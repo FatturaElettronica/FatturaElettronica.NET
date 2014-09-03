@@ -25,5 +25,5 @@ FatturaElettronicaPA è un progetto open source [Gestionale Amica][ga] rilasciat
 
 [pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.0.pdf
 [bo]: http://github.com/FatturaElettronicaPA/BusinessObjects 
-[bsd]: http://github.com/FatturaElettronicaPA/BusinessObjects/blob/master/LICENSE
+[bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
