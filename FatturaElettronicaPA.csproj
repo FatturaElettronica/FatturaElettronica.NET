@@ -1,0 +1,349 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{417B2F7C-A46B-49DA-B5E5-150ECF084BCD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FatturaElettronicaPA</RootNamespace>
+    <AssemblyName>FatturaElettronicaPA</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Common\Anagrafica.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\BusinessObject.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\DatiAnagrafici.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\DatiDocumento.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\SoggettoEmittente.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\StatoLiquidazione.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\SocioUnico.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\RegimeFiscale.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\Provincia.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\IdFiscaleIva.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\Località.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\ScontoMaggiorazione.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronica.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\Allegati\Allegati.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiBeniServizi\AltriDatiGestionali.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiBeniServizi\CodiceArticolo.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiBeniServizi\DatiBeniServizi.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiBeniServizi\DatiRiepilogo.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiBeniServizi\DettaglioLinee.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiAnagraficiVettore.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiBollo.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiCassaPrevidenziale.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiContratto.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiConvenzione.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiDDT.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiFattureCollegate.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiGenerali.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiGeneraliDocumento.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiOrdineAcquisto.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiRicezione.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiRitenuta.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiSAL.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiTrasporto.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\FatturaPrincipale.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\IndirizzoResa.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiPagamento\DatiPagamento.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiPagamento\DettaglioPagamento.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiVeicoli\DatiVeicoli.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaBody\FatturaElettronicaBody.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\CedentePrestatore.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\Contatti.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\DatiAnagrafici.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\IscrizioneRea.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\Sede.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\StabileOrganizzazione.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\CessionarioCommittente.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\Sede.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\DatiTrasmissione\ContattiTrasmittente.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Common\FormatoTrasmissione.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\DatiTrasmissione\DatiTrasmissione.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\DatiTrasmissione\IdTrasmittente.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\FatturaElettronicaHeader.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\RappresentanteFiscale\RappresentanteFiscale.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="FatturaElettronicaHeader\TerzoIntermediarioOSoggettoEmittente\TerzoIntermediarioOSoggettoEmittente.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FCountryValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FDateValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FDivisaValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FEsigibilitaIVAValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FLengthValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FModalitaPagamentoValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FNaturaValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FProvinciaValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FRegimeFiscaleValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FRequiredValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FSiValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FTipoCassaValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FTipoCessionePrestazioneValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FTipoDocumentoValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FTipoRitenutaValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FTipoScontoMaggiorazioneValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+    <Compile Include="Validators\FXorRequiredValidator.cs">
+      <SubType>
+      </SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="FatturaElettronica.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
+      <Project>{06f90b65-7d19-46dc-8336-0f3335be6c76}</Project>
+      <Name>BusinessObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
