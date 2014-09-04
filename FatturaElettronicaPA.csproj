@@ -333,10 +333,9 @@
     <None Include="FatturaElettronica.snk" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
-      <Project>{06f90b65-7d19-46dc-8336-0f3335be6c76}</Project>
-      <Name>BusinessObjects</Name>
-    </ProjectReference>
+    <Reference Include="BusinessObjects">
+      <HintPath>..\..\BusinessObjects\BusinessObjects\bin\Debug\BusinessObjects.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
