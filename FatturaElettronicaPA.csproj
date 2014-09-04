@@ -334,7 +334,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BusinessObjects">
-      <HintPath>..\..\BusinessObjects\BusinessObjects\bin\Debug\BusinessObjects.dll</HintPath>
+      <HintPath>..\BusinessObjects\BusinessObjects\bin\Debug\BusinessObjects.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
