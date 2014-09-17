@@ -9,10 +9,10 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.CedentePrestatore
     /// <summary>
     /// Represents a DatiAnagrafici object
     /// </summary>
-    public class IscrizioneRea : Common.BusinessObject
+    public class IscrizioneREA : Common.BusinessObject
     {
-        public IscrizioneRea() { } 
-        public IscrizioneRea(XmlReader r) : base(r) { } 
+        public IscrizioneREA() { } 
+        public IscrizioneREA(XmlReader r) : base(r) { } 
 
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();

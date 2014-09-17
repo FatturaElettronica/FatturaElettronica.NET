@@ -15,7 +15,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.CedentePrestatore
         private readonly DatiAnagrafici _datiAnagrafici;
         private readonly Sede _sede;
         private readonly StabileOrganizzazione _stabileOrganizzazione;
-        private readonly IscrizioneRea _iscrizioneRea;
+        private readonly IscrizioneREA _iscrizioneREA;
         private readonly Contatti _contatti;
 
         /// <summary>
@@ -25,7 +25,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.CedentePrestatore
             _datiAnagrafici = new DatiAnagrafici();
             _sede = new Sede();
             _stabileOrganizzazione = new StabileOrganizzazione();
-            _iscrizioneRea = new IscrizioneRea();
+            _iscrizioneREA = new IscrizioneREA();
             _contatti = new Contatti();
         }
         public CedentePrestatore(XmlReader r) : base(r) { }
@@ -72,8 +72,8 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.CedentePrestatore
         /// Nei casi di società iscritte nel registro delle imprese ai sensi dell'art. 2250 del codice civile.
         /// </summary>
         [DataProperty]
-        public IscrizioneRea IscrizioneRea  { 
-            get { return _iscrizioneRea; }
+        public IscrizioneREA IscrizioneREA  { 
+            get { return _iscrizioneREA; }
         }
 
         /// <summary>

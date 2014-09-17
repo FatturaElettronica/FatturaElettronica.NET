@@ -207,7 +207,7 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\IscrizioneRea.cs">
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\IscrizioneREA.cs">
       <SubType>
       </SubType>
     </Compile>
