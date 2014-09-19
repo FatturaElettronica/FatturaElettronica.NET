@@ -6,7 +6,7 @@
 - Supporto per la serializzazione in formato JSON
 
 ## Esempio
-
+```cs
     // instanzia una nuova fattura elettronica
     FatturaElettronica fattura = new FatturaElettronica();
 
@@ -34,6 +34,7 @@
     using (w = XmlWriter.Create("IT01234567890_11111.xml", s)) {
 	    fattura.WriteXml(w);
     }
+```
 
 ## Portable Class Library
 La libreria gira senza modifiche sui seguenti ambienti:
