@@ -5,6 +5,36 @@
 - Convalida in osservanza delle specifiche tecniche ufficiali.
 - Supporto per la serializzazione in formato JSON
 
+## Esempio
+
+    // instanzia una nuova fattura elettronica
+    FatturaElettronica fattura = new FatturaElettronica();
+
+    // lettura da file XML compatibile con formato SDI1.0
+    var s = new XmlReaderSettings {IgnoreWhitespace = true};
+    var r = XmlReader.Create("IT01234567890_11111.xml", s);
+    fattura.ReadXml(r);
+
+    // convalida documento
+    if (!fattura.IsValid) {
+	    Debug.WriteLine(fattura.Error);
+    }
+
+    // serializzazione JSON
+    var json = fattura.ToJson(JsonOptions.Indented);
+    Debug.WriteLine(json);
+
+    // modifica valore
+    fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.RegimeFiscale = "RF11";
+
+    // serializzazione XML secondo lo standard SDI 1.0
+    var s = new XmlWriterSettings { Indent = true };
+
+    XmlWriter w;
+    using (w = XmlWriter.Create("IT01234567890_11111.xml", s)) {
+	    fattura.WriteXml(w);
+    }
+
 ## Portable Class Library
 La libreria gira senza modifiche sui seguenti ambienti:
 
