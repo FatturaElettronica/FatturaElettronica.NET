@@ -22,8 +22,8 @@ namespace FatturaElettronicaPA
 
         public override void WriteXml(System.Xml.XmlWriter w)
         {
-            w.WriteStartElement("p", GetType().Name, "http://www.fatturapa.gov.it/sdi/fatturapa/v1.0");
-            w.WriteAttributeString("versione","1.0");
+            w.WriteStartElement("p", GetType().Name, "http://www.fatturapa.gov.it/sdi/fatturapa/v1.1");
+            w.WriteAttributeString("versione","1.1");
             base.WriteXml(w);
             w.WriteEndElement();
         }

@@ -27,6 +27,6 @@ namespace FatturaElettronicaPA.Common
         /// <summary>
         /// Formati supportati.
         /// </summary>
-        public static readonly FormatoTrasmissione[] List = { new FormatoTrasmissione("SDI10") };
+        public static readonly FormatoTrasmissione[] List = { new FormatoTrasmissione("SDI11") };
     }
 }
