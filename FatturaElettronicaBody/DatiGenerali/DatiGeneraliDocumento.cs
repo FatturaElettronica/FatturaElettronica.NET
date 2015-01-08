@@ -18,6 +18,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         private readonly DatiBollo _datiBollo;
         private readonly List<DatiCassaPrevidenziale> _datiCassaPrevidenziale;
         private readonly List<ScontoMaggiorazione> _scontoMaggiorazione;
+        private readonly List<string> _causale;
 
         /// <summary>
         /// Dati generali del documento principale ed i dati dei documenti correlati.
@@ -27,6 +28,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
             _datiBollo = new DatiBollo();
             _datiCassaPrevidenziale = new List<DatiCassaPrevidenziale>();
             _scontoMaggiorazione = new List<ScontoMaggiorazione>();
+            _causale = new List<string>();
         }
         public DatiGeneraliDocumento(XmlReader r) : base(r) { }
 
@@ -36,7 +38,6 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
             rules.Add(new AndCompositeValidator("Divisa", new List<Validator>{new FRequiredValidator(), new FDivisaValidator()}));
             rules.Add(new AndCompositeValidator("Data", new List<Validator>{new FRequiredValidator(), new FDateValidator()}));
             rules.Add(new AndCompositeValidator("Numero", new List<Validator>{new FRequiredValidator(), new FLengthValidator(1,20)}));
-            rules.Add(new FLengthValidator("Causale", 1, 200));
             rules.Add(new FSiValidator("Art73"));
             return rules;
         }
@@ -111,7 +112,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         /// Descrizione della causale del documento.
         /// </summary>
         [DataProperty]
-        public string Causale { get; set; }
+        public List<string> Causale { get { return _causale; }}
 
         /// <summary>
         /// Indica se il documento è stato emesso secondo modalità e termini stabiliti con decreto ministeriale ai sensi art. 73

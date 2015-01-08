@@ -119,6 +119,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="FatturaElettronicaBody\DatiGenerali\Causale.cs" />
     <Compile Include="FatturaElettronicaBody\DatiGenerali\DatiBollo.cs">
       <SubType>
       </SubType>
