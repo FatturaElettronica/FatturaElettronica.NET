@@ -25,7 +25,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.DatiTrasmissione
         public DatiTrasmissione() {
             _idTrasmittente = new IdTrasmittente();
             _contattiTrasmittente = new ContattiTrasmittente();
-            _formatoTrasmissione = "SDI10";
+            _formatoTrasmissione = "SDI11";
         }
         public DatiTrasmissione(XmlReader r) : base(r) { }
 
@@ -37,7 +37,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.DatiTrasmissione
                     new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 10)}));
             rules.Add(
                 new AndCompositeValidator("FormatoTrasmissione", 
-                    new List<Validator> {new FRequiredValidator(), new DomainValidator("Valore consentito: [SDI10]", Common.FormatoTrasmissione.Nomi) }));
+                    new List<Validator> {new FRequiredValidator(), new DomainValidator("Valore consentito: [SDI11]", Common.FormatoTrasmissione.Nomi) }));
             rules.Add(new AndCompositeValidator("CodiceDestinatario",
                     new List<Validator> {new FRequiredValidator(), new FLengthValidator(6) }));
             return rules;

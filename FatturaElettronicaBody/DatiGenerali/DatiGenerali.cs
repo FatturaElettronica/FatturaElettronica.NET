@@ -45,7 +45,6 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
             rules.Add(new FRequiredValidator("DatiGeneraliDocumento"));
-            rules.Add(new FLengthValidator("NormaDiRiferimento", 1, 100));
             return rules;
         }
 
@@ -112,14 +111,6 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public DatiTrasporto DatiTrasporto { get { return _datiTrasporto; } }
-
-        /// <summary>
-        /// Da valorizzare nei casi di reverse charge (autofattura); contiene la norma di riferimento, comunitaria o nazionale, nei
-        /// casi in cui il cessionario/committente è debitore di imposta in luogo del cedente/prestatore; negli altri casi il campo
-        /// non va valorizzato.
-        /// </summary>
-        [DataProperty]
-        public string NormaDiRiferimento { get; set; }
 
         /// <summary>
         /// Da valorizzare nei casi di fatture per operazioni accessorie, emesse dagli autotrasportatori per usufruire delle

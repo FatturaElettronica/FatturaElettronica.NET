@@ -31,7 +31,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
             var rules = base.CreateRules();
             rules.Add(new FRequiredValidator("NumeroLinea"));
             rules.Add(new FTipoCessionePrestazioneValidator("TipoCessionePrestazione"));
-            rules.Add(new AndCompositeValidator("Descrizione", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 100)}));
+            rules.Add(new AndCompositeValidator("Descrizione", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 1000)}));
             rules.Add(new FLengthValidator("UnitaMisura", 1, 10));
             rules.Add(new FRequiredValidator("PrezzoUnitario"));
             rules.Add(new FRequiredValidator("PrezzoTotale"));

@@ -16,8 +16,10 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
 
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("NumeroBollo", new List<Validator>{new FRequiredValidator(), new FLengthValidator(14)}));
-            rules.Add(new FRequiredValidator("ImportoRitenuta"));
+            rules.Add(
+                new AndCompositeValidator("BolloVirtuale", 
+                    new List<Validator> {new FRequiredValidator(), new DomainValidator("Valore consentito: [SI]", new[] {"SI"}) }));
+            rules.Add(new FRequiredValidator("ImportoBollo"));
             return rules;
         }
 
@@ -26,12 +28,12 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
-        
+
         /// <summary>
-        /// Numero del bollo.
+        /// Bollo virtuale.
         /// </summary>
         [DataProperty]
-        public string NumeroBollo { get; set; }
+        public string BolloVirtuale { get; set; }
         
 
         /// <summary>

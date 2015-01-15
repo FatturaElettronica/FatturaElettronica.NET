@@ -31,7 +31,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiPagamento
             rules.Add(new FLengthValidator("ABI", 5));
             rules.Add(new FLengthValidator("CAB", 5));
             rules.Add(new FLengthValidator("BIC", 8, 11));
-            rules.Add(new FLengthValidator("CodicePagamento", 1, 15));
+            rules.Add(new FLengthValidator("CodicePagamento", 1, 60));
             return rules;
         }
 
