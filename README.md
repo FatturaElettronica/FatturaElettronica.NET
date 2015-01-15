@@ -1,7 +1,7 @@
 ﻿# Fattura Elettronica per la Pubblica Amministrazione
 
 ## Features
-- Lettura e scrittura nel [formato standard v1.0 PA][pa] (XML).
+- Lettura e scrittura nel [formato standard v1.1 PA][pa] (XML).
 - Convalida in osservanza delle specifiche tecniche ufficiali.
 - Supporto per la serializzazione in formato JSON
 
@@ -10,7 +10,7 @@
     // instanzia una nuova fattura elettronica
     FatturaElettronica fattura = new FatturaElettronica();
 
-    // lettura da file XML compatibile con formato SDI1.0
+    // lettura da file XML compatibile con formato SDI1.1
     var s = new XmlReaderSettings {IgnoreWhitespace = true};
     var r = XmlReader.Create("IT01234567890_11111.xml", s);
     fattura.ReadXml(r);
@@ -27,7 +27,7 @@
     // modifica valore
     fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.RegimeFiscale = "RF11";
 
-    // serializzazione XML secondo lo standard SDI 1.0
+    // serializzazione XML secondo lo standard SDI 1.1
     var s = new XmlWriterSettings { Indent = true };
 
     XmlWriter w;
@@ -54,7 +54,7 @@ L'unica dipendenza è il progetto [BusinessObjects][bo], anch'esso reperibile su
 ## Licenza
 FatturaElettronicaPA è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.0.pdf
+[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_V1.1.pdf
 [bo]: http://github.com/FatturaElettronicaPA/BusinessObjects 
 [bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
