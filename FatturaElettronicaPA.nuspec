@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/FatturaElettronicaPA/FatturaElettronicaPA</projectUrl>
+    <iconUrl>http://python-eve.org/_static/favicon.ico</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <releaseNotes>First public release.</releaseNotes>
+    <copyright>Copyright 2015 Nicola Iarocci and Gestionali Amica</copyright>
+    <tags>fattura elettronica pubblica amministrazione</tags>
+  </metadata>
+</package>
