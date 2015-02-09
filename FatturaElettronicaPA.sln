@@ -1,16 +1,16 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatturaElettronicaPA", "FatturaElettronicaPA.csproj", "{417B2F7C-A46B-49DA-B5E5-150ECF084BCD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{34BFDA14-0797-4896-8E48-89970EF00AA7}"
 	ProjectSection(SolutionItems) = preProject
 		AUTHORS = AUTHORS
-		README.md = README.md
-		LICENSE.txt = LICENSE.txt
 		FatturaElettronicaPA.nuspec = FatturaElettronicaPA.nuspec
+		LICENSE.txt = LICENSE.txt
+		README.md = README.md
 	EndProjectSection
 EndProject
 Global
@@ -24,12 +24,10 @@ Global
 		{417B2F7C-A46B-49DA-B5E5-150ECF084BCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{417B2F7C-A46B-49DA-B5E5-150ECF084BCD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = FatturaElettronicaPA.csproj
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 EndGlobal
