@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v0.1.2
+======
+
+Rilasciata il 16.2.2015
+
+- Supporto per valori L1, M1, O1, V1 per DatiRitenuta.CausalePagamento.
+- Risolto problema col validatore di DatiRitenuta.CausalePagamento.
+- Supporto per valore RF19 per campo RegimeFiscale.
+
 v0.1.1
 ======
 
