@@ -284,6 +284,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Validators\FCausalePagamentoValidator.cs" />
     <Compile Include="Validators\FNaturaValidator.cs">
       <SubType>
       </SubType>
