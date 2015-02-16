@@ -7,7 +7,7 @@ namespace FatturaElettronicaPA.Validators
     /// </summary>
     public class FEsigibilitaIVAValidator : DomainValidator
     {
-        private const string BrokenDescription = "Valori ammessi [I] immediata, [D] differita.";
+        private const string BrokenDescription = "Valori ammessi [I] immediata, [D] differita, [S] scissione dei pagamenti.";
 
         /// <summary>
         /// Validates FatturaElettronicaBody.DatiGenerali.DatiBeniServizi.DatiRiepilogo.EsigibilitaIVA.
@@ -16,7 +16,7 @@ namespace FatturaElettronicaPA.Validators
         public FEsigibilitaIVAValidator(string propertyName) : this(propertyName, BrokenDescription) { }
         public FEsigibilitaIVAValidator(string propertyName, string description) : base(propertyName, description)
         {
-            Domain = new[] { "I", "D" };
+            Domain = new[] { "I", "D", "S" };
         }
     }
 }
