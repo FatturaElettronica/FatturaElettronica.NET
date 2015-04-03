@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Validators/FRequiredValidator.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FatturaElettronicaPA.nuspec">
     <Files>
       <File FileName="Validators/FCountryValidator.cs" Line="1" Column="1" />
       <File FileName="Validators/FLengthValidator.cs" Line="1" Column="1" />
       <File FileName="Validators/FSiValidator.cs" Line="1" Column="1" />
       <File FileName="Validators/FRequiredValidator.cs" Line="1" Column="1" />
+      <File FileName="FatturaElettronicaPA.nuspec" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
