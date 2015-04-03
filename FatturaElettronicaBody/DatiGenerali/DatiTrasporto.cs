@@ -24,14 +24,10 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         }
         public DatiTrasporto(XmlReader r) : base(r) { }
 
+        // TODO: Implementare le regole per i DatiTrasporto
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("TipoCassa", new List<Validator>{new FRequiredValidator(), new FTipoCassaValidator()}));
-            rules.Add(new FRequiredValidator("AlCassa"));
-            rules.Add(new FRequiredValidator("ImportContributoCassa"));
-            rules.Add(new FRequiredValidator("AliquotaIVA"));
-            rules.Add(new FNaturaValidator("Natura"));
-            rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
+            
             return rules;
         }
 
