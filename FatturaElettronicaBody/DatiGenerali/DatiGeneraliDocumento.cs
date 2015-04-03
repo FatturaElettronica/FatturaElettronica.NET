@@ -36,7 +36,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
             var rules = base.CreateRules();
             rules.Add(new AndCompositeValidator("TipoDocumento", new List<Validator>{new FRequiredValidator(), new FTipoDocumentoValidator()}));
             rules.Add(new AndCompositeValidator("Divisa", new List<Validator>{new FRequiredValidator(), new FDivisaValidator()}));
-            rules.Add(new AndCompositeValidator("Data", new List<Validator>{new FRequiredValidator(), new FDateValidator()}));
+            rules.Add(new AndCompositeValidator("Data", new List<Validator>{new FRequiredValidator()}));
             rules.Add(new AndCompositeValidator("Numero", new List<Validator>{new FRequiredValidator(), new FLengthValidator(1,20)}));
             rules.Add(new FSiValidator("Art73"));
             return rules;

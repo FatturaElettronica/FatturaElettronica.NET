@@ -18,7 +18,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
             var rules = base.CreateRules();
             rules.Add(new AndCompositeValidator("TipoCassa", new List<Validator>{new FRequiredValidator(), new FTipoCassaValidator()}));
             rules.Add(new FRequiredValidator("AlCassa"));
-            rules.Add(new FRequiredValidator("ImportContributoCassa"));
+            rules.Add(new FRequiredValidator("ImportoContributoCassa"));
             rules.Add(new FRequiredValidator("AliquotaIVA"));
             rules.Add(new FNaturaValidator("Natura"));
             rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));

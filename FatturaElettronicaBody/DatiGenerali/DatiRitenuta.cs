@@ -19,7 +19,6 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
             rules.Add(new AndCompositeValidator("TipoRitenuta", new List<Validator>{new FRequiredValidator(), new FTipoRitenutaValidator()}));
             rules.Add(new FRequiredValidator("ImportoRitenuta"));
             rules.Add(new FRequiredValidator("AliquotaRitenuta"));
-            rules.Add(new FSiValidator());
             rules.Add(new AndCompositeValidator("CausalePagamento", new List<Validator>{new FRequiredValidator(), new FCausalePagamentoValidator()}));
             return rules;
         }
