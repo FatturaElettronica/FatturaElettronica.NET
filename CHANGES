@@ -4,6 +4,8 @@ Changelog
 v0.1.3
 ======
 
+Rilasciata il 7.4.2015
+
 - Upgrade to BusinessObject v0.1.1
 - Upgrade to Json.NET v6.0.8
 - Fix: ReadXML crash su valori Decimal?
