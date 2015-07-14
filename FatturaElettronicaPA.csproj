@@ -336,7 +336,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="BusinessObjects">
-      <HintPath>packages\BusinessObjects.0.1.1.0\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\BusinessObjects.dll</HintPath>
+      <HintPath>packages\BusinessObjects.0.1.2.0\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\BusinessObjects.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
