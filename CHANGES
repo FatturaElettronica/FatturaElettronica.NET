@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.1.4
+======
+
+Rilasciata il 14.7.2015
+
+- Upgrade to BusinessObject v0.1.2
+- Fix: Convalida di FatturaElettronicaBody. Chiude #4.
+
 v0.1.3
 ======
 
