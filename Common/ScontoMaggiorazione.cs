@@ -12,7 +12,7 @@ namespace FatturaElettronicaPA.Common
     {
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("Tipo", new List<Validator>{new FRequiredValidator(), new FTipoCassaValidator()}));
+            rules.Add(new AndCompositeValidator("Tipo", new List<Validator>{new FRequiredValidator(), new FTipoScontoMaggiorazioneValidator()}));
             return rules;
         }
 
