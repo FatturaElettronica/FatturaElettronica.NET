@@ -6,7 +6,7 @@ v0.1.5
 
 Non ancora rilasciata
 
-- 
+- Fix: Campo 2.4.2.2 ModalitaPagamento: non veniva convalidato valore MP05.
 
 v0.1.4
 ======
