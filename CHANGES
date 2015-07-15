@@ -4,7 +4,7 @@ Changelog
 v0.1.5
 ======
 
-Non ancora rilasciata
+Rilasciata il 15.7.2015
 
 - Fix: 2.2.1.10.1 ScontoMaggiorazione.Tipo: convalida valori corretti SC e MG.
 - Fix: 2.4.2.2 ModalitaPagamento: non veniva convalidato valore MP05.
