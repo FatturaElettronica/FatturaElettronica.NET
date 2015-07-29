@@ -150,7 +150,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiPagamento
         /// Data limite stabilita per il pagamento anticipato.
         /// </summary>
         [DataProperty]
-        public decimal? DataLimitePagamentoAnticipato { get; set; }
+        public DateTime? DataLimitePagamentoAnticipato { get; set; }
 
         /// <summary>
         /// Ammontare della penalità dovuta per pagamenti ritardati.
