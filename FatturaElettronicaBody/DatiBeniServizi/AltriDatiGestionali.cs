@@ -47,7 +47,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
         /// Campo in cui inserire una data riferita alla tiplogia di informazione.
         /// </summary>
         [DataProperty]
-        public DateTime RiferimentoData { get; set; }
+        public DateTime? RiferimentoData { get; set; }
         #endregion
     }
 }

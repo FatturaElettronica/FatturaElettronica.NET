@@ -6,6 +6,8 @@ v0.1.6
 
 Non ancora rilasciata.
 
+- Fix: 2.2.1.16.4 RiferimentoData non serilizza più a DateTime.MinValue quando non valorizzato.
+
 v0.1.5
 ======
 
