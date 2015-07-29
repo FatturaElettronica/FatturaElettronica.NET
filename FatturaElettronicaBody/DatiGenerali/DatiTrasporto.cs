@@ -116,7 +116,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         [IgnoreXmlDateFormat]
-        public DateTime DataOraConsegna { get; set; }
+        public DateTime? DataOraConsegna { get; set; }
         #endregion
     }
 }
