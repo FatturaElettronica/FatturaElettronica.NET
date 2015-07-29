@@ -27,7 +27,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiVeicoli
         /// Data di prima immatricolazione o iscrizione nei pubblici registri.
         /// </summary>
         [DataProperty]
-        public DateTime Data { get; set; }
+        public DateTime? Data { get; set; }
 
         /// <summary>
         /// Totale chilometri percorsi, oppure totale ora navigate o volate.
