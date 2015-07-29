@@ -66,7 +66,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiPagamento
         /// previste.
         /// </summary>
         [DataProperty]
-        public DateTime DataScadenzaPagamento { get; set; }
+        public DateTime? DataScadenzaPagamento { get; set; }
 
         /// <summary>
         /// Importo relativo al pagamento.
