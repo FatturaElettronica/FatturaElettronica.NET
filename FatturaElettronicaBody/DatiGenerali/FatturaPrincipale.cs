@@ -41,7 +41,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         /// Data della fattura relativa al trasporto di beni.
         /// </summary>
         [DataProperty]
-        public DateTime? DataFatturaPrincipale { get; set; }
+        public DateTime DataFatturaPrincipale { get; set; }
         #endregion
     }
 }

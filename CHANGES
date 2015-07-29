@@ -6,6 +6,7 @@ v0.1.6
 
 Non ancora rilasciata.
 
+- Fix: 2.1.10.2 DataFatturaPrincipale non nullabile essendo obbligatorio.
 - Fix: 2.1.9.13 DataOraConsegna non serializza più a MinValue quando non valorizzato. Closes #10.
 - Fix: 2.2.1.16.4 RiferimentoData non serializza più a MinValue quando non valorizzato.
 
