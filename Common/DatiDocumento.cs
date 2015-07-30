@@ -12,13 +12,19 @@ namespace FatturaElettronicaPA.Common
     /// </summary>
     public abstract class DatiDocumento : BusinessObject
     {
+        private readonly List<int> _riferimentoNumeroLinea;
 
-        protected DatiDocumento() { }
+        protected DatiDocumento()
+        {
+            _riferimentoNumeroLinea = new List<int>();
+        }
         protected DatiDocumento(XmlReader r) : base(r) { }
 
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
-            rules.Add(new FLengthValidator("RiferimentoNumeroLinea", 1, 4));
+            // TODO validazione per RiferimentoNumeroLinea 2.1.2.1 che è una List<int> ma
+            // deve avere len 1..4 come fosse stringa.
+            //rules.Add(new FLengthValidator("RiferimentoNumeroLinea", 1, 4));
             rules.Add(new AndCompositeValidator("IdDocumento", new List<Validator>{new FRequiredValidator(), new FLengthValidator(1, 20)}));
             rules.Add(new FLengthValidator("NumItem", 1, 20));
             rules.Add(new FLengthValidator("CodiceCommessaConvenzione", 1, 100));
@@ -34,11 +40,11 @@ namespace FatturaElettronicaPA.Common
         /// Also, properties must be listed with the precise order in the specification.
 
         /// <summary>
-        /// Linea di dettaglio della fattura a cui si fa riferimento.
+        /// Linee di dettaglio della fattura a cui si fa riferimento.
         /// </summary>
         /// <remarks>Se il riferimento è all'intera fattura non viene valorizzato.</remarks>
         [DataProperty]
-        public int? RiferimentoNumeroLinea { get; set; }
+        public List<int> RiferimentoNumeroLinea { get { return _riferimentoNumeroLinea; }}
         
         /// <summary>
         /// Numero del documento a cui si fa riferimento.

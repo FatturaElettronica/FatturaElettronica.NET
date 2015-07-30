@@ -6,6 +6,8 @@ v0.1.6
 
 Non ancora rilasciata.
 
+- Fix: 2.1.2.1 RiferimentoNumeroLinea non gestito come lista 0..N, ma come valore singolo.
+- Fix: 2.1.2.1 RiferimentoNumeroLinea in deserializzazione si ha errore conversione Nullable. Closes #9.
 - Fix: 2.1.1.11 Causale. Se sono presenti 2+ righe allora il codice va in loop. Closes #8.
 - Fix: Crash in deserializzazione di tag XML vuoti (es: <ContattiTrasmittente />). Closes #7.
 - Fix: 2.1.9.13 DataOraConsegna serializza a MinValue quando non valorizzato. Closes #10.
