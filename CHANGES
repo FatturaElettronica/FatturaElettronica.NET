@@ -6,6 +6,7 @@ v0.1.6
 
 Non ancora rilasciata.
 
+- Fix: 2.1.1.11 Causale. Se sono presenti 2+ righe allora il codice va in loop. Closes #8.
 - Fix: Crash in deserializzazione di tag XML vuoti (es: <ContattiTrasmittente />). Closes #7.
 - Fix: 2.1.9.13 DataOraConsegna serializza a MinValue quando non valorizzato. Closes #10.
 - Fix: 2.2.1.16.4 RiferimentoData serializza a MinValue quando non valorizzato.
