@@ -6,6 +6,7 @@ v0.1.6
 
 Rilasciata il 31.7.2015
 
+- Upgrade to BusinessObjects v0.1.3
 - New: Convalida per 2.1.1.11 Causale.
 - Fix: 2.1.2.1 RiferimentoNumeroLinea non gestito come lista 0..N, ma come valore singolo.
 - Fix: 2.1.2.1 RiferimentoNumeroLinea in deserializzazione si ha errore conversione Nullable. Closes #9.
