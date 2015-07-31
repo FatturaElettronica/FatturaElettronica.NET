@@ -4,7 +4,7 @@ Changelog
 v0.1.6
 ======
 
-Non ancora rilasciata.
+Rilasciata il 31.7.2015
 
 - New: Convalida per 2.1.1.11 Causale.
 - Fix: 2.1.2.1 RiferimentoNumeroLinea non gestito come lista 0..N, ma come valore singolo.
