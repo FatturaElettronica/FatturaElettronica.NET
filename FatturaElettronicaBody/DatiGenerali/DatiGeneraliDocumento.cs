@@ -34,7 +34,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
 
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
-            // TODO validazione Causale 2.1.1.11 length 1..200 ma è List<string>
+            rules.Add(new ListOfStringLengthValidator("Causale","Lunghezza massima 200", 1,200));
             rules.Add(new AndCompositeValidator("TipoDocumento", new List<Validator>{new FRequiredValidator(), new FTipoDocumentoValidator()}));
             rules.Add(new AndCompositeValidator("Divisa", new List<Validator>{new FRequiredValidator(), new FDivisaValidator()}));
             rules.Add(new FRequiredValidator("Data"));

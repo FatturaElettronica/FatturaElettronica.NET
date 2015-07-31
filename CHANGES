@@ -6,6 +6,7 @@ v0.1.6
 
 Non ancora rilasciata.
 
+- New: Convalida per 2.1.1.11 Causale.
 - Fix: 2.1.2.1 RiferimentoNumeroLinea non gestito come lista 0..N, ma come valore singolo.
 - Fix: 2.1.2.1 RiferimentoNumeroLinea in deserializzazione si ha errore conversione Nullable. Closes #9.
 - Fix: 2.1.1.11 Causale. Se sono presenti 2+ righe allora il codice va in loop. Closes #8.
