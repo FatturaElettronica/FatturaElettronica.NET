@@ -335,8 +335,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="BusinessObjects">
-      <HintPath>packages\BusinessObjects.0.1.3.0\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\BusinessObjects.dll</HintPath>
+    <Reference Include="BusinessObjects, Version=0.1.4.0, Culture=neutral, PublicKeyToken=ee01fa0baf555a0d, processorArchitecture=MSIL">
+      <HintPath>packages\BusinessObjects.0.1.4.0\lib\portable-net40+sl50+win+wp80+MonoAndroid10+MonoTouch10\BusinessObjects.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json">

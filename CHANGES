@@ -6,6 +6,10 @@ v0.1.7
 
 Non ancora rilasciata
 
+- Fix: 2.1.9.4 NumeroColli in deserializzazione si ha errore conversione Nullable. Closes #12.
+- Fix: 2.4.2.4 GiorniTerminiPagamento in deserializzazione si ha errore conversione Nullable. Closes #12.
+- Upgrade to BusinessObjects v0.1.4
+
 v0.1.6
 ======
 
