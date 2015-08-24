@@ -14,13 +14,13 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
     public class DatiDDT : Common.BusinessObject
     {
 
-        private readonly List<int?> _riferimentoNumeroLinea;
+        private readonly List<int> _riferimentoNumeroLinea;
 
         /// <summary>
         /// Nei casi di fattura differita per indicare il documento con cui è stato consegnato il bene.
         /// </summary>
         public DatiDDT() {
-            _riferimentoNumeroLinea = new List<int?>();
+            _riferimentoNumeroLinea = new List<int>();
         }
 
 
@@ -57,7 +57,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         /// Linea di dettaglio della fattura cui si riferisce il DDT (non viene valorizzato se il riferimento è all'intera fattura).
         /// </summary>
         [DataProperty]
-        public List<int?> RiferimentoNumeroLinea { get { return _riferimentoNumeroLinea; }}
+        public List<int> RiferimentoNumeroLinea { get { return _riferimentoNumeroLinea; }}
         #endregion
     }
 }
