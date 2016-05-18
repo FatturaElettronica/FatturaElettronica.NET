@@ -39,14 +39,14 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
             rules.Add(new FSiValidator("Ritenuta"));
             rules.Add(new FNaturaValidator("Natura"));
             rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
-            rules.Add(new FPrezzoTotaleValidator("PrezzoTotale", "00423: il valore del campo PrezzoTotale non risulta calcolato secondo le regole definite nelle specifiche tecniche", ValidatePrezzoTotale));
+            rules.Add(new FPrezzoTotaleValidator("PrezzoTotale", "00423: il valore del campo PrezzoTotale non risulta calcolato secondo le regole definite nelle specifiche tecniche", ValidateAgainstErr00423));
             return rules;
         }
 		/// <summary>
         /// Validate error 00423 from FatturaElettronicaPA v1.3
         /// </summary>
         /// <returns></returns>
-		public bool ValidatePrezzoTotale()
+		public bool ValidateAgainstErr00423()
         {
             decimal sconti = 0;
 			decimal maggiorazioni = 0;

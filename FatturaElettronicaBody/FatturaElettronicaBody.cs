@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
@@ -30,7 +31,26 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody
             var rules = base.CreateRules();
             rules.Add(new FRequiredValidator("DatiGenerali"));
             rules.Add(new FRequiredValidator("DatiBeniServizi"));
+            rules.Add(new DelegateValidator("DatiBeniServizi.DatiRiepilogo", "00419: è presente nel documento un’aliquota IVA per la quale non esiste il relativo blocco DatiRiepilogo.", ValidateAgainstErr00419));
             return rules;
+        }
+
+		/// <summary>
+        /// Validate error 00423 from FatturaElettronicaPA v1.3
+        /// </summary>
+        /// <returns></returns>
+		private bool ValidateAgainstErr00419()
+        {
+            var hash = new Collection<decimal>();
+            foreach (var cp in DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale)
+            {
+                if (!hash.Contains(cp.AliquotaIVA)) hash.Add(cp.AliquotaIVA);
+            }
+            foreach (var l in DatiBeniServizi.DettaglioLinee)
+            {
+                if (!hash.Contains(l.AliquotaIVA)) hash.Add(l.AliquotaIVA);
+            }
+            return DatiBeniServizi.DatiRiepilogo.Count >= hash.Count;
         }
 
         #region Properties 
