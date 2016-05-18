@@ -46,7 +46,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
         /// Validate error 00423 from FatturaElettronicaPA v1.3
         /// </summary>
         /// <returns></returns>
-		public bool ValidateAgainstErr00423()
+		private bool ValidateAgainstErr00423()
         {
             decimal sconti = 0;
 			decimal maggiorazioni = 0;

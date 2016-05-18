@@ -21,7 +21,17 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
             rules.Add(new FRequiredValidator("ImponibileImporto"));
             rules.Add(new FRequiredValidator("Imposta"));
             rules.Add(new FEsigibilitaIVAValidator("EsigibilitaIVA"));
+            rules.Add(new DelegateValidator("Natura", " 00420: nel blocco DatiRiepilogo con EsigibilitaIVA uguale a S il campo Natura non può assumere valore N6.", ValidateAgainstErr00420));
             return rules;
+        }
+
+		/// <summary>
+        /// Validate error 00420 from FatturaElettronicaPA v1.3
+        /// </summary>
+        /// <returns></returns>
+		private bool ValidateAgainstErr00420()
+        {
+            return !(Natura == "N6" && EsigibilitaIVA == "S");
         }
 
         #region Properties

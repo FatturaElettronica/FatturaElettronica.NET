@@ -6,6 +6,7 @@ v0.2
 
 Non ancora rilasciata
 
+- New: Errore 00420 aggiunto alla convalida. Addresses #16.
 - New: Errore 00129 aggiunto alla convalida. Addresses #16.
 - New: Errore 00423 aggiunto alla convalida. Closes #17. Addresses #16.
 
