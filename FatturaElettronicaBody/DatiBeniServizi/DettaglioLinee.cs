@@ -35,11 +35,11 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
             rules.Add(new FLengthValidator("UnitaMisura", 1, 10));
             rules.Add(new FRequiredValidator("PrezzoUnitario"));
             rules.Add(new FRequiredValidator("PrezzoTotale"));
-            rules.Add(new FRequiredValidator("AliquotaIVA"));
             rules.Add(new FSiValidator("Ritenuta"));
             rules.Add(new FNaturaValidator("Natura"));
             rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
             rules.Add(new FPrezzoTotaleValidator("PrezzoTotale", "00423: il valore del campo PrezzoTotale non risulta calcolato secondo le regole definite nelle specifiche tecniche", ValidateAgainstErr00423));
+            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> { new FRequiredValidator("AliquotaIVA"), new FAliquotaIVAValidator("AliquotaIVA") }));
             return rules;
         }
 		/// <summary>

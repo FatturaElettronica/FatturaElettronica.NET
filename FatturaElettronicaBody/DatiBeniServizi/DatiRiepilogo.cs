@@ -16,7 +16,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
 
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("AliquotaIVA"));
+            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> { new FRequiredValidator("AliquotaIVA"), new FAliquotaIVAValidator("AliquotaIVA") }));
             rules.Add(new FNaturaValidator("Natura"));
             rules.Add(new FRequiredValidator("ImponibileImporto"));
             rules.Add(new FRequiredValidator("Imposta"));
