@@ -8,6 +8,7 @@ Non ancora rilasciata
 
 - New: Errore 00419 aggiunto alla convalida. Addresses #16.
 - New: Errore 00420 aggiunto alla convalida. Addresses #16.
+- New: Errore 00421 aggiunto alla convalida. Addresses #16.
 - New: Errore 00423 aggiunto alla convalida. Closes #17. Addresses #16.
 
 v0.1.8
