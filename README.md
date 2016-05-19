@@ -1,7 +1,7 @@
 ﻿# Fattura Elettronica per la Pubblica Amministrazione
 
 ## Features
-- Lettura e scrittura nel [formato standard v1.1 PA][pa] (XML).
+- Lettura e scrittura nel [formato standard v1.3 PA][pa] (XML).
 - Convalida in osservanza delle specifiche tecniche ufficiali.
 - Supporto per la serializzazione in formato JSON
 
@@ -62,7 +62,7 @@ L'unica dipendenza è il progetto [BusinessObjects][bo], anch'esso reperibile su
 ## Licenza
 FatturaElettronicaPA è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_V1.1.pdf
+[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_SdI_v1.3.pdf
 [bo]: http://github.com/FatturaElettronicaPA/BusinessObjects 
 [bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
