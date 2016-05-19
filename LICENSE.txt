@@ -1,4 +1,4 @@
-Copyright (c) 2015 by Nicola Iarocci, Gestionali Amica and contributors. See 
+Copyright (c) 2016 by Nicola Iarocci, Gestionali Amica and contributors. See 
 AUTHORS for more details.
 
 Some rights reserved.

@@ -11,7 +11,7 @@
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>First public release.</releaseNotes>
-    <copyright>Copyright 2015 Nicola Iarocci and Gestionali Amica</copyright>
+    <copyright>Copyright 2016 Nicola Iarocci and Gestionali Amica</copyright>
     <tags>fattura elettronica pubblica amministrazione</tags>
   </metadata>
 </package>
