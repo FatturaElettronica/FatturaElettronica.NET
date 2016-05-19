@@ -45,7 +45,28 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
             rules.Add(new FRequiredValidator("DatiGeneraliDocumento"));
+            rules.Add(new DelegateValidator(
+				"DatiGeneraliDocumento.Data", 
+				"00418:  la data del documento Nota di Credito (campo 2.1.1.3 <Data>) non può essere antecedente alla data della fattura collegata (campo 2.1.6.3 <Data>), riferita nello stesso file.", 
+				ValidateAgainstErr00418));
             return rules;
+        }
+
+		/// <summary>
+        /// Validate error 00418 from FatturaElettronicaPA v1.3
+        /// </summary>
+        /// <returns></returns>
+		private bool ValidateAgainstErr00418()
+        {
+            if (DatiGeneraliDocumento.TipoDocumento == "TD04")
+            {
+				foreach (var fc in DatiFattureCollegate)
+				{
+					if (DatiGeneraliDocumento.Data < fc.Data) return false;
+				}
+            }
+            return true;
+
         }
 
         #region Properties 

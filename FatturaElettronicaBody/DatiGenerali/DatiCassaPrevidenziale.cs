@@ -16,12 +16,12 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
 
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("TipoCassa", new List<Validator>{new FRequiredValidator(), new FTipoCassaValidator()}));
             rules.Add(new FRequiredValidator("AlCassa"));
             rules.Add(new FRequiredValidator("ImportoContributoCassa"));
-            rules.Add(new FRequiredValidator("AliquotaIVA"));
             rules.Add(new FNaturaValidator("Natura"));
             rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
+            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> { new FRequiredValidator("AliquotaIVA"), new FAliquotaIVAValidator("AliquotaIVA") }));
+            rules.Add(new AndCompositeValidator("TipoCassa", new List<Validator>{new FRequiredValidator(), new FTipoCassaValidator()}));
             return rules;
         }
 

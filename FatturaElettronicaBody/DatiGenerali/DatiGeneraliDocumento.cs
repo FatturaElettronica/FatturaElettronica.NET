@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
@@ -38,9 +39,17 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
             rules.Add(new AndCompositeValidator("TipoDocumento", new List<Validator>{new FRequiredValidator(), new FTipoDocumentoValidator()}));
             rules.Add(new AndCompositeValidator("Divisa", new List<Validator>{new FRequiredValidator(), new FDivisaValidator()}));
             rules.Add(new FRequiredValidator("Data"));
-            rules.Add(new AndCompositeValidator("Numero", new List<Validator>{new FRequiredValidator(), new FLengthValidator(1,20)}));
             rules.Add(new FSiValidator("Art73"));
+            rules.Add(new AndCompositeValidator("Numero", new List<Validator>{
+                new FRequiredValidator(),
+                new FLengthValidator(1,20),
+            new DelegateValidator("00425: il Numero della fattura (campo 2.1.1.4 <Numero>) deve contenere almeno un carattere numerico", ValidateAgainstErr00425)}));
             return rules;
+        }
+
+		private bool ValidateAgainstErr00425()
+        {
+            return Numero.IndexOfAny("0123456789".ToCharArray()) > -1;
         }
 
         #region Properties

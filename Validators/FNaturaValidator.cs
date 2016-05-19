@@ -8,7 +8,7 @@ namespace FatturaElettronicaPA.Validators
     public class FNaturaValidator : DomainValidator
     {
 
-        private const string BrokenDescription = "Valori ammessi [N1], [N2], [..], [N5])";
+        private const string BrokenDescription = "Valori ammessi [N1], [N2], [..], [N6])";
 
         /// <summary>
         /// Constructor.
@@ -17,7 +17,7 @@ namespace FatturaElettronicaPA.Validators
         public FNaturaValidator(string propertyName) : this(propertyName, BrokenDescription) { }
         public FNaturaValidator(string propertyName, string description) : base(propertyName, description)
         {
-            Domain = new[] { "N1", "N2", "N3", "N4", "N5" };
+            Domain = new[] { "N1", "N2", "N3", "N4", "N5", "N6" };
         }
     }
 }

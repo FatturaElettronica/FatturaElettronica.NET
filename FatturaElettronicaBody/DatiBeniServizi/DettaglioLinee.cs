@@ -35,11 +35,34 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
             rules.Add(new FLengthValidator("UnitaMisura", 1, 10));
             rules.Add(new FRequiredValidator("PrezzoUnitario"));
             rules.Add(new FRequiredValidator("PrezzoTotale"));
-            rules.Add(new FRequiredValidator("AliquotaIVA"));
             rules.Add(new FSiValidator("Ritenuta"));
             rules.Add(new FNaturaValidator("Natura"));
             rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
+            rules.Add(new FPrezzoTotaleValidator("PrezzoTotale", "00423: il valore del campo PrezzoTotale non risulta calcolato secondo le regole definite nelle specifiche tecniche", ValidateAgainstErr00423));
+            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> { new FRequiredValidator("AliquotaIVA"), new FAliquotaIVAValidator("AliquotaIVA") }));
             return rules;
+        }
+		/// <summary>
+        /// Validate error 00423 from FatturaElettronicaPA v1.3
+        /// </summary>
+        /// <returns></returns>
+		private bool ValidateAgainstErr00423()
+        {
+            decimal sconti = 0;
+			decimal maggiorazioni = 0;
+			foreach (var sconto in ScontoMaggiorazione) {
+
+                if (sconto.Importo == null && sconto.Percentuale == null) continue;
+
+                var importo = (decimal)((sconto.Percentuale == null) ? sconto.Importo : (PrezzoUnitario * sconto.Percentuale) / 100);
+
+                if (sconto.Tipo == "SC")
+                    sconti += importo;
+                else
+                    maggiorazioni += importo;
+
+            }
+            return PrezzoTotale == (PrezzoUnitario - sconti + maggiorazioni) * Quantita;
         }
 
         #region Properties
