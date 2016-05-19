@@ -62,7 +62,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
                     maggiorazioni += importo;
 
             }
-            return (PrezzoTotale == (PrezzoUnitario - sconti + maggiorazioni) * Quantita);
+            return PrezzoTotale == (PrezzoUnitario - sconti + maggiorazioni) * Quantita;
         }
 
         #region Properties
