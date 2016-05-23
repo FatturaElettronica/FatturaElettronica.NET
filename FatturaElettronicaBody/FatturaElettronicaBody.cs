@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Xml;
 using BusinessObjects;
@@ -87,7 +88,7 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody
 
 			foreach (var t in totals.Values)
             {
-                if (t.ImponibileImporto != t.PrezzoTotale + t.ImportoContrCassa + t.Arrotondamento) return false;
+                if (Math.Abs(t.ImponibileImporto - (t.PrezzoTotale + t.ImportoContrCassa + t.Arrotondamento)) >= 1) return false;
             }
             return true;
         }
