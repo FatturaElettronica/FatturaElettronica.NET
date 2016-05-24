@@ -14,7 +14,7 @@ namespace FatturaElettronicaPA.Common
         /// </summary>
         protected BusinessObject() {
             XmlOptions.DateTimeFormat = "yyyy-MM-dd";
-            XmlOptions.DecimalFormat = "0.00";
+            XmlOptions.DecimalFormat = "0.00###";
         }
         protected BusinessObject(XmlReader r) : base(r) { }
     }
