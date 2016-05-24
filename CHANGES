@@ -1,6 +1,15 @@
 Changelog
 =========
 
+v0.2.2
+======
+
+Non rilasciata
+
+- New: Errore 00400 aggiunto alla convalida.
+- New: Errore 00401 aggiunto alla convalida.
+- Fix: Errore 00424 non consente aliquota IVA impostata al valore 1.
+
 v0.2.1
 ======
 

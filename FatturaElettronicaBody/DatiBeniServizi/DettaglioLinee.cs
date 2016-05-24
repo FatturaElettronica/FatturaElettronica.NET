@@ -39,7 +39,12 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
             rules.Add(new FNaturaValidator("Natura"));
             rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
             rules.Add(new FPrezzoTotaleValidator("PrezzoTotale", "00423: il valore del campo PrezzoTotale non risulta calcolato secondo le regole definite nelle specifiche tecniche", ValidateAgainstErr00423));
-            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> { new FRequiredValidator("AliquotaIVA"), new FAliquotaIVAValidator("AliquotaIVA") }));
+            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> {
+                new FRequiredValidator("AliquotaIVA"),
+                new FAliquotaIVAValidator("AliquotaIVA"),
+                new DelegateValidator("AliquotaIVA", "00400: sulla riga di dettaglio con aliquota IVA pari a zero deve essere presente il campo Natura.", ValidateAgainstErr00400),
+                new DelegateValidator("AliquotaIVA", "00401:  sulla riga di dettaglio con aliquota IVA diversa da zero non deve essere presente il campo Natura.", ValidateAgainstErr00401)
+                }));
             return rules;
         }
 		/// <summary>
@@ -63,6 +68,24 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
 
             }
             return PrezzoTotale == (PrezzoUnitario - sconti + maggiorazioni) * Quantita;
+        }
+
+		/// <summary>
+        /// Validate error 00400 from FatturaElettronicaPA v1.3
+        /// </summary>
+        /// <returns></returns>
+		private bool ValidateAgainstErr00400()
+        {
+            return AliquotaIVA != 0 || !string.IsNullOrEmpty(Natura);
+        }
+
+		/// <summary>
+        /// Validate error 00401 from FatturaElettronicaPA v1.3
+        /// </summary>
+        /// <returns></returns>
+		private bool ValidateAgainstErr00401()
+        {
+            return AliquotaIVA == 0 || string.IsNullOrEmpty(Natura);
         }
 
         #region Properties
