@@ -1,10 +1,17 @@
 Changelog
 =========
 
+v0.2.3
+======
+
+Rilasciata il 24.5.2016
+
+- Fix: Serializzare valori decimali con piu' di 2 decimali.
+
 v0.2.2
 ======
 
-Non rilasciata
+Rilasciata il 24.5.2016
 
 - New: Errore 00400 aggiunto alla convalida.
 - New: Errore 00401 aggiunto alla convalida.
