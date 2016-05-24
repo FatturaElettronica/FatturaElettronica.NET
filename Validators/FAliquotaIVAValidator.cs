@@ -13,7 +13,7 @@ namespace FatturaElettronicaPA.Validators
         public override bool Validate(BusinessObjectBase businessObject)
         {
             var v = (decimal)GetPropertyValue(businessObject, PropertyName);
-            return v == 0 || v > 1.00M;
+            return v == 0 || v >= 1.00M;
         }
     }
 }
