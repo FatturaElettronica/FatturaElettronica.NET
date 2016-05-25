@@ -53,21 +53,20 @@ namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
         /// <returns></returns>
 		private bool ValidateAgainstErr00423()
         {
-            decimal sconti = 0;
-			decimal maggiorazioni = 0;
+			var prezzo = PrezzoUnitario;
 			foreach (var sconto in ScontoMaggiorazione) {
 
                 if (sconto.Importo == null && sconto.Percentuale == null) continue;
 
-                var importo = (decimal)((sconto.Percentuale == null) ? sconto.Importo : (PrezzoUnitario * sconto.Percentuale) / 100);
+                var importo = (decimal)((sconto.Importo > 0) ?  sconto.Importo : (prezzo * sconto.Percentuale) / 100);
 
                 if (sconto.Tipo == "SC")
-                    sconti += importo;
+                    prezzo -= importo;
                 else
-                    maggiorazioni += importo;
+                    prezzo += importo;
 
             }
-            return PrezzoTotale == (PrezzoUnitario - sconti + maggiorazioni) * Quantita;
+            return PrezzoTotale == prezzo * Quantita;
         }
 
 		/// <summary>

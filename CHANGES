@@ -6,7 +6,7 @@ v0.2.4
 
 Non rilasciata.
 
-
+- Fix: Validazione 00423: calcolo in base a percentuale sconto. Closes #18.
 
 v0.2.3
 ======
