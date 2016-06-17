@@ -1,10 +1,15 @@
 Changelog
 =========
 
+v0.2.5
+======
+
+Non ancora rilasciata.
+
 v0.2.4
 ======
 
-Non rilasciata.
+Rilasciata il 25.5.2016
 
 - Fix: Validazione 00423: calcolo in base a percentuale sconto. Closes #18.
 
