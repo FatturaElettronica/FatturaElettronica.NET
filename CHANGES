@@ -6,6 +6,9 @@ v0.2.5
 
 Non ancora rilasciata.
 
+- Fix: PrezzoTotale ora prevede tolleranza "accettabile" su seconda cifra
+  decimale. Closes #19.
+
 v0.2.4
 ======
 
