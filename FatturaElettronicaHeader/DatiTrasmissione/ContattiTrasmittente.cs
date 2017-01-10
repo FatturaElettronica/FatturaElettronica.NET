@@ -3,7 +3,7 @@ using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader.DatiTrasmissione
+namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
 {
     /// <summary>
     /// Represents a ContattiTrasmittente object

@@ -1,9 +1,9 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 using System.Collections.Generic;
 
-namespace FatturaElettronicaPA
+namespace FatturaElettronica
 {
     public class FatturaElettronica : BusinessObject
     {

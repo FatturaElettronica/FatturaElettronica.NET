@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiPagamento
+namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
 {
     /// <summary>
     /// Dati di dettaglio del pagamento.

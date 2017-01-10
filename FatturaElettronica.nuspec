@@ -6,12 +6,13 @@
     <title>$title$</title>
     <authors>$author$</authors>
     <owners>$author$</owners>
+    <language>it-IT</language>
     <licenseUrl>https://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE.txt</licenseUrl>
     <projectUrl>https://github.com/FatturaElettronicaPA/FatturaElettronicaPA</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>First public release.</releaseNotes>
-    <copyright>Copyright 2016 Nicola Iarocci and Gestionali Amica</copyright>
-    <tags>fattura elettronica pubblica amministrazione</tags>
+    <copyright>Copyright 2017 Nicola Iarocci and Gestionali Amica</copyright>
+    <tags>fattura elettronica pubblica amministrazione privati xml</tags>
   </metadata>
 </package>

@@ -1,7 +1,8 @@
-﻿# Fattura Elettronica per la Pubblica Amministrazione
+﻿# Fattura Elettronica per piattaforme .NET
 
 ## Features
-- Lettura e scrittura nel [formato standard v1.3 PA][pa] (XML).
+- Lettura e scrittura nel [formato standard v1.2][pa] (XML).
+- Supporta sia fatture elettroniche tra privati che con la Pubblica Amministrazione.
 - Convalida in osservanza delle specifiche tecniche ufficiali.
 - Supporto per la serializzazione in formato JSON
 
@@ -57,12 +58,12 @@ FatturaElettronicaPA è su [NuGet][nuget] quindi tutto quel che serve è eseguir
 dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 
 ## Dipendenze
-L'unica dipendenza è il progetto [BusinessObjects][bo], anch'esso reperibile su GitHub. 
+L'unica dipendenza è il progetto [BusinessObjects][bo] anch'esso reperibile su GitHub. 
 
 ## Licenza
 FatturaElettronicaPA è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_SdI_v1.3.pdf
+[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.2.pdf 
 [bo]: http://github.com/FatturaElettronicaPA/BusinessObjects 
 [bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE
 [ga]: http://gestionaleamica.com

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using BusinessObjects.Validators;
 
-namespace FatturaElettronicaPA.Validators
+namespace FatturaElettronica.Validators
 {
     public class FPrezzoTotaleValidator : DelegateValidator
     {

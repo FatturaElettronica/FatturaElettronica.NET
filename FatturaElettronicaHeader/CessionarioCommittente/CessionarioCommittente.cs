@@ -2,10 +2,10 @@
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Common;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Common;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader.CessionarioCommittente
+namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 {
 
     /// <summary>

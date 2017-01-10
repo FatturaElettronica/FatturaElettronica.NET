@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody
+namespace FatturaElettronica.FatturaElettronicaBody
 {
     public class FatturaElettronicaBody : Common.BusinessObject
     {

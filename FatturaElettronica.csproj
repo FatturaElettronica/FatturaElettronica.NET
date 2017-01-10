@@ -8,8 +8,8 @@
     <ProjectGuid>{417B2F7C-A46B-49DA-B5E5-150ECF084BCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FatturaElettronicaPA</RootNamespace>
-    <AssemblyName>FatturaElettronicaPA</AssemblyName>
+    <RootNamespace>FatturaElettronica</RootNamespace>
+    <AssemblyName>FatturaElettronica</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>

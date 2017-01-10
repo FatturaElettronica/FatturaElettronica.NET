@@ -1,7 +1,7 @@
 ﻿using System.Xml;
-using FatturaElettronicaPA.Common;
+using FatturaElettronica.Common;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader.DatiTrasmissione
+namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
 {
     public class IdTrasmittente : IdFiscaleIVA
     {

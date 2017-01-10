@@ -4,10 +4,10 @@ using System.Linq;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Common;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Common;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
+namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Dati generali del documento principale ed i dati dei documenti correlati.

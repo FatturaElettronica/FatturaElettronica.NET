@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiVeicoli
+namespace FatturaElettronica.FatturaElettronicaBody.DatiVeicoli
 {
     /// <summary>
     /// Dati relativi ai veicoli di cui all'art. 38 comma 4 del ddl 331 del 1993.

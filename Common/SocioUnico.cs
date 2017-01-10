@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace FatturaElettronicaPA.Common
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Indica se vi è un socio unico oppure se vi sono più soci.

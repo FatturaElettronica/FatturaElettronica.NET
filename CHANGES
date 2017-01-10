@@ -1,6 +1,22 @@
 Changelog
 =========
 
+v 0.3
+=====
+
+Non ancora rilasciata.
+
+BREAKING CHANGES
+----------------
+Questa release introduce una serie di cambianti importanti che rompono la
+compatibilità con l'API precedente.
+
+- Il package NuGet cambia nome. Ora si chiama FatturaElettronica (era FatturaElettronicaPA).
+- Il namespace diventa FatturaElettronica (era FatturaElettronicaPA)
+- Il package FatturaElettronicaPA verrà marcato come obsoleto su NuGet.
+
+
+
 v0.2.5
 ======
 

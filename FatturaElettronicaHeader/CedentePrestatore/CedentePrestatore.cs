@@ -2,9 +2,9 @@
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader.CedentePrestatore
+namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
 
     /// <summary>
