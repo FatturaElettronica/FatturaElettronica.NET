@@ -18,6 +18,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
         private string _progressivoInvio;
         private string _formatoTrasmissione;
         private string _codiceDestinatario;
+        private string _pecDestinatario;
 
         /// <summary>
         /// Constructor.
@@ -25,7 +26,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
         public DatiTrasmissione() {
             _idTrasmittente = new IdTrasmittente();
             _contattiTrasmittente = new ContattiTrasmittente();
-            _formatoTrasmissione = "FPA12";
         }
         public DatiTrasmissione(XmlReader r) : base(r) { }
 
@@ -40,6 +40,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
                     new List<Validator> {new FRequiredValidator(), new DomainValidator("Valori ammessi: [FPA12, FPR12]", Common.FormatoTrasmissione.Nomi) }));
             rules.Add(new AndCompositeValidator("CodiceDestinatario",
                     new List<Validator> {new FRequiredValidator(), new FLengthValidator(6) }));
+            rules.Add(new AndCompositeValidator("PECDestinatario",
+                    new List<Validator> {new FPECDestinatarioValidator(), new FLengthValidator(7, 256) }));
             return rules;
         }
 
@@ -100,6 +102,18 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
         [DataProperty]
         public ContattiTrasmittente ContattiTrasmittente { 
             get { return _contattiTrasmittente; }
+        }
+
+        /// <summary>
+        /// Inidirizzo PEC al quale inviare il documento.
+        /// </summary>
+        [DataProperty]
+        public string PECDestinatario { 
+            get { return _pecDestinatario; }
+            set {
+                _pecDestinatario = CleanString(value);
+                NotifyChanged();
+            }
         }
         #endregion
     }

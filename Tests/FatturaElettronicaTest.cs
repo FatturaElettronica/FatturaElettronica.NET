@@ -52,12 +52,39 @@ namespace Tests
             f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione =FormatoTrasmissione.Privati;
             Assert.IsFalse(f.Error.Contains("FormatoTrasmissione"));
 
-            var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);
+            f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);
             f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = "test";
             Assert.IsTrue(f.Error.Contains("FormatoTrasmissione"));
             Assert.IsTrue(f.Error.Contains(FormatoTrasmissione.PubblicaAmministrazione));
             f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione =FormatoTrasmissione.PubblicaAmministrazione;
             Assert.IsFalse(f.Error.Contains("FormatoTrasmissione"));
+        }
+
+        [TestMethod]
+        public void ValidatePECDestinatario()
+        {
+            var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati);
+
+            // Nelle fatture tra privati, poiché il default per CodiceDestinatario è 0000000,
+            // è necessario impostare un valore per PECDestinatario.
+            Assert.IsTrue(f.Error.Contains("PECDestinatario"));
+
+            // PECDestinatario deve essere tra 7 e 256 caratteri.
+            f.FatturaElettronicaHeader.DatiTrasmissione.PECDestinatario = "123456";
+            Assert.IsTrue(f.Error.Contains("PECDestinatario"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.PECDestinatario = new string('n', 257);
+            Assert.IsTrue(f.Error.Contains("PECDestinatario"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.PECDestinatario = "1234567";
+            Assert.IsFalse(f.Error.Contains("PECDestinatario"));
+
+            // Se CodiceDestinatario è diverso da 0000000, allora PECDestinatario non deve essere
+            // valorizzato
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "test";
+            Assert.IsTrue(f.Error.Contains("PECDestinatario"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.PECDestinatario = null;
+            Assert.IsFalse(f.Error.Contains("PECDestinatario"));
+
+
         }
 
         private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
