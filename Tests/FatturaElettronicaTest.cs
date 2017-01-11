@@ -128,6 +128,20 @@ namespace Tests
             f.FatturaElettronicaHeader.CessionarioCommittente.StabileOrganizzazione.Indirizzo = "indirizzo2";
 
         }
+
+        [TestMethod]
+        public void CessionarioCommittenteRappresentanteFiscale()
+        {
+            var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati);
+
+            f.FatturaElettronicaHeader.CessionarioCommittente.RappresentanteFiscale.Denominazione = "denominazione1";
+            f.FatturaElettronicaHeader.CessionarioCommittente.RappresentanteFiscale.Nome = "Nome";
+            f.FatturaElettronicaHeader.CessionarioCommittente.RappresentanteFiscale.Cognome = "Cognome";
+            Assert.IsTrue(f.Error.Contains("[Denominazione, CognomeNome]"));
+            f.FatturaElettronicaHeader.CessionarioCommittente.RappresentanteFiscale.Denominazione = null;
+            Assert.IsFalse(f.Error.Contains("[Denominazione, CognomeNome]"));
+
+        }
         private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))

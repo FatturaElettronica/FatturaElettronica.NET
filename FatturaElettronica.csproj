@@ -39,6 +39,7 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\DenominazioneNomeCognome.cs" />
     <Compile Include="Common\Anagrafica.cs">
       <SubType>
       </SubType>
@@ -223,6 +224,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\RappresentanteFiscale.cs" />
     <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\Sede.cs">
       <SubType>
       </SubType>
