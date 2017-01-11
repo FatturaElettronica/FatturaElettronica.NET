@@ -27,7 +27,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
             rules.Add(new FLengthValidator("CFQuietanzante", 16));
             rules.Add(new FLengthValidator("TitoloQuietanzante", 2, 10));
             rules.Add(new FLengthValidator("IstitutoFinanziario", 1, 60));
-            rules.Add(new FLengthValidator("IBAN", 27, 34));
+            rules.Add(new FLengthValidator("IBAN", 15, 34));
             rules.Add(new FLengthValidator("ABI", 5));
             rules.Add(new FLengthValidator("CAB", 5));
             rules.Add(new FLengthValidator("BIC", 8, 11));

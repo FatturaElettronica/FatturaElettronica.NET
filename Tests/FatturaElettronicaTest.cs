@@ -203,6 +203,27 @@ namespace Tests
 
         }
 
+        [TestMethod]
+        public void ValidateIBAN()
+        {
+            const int min = 15;
+            const int max = 34;
+
+            FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento dp;
+            for (var i=min; i<=max; i++)
+            {
+                dp = new FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento();
+                dp.IBAN = new string('n', i);
+                Assert.IsFalse(dp.Error.Contains("IBAN"));
+            }
+            dp = new FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento();
+            dp.IBAN = new string('n', max + 1);
+            Assert.IsTrue(dp.Error.Contains("IBAN"));
+            dp = new FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento();
+            dp.IBAN = new string('n', min - 1);
+            Assert.IsTrue(dp.Error.Contains("IBAN"));
+        }
+
         private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
