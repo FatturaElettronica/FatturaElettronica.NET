@@ -1,7 +1,7 @@
 Changelog
 =========
 
-v 0.3
+v0.3
 =====
 
 Non ancora rilasciata.
@@ -14,6 +14,13 @@ compatibilità con l'API precedente.
 - Il package NuGet cambia nome. Ora si chiama FatturaElettronica (era FatturaElettronicaPA).
 - Il namespace diventa FatturaElettronica (era FatturaElettronicaPA)
 - Il package FatturaElettronicaPA verrà marcato come obsoleto su NuGet.
+- Il costruttore della classe FatturaElettronica è ora protetto.
+- Usare il factory method CreateInstance() per ottenere una istanza della classe.
+- CreateInstance() consente di scegliere se ottenere una fattura tra soggetti privati o per la Pubblica Amministrazione.
+- La fattura restituita da CreateInstance() ha già il campo FormatoTrasmissione correttamente impostato a FPA12 o FPR12.
+- Nel caso di fattura tra privati, per default la fattura ha il CodiceDestinatario impostato a "0000000" (sarà cura del utente impostare in seguito il nuovo campo PECDestinatario o aggiornare il CodiceDestinatario col codice canale del destinatario)
+
+- Aggiunta test suite. Al momento vengono testate le funzionalità sviluppate ex-novo. Idealemnte, in futuro si procederà ad aggiungere gli unit test per le feature già attive (collaborazioni sono benvenute).
 
 
 

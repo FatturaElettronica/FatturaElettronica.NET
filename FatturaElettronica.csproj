@@ -255,6 +255,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\FAliquotaIVAValidator.cs" />
     <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
@@ -337,13 +338,15 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="BusinessObjects, Version=0.1.5.0, Culture=neutral, PublicKeyToken=ee01fa0baf555a0d, processorArchitecture=MSIL">
-      <HintPath>packages\BusinessObjects.0.1.5\lib\portable40-net40+sl5+win8+wp8\BusinessObjects.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
+      <Project>{06f90b65-7d19-46dc-8336-0f3335be6c76}</Project>
+      <Name>BusinessObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
