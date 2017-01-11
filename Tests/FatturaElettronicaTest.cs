@@ -155,6 +155,7 @@ namespace Tests
                 dp.ModalitaPagamento = string.Format("MP{0}", (i<10) ? "0"+i.ToString() : i.ToString());
                 Assert.IsTrue(dp.IsValid);
             }
+
             dp = new FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento();
             dp.ModalitaPagamento = string.Format("MP{0}", max+1);
             Assert.IsFalse(dp.IsValid);
@@ -164,6 +165,44 @@ namespace Tests
             Assert.IsFalse(dp.IsValid);
 
         }
+
+        [TestMethod]
+        public void ValidateNatura()
+        {
+            const int max = 7;
+
+            // DatiGenerali.DatiCassaPrevidenziale.Natura.
+            FatturaElettronica.FatturaElettronicaBody.DatiGenerali.DatiCassaPrevidenziale dc;
+            for (var i=1; i<=max; i++)
+            {
+                dc = new FatturaElettronica.FatturaElettronicaBody.DatiGenerali.DatiCassaPrevidenziale();
+                dc.Natura = string.Format("N{0}", i.ToString());
+                Assert.IsFalse(dc.Error.Contains("Natura"));
+            }
+            dc = new FatturaElettronica.FatturaElettronicaBody.DatiGenerali.DatiCassaPrevidenziale();
+            dc.Natura = string.Format("N{0}", max+1);
+            Assert.IsTrue(dc.Error.Contains("Natura"));
+            dc = new FatturaElettronica.FatturaElettronicaBody.DatiGenerali.DatiCassaPrevidenziale();
+            dc.Natura = "test";
+            Assert.IsTrue(dc.Error.Contains("Natura"));
+
+            // DatiBeniServizi.DatiRiepilogo.Natura.
+            FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo dr;
+            for (var i=1; i<=max; i++)
+            {
+                dr = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo();
+                dr.Natura = string.Format("N{0}", i.ToString());
+                Assert.IsTrue(dr.IsValid);
+            }
+            dr = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo();
+            dr.Natura = string.Format("N{0}", max+1);
+            Assert.IsFalse(dr.IsValid);
+            dr = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DatiRiepilogo();
+            dr.Natura = "test";
+            Assert.IsFalse(dr.IsValid);
+
+        }
+
         private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))

@@ -25,7 +25,8 @@ compatibilità con l'API precedente.
 - New: campo 1.4.4 RappresentanteFiscale.
 - New: campo 1.4.3 StabileOrganizzazione.
 - New: campo 1.1.6 PECDestinatario e relavite convalide.
-- Fix: aggiunto valore MP22 alla campo 2.4.2.2 ModalitaPagamento.
+- Fix: aggiunto valore N7 ai campi 2.2.2.2 e 2.1.1.7.7 Natura.
+- Fix: aggiunto valore MP22 al campo 2.4.2.2 ModalitaPagamento.
 - Fix: campo 1.1.4 FormatoTrasmissione supporta valori FPA12 (Pubblica Amministrazione) e FPR12 (Privati)
 - Fix: campo 1.1.4 CodiceDestinatario, adeguate le convalide per tenere conto del FormatoTrasmissione impostato.
 
