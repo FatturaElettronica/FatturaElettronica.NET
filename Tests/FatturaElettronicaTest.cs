@@ -61,6 +61,38 @@ namespace Tests
         }
 
         [TestMethod]
+        public void ValidateCodiceDestinatario()
+        {
+            var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati);
+
+            // CodiceDestinatario è obbligatorio
+            Assert.IsTrue(f.Error.Contains("CodiceDestinatario"));
+
+            // Nelle fatture tra privati CodiceDestinatario deve essere 7 caratteri.
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "123456";
+            Assert.IsTrue(f.Error.Contains("CodiceDestinatario"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "12345678";
+            Assert.IsTrue(f.Error.Contains("CodiceDestinatario"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "1234567";
+            Assert.IsFalse(f.Error.Contains("CodiceDestinatario"));
+
+            f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);
+
+            // CodiceDestinatario è obbligatorio
+            Assert.IsTrue(f.Error.Contains("CodiceDestinatario"));
+
+            // Nelle fatture PA CodiceDestinatario deve essere 6 caratteri.
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "12345";
+            Assert.IsTrue(f.Error.Contains("CodiceDestinatario"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "1234567";
+            Assert.IsTrue(f.Error.Contains("CodiceDestinatario"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "123456";
+            Assert.IsFalse(f.Error.Contains("CodiceDestinatario"));
+
+        }
+
+
+        [TestMethod]
         public void ValidatePECDestinatario()
         {
             var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati);
@@ -83,8 +115,6 @@ namespace Tests
             Assert.IsTrue(f.Error.Contains("PECDestinatario"));
             f.FatturaElettronicaHeader.DatiTrasmissione.PECDestinatario = null;
             Assert.IsFalse(f.Error.Contains("PECDestinatario"));
-
-
         }
 
         private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)

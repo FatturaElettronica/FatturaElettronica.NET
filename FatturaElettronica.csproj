@@ -257,6 +257,7 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
     <Compile Include="Validators\FPECDestinatarioValidator.cs" />
     <Compile Include="Validators\FAliquotaIVAValidator.cs" />
     <Compile Include="Validators\FCondizioniPagamentoValidator.cs">

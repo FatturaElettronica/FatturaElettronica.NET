@@ -24,6 +24,7 @@ compatibilità con l'API precedente.
 
 - New: campo 1.1.6 PECDestinatario e relavite convalide.
 - Fix: campo 1.1.4 FormatoTrasmissione supporta valori FPA12 (Pubblica Amministrazione) e FPR12 (Privati)
+- Fix: campo 1.1.4 CodiceDestinatario, adeguate le convalide per tenere conto del FormatoTrasmissione impostato.
 
 
 
