@@ -142,6 +142,28 @@ namespace Tests
             Assert.IsFalse(f.Error.Contains("[Denominazione, CognomeNome]"));
 
         }
+
+        [TestMethod]
+        public void ValidateModalitàPagamento()
+        {
+            FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento dp;
+            const int max = 22;
+
+            for (var i=1; i<=max; i++)
+            {
+                dp = new FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento();
+                dp.ModalitaPagamento = string.Format("MP{0}", (i<10) ? "0"+i.ToString() : i.ToString());
+                Assert.IsTrue(dp.IsValid);
+            }
+            dp = new FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento();
+            dp.ModalitaPagamento = string.Format("MP{0}", max+1);
+            Assert.IsFalse(dp.IsValid);
+
+            dp = new FatturaElettronica.FatturaElettronicaBody.DatiPagamento.DettaglioPagamento();
+            dp.ModalitaPagamento = "test";
+            Assert.IsFalse(dp.IsValid);
+
+        }
         private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
