@@ -2,6 +2,7 @@
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
+using FatturaElettronica.Common;
 using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore

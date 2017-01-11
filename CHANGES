@@ -22,6 +22,7 @@ compatibilità con l'API precedente.
 
 - Aggiunta test suite. Al momento vengono testate le funzionalità sviluppate ex-novo. Idealemnte, in futuro si procederà ad aggiungere gli unit test per le feature già attive (collaborazioni sono benvenute).
 
+- New campo 1.4.3 StabileOrganizzazione.
 - New: campo 1.1.6 PECDestinatario e relavite convalide.
 - Fix: campo 1.1.4 FormatoTrasmissione supporta valori FPA12 (Pubblica Amministrazione) e FPR12 (Privati)
 - Fix: campo 1.1.4 CodiceDestinatario, adeguate le convalide per tenere conto del FormatoTrasmissione impostato.

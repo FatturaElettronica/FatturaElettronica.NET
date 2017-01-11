@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
+namespace FatturaElettronica.Common
 {
     public class StabileOrganizzazione : Common.Località
     {

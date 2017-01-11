@@ -110,13 +110,24 @@ namespace Tests
             Assert.IsFalse(f.Error.Contains("PECDestinatario"));
 
             // Se CodiceDestinatario è diverso da 0000000, allora PECDestinatario non deve essere
-            // valorizzato
+            // valorizzato.
             f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = "test";
             Assert.IsTrue(f.Error.Contains("PECDestinatario"));
             f.FatturaElettronicaHeader.DatiTrasmissione.PECDestinatario = null;
             Assert.IsFalse(f.Error.Contains("PECDestinatario"));
         }
 
+        [TestMethod]
+        public void StabileOrganizzazione()
+        {
+            var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);
+
+            // StabileOrganizzazione è disponibile sia in CedentePrestatore...
+            f.FatturaElettronicaHeader.CedentePrestatore.StabileOrganizzazione.Indirizzo = "indirizzo1";
+            // ...che in CommissionarioCommittente.
+            f.FatturaElettronicaHeader.CessionarioCommittente.StabileOrganizzazione.Indirizzo = "indirizzo2";
+
+        }
         private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
