@@ -9,7 +9,7 @@
 ## Esempio
 ```cs
     // instanzia una nuova fattura elettronica
-    FatturaElettronica fattura = new FatturaElettronica();
+    var fattura = new FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione)
 
     // lettura da file XML compatibile con formato SDI1.1
     var s = new XmlReaderSettings {IgnoreWhitespace = true};
@@ -28,7 +28,7 @@
     // modifica valore
     fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.RegimeFiscale = "RF11";
 
-    // serializzazione XML secondo lo standard SDI 1.1
+    // serializzazione XML secondo lo standard SDI 1.2
     var s = new XmlWriterSettings { Indent = true };
 
     XmlWriter w;
