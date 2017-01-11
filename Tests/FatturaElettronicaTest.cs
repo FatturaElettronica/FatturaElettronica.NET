@@ -47,17 +47,17 @@ namespace Tests
         {
             var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati);
             f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = "test";
-            Assert.IsTrue(f.Error.Contains("FormatoTrasmissione"));
+            Assert.IsTrue(f.Error.Contains("DatiTrasmissione.FormatoTrasmissione"));
             Assert.IsTrue(f.Error.Contains(FormatoTrasmissione.Privati));
             f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione =FormatoTrasmissione.Privati;
-            Assert.IsFalse(f.Error.Contains("FormatoTrasmissione"));
+            Assert.IsFalse(f.Error.Contains("DatiTrasmissione.FormatoTrasmissione"));
 
             f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);
             f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = "test";
-            Assert.IsTrue(f.Error.Contains("FormatoTrasmissione"));
+            Assert.IsTrue(f.Error.Contains("DatiTrasmissione.FormatoTrasmissione"));
             Assert.IsTrue(f.Error.Contains(FormatoTrasmissione.PubblicaAmministrazione));
-            f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione =FormatoTrasmissione.PubblicaAmministrazione;
-            Assert.IsFalse(f.Error.Contains("FormatoTrasmissione"));
+            f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
+            Assert.IsFalse(f.Error.Contains("DatiTrasmissione.FormatoTrasmissione"));
         }
 
         [TestMethod]
