@@ -29,6 +29,10 @@ namespace FatturaElettronica
         {
             w.WriteStartElement(RootElement.Prefix, RootElement.LocalName, RootElement.NameSpace);
             w.WriteAttributeString("versione", FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione);
+            foreach (RootElement.XmlAttributeString a in RootElement.ExtraAttributes)
+            {
+                w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
+            }
             base.WriteXml(w);
             w.WriteEndElement();
         }

@@ -3,6 +3,7 @@ using System.Xml;
 using System.IO;
 using FatturaElettronica.Impostazioni;
 using System;
+using FatturaElettronica;
 
 namespace Tests
 {
@@ -12,19 +13,13 @@ namespace Tests
         [TestMethod]
         public void SerializePrivatiHeader()
         {
-            var result = SerializeAndGetBackVersionAndNamespace(
-                FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati));
-            Assert.AreEqual(FormatoTrasmissione.Privati, result.Item1);
-            Assert.AreEqual(RootElement.NameSpace, result.Item2);
+            SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati));
         }
 
         [TestMethod]
         public void SerializePubblicaAmministrazioneHeader()
         {
-            var result = SerializeAndGetBackVersionAndNamespace(
-                FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione));
-            Assert.AreEqual(FormatoTrasmissione.PubblicaAmministrazione, result.Item1);
-            Assert.AreEqual(RootElement.NameSpace, result.Item2);
+            SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione));
         }
 
         [TestMethod]
@@ -171,15 +166,13 @@ namespace Tests
             Assert.AreEqual(new DateTime(2015, 01, 30), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento);
             Assert.AreEqual(30.5m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
-        private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
+        private void SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaElettronica f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
             {
                 f.WriteXml(w);
             }
 
-            var version = string.Empty;
-            var xmlns = string.Empty;
             using (var r = XmlReader.Create("test"))
             {
                while (r.Read())
@@ -188,16 +181,18 @@ namespace Tests
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            version = r.GetAttribute("versione");
-                            xmlns = r.NamespaceURI;
+                            Assert.AreEqual(f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
+                            foreach (RootElement.XmlAttributeString a in RootElement.ExtraAttributes)
+                            {
+                                Assert.AreEqual(a.value, r.GetAttribute(string.Format("{0}:{1}", a.Prefix, a.LocalName)));
+                            }
                             break;
                         }
                     }
                 }
             }
             File.Delete("test");
-
-            return new Tuple<string, string>(version, xmlns);
         }
     }
 }

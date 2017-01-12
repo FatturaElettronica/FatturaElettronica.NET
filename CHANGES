@@ -22,6 +22,9 @@ compatibilità con l'API precedente.
 
 - Aggiunta test suite. Mancano test delle convalide implementate prima della v0.3.
 
+- New: attributo xmlns:ds nel root elemento del documento xml.
+- New: attributo xmlns:xsi nel root elemento del documento xml.
+- New: attributo xsi:schemaLocation nel root elemento del documento xml.
 - New: campo 1.4.4 RappresentanteFiscale.
 - New: campo 1.4.3 StabileOrganizzazione.
 - New: campo 1.1.6 PECDestinatario e relavite convalide.
