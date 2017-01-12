@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
+using System.IO;
 using FatturaElettronica.Impostazioni;
 using System;
 
@@ -22,26 +23,6 @@ namespace Tests
             Assert.AreEqual(new string('0', 7), f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario);
         }
 
-        [TestMethod]
-        public void SerializePrivatiHeader()
-        {
-
-            var result = SerializeAndGetBackVersionAndNamespace(
-                FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati));
-            Assert.AreEqual(FormatoTrasmissione.Privati, result.Item1);
-            Assert.AreEqual(RootElement.NameSpace, result.Item2);
-
-        }
-
-        [TestMethod]
-        public void SerializePubblicaAmministrazioneHeader()
-        {
-            var result = SerializeAndGetBackVersionAndNamespace(
-                FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione));
-            Assert.AreEqual(FormatoTrasmissione.PubblicaAmministrazione, result.Item1);
-            Assert.AreEqual(RootElement.NameSpace, result.Item2);
-
-        }
         [TestMethod]
         public void ValidateFormatoTrasmissione()
         {
@@ -224,31 +205,5 @@ namespace Tests
             Assert.IsTrue(dp.Error.Contains("IBAN"));
         }
 
-        private Tuple<string, string> SerializeAndGetBackVersionAndNamespace(FatturaElettronica.FatturaElettronica f)
-        {
-            using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
-            {
-                f.WriteXml(w);
-            }
-
-            var version = string.Empty;
-            var xmlns = string.Empty;
-            using (var r = XmlReader.Create("test"))
-            {
-               while (r.Read())
-                {
-                    if (r.NodeType == XmlNodeType.Element)
-                    {
-                        if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
-                        {
-                            version = r.GetAttribute("versione");
-                            xmlns = r.NamespaceURI;
-                            break;
-                        }
-                    }
-                }
-            }
-            return new Tuple<string, string>(version, xmlns);
-        }
     }
 }
