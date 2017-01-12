@@ -20,8 +20,8 @@ compatibilità con l'API precedente.
 - La fattura restituita da CreateInstance() ha già il campo FormatoTrasmissione correttamente impostato a FPA12 o FPR12.
 - Nel caso di fattura tra privati, per default la fattura ha il CodiceDestinatario impostato a "0000000" (sarà cura del utente impostare in seguito il nuovo campo PECDestinatario o aggiornare il CodiceDestinatario col codice canale del destinatario)
 
-- Aggiunta test suite. Mancano test delle convalide implementate prima della v0.3.
-
+Altre modifiche
+---------------
 - New: attributo xmlns:ds nel root elemento del documento xml.
 - New: attributo xmlns:xsi nel root elemento del documento xml.
 - New: attributo xsi:schemaLocation nel root elemento del documento xml.
@@ -33,6 +33,7 @@ compatibilità con l'API precedente.
 - Fix: aggiunto valore MP22 al campo 2.4.2.2 ModalitaPagamento.
 - Fix: campo 1.1.4 FormatoTrasmissione supporta valori FPA12 (Pubblica Amministrazione) e FPR12 (Privati)
 - Fix: campo 1.1.4 CodiceDestinatario, adeguate le convalide per tenere conto del FormatoTrasmissione impostato.
+- Aggiunta la test suite. Mancano test delle convalide implementate prima della v0.3.
 
 v0.2.5
 ======
