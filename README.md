@@ -1,15 +1,14 @@
-﻿# Fattura Elettronica per piattaforme .NET
+﻿# Fattura Elettronica per .NET
 
 ## Features
-- Lettura e scrittura nel [formato standard v1.2][pa] (XML).
-- Supporta sia fatture elettroniche tra privati che con la Pubblica Amministrazione.
+- Lettura e scrittura nel [formato standard v1.3 PA][pa] (XML).
 - Convalida in osservanza delle specifiche tecniche ufficiali.
 - Supporto per la serializzazione in formato JSON
 
 ## Esempio
 ```cs
     // instanzia una nuova fattura elettronica
-    var fattura = new FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione)
+    FatturaElettronica fattura = new FatturaElettronica();
 
     // lettura da file XML compatibile con formato SDI1.1
     var s = new XmlReaderSettings {IgnoreWhitespace = true};
@@ -28,7 +27,7 @@
     // modifica valore
     fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.RegimeFiscale = "RF11";
 
-    // serializzazione XML secondo lo standard SDI 1.2
+    // serializzazione XML secondo lo standard SDI 1.1
     var s = new XmlWriterSettings { Indent = true };
 
     XmlWriter w;
@@ -50,21 +49,21 @@ La libreria gira senza modifiche sui seguenti ambienti:
 Un file .snk è fornito per la firma dell'assembly, in modo che possa essere usato in contesti in cui lo *strong naming* sia necessario.
 
 ## Installazione
-FatturaElettronicaPA è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
+FatturaElettronica.NET è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
 
 ```
-	PM> Install-Package FatturaElettronicaPA
+	PM> Install-Package FatturaElettronica
 ```
 dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 
 ## Dipendenze
-L'unica dipendenza è il progetto [BusinessObjects][bo] anch'esso reperibile su GitHub. 
+L'unica dipendenza è il progetto [BusinessObjects][bo], anch'esso reperibile su GitHub. 
 
 ## Licenza
-FatturaElettronicaPA è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
+FatturaElettronica.NET è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.2.pdf 
+[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_SdI_v1.3.pdf
 [bo]: http://github.com/FatturaElettronicaPA/BusinessObjects 
-[bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE
+[bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronica.NET/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
-[nuget]: https://www.nuget.org/packages/FatturaElettronicaPA/
+[nuget]: https://www.nuget.org/packages/FatturaElettronica/
