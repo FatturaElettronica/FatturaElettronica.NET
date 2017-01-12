@@ -50,10 +50,10 @@ La libreria gira senza modifiche sui seguenti ambienti:
 Un file .snk è fornito per la firma dell'assembly, in modo che possa essere usato in contesti in cui lo *strong naming* sia necessario.
 
 ## Installazione
-FatturaElettronicaPA è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
+FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
 
 ```
-	PM> Install-Package FatturaElettronicaPA
+	PM> Install-Package FatturaElettronica
 ```
 dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 
@@ -61,10 +61,10 @@ dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 L'unica dipendenza è il progetto [BusinessObjects][bo] anch'esso reperibile su GitHub. 
 
 ## Licenza
-FatturaElettronicaPA è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
+FatturaElettronica è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
 [pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.2.pdf 
 [bo]: http://github.com/FatturaElettronicaPA/BusinessObjects 
-[bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE
+[bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronica.NET/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
-[nuget]: https://www.nuget.org/packages/FatturaElettronicaPA/
+[nuget]: https://www.nuget.org/packages/FatturaElettronica/
