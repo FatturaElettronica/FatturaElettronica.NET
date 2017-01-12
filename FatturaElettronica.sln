@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		AUTHORS = AUTHORS
 		CHANGES = CHANGES
 		FatturaElettronica.nuspec = FatturaElettronica.nuspec
-		LICENSE.txt = LICENSE.txt
+		LICENSE = LICENSE
 		README.md = README.md
 	EndProjectSection
 EndProject
