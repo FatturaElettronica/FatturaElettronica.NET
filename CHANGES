@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.2.6
+======
+
+Rilasciata il 13.1.2017
+
+- Questa release serve solo a segnalare su NuGet che FatturaElettronicaPA è obsoleto.
+- Scaricare e installare il package FatturaElettronica v0.3 e successivi da ora in poi.
+
 v0.2.5
 ======
 
