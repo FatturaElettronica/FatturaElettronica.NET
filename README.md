@@ -64,7 +64,7 @@ L'unica dipendenza è il progetto [BusinessObjects][bo] anch'esso reperibile su 
 FatturaElettronica è un progetto open source [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
 [pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.2.pdf 
-[bo]: http://github.com/FatturaElettronicaPA/BusinessObjects 
-[bsd]: http://github.com/FatturaElettronicaPA/FatturaElettronica.NET/blob/master/LICENSE
+[bo]: http://github.com/FatturaElettronica/BusinessObjects 
+[bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
 [nuget]: https://www.nuget.org/packages/FatturaElettronica/

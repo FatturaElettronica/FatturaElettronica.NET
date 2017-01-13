@@ -7,8 +7,8 @@
     <authors>$author$</authors>
     <owners>$author$</owners>
     <language>it-IT</language>
-    <licenseUrl>https://github.com/FatturaElettronicaPA/FatturaElettronicaPA/blob/master/LICENSE.txt</licenseUrl>
-    <projectUrl>https://github.com/FatturaElettronicaPA/FatturaElettronicaPA</projectUrl>
+    <licenseUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>First public release.</releaseNotes>

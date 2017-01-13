@@ -1,5 +1,4 @@
 ﻿using BusinessObjects;
-using BusinessObjects;
 using BusinessObjects.Validators;
 using FatturaElettronica.Validators;
 using System.Collections.Generic;

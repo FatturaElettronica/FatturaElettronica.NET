@@ -5,7 +5,7 @@ using System.Resources;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("FatturaElettronica.NET")]
-[assembly: AssemblyDescription("Fattura Elettronica per .NET. Supporta sia Pubblica Amministrazione che privati.")]
+[assembly: AssemblyDescription("Fattura Elettronica per le aziende e la Pubblica Amministrazione Italiana")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Nicola Iarocci, CIR2000")]
 [assembly: AssemblyProduct("FatturaElettronica.NET")]
