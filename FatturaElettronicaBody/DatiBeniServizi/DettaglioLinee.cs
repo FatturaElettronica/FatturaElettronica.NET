@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiBeniServizi
+namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
     /// <summary>
     /// Linee di dettaglio del documento (i campi del blocco si ripetono per ogni riga di dettaglio).

@@ -2,10 +2,10 @@
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Common;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Common;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader.CessionarioCommittente
+namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 {
 
     /// <summary>
@@ -15,6 +15,8 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.CessionarioCommittente
     {
         private readonly DatiAnagrafici _datiAnagrafici;
         private readonly Sede _sede;
+        private readonly StabileOrganizzazione _stabileOrganizzazione;
+        private readonly RappresentanteFiscale _rappresentanteFiscale;
 
         /// <summary>
         /// Dati relativi al cedente / prestatore.
@@ -22,6 +24,8 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.CessionarioCommittente
         public CessionarioCommittente() {
             _datiAnagrafici = new DatiAnagrafici();
             _sede = new Sede();
+            _stabileOrganizzazione = new StabileOrganizzazione();
+            _rappresentanteFiscale = new RappresentanteFiscale();
         }
         public CessionarioCommittente(XmlReader r) : base(r) { }
 
@@ -52,6 +56,22 @@ namespace FatturaElettronicaPA.FatturaElettronicaHeader.CessionarioCommittente
         [DataProperty]
         public Sede Sede { 
             get { return _sede; }
+        }
+
+        /// <summary>
+        /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 FormatoTrasmissione = "FPR12" (fattura tra privati), nel caso di cessionario/committente non residente e con stabile organizzazione in Italia.
+        /// </summary>
+        [DataProperty]
+        public StabileOrganizzazione StabileOrganizzazione { 
+            get { return _stabileOrganizzazione; }
+        }
+
+        /// <summary>
+        /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 <FormatoTrasmissione> = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
+        /// </summary>
+        [DataProperty]
+        public RappresentanteFiscale RappresentanteFiscale { 
+            get { return _rappresentanteFiscale; }
         }
         #endregion
     }

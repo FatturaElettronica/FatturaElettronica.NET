@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace FatturaElettronicaPA.Common
+namespace FatturaElettronica.Common
 {
 
     /// <summary>

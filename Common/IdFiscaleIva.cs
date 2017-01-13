@@ -2,9 +2,9 @@
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.Common
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ed i restanti il codice

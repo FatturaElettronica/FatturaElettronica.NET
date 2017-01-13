@@ -1,6 +1,6 @@
 using BusinessObjects.Validators;
 
-namespace FatturaElettronicaPA.Validators {
+namespace FatturaElettronica.Validators {
     public class FLengthValidator : LengthValidator {
 
         /// <summary>

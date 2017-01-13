@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
+namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Informazioni relative ai dati presenti sul sistema gestionale in uso presso la PA (Agenzie Fiscali) riguardanti la fase di ricezione.

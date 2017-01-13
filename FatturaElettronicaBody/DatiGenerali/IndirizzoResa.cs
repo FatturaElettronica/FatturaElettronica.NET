@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
+namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     public class IndirizzoResa : Common.Località
     {

@@ -1,11 +1,10 @@
 ﻿using BusinessObjects;
-using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 using System.Collections.Generic;
 using System.Xml;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader
+namespace FatturaElettronica.FatturaElettronicaHeader
 {
     public class FatturaElettronicaHeader : Common.BusinessObject
     {

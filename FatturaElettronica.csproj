@@ -8,8 +8,8 @@
     <ProjectGuid>{417B2F7C-A46B-49DA-B5E5-150ECF084BCD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FatturaElettronicaPA</RootNamespace>
-    <AssemblyName>FatturaElettronicaPA</AssemblyName>
+    <RootNamespace>FatturaElettronica</RootNamespace>
+    <AssemblyName>FatturaElettronica</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -39,6 +39,7 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\DenominazioneNomeCognome.cs" />
     <Compile Include="Common\Anagrafica.cs">
       <SubType>
       </SubType>
@@ -215,7 +216,7 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\StabileOrganizzazione.cs">
+    <Compile Include="Common\StabileOrganizzazione.cs">
       <SubType>
       </SubType>
     </Compile>
@@ -223,6 +224,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\RappresentanteFiscale.cs" />
     <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\Sede.cs">
       <SubType>
       </SubType>
@@ -255,7 +257,10 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
+    <Compile Include="Validators\FPECDestinatarioValidator.cs" />
     <Compile Include="Validators\FAliquotaIVAValidator.cs" />
     <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
       <SubType>
@@ -337,14 +342,17 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="BusinessObjects, Version=0.1.5.0, Culture=neutral, PublicKeyToken=ee01fa0baf555a0d, processorArchitecture=MSIL">
-      <HintPath>packages\BusinessObjects.0.1.5\lib\portable40-net40+sl5+win8+wp8\BusinessObjects.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
+      <Project>{06f90b65-7d19-46dc-8336-0f3335be6c76}</Project>
+      <Name>BusinessObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

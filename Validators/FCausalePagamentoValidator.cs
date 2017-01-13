@@ -1,6 +1,6 @@
 using BusinessObjects.Validators;
 
-namespace FatturaElettronicaPA.Validators
+namespace FatturaElettronica.Validators
 {
     /// <summary>
     /// Validates FatturaElettronicaBody.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.CausalePagamento

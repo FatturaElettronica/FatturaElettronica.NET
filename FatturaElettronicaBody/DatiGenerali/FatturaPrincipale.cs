@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
+namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Da valorizzare nei casi di fatture per operazione accessorie, emesse dagli autotraportatori per usufruire delle

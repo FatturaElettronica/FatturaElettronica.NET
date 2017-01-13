@@ -2,9 +2,9 @@
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
+namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Dati relativi alla ritenuta.

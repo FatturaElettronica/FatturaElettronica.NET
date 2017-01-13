@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace FatturaElettronicaPA.Common
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Stato Liquidazione di società iscritta al registro imprese.

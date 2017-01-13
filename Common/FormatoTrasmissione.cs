@@ -1,6 +1,7 @@
 ﻿using System.Linq;
+using FatturaElettronica.Impostazioni;
 
-namespace FatturaElettronicaPA.Common
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Lista dei FormatoTrasmissione supportati.
@@ -27,6 +28,9 @@ namespace FatturaElettronicaPA.Common
         /// <summary>
         /// Formati supportati.
         /// </summary>
-        public static readonly FormatoTrasmissione[] List = { new FormatoTrasmissione("SDI11") };
+        public static readonly FormatoTrasmissione[] List = {
+            new FormatoTrasmissione(Impostazioni.FormatoTrasmissione.PubblicaAmministrazione),
+            new FormatoTrasmissione(Impostazioni.FormatoTrasmissione.Privati),
+        };
     }
 }

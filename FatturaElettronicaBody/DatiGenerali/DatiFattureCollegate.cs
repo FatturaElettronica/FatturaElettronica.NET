@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.DatiGenerali
+namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Informazioni relative alle fatture precedentemente trasmesse e alle quali si collega il documento presente.

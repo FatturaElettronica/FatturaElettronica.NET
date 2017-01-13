@@ -1,6 +1,6 @@
 ﻿using System.Xml;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader.CessionarioCommittente
+namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 {
     public class Sede : Common.Località
     {

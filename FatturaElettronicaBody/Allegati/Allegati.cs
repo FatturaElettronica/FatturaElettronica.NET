@@ -2,9 +2,9 @@
 using System.Xml;
 using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 
-namespace FatturaElettronicaPA.FatturaElettronicaBody.Allegati
+namespace FatturaElettronica.FatturaElettronicaBody.Allegati
 {
     /// <summary>
     /// Dati relativi ad eventuale allegato.

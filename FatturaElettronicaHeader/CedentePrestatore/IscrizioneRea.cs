@@ -1,10 +1,10 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 using System.Collections.Generic;
 using System.Xml;
 
-namespace FatturaElettronicaPA.FatturaElettronicaHeader.CedentePrestatore
+namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
     /// <summary>
     /// Represents a DatiAnagrafici object

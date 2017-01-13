@@ -2,7 +2,7 @@
 using BusinessObjects;
 using BusinessObjects.Validators;
 
-namespace FatturaElettronicaPA.Validators
+namespace FatturaElettronica.Validators
 {
     /// <summary>
     /// Validates AliquotaIVA properties

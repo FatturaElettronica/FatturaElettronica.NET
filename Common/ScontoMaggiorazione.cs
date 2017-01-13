@@ -1,9 +1,9 @@
 ﻿using BusinessObjects;
 using BusinessObjects.Validators;
-using FatturaElettronicaPA.Validators;
+using FatturaElettronica.Validators;
 using System.Collections.Generic;
 
-namespace FatturaElettronicaPA.Common
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Eventuale sconto o maggiorazione applicati sul totale documento.

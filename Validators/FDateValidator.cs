@@ -1,6 +1,6 @@
 using BusinessObjects.Validators;
 
-namespace FatturaElettronicaPA.Validators {
+namespace FatturaElettronica.Validators {
     // TODO remove this class as it is not needed anymore.
     public class FDateValidator : RegexValidator {
 

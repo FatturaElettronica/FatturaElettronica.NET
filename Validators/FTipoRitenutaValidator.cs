@@ -1,6 +1,6 @@
 using BusinessObjects.Validators;
 
-namespace FatturaElettronicaPA.Validators
+namespace FatturaElettronica.Validators
 {
     /// <summary>
     /// Validates that a property conforms to FatturaElettronicaBody.DatiGenerali.DatiGeneraliDocumento.Art73 validation rule.
