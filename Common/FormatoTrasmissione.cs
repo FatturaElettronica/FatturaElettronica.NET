@@ -26,12 +26,15 @@ namespace FatturaElettronica.Common
         }
 
         /// <summary>
-        /// Array di Name supportati.
+        /// Array di nomi supportati.
         /// </summary>
         public static string[] Nomi
         {
             get { return List.Select(x => x.Nome).ToArray(); }
         }
+        /// <summary>
+        /// Array di sigle supportate.
+        /// </summary>
         public static string[] Sigle
         {
             get { return List.Select(x => x.Sigla).ToArray(); }
