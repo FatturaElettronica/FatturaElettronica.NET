@@ -37,7 +37,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
                     new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 10)}));
             rules.Add(
                 new AndCompositeValidator("FormatoTrasmissione", 
-                    new List<Validator> {new FRequiredValidator(), new DomainValidator("Valori ammessi: [FPA12, FPR12]", Common.FormatoTrasmissione.Nomi) }));
+                    new List<Validator> {new FRequiredValidator(), new DomainValidator("Valori ammessi: [FPA12, FPR12]", Common.FormatoTrasmissione.Sigle) }));
             rules.Add(new AndCompositeValidator("CodiceDestinatario",
                     new List<Validator> {new FRequiredValidator(), new FCodiceDestinatarioValidator() }));
             rules.Add(new AndCompositeValidator("PECDestinatario",

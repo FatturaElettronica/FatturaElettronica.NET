@@ -1,6 +1,12 @@
 Changelog
 =========
 
+v0.3.1
+======
+
+- New: aggiunte proprietà Sigla e Sigle[] alla classe FormatoTrasmissione
+- New: aggiunta proprietà Descrizione alla classe FormatoTrasmissione
+
 v0.3
 =====
 
