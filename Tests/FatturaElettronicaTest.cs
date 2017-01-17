@@ -218,5 +218,52 @@ namespace Tests
             Assert.IsTrue(l.ValidateAgainstErr00423());
         }
 
+        [TestMethod]
+        public void ValidateDatiRitenutaOnDatiCassaPrevidenziale()
+        {
+            // Testa che #22 sia risolto
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/22
+
+            var b = new FatturaElettronica.FatturaElettronicaBody.FatturaElettronicaBody();
+            var cp = new FatturaElettronica.FatturaElettronicaBody.DatiGenerali.DatiCassaPrevidenziale();
+            b.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(cp);
+
+            // Se non ci sono DatiCassaPrevidenziale con Ritenuta = "SI", è accettabile che DatiRitenuta non sia valorizzato.
+            Assert.IsNull(cp.Ritenuta);
+            Assert.IsNull(b.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta);
+            Assert.IsTrue(b.ValidateAgainstErr00415());
+
+            // Se almeno un DatiCassaPrevidenziale ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato.
+            cp.Ritenuta = "SI";
+            Assert.IsFalse(b.ValidateAgainstErr00415());
+
+            cp.Ritenuta = null;
+            Assert.IsTrue(b.ValidateAgainstErr00415());
+        }
+
+        [TestMethod]
+        public void ValidateDatiRitenutaOnDettaglioLinee()
+        {
+            // Testa che #22 sia risolto
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/22
+
+            var b = new FatturaElettronica.FatturaElettronicaBody.FatturaElettronicaBody();
+
+            var dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            b.DatiBeniServizi.DettaglioLinee.Add(dl);
+
+            // Se non ci sono DettaglioLinee con Ritenuta = "SI", è accettabile che DatiRitenuta non sia valorizzato.
+            Assert.IsNull(b.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta);
+            Assert.IsNull(dl.Ritenuta);
+            Assert.IsTrue(b.ValidateAgainstErr00411());
+
+            // Se almeno un DettaglioLinee ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato.
+            dl.Ritenuta = "SI";
+            Assert.IsFalse(b.ValidateAgainstErr00411());
+
+            dl.Ritenuta = null;
+            Assert.IsTrue(b.ValidateAgainstErr00411());
+        }
+
     }
 }

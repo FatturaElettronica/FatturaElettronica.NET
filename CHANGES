@@ -6,6 +6,8 @@ v0.3.2
 
 Non ancora rilasciata.
 
+- Fix: Convalida errore 00415. Se almeno un DatiCassaPrevidenziale ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato. Closes #22.
+- Fix: Convalida errore 00411. Se almeno un DettaglioLinee ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato. Closes #22.
 - Fix: Convalida errore 00423 nel caso di campo Quantità a null. Closes #20.
 
 v0.3.1

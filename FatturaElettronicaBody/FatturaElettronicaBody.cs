@@ -34,7 +34,48 @@ namespace FatturaElettronica.FatturaElettronicaBody
             rules.Add(new FRequiredValidator("DatiBeniServizi"));
             rules.Add(new DelegateValidator("DatiBeniServizi.DatiRiepilogo", "00419: è presente nel documento un’aliquota IVA per la quale non esiste il relativo blocco DatiRiepilogo.", ValidateAgainstErr00419));
             rules.Add(new DelegateValidator("DatiBeniServizi.DatiRiepilogo.ImponibileImporto", "00422:  il valore del campo ImponibileImporto non risulta calcolato secondo le regole definite nelle specifiche tecniche.", ValidateAgainstErr00422));
+            rules.Add(new DelegateValidator("DatiGenerali.DatiGeneraliDocumento.DatiRitenuta", "00411: 2.1.1.5 <DatiRitenuta> non presente a fronte di almeno un blocco 2.2.1 <DettaglioLinee> con 2.2.1.13 <Ritenuta> uguale a SI.", ValidateAgainstErr00411));
+            rules.Add(new DelegateValidator("DatiGenerali.DatiGeneraliDocumento.DatiRitenuta", "00415: 2.1.1.5 <DatiRitenuta> non presente a fronte di 2.1.1.7.6 <Ritenuta> uguale a SI.", ValidateAgainstErr00415));
             return rules;
+        }
+
+        /// <summary>
+        /// Se almeno un DatiCassaPrevidenziale.Ritenuta = "SI" allora DatiRitenuta deve essere valorizzato.
+        /// </summary>
+        /// <returns></returns>
+        internal bool ValidateAgainstErr00415()
+        {
+            if (DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta == null)
+            {
+                foreach (var cp in DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale)
+                {
+                    if (cp.Ritenuta == "SI")
+                    {
+                        return false;
+                    }
+
+                }
+            }
+            return true;
+        }
+
+        /// <summary>
+        /// Se almeno un DettaglioLinee.Ritenuta = "SI" allora DatiRitenuta deve essere valorizzato.
+        /// </summary>
+        /// <returns></returns>
+        internal bool ValidateAgainstErr00411()
+        {
+            if (DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta == null)
+            {
+                foreach (var dl in DatiBeniServizi.DettaglioLinee)
+                {
+                    if (dl.Ritenuta == "SI")
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         /// <summary>
