@@ -45,7 +45,7 @@ namespace FatturaElettronica.FatturaElettronicaBody
         /// <returns></returns>
         internal bool ValidateAgainstErr00415()
         {
-            if (DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta == null)
+            if (DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.IsEmpty())
             {
                 foreach (var cp in DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale)
                 {
@@ -65,7 +65,7 @@ namespace FatturaElettronica.FatturaElettronicaBody
         /// <returns></returns>
         internal bool ValidateAgainstErr00411()
         {
-            if (DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.TipoRitenuta == null)
+            if (DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.IsEmpty())
             {
                 foreach (var dl in DatiBeniServizi.DettaglioLinee)
                 {
