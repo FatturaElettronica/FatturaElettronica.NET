@@ -205,5 +205,18 @@ namespace Tests
             Assert.IsTrue(dp.Error.Contains("IBAN"));
         }
 
+        [TestMethod]
+        public void ValidatePrezzoTotaleConQuantitaANull()
+        {
+            // Testa che #20 sia risolto
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/20
+
+            var l = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            l.PrezzoUnitario = 10;
+            l.PrezzoTotale = 10;
+            Assert.IsNull(l.Quantita);
+            Assert.IsTrue(l.ValidateAgainstErr00423());
+        }
+
     }
 }

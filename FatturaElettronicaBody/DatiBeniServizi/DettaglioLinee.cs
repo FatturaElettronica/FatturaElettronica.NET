@@ -51,10 +51,11 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// Validate error 00423 from FatturaElettronicaPA v1.3
         /// </summary>
         /// <returns></returns>
-		private bool ValidateAgainstErr00423()
+		internal bool ValidateAgainstErr00423()
         {
 			var prezzo = PrezzoUnitario;
-			foreach (var sconto in ScontoMaggiorazione) {
+			foreach (var sconto in ScontoMaggiorazione)
+            {
 
                 if (sconto.Importo == null && sconto.Percentuale == null) continue;
 
@@ -66,7 +67,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
                     prezzo += importo;
 
             }
-            return PrezzoTotale == prezzo * Quantita;
+            return PrezzoTotale == prezzo * ((Quantita != null) ? Quantita : 1);
         }
 
 		/// <summary>
