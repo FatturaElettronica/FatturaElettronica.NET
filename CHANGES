@@ -4,7 +4,7 @@ Changelog
 v0.3.2
 ======
 
-Non ancora rilasciata.
+Rilasciata il 17.1.2017.
 
 - Fix: Convalida errore 00415. Se almeno un DatiCassaPrevidenziale ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato. Closes #22.
 - Fix: Convalida errore 00411. Se almeno un DettaglioLinee ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato. Closes #22.
