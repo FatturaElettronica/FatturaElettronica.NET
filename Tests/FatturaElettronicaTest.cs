@@ -265,5 +265,66 @@ namespace Tests
             Assert.IsTrue(b.ValidateAgainstErr00411());
         }
 
+        [TestMethod]
+        public void ArrotondamentoImportiUnitariConMoltiDecimali()
+        {
+            var dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl.PrezzoUnitario = 13.4426m;
+            dl.Quantita = 2;
+            dl.Descrizione = "description";
+            dl.PrezzoTotale = 26.89m;
+            dl.AliquotaIVA = 22.0m;
+            Assert.IsTrue(dl.IsValid);
+
+            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl.PrezzoUnitario = 3.0246m;
+            dl.Quantita = 5;
+            dl.Descrizione = "description";
+            dl.PrezzoTotale = 15.12m;
+            dl.AliquotaIVA = 22.0m;
+            Assert.IsTrue(dl.IsValid);
+
+            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl.PrezzoUnitario = 5.7377m;
+            dl.Quantita = 0.2m;
+            dl.Descrizione = "description";
+            dl.PrezzoTotale = 1.15m;
+            dl.AliquotaIVA = 22.0m;
+            Assert.IsTrue(dl.IsValid);
+
+            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl.PrezzoUnitario = 0.0492m;
+            dl.Quantita = 4;
+            dl.Descrizione = "description";
+            dl.PrezzoTotale = 0.20m;
+            dl.AliquotaIVA = 22.0m;
+            Assert.IsTrue(dl.IsValid);
+
+            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl.PrezzoUnitario = 22;
+            dl.Quantita = 4;
+            dl.Descrizione = "description";
+            dl.PrezzoTotale = 88;
+            dl.AliquotaIVA = 22.0m;
+            Assert.IsTrue(dl.IsValid);
+
+            // Make sure we Round AwayFromZero (PCL has no overload for it)
+            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl.PrezzoUnitario = 9.2425m;
+            dl.Quantita = 4;
+            dl.Descrizione = "description";
+            dl.PrezzoTotale = 36.97m;
+            dl.AliquotaIVA = 22.0m;
+            Assert.IsTrue(dl.IsValid);
+
+            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl.PrezzoUnitario = 12.235m;
+            dl.Quantita = 1;
+            dl.Descrizione = "description";
+            dl.PrezzoTotale = 12.24m;
+            dl.AliquotaIVA = 22.0m;
+            Assert.IsTrue(dl.IsValid);
+        }
+
     }
 }
