@@ -67,7 +67,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
                     prezzo += importo;
 
             }
-            return PrezzoTotale == prezzo * ((Quantita != null) ? Quantita : 1);
+            return PrezzoTotale == Math.Round((decimal)(prezzo * ((Quantita != null) ? Quantita : 1)), 2);
         }
 
 		/// <summary>

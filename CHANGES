@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.3.3
+======
+
+Non ancora rilasciata.
+
+- Fix: Consenti serializzazione di valori numerici fino a 5 decimali (minimo 2).
+
 v0.3.2
 ======
 
