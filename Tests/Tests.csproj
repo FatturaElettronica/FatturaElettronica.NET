@@ -42,6 +42,10 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation-Signed.6.2.1.0\lib\Net45\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Xml" />
   </ItemGroup>
@@ -58,8 +62,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="ContattiTrasmittenteValidator.cs" />
+    <Compile Include="DatiTrasmissioneValidator.cs" />
     <Compile Include="DeserializeAndSerialize.cs" />
     <Compile Include="FatturaElettronicaTest.cs" />
+    <Compile Include="IdFiscaleValidator.cs" />
+    <Compile Include="IdTrasmittenteValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +82,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="FatturaElettronica.snk" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

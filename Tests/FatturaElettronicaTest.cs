@@ -4,6 +4,9 @@ using System.IO;
 using FatturaElettronica.Impostazioni;
 using System;
 using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Validators;
+using FluentValidation.TestHelper;
+using FluentValidation;
 
 namespace Tests
 {

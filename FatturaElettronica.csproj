@@ -196,6 +196,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="FatturaElettronicaExtensions.cs" />
     <Compile Include="FatturaElettronicaHeader\CedentePrestatore\CedentePrestatore.cs">
       <SubType>
       </SubType>
@@ -259,7 +260,11 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\ContattiTrasmittenteValidator.cs" />
+    <Compile Include="Validators\DatiTrasmissioneValidator.cs" />
+    <Compile Include="Validators\DomainValidator.cs" />
     <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
+    <Compile Include="Validators\FormatoTrasmissioneValidator.cs" />
     <Compile Include="Validators\FPECDestinatarioValidator.cs" />
     <Compile Include="Validators\FAliquotaIVAValidator.cs" />
     <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
@@ -336,20 +341,15 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Validators\IdFiscaleIVAValidator.cs" />
+    <Compile Include="Validators\IdPaeseValidator.cs" />
+    <Compile Include="Validators\FatturaElettronicaValidator.cs" />
+    <Compile Include="Validators\IdTrasmittenteValidator.cs" />
+    <Compile Include="Validators\ValidatorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FatturaElettronica.snk" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="BusinessObjects, Version=0.1.5.0, Culture=neutral, PublicKeyToken=ee01fa0baf555a0d, processorArchitecture=MSIL">
-      <HintPath>packages\BusinessObjects.0.1.5\lib\portable40-net40+sl5+win8+wp8\BusinessObjects.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

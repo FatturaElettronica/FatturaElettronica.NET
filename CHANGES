@@ -43,6 +43,13 @@ Rilasciata il 18.1.2017.
 v0.3.2
 ======
 
+Non rilasciata.
+
+- Fix: Arrotonda valori numerici fino a 5 decimali (minimo 2).
+
+v0.3.2
+======
+
 Rilasciata il 17.1.2017.
 
 - Fix: Convalida errore 00415. Se almeno un DatiCassaPrevidenziale ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato. Closes #22.
