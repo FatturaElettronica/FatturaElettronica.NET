@@ -1,23 +1,12 @@
 ﻿using FluentValidation.TestHelper;
-using FatturaElettronica;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiTrasmissioneValidator
+    public class DatiTrasmissioneValidator : BaseTestClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
     {
-        private FatturaElettronica.Validators.DatiTrasmissioneValidator validator;
-        private DatiTrasmissione challenge;
-
-        [TestInitialize]
-        public void Init()
-        {
-            validator = new FatturaElettronica.Validators.DatiTrasmissioneValidator();
-            challenge = new DatiTrasmissione();
-        }
-
         [TestMethod]
         public void IdTrasmittenteHasChildValidator()
         {

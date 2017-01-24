@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    class DatiTrasmissioneValidator : AbstractValidator<DatiTrasmissione>
+    public class DatiTrasmissioneValidator : AbstractValidator<DatiTrasmissione>
     {
         public DatiTrasmissioneValidator()
         {

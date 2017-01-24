@@ -5,21 +5,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class FatturaElettronicaHeaderValidator
+    public class FatturaElettronicaHeaderValidator: BaseTestClass<FatturaElettronicaHeader, FatturaElettronica.Validators.FatturaElettronicaHeaderValidator>
     {
-        private FatturaElettronica.Validators.FatturaElettronicaHeaderValidator validator;
-        private FatturaElettronicaHeader challenge;
-
-        [TestInitialize]
-        public void Init()
-        {
-            validator = new FatturaElettronica.Validators.FatturaElettronicaHeaderValidator();
-            challenge = new FatturaElettronicaHeader();
-        }
-
         [TestMethod]
         public void DatiTramissioneHasChildValidator()
         {
+            var r1 = validator.Validate(challenge);
             validator.ShouldHaveChildValidator(
                 x => x.DatiTrasmissione, typeof(FatturaElettronica.Validators.DatiTrasmissioneValidator));
         }

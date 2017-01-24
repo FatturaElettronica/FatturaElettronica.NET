@@ -1,4 +1,12 @@
-﻿namespace FatturaElettronica.Validators
+﻿using FluentValidation;
+
+namespace FatturaElettronica.Validators
 {
-    class FatturaElettronicaValidator : DatiTrasmissioneValidator { }
+    public class FatturaElettronicaValidator : AbstractValidator<FatturaElettronica>
+    {
+        public FatturaElettronicaValidator()
+        {
+            RuleFor(dt => dt.FatturaElettronicaHeader).SetValidator(new FatturaElettronicaHeaderValidator());
+        }
+    }
 }

@@ -15,7 +15,7 @@ using FatturaElettronica.Impostazioni;
 
 namespace FatturaElettronica
 {
-    public class FatturaElettronica : BusinessObject
+    public class FatturaElettronica : Common.BusinessObject
     {
         private readonly FatturaElettronicaHeader.FatturaElettronicaHeader _header;
         private readonly List<FatturaElettronicaBody.FatturaElettronicaBody> _body;

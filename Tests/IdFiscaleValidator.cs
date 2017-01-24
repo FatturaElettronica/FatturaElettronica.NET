@@ -6,18 +6,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class IdFiscaleValidator
+    public class IdFiscaleValidator : BaseTestClass<IdFiscaleIVA, IdFiscaleIVAValidator>
     {
-
-        private IdFiscaleIVAValidator validator;
-        private IdFiscaleIVA challenge;
-
-        [TestInitialize]
-        public void Init()
-        {
-            validator = new IdFiscaleIVAValidator();
-            challenge = new IdFiscaleIVA();
-        }
 
         [TestMethod]
         public void IdPaeseCannotBeEmpty()

@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    class IdFiscaleIVAValidator : AbstractValidator<IdFiscaleIVA>
+    public class IdFiscaleIVAValidator : AbstractValidator<IdFiscaleIVA>
     {
         public IdFiscaleIVAValidator()
         {

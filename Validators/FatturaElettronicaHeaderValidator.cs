@@ -2,7 +2,7 @@
 
 namespace FatturaElettronica.Validators
 {
-    class FatturaElettronicaHeaderValidator : AbstractValidator<FatturaElettronicaHeader.FatturaElettronicaHeader>
+    public class FatturaElettronicaHeaderValidator : AbstractValidator<FatturaElettronicaHeader.FatturaElettronicaHeader>
     {
         public FatturaElettronicaHeaderValidator()
         {

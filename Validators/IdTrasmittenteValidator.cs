@@ -1,4 +1,4 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    class IdTrasmittenteValidator : IdFiscaleIVAValidator { }
+    public class IdTrasmittenteValidator : IdFiscaleIVAValidator { }
 }

@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    class ContattiTrasmittenteValidator : AbstractValidator<ContattiTrasmittente>
+    public class ContattiTrasmittenteValidator : AbstractValidator<ContattiTrasmittente>
     {
         public ContattiTrasmittenteValidator()
         {

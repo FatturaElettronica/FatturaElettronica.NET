@@ -1,23 +1,12 @@
 ﻿using FluentValidation.TestHelper;
-using FatturaElettronica;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
 
 namespace Tests
 {
     [TestClass]
-    public class ContattiTrasmittenteValidator
+    public class ContattiTrasmittenteValidator: BaseTestClass<ContattiTrasmittente, FatturaElettronica.Validators.ContattiTrasmittenteValidator>
     {
-        private FatturaElettronica.Validators.ContattiTrasmittenteValidator validator;
-        private ContattiTrasmittente challenge;
-
-        [TestInitialize]
-        public void Init()
-        {
-            validator = new FatturaElettronica.Validators.ContattiTrasmittenteValidator();
-            challenge = new ContattiTrasmittente();
-        }
-
         [TestMethod]
         public void TelefonoMinMaxLength()
         {

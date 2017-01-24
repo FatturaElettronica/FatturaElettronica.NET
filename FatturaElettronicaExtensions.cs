@@ -1,18 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
+using System.Reflection;
+using FatturaElettronica;
 using FatturaElettronica.Validators;
+using FluentValidation;
+using FluentValidation.Results;
 
 namespace FatturaElettronica
 {
     public static class FatturaElettronicaExtensions
     {
-        public static FluentValidation.Results.ValidationResult Validate(this DatiTrasmissione fe)
+        public static ValidationResult Validate(this Common.BusinessObject obj)
         {
-            var validator = new FatturaElettronicaValidator();
-            return validator.Validate(fe);
+            var type = Type.GetType(
+                string.Format("FatturaElettronica.Validators.{0}Validator", obj.GetType().Name));
+            var instance = Activator.CreateInstance(type);
+            var method = type.GetMethod("Validate", new [] {obj.GetType()});
+            return (ValidationResult)method.Invoke(instance, new [] {obj} );
         }
     }
 }
