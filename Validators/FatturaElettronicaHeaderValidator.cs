@@ -6,7 +6,8 @@ namespace FatturaElettronica.Validators
     {
         public FatturaElettronicaHeaderValidator()
         {
-            RuleFor(dt => dt.DatiTrasmissione).SetValidator(new DatiTrasmissioneValidator());
+            RuleFor(x => x.DatiTrasmissione).SetValidator(new DatiTrasmissioneValidator());
+            RuleFor(x => x.CedentePrestatore).SetValidator(new CedentePrestatoreValidator());
         }
     }
 }

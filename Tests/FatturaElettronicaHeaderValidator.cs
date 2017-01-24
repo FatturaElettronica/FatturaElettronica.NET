@@ -10,9 +10,14 @@ namespace Tests
         [TestMethod]
         public void DatiTramissioneHasChildValidator()
         {
-            var r1 = validator.Validate(challenge);
             validator.ShouldHaveChildValidator(
                 x => x.DatiTrasmissione, typeof(FatturaElettronica.Validators.DatiTrasmissioneValidator));
+        }
+        [TestMethod]
+        public void CedentePrestatoreHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(
+                x => x.CedentePrestatore, typeof(FatturaElettronica.Validators.CedentePrestatoreValidator));
         }
     }
 }
