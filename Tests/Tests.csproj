@@ -63,6 +63,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ContattiTrasmittenteValidator.cs" />
+    <Compile Include="FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="DatiTrasmissioneValidator.cs" />
     <Compile Include="DeserializeAndSerialize.cs" />
     <Compile Include="FatturaElettronicaTest.cs" />

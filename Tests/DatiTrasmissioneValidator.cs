@@ -79,7 +79,6 @@ namespace Tests
         [TestMethod]
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPR12()
         {
-
             // Quando FormatoTrasmissione = FPR12 ProgressivioInvio.Lenght = 7.
             challenge.FormatoTrasmissione = FatturaElettronica.Impostazioni.FormatoTrasmissione.Privati;
             challenge.CodiceDestinatario = new string('x', 7);

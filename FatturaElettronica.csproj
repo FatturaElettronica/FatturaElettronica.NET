@@ -261,6 +261,7 @@
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validators\ContattiTrasmittenteValidator.cs" />
+    <Compile Include="Validators\FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="Validators\DatiTrasmissioneValidator.cs" />
     <Compile Include="Validators\DomainValidator.cs" />
     <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
