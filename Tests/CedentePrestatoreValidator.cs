@@ -17,5 +17,11 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.SedeValidator));
         }
+        [TestMethod]
+        public void StabileOrganizzazioneHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(
+                x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.StabileOrganizzazioneValidator));
+        }
     }
 }
