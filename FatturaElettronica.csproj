@@ -347,7 +347,9 @@
       </SubType>
     </Compile>
     <Compile Include="Validators\IdFiscaleIVAValidator.cs" />
-    <Compile Include="Validators\IdPaeseValidator.cs" />
+    <Compile Include="Validators\RegimeFiscaleDomainValidator.cs" />
+    <Compile Include="Validators\ProvinciaDomainValidator.cs" />
+    <Compile Include="Validators\IdPaeseDomainValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaValidator.cs" />
     <Compile Include="Validators\IdTrasmittenteValidator.cs" />
     <Compile Include="Validators\ValidatorExtensions.cs" />

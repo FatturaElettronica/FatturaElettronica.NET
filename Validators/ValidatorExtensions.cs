@@ -12,5 +12,13 @@ namespace FatturaElettronica.Validators
         {
             return ruleBuilder.SetValidator(new IdPaeseDomainValidator<TProperty>());
         }
+        public static IRuleBuilderOptions<T, TProperty> ProvinciaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new ProvinciaDomainValidator<TProperty>());
+        }
+        public static IRuleBuilderOptions<T, TProperty> RegimeFiscaleDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new RegimeFiscaleDomainValidator<TProperty>());
+        }
     }
 }
