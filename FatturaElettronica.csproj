@@ -260,6 +260,9 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\StatoLiquidazioneDomainValidator.cs" />
+    <Compile Include="Validators\SocioUnicoDomainValidator.cs" />
+    <Compile Include="Validators\IscrizioneREAValidator.cs" />
     <Compile Include="Validators\StabileOrganizzazioneValidator.cs" />
     <Compile Include="Validators\SedeValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiValidator.cs" />

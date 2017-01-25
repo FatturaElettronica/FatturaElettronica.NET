@@ -66,6 +66,7 @@
     <Compile Include="ContattiTrasmittenteValidator.cs" />
     <Compile Include="AnagraficaValidator.cs" />
     <Compile Include="CedentePrestatoreValidator.cs" />
+    <Compile Include="IscrizioneREAValidator.cs" />
     <Compile Include="StabileOrganizzazioneValidator.cs" />
     <Compile Include="SedeValidator.cs" />
     <Compile Include="DatiAnagraficiValidator.cs" />

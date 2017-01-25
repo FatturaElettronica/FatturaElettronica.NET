@@ -23,5 +23,10 @@ namespace Tests
             validator.ShouldHaveChildValidator(
                 x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.StabileOrganizzazioneValidator));
         }
+        [TestMethod]
+        public void IscrizioneREAHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.IscrizioneREAValidator));
+        }
     }
 }

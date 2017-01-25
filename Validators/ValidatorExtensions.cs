@@ -20,5 +20,13 @@ namespace FatturaElettronica.Validators
         {
             return ruleBuilder.SetValidator(new RegimeFiscaleDomainValidator<TProperty>());
         }
+        public static IRuleBuilderOptions<T, TProperty> SocioUnicoDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new SocioUnicoDomainValidator<TProperty>());
+        }
+        public static IRuleBuilderOptions<T, TProperty> StatoLiquidazioneDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new StatoLiquidazioneDomainValidator<TProperty>());
+        }
     }
 }

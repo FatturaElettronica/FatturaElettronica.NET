@@ -10,6 +10,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiAnagrafici).SetValidator(new DatiAnagraficiValidator());
             RuleFor(x => x.Sede).SetValidator(new SedeValidator());
             RuleFor(x => x.StabileOrganizzazione).SetValidator(new StabileOrganizzazioneValidator());
+            RuleFor(x => x.IscrizioneREA).SetValidator(new IscrizioneREAValidator());
         }
     }
 }
