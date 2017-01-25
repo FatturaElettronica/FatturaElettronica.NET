@@ -15,6 +15,8 @@ namespace Tests
         [TestMethod]
         public void ProgressivoInvioCannotBeEmpty()
         {
+            challenge.ProgressivoInvio = null;
+            validator.ShouldHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
             challenge.ProgressivoInvio = string.Empty;
             validator.ShouldHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
         }
@@ -26,12 +28,10 @@ namespace Tests
         [TestMethod]
         public void ProgressivoInvioMinMaxLength()
         {
-            challenge.ProgressivoInvio = "";
-            validator.ShouldHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
+            challenge.ProgressivoInvio = new string('x', 1);
+            validator.ShouldNotHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
             challenge.ProgressivoInvio = new string('x', 11);
             validator.ShouldHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
-            challenge.ProgressivoInvio = "1";
-            validator.ShouldNotHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
         }
         [TestMethod]
         public void FormatoTrasmissioneCannotBeEmpty()

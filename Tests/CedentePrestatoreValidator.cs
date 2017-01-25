@@ -8,9 +8,14 @@ namespace Tests
     public class CedentePrestatoreValidator : BaseTestClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
     {
         [TestMethod]
-        public void CedentePrestatoreHasChildValidator()
+        public void DatiAnagraficiHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiValidator));
+        }
+        [TestMethod]
+        public void SedeHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.SedeValidator));
         }
     }
 }
