@@ -267,7 +267,6 @@
     <Compile Include="Validators\SedeValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiValidator.cs" />
     <Compile Include="Validators\CedentePrestatoreValidator.cs" />
-    <Compile Include="Validators\DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="Validators\ContattiTrasmittenteValidator.cs" />
     <Compile Include="Validators\AnagraficaValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaHeaderValidator.cs" />
