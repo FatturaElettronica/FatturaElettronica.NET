@@ -12,6 +12,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.StabileOrganizzazione).SetValidator(new StabileOrganizzazioneValidator());
             RuleFor(x => x.IscrizioneREA).SetValidator(new IscrizioneREAValidator());
             RuleFor(x => x.Contatti).SetValidator(new ContattiValidator());
+            RuleFor(x => x.RiferimentoAmministrazione).Length(1, 20);
         }
     }
 }

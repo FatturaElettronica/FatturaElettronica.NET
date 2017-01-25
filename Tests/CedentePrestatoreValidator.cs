@@ -33,5 +33,17 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(x => x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
         }
+        [TestMethod]
+        public void RiferimentoAmministrazioneMinMaxLength()
+        {
+            challenge.RiferimentoAmministrazione = null;
+            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+            challenge.RiferimentoAmministrazione = new string('x', 21);
+            validator.ShouldHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+            challenge.RiferimentoAmministrazione = new string('x', 1);
+            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+            challenge.RiferimentoAmministrazione = new string('x', 20);
+            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+        }
     }
 }
