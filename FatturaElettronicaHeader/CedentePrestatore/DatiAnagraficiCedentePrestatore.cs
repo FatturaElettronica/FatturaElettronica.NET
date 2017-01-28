@@ -7,16 +7,18 @@ using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
-    public class DatiAnagrafici : Common.DatiAnagrafici
+    public class DatiAnagraficiCedentePrestatore : Common.DatiAnagrafici
     {
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.
         /// </summary>
-        public DatiAnagrafici() { }
-        public DatiAnagrafici(XmlReader r) : base(r) { }
+        public DatiAnagraficiCedentePrestatore() { }
+        public DatiAnagraficiCedentePrestatore(XmlReader r) : base(r) { }
 
         protected override List<Validator> CreateRules()
         {
+            XmlOptions.ElementName = "DatiAnagrafici";
+
             var rules = base.CreateRules();
             rules.Add(new FRequiredValidator("IdFiscaleIVA"));
             rules.Add(new FLengthValidator("AlboProfessionale", 1, 60));

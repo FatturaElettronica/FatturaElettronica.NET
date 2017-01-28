@@ -10,7 +10,7 @@ namespace Tests
         [TestMethod]
         public void DatiAnagraficiHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiValidator));
+            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator));
         }
         [TestMethod]
         public void SedeHasChildValidator()

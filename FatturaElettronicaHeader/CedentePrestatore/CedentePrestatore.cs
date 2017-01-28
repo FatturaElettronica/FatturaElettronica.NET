@@ -13,7 +13,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// </summary>
     public class CedentePrestatore : Common.BusinessObject
     {
-        private readonly DatiAnagrafici _datiAnagrafici;
+        private readonly DatiAnagraficiCedentePrestatore _datiAnagrafici;
         private readonly Sede _sede;
         private readonly StabileOrganizzazione _stabileOrganizzazione;
         private readonly IscrizioneREA _iscrizioneREA;
@@ -23,7 +23,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         public CedentePrestatore() {
-            _datiAnagrafici = new DatiAnagrafici();
+            _datiAnagrafici = new DatiAnagraficiCedentePrestatore();
             _sede = new Sede();
             _stabileOrganizzazione = new StabileOrganizzazione();
             _iscrizioneREA = new IscrizioneREA();
@@ -49,7 +49,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public DatiAnagrafici DatiAnagrafici { 
+        public DatiAnagraficiCedentePrestatore DatiAnagrafici { 
             get { return _datiAnagrafici; }
         }
 

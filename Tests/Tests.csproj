@@ -63,14 +63,16 @@
   </Choose>
   <ItemGroup>
     <Compile Include="BaseTestClass.cs" />
+    <Compile Include="RappresentanteFiscaleValidator.cs" />
     <Compile Include="ContattiTrasmittenteValidator.cs" />
     <Compile Include="AnagraficaValidator.cs" />
     <Compile Include="CedentePrestatoreValidator.cs" />
     <Compile Include="ContattiValidator.cs" />
+    <Compile Include="DatiAnagraficiValidator.cs" />
     <Compile Include="IscrizioneREAValidator.cs" />
     <Compile Include="StabileOrganizzazioneValidator.cs" />
     <Compile Include="SedeValidator.cs" />
-    <Compile Include="DatiAnagraficiValidator.cs" />
+    <Compile Include="DatiAnagraficCedentePrestatoreValidator.cs" />
     <Compile Include="FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="DatiTrasmissioneValidator.cs" />
     <Compile Include="DeserializeAndSerialize.cs" />
