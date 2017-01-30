@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class IscrizioneREAValidator : BaseTestClass<IscrizioneREA, FatturaElettronica.Validators.IscrizioneREAValidator>
+    public class IscrizioneREAValidator : BaseClass<IscrizioneREA, FatturaElettronica.Validators.IscrizioneREAValidator>
     {
         [TestMethod]
         public void UfficioCannotBeEmpty()

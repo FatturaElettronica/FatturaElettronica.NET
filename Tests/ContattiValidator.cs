@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class ContattiValidator : BaseTestClass<Contatti, FatturaElettronica.Validators.ContattiValidator>
+    public class ContattiValidator : BaseClass<Contatti, FatturaElettronica.Validators.ContattiValidator>
     {
         [TestMethod]
         public void TelefonoMinMaxLength()

@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class IdFiscaleValidator : BaseTestClass<IdFiscaleIVA, IdFiscaleIVAValidator>
+    public class IdFiscaleValidator : BaseClass<IdFiscaleIVA, IdFiscaleIVAValidator>
     {
 
         [TestMethod]

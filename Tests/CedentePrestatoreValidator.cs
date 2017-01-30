@@ -5,7 +5,7 @@ using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
 namespace Tests
 {
     [TestClass]
-    public class CedentePrestatoreValidator : BaseTestClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
+    public class CedentePrestatoreValidator : BaseClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
     {
         [TestMethod]
         public void DatiAnagraficiHasChildValidator()

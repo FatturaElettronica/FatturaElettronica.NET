@@ -5,7 +5,7 @@ using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
 namespace Tests
 {
     [TestClass]
-    public class ContattiTrasmittenteValidator: BaseTestClass<ContattiTrasmittente, FatturaElettronica.Validators.ContattiTrasmittenteValidator>
+    public class ContattiTrasmittenteValidator: BaseClass<ContattiTrasmittente, FatturaElettronica.Validators.ContattiTrasmittenteValidator>
     {
         [TestMethod]
         public void TelefonoMinMaxLength()

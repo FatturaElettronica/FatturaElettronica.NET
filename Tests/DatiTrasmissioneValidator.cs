@@ -5,7 +5,7 @@ using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
 namespace Tests
 {
     [TestClass]
-    public class DatiTrasmissioneValidator : BaseTestClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
+    public class DatiTrasmissioneValidator : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
     {
         [TestMethod]
         public void IdTrasmittenteHasChildValidator()

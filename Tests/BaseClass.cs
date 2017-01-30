@@ -7,7 +7,7 @@ using System;
 namespace Tests
 {
     [TestClass]
-    public abstract class BaseTestClass<TClass, TValidator> 
+    public abstract class BaseClass<TClass, TValidator> 
         where TClass : FatturaElettronica.Common.BusinessObject
         where TValidator : IValidator<TClass>
     {

@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class FatturaElettronicaHeaderValidator: BaseTestClass<FatturaElettronicaHeader, FatturaElettronica.Validators.FatturaElettronicaHeaderValidator>
+    public class FatturaElettronicaHeaderValidator: BaseClass<FatturaElettronicaHeader, FatturaElettronica.Validators.FatturaElettronicaHeaderValidator>
     {
         [TestMethod]
         public void DatiTramissioneHasChildValidator()

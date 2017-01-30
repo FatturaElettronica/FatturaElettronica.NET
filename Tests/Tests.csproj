@@ -62,9 +62,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BaseDatiAnagraficiValidator.cs" />
+    <Compile Include="DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="CessionarioCommittenteValidator.cs" />
     <Compile Include="RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
-    <Compile Include="BaseTestClass.cs" />
+    <Compile Include="BaseClass.cs" />
     <Compile Include="RappresentanteFiscaleValidator.cs" />
     <Compile Include="ContattiTrasmittenteValidator.cs" />
     <Compile Include="AnagraficaValidator.cs" />
@@ -72,6 +74,7 @@
     <Compile Include="ContattiValidator.cs" />
     <Compile Include="DatiAnagraficiValidator.cs" />
     <Compile Include="IscrizioneREAValidator.cs" />
+    <Compile Include="BaseLocalitàValidator.cs" />
     <Compile Include="SedeCessionarioCommittenteValidator.cs" />
     <Compile Include="StabileOrganizzazioneValidator.cs" />
     <Compile Include="SedeCedentePrestatoreValidator.cs" />

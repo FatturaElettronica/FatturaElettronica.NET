@@ -5,7 +5,7 @@ using FatturaElettronica.Validators;
 namespace Tests
 {
     [TestClass]
-    public class FatturaElettronicaValidator : BaseTestClass<FatturaElettronica.FatturaElettronica, FatturaElettronica.Validators.FatturaElettronicaValidator>
+    public class FatturaElettronicaValidator : BaseClass<FatturaElettronica.FatturaElettronica, FatturaElettronica.Validators.FatturaElettronicaValidator>
     {
         [TestInitialize]
         public new void Init() 
