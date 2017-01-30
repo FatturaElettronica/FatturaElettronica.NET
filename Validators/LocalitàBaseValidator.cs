@@ -2,9 +2,9 @@
 
 namespace FatturaElettronica.Validators
 {
-    public class SedeValidator : AbstractValidator<FatturaElettronicaHeader.CedentePrestatore.Sede>
+    public abstract class LocalitàBaseValidator<T> : AbstractValidator<T> where T : Common.Località
     {
-        public SedeValidator()
+        public LocalitàBaseValidator()
         {
             RuleFor(x => x.Indirizzo).NotEmpty().Length(1, 60);
             RuleFor(x => x.NumeroCivico).Length(1, 8);

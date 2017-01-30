@@ -62,6 +62,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CessionarioCommittenteValidator.cs" />
+    <Compile Include="RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="BaseTestClass.cs" />
     <Compile Include="RappresentanteFiscaleValidator.cs" />
     <Compile Include="ContattiTrasmittenteValidator.cs" />
@@ -70,8 +72,9 @@
     <Compile Include="ContattiValidator.cs" />
     <Compile Include="DatiAnagraficiValidator.cs" />
     <Compile Include="IscrizioneREAValidator.cs" />
+    <Compile Include="SedeCessionarioCommittenteValidator.cs" />
     <Compile Include="StabileOrganizzazioneValidator.cs" />
-    <Compile Include="SedeValidator.cs" />
+    <Compile Include="SedeCedentePrestatoreValidator.cs" />
     <Compile Include="DatiAnagraficCedentePrestatoreValidator.cs" />
     <Compile Include="FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="DatiTrasmissioneValidator.cs" />

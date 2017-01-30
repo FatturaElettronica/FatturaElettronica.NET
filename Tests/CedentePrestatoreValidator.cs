@@ -15,7 +15,7 @@ namespace Tests
         [TestMethod]
         public void SedeHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.SedeValidator));
+            validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.SedeCedentePrestatoreValidator));
         }
         [TestMethod]
         public void StabileOrganizzazioneHasChildValidator()

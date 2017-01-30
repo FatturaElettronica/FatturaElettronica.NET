@@ -14,18 +14,18 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     public class CessionarioCommittente : Common.BusinessObject
     {
         private readonly DatiAnagrafici _datiAnagrafici;
-        private readonly Sede _sede;
+        private readonly SedeCessionarioCommittente _sede;
         private readonly StabileOrganizzazione _stabileOrganizzazione;
-        private readonly RappresentanteFiscale _rappresentanteFiscale;
+        private readonly RappresentanteFiscaleCessionarioCommittente _rappresentanteFiscale;
 
         /// <summary>
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         public CessionarioCommittente() {
             _datiAnagrafici = new DatiAnagrafici();
-            _sede = new Sede();
+            _sede = new SedeCessionarioCommittente();
             _stabileOrganizzazione = new StabileOrganizzazione();
-            _rappresentanteFiscale = new RappresentanteFiscale();
+            _rappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
         }
         public CessionarioCommittente(XmlReader r) : base(r) { }
 
@@ -54,7 +54,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Dati della sede del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public Sede Sede { 
+        public SedeCessionarioCommittente Sede { 
             get { return _sede; }
         }
 
@@ -70,7 +70,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 <FormatoTrasmissione> = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
         /// </summary>
         [DataProperty]
-        public RappresentanteFiscale RappresentanteFiscale { 
+        public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { 
             get { return _rappresentanteFiscale; }
         }
         #endregion

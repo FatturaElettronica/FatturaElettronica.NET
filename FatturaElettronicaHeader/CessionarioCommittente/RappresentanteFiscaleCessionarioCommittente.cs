@@ -7,14 +7,17 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     /// <summary>
     /// Represents a CessionarioCommittente.RappresentanteFiscale object.
     /// </summary>
-    public class RappresentanteFiscale : DenominazioneNomeCognome
+    public class RappresentanteFiscaleCessionarioCommittente : DenominazioneNomeCognome
     {
         private readonly IdFiscaleIVA _idFiscaleIva;
 
-        public RappresentanteFiscale() {
+        public RappresentanteFiscaleCessionarioCommittente() {
+
+            XmlOptions.ElementName = "RapprentanteFiscale";
+
             _idFiscaleIva = new IdFiscaleIVA();
         }
-        public RappresentanteFiscale(XmlReader r) : base(r) { }
+        public RappresentanteFiscaleCessionarioCommittente(XmlReader r) : base(r) { }
 
         # region Properties 
         /// <summary>

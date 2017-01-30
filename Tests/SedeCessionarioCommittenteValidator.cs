@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class SedeValidator : BaseTestClass<FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore.Sede, FatturaElettronica.Validators.SedeValidator>
+    public class SedeCessionarioCommittenteValidator : BaseTestClass<FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente.SedeCessionarioCommittente, FatturaElettronica.Validators.SedeCessionarioCommittenteValidator>
     {
         [TestMethod]
         public void IndirizzoCannotBeEmpty()

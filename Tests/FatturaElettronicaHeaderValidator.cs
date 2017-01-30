@@ -25,5 +25,11 @@ namespace Tests
             validator.ShouldHaveChildValidator(
                 x => x.Rappresentante, typeof(FatturaElettronica.Validators.RappresentanteFiscaleValidator));
         }
+        [TestMethod]
+        public void CessionarioCommittenteHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(
+                x => x.CessionarioCommittente, typeof(FatturaElettronica.Validators.CessionarioCommittenteValidator));
+        }
     }
 }
