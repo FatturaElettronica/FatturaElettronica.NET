@@ -59,7 +59,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 
                 if (sconto.Importo == null && sconto.Percentuale == null) continue;
 
-                var importo = (decimal)((sconto.Importo > 0) ?  sconto.Importo : (prezzo * sconto.Percentuale) / 100);
+                var importo = (decimal)((sconto.Importo != 0) ?  Math.Abs((decimal)sconto.Importo) : (prezzo * sconto.Percentuale) / 100);
 
                 if (sconto.Tipo == "SC")
                     prezzo -= importo;

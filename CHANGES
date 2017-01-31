@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.3.4
+======
+
+Non ancora rilasciata
+
+- Fix: Crash quando ScontoMaggiorazione.Importo ha valore negativo. Closes #27.
+
 v0.3.3
 ======
 

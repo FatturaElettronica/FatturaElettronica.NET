@@ -155,16 +155,24 @@ namespace Tests
             Assert.AreEqual(2m, body.DatiBeniServizi.DettaglioLinee[1].PrezzoUnitario);
             Assert.AreEqual(20m, body.DatiBeniServizi.DettaglioLinee[1].PrezzoTotale);
             Assert.AreEqual(22m, body.DatiBeniServizi.DettaglioLinee[1].AliquotaIVA);
+            Assert.AreEqual(3, body.DatiBeniServizi.DettaglioLinee[2].NumeroLinea);
+            Assert.AreEqual("TUBI RITORNO GASOLIO", body.DatiBeniServizi.DettaglioLinee[2].Descrizione);
+            Assert.AreEqual(2m, body.DatiBeniServizi.DettaglioLinee[2].Quantita);
+            Assert.AreEqual(5m, body.DatiBeniServizi.DettaglioLinee[2].PrezzoUnitario);
+            Assert.AreEqual(6.58m, body.DatiBeniServizi.DettaglioLinee[2].PrezzoTotale);
+            Assert.AreEqual(22m, body.DatiBeniServizi.DettaglioLinee[2].AliquotaIVA);
+            Assert.AreEqual("SC", body.DatiBeniServizi.DettaglioLinee[2].ScontoMaggiorazione[0].Tipo);
+            Assert.AreEqual(-1.71m, body.DatiBeniServizi.DettaglioLinee[2].ScontoMaggiorazione[0].Importo);
             // DatiRiepilogo
             Assert.AreEqual(22m, body.DatiBeniServizi.DatiRiepilogo[0].AliquotaIVA);
-            Assert.AreEqual(25m, body.DatiBeniServizi.DatiRiepilogo[0].ImponibileImporto);
-            Assert.AreEqual(5.5m, body.DatiBeniServizi.DatiRiepilogo[0].Imposta);
+            Assert.AreEqual(31.58m, body.DatiBeniServizi.DatiRiepilogo[0].ImponibileImporto);
+            Assert.AreEqual(6.95m, body.DatiBeniServizi.DatiRiepilogo[0].Imposta);
             Assert.AreEqual("D", body.DatiBeniServizi.DatiRiepilogo[0].EsigibilitaIVA);
             // DatiPagamento
             Assert.AreEqual("TP01", body.DatiPagamento[0].CondizioniPagamento);
             Assert.AreEqual("MP01", body.DatiPagamento[0].DettaglioPagamento[0].ModalitaPagamento);
             Assert.AreEqual(new DateTime(2015, 01, 30), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento);
-            Assert.AreEqual(30.5m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
+            Assert.AreEqual(31.58m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
         private void SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaElettronica f)
         {
