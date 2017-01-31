@@ -31,5 +31,21 @@ namespace Tests
             validator.ShouldHaveChildValidator(
                 x => x.CessionarioCommittente, typeof(FatturaElettronica.Validators.CessionarioCommittenteValidator));
         }
+        [TestMethod]
+        public void SoggettoEmittenteCanBeEmpty()
+        {
+            challenge.SoggettoEmittente = null;
+            validator.ShouldNotHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
+        }
+        [TestMethod]
+        public void SoggettoEmittenteCanOnlyAcceptDomainValues()
+        {
+            challenge.SoggettoEmittente = "XX";
+            validator.ShouldHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
+            challenge.SoggettoEmittente = "CC";
+            validator.ShouldNotHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
+            challenge.SoggettoEmittente = "TZ";
+            validator.ShouldNotHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
+        }
     }
 }
