@@ -10,6 +10,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.CedentePrestatore).SetValidator(new CedentePrestatoreValidator());
             RuleFor(x => x.Rappresentante).SetValidator(new RappresentanteFiscaleValidator());
             RuleFor(x => x.CessionarioCommittente).SetValidator(new CessionarioCommittenteValidator());
+            RuleFor(x => x.TerzoIntermediarioOSoggettoEmittente).SetValidator(new TerzoIntermediarioOSoggettoEmittenteValidator());
         }
     }
 }

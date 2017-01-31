@@ -56,6 +56,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Common\RappresentanteFiscale.cs" />
     <Compile Include="Common\SoggettoEmittente.cs">
       <SubType>
       </SubType>
@@ -260,6 +261,7 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\TerzoIntermediarioOSoggettoEmittenteValidator.cs" />
     <Compile Include="Validators\RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="Validators\DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="Validators\CessionarioCommittenteValidator.cs" />

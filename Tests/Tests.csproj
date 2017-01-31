@@ -62,11 +62,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="BaseRappresentanteFiscaleValidator.cs" />
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
     <Compile Include="DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="CessionarioCommittenteValidator.cs" />
     <Compile Include="RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="BaseClass.cs" />
+    <Compile Include="TerzoIntermediarioOSoggettoEmittenteValidator.cs" />
     <Compile Include="RappresentanteFiscaleValidator.cs" />
     <Compile Include="ContattiTrasmittenteValidator.cs" />
     <Compile Include="AnagraficaValidator.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="IdFiscaleValidator.cs" />
     <Compile Include="IdTrasmittenteValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
