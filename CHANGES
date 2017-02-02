@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.3.5
+======
+
+Rilasciata il 2.2.2017.
+
+- Fix: Crash con ScontoMaggiorazione.Importo non impostato (null). Closes #28.
+
 v0.3.4
 ======
 
