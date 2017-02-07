@@ -66,6 +66,9 @@
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
     <Compile Include="DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="CessionarioCommittenteValidator.cs" />
+    <Compile Include="DatiGeneraliValidator.cs" />
+    <Compile Include="FatturaElettronicaBodyValidator.cs" />
+    <Compile Include="DatiGeneraliDocumentoValidator.cs" />
     <Compile Include="RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="BaseClass.cs" />
     <Compile Include="TerzoIntermediarioOSoggettoEmittenteValidator.cs" />

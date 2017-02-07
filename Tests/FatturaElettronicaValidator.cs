@@ -19,6 +19,8 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(
                 x => x.FatturaElettronicaHeader, typeof(FatturaElettronica.Validators.FatturaElettronicaHeaderValidator));
+            validator.ShouldHaveChildValidator(
+                x => x.FatturaElettronicaBody, typeof(FatturaElettronica.Validators.FatturaElettronicaBodyValidator));
         }
     }
 }

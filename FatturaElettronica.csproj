@@ -57,6 +57,7 @@
       </SubType>
     </Compile>
     <Compile Include="Common\RappresentanteFiscale.cs" />
+    <Compile Include="Common\TipoDocumento.cs" />
     <Compile Include="Common\SoggettoEmittente.cs">
       <SubType>
       </SubType>
@@ -261,6 +262,10 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\DatiGeneraliDocumentoValidator.cs" />
+    <Compile Include="Validators\DatiGeneraliValidator.cs" />
+    <Compile Include="Validators\FatturaElettronicaBodyValidator.cs" />
+    <Compile Include="Validators\TipoDocumentoDomainValidator.cs" />
     <Compile Include="Validators\SoggettoEmittenteDomainValidator.cs" />
     <Compile Include="Validators\TerzoIntermediarioOSoggettoEmittenteValidator.cs" />
     <Compile Include="Validators\RappresentanteFiscaleCessionarioCommittenteValidator.cs" />

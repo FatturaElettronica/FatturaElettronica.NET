@@ -32,5 +32,9 @@ namespace FatturaElettronica.Validators
         {
             return ruleBuilder.SetValidator(new SoggettoEmittenteDomainValidator<TProperty>());
         }
+        public static IRuleBuilderOptions<T, TProperty> TipoDocumentoDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new TipoDocumentoDomainValidator<TProperty>());
+        }
     }
 }

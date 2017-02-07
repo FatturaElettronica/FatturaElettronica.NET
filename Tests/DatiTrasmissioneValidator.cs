@@ -36,14 +36,14 @@ namespace Tests
         [TestMethod]
         public void FormatoTrasmissioneCannotBeEmpty()
         {
+            challenge.FormatoTrasmissione = null;
+            validator.ShouldHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
             challenge.FormatoTrasmissione = string.Empty;
             validator.ShouldHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
         }
         [TestMethod]
         public void FormatoTrasmissioneCanOnlyAcceptDomainValues()
         {
-            challenge.FormatoTrasmissione = "";
-            validator.ShouldHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
             challenge.FormatoTrasmissione = "XX";
             validator.ShouldHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
             challenge.FormatoTrasmissione = "FPA12";
