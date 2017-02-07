@@ -6,7 +6,7 @@
         {
             get
             {
-                return Common.StatoLiquidazione.Codici;
+                return Tabelle.StatoLiquidazione.Codici;
             }
         }
     }

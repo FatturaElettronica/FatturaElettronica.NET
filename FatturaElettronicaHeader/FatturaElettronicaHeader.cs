@@ -32,7 +32,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader
             rules.Add(new FRequiredValidator("DatiTrasmissione"));
             rules.Add(new FRequiredValidator("CedentePrestatore"));
             rules.Add(new FRequiredValidator("CessionarioCommittente"));
-            rules.Add(new DomainValidator("SoggettoEmittente", string.Empty, Common.SoggettoEmittente.Codici));
+            rules.Add(new DomainValidator("SoggettoEmittente", string.Empty, Tabelle.SoggettoEmittente.Codici));
             return rules;
         }
 

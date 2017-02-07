@@ -18,7 +18,7 @@ namespace FatturaElettronica.Validators
 
         public FRegimeFiscaleValidator(string propertyName, string description) : base(propertyName, description)
         {
-            Domain = Common.RegimeFiscale.Codici;
+            Domain = Tabelle.RegimeFiscale.Codici;
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using System.Linq;
-using FatturaElettronica.Impostazioni;
 
-namespace FatturaElettronica.Common
+namespace FatturaElettronica.Tabelle
 {
     /// <summary>
     /// Lista dei FormatoTrasmissione supportati.

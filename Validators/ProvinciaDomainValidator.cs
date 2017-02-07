@@ -6,7 +6,7 @@
         {
             get
             {
-                return Common.Provincia.Sigle;
+                return Tabelle.Provincia.Sigle;
             }
         }
     }

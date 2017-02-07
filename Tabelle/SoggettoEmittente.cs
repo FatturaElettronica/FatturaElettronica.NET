@@ -1,12 +1,11 @@
 ﻿using System.Linq;
 
-namespace FatturaElettronica.Common
+namespace FatturaElettronica.Tabelle
 {
     /// <summary>
-    /// Indica se vi è un socio unico oppure se vi sono più soci.
+    /// Soggetto Emittente.
     /// </summary>
-    /// <remarks>Andrebbe usato solo nei casi di società SRL iscritte al registro imprese.</remarks>
-    public class SocioUnico
+    public class SoggettoEmittente
     {
         /// <summary>
         /// Descrizione.
@@ -16,7 +15,7 @@ namespace FatturaElettronica.Common
         /// Codice.
         /// </summary>
         public string Codice { get; private set; }
-        private SocioUnico(string codice, string descrizione)
+        private SoggettoEmittente(string codice, string descrizione)
         {
             Codice = codice;
             Descrizione = descrizione;
@@ -31,12 +30,12 @@ namespace FatturaElettronica.Common
         }
 
         /// <summary>
-        /// Situazioni societarie ammesse.
+        /// Sogetti emittenti ammessi.
         /// </summary>
-        public static readonly SocioUnico[] List =
+        public static readonly SoggettoEmittente[] List =
         {
-            new SocioUnico("SU", "Socio unico"),
-            new SocioUnico("SM", "Più soci")
+            new SoggettoEmittente("CC", "cessionario/committente"),
+            new SoggettoEmittente("TZ", "terzo")
         };
     }
 }

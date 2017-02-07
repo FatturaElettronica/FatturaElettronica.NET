@@ -26,11 +26,11 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
                     new FRequiredValidator(),
                     new FLengthValidator(1, 20)
                 }));
-            rules.Add(new DomainValidator("SocioUnico", "Valori ammessi: [SU],[SM].", Common.SocioUnico.Codici));
+            rules.Add(new DomainValidator("SocioUnico", "Valori ammessi: [SU],[SM].", Tabelle.SocioUnico.Codici));
             rules.Add(new AndCompositeValidator("StatoLiquidazione",
                 new List<Validator> {
                     new FRequiredValidator(),
-                    new DomainValidator("Valori ammessi: [LS],[LN].", Common.StatoLiquidazione.Codici)}));
+                    new DomainValidator("Valori ammessi: [LS],[LN].", Tabelle.StatoLiquidazione.Codici)}));
             return rules;
         }
 

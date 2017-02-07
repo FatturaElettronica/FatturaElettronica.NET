@@ -1,6 +1,4 @@
-﻿using FatturaElettronica.Common;
-
-namespace FatturaElettronica.Validators
+﻿namespace FatturaElettronica.Validators
 {
     public class TipoDocumentoDomainValidator<T> : DomainValidator<T>
     {
@@ -8,7 +6,7 @@ namespace FatturaElettronica.Validators
         {
             get
             {
-                return TipoDocumento.Codici;
+                return Tabelle.TipoDocumento.Codici;
             }
         }
     }

@@ -39,7 +39,6 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Common\CausalePagamento.cs" />
     <Compile Include="Common\DenominazioneNomeCognome.cs" />
     <Compile Include="Common\Anagrafica.cs">
       <SubType>
@@ -57,30 +56,8 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="Common\DatiRitenuta.cs" />
+    <Compile Include="Tabelle\TipoRitenuta.cs" />
     <Compile Include="Common\RappresentanteFiscale.cs" />
-    <Compile Include="Common\Divisa.cs" />
-    <Compile Include="Common\TipoDocumento.cs" />
-    <Compile Include="Common\SoggettoEmittente.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\StatoLiquidazione.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\SocioUnico.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\RegimeFiscale.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\Provincia.cs">
-      <SubType>
-      </SubType>
-    </Compile>
     <Compile Include="Common\IdFiscaleIva.cs">
       <SubType>
       </SubType>
@@ -239,10 +216,6 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="Common\FormatoTrasmissione.cs">
-      <SubType>
-      </SubType>
-    </Compile>
     <Compile Include="FatturaElettronicaHeader\DatiTrasmissione\DatiTrasmissione.cs">
       <SubType>
       </SubType>
@@ -265,6 +238,15 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tabelle\CausalePagamento.cs" />
+    <Compile Include="Tabelle\Divisa.cs" />
+    <Compile Include="Tabelle\FormatoTrasmissione.cs" />
+    <Compile Include="Tabelle\Provincia.cs" />
+    <Compile Include="Tabelle\RegimeFiscale.cs" />
+    <Compile Include="Tabelle\SocioUnico.cs" />
+    <Compile Include="Tabelle\SoggettoEmittente.cs" />
+    <Compile Include="Tabelle\StatoLiquidazione.cs" />
+    <Compile Include="Tabelle\TipoDocumento.cs" />
     <Compile Include="Validators\DatiRitenutaValidator.cs" />
     <Compile Include="Validators\DatiGeneraliDocumentoValidator.cs" />
     <Compile Include="Validators\DatiGeneraliValidator.cs" />

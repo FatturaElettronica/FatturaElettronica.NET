@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace FatturaElettronica.Common
+namespace FatturaElettronica.Tabelle
 {
     /// <summary>
     /// Province italiane.

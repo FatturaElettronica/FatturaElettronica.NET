@@ -1,6 +1,4 @@
-﻿using FatturaElettronica.Common;
-
-namespace FatturaElettronica.Validators
+﻿namespace FatturaElettronica.Validators
 {
     public class TipoRitenutaDomainValidator<T> : DomainValidator<T>
     {
@@ -8,7 +6,7 @@ namespace FatturaElettronica.Validators
         {
             get
             {
-                return TipoRitenuta.Codici;
+                return Tabelle.TipoRitenuta.Codici;
             }
         }
     }
