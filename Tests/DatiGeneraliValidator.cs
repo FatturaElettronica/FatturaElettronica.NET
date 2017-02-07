@@ -1,6 +1,8 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using System;
+using System.Linq;
 
 namespace Tests
 {
@@ -12,6 +14,25 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(
                 x => x.DatiGeneraliDocumento, typeof(FatturaElettronica.Validators.DatiGeneraliDocumentoValidator));
+        }
+        [TestMethod]
+        public void DatiGeneraliDocumentoCannotPredateDatiFattureCollegate()
+        {
+            challenge.DatiGeneraliDocumento.Data = DateTime.Now.AddDays(-1);
+            challenge.DatiFattureCollegate.Add(
+                new DatiFattureCollegate { Data = DateTime.Now });
+
+            var r = validator.Validate(challenge);
+            Assert.IsFalse(r.IsValid);
+
+            // For some reason this does not work (I suspect because property name is dotted)
+            //validator.ShouldHaveValidationErrorFor(x => x.DatiGeneraliDocumento.Data, challenge);
+
+            Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGeneraliDocumento.Data"));
+
+            challenge.DatiGeneraliDocumento.Data = DateTime.Now;
+            r = validator.Validate(challenge);
+            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGeneraliDocumento.Data"));
         }
     }
 }

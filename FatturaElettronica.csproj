@@ -39,6 +39,7 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\CausalePagamento.cs" />
     <Compile Include="Common\DenominazioneNomeCognome.cs" />
     <Compile Include="Common\Anagrafica.cs">
       <SubType>
@@ -56,7 +57,9 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Common\DatiRitenuta.cs" />
     <Compile Include="Common\RappresentanteFiscale.cs" />
+    <Compile Include="Common\Divisa.cs" />
     <Compile Include="Common\TipoDocumento.cs" />
     <Compile Include="Common\SoggettoEmittente.cs">
       <SubType>
@@ -262,9 +265,13 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\DatiRitenutaValidator.cs" />
     <Compile Include="Validators\DatiGeneraliDocumentoValidator.cs" />
     <Compile Include="Validators\DatiGeneraliValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaBodyValidator.cs" />
+    <Compile Include="Validators\DivisaDomainValidator.cs" />
+    <Compile Include="Validators\CausalePagamentoDomainValidator.cs" />
+    <Compile Include="Validators\TipoRitenutaDomainValidator.cs" />
     <Compile Include="Validators\TipoDocumentoDomainValidator.cs" />
     <Compile Include="Validators\SoggettoEmittenteDomainValidator.cs" />
     <Compile Include="Validators\TerzoIntermediarioOSoggettoEmittenteValidator.cs" />

@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="BaseRappresentanteFiscaleValidator.cs" />
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
+    <Compile Include="DatiRitenutaValidator.cs" />
     <Compile Include="DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="CessionarioCommittenteValidator.cs" />
     <Compile Include="DatiGeneraliValidator.cs" />
