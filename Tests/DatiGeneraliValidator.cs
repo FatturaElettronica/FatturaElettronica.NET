@@ -36,8 +36,27 @@ namespace Tests
         [TestMethod]
         public void DatiOrdineAcquistoHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
-                x => x.DatiOrdineAcquisto, typeof(FatturaElettronica.Validators.DatiOrdineAcquistoValidator));
+            validator.ShouldHaveChildValidator(x => x.DatiOrdineAcquisto, typeof(FatturaElettronica.Validators.DatiOrdineAcquistoValidator));
+        }
+        [TestMethod]
+        public void DatiContrattoHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiContratto, typeof(FatturaElettronica.Validators.DatiContrattoValidator));
+        }
+        [TestMethod]
+        public void DatiConvenzioneHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiConvenzione, typeof(FatturaElettronica.Validators.DatiConvenzioneValidator));
+        }
+        [TestMethod]
+        public void DatiRicezioneHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiRicezione, typeof(FatturaElettronica.Validators.DatiRicezioneValidator));
+        }
+        [TestMethod]
+        public void DatiFattureCollegateHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiFattureCollegate, typeof(FatturaElettronica.Validators.DatiFattureCollegateValidator));
         }
     }
 }
