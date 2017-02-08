@@ -16,6 +16,7 @@ namespace FatturaElettronica.Validators
                 }
                 return true;
             }).WithMessage("00418 Data antecedente a una o più date in DatiFattureCollegate");
+            RuleFor(x => x.DatiOrdineAcquisto).SetCollectionValidator(new DatiOrdineAcquistoValidator());
         }
     }
 }

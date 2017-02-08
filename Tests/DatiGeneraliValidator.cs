@@ -33,5 +33,11 @@ namespace Tests
             r = validator.Validate(challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGeneraliDocumento.Data"));
         }
+        [TestMethod]
+        public void DatiOrdineAcquistoHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(
+                x => x.DatiOrdineAcquisto, typeof(FatturaElettronica.Validators.DatiOrdineAcquistoValidator));
+        }
     }
 }

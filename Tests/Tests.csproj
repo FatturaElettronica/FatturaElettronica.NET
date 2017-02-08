@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="BaseRappresentanteFiscaleValidator.cs" />
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
+    <Compile Include="DatiOrdineAcquistoValidator.cs" />
     <Compile Include="DatiCassaPrevidenzialeValidator.cs" />
     <Compile Include="DatiBolloValidator.cs" />
     <Compile Include="DatiRitenutaValidator.cs" />

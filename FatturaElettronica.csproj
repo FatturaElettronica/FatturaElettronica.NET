@@ -251,6 +251,7 @@
     <Compile Include="Tabelle\SoggettoEmittente.cs" />
     <Compile Include="Tabelle\StatoLiquidazione.cs" />
     <Compile Include="Tabelle\TipoDocumento.cs" />
+    <Compile Include="Validators\DatiOrdineAcquistoValidator.cs" />
     <Compile Include="Validators\StringLengthValidator.cs" />
     <Compile Include="Validators\IsValidScontoMaggiorazioneValidator.cs" />
     <Compile Include="Validators\ScontoMaggiorazioneValidator.cs" />
