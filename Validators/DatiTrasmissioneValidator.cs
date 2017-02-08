@@ -9,7 +9,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(dt => dt.IdTrasmittente).SetValidator(new IdTrasmittenteValidator());
             RuleFor(dt => dt.ProgressivoInvio).Length(1, 10);
-            RuleFor(dt => dt.FormatoTrasmissione).FormatoTrasmissioneDomain();
+            RuleFor(dt => dt.FormatoTrasmissione).IsValidFormatoTrasmissioneValue();
 
             RuleFor(dt => dt.CodiceDestinatario).Length(6)
                 .When(dt => dt.FormatoTrasmissione == Impostazioni.FormatoTrasmissione.PubblicaAmministrazione);

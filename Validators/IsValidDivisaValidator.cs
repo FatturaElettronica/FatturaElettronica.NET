@@ -1,12 +1,12 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class ProvinciaDomainValidator<T> : DomainValidator<T>
+    public class IsValidDivisaValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {
             get
             {
-                return new Tabelle.Provincia().Codici;
+                return new Tabelle.Divisa().Codici;
             }
         }
     }

@@ -1,12 +1,12 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class CausalePagamentoDomainValidator<T> : DomainValidator<T>
+    public class IsSocioUnicoValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {
             get
             {
-                return new Tabelle.CausalePagamento().Codici;
+                return new Tabelle.SocioUnico().Codici;
             }
         }
     }

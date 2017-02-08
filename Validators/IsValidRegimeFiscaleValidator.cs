@@ -1,12 +1,12 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class DivisaDomainValidator<T> : DomainValidator<T>
+    public class IsValidRegimeFiscaleValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {
             get
             {
-                return new Tabelle.Divisa().Codici;
+                return new Tabelle.RegimeFiscale().Codici;
             }
         }
     }

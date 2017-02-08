@@ -9,10 +9,10 @@ namespace FatturaElettronica.Validators
         {
             When(x => !x.IsEmpty(), () =>
             {
-                RuleFor(x => x.TipoRitenuta).NotEmpty().TipoRitenutaDomain();
+                RuleFor(x => x.TipoRitenuta).NotEmpty().IsValidTipoRitenutaValue();
                 RuleFor(x => x.ImportoRitenuta).NotNull();
                 RuleFor(x => x.AliquotaRitenuta).NotNull();
-                RuleFor(x => x.CausalePagamento).NotNull().CausalePagamentoDomain();
+                RuleFor(x => x.CausalePagamento).NotNull().IsValidCausalePagamentoValue();
             });
         }
     }

@@ -7,9 +7,9 @@ namespace FatturaElettronica.Validators
         public DatiAnagraficiCedentePrestatoreValidator()
         {
             RuleFor(x => x.AlboProfessionale).Length(1, 60);
-            RuleFor(x => x.ProvinciaAlbo).ProvinciaDomain().Unless(x => string.IsNullOrEmpty(x.ProvinciaAlbo));
+            RuleFor(x => x.ProvinciaAlbo).IsValidProvinciaValue().Unless(x => string.IsNullOrEmpty(x.ProvinciaAlbo));
             RuleFor(x => x.NumeroIscrizioneAlbo).Length(1, 60);
-            RuleFor(x => x.RegimeFiscale).NotEmpty().RegimeFiscaleDomain();
+            RuleFor(x => x.RegimeFiscale).NotEmpty().IsValidRegimeFiscaleValue();
         }
     }
 }

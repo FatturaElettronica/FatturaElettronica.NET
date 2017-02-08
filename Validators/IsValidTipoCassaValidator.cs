@@ -2,7 +2,7 @@
 
 namespace FatturaElettronica.Validators
 {
-    public class TipoCassaDomainValidator<T> : DomainValidator<T>
+    public class IsValidTipoCassaValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {

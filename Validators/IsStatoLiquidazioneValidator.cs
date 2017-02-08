@@ -1,12 +1,12 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class SocioUnicoDomainValidator<T> : DomainValidator<T>
+    public class IsStatoLiquidazioneValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {
             get
             {
-                return new Tabelle.SocioUnico().Codici;
+                return new Tabelle.StatoLiquidazione().Codici;
             }
         }
     }

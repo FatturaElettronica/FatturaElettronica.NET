@@ -2,7 +2,7 @@
 
 namespace FatturaElettronica.Validators
 {
-    public class NaturaDomainValidator<T> : DomainValidator<T>
+    public class IsValidNaturaValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {

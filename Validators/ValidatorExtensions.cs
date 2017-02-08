@@ -4,57 +4,57 @@ namespace FatturaElettronica.Validators
 {
     public static class ValidatorExtensions
     {
-        public static IRuleBuilderOptions<T, TProperty> FormatoTrasmissioneDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidFormatoTrasmissioneValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new FormatoTrasmissioneDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidFormatoTrasmissioneValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> IdPaeseDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidIdPaeseValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new IdPaeseDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidIdPaeseValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> ProvinciaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidProvinciaValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new ProvinciaDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidProvinciaValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> RegimeFiscaleDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidRegimeFiscaleValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new RegimeFiscaleDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidRegimeFiscaleValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> SocioUnicoDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidSocioUnicoValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new SocioUnicoDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsSocioUnicoValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> StatoLiquidazioneDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidStatoLiquidazioneValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new StatoLiquidazioneDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsStatoLiquidazioneValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> SoggettoEmittenteDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidSoggettoEmittenteValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new SoggettoEmittenteDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsSoggettoEmittenteValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> TipoDocumentoDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidTipoDocumentoValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new TipoDocumentoDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidTipoDocumentoValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> DivisaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidDivisaValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new DivisaDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidDivisaValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> TipoRitenutaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidTipoRitenutaValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new TipoRitenutaDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidTipoRitenutaValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> CausalePagamentoDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidCausalePagamentoValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new CausalePagamentoDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidCausalePagamentoValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> TipoCassaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidTipoCassaValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new TipoCassaDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidTipoCassaValidator<TProperty>());
         }
-        public static IRuleBuilderOptions<T, TProperty> NaturaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static IRuleBuilderOptions<T, TProperty> IsValidNaturaValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new NaturaDomainValidator<TProperty>());
+            return ruleBuilder.SetValidator(new IsValidNaturaValidator<TProperty>());
         }
         public static IRuleBuilderOptions<T, TProperty> IsValidScontoMaggiorazioneValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
         {

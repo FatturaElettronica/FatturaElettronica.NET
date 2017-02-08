@@ -1,14 +1,14 @@
-﻿using FatturaElettronica.Tabelle;
+﻿using BusinessObjects;
 
 namespace FatturaElettronica.Validators
 {
-    public class TipoRitenutaDomainValidator<T> : DomainValidator<T>
+    public class IsValidIdPaeseValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {
             get
             {
-                return new TipoRitenuta().Codici;
+                return Country.TwoLetterCodes;
             }
         }
     }

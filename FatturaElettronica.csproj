@@ -260,13 +260,13 @@
     <Compile Include="Validators\DatiGeneraliDocumentoValidator.cs" />
     <Compile Include="Validators\DatiGeneraliValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaBodyValidator.cs" />
-    <Compile Include="Validators\DivisaDomainValidator.cs" />
-    <Compile Include="Validators\CausalePagamentoDomainValidator.cs" />
-    <Compile Include="Validators\NaturaDomainValidator.cs" />
-    <Compile Include="Validators\TipoCassaDomainValidator.cs" />
-    <Compile Include="Validators\TipoRitenutaDomainValidator.cs" />
-    <Compile Include="Validators\TipoDocumentoDomainValidator.cs" />
-    <Compile Include="Validators\SoggettoEmittenteDomainValidator.cs" />
+    <Compile Include="Validators\IsValidDivisaValidator.cs" />
+    <Compile Include="Validators\IsValidCausalePagamentoValidator.cs" />
+    <Compile Include="Validators\IsValidNaturaValidator.cs" />
+    <Compile Include="Validators\IsValidTipoCassaValidator.cs" />
+    <Compile Include="Validators\IsValidTipoRitenutaValidator.cs" />
+    <Compile Include="Validators\IsValidTipoDocumentoValidator.cs" />
+    <Compile Include="Validators\IsSoggettoEmittenteValidator.cs" />
     <Compile Include="Validators\TerzoIntermediarioOSoggettoEmittenteValidator.cs" />
     <Compile Include="Validators\RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="Validators\DenominazioneNomeCognomeValidator.cs" />
@@ -277,8 +277,8 @@
     <Compile Include="Validators\DatiAnagraficiBaseValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiValidator.cs" />
     <Compile Include="Validators\SedeCessionarioCommittenteValidator.cs" />
-    <Compile Include="Validators\StatoLiquidazioneDomainValidator.cs" />
-    <Compile Include="Validators\SocioUnicoDomainValidator.cs" />
+    <Compile Include="Validators\IsStatoLiquidazioneValidator.cs" />
+    <Compile Include="Validators\IsSocioUnicoValidator.cs" />
     <Compile Include="Validators\IscrizioneREAValidator.cs" />
     <Compile Include="Validators\StabileOrganizzazioneValidator.cs" />
     <Compile Include="Validators\SedeCedentePrestatoreValidator.cs" />
@@ -290,7 +290,7 @@
     <Compile Include="Validators\DatiTrasmissioneValidator.cs" />
     <Compile Include="Validators\DomainValidator.cs" />
     <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
-    <Compile Include="Validators\FormatoTrasmissioneValidator.cs" />
+    <Compile Include="Validators\IsValidFormatoTrasmissioneValidator.cs" />
     <Compile Include="Validators\FPECDestinatarioValidator.cs" />
     <Compile Include="Validators\FAliquotaIVAValidator.cs" />
     <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
@@ -368,9 +368,9 @@
       </SubType>
     </Compile>
     <Compile Include="Validators\IdFiscaleIVAValidator.cs" />
-    <Compile Include="Validators\RegimeFiscaleDomainValidator.cs" />
-    <Compile Include="Validators\ProvinciaDomainValidator.cs" />
-    <Compile Include="Validators\IdPaeseDomainValidator.cs" />
+    <Compile Include="Validators\IsValidRegimeFiscaleValidator.cs" />
+    <Compile Include="Validators\IsValidProvinciaValidator.cs" />
+    <Compile Include="Validators\IsValidIdPaeseValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaValidator.cs" />
     <Compile Include="Validators\IdTrasmittenteValidator.cs" />
     <Compile Include="Validators\ValidatorExtensions.cs" />

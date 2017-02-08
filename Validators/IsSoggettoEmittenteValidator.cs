@@ -1,12 +1,12 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class FormatoTrasmissioneDomainValidator<T> : DomainValidator<T>
+    public class IsSoggettoEmittenteValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {
             get
             {
-                return new[] { "FPA12", "FPR12" };
+                return new Tabelle.SoggettoEmittente().Codici;
             }
         }
     }

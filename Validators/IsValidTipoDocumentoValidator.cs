@@ -1,12 +1,12 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class StatoLiquidazioneDomainValidator<T> : DomainValidator<T>
+    public class IsValidTipoDocumentoValidator<T> : DomainValidator<T>
     {
         protected override string[] Domain
         {
             get
             {
-                return new Tabelle.StatoLiquidazione().Codici;
+                return new Tabelle.TipoDocumento().Codici;
             }
         }
     }
