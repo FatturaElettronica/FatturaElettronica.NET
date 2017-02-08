@@ -48,5 +48,17 @@ namespace FatturaElettronica.Validators
         {
             return ruleBuilder.SetValidator(new CausalePagamentoDomainValidator<TProperty>());
         }
+        public static IRuleBuilderOptions<T, TProperty> TipoCassaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new TipoCassaDomainValidator<TProperty>());
+        }
+        public static IRuleBuilderOptions<T, TProperty> NaturaDomain<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new NaturaDomainValidator<TProperty>());
+        }
+        public static IRuleBuilderOptions<T, TProperty> IsValidScontoMaggiorazioneValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new IsValidScontoMaggiorazioneValidator<TProperty>());
+        }
     }
 }

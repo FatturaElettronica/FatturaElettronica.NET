@@ -7,10 +7,13 @@ namespace FatturaElettronica.Validators
     {
         public DatiRitenutaValidator()
         {
-            RuleFor(x => x.TipoRitenuta).NotEmpty().TipoRitenutaDomain();
-            RuleFor(x => x.ImportoRitenuta).NotNull();
-            RuleFor(x => x.AliquotaRitenuta).NotNull();
-            RuleFor(x => x.CausalePagamento).NotNull().CausalePagamentoDomain();
+            When(x => !x.IsEmpty(), () =>
+            {
+                RuleFor(x => x.TipoRitenuta).NotEmpty().TipoRitenutaDomain();
+                RuleFor(x => x.ImportoRitenuta).NotNull();
+                RuleFor(x => x.AliquotaRitenuta).NotNull();
+                RuleFor(x => x.CausalePagamento).NotNull().CausalePagamentoDomain();
+            });
         }
     }
 }

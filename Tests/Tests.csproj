@@ -64,12 +64,16 @@
   <ItemGroup>
     <Compile Include="BaseRappresentanteFiscaleValidator.cs" />
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
+    <Compile Include="DatiCassaPrevidenzialeValidator.cs" />
+    <Compile Include="DatiBolloValidator.cs" />
     <Compile Include="DatiRitenutaValidator.cs" />
+    <Compile Include="StringLengthValidator.cs" />
     <Compile Include="DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="CessionarioCommittenteValidator.cs" />
     <Compile Include="DatiGeneraliValidator.cs" />
     <Compile Include="FatturaElettronicaBodyValidator.cs" />
     <Compile Include="DatiGeneraliDocumentoValidator.cs" />
+    <Compile Include="ScontoMaggiorazioneValidator.cs" />
     <Compile Include="RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="BaseClass.cs" />
     <Compile Include="TerzoIntermediarioOSoggettoEmittenteValidator.cs" />

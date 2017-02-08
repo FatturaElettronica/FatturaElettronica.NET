@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Validators;
+using System.Linq;
 
 namespace Tests
 {
@@ -74,6 +75,57 @@ namespace Tests
         public void DatiRitenutaHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
+        }
+        [TestMethod]
+        public void DatiBolloHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiBollo, typeof(FatturaElettronica.Validators.DatiBolloValidator));
+        }
+        [TestMethod]
+        public void DatiCassaPrevidenzialeHasCollectionValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiCassaPrevidenziale, typeof(FatturaElettronica.Validators.DatiCassaPrevidenzialeValidator));
+        }
+        [TestMethod]
+        public void ScontoMaggiorazioneHasCollectionValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.ScontoMaggiorazione, typeof(FatturaElettronica.Validators.ScontoMaggiorazioneValidator));
+        }
+        [TestMethod]
+        public void DatiRitenutaRequiredWhenDatiCassaPrevidenzialeNotEmpty()
+        {
+            challenge.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale { Ritenuta = "SI" });
+            var r = validator.Validate(challenge);
+            Assert.IsFalse(r.IsValid);
+
+            //For some reason this does not work (because DatiCassaPrevidenziale is a collection)
+            // TODO consider implementing an extension method for this
+            Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale"));
+
+            challenge.DatiCassaPrevidenziale.Clear();
+            r = validator.Validate(challenge);
+            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale"));
+        }
+        [TestMethod]
+        public void CausaleHasCollectionValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.Causale, typeof(FatturaElettronica.Validators.StringLengthValidator));
+        }
+        [TestMethod]
+        public void Art73CanBeEmpty()
+        {
+            challenge.Art73 = null;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Art73, challenge);
+            challenge.Art73 = string.Empty;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Art73, challenge);
+        }
+        [TestMethod]
+        public void Art73CanOnlyAcceptSIValue()
+        {
+            challenge.Art73 = "NO";
+            validator.ShouldHaveValidationErrorFor(x => x.Art73, challenge);
+            challenge.Art73 = "SI";
+            validator.ShouldNotHaveValidationErrorFor(x => x.Art73, challenge);
         }
     }
 }

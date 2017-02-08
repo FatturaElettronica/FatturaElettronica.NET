@@ -7,6 +7,31 @@ namespace Tests
     [TestClass]
     public class DatiRitenutaValidator: BaseClass<DatiRitenuta, FatturaElettronica.Validators.DatiRitenutaValidator>
     {
+        [TestInitialize]
+        public new void Init()
+        {
+            base.Init();
+
+            // Abbiamo bisogno che l'istanza non sia Empty.
+            challenge.CausalePagamento = "hello";
+
+        }
+        [TestMethod]
+        public void ValidationIsPerformedWhenNotEmpty()
+        {
+            var r = validator.Validate(challenge);
+            Assert.IsFalse(r.IsValid);
+        }
+
+        [TestMethod]
+        public void IsValidWhenEmptyBecauseOptional()
+        {
+            // Riportiamo istanza a Empty (vedi Init()).
+            challenge.CausalePagamento = null;
+
+            var r = validator.Validate(challenge);
+            Assert.IsTrue(r.IsValid);
+        }
         [TestMethod]
         public void TipoRitenutaCannotBeEmpty()
         {
@@ -44,6 +69,10 @@ namespace Tests
         [TestMethod]
         public void CausalePagamentoCannotBeEmpty()
         {
+            // Abbiamo bisogno di istanza non Empty ma in questo caso non possiamo usare CausalePagamento
+            // a tal scopo perché dobbiamo testare proprio quella proprietà.
+            challenge.ImportoRitenuta = 1;
+
             challenge.CausalePagamento = null;
             validator.ShouldHaveValidationErrorFor(x => x.CausalePagamento, challenge);
             challenge.CausalePagamento = string.Empty;

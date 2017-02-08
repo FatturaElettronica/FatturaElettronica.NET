@@ -26,8 +26,7 @@ namespace Tests
             Assert.IsFalse(r.IsValid);
 
             // For some reason this does not work (I suspect because property name is dotted)
-            //validator.ShouldHaveValidationErrorFor(x => x.DatiGeneraliDocumento.Data, challenge);
-
+            // TODO consider implementing an extension method for this
             Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGeneraliDocumento.Data"));
 
             challenge.DatiGeneraliDocumento.Data = DateTime.Now;
