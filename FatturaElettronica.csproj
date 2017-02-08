@@ -56,6 +56,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Tabelle\Tabella.cs" />
     <Compile Include="Tabelle\TipoRitenuta.cs" />
     <Compile Include="Common\RappresentanteFiscale.cs" />
     <Compile Include="Common\IdFiscaleIva.cs">

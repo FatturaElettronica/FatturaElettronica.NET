@@ -1,41 +1,16 @@
-﻿using System.Linq;
-
-namespace FatturaElettronica.Tabelle
+﻿namespace FatturaElettronica.Tabelle
 {
-    /// <summary>
-    /// Stato Liquidazione di società iscritta al registro imprese.
-    /// </summary>
-    public class StatoLiquidazione
+    public class StatoLiquidazione : Tabella
     {
-        /// <summary>
-        /// Descrizione.
-        /// </summary>
-        public string Descrizione { get; private set; }
-        /// <summary>
-        /// Codice.
-        /// </summary>
-        public string Codice { get; private set; }
-        private StatoLiquidazione(string codice, string descrizione)
+        public override Tabella[] List
         {
-            Codice = codice;
-            Descrizione = descrizione;
+            get
+            {
+                return new Tabella[] {
+                    new StatoLiquidazione { Codice = "LS", Nome = "In liquidazione" },
+                    new StatoLiquidazione { Codice = "LN", Nome = "Non in liquidazione" }
+                };
+            }
         }
-
-        /// <summary>
-        /// Array di Codici.
-        /// </summary>
-        public static string[] Codici
-        {
-            get { return List.Select(x => x.Codice).ToArray(); }
-        }
-
-        /// <summary>
-        /// Situazioni societarie ammesse.
-        /// </summary>
-        public static readonly StatoLiquidazione[] List =
-        {
-            new StatoLiquidazione("LS", "In liquidazione"),
-            new StatoLiquidazione("LN", "Non in liquidazione")
-        };
     }
 }

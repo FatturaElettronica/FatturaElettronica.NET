@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.Provincia.Sigle;
+                return new Tabelle.Provincia().Codici;
             }
         }
     }

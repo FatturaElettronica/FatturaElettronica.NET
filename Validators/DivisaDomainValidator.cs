@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.Divisa.Sigle;
+                return new Tabelle.Divisa().Codici;
             }
         }
     }

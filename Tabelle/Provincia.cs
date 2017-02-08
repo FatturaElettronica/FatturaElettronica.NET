@@ -2,165 +2,127 @@
 
 namespace FatturaElettronica.Tabelle
 {
-    /// <summary>
-    /// Province italiane.
-    /// </summary>
-    public class Provincia
+    public class Provincia : Tabella
     {
-        /// <summary>
-        /// Nome della provincia.
-        /// </summary>
-        public string Nome { get; private set; }
-        /// <summary>
-        /// Sigla della provincia.
-        /// </summary>
-        public string Sigla { get; private set; }
-        /// <summary>
-        /// Nome e Sigla nel formato Provincia (Sigla).
-        /// </summary>
-        public string Descrizione { 
-            get {
-                return (string.IsNullOrEmpty(Nome)) ? string.Empty : Nome + " (" + Sigla + ")";
+        public override Tabella[] List
+        {
+            get
+            {
+                return new Tabella[]
+                {
+                    new Provincia { Codice = "", Nome = null },
+                    new Provincia { Codice = "AG", Nome = "Agrigento" },
+                    new Provincia { Codice = "AL", Nome = "Alessandria" },
+                    new Provincia { Codice = "AN", Nome = "Ancona" },
+                    new Provincia { Codice = "AO", Nome = "Aosta" },
+                    new Provincia { Codice = "AQ", Nome = "L'Aquila" },
+                    new Provincia { Codice = "AR", Nome = "Arezzo" },
+                    new Provincia { Codice = "AP", Nome = "Ascoli-Piceno" },
+                    new Provincia { Codice = "AT", Nome = "Asti" },
+                    new Provincia { Codice = "AV", Nome = "Avellino" },
+                    new Provincia { Codice = "BA", Nome = "Bari" },
+                    new Provincia { Codice = "BT", Nome = "Barletta-Andria-Trani" },
+                    new Provincia { Codice = "BL", Nome = "Belluno" },
+                    new Provincia { Codice = "BN", Nome = "Benevento" },
+                    new Provincia { Codice = "BG", Nome = "Bergamo" },
+                    new Provincia { Codice = "BI", Nome = "Biella" },
+                    new Provincia { Codice = "BO", Nome = "Bologna" },
+                    new Provincia { Codice = "BZ", Nome = "Bolzano" },
+                    new Provincia { Codice = "BS", Nome = "Brescia" },
+                    new Provincia { Codice = "BR", Nome = "Brindisi" },
+                    new Provincia { Codice = "CA", Nome = "Cagliari" },
+                    new Provincia { Codice = "CL", Nome = "Caltanissetta" },
+                    new Provincia { Codice = "CB", Nome = "Campobasso" },
+                    new Provincia { Codice = "CI", Nome = "Carbonia Iglesias" },
+                    new Provincia { Codice = "CE", Nome = "Caserta" },
+                    new Provincia { Codice = "CT", Nome = "Catania" },
+                    new Provincia { Codice = "CZ", Nome = "Catanzaro" },
+                    new Provincia { Codice = "CH", Nome = "Chieti" },
+                    new Provincia { Codice = "CO", Nome = "Como" },
+                    new Provincia { Codice = "CS", Nome = "Cosenza" },
+                    new Provincia { Codice = "CR", Nome = "Cremona" },
+                    new Provincia { Codice = "KR", Nome = "Crotone" },
+                    new Provincia { Codice = "CN", Nome = "Cuneo" },
+                    new Provincia { Codice = "EN", Nome = "Enna" },
+                    new Provincia { Codice = "FM", Nome = "Fermo" },
+                    new Provincia { Codice = "FE", Nome = "Ferrara" },
+                    new Provincia { Codice = "FI", Nome = "Firenze" },
+                    new Provincia { Codice = "FG", Nome = "Foggia" },
+                    new Provincia { Codice = "FC", Nome = "Forli-Cesena" },
+                    new Provincia { Codice = "FR", Nome = "Frosinone" },
+                    new Provincia { Codice = "GE", Nome = "Genova" },
+                    new Provincia { Codice = "GO", Nome = "Gorizia" },
+                    new Provincia { Codice = "GR", Nome = "Grosseto" },
+                    new Provincia { Codice = "IM", Nome = "Imperia" },
+                    new Provincia { Codice = "IS", Nome = "Isernia" },
+                    new Provincia { Codice = "SP", Nome = "La-Spezia" },
+                    new Provincia { Codice = "LT", Nome = "Latina" },
+                    new Provincia { Codice = "LE", Nome = "Lecce" },
+                    new Provincia { Codice = "LC", Nome = "Lecco" },
+                    new Provincia { Codice = "LI", Nome = "Livorno" },
+                    new Provincia { Codice = "LO", Nome = "Lodi" },
+                    new Provincia { Codice = "LU", Nome = "Lucca" },
+                    new Provincia { Codice = "MC", Nome = "Macerata" },
+                    new Provincia { Codice = "MN", Nome = "Mantova" },
+                    new Provincia { Codice = "MS", Nome = "Massa-Carrara" },
+                    new Provincia { Codice = "MT", Nome = "Matera" },
+                    new Provincia { Codice = "VS", Nome = "Medio Campidano" },
+                    new Provincia { Codice = "ME", Nome = "Messina" },
+                    new Provincia { Codice = "MI", Nome = "Milano" },
+                    new Provincia { Codice = "MO", Nome = "Modena" },
+                    new Provincia { Codice = "MB", Nome = "Monza-Brianza" },
+                    new Provincia { Codice = "NA", Nome = "Napoli" },
+                    new Provincia { Codice = "NO", Nome = "Novara" },
+                    new Provincia { Codice = "NU", Nome = "Nuoro" },
+                    new Provincia { Codice = "OG", Nome = "Ogliastra" },
+                    new Provincia { Codice = "OT", Nome = "Olbia Tempio" },
+                    new Provincia { Codice = "OR", Nome = "Oristano" },
+                    new Provincia { Codice = "PD", Nome = "Padova" },
+                    new Provincia { Codice = "PA", Nome = "Palermo" },
+                    new Provincia { Codice = "PR", Nome = "Parma" },
+                    new Provincia { Codice = "PV", Nome = "Pavia" },
+                    new Provincia { Codice = "PG", Nome = "Perugia" },
+                    new Provincia { Codice = "PU", Nome = "Pesaro-Urbino" },
+                    new Provincia { Codice = "PE", Nome = "Pescara" },
+                    new Provincia { Codice = "PC", Nome = "Piacenza" },
+                    new Provincia { Codice = "PI", Nome = "Pisa" },
+                    new Provincia { Codice = "PT", Nome = "Pistoia" },
+                    new Provincia { Codice = "PN", Nome = "Pordenone" },
+                    new Provincia { Codice = "PZ", Nome = "Potenza" },
+                    new Provincia { Codice = "PO", Nome = "Prato" },
+                    new Provincia { Codice = "RG", Nome = "Ragusa" },
+                    new Provincia { Codice = "RA", Nome = "Ravenna" },
+                    new Provincia { Codice = "RC", Nome = "Reggio-Calabria" },
+                    new Provincia { Codice = "RE", Nome = "Reggio-Emilia" },
+                    new Provincia { Codice = "RI", Nome = "Rieti" },
+                    new Provincia { Codice = "RN", Nome = "Rimini" },
+                    new Provincia { Codice = "RM", Nome = "Roma" },
+                    new Provincia { Codice = "RO", Nome = "Rovigo" },
+                    new Provincia { Codice = "SA", Nome = "Salerno" },
+                    new Provincia { Codice = "SS", Nome = "Sassari" },
+                    new Provincia { Codice = "SV", Nome = "Savona" },
+                    new Provincia { Codice = "SI", Nome = "Siena" },
+                    new Provincia { Codice = "SR", Nome = "Siracusa" },
+                    new Provincia { Codice = "SO", Nome = "Sondrio" },
+                    new Provincia { Codice = "TA", Nome = "Taranto" },
+                    new Provincia { Codice = "TE", Nome = "Teramo" },
+                    new Provincia { Codice = "TR", Nome = "Terni" },
+                    new Provincia { Codice = "TO", Nome = "Torino" },
+                    new Provincia { Codice = "TP", Nome = "Trapani" },
+                    new Provincia { Codice = "TN", Nome = "Trento" },
+                    new Provincia { Codice = "TV", Nome = "Treviso" },
+                    new Provincia { Codice = "TS", Nome = "Trieste" },
+                    new Provincia { Codice = "UD", Nome = "Udine" },
+                    new Provincia { Codice = "VA", Nome = "Varese" },
+                    new Provincia { Codice = "VE", Nome = "Venezia" },
+                    new Provincia { Codice = "VB", Nome = "Verbania" },
+                    new Provincia { Codice = "VC", Nome = "Vercelli" },
+                    new Provincia { Codice = "VR", Nome = "Verona" },
+                    new Provincia { Codice = "VV", Nome = "Vibo-Valentia" },
+                    new Provincia { Codice = "VI", Nome = "Vicenza" },
+                    new Provincia { Codice = "VT", Nome = "Viterbo"}
+                };
             }
         }
-
-        private Provincia(string sigla, string nome)
-        {
-            Sigla = sigla;
-            Nome = nome;
-        }
-
-        /// <summary>
-        /// Array di Sigle di provincia.
-        /// </summary>
-        public static string[] Sigle
-        {
-            get { return List.Select(x => x.Sigla).ToArray(); }
-        }
-        /// <summary>
-        /// Array di Nomi di provincia.
-        /// </summary>
-        public static string[] Nomi
-        {
-            get { return List.Select(x => x.Nome).ToArray(); }
-        }
-
-        /// <summary>
-        /// Province italiane.
-        /// </summary>
-        public static readonly Provincia[] List =
-        {
-            new Provincia("", null),
-            new Provincia("AG", "Agrigento"),
-            new Provincia("AL", "Alessandria"),
-            new Provincia("AN", "Ancona"),
-            new Provincia("AO", "Aosta"),
-            new Provincia("AQ", "L'Aquila"),
-            new Provincia("AR", "Arezzo"),
-            new Provincia("AP", "Ascoli-Piceno"),
-            new Provincia("AT", "Asti"),
-            new Provincia("AV", "Avellino"),
-            new Provincia("BA", "Bari"),
-            new Provincia("BT", "Barletta-Andria-Trani"),
-            new Provincia("BL", "Belluno"),
-            new Provincia("BN", "Benevento"),
-            new Provincia("BG", "Bergamo"),
-            new Provincia("BI", "Biella"),
-            new Provincia("BO", "Bologna"),
-            new Provincia("BZ", "Bolzano"),
-            new Provincia("BS", "Brescia"),
-            new Provincia("BR", "Brindisi"),
-            new Provincia("CA", "Cagliari"),
-            new Provincia("CL", "Caltanissetta"),
-            new Provincia("CB", "Campobasso"),
-            new Provincia("CI", "Carbonia Iglesias"),
-            new Provincia("CE", "Caserta"),
-            new Provincia("CT", "Catania"),
-            new Provincia("CZ", "Catanzaro"),
-            new Provincia("CH", "Chieti"),
-            new Provincia("CO", "Como"),
-            new Provincia("CS", "Cosenza"),
-            new Provincia("CR", "Cremona"),
-            new Provincia("KR", "Crotone"),
-            new Provincia("CN", "Cuneo"),
-            new Provincia("EN", "Enna"),
-            new Provincia("FM", "Fermo"),
-            new Provincia("FE", "Ferrara"),
-            new Provincia("FI", "Firenze"),
-            new Provincia("FG", "Foggia"),
-            new Provincia("FC", "Forli-Cesena"),
-            new Provincia("FR", "Frosinone"),
-            new Provincia("GE", "Genova"),
-            new Provincia("GO", "Gorizia"),
-            new Provincia("GR", "Grosseto"),
-            new Provincia("IM", "Imperia"),
-            new Provincia("IS", "Isernia"),
-            new Provincia("SP", "La-Spezia"),
-            new Provincia("LT", "Latina"),
-            new Provincia("LE", "Lecce"),
-            new Provincia("LC", "Lecco"),
-            new Provincia("LI", "Livorno"),
-            new Provincia("LO", "Lodi"),
-            new Provincia("LU", "Lucca"),
-            new Provincia("MC", "Macerata"),
-            new Provincia("MN", "Mantova"),
-            new Provincia("MS", "Massa-Carrara"),
-            new Provincia("MT", "Matera"),
-            new Provincia("VS", "Medio Campidano"),
-            new Provincia("ME", "Messina"),
-            new Provincia("MI", "Milano"),
-            new Provincia("MO", "Modena"),
-            new Provincia("MB", "Monza-Brianza"),
-            new Provincia("NA", "Napoli"),
-            new Provincia("NO", "Novara"),
-            new Provincia("NU", "Nuoro"),
-            new Provincia("OG", "Ogliastra"),
-            new Provincia("OT", "Olbia Tempio"),
-            new Provincia("OR", "Oristano"),
-            new Provincia("PD", "Padova"),
-            new Provincia("PA", "Palermo"),
-            new Provincia("PR", "Parma"),
-            new Provincia("PV", "Pavia"),
-            new Provincia("PG", "Perugia"),
-            new Provincia("PU", "Pesaro-Urbino"),
-            new Provincia("PE", "Pescara"),
-            new Provincia("PC", "Piacenza"),
-            new Provincia("PI", "Pisa"),
-            new Provincia("PT", "Pistoia"),
-            new Provincia("PN", "Pordenone"),
-            new Provincia("PZ", "Potenza"),
-            new Provincia("PO", "Prato"),
-            new Provincia("RG", "Ragusa"),
-            new Provincia("RA", "Ravenna"),
-            new Provincia("RC", "Reggio-Calabria"),
-            new Provincia("RE", "Reggio-Emilia"),
-            new Provincia("RI", "Rieti"),
-            new Provincia("RN", "Rimini"),
-            new Provincia("RM", "Roma"),
-            new Provincia("RO", "Rovigo"),
-            new Provincia("SA", "Salerno"),
-            new Provincia("SS", "Sassari"),
-            new Provincia("SV", "Savona"),
-            new Provincia("SI", "Siena"),
-            new Provincia("SR", "Siracusa"),
-            new Provincia("SO", "Sondrio"),
-            new Provincia("TA", "Taranto"),
-            new Provincia("TE", "Teramo"),
-            new Provincia("TR", "Terni"),
-            new Provincia("TO", "Torino"),
-            new Provincia("TP", "Trapani"),
-            new Provincia("TN", "Trento"),
-            new Provincia("TV", "Treviso"),
-            new Provincia("TS", "Trieste"),
-            new Provincia("UD", "Udine"),
-            new Provincia("VA", "Varese"),
-            new Provincia("VE", "Venezia"),
-            new Provincia("VB", "Verbania"),
-            new Provincia("VC", "Vercelli"),
-            new Provincia("VR", "Verona"),
-            new Provincia("VV", "Vibo-Valentia"),
-            new Provincia("VI", "Vicenza"),
-            new Provincia("VT", "Viterbo")
-        };
     }
 }

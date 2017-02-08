@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.RegimeFiscale.Codici;
+                return new Tabelle.RegimeFiscale().Codici;
             }
         }
     }

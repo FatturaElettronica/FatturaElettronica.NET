@@ -1,41 +1,17 @@
-﻿using System.Linq;
-
-namespace FatturaElettronica.Tabelle
+﻿namespace FatturaElettronica.Tabelle
 {
-    /// <summary>
-    /// Soggetto Emittente.
-    /// </summary>
-    public class SoggettoEmittente
+    public class SoggettoEmittente : Tabella
     {
-        /// <summary>
-        /// Descrizione.
-        /// </summary>
-        public string Descrizione { get; private set; }
-        /// <summary>
-        /// Codice.
-        /// </summary>
-        public string Codice { get; private set; }
-        private SoggettoEmittente(string codice, string descrizione)
+        public override Tabella[] List
         {
-            Codice = codice;
-            Descrizione = descrizione;
+            get
+            {
+                return new Tabella[]
+                {
+                    new SoggettoEmittente { Codice = "CC", Nome = "cessionario/committente" },
+                    new SoggettoEmittente { Codice = "TZ", Nome = "terzo" }
+                };
+            }
         }
-
-        /// <summary>
-        /// Array di Codici.
-        /// </summary>
-        public static string[] Codici
-        {
-            get { return List.Select(x => x.Codice).ToArray(); }
-        }
-
-        /// <summary>
-        /// Sogetti emittenti ammessi.
-        /// </summary>
-        public static readonly SoggettoEmittente[] List =
-        {
-            new SoggettoEmittente("CC", "cessionario/committente"),
-            new SoggettoEmittente("TZ", "terzo")
-        };
     }
 }

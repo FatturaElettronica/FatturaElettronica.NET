@@ -1,49 +1,17 @@
-﻿using System.Linq;
-
-namespace FatturaElettronica.Tabelle
+﻿namespace FatturaElettronica.Tabelle
 {
-    /// <summary>
-    /// Lista dei FormatoTrasmissione supportati.
-    /// </summary>
-    public class FormatoTrasmissione
+    public class FormatoTrasmissione : Tabella
     {
-        /// <summary>
-        /// Formato trasmissione.
-        /// </summary>
-        public string Nome { get; private set; }
-        public string Sigla { get; private set; }
-        public string Descrizione { 
-            get {
-                return string.Format("{0} {1}", Sigla, Nome);
+        public override Tabella[] List
+        {
+            get
+            {
+                return new Tabella[]
+                {
+                    new FormatoTrasmissione{ Codice = Impostazioni.FormatoTrasmissione.PubblicaAmministrazione, Nome = "Fattura verso la PA" },
+                    new FormatoTrasmissione{ Codice = Impostazioni.FormatoTrasmissione.Privati, Nome = "Fattura verso privati" }
+                };
             }
         }
-
-        private FormatoTrasmissione(string sigla, string nome)
-        {
-            Sigla = sigla;
-            Nome = nome;
-        }
-
-        /// <summary>
-        /// Array di nomi supportati.
-        /// </summary>
-        public static string[] Nomi
-        {
-            get { return List.Select(x => x.Nome).ToArray(); }
-        }
-        /// <summary>
-        /// Array di sigle supportate.
-        /// </summary>
-        public static string[] Sigle
-        {
-            get { return List.Select(x => x.Sigla).ToArray(); }
-        }
-        /// <summary>
-        /// Formati supportati.
-        /// </summary>
-        public static readonly FormatoTrasmissione[] List = {
-            new FormatoTrasmissione(Impostazioni.FormatoTrasmissione.PubblicaAmministrazione, "Fattura verso la PA"),
-            new FormatoTrasmissione(Impostazioni.FormatoTrasmissione.Privati, "Fattura verso privati"),
-        };
     }
 }

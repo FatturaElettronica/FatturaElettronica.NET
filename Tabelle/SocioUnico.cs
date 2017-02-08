@@ -1,42 +1,17 @@
-﻿using System.Linq;
-
-namespace FatturaElettronica.Tabelle
+﻿namespace FatturaElettronica.Tabelle
 {
-    /// <summary>
-    /// Indica se vi è un socio unico oppure se vi sono più soci.
-    /// </summary>
-    /// <remarks>Andrebbe usato solo nei casi di società SRL iscritte al registro imprese.</remarks>
-    public class SocioUnico
+    public class SocioUnico : Tabella
     {
-        /// <summary>
-        /// Descrizione.
-        /// </summary>
-        public string Descrizione { get; private set; }
-        /// <summary>
-        /// Codice.
-        /// </summary>
-        public string Codice { get; private set; }
-        private SocioUnico(string codice, string descrizione)
+        public override Tabella[] List
         {
-            Codice = codice;
-            Descrizione = descrizione;
+            get
+            {
+                return new Tabella[]
+                {
+                    new SocioUnico { Codice = "SU", Nome = "Socio unico" },
+                    new SocioUnico { Codice = "SM", Nome = "Più soci" }
+                };
+            }
         }
-
-        /// <summary>
-        /// Array di Codici.
-        /// </summary>
-        public static string[] Codici
-        {
-            get { return List.Select(x => x.Codice).ToArray(); }
-        }
-
-        /// <summary>
-        /// Situazioni societarie ammesse.
-        /// </summary>
-        public static readonly SocioUnico[] List =
-        {
-            new SocioUnico("SU", "Socio unico"),
-            new SocioUnico("SM", "Più soci")
-        };
     }
 }

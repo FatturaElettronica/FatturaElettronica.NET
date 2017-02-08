@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.StatoLiquidazione.Codici;
+                return new Tabelle.StatoLiquidazione().Codici;
             }
         }
     }

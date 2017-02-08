@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.TipoDocumento.Codici;
+                return new Tabelle.TipoDocumento().Codici;
             }
         }
     }

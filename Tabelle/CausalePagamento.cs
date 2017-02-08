@@ -1,72 +1,42 @@
-﻿using System.Linq;
-
-namespace FatturaElettronica.Tabelle
+﻿namespace FatturaElettronica.Tabelle
 {
-    /// <summary>
-    /// Tipi documento.
-    /// </summary>
-    public class CausalePagamento
+    public class CausalePagamento : Tabella
     {
-        /// <summary>
-        /// Nome della ritenuta.
-        /// </summary>
-        public string Nome { get; private set; }
-        /// <summary>
-        /// Codice della ritenuta.
-        /// </summary>
-        public string Codice { get; private set; }
-        /// <summary>
-        /// Nome e Codice della ritenuta.
-        /// </summary>
-        public string Descrizione { get { return Codice + " " + Nome; }}
-
-        private CausalePagamento(string codice, string nome)
+        public override Tabella[] List
         {
-            Codice = codice;
-            Nome = nome;
+            get
+            {
+                // TODO add appropriate values for Nome
+                return new Tabella[] {
+                    new CausalePagamento{ Codice = "A", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "B", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "C", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "D", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "E", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "G", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "H", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "I", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "L", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "M", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "N", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "O", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "P", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "Q", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "R", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "S", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "T", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "U", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "V", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "W", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "X", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "Y", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "Z", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "L1", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "M1", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "O1", Nome = string.Empty},
+                    new CausalePagamento{ Codice = "V1", Nome = string.Empty}
+                };
+            } 
         }
-
-        /// <summary>
-        /// Array di codici ritenuta.
-        /// </summary>
-        public static string[] Codici
-        {
-            get { return List.Select(x => x.Codice).ToArray(); }
-        }
-
-        /// <summary>
-        /// Tipi documento supportati.
-        /// </summary>
-        public static readonly CausalePagamento[] List =
-        {
-            // TODO add appropriate values for Nome
-            new CausalePagamento("A", string.Empty),
-            new CausalePagamento("B", string.Empty),
-            new CausalePagamento("C", string.Empty),
-            new CausalePagamento("D", string.Empty),
-            new CausalePagamento("E", string.Empty),
-            new CausalePagamento("G", string.Empty),
-            new CausalePagamento("H", string.Empty),
-            new CausalePagamento("I", string.Empty),
-            new CausalePagamento("L", string.Empty),
-            new CausalePagamento("M", string.Empty),
-            new CausalePagamento("N", string.Empty),
-            new CausalePagamento("O", string.Empty),
-            new CausalePagamento("P", string.Empty),
-            new CausalePagamento("Q", string.Empty),
-            new CausalePagamento("R", string.Empty),
-            new CausalePagamento("S", string.Empty),
-            new CausalePagamento("T", string.Empty),
-            new CausalePagamento("U", string.Empty),
-            new CausalePagamento("V", string.Empty),
-            new CausalePagamento("W", string.Empty),
-            new CausalePagamento("X", string.Empty),
-            new CausalePagamento("Y", string.Empty),
-            new CausalePagamento("Z", string.Empty),
-            new CausalePagamento("L1", string.Empty),
-            new CausalePagamento("M1", string.Empty),
-            new CausalePagamento("O1", string.Empty),
-            new CausalePagamento("V1", string.Empty)
-        };
     }
 }

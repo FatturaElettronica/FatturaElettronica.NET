@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.SocioUnico.Codici;
+                return new Tabelle.SocioUnico().Codici;
             }
         }
     }

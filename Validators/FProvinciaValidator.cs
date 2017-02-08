@@ -15,7 +15,7 @@ namespace FatturaElettronica.Validators
         public FProvinciaValidator() : this(null, BrokenDescription) { }
         public FProvinciaValidator(string propertyName) : this(propertyName, BrokenDescription) { }
         public FProvinciaValidator(string propertyName, string description) : base(propertyName, description) {
-            Domain = Tabelle.Provincia.Sigle;
+            Domain = new Tabelle.Provincia().Codici;
         }
 
     }

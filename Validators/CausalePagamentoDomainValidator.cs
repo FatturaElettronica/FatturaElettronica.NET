@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.CausalePagamento.Codici;
+                return new Tabelle.CausalePagamento().Codici;
             }
         }
     }

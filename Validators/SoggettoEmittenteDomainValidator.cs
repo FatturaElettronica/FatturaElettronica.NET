@@ -6,7 +6,7 @@
         {
             get
             {
-                return Tabelle.SoggettoEmittente.Codici;
+                return new Tabelle.SoggettoEmittente().Codici;
             }
         }
     }
