@@ -56,6 +56,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Tabelle\TipoResa.cs" />
     <Compile Include="Tabelle\ScontoMaggiorazione.cs" />
     <Compile Include="Tabelle\Natura.cs" />
     <Compile Include="Tabelle\TipoCassa.cs" />
@@ -251,6 +252,8 @@
     <Compile Include="Tabelle\SoggettoEmittente.cs" />
     <Compile Include="Tabelle\StatoLiquidazione.cs" />
     <Compile Include="Tabelle\TipoDocumento.cs" />
+    <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
+    <Compile Include="Validators\DatiTrasportoValidator.cs" />
     <Compile Include="Validators\DatiDDTValidator.cs" />
     <Compile Include="Validators\DatiFattureCollegateValidator.cs" />
     <Compile Include="Validators\DatiConvenzioneValidator.cs" />
@@ -258,6 +261,8 @@
     <Compile Include="Validators\DatiContrattoValidator.cs" />
     <Compile Include="Validators\DatiOrdineAcquistoValidator.cs" />
     <Compile Include="Validators\DatiDocumentoValidator.cs" />
+    <Compile Include="Validators\IsValidTipoResaValidator.cs" />
+    <Compile Include="Validators\IndirizzoResaValidator.cs" />
     <Compile Include="Validators\StringLengthValidator.cs" />
     <Compile Include="Validators\IsValidScontoMaggiorazioneValidator.cs" />
     <Compile Include="Validators\ScontoMaggiorazioneValidator.cs" />

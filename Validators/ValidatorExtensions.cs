@@ -60,5 +60,9 @@ namespace FatturaElettronica.Validators
         {
             return ruleBuilder.SetValidator(new IsValidScontoMaggiorazioneValidator<TProperty>());
         }
+        public static IRuleBuilderOptions<T, TProperty> IsValidTipoResaValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new IsValidTipoResaValidator<TProperty>());
+        }
     }
 }

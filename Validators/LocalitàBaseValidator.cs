@@ -4,7 +4,21 @@ namespace FatturaElettronica.Validators
 {
     public abstract class LocalitàBaseValidator<T> : AbstractValidator<T> where T : Common.Località
     {
-        public LocalitàBaseValidator()
+        public LocalitàBaseValidator(bool optional=false)
+        {
+            if (optional)
+            {
+                When(x => !x.IsEmpty(), () =>
+                {
+                    SetRules();
+                });
+            }
+            else
+            {
+                SetRules();
+            }
+        }
+        private void SetRules()
         {
             RuleFor(x => x.Indirizzo).NotEmpty().Length(1, 60);
             RuleFor(x => x.NumeroCivico).Length(1, 8);
