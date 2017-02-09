@@ -58,5 +58,10 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(x => x.DatiFattureCollegate, typeof(FatturaElettronica.Validators.DatiFattureCollegateValidator));
         }
+        [TestMethod]
+        public void DatiDDTHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiDDT, typeof(FatturaElettronica.Validators.DatiDDTValidator));
+        }
     }
 }

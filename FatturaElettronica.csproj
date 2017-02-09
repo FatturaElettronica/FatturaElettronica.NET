@@ -251,6 +251,7 @@
     <Compile Include="Tabelle\SoggettoEmittente.cs" />
     <Compile Include="Tabelle\StatoLiquidazione.cs" />
     <Compile Include="Tabelle\TipoDocumento.cs" />
+    <Compile Include="Validators\DatiDDTValidator.cs" />
     <Compile Include="Validators\DatiFattureCollegateValidator.cs" />
     <Compile Include="Validators\DatiConvenzioneValidator.cs" />
     <Compile Include="Validators\DatiRicezioneValidator.cs" />

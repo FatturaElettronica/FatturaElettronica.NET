@@ -21,6 +21,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiConvenzione).SetCollectionValidator(new DatiConvenzioneValidator());
             RuleFor(x => x.DatiRicezione).SetCollectionValidator(new DatiRicezioneValidator());
             RuleFor(x => x.DatiFattureCollegate).SetCollectionValidator(new DatiFattureCollegateValidator());
+            RuleFor(x => x.DatiDDT).SetCollectionValidator(new DatiDDTValidator());
         }
     }
 }

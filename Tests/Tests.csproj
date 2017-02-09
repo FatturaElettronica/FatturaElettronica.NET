@@ -66,6 +66,7 @@
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
     <Compile Include="BaseDatiDocumentoValidator.cs" />
     <Compile Include="DatiFattureCollegateValidator.cs" />
+    <Compile Include="DatiDDTValidator.cs" />
     <Compile Include="DatiRicezioneValidator.cs" />
     <Compile Include="DatiConvenzioneValidator.cs" />
     <Compile Include="DatiContrattoValidator.cs" />
