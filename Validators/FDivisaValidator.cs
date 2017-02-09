@@ -6,7 +6,7 @@ namespace FatturaElettronica.Validators {
     /// </summary>
     public class FDivisaValidator : DomainValidator {
 
-        private const string BrokenDescription = "Valori ammessi ([TD01], [TD02], [..], [TD06])";
+        private const string BrokenDescription = "Il codice deve essere compreso tra quelli consentiti dallo standard ISO 4217 alpha-3:201, ad esempio: [EUR], [USD], [GBP], [CZK], [...]";
 
         /// <summary>
         /// Constructor.
