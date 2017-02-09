@@ -68,5 +68,10 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(x => x.DatiTrasporto, typeof(FatturaElettronica.Validators.DatiTrasportoValidator));
         }
+        [TestMethod]
+        public void FatturaPrincipaleHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.FatturaPrincipale, typeof(FatturaElettronica.Validators.FatturaPrincipaleValidator));
+        }
     }
 }

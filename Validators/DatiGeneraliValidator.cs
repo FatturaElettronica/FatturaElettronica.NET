@@ -23,6 +23,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiFattureCollegate).SetCollectionValidator(new DatiFattureCollegateValidator());
             RuleFor(x => x.DatiDDT).SetCollectionValidator(new DatiDDTValidator());
             RuleFor(x => x.DatiTrasporto).SetValidator(new DatiTrasportoValidator());
+            RuleFor(x => x.FatturaPrincipale).SetValidator(new FatturaPrincipaleValidator());
         }
     }
 }

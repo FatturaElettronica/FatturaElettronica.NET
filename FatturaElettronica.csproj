@@ -253,6 +253,7 @@
     <Compile Include="Tabelle\StatoLiquidazione.cs" />
     <Compile Include="Tabelle\TipoDocumento.cs" />
     <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
+    <Compile Include="Validators\FatturaPrincipaleValidator.cs" />
     <Compile Include="Validators\DatiTrasportoValidator.cs" />
     <Compile Include="Validators\DatiDDTValidator.cs" />
     <Compile Include="Validators\DatiFattureCollegateValidator.cs" />
