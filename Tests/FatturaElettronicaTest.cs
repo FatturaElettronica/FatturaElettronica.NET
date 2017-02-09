@@ -3,6 +3,7 @@ using System.Xml;
 using System.IO;
 using FatturaElettronica.Impostazioni;
 using System;
+using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
 
 namespace Tests
 {
@@ -211,7 +212,7 @@ namespace Tests
             // Testa che #20 sia risolto
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/20
 
-            var l = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            var l = new DettaglioLinee();
             l.PrezzoUnitario = 10;
             l.PrezzoTotale = 10;
             Assert.IsNull(l.Quantita);
@@ -268,7 +269,7 @@ namespace Tests
         [TestMethod]
         public void ArrotondamentoImportiUnitariConMoltiDecimali()
         {
-            var dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            var dl = new DettaglioLinee();
             dl.PrezzoUnitario = 13.4426m;
             dl.Quantita = 2;
             dl.Descrizione = "description";
@@ -276,7 +277,7 @@ namespace Tests
             dl.AliquotaIVA = 22.0m;
             Assert.IsTrue(dl.IsValid);
 
-            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl = new DettaglioLinee();
             dl.PrezzoUnitario = 3.0246m;
             dl.Quantita = 5;
             dl.Descrizione = "description";
@@ -284,7 +285,7 @@ namespace Tests
             dl.AliquotaIVA = 22.0m;
             Assert.IsTrue(dl.IsValid);
 
-            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl = new DettaglioLinee();
             dl.PrezzoUnitario = 5.7377m;
             dl.Quantita = 0.2m;
             dl.Descrizione = "description";
@@ -292,7 +293,7 @@ namespace Tests
             dl.AliquotaIVA = 22.0m;
             Assert.IsTrue(dl.IsValid);
 
-            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl = new DettaglioLinee();
             dl.PrezzoUnitario = 0.0492m;
             dl.Quantita = 4;
             dl.Descrizione = "description";
@@ -300,7 +301,7 @@ namespace Tests
             dl.AliquotaIVA = 22.0m;
             Assert.IsTrue(dl.IsValid);
 
-            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl = new DettaglioLinee();
             dl.PrezzoUnitario = 22;
             dl.Quantita = 4;
             dl.Descrizione = "description";
@@ -309,7 +310,7 @@ namespace Tests
             Assert.IsTrue(dl.IsValid);
 
             // Make sure we Round AwayFromZero (PCL has no overload for it)
-            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl = new DettaglioLinee();
             dl.PrezzoUnitario = 9.2425m;
             dl.Quantita = 4;
             dl.Descrizione = "description";
@@ -317,7 +318,7 @@ namespace Tests
             dl.AliquotaIVA = 22.0m;
             Assert.IsTrue(dl.IsValid);
 
-            dl = new FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi.DettaglioLinee();
+            dl = new DettaglioLinee();
             dl.PrezzoUnitario = 12.235m;
             dl.Quantita = 1;
             dl.Descrizione = "description";
@@ -325,6 +326,16 @@ namespace Tests
             dl.AliquotaIVA = 22.0m;
             Assert.IsTrue(dl.IsValid);
         }
-
+        [TestMethod]
+        public void ValidateDettaglioLineeAgainstErr00423()
+        {
+            var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);
+            var r = new DettaglioLinee();
+            r.PrezzoUnitario = 19.30m;
+            r.Quantita = 1;
+            r.ScontoMaggiorazione.Add(new FatturaElettronica.Common.ScontoMaggiorazione { Tipo = "SC", Percentuale = 15m });
+            r.PrezzoTotale = 16.41m;
+            Assert.IsTrue(r.ValidateAgainstErr00423());
+        }
     }
 }
