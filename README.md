@@ -40,12 +40,13 @@
 ## Portable Class Library
 La libreria gira senza modifiche sui seguenti ambienti:
 
-- .NET Framework 4.0 e superiori,
-- Xamarin.iOS
+- NET Framework 4.5 e superiori,
+- NET Core 1.0
+- Windows 8
+- Windows Phone Silverlight 8
 - Xamarin.Android
-- Windows Phone 8
-- Windows Store apps (Windows 8)
-- Silverlight 5.0
+- Xamarin.iOS
+- Xamarin.iOS (Classic)
 
 Un file .snk è fornito per la firma dell'assembly, in modo che possa essere usato in contesti in cui lo *strong naming* sia necessario.
 
