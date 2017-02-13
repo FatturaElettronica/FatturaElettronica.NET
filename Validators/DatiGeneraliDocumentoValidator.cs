@@ -15,8 +15,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiBollo).SetValidator(new DatiBolloValidator());
             RuleFor(x => x.DatiCassaPrevidenziale).SetCollectionValidator(new DatiCassaPrevidenzialeValidator());
             RuleFor(x => x.DatiCassaPrevidenziale)
-                .Must((dgd, daticassa) => { return (daticassa.Count > 0) ? !dgd.DatiRitenuta.IsEmpty() : true; })
-                .WithMessage("415 DatiRitenuta non presente a fronte di DatiCassaPreviendiale.Ritenuta valorizzato");
+                .Must((datiGeneraliDocumento, datiCassa) => { return (datiCassa.Count > 0) ? !datiGeneraliDocumento.DatiRitenuta.IsEmpty() : true; })
+                .WithMessage("00415: DatiRitenuta non presente a fronte di DatiCassaPreviendiale.Ritenuta valorizzato");
             RuleFor(x => x.ScontoMaggiorazione).SetCollectionValidator(new ScontoMaggiorazioneValidator());
             RuleFor(x => x.Causale).SetCollectionValidator(new StringLengthValidator(1, 200));
             RuleFor(x => x.Art73).Equal("SI").Unless(x => string.IsNullOrEmpty(x.Art73));

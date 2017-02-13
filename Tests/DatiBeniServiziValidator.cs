@@ -14,12 +14,5 @@ namespace Tests
             validator.ShouldHaveChildValidator(
                 x => x.DettaglioLinee, typeof(FatturaElettronica.Validators.DettaglioLineeValidator));
         }
-        [TestMethod]
-        public void DetaglioLineeCannotBeEmpty()
-        {
-            var r = validator.Validate(challenge);
-            Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioLinee"));
-            //validator.ShouldHaveValidationErrorFor(x => x.DettaglioLinee, challenge);
-        }
     }
 }

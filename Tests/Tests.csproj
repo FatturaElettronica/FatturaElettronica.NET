@@ -65,7 +65,10 @@
     <Compile Include="BaseRappresentanteFiscaleValidator.cs" />
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
     <Compile Include="BaseDatiDocumentoValidator.cs" />
+    <Compile Include="AltriDatiGestionaliValidator.cs" />
     <Compile Include="DatiAnagraficiVettoreValidator.cs" />
+    <Compile Include="CodiceArticoloValidator.cs" />
+    <Compile Include="DettaglioLineeValidator.cs" />
     <Compile Include="DatiBeniServiziValidator.cs" />
     <Compile Include="FatturaPrincipaleValidator.cs" />
     <Compile Include="DatiTrasportoValidator.cs" />
