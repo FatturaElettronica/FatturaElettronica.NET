@@ -68,5 +68,9 @@ namespace FatturaElettronica.Validators
         {
             return ruleBuilder.SetValidator(new IsValidTipoCessionePrestazioneValidator<TProperty>());
         }
+        public static IRuleBuilderOptions<T, TProperty> IsValidEsigibilitaIVAValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new IsValidEsigibilitaIVAValidator<TProperty>());
+        }
     }
 }

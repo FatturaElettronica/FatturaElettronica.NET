@@ -14,23 +14,26 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.UnitaMisura).Length(1, 10).When(x => !string.IsNullOrEmpty(x.UnitaMisura));
             RuleFor(x => x.ScontoMaggiorazione).SetCollectionValidator(new ScontoMaggiorazioneValidator());
             RuleFor(x => x.PrezzoTotale)
-                .Must((challenge, prezzoTotale) => PrezzoTotaleValidator(prezzoTotale, challenge))
-                .WithMessage("00423: PrezzoTotale non calcolato secondo le specifiche tecniche");
+                .Must((dettaglioLinee, _) => PrezzoTotaleValidateAgainstError00423(dettaglioLinee))
+                .WithMessage("PrezzoTotale non calcolato secondo le specifiche tecniche")
+                .WithErrorCode("00423");
             RuleFor(x => x.Ritenuta).Equal("SI").Unless(x => string.IsNullOrEmpty(x.Ritenuta));
             RuleFor(x => x.Natura).IsValidNaturaValue().Unless(x => string.IsNullOrEmpty(x.Natura));
             RuleFor(x => x.Natura)
                 .Must(natura => !string.IsNullOrEmpty(natura))
                 .When(x => x.AliquotaIVA == 0)
-                .WithMessage("00400: Natura non presente a fronte di Aliquota IVA pari a 0");
+                .WithMessage("Natura non presente a fronte di Aliquota IVA pari a 0")
+                .WithErrorCode("00400");
             RuleFor(x => x.Natura)
                 .Must(natura => string.IsNullOrEmpty(natura))
                 .When(x => x.AliquotaIVA > 0)
-                .WithMessage("00401: Natura presente a fronte di Aliquota IVA diversa da zero");
+                .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero")
+                .WithErrorCode("00401");
             RuleFor(x => x.RiferimentoAmministrazione).Length(1, 20).When(x => !string.IsNullOrEmpty(x.RiferimentoAmministrazione));
             RuleFor(x => x.AltriDatiGestionali).SetCollectionValidator(new AltriDatiGestionaliValidator());
         }
 
-        private bool PrezzoTotaleValidator(decimal prezzoTotale, DettaglioLinee challenge)
+        private bool PrezzoTotaleValidateAgainstError00423(DettaglioLinee challenge)
         {
 			var prezzo = challenge.PrezzoUnitario;
 			foreach (var sconto in challenge.ScontoMaggiorazione)
@@ -46,7 +49,7 @@ namespace FatturaElettronica.Validators
                     prezzo += importo;
 
             }
-            return prezzoTotale == Math.Round((decimal)(prezzo * ((challenge.Quantita != null) ? challenge.Quantita : 1)), 2, MidpointRounding.AwayFromZero);
+            return challenge.PrezzoTotale == Math.Round((decimal)(prezzo * ((challenge.Quantita != null) ? challenge.Quantita : 1)), 2, MidpointRounding.AwayFromZero);
         }
     }
 }

@@ -70,6 +70,7 @@
     <Compile Include="CodiceArticoloValidator.cs" />
     <Compile Include="DettaglioLineeValidator.cs" />
     <Compile Include="DatiBeniServiziValidator.cs" />
+    <Compile Include="DatiRiepilogoValidator.cs" />
     <Compile Include="FatturaPrincipaleValidator.cs" />
     <Compile Include="DatiTrasportoValidator.cs" />
     <Compile Include="DatiFattureCollegateValidator.cs" />

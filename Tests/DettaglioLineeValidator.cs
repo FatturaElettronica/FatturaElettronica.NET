@@ -127,6 +127,11 @@ namespace Tests
             challenge.ScontoMaggiorazione.Add(new FatturaElettronica.Common.ScontoMaggiorazione { Tipo = "SC", Percentuale = 15m });
             challenge.PrezzoTotale = 16.41m;
             validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
+
+            challenge.PrezzoUnitario = 20.5m;
+            challenge.Quantita = 2;
+            challenge.PrezzoTotale = 42;
+            validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, challenge).WithErrorCode("00423");
         }
 
         [TestMethod]
@@ -160,7 +165,7 @@ namespace Tests
         {
             challenge.AliquotaIVA = 22m;
             challenge.Natura = "N1";
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
+            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge).WithErrorCode("00401");
             challenge.AliquotaIVA = 0m;
             validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
         }
@@ -169,10 +174,10 @@ namespace Tests
         {
             challenge.AliquotaIVA = 0;
             challenge.Natura = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
+            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge).WithErrorCode("00400");
             challenge.AliquotaIVA = 0;
             challenge.Natura = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
+            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge).WithErrorCode("00400");
             challenge.AliquotaIVA = 22m;
             challenge.Natura = string.Empty;
             validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);

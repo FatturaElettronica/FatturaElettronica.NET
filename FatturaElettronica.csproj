@@ -62,6 +62,7 @@
     <Compile Include="Tabelle\Natura.cs" />
     <Compile Include="Tabelle\TipoCassa.cs" />
     <Compile Include="Tabelle\Tabella.cs" />
+    <Compile Include="Tabelle\EsigibilitaIVA.cs" />
     <Compile Include="Tabelle\TipoRitenuta.cs" />
     <Compile Include="Common\RappresentanteFiscale.cs" />
     <Compile Include="Common\IdFiscaleIva.cs">
@@ -254,8 +255,10 @@
     <Compile Include="Tabelle\StatoLiquidazione.cs" />
     <Compile Include="Tabelle\TipoDocumento.cs" />
     <Compile Include="Validators\AltriDatiGestionaliValidator.cs" />
+    <Compile Include="Validators\DatiRiepilogoValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
     <Compile Include="Validators\CodiceArticoloValidator.cs" />
+    <Compile Include="Validators\IsValidEsigibilitaIVAValidator.cs" />
     <Compile Include="Validators\IsValidTipoCessionePrestazioneValidator.cs" />
     <Compile Include="Validators\DatiBeniServiziValidator.cs" />
     <Compile Include="Validators\DettaglioLineeValidator.cs" />
