@@ -25,6 +25,7 @@ namespace FatturaElettronica.Validators
                 .Must((body, _) => DatiRiepilogoValidateAgainstError00419(body))
                 .WithMessage("DatiRiepilogo non presente in corrispondenza di almeno un valore DettaglioLinee.AliquiotaIVA o DatiCassaPrevidenziale.AliquotaIVA")
                 .WithErrorCode("00419");
+            RuleFor(x => x.DatiVeicoli).SetValidator(new DatiVeicoliValidator());
         }
 
         private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.FatturaElettronicaBody body)

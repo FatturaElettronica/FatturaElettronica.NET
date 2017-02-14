@@ -63,5 +63,11 @@ namespace Tests
             r = validator.Validate(challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi.DatiRiepilogo"));
         }
+        [TestMethod]
+        public void DatiVeicoliHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(
+                x => x.DatiGenerali, typeof(FatturaElettronica.Validators.DatiGeneraliValidator));
+        }
     }
 }

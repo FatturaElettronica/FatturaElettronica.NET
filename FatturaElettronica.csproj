@@ -255,6 +255,7 @@
     <Compile Include="Tabelle\StatoLiquidazione.cs" />
     <Compile Include="Tabelle\TipoDocumento.cs" />
     <Compile Include="Validators\AltriDatiGestionaliValidator.cs" />
+    <Compile Include="Validators\DatiVeicoliValidator.cs" />
     <Compile Include="Validators\DatiRiepilogoValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
     <Compile Include="Validators\CodiceArticoloValidator.cs" />
