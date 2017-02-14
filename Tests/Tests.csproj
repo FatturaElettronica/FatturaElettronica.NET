@@ -66,6 +66,7 @@
     <Compile Include="BaseDatiAnagraficiValidator.cs" />
     <Compile Include="BaseDatiDocumentoValidator.cs" />
     <Compile Include="AltriDatiGestionaliValidator.cs" />
+    <Compile Include="AllegatiValidator.cs" />
     <Compile Include="DatiPagamentoValidator.cs" />
     <Compile Include="DettaglioPagamentoValidator.cs" />
     <Compile Include="DatiVeicoliValidator.cs" />

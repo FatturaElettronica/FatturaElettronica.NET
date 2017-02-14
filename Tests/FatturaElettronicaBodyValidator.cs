@@ -16,10 +16,17 @@ namespace Tests
             validator.ShouldHaveChildValidator(
                 x => x.DatiGenerali, typeof(FatturaElettronica.Validators.DatiGeneraliValidator));
         }
+        [TestMethod]
         public void DatiBeniServiziHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
                 x => x.DatiBeniServizi, typeof(FatturaElettronica.Validators.DatiBeniServiziValidator));
+        }
+        [TestMethod]
+        public void DatiBeniServiziCannotBeEmpty()
+        {
+            var r = validator.Validate(challenge);
+            Assert.AreEqual("DatiBeniServizi è obbligatorio", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi").ErrorMessage);
         }
         [TestMethod]
         public void DatiRitenutaValidateAgainstError00411()
@@ -74,6 +81,12 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(
                 x => x.DatiPagamento, typeof(FatturaElettronica.Validators.DatiPagamentoValidator));
+        }
+        [TestMethod]
+        public void AllegatiHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(
+                x => x.Allegati, typeof(FatturaElettronica.Validators.AllegatiValidator));
         }
     }
 }

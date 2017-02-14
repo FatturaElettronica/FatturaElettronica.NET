@@ -11,7 +11,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.DatiGenerali).SetValidator(new DatiGeneraliValidator());
             RuleFor(x => x.DatiBeniServizi).SetValidator(new DatiBeniServiziValidator());
-            RuleFor(x => x.DatiBeniServizi).Must(x => !x.IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
+            RuleFor(x => x.DatiBeniServizi).Must(x => x.IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
             RuleFor(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta)
                 .Must((body, _) => DatiRitenutaAgainstDettaglioLinee(body))
                 .When(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.IsEmpty())
@@ -27,6 +27,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00419");
             RuleFor(x => x.DatiVeicoli).SetValidator(new DatiVeicoliValidator());
             RuleFor(x => x.DatiPagamento).SetCollectionValidator(new DatiPagamentoValidator());
+            RuleFor(x=>x.Allegati).SetCollectionValidator(new AllegatiValidator());
         }
 
         private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.FatturaElettronicaBody body)

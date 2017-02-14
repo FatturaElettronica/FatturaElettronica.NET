@@ -40,9 +40,10 @@ namespace Tests
         [TestMethod]
         public void DescrizioneCannotBeEmpty()
         {
+            challenge.Descrizione = null;
             validator.ShouldHaveValidationErrorFor(x => x.Descrizione, challenge);
-            challenge.Descrizione = "x";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Descrizione, challenge);
+            challenge.Descrizione = string.Empty;
+            validator.ShouldHaveValidationErrorFor(x => x.Descrizione, challenge);
         }
         [TestMethod]
         public void DescrizioneMinMaxLength()
