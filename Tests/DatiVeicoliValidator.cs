@@ -13,9 +13,10 @@ namespace Tests
         [TestMethod]
         public void TotalePercorsoCannotBeEmpty()
         {
+            challenge.TotalePercorso = null;
             validator.ShouldHaveValidationErrorFor(x => x.TotalePercorso, challenge);
-            challenge.TotalePercorso = "x";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TotalePercorso, challenge);
+            challenge.TotalePercorso = string.Empty;
+            validator.ShouldHaveValidationErrorFor(x => x.TotalePercorso, challenge);
         }
         [TestMethod]
         public void TotalePercorsoMinMaxLength()

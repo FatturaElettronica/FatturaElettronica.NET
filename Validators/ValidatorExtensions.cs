@@ -72,5 +72,13 @@ namespace FatturaElettronica.Validators
         {
             return ruleBuilder.SetValidator(new IsValidEsigibilitaIVAValidator<TProperty>());
         }
+        public static IRuleBuilderOptions<T, TProperty> IsValidCondizioniPagamentoValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new IsValidCondizioniPagamentoValidator<TProperty>());
+        }
+        public static IRuleBuilderOptions<T, TProperty> IsValidModalitaPagamentoValue<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new IsValidModalitaPagamentoValidator<TProperty>());
+        }
     }
 }
