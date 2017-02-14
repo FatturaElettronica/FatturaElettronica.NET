@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Tabelle;
 
 namespace FatturaElettronica.Validators
 {
@@ -9,10 +10,10 @@ namespace FatturaElettronica.Validators
         {
             When(x => !x.IsEmpty(), () =>
             {
-                RuleFor(x => x.TipoRitenuta).NotEmpty().IsValidTipoRitenutaValue();
+                RuleFor(x => x.TipoRitenuta).NotEmpty().SetValidator(new IsValidValidator<TipoRitenuta>());
                 RuleFor(x => x.ImportoRitenuta).NotNull();
                 RuleFor(x => x.AliquotaRitenuta).NotNull();
-                RuleFor(x => x.CausalePagamento).NotNull().IsValidCausalePagamentoValue();
+                RuleFor(x => x.CausalePagamento).NotNull().SetValidator(new IsValidValidator<CausalePagamento>());
             });
         }
     }

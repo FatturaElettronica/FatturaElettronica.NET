@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Tabelle;
 
 namespace FatturaElettronica.Validators
 {
@@ -12,7 +13,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.CausaleTrasporto).Length(1, 100).Unless(x => string.IsNullOrEmpty(x.CausaleTrasporto));
             RuleFor(x => x.Descrizione).Length(1, 100).Unless(x => string.IsNullOrEmpty(x.Descrizione));
             RuleFor(x => x.UnitaMisuraPeso).Length(1, 10).Unless(x => string.IsNullOrEmpty(x.UnitaMisuraPeso));
-            RuleFor(x => x.TipoResa).IsValidTipoResaValue().Unless(x => string.IsNullOrEmpty(x.TipoResa));
+            RuleFor(x => x.TipoResa).SetValidator(new IsValidValidator<TipoResa>()).Unless(x => string.IsNullOrEmpty(x.TipoResa));
             RuleFor(x => x.IndirizzoResa).SetValidator(new IndirizzoResaValidator());
         }
     }

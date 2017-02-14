@@ -56,6 +56,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="Tabelle\IdPaese.cs" />
     <Compile Include="Tabelle\CondizioniPagamento.cs" />
     <Compile Include="Tabelle\ModalitaPagamento.cs" />
     <Compile Include="Tabelle\TipoCessionePrestazione.cs" />
@@ -264,10 +265,7 @@
     <Compile Include="Validators\DatiRiepilogoValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
     <Compile Include="Validators\CodiceArticoloValidator.cs" />
-    <Compile Include="Validators\IsValidCondizioniPagamentoValidator.cs" />
-    <Compile Include="Validators\IsValidModalitaPagamentoValidator.cs" />
-    <Compile Include="Validators\IsValidEsigibilitaIVAValidator.cs" />
-    <Compile Include="Validators\IsValidTipoCessionePrestazioneValidator.cs" />
+    <Compile Include="Validators\IsValidValidator.cs" />
     <Compile Include="Validators\DatiBeniServiziValidator.cs" />
     <Compile Include="Validators\DettaglioLineeValidator.cs" />
     <Compile Include="Validators\FatturaPrincipaleValidator.cs" />
@@ -279,10 +277,8 @@
     <Compile Include="Validators\DatiContrattoValidator.cs" />
     <Compile Include="Validators\DatiOrdineAcquistoValidator.cs" />
     <Compile Include="Validators\DatiDocumentoValidator.cs" />
-    <Compile Include="Validators\IsValidTipoResaValidator.cs" />
     <Compile Include="Validators\IndirizzoResaValidator.cs" />
     <Compile Include="Validators\StringLengthValidator.cs" />
-    <Compile Include="Validators\IsValidScontoMaggiorazioneValidator.cs" />
     <Compile Include="Validators\ScontoMaggiorazioneValidator.cs" />
     <Compile Include="Validators\DatiCassaPrevidenzialeValidator.cs" />
     <Compile Include="Validators\DatiBolloValidator.cs" />
@@ -290,13 +286,6 @@
     <Compile Include="Validators\DatiGeneraliDocumentoValidator.cs" />
     <Compile Include="Validators\DatiGeneraliValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaBodyValidator.cs" />
-    <Compile Include="Validators\IsValidDivisaValidator.cs" />
-    <Compile Include="Validators\IsValidCausalePagamentoValidator.cs" />
-    <Compile Include="Validators\IsValidNaturaValidator.cs" />
-    <Compile Include="Validators\IsValidTipoCassaValidator.cs" />
-    <Compile Include="Validators\IsValidTipoRitenutaValidator.cs" />
-    <Compile Include="Validators\IsValidTipoDocumentoValidator.cs" />
-    <Compile Include="Validators\IsSoggettoEmittenteValidator.cs" />
     <Compile Include="Validators\TerzoIntermediarioOSoggettoEmittenteValidator.cs" />
     <Compile Include="Validators\RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="Validators\DenominazioneNomeCognomeValidator.cs" />
@@ -307,8 +296,6 @@
     <Compile Include="Validators\DatiAnagraficiBaseValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiValidator.cs" />
     <Compile Include="Validators\SedeCessionarioCommittenteValidator.cs" />
-    <Compile Include="Validators\IsStatoLiquidazioneValidator.cs" />
-    <Compile Include="Validators\IsSocioUnicoValidator.cs" />
     <Compile Include="Validators\IscrizioneREAValidator.cs" />
     <Compile Include="Validators\StabileOrganizzazioneValidator.cs" />
     <Compile Include="Validators\SedeCedentePrestatoreValidator.cs" />
@@ -318,9 +305,7 @@
     <Compile Include="Validators\AnagraficaValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="Validators\DatiTrasmissioneValidator.cs" />
-    <Compile Include="Validators\DomainValidator.cs" />
     <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
-    <Compile Include="Validators\IsValidFormatoTrasmissioneValidator.cs" />
     <Compile Include="Validators\FPECDestinatarioValidator.cs" />
     <Compile Include="Validators\FAliquotaIVAValidator.cs" />
     <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
@@ -398,12 +383,8 @@
       </SubType>
     </Compile>
     <Compile Include="Validators\IdFiscaleIVAValidator.cs" />
-    <Compile Include="Validators\IsValidRegimeFiscaleValidator.cs" />
-    <Compile Include="Validators\IsValidProvinciaValidator.cs" />
-    <Compile Include="Validators\IsValidIdPaeseValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaValidator.cs" />
     <Compile Include="Validators\IdTrasmittenteValidator.cs" />
-    <Compile Include="Validators\ValidatorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="FatturaElettronica.snk" />

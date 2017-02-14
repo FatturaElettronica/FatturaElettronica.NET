@@ -1,4 +1,5 @@
 ﻿using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
+using FatturaElettronica.Tabelle;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
@@ -9,7 +10,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(dt => dt.IdTrasmittente).SetValidator(new IdTrasmittenteValidator());
             RuleFor(dt => dt.ProgressivoInvio).Length(1, 10);
-            RuleFor(dt => dt.FormatoTrasmissione).IsValidFormatoTrasmissioneValue();
+            RuleFor(dt => dt.FormatoTrasmissione).SetValidator(new IsValidValidator<FormatoTrasmissione>());
 
             RuleFor(dt => dt.CodiceDestinatario).Length(6)
                 .When(dt => dt.FormatoTrasmissione == Impostazioni.FormatoTrasmissione.PubblicaAmministrazione);

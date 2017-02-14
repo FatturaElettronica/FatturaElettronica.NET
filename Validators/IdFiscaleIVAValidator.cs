@@ -1,4 +1,6 @@
-﻿using FatturaElettronica.Common;
+﻿using BusinessObjects;
+using FatturaElettronica.Common;
+using FatturaElettronica.Tabelle;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
@@ -7,7 +9,7 @@ namespace FatturaElettronica.Validators
     {
         public IdFiscaleIVAValidator()
         {
-            RuleFor(id => id.IdPaese).NotEmpty().IsValidIdPaeseValue();
+            RuleFor(id => id.IdPaese).NotEmpty().SetValidator(new IsValidValidator<IdPaese>());
             RuleFor(id => id.IdCodice).NotEmpty().Length(1, 28);
         }
     }

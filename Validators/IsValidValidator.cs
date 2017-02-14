@@ -1,11 +1,14 @@
 ﻿using System;
+using BusinessObjects;
+using FatturaElettronica.Tabelle;
 using FluentValidation.Validators;
 
 namespace FatturaElettronica.Validators
 {
-    public abstract class DomainValidator<T> : PropertyValidator
+    public class IsValidValidator<T> : PropertyValidator 
+        where T : Tabella, new()
     {
-        public DomainValidator() : base("'{PropertyName}' valori accettati: {AcceptedValues}") { }
+        public IsValidValidator() : base("'{PropertyName}' valori accettati: {AcceptedValues}") { }
 
         protected override bool IsValid(PropertyValidatorContext context)
         {
@@ -13,6 +16,6 @@ namespace FatturaElettronica.Validators
 
             return Array.IndexOf(Domain, context.PropertyValue) != -1;
         }
-        protected abstract string[] Domain { get; }
+        protected string[] Domain { get { return new T().Codici; } }
     }
 }

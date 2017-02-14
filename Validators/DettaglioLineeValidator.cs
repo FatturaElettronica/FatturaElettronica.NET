@@ -1,5 +1,6 @@
 ﻿using System;
 using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Tabelle;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
@@ -8,7 +9,7 @@ namespace FatturaElettronica.Validators
     {
         public DettaglioLineeValidator()
         {
-            RuleFor(x => x.TipoCessionePrestazione).IsValidTipoCessionePrestazioneValue().Unless(x=>string.IsNullOrEmpty(x.TipoCessionePrestazione));
+            RuleFor(x => x.TipoCessionePrestazione).SetValidator(new IsValidValidator<TipoCessionePrestazione>()).Unless(x=>string.IsNullOrEmpty(x.TipoCessionePrestazione));
             RuleFor(x => x.CodiceArticolo).SetCollectionValidator(new CodiceArticoloValidator());
             RuleFor(x=>x.Descrizione).NotEmpty().Length(1, 1000);
             RuleFor(x => x.UnitaMisura).Length(1, 10).When(x => !string.IsNullOrEmpty(x.UnitaMisura));
@@ -18,7 +19,7 @@ namespace FatturaElettronica.Validators
                 .WithMessage("PrezzoTotale non calcolato secondo le specifiche tecniche")
                 .WithErrorCode("00423");
             RuleFor(x => x.Ritenuta).Equal("SI").Unless(x => string.IsNullOrEmpty(x.Ritenuta));
-            RuleFor(x => x.Natura).IsValidNaturaValue().Unless(x => string.IsNullOrEmpty(x.Natura));
+            RuleFor(x => x.Natura).SetValidator(new IsValidValidator<Natura>()).Unless(x => string.IsNullOrEmpty(x.Natura));
             RuleFor(x => x.Natura)
                 .Must(natura => !string.IsNullOrEmpty(natura))
                 .When(x => x.AliquotaIVA == 0)

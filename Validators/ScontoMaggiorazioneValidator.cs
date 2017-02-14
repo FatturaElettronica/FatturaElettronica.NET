@@ -7,7 +7,7 @@ namespace FatturaElettronica.Validators
     {
         public ScontoMaggiorazioneValidator()
         {
-            RuleFor(x => x.Tipo).NotEmpty().IsValidScontoMaggiorazioneValue();
+            RuleFor(x => x.Tipo).NotEmpty().SetValidator(new IsValidValidator<Tabelle.ScontoMaggiorazione>());
             RuleFor(x => x.Importo).NotNull().GreaterThan(0).Unless(x => x.Percentuale != null);
             RuleFor(x => x.Percentuale).NotNull().GreaterThan(0).Unless(x => x.Importo != null);
         }

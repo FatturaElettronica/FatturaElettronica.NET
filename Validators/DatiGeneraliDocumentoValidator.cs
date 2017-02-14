@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Tabelle;
 
 namespace FatturaElettronica.Validators
 {
@@ -7,8 +8,8 @@ namespace FatturaElettronica.Validators
     {
         public DatiGeneraliDocumentoValidator()
         {
-            RuleFor(x => x.TipoDocumento).NotEmpty().IsValidTipoDocumentoValue();
-            RuleFor(x => x.Divisa).NotEmpty().IsValidDivisaValue();
+            RuleFor(x => x.TipoDocumento).NotEmpty().SetValidator(new IsValidValidator<TipoDocumento>());
+            RuleFor(x => x.Divisa).NotEmpty().SetValidator(new IsValidValidator<Divisa>());
             RuleFor(x => x.Numero).NotEmpty().Length(1, 20);
             RuleFor(x => x.Numero).Matches(@"\d").WithMessage("Almeno un carattere numerico è necessario");
             RuleFor(x => x.DatiRitenuta).SetValidator(new DatiRitenutaValidator());
