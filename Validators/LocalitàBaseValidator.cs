@@ -23,10 +23,10 @@ namespace FatturaElettronica.Validators
         private void SetRules()
         {
             RuleFor(x => x.Indirizzo).NotEmpty().Length(1, 60);
-            RuleFor(x => x.NumeroCivico).Length(1, 8);
+            RuleFor(x => x.NumeroCivico).Length(1, 8).When(x => !string.IsNullOrEmpty(x.NumeroCivico));
             RuleFor(x => x.CAP).NotEmpty().Length(5);
             RuleFor(x => x.Comune).NotEmpty().Length(1, 60);
-            RuleFor(x => x.Provincia).SetValidator(new IsValidValidator<Provincia>()).Unless(x => string.IsNullOrEmpty(x.Provincia));
+            RuleFor(x => x.Provincia).SetValidator(new IsValidValidator<Provincia>()).When(x => !string.IsNullOrEmpty(x.Provincia));
             RuleFor(id => id.Nazione).NotEmpty().SetValidator(new IsValidValidator<IdPaese>());
         }
     }

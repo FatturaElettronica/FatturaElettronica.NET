@@ -1,7 +1,7 @@
 ﻿using FluentValidation.TestHelper;
-using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
@@ -9,80 +9,54 @@ namespace Tests
     public class DettaglioLineeValidator: BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
     {
         [TestMethod]
-        public void TipoCessionePrestazioneCanBeEmpty()
+        public void TipoCessionePrestazioneIsOptional()
         {
-            challenge.TipoCessionePrestazione = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoCessionePrestazione, challenge);
-            challenge.TipoCessionePrestazione = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoCessionePrestazione, challenge);
+            AssertOptional(x => x.TipoCessionePrestazione);
         }
         [TestMethod]
-        public void TipoCessionePrestazioneCanOnlyAcceptDomainValues()
+        public void TipoCessionePrestazioneOnlyAcceptsTableValues()
         {
-            challenge.TipoCessionePrestazione = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.TipoCessionePrestazione, challenge);
-            challenge.TipoCessionePrestazione = "SC";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoCessionePrestazione, challenge);
-            challenge.TipoCessionePrestazione = "AB";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoCessionePrestazione, challenge);
+            AssertOnlyAcceptsTableValues<TipoCessionePrestazione>(x => x.TipoCessionePrestazione);
         }
         [TestMethod]
-        public void CodiceArticoloHasChildValidator()
+        public void CodiceArticoloHasCollectionValidator()
         {
             validator.ShouldHaveChildValidator(x => x.CodiceArticolo, typeof(FatturaElettronica.Validators.CodiceArticoloValidator));
         }
         [TestMethod]
         public void CodiceArticoloCollectionCanBeEmpty()
         {
-            var r = validator.Validate(challenge);
-            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "CodiceArticolo"));
+            AssertCollectionCanBeEmpty(x => x.CodiceArticolo);
         }
         [TestMethod]
-        public void DescrizioneCannotBeEmpty()
+        public void DescrizioneIsRequired()
         {
-            challenge.Descrizione = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Descrizione, challenge);
-            challenge.Descrizione = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Descrizione, challenge);
+            AssertRequired(x => x.Descrizione);
         }
         [TestMethod]
         public void DescrizioneMinMaxLength()
         {
-            challenge.Descrizione = new string('x', 1001);
-            validator.ShouldHaveValidationErrorFor(x => x.Descrizione, challenge);
-            challenge.Descrizione = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Descrizione, challenge);
-            challenge.Descrizione = new string('x', 1000);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Descrizione, challenge);
+            AssertMinMaxLength(x => x.Descrizione, 1, 1000);
         }
         [TestMethod]
-        public void UnitaMisuraCanBeEmpty()
+        public void UnitaMisuraIsOptional()
         {
-            challenge.UnitaMisura = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisura, challenge);
-            challenge.UnitaMisura = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisura, challenge);
+            AssertOptional(x => x.UnitaMisura);
         }
         [TestMethod]
         public void UnitaMisuraMinMaxLength()
         {
-            challenge.UnitaMisura = new string('x', 11);
-            validator.ShouldHaveValidationErrorFor(x => x.UnitaMisura, challenge);
-            challenge.UnitaMisura = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisura, challenge);
-            challenge.UnitaMisura = new string('x', 10);
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisura, challenge);
+            AssertMinMaxLength(x => x.UnitaMisura, 1, 10);
         }
         [TestMethod]
-        public void ScontoMaggioazioneHasChildValidator()
+        public void ScontoMaggioazioneHasChildValidator() 
         {
             validator.ShouldHaveChildValidator(x => x.ScontoMaggiorazione, typeof(FatturaElettronica.Validators.ScontoMaggiorazioneValidator));
         }
         [TestMethod]
         public void ScontoMaggiorazioneCollectionCanBeEmpty()
         {
-            var r = validator.Validate(challenge);
-            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "ScontoMaggiorazione"));
+            AssertCollectionCanBeEmpty(x => x.ScontoMaggiorazione);
         }
         [TestMethod]
         public void PrezzoTotaleValidatesAgainstError00423()
@@ -136,30 +110,19 @@ namespace Tests
         }
 
         [TestMethod]
-        public void RitenutaCanBeEmpty()
+        public void RitenutaIsOptional()
         {
-            challenge.Ritenuta = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Ritenuta, challenge);
-            challenge.Ritenuta = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Ritenuta, challenge);
+            AssertOptional(x => x.Ritenuta);
         }
         [TestMethod]
-        public void RitenutaCanOnlyAcceptSIValue()
+        public void RitenutaOnlyAccepstSIValue()
         {
-            challenge.Ritenuta = "NO";
-            validator.ShouldHaveValidationErrorFor(x => x.Ritenuta, challenge);
-            challenge.Ritenuta = "SI";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Ritenuta, challenge);
+            AssertOnlyAcceptsSIValue(x => x.Ritenuta);
         }
         [TestMethod]
-        public void NaturaCanOnlyAcceptDomainValues()
+        public void NaturaOnlyAcceptsTableValues()
         {
-            challenge.Natura = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
-            challenge.Natura = "N1";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
-            challenge.Natura = "N7";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
+            AssertOnlyAcceptsTableValues<Natura>(x => x.Natura);
         }
         [TestMethod]
         public void NaturaValidateAgainstError00401()
@@ -184,22 +147,14 @@ namespace Tests
             validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
         }
         [TestMethod]
-        public void RiferimentoAmministrazioneCanBeEmpty()
+        public void RiferimentoAmministrazioneIsOptional()
         {
-            challenge.RiferimentoAmministrazione = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+            AssertOptional(x => x.RiferimentoAmministrazione);
         }
         [TestMethod]
         public void RiferimentoAmministrazioneMinMaxLength()
         {
-            challenge.RiferimentoAmministrazione = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+            AssertMinMaxLength(x => x.RiferimentoAmministrazione, 1, 20);
         }
         [TestMethod]
         public void AltriDatiGestionaliHasChildValidator()
@@ -209,8 +164,7 @@ namespace Tests
         [TestMethod]
         public void AltriDatiGestionaliCollectionCanBeEmpty()
         {
-            var r = validator.Validate(challenge);
-            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "AltriDatiGestionali"));
+            AssertCollectionCanBeEmpty(x => x.AltriDatiGestionali);
         }
     }
 }

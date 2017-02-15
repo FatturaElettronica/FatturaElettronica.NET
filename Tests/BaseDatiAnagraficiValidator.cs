@@ -5,7 +5,8 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public abstract class BaseDatiAnagraficiValidator<TClass, TValidator> : BaseClass<TClass, TValidator>
+    public abstract class BaseDatiAnagraficiValidator<TClass, TValidator> 
+        : BaseClass<TClass, TValidator>
         where TClass : FatturaElettronica.Common.DatiAnagrafici
         where TValidator : IValidator<TClass>
     {
@@ -15,18 +16,14 @@ namespace Tests
             validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
         }
         [TestMethod]
+        public void CodiceFiscaleIsOptional()
+        {
+            AssertOptional(x => x.CodiceFiscale);
+        }
+        [TestMethod]
         public void CodiceFiscaleMinMaxLength()
         {
-            challenge.CodiceFiscale = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceFiscale, challenge);
-            challenge.CodiceFiscale = new string('x', 10);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceFiscale, challenge);
-            challenge.CodiceFiscale = new string('x', 17);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceFiscale, challenge);
-            challenge.CodiceFiscale = new string('x', 11);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceFiscale, challenge);
-            challenge.CodiceFiscale = new string('x', 16);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceFiscale, challenge);
+            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
         }
         [TestMethod]
         public void AnagraficaHasChildValidator()

@@ -1,11 +1,13 @@
 ﻿using FluentValidation.TestHelper;
 using FatturaElettronica.FatturaElettronicaHeader;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class FatturaElettronicaHeaderValidator: BaseClass<FatturaElettronicaHeader, FatturaElettronica.Validators.FatturaElettronicaHeaderValidator>
+    public class FatturaElettronicaHeaderValidator
+        : BaseClass<FatturaElettronicaHeader, FatturaElettronica.Validators.FatturaElettronicaHeaderValidator>
     {
         [TestMethod]
         public void DatiTramissioneHasChildValidator()
@@ -32,20 +34,14 @@ namespace Tests
                 x => x.CessionarioCommittente, typeof(FatturaElettronica.Validators.CessionarioCommittenteValidator));
         }
         [TestMethod]
-        public void SoggettoEmittenteCanBeEmpty()
+        public void SoggettoEmittenteIsOptional()
         {
-            challenge.SoggettoEmittente = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
+            AssertOptional(x => x.SoggettoEmittente);
         }
         [TestMethod]
-        public void SoggettoEmittenteCanOnlyAcceptDomainValues()
+        public void SoggettoEmittenteOnlyAcceptsTableValues()
         {
-            challenge.SoggettoEmittente = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
-            challenge.SoggettoEmittente = "CC";
-            validator.ShouldNotHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
-            challenge.SoggettoEmittente = "TZ";
-            validator.ShouldNotHaveValidationErrorFor(x => x.SoggettoEmittente, challenge);
+            AssertOnlyAcceptsTableValues<SoggettoEmittente>(x => x.SoggettoEmittente);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
-using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
@@ -32,22 +31,14 @@ namespace Tests
             Assert.IsTrue(r.IsValid);
         }
         [TestMethod]
-        public void NumeroLicenzaGuidaCanBeEmpty()
+        public void NumeroLicenzaIsOptional()
         {
-            challenge.NumeroLicenzaGuida = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroLicenzaGuida, challenge);
-            challenge.NumeroLicenzaGuida = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroLicenzaGuida, challenge);
+            AssertOptional(x => x.NumeroLicenzaGuida);
         }
         [TestMethod]
         public void NumeroLicenzaGuidaMinMaxLength()
         {
-            challenge.NumeroLicenzaGuida = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.NumeroLicenzaGuida, challenge);
-            challenge.NumeroLicenzaGuida = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroLicenzaGuida, challenge);
-            challenge.NumeroLicenzaGuida = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroLicenzaGuida, challenge);
+            AssertMinMaxLength(x => x.NumeroLicenzaGuida, 1, 20);
         }
 
         // Questi test della Base class non devono essere eseuigiti per DatiAnagraficiVettore.

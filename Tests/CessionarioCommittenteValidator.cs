@@ -6,7 +6,8 @@ using FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente;
 namespace Tests
 {
     [TestClass]
-    public class CessionarioCommittenteValidator : BaseClass<CessionarioCommittente, FatturaElettronica.Validators.CessionarioCommittenteValidator>
+    public class CessionarioCommittenteValidator 
+        : BaseClass<CessionarioCommittente, FatturaElettronica.Validators.CessionarioCommittenteValidator>
     {
         [TestMethod]
         public void DatiAnagraficiHasChildValidator()

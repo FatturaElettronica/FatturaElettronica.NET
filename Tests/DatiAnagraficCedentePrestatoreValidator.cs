@@ -1,60 +1,51 @@
-﻿using FluentValidation.TestHelper;
+﻿using FatturaElettronica.Tabelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiAnagraficiCedentePrestatoreValidator : BaseDatiAnagraficiValidator<FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore.DatiAnagraficiCedentePrestatore, FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator>
+    public class DatiAnagraficiCedentePrestatoreValidator 
+        : BaseDatiAnagraficiValidator<FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore.DatiAnagraficiCedentePrestatore, FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator>
     {
+        [TestMethod]
+        public void AlboProfessionalIsOptional()
+        {
+            AssertOptional(x => x.AlboProfessionale);
+        }
         [TestMethod]
         public void AlboProfessionaleMinMaxLength()
         {
-            challenge.AlboProfessionale = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.AlboProfessionale, challenge);
-            challenge.AlboProfessionale = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.AlboProfessionale, challenge);
-            challenge.AlboProfessionale = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.AlboProfessionale, challenge);
-            challenge.AlboProfessionale = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.AlboProfessionale, challenge);
+            AssertMinMaxLength(x => x.AlboProfessionale, 1, 60);
         }
         [TestMethod]
-        public void ProvinciaAlboCanBeEmpty()
+        public void ProvinciaAlboIsOptional()
         {
-            challenge.ProvinciaAlbo = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.ProvinciaAlbo, challenge);
-            challenge.ProvinciaAlbo = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.ProvinciaAlbo, challenge);
+            AssertOptional(x => x.ProvinciaAlbo);
         }
         [TestMethod]
-        public void ProvinciaAlboCanOnlyAcceptDomainValues()
+        public void ProvinciaAlboOnlyAcceptsTableValues()
         {
-            challenge.ProvinciaAlbo = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.ProvinciaAlbo, challenge);
-            challenge.ProvinciaAlbo = "RA";
-            validator.ShouldNotHaveValidationErrorFor(x => x.ProvinciaAlbo, challenge);
+            AssertOnlyAcceptsTableValues<Provincia>(x => x.ProvinciaAlbo);
+        }
+        [TestMethod]
+        public void NumeroIscrizioneAlboIsOptional()
+        {
+            AssertOptional(x => x.NumeroIscrizioneAlbo);
         }
         [TestMethod]
         public void NumeroIscrizioneAlboMinMaxLength()
         {
-            challenge.NumeroIscrizioneAlbo = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroIscrizioneAlbo, challenge);
-            challenge.NumeroIscrizioneAlbo = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.NumeroIscrizioneAlbo, challenge);
-            challenge.NumeroIscrizioneAlbo = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroIscrizioneAlbo, challenge);
-            challenge.NumeroIscrizioneAlbo = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroIscrizioneAlbo, challenge);
+            AssertMinMaxLength(x => x.NumeroIscrizioneAlbo, 1, 60);
         }
         [TestMethod]
-        public void RegimeFiscaleCanOnlyAcceptDomainValues()
+        public void RegimeFiscaleIsRequired()
         {
-            challenge.RegimeFiscale = null;
-            validator.ShouldHaveValidationErrorFor(x => x.RegimeFiscale, challenge);
-            challenge.RegimeFiscale = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.RegimeFiscale, challenge);
-            challenge.RegimeFiscale = "RF01";
-            validator.ShouldNotHaveValidationErrorFor(x => x.RegimeFiscale, challenge);
+            AssertRequired(x => x.RegimeFiscale);
+        }
+        [TestMethod]
+        public void RegimeFiscaleOnlyAcceptsTableValues()
+        {
+            AssertOnlyAcceptsTableValues<RegimeFiscale>(x => x.RegimeFiscale);
         }
     }
 }

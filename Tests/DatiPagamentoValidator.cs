@@ -1,30 +1,23 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiPagamento;
-using System.Linq;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiPagamentoValidator: BaseClass<DatiPagamento, FatturaElettronica.Validators.DatiPagamentoValidator>
+    public class DatiPagamentoValidator
+        : BaseClass<DatiPagamento, FatturaElettronica.Validators.DatiPagamentoValidator>
     {
         [TestMethod]
-        public void CondizioniPagamentoCannotBeEmpty()
+        public void CondizioniPagamentoIsRequired()
         {
-            challenge.CondizioniPagamento = null;
-            validator.ShouldHaveValidationErrorFor(x => x.CondizioniPagamento, challenge);
-            challenge.CondizioniPagamento = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.CondizioniPagamento, challenge);
+            AssertRequired(x => x.CondizioniPagamento);
         }
         [TestMethod]
-        public void CondizioniPagamentoCanOnlyAcceptDomainValues()
+        public void CondizioniPagamentoOnlyAcceptsTableValues()
         {
-            challenge.CondizioniPagamento = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.CondizioniPagamento, challenge);
-            challenge.CondizioniPagamento = "TP01";
-            validator.ShouldNotHaveValidationErrorFor(x => x.CondizioniPagamento, challenge);
-            challenge.CondizioniPagamento = "TP03";
-            validator.ShouldNotHaveValidationErrorFor(x => x.CondizioniPagamento, challenge);
+            AssertOnlyAcceptsTableValues<CondizioniPagamento>(x => x.CondizioniPagamento);
         }
         [TestMethod]
         public void DettaglioPagamentoHasChildValidator()
@@ -35,12 +28,7 @@ namespace Tests
         [TestMethod]
         public void DettaglioPagamentoCollectionCannotBeEmpty()
         {
-            var r = validator.Validate(challenge);
-            Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioPagamento"));
-
-            challenge.DettaglioPagamento.Add(new DettaglioPagamento());
-            r = validator.Validate(challenge);
-            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioPagamento"));
+            AssertCollectionCannotBeEmpty(x => x.DettaglioPagamento);
         }
     }
 }

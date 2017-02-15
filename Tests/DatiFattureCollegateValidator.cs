@@ -4,7 +4,8 @@ using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 namespace Tests
 {
     [TestClass]
-    public class DatiFattureCollegateValidator: BaseDatiDocumentoValidator<DatiFattureCollegate, FatturaElettronica.Validators.DatiFattureCollegateValidator>
+    public class DatiFattureCollegateValidator
+        : BaseDatiDocumentoValidator<DatiFattureCollegate, FatturaElettronica.Validators.DatiFattureCollegateValidator>
     {
     }
 }

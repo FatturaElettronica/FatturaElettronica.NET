@@ -1,6 +1,6 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
@@ -33,60 +33,38 @@ namespace Tests
             Assert.IsTrue(r.IsValid);
         }
         [TestMethod]
-        public void TipoRitenutaCannotBeEmpty()
+        public void TipoRitenutaIsRequired()
         {
-            challenge.TipoRitenuta = null;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoRitenuta, challenge);
-            challenge.TipoRitenuta = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoRitenuta, challenge);
+            AssertRequired(x => x.TipoRitenuta);
         }
         [TestMethod]
-        public void TipoRitenutaCanOnlyAcceptDomainValues()
+        public void TipoRitenutaOnlyAcceptsTableValues()
         {
-            challenge.TipoRitenuta = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.TipoRitenuta, challenge);
-            challenge.TipoRitenuta = "RT01";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoRitenuta, challenge);
-            challenge.TipoRitenuta = "RT02";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoRitenuta, challenge);
+            AssertOnlyAcceptsTableValues<TipoRitenuta>(x => x.TipoRitenuta);
         }
         [TestMethod]
-        public void ImportoPagamentoCannotBeNull()
+        public void ImportoRitenutaIsRequired()
         {
-            challenge.ImportoRitenuta = null;
-            validator.ShouldHaveValidationErrorFor(x => x.ImportoRitenuta, challenge);
-            challenge.ImportoRitenuta = 0;
-            validator.ShouldNotHaveValidationErrorFor(x => x.ImportoRitenuta, challenge);
+            AssertRequired(x => x.ImportoRitenuta);
         }
         [TestMethod]
-        public void AliquotaRitenutaCannotBeNull()
+        public void AliquotaRitenutaIsRequired()
         {
-            challenge.AliquotaRitenuta = null;
-            validator.ShouldHaveValidationErrorFor(x => x.AliquotaRitenuta, challenge);
-            challenge.AliquotaRitenuta = 0;
-            validator.ShouldNotHaveValidationErrorFor(x => x.AliquotaRitenuta, challenge);
+            AssertRequired(x => x.AliquotaRitenuta);
         }
         [TestMethod]
-        public void CausalePagamentoCannotBeEmpty()
+        public void CausalePagamentoIsRequired()
         {
             // Abbiamo bisogno di istanza non Empty ma in questo caso non possiamo usare CausalePagamento
             // a tal scopo perché dobbiamo testare proprio quella proprietà.
             challenge.ImportoRitenuta = 1;
 
-            challenge.CausalePagamento = null;
-            validator.ShouldHaveValidationErrorFor(x => x.CausalePagamento, challenge);
-            challenge.CausalePagamento = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.CausalePagamento, challenge);
+            AssertRequired(x => x.CausalePagamento);
         }
         [TestMethod]
-        public void CausalePagamentoCanOnlyAcceptDomainValues()
+        public void CausalePagamentoOnlyAcceptsTableValues()
         {
-            challenge.CausalePagamento = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.CausalePagamento, challenge);
-            challenge.CausalePagamento = "A";
-            validator.ShouldNotHaveValidationErrorFor(x => x.CausalePagamento, challenge);
-            challenge.CausalePagamento = "Z";
-            validator.ShouldNotHaveValidationErrorFor(x => x.CausalePagamento, challenge);
+            AssertOnlyAcceptsTableValues<CausalePagamento>(x => x.CausalePagamento);
         }
     }
 }

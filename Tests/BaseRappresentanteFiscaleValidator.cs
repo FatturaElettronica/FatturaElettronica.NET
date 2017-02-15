@@ -1,11 +1,11 @@
-﻿using FatturaElettronica.FatturaElettronicaHeader.RappresentanteFiscale;
-using FluentValidation;
+﻿using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
-    public abstract class BaseRappresentanteFiscaleValidator<TClass, TValidator> : BaseClass<TClass, TValidator>
+    public abstract class BaseRappresentanteFiscaleValidator<TClass, TValidator> 
+        : BaseClass<TClass, TValidator>
         where TClass : FatturaElettronica.Common.RappresentanteFiscale
         where TValidator : IValidator<TClass>
     {

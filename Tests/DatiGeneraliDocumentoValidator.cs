@@ -3,68 +3,46 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Validators;
 using System.Linq;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiGeneraliDocumentoValidator: BaseClass<DatiGeneraliDocumento, FatturaElettronica.Validators.DatiGeneraliDocumentoValidator>
+    public class DatiGeneraliDocumentoValidator
+        : BaseClass<DatiGeneraliDocumento, FatturaElettronica.Validators.DatiGeneraliDocumentoValidator>
     {
         [TestMethod]
-        public void TipoDocumentoCannotBeEmpty()
+        public void TipoDocumentoIsRequired()
         {
-            challenge.TipoDocumento = null;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoDocumento, challenge);
-            challenge.TipoDocumento = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoDocumento, challenge);
+            AssertRequired(x => x.TipoDocumento);
         }
         [TestMethod]
-        public void TipoDocumentoCanOnlyAcceptDomainValues()
+        public void TipoDocumentoOnlyAcceptsTableValues()
         {
-            challenge.TipoDocumento = "TD07";
-            validator.ShouldHaveValidationErrorFor(x => x.TipoDocumento, challenge);
-            challenge.TipoDocumento = "TD01";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoDocumento, challenge);
-            challenge.TipoDocumento = "TD06";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoDocumento, challenge);
+            AssertOnlyAcceptsTableValues<TipoDocumento>(x => x.TipoDocumento);
         }
         [TestMethod]
-        public void DivisaCannotBeEmpty()
+        public void DivisaIsRequired()
         {
-            challenge.Divisa = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Divisa, challenge);
-            challenge.Divisa = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Divisa, challenge);
+            AssertRequired(x => x.Divisa);
         }
         [TestMethod]
-        public void DivisaCanOnlyAcceptDomainValues()
+        public void DivisaOnlyAcceptsTableValues()
         {
-            challenge.Divisa = "notreally";
-            validator.ShouldHaveValidationErrorFor(x => x.Divisa, challenge);
-            challenge.Divisa = "EUR";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Divisa, challenge);
-            challenge.Divisa = "XXX";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Divisa, challenge);
+            AssertOnlyAcceptsTableValues<Divisa>(x => x.Divisa);
         }
         [TestMethod]
-        public void NumeroCannotBeEmpty()
+        public void NumeroIsRequired()
         {
-            challenge.Numero = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Numero, challenge);
-            challenge.Numero = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Numero, challenge);
+            AssertRequired(x => x.Numero);
         }
         [TestMethod]
         public void NumeroMinMaxLength()
         {
-            challenge.Numero = new string('1', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.Numero, challenge);
-            challenge.Numero = new string('1', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Numero, challenge);
-            challenge.Numero = new string('1', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Numero, challenge);
+            AssertMinMaxLength(x => x.Numero, 1, 20, filler:'1');
         }
         [TestMethod]
-        public void NumeroDeveAvereUnCarattereNumerico()
+        public void NumeroMustHaveAtLeatOneNumericChar()
         {
             challenge.Numero = "hello";
             validator.ShouldHaveValidationErrorFor(x => x.Numero, challenge);
@@ -98,9 +76,7 @@ namespace Tests
             var r = validator.Validate(challenge);
             Assert.IsFalse(r.IsValid);
 
-            //For some reason this does not work (because DatiCassaPrevidenziale is a collection)
-            // TODO consider implementing an extension method for this
-            Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale"));
+            Assert.AreEqual("00415", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale").ErrorCode);
 
             challenge.DatiCassaPrevidenziale.Clear();
             r = validator.Validate(challenge);
@@ -112,20 +88,14 @@ namespace Tests
             validator.ShouldHaveChildValidator(x => x.Causale, typeof(FatturaElettronica.Validators.StringLengthValidator));
         }
         [TestMethod]
-        public void Art73CanBeEmpty()
+        public void Art73IsOptional()
         {
-            challenge.Art73 = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Art73, challenge);
-            challenge.Art73 = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Art73, challenge);
+            AssertOptional(x => x.Art73);
         }
         [TestMethod]
-        public void Art73CanOnlyAcceptSIValue()
+        public void Art73OnlyAcceptsSIValue()
         {
-            challenge.Art73 = "NO";
-            validator.ShouldHaveValidationErrorFor(x => x.Art73, challenge);
-            challenge.Art73 = "SI";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Art73, challenge);
+            AssertOnlyAcceptsSIValue(x => x.Art73);
         }
     }
 }

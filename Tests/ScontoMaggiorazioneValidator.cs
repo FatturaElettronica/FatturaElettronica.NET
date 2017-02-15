@@ -5,26 +5,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class ScontoMaggiorazioneValidator : BaseClass<ScontoMaggiorazione, FatturaElettronica.Validators.ScontoMaggiorazioneValidator>
+    public class ScontoMaggiorazioneValidator 
+        : BaseClass<ScontoMaggiorazione, FatturaElettronica.Validators.ScontoMaggiorazioneValidator>
     {
 
         [TestMethod]
-        public void TipoCannotBeEmpty()
+        public void TipoIsRequired()
         {
-            challenge.Tipo = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Tipo, challenge);
-            challenge.Tipo = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Tipo, challenge);
+            AssertRequired(x => x.Tipo);
         }
         [TestMethod]
-        public void TipoCanOnlyAcceptValidValues()
+        public void TipoOnlyAcceptsTableValues()
         {
-            challenge.Tipo = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.Tipo, challenge);
-            challenge.Tipo = "SC";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Tipo, challenge);
-            challenge.Tipo = "MG";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Tipo, challenge);
+            AssertOnlyAcceptsTableValues<FatturaElettronica.Tabelle.ScontoMaggiorazione>(x => x.Tipo);
         }
         [TestMethod]
         public void ImportoMustHaveValueUnlessPercentualeDoes()

@@ -1,11 +1,11 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiBolloValidator: BaseClass<DatiBollo, FatturaElettronica.Validators.DatiBolloValidator>
+    public class DatiBolloValidator
+        : BaseClass<DatiBollo, FatturaElettronica.Validators.DatiBolloValidator>
     {
         [TestInitialize]
         public new void Init()
@@ -33,32 +33,23 @@ namespace Tests
             Assert.IsTrue(r.IsValid);
         }
         [TestMethod]
-        public void ImportoBolloCannotBeNull()
+        public void ImportoBolloIsRequired()
         {
             // Abbiamo bisogno di istanza non Empty ma in questo caso non possiamo usare CausalePagamento
             // a tal scopo perché dobbiamo testare proprio quella proprietà.
             challenge.BolloVirtuale = "hello";
 
-            challenge.ImportoBollo = null;
-            validator.ShouldHaveValidationErrorFor(x => x.ImportoBollo, challenge);
-            challenge.ImportoBollo = 0;
-            validator.ShouldNotHaveValidationErrorFor(x => x.ImportoBollo, challenge);
+            AssertRequired(x => x.ImportoBollo);
         }
         [TestMethod]
-        public void BolloVirtualeCannotBeEmpty()
+        public void BolloVirtualeIsRequired()
         {
-            challenge.BolloVirtuale = null;
-            validator.ShouldHaveValidationErrorFor(x => x.BolloVirtuale, challenge);
-            challenge.BolloVirtuale = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.BolloVirtuale, challenge);
+            AssertRequired(x => x.BolloVirtuale);
         }
         [TestMethod]
-        public void BolloVirtualCanOnlyAcceptSIValue()
+        public void BolloVirtualeOnlyAcceptsSIValue()
         {
-            challenge.BolloVirtuale = "NO";
-            validator.ShouldHaveValidationErrorFor(x => x.BolloVirtuale, challenge);
-            challenge.BolloVirtuale = "SI";
-            validator.ShouldNotHaveValidationErrorFor(x => x.BolloVirtuale, challenge);
+            AssertOnlyAcceptsSIValue(x => x.BolloVirtuale);
         }
     }
 }

@@ -86,7 +86,6 @@
     <Compile Include="DatiCassaPrevidenzialeValidator.cs" />
     <Compile Include="DatiBolloValidator.cs" />
     <Compile Include="DatiRitenutaValidator.cs" />
-    <Compile Include="StringLengthValidator.cs" />
     <Compile Include="DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="CessionarioCommittenteValidator.cs" />
     <Compile Include="DatiGeneraliValidator.cs" />

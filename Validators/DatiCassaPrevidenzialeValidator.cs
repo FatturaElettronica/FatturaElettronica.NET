@@ -14,7 +14,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.AliquotaIVA).NotNull();
             RuleFor(x => x.Ritenuta).Equal("SI").Unless(x => string.IsNullOrEmpty(x.Ritenuta));
             RuleFor(x => x.Natura).NotEmpty().SetValidator(new IsValidValidator<Natura>());
-            RuleFor(x => x.RiferimentoAmministrazione).Length(1, 20);
+            RuleFor(x => x.RiferimentoAmministrazione).Length(1, 20).When(x=>!string.IsNullOrEmpty(x.RiferimentoAmministrazione));
         }
     }
 }

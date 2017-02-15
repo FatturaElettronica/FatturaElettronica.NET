@@ -1,75 +1,52 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiCassaPrevidenzialeValidator: BaseClass<DatiCassaPrevidenziale, FatturaElettronica.Validators.DatiCassaPrevidenzialeValidator>
+    public class DatiCassaPrevidenzialeValidator
+        : BaseClass<DatiCassaPrevidenziale, FatturaElettronica.Validators.DatiCassaPrevidenzialeValidator>
     {
         [TestMethod]
-        public void TipoCassaCannotBeEmpty()
+        public void TipoCassaIsRequired()
         {
-            challenge.TipoCassa = null;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoCassa, challenge);
-            challenge.TipoCassa = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoCassa, challenge);
+            AssertRequired(x => x.TipoCassa);
         }
         [TestMethod]
-        public void TipoCassaCanOnlyAcceptDomainValues()
+        public void TipoCassaOnlyAcceptsTableValues()
         {
-            challenge.TipoCassa = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.TipoCassa, challenge);
-            challenge.TipoCassa = "TC01";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoCassa, challenge);
-            challenge.TipoCassa = "TC22";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoCassa, challenge);
+            AssertOnlyAcceptsTableValues<TipoCassa>(x => x.TipoCassa);
         }
         [TestMethod]
-        public void NaturaCannotBeEmpty()
+        public void NaturaIsRequired()
         {
-            challenge.Natura = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
-            challenge.Natura = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
+            AssertRequired(x => x.Natura);
         }
         [TestMethod]
-        public void NaturaCanOnlyAcceptDomainValues()
+        public void NaturaOnlyAcceptsTableValues()
         {
-            challenge.Natura = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
-            challenge.Natura = "N1";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
-            challenge.Natura = "N7";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
+            AssertOnlyAcceptsTableValues<Natura>(x => x.Natura);
+        }
+        [TestMethod]
+        public void RiferimentoAmministrazioneIsOptional()
+        {
+            AssertOptional(x => x.RiferimentoAmministrazione);
         }
         [TestMethod]
         public void RiferimentoAmministrazioneMinMaxLength()
         {
-            challenge.RiferimentoAmministrazione = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+            AssertMinMaxLength(x => x.RiferimentoAmministrazione, 1, 20);
         }
         [TestMethod]
-        public void RitenutaCanBeEmpty()
+        public void RitenutaIsOptional()
         {
-            challenge.Ritenuta = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Ritenuta, challenge);
-            challenge.Ritenuta = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Ritenuta, challenge);
+            AssertOptional(x => x.Ritenuta);
         }
         [TestMethod]
-        public void RitenutaCanOnlyAcceptSIValue()
+        public void RitenutaOnlyAcceptSIValue()
         {
-            challenge.Ritenuta = "NO";
-            validator.ShouldHaveValidationErrorFor(x => x.Ritenuta, challenge);
-            challenge.Ritenuta = "SI";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Ritenuta, challenge);
+            AssertOnlyAcceptsSIValue(x => x.Ritenuta);
         }
     }
 }

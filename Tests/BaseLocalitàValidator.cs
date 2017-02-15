@@ -1,112 +1,75 @@
-﻿using FluentValidation;
-using FluentValidation.TestHelper;
+﻿using FatturaElettronica.Tabelle;
+using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
-    public abstract class BaseLocalitàValidator<TClass, TValidator> : BaseClass<TClass, TValidator> 
+    public abstract class BaseLocalitàValidator<TClass, TValidator> 
+        : BaseClass<TClass, TValidator> 
         where TClass : FatturaElettronica.Common.Località
         where TValidator : IValidator<TClass>
 
     {
         [TestMethod]
-        public void IndirizzoCannotBeEmpty()
+        public void IndirizzoIsRequired()
         {
-            challenge.Indirizzo = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Indirizzo, challenge);
-            challenge.Indirizzo = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Indirizzo, challenge);
+            AssertRequired(x => x.Indirizzo);
         }
         [TestMethod]
         public void IndirizzoMinMaxLength()
         {
-            challenge.Indirizzo = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.Indirizzo, challenge);
-            challenge.Indirizzo = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Indirizzo, challenge);
-            challenge.Indirizzo = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Indirizzo, challenge);
+            AssertMinMaxLength(x => x.Indirizzo, 1, 60);
+        }
+        [TestMethod]
+        public void NumeroCivicoIsOptional()
+        {
+            AssertOptional(x => x.NumeroCivico);
         }
         [TestMethod]
         public void NumeroCivicoMinMaxLength()
         {
-            challenge.NumeroCivico = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroCivico, challenge);
-            challenge.NumeroCivico = new string('x', 9);
-            validator.ShouldHaveValidationErrorFor(x => x.NumeroCivico, challenge);
-            challenge.NumeroCivico = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroCivico, challenge);
-            challenge.NumeroCivico = new string('x', 8);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroCivico, challenge);
+            AssertMinMaxLength(x => x.NumeroCivico, 1, 8);
         }
         [TestMethod]
-        public void CAPCannotBeEmpty()
+        public void CAPIsRequired()
         {
-            challenge.CAP = null;
-            validator.ShouldHaveValidationErrorFor(x => x.CAP, challenge);
-            challenge.CAP = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.CAP, challenge);
+            AssertRequired(x => x.CAP);
         }
         [TestMethod]
-        public void CAPMinMaxLength()
+        public void CAPLength()
         {
-            challenge.CAP = new string('x', 1);
-            validator.ShouldHaveValidationErrorFor(x => x.CAP, challenge);
-            challenge.CAP = new string('x', 6);
-            validator.ShouldHaveValidationErrorFor(x => x.CAP, challenge);
-            challenge.CAP = new string('x', 5);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CAP, challenge);
+            AssertLength(x => x.CAP, 5);
         }
         [TestMethod]
-        public void ComuneCannotBeEmpty()
+        public void ComuneIsRequired()
         {
-            challenge.Comune = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Comune, challenge);
-            challenge.Comune = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Comune, challenge);
+            AssertRequired(x => x.Comune);
         }
         [TestMethod]
         public void ComuneMinMaxLength()
         {
-            challenge.Comune = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.Comune, challenge);
-            challenge.Comune = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Comune, challenge);
-            challenge.Comune = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Comune, challenge);
+            AssertMinMaxLength(x => x.Comune, 1, 60);
         }
         [TestMethod]
-        public void ProvinciaCanBeEmpty()
+        public void ProvinciaOptional()
         {
-            challenge.Provincia = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Provincia, challenge);
-            challenge.Provincia = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Provincia, challenge);
+            AssertOptional(x => x.Provincia);
         }
         [TestMethod]
-        public void ProvinciaCanOnlyAcceptDomainValues()
+        public void ProvinciaOnlyAcceptsTableValues()
         {
-            challenge.Provincia = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.Provincia, challenge);
-            challenge.Provincia = "RA";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Provincia, challenge);
+            AssertOnlyAcceptsTableValues<Provincia>(x => x.Provincia);
         }
         [TestMethod]
-        public void NazioneCannotBeEmpty()
+        public void NazioneIsRequired()
         {
-            challenge.Nazione = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Nazione, challenge);
-            challenge.Nazione = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Nazione, challenge);
+            AssertRequired(x => x.Nazione);
         }
         [TestMethod]
-        public void NazioneCanOnlyAcceptDomainValues()
+        public void NazioneOnlyAcceptsTableValues()
         {
-            challenge.Nazione = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.Nazione, challenge);
-            challenge.Nazione = "IT";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Nazione, challenge);
+            AssertOnlyAcceptsTableValues<IdPaese>(x => x.Nazione);
         }
     }
 }

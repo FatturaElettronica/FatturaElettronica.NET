@@ -1,13 +1,13 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
-using System;
-using System.Linq;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiTrasportoValidator: BaseClass<DatiTrasporto, FatturaElettronica.Validators.DatiTrasportoValidator>
+    public class DatiTrasportoValidator
+        : BaseClass<DatiTrasporto, FatturaElettronica.Validators.DatiTrasportoValidator>
     {
         [TestMethod]
         public void DatiAnagraficiVettoreHasChildValidator()
@@ -16,94 +16,54 @@ namespace Tests
                 x => x.DatiAnagraficiVettore, typeof(FatturaElettronica.Validators.DatiAnagraficiVettoreValidator));
         }
         [TestMethod]
-        public void MezzoTrasportoCanBeEmpty()
+        public void MezzoTrasportoIsOptional()
         {
-            challenge.MezzoTrasporto = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.MezzoTrasporto, challenge);
-            challenge.MezzoTrasporto = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.MezzoTrasporto, challenge);
+            AssertOptional(x => x.MezzoTrasporto);
         }
         [TestMethod]
         public void MezzoTrasportoMinMaxLength()
         {
-            challenge.MezzoTrasporto = new string('x', 81);
-            validator.ShouldHaveValidationErrorFor(x => x.MezzoTrasporto, challenge);
-            challenge.MezzoTrasporto = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.MezzoTrasporto, challenge);
-            challenge.MezzoTrasporto = new string('x', 80);
-            validator.ShouldNotHaveValidationErrorFor(x => x.MezzoTrasporto, challenge);
+            AssertMinMaxLength(x => x.MezzoTrasporto, 1, 80);
         }
         [TestMethod]
-        public void CausaleTrasportoCanBeEmpty()
+        public void CausaleTrasportoIsOptional()
         {
-            challenge.CausaleTrasporto = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CausaleTrasporto, challenge);
-            challenge.CausaleTrasporto = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CausaleTrasporto, challenge);
+            AssertOptional(x => x.CausaleTrasporto);
         }
         [TestMethod]
         public void CausaleTrasportoMinMaxLength()
         {
-            challenge.CausaleTrasporto = new string('x', 101);
-            validator.ShouldHaveValidationErrorFor(x => x.CausaleTrasporto, challenge);
-            challenge.CausaleTrasporto = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CausaleTrasporto, challenge);
-            challenge.CausaleTrasporto = new string('x', 100);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CausaleTrasporto, challenge);
+            AssertMinMaxLength(x => x.CausaleTrasporto, 1, 100);
         }
         [TestMethod]
-        public void DescrizioneCanBeEmpty()
+        public void DescrizioneIsOptional()
         {
-            challenge.Descrizione = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Descrizione, challenge);
-            challenge.Descrizione = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Descrizione, challenge);
+            AssertOptional(x => x.Descrizione);
         }
         [TestMethod]
         public void DescrizioneMinMaxLength()
         {
-            challenge.Descrizione = new string('x', 101);
-            validator.ShouldHaveValidationErrorFor(x => x.Descrizione, challenge);
-            challenge.Descrizione = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Descrizione, challenge);
-            challenge.Descrizione = new string('x', 100);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Descrizione, challenge);
+            AssertMinMaxLength(x => x.Descrizione, 1, 100);
         }
         [TestMethod]
-        public void UnitaMisuraPesoCanBeEmpty()
+        public void UnitaMisuraPesoIsOptional()
         {
-            challenge.UnitaMisuraPeso = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisuraPeso, challenge);
-            challenge.UnitaMisuraPeso = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisuraPeso, challenge);
+            AssertOptional(x => x.UnitaMisuraPeso);
         }
         [TestMethod]
         public void UnitaMisuraPesoMinMaxLength()
         {
-            challenge.UnitaMisuraPeso = new string('x', 11);
-            validator.ShouldHaveValidationErrorFor(x => x.UnitaMisuraPeso, challenge);
-            challenge.UnitaMisuraPeso = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisuraPeso, challenge);
-            challenge.UnitaMisuraPeso = new string('x', 10);
-            validator.ShouldNotHaveValidationErrorFor(x => x.UnitaMisuraPeso, challenge);
+            AssertMinMaxLength(x => x.UnitaMisuraPeso, 1, 10);
         }
         [TestMethod]
-        public void TipoResaCanBeEmpty()
+        public void TipoResaIsOptional()
         {
-            challenge.TipoResa = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoResa, challenge);
-            challenge.TipoResa = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoResa, challenge);
+            AssertOptional(x => x.TipoResa);
         }
         [TestMethod]
-        public void TipoResaCanOnlyAcceptValidValues()
+        public void TipoResaOnlyAcceptsTableValues()
         {
-            challenge.TipoResa = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.TipoResa, challenge);
-            challenge.TipoResa = "EXW";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoResa, challenge);
-            challenge.TipoResa = "DDP";
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoResa, challenge);
+            AssertOnlyAcceptsTableValues<TipoResa>(x => x.TipoResa);
         }
         [TestMethod]
         public void IndirizzoResaHasChildValidator()

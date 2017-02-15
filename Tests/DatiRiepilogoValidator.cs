@@ -1,24 +1,18 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody;
 using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
-using System.Linq;
-using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiRiepilogoValidator: BaseClass<DatiRiepilogo, FatturaElettronica.Validators.DatiRiepilogoValidator>
+    public class DatiRiepilogoValidator
+        : BaseClass<DatiRiepilogo, FatturaElettronica.Validators.DatiRiepilogoValidator>
     {
         [TestMethod]
-        public void NaturaCanOnlyAcceptDomainValues()
+        public void NaturaOnlyAcceptsTableValues()
         {
-            challenge.Natura = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge);
-            challenge.Natura = "N1";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
-            challenge.Natura = "N7";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
+            AssertOnlyAcceptsTableValues<Natura>(x => x.Natura);
         }
         [TestMethod]
         public void NaturaValidateAgainstError00430()
@@ -63,42 +57,24 @@ namespace Tests
             validator.ShouldHaveValidationErrorFor(x => x.Imposta, challenge).WithErrorCode("00421");
         }
         [TestMethod]
-        public void EsigibilitaIVACanBeEmpty()
+        public void EsigibilitaIVAIsOptional()
         {
-            challenge.EsigibilitaIVA = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.EsigibilitaIVA, challenge);
-            challenge.EsigibilitaIVA = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.EsigibilitaIVA, challenge);
+            AssertOptional(x => x.EsigibilitaIVA);
         }
         [TestMethod]
-        public void EsigibilitaIVACanOnlyAcceptDomainValues()
+        public void EsigibilitaIVAOnlyAcceptsTableValues()
         {
-            challenge.EsigibilitaIVA = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.EsigibilitaIVA, challenge);
-            challenge.EsigibilitaIVA = "I";
-            validator.ShouldNotHaveValidationErrorFor(x => x.EsigibilitaIVA, challenge);
-            challenge.EsigibilitaIVA = "D";
-            validator.ShouldNotHaveValidationErrorFor(x => x.EsigibilitaIVA, challenge);
-            challenge.EsigibilitaIVA = "S";
-            validator.ShouldNotHaveValidationErrorFor(x => x.EsigibilitaIVA, challenge);
+            AssertOnlyAcceptsTableValues<EsigibilitaIVA>(x => x.EsigibilitaIVA);
         }
         [TestMethod]
-        public void RiferimentoNormativoCanBeEmpty()
+        public void RiferimentoNormativoIsOptional()
         {
-            challenge.RiferimentoNormativo = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, challenge);
-            challenge.RiferimentoNormativo = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, challenge);
+            AssertOptional(x => x.RiferimentoNormativo);
         }
         [TestMethod]
         public void RiferimentoNormativoMinMaxLength()
         {
-            challenge.RiferimentoNormativo = new string('x', 101);
-            validator.ShouldHaveValidationErrorFor(x => x.RiferimentoNormativo, challenge);
-            challenge.RiferimentoNormativo = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, challenge);
-            challenge.RiferimentoNormativo = new string('x', 100);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, challenge);
+            AssertMinMaxLength(x => x.RiferimentoNormativo, 1, 100);
         }
     }
 }

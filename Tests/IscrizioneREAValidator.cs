@@ -1,81 +1,52 @@
 ﻿using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
-using FluentValidation.TestHelper;
+using FatturaElettronica.Tabelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
-    public class IscrizioneREAValidator : BaseClass<IscrizioneREA, FatturaElettronica.Validators.IscrizioneREAValidator>
+    public class IscrizioneREAValidator 
+        : BaseClass<IscrizioneREA, FatturaElettronica.Validators.IscrizioneREAValidator>
     {
         [TestMethod]
-        public void UfficioCannotBeEmpty()
+        public void UfficioIsRequired()
         {
-            challenge.Ufficio = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Ufficio, challenge);
-            challenge.Ufficio = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.Ufficio, challenge);
+            AssertRequired(x => x.Ufficio);
         }
         [TestMethod]
-        public void UfficioCanOnlyAcceptDomainValues()
+        public void UfficioOnlyAcceptsTableValues()
         {
-            challenge.Ufficio = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.Ufficio, challenge);
-            challenge.Ufficio = "RA";
-            validator.ShouldNotHaveValidationErrorFor(x => x.Ufficio, challenge);
+            AssertOnlyAcceptsTableValues<Provincia>(x => x.Ufficio);
         }
         [TestMethod]
-        public void NumeroREACannotBeEmpty()
+        public void NumeroREAIsRequired()
         {
-            challenge.NumeroREA = null;
-            validator.ShouldHaveValidationErrorFor(x => x.NumeroREA, challenge);
-            challenge.NumeroREA = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.NumeroREA, challenge);
+            AssertRequired(x => x.NumeroREA);
         }
         [TestMethod]
         public void NumeroREAMinMaxLength()
         {
-            challenge.NumeroREA = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.NumeroREA, challenge);
-            challenge.NumeroREA = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroREA, challenge);
-            challenge.NumeroREA = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumeroREA, challenge);
+            AssertMinMaxLength(x => x.NumeroREA, 1, 20);
         }
         [TestMethod]
-        public void UfficioCanBeEmpty()
+        public void SocioUnicoIsOptional()
         {
-            challenge.SocioUnico = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.SocioUnico, challenge);
-            challenge.SocioUnico = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.SocioUnico, challenge);
+            AssertOptional(x => x.SocioUnico);
         }
         [TestMethod]
-        public void SocioUnicoCanOnlyAcceptDomainValues()
+        public void SocioUnicoOnlyAcceptsTableValues()
         {
-            challenge.SocioUnico = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.SocioUnico, challenge);
-            challenge.SocioUnico = "SU";
-            validator.ShouldNotHaveValidationErrorFor(x => x.SocioUnico, challenge);
-            challenge.SocioUnico = "SM";
-            validator.ShouldNotHaveValidationErrorFor(x => x.SocioUnico, challenge);
+            AssertOnlyAcceptsTableValues<SocioUnico>(x => x.SocioUnico);
         }
         [TestMethod]
-        public void StatoLiquidazioneCannotBeEmpty()
+        public void StatoLiquidazioneIsRequired()
         {
-            challenge.StatoLiquidazione = null;
-            validator.ShouldHaveValidationErrorFor(x => x.StatoLiquidazione, challenge);
-            challenge.StatoLiquidazione = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.StatoLiquidazione, challenge);
+            AssertRequired(x => x.StatoLiquidazione);
         }
         [TestMethod]
-        public void StatoLiquidazioneCanOnlyAcceptDomainValues()
+        public void StatoLiquidazioneOnlyAcceptsTableValues()
         {
-            challenge.StatoLiquidazione = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.StatoLiquidazione, challenge);
-            challenge.StatoLiquidazione = "LS";
-            validator.ShouldNotHaveValidationErrorFor(x => x.StatoLiquidazione, challenge);
-            challenge.StatoLiquidazione = "LN";
-            validator.ShouldNotHaveValidationErrorFor(x => x.StatoLiquidazione, challenge);
+            AssertOnlyAcceptsTableValues<StatoLiquidazione>(x => x.StatoLiquidazione);
         }
     }
 }

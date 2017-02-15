@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace FatturaElettronica.Tabelle
+﻿namespace FatturaElettronica.Tabelle
 {
     public class Provincia : Tabella
     {
@@ -10,7 +8,6 @@ namespace FatturaElettronica.Tabelle
             {
                 return new Tabella[]
                 {
-                    new Provincia { Codice = "", Nome = null },
                     new Provincia { Codice = "AG", Nome = "Agrigento" },
                     new Provincia { Codice = "AL", Nome = "Alessandria" },
                     new Provincia { Codice = "AN", Nome = "Ancona" },

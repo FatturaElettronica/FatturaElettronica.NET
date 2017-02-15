@@ -5,7 +5,8 @@ using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
 namespace Tests
 {
     [TestClass]
-    public class CedentePrestatoreValidator : BaseClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
+    public class CedentePrestatoreValidator 
+        : BaseClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
     {
         [TestMethod]
         public void DatiAnagraficiHasChildValidator()
@@ -36,14 +37,7 @@ namespace Tests
         [TestMethod]
         public void RiferimentoAmministrazioneMinMaxLength()
         {
-            challenge.RiferimentoAmministrazione = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
-            challenge.RiferimentoAmministrazione = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoAmministrazione, challenge);
+            AssertMinMaxLength(x => x.RiferimentoAmministrazione, 1, 20);
         }
     }
 }

@@ -1,11 +1,13 @@
 ﻿using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiTrasmissioneValidator : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
+    public class DatiTrasmissioneValidator 
+        : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
     {
         [TestMethod]
         public void IdTrasmittenteHasChildValidator()
@@ -13,12 +15,9 @@ namespace Tests
             validator.ShouldHaveChildValidator(x => x.IdTrasmittente, typeof(FatturaElettronica.Validators.IdTrasmittenteValidator));
         }
         [TestMethod]
-        public void ProgressivoInvioCannotBeEmpty()
+        public void ProgressivoInvioIsRequired()
         {
-            challenge.ProgressivoInvio = null;
-            validator.ShouldHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
-            challenge.ProgressivoInvio = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
+            AssertRequired(x => x.ProgressivoInvio);
         }
         [TestMethod]
         public void ContattiTrasmittenteHasChildValidator()
@@ -28,80 +27,60 @@ namespace Tests
         [TestMethod]
         public void ProgressivoInvioMinMaxLength()
         {
-            challenge.ProgressivoInvio = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
-            challenge.ProgressivoInvio = new string('x', 11);
-            validator.ShouldHaveValidationErrorFor(x => x.ProgressivoInvio, challenge);
+            AssertMinMaxLength(x => x.ProgressivoInvio, 1, 10);
         }
         [TestMethod]
-        public void FormatoTrasmissioneCannotBeEmpty()
+        public void FormatoTrasmissioneIsRequired()
         {
-            challenge.FormatoTrasmissione = null;
-            validator.ShouldHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
-            challenge.FormatoTrasmissione = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
+            AssertRequired(x => x.FormatoTrasmissione);
         }
         [TestMethod]
-        public void FormatoTrasmissioneCanOnlyAcceptDomainValues()
+        public void FormatoTrasmissioneOnlyAcceptsTableValues()
         {
-            challenge.FormatoTrasmissione = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
-            challenge.FormatoTrasmissione = "FPA12";
-            validator.ShouldNotHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
-            challenge.FormatoTrasmissione = "FPR12";
-            validator.ShouldNotHaveValidationErrorFor(x => x.FormatoTrasmissione, challenge);
+            AssertOnlyAcceptsTableValues<FormatoTrasmissione>(x => x.FormatoTrasmissione, expectedErrorCode:"00428");
+        }
+        [TestMethod]
+        public void CodiceDestinatarioIsRequired()
+        {
+            AssertRequired(x => x.CodiceDestinatario);
         }
         [TestMethod]
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPA12()
         {
             // Quando FormatoTrasmissione = FPA12 ProgressivioInvio.Lenght = 6.
             challenge.FormatoTrasmissione = FatturaElettronica.Impostazioni.FormatoTrasmissione.PubblicaAmministrazione;
-            challenge.CodiceDestinatario = null;
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, challenge);
-            challenge.CodiceDestinatario = new string('x', 6);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceDestinatario, challenge);
-            challenge.CodiceDestinatario = new string('x', 1);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, challenge);
-            challenge.CodiceDestinatario = new string('x', 7);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, challenge);
+            AssertLength(x => x.CodiceDestinatario, 6, expectedErrorCode:"00427");
         }
         [TestMethod]
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPR12()
         {
             // Quando FormatoTrasmissione = FPR12 ProgressivioInvio.Lenght = 7.
             challenge.FormatoTrasmissione = FatturaElettronica.Impostazioni.FormatoTrasmissione.Privati;
-            challenge.CodiceDestinatario = new string('x', 7);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceDestinatario, challenge);
-            challenge.CodiceDestinatario = new string('x', 1);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, challenge);
-            challenge.CodiceDestinatario = new string('x', 6);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, challenge);
+            AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode:"00427");
         }
         [TestMethod]
-        public void PECDestinatarioWithCodiceDestinatarioHasValue0000000()
+        public void PECDestinatarioMinMaxLengthWhenCodiceDestinatarioIs0000000()
         {
             challenge.CodiceDestinatario = new string('0', 7);
 
-            challenge.PECDestinatario = null;
-            validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-            challenge.PECDestinatario = new string('x', 6);
-            validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-            challenge.PECDestinatario = new string('x', 257);
-            validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-            challenge.PECDestinatario = new string('x', 7);
-            validator.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-            challenge.PECDestinatario = new string('x', 256);
-            validator.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario, challenge);
+            AssertMinMaxLength(x => x.PECDestinatario, 7, 256, expectedErrorCode:"00426");
         }
         [TestMethod]
-        public void PECDestinatarioWithCodiceDestinatarioHasNotValue0000000()
+        public void PECDestinatarioIsRequiredWhenCodiceDestinatarioIs0000000()
+        {
+            challenge.CodiceDestinatario = new string('0', 7);
+
+            AssertRequired(x => x.PECDestinatario, expectedErrorCode:"00426");
+        }
+        [TestMethod]
+        public void PECDestinatarioIsOptionalWhenCodiceDestinatarioIsNot0000000()
         {
             challenge.CodiceDestinatario = "1234567";
 
-            challenge.PECDestinatario = "whatever";
-            validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-            challenge.PECDestinatario = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario, challenge);
+            challenge.PECDestinatario = "x";
+            validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge).WithErrorCode("00426");
+
+            AssertOptional(x => x.PECDestinatario);
         }
     }
 }

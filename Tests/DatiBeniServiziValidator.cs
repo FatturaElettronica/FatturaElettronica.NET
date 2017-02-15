@@ -6,7 +6,8 @@ using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
 namespace Tests
 {
     [TestClass]
-    public class DatiBeniServiziValidator: BaseClass<DatiBeniServizi, FatturaElettronica.Validators.DatiBeniServiziValidator>
+    public class DatiBeniServiziValidator
+        : BaseClass<DatiBeniServizi, FatturaElettronica.Validators.DatiBeniServiziValidator>
     {
         [TestMethod]
         public void DettaglioLineeHasCollectionValidator()
@@ -33,12 +34,7 @@ namespace Tests
         [TestMethod]
         public void DatiRiepilogoCollectionCannotBeEmpty()
         {
-            var r = validator.Validate(challenge);
-            Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiRiepilogo"));
-
-            challenge.DatiRiepilogo.Add(new DatiRiepilogo());
-            r = validator.Validate(challenge);
-            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiRiepilogo"));
+            AssertCollectionCannotBeEmpty(x => x.DatiRiepilogo);
         }
     }
 }

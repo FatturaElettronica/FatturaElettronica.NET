@@ -1,48 +1,31 @@
-﻿using FluentValidation.TestHelper;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
 
 namespace Tests
 {
     [TestClass]
-    public class AltriDatiGestionaliValidator: BaseClass<AltriDatiGestionali, FatturaElettronica.Validators.AltriDatiGestionaliValidator>
+    public class AltriDatiGestionaliValidator
+        : BaseClass<AltriDatiGestionali, FatturaElettronica.Validators.AltriDatiGestionaliValidator>
     {
         [TestMethod]
-        public void TipoDatoCannotBeEmpty()
+        public void TipoDatoIsRequired()
         {
-            challenge.TipoDato = null;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoDato, challenge);
-            challenge.TipoDato = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.TipoDato, challenge);
+            AssertRequired(x => x.TipoDato);
         }
         [TestMethod]
         public void TipoDatoMinMaxLength()
         {
-            challenge.TipoDato = new string('x', 11);
-            validator.ShouldHaveValidationErrorFor(x => x.TipoDato, challenge);
-            challenge.TipoDato = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoDato, challenge);
-            challenge.TipoDato = new string('x', 10);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TipoDato, challenge);
+            AssertMinMaxLength(x => x.TipoDato, 1, 10);
         }
         [TestMethod]
-        public void RiferimentoTestoCanBeEmpty()
+        public void RiferimentoTestoIsOptional()
         {
-            challenge.RiferimentoTesto = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoTesto, challenge);
-            challenge.RiferimentoTesto = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoTesto, challenge);
+            AssertOptional(x => x.RiferimentoTesto);
         }
         [TestMethod]
         public void RiferimentoTestoMinMaxLength()
         {
-            challenge.RiferimentoTesto = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.RiferimentoTesto, challenge);
-            challenge.RiferimentoTesto = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoTesto, challenge);
-            challenge.RiferimentoTesto = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoTesto, challenge);
+            AssertMinMaxLength(x => x.RiferimentoTesto, 1, 60);
         }
     }
 }

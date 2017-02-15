@@ -1,249 +1,142 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiPagamento;
+using FatturaElettronica.Tabelle;
 
 namespace Tests
 {
     [TestClass]
-    public class DettaglioPagamentoValidator: BaseClass<DettaglioPagamento, FatturaElettronica.Validators.DettaglioPagamentoValidator>
+    public class DettaglioPagamentoValidator
+        : BaseClass<DettaglioPagamento, FatturaElettronica.Validators.DettaglioPagamentoValidator>
     {
         [TestMethod]
-        public void BeneficiarioCanBeEmpty()
+        public void BeneficiarioIsOptional()
         {
-            challenge.Beneficiario = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Beneficiario, challenge);
-            challenge.Beneficiario = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Beneficiario, challenge);
+            AssertOptional(x => x.Beneficiario);
         }
         [TestMethod]
         public void BeneficiarioMisuraMinMaxLength()
         {
-            challenge.Beneficiario = new string('x', 201);
-            validator.ShouldHaveValidationErrorFor(x => x.Beneficiario, challenge);
-            challenge.Beneficiario = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Beneficiario, challenge);
-            challenge.Beneficiario = new string('x', 200);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Beneficiario, challenge);
+            AssertMinMaxLength(x => x.Beneficiario, 1, 200);
         }
         [TestMethod]
-        public void ModalitaPagamentoCannotBeEmpty()
+        public void ModalitaPagamentoIsRequired()
         {
-            challenge.ModalitaPagamento = null;
-            validator.ShouldHaveValidationErrorFor(x => x.ModalitaPagamento, challenge);
-            challenge.ModalitaPagamento = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.ModalitaPagamento, challenge);
+            AssertRequired(x => x.ModalitaPagamento);
         }
         [TestMethod]
-        public void ModalitaPagamentoCanOnlyAcceptDomainValues()
+        public void ModalitaPagamentoOnlyAcceptsTableValues()
         {
-            challenge.ModalitaPagamento = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.ModalitaPagamento, challenge);
-            challenge.ModalitaPagamento = "MP01";
-            validator.ShouldNotHaveValidationErrorFor(x => x.ModalitaPagamento, challenge);
-            challenge.ModalitaPagamento = "MP22";
-            validator.ShouldNotHaveValidationErrorFor(x => x.ModalitaPagamento, challenge);
+            AssertOnlyAcceptsTableValues<ModalitaPagamento>(x => x.ModalitaPagamento);
         }
         [TestMethod]
-        public void CodUfficioPostaleCanBeEmpty()
+        public void CodUfficioPostaleIsOptional()
         {
-            challenge.CodUfficioPostale = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodUfficioPostale, challenge);
-            challenge.CodUfficioPostale = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodUfficioPostale, challenge);
+            AssertOptional(x => x.CodUfficioPostale);
         }
         [TestMethod]
         public void CodUfficioPostaleMinMaxLength()
         {
-            challenge.CodUfficioPostale = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.CodUfficioPostale, challenge);
-            challenge.CodUfficioPostale = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodUfficioPostale, challenge);
-            challenge.CodUfficioPostale = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodUfficioPostale, challenge);
+            AssertMinMaxLength(x => x.CodUfficioPostale, 1, 20);
         }
         [TestMethod]
-        public void CognomeQuietanzanteCanBeEmpty()
+        public void CognomeQuietanzanteIsOptional()
         {
-            challenge.CognomeQuietanzante = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CognomeQuietanzante, challenge);
-            challenge.CognomeQuietanzante = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CognomeQuietanzante, challenge);
+            AssertOptional(x => x.CognomeQuietanzante);
         }
         [TestMethod]
         public void CognomeQuietanzanteMinMaxLength()
         {
-            challenge.CognomeQuietanzante = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.CognomeQuietanzante, challenge);
-            challenge.CognomeQuietanzante = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CognomeQuietanzante, challenge);
-            challenge.CognomeQuietanzante = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CognomeQuietanzante, challenge);
+            AssertMinMaxLength(x => x.CognomeQuietanzante, 1, 60);
         }
         [TestMethod]
-        public void NomeQuietanzanteCanBeEmpty()
+        public void NomeQuietanzanteIsOptional()
         {
-            challenge.NomeQuietanzante = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NomeQuietanzante, challenge);
-            challenge.NomeQuietanzante = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NomeQuietanzante, challenge);
+            AssertOptional(x => x.NomeQuietanzante);
         }
         [TestMethod]
         public void NomeQuietanzanteMinMaxLength()
         {
-            challenge.NomeQuietanzante = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.NomeQuietanzante, challenge);
-            challenge.NomeQuietanzante = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NomeQuietanzante, challenge);
-            challenge.NomeQuietanzante = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NomeQuietanzante, challenge);
+            AssertMinMaxLength(x => x.NomeQuietanzante, 1, 60);
         }
         [TestMethod]
-        public void CFQuietanzanteCanBeEmpty()
+        public void CFQuietanzanteIsOptional()
         {
-            challenge.CFQuietanzante = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CFQuietanzante, challenge);
-            challenge.CFQuietanzante = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CFQuietanzante, challenge);
+            AssertOptional(x => x.CFQuietanzante);
         }
         [TestMethod]
         public void CFQuietanzanteMinMaxLength()
         {
-            challenge.CFQuietanzante = new string('x', 17);
-            validator.ShouldHaveValidationErrorFor(x => x.CFQuietanzante, challenge);
-            challenge.CFQuietanzante = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CFQuietanzante, challenge);
-            challenge.CFQuietanzante = new string('x', 16);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CFQuietanzante, challenge);
+            AssertMinMaxLength(x => x.CFQuietanzante, 1, 16);
         }
         [TestMethod]
-        public void TitoloQuietanzanteCanBeEmpty()
+        public void TitoloQuietanzanteIsOptional()
         {
-            challenge.TitoloQuietanzante = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.TitoloQuietanzante, challenge);
-            challenge.TitoloQuietanzante = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.TitoloQuietanzante, challenge);
+            AssertOptional(x => x.TitoloQuietanzante);
         }
         [TestMethod]
         public void TitoloQuietanzanteMinMaxLength()
         {
-            challenge.TitoloQuietanzante = new string('x', 11);
-            validator.ShouldHaveValidationErrorFor(x => x.TitoloQuietanzante, challenge);
-            challenge.TitoloQuietanzante = new string('x', 2);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TitoloQuietanzante, challenge);
-            challenge.TitoloQuietanzante = new string('x', 10);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TitoloQuietanzante, challenge);
+            AssertMinMaxLength(x => x.TitoloQuietanzante, 2, 10);
         }
         [TestMethod]
-        public void IstitutoFinanziarioCanBeEmpty()
+        public void IstitutoFinanziarioIsOptional()
         {
-            challenge.IstitutoFinanziario = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.IstitutoFinanziario, challenge);
-            challenge.IstitutoFinanziario = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.IstitutoFinanziario, challenge);
+            AssertOptional(x => x.IstitutoFinanziario);
         }
         [TestMethod]
         public void IstitutoFinanziarioMinMaxLength()
         {
-            challenge.IstitutoFinanziario = new string('x', 81);
-            validator.ShouldHaveValidationErrorFor(x => x.IstitutoFinanziario, challenge);
-            challenge.IstitutoFinanziario = new string('x', 2);
-            validator.ShouldNotHaveValidationErrorFor(x => x.IstitutoFinanziario, challenge);
-            challenge.IstitutoFinanziario = new string('x', 80);
-            validator.ShouldNotHaveValidationErrorFor(x => x.IstitutoFinanziario, challenge);
+            AssertMinMaxLength(x => x.IstitutoFinanziario, 1, 80);
         }
         [TestMethod]
-        public void IBANCanBeEmpty()
+        public void IBANIsOptional()
         {
-            challenge.IBAN = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.IBAN, challenge);
-            challenge.IBAN = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.IBAN, challenge);
+            AssertOptional(x => x.IBAN);
         }
         [TestMethod]
         public void IBANMinMaxLength()
         {
-            challenge.IBAN = new string('x', 14);
-            validator.ShouldHaveValidationErrorFor(x => x.IBAN, challenge);
-            challenge.IBAN = new string('x', 35);
-            validator.ShouldHaveValidationErrorFor(x => x.IBAN, challenge);
-            challenge.IBAN = new string('x', 15);
-            validator.ShouldNotHaveValidationErrorFor(x => x.IBAN, challenge);
-            challenge.IBAN = new string('x', 34);
-            validator.ShouldNotHaveValidationErrorFor(x => x.IBAN, challenge);
+            AssertMinMaxLength(x => x.IBAN, 15, 34);
         }
         [TestMethod]
-        public void ABICanBeEmpty()
+        public void ABIIsOptional()
         {
-            challenge.ABI = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.ABI, challenge);
-            challenge.ABI = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.ABI, challenge);
+            AssertOptional(x => x.ABI);
         }
         [TestMethod]
         public void ABIMinMaxLength()
         {
-            challenge.ABI = new string('x', 4);
-            validator.ShouldHaveValidationErrorFor(x => x.ABI, challenge);
-            challenge.ABI = new string('x', 6);
-            validator.ShouldHaveValidationErrorFor(x => x.ABI, challenge);
-            challenge.ABI = new string('x', 5);
-            validator.ShouldNotHaveValidationErrorFor(x => x.ABI, challenge);
+            AssertLength(x => x.ABI, 5);
         }
         [TestMethod]
-        public void CABCanBeEmpty()
+        public void CABIsOptional()
         {
-            challenge.CAB = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CAB, challenge);
-            challenge.CAB = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CAB, challenge);
+            AssertOptional(x => x.CAB);
         }
         [TestMethod]
         public void CABMinMaxLength()
         {
-            challenge.CAB = new string('x', 4);
-            validator.ShouldHaveValidationErrorFor(x => x.CAB, challenge);
-            challenge.CAB = new string('x', 6);
-            validator.ShouldHaveValidationErrorFor(x => x.CAB, challenge);
-            challenge.CAB = new string('x', 5);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CAB, challenge);
+            AssertLength(x => x.CAB, 5);
         }
         [TestMethod]
-        public void BICCanBeEmpty()
+        public void BICIsOptional()
         {
-            challenge.BIC = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.BIC, challenge);
-            challenge.BIC = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.BIC, challenge);
+            AssertOptional(x => x.BIC);
         }
         [TestMethod]
         public void BICMinMaxLength()
         {
-            challenge.BIC = new string('x', 7);
-            validator.ShouldHaveValidationErrorFor(x => x.BIC, challenge);
-            challenge.BIC = new string('x', 12);
-            validator.ShouldHaveValidationErrorFor(x => x.BIC, challenge);
-            challenge.BIC = new string('x', 8);
-            validator.ShouldNotHaveValidationErrorFor(x => x.BIC, challenge);
-            challenge.BIC = new string('x', 11);
-            validator.ShouldNotHaveValidationErrorFor(x => x.BIC, challenge);
+            AssertMinMaxLength(x => x.BIC, 8, 11);
         }
         [TestMethod]
-        public void CodicePagamentoCanBeEmpty()
+        public void CodicePagamentoIsOptional()
         {
-            challenge.CodicePagamento = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodicePagamento, challenge);
-            challenge.CodicePagamento = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodicePagamento, challenge);
+            AssertOptional(x => x.CodicePagamento);
         }
         [TestMethod]
         public void CodicePagamentoMinMaxLength()
         {
-            challenge.CodicePagamento = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.CodicePagamento, challenge);
-            challenge.CodicePagamento = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodicePagamento, challenge);
-            challenge.CodicePagamento = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodicePagamento, challenge);
+            AssertMinMaxLength(x => x.CodicePagamento, 1, 60);
         }
     }
 }

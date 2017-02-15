@@ -6,87 +6,72 @@ using FluentValidation;
 namespace Tests
 {
     [TestClass]
-    public abstract class DenominazioneNomeCognomeValidator<TClass, TValidator> : BaseClass<TClass, TValidator>
+    public abstract class DenominazioneNomeCognomeValidator<TClass, TValidator> 
+        : BaseClass<TClass, TValidator>
         where TClass : DenominazioneNomeCognome
         where TValidator : IValidator<TClass>
     {
         [TestMethod]
-        public void DenominazioneCannotBeEmptyWhenNomeCognomeIsEmpty()
+        public void DenominazioneIsRequiredWhenNomeCognomeIsEmpty()
         {
-            challenge.Denominazione = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Denominazione, challenge);
-            challenge.Denominazione = new string('x', 81);
-            validator.ShouldHaveValidationErrorFor(x => x.Denominazione, challenge);
+            challenge.Nome = null;
+            challenge.Cognome = null;
 
-            challenge.Denominazione = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Denominazione, challenge);
-            challenge.Denominazione = new string('x', 80);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Denominazione, challenge);
+            AssertRequired(x => x.Denominazione, expectedErrorCode:"00200");
+            AssertMinMaxLength(x => x.Denominazione, 1, 80, expectedErrorCode:"00200");
         }
         [TestMethod]
-        public void DenominazioneMustBeEmptyWhenNomeCognoneHasValue()
+        public void DenominazioneMustBeEmptyWhenNomeCognoneIsNotEmpty()
         {
             challenge.Nome = "nome";
-            challenge.Denominazione = new string('x', 81);
-            validator.ShouldHaveValidationErrorFor(x => x.Denominazione, challenge);
-            challenge.Denominazione = new string('x', 1);
-            validator.ShouldHaveValidationErrorFor(x => x.Denominazione, challenge);
-            challenge.Denominazione = new string('x', 80);
-            validator.ShouldHaveValidationErrorFor(x => x.Denominazione, challenge);
+
+            challenge.Denominazione = "x";
+            validator.ShouldHaveValidationErrorFor(x => x.Denominazione, challenge).WithErrorCode("00200");
 
             challenge.Denominazione = null;
             validator.ShouldNotHaveValidationErrorFor(x => x.Denominazione, challenge);
+            challenge.Denominazione = string.Empty;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Denominazione, challenge);
         }
         [TestMethod]
-        public void NomeCannotBeEmptyWhenDenominazioneIsEmpty()
+        public void NomeIsRequiredWhenDenominazioneIsEmpty()
         {
             challenge.Denominazione = null;
-            challenge.Nome = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Nome, challenge);
-            challenge.Nome = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.Nome, challenge);
-            challenge.Nome = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Nome, challenge);
-            challenge.Nome = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Nome, challenge);
+
+            AssertRequired(x => x.Nome, expectedErrorCode:"00200");
+            AssertMinMaxLength(x => x.Nome, 1, 60, expectedErrorCode:"00200");
         }
         [TestMethod]
-        public void NomeMustBeEmptyWhenDenominazioneHasValue()
+        public void NomeMustBeEmptyWhenDenominazioneIsNotEmpty()
         {
             challenge.Denominazione = "denominazione";
-            challenge.Nome = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.Nome, challenge);
-            challenge.Nome = new string('x', 1);
-            validator.ShouldHaveValidationErrorFor(x => x.Nome, challenge);
-            challenge.Nome = new string('x', 60);
-            validator.ShouldHaveValidationErrorFor(x => x.Nome, challenge);
+
+            challenge.Nome = "x";
+            validator.ShouldHaveValidationErrorFor(x => x.Nome, challenge).WithErrorCode("00200");
+
             challenge.Nome = null;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Nome, challenge);
+            challenge.Nome = string.Empty;
             validator.ShouldNotHaveValidationErrorFor(x => x.Nome, challenge);
         }
         [TestMethod]
-        public void CognomeCannotBeEmptyWhenDenominazioneIsEmpty()
+        public void CognomeIsRequiredWhenDenominazioneIsEmpty()
         {
             challenge.Denominazione = null;
-            challenge.Cognome = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Cognome, challenge);
-            challenge.Cognome = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.Cognome, challenge);
-            challenge.Cognome = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, challenge);
-            challenge.Cognome = new string('x', 60);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, challenge);
+
+            AssertRequired(x => x.Cognome, expectedErrorCode:"00200");
+            AssertMinMaxLength(x => x.Cognome, 1, 60, expectedErrorCode:"00200");
         }
         [TestMethod]
-        public void CognomeMustBeEmptyWhenDenominazioneHasValue()
+        public void CognomeMustBeEmptyWhenDenominazioneIsNotEmpty()
         {
             challenge.Denominazione = "denominazione";
-            challenge.Cognome = new string('x', 61);
-            validator.ShouldHaveValidationErrorFor(x => x.Cognome, challenge);
-            challenge.Cognome = new string('x', 1);
-            validator.ShouldHaveValidationErrorFor(x => x.Cognome, challenge);
-            challenge.Cognome = new string('x', 60);
-            validator.ShouldHaveValidationErrorFor(x => x.Cognome, challenge);
+            challenge.Cognome = "x";
+            validator.ShouldHaveValidationErrorFor(x => x.Cognome, challenge).WithErrorCode("00200");
+
             challenge.Cognome = null;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, challenge);
+            challenge.Cognome = string.Empty;
             validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, challenge);
         }
     }

@@ -11,7 +11,6 @@ namespace Tests
         {
             var challenge = new FatturaElettronica.Validators.IdTrasmittenteValidator();
             Assert.IsInstanceOfType(challenge, typeof(IdFiscaleIVAValidator));
-
         }
     }
 }

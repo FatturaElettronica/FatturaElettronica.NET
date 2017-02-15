@@ -1,53 +1,41 @@
 ﻿using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
-using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
-    public class ContattiValidator : BaseClass<Contatti, FatturaElettronica.Validators.ContattiValidator>
+    public class ContattiValidator 
+        : BaseClass<Contatti, FatturaElettronica.Validators.ContattiValidator>
     {
+        [TestMethod]
+        public void TelefonoIsOptional()
+        {
+            AssertOptional(x => x.Telefono);
+        }
         [TestMethod]
         public void TelefonoMinMaxLength()
         {
-            challenge.Telefono = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Telefono, challenge);
-            challenge.Telefono = new string('x', 4);
-            validator.ShouldHaveValidationErrorFor(x => x.Telefono, challenge);
-            challenge.Telefono = new string('x', 13);
-            validator.ShouldHaveValidationErrorFor(x => x.Telefono, challenge);
-            challenge.Telefono = new string('x', 5);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Telefono, challenge);
-            challenge.Telefono = new string('x', 12);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Telefono, challenge);
+            AssertMinMaxLength(x => x.Telefono, 5, 12);
+        }
+        [TestMethod]
+        public void FaxIsOptional()
+        {
+            AssertOptional(x => x.Fax);
         }
         [TestMethod]
         public void FaxMinMaxLength()
         {
-            challenge.Fax = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Fax, challenge);
-            challenge.Fax = new string('x', 4);
-            validator.ShouldHaveValidationErrorFor(x => x.Fax, challenge);
-            challenge.Fax = new string('x', 13);
-            validator.ShouldHaveValidationErrorFor(x => x.Fax, challenge);
-            challenge.Fax = new string('x', 5);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Fax, challenge);
-            challenge.Fax = new string('x', 12);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Fax, challenge);
+            AssertMinMaxLength(x => x.Fax, 5, 12);
+        }
+        [TestMethod]
+        public void EmailIsOptional()
+        {
+            AssertOptional(x => x.Email);
         }
         [TestMethod]
         public void EmailMinMaxLength()
         {
-            challenge.Email = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Email, challenge);
-            challenge.Email = new string('x', 6);
-            validator.ShouldHaveValidationErrorFor(x => x.Email, challenge);
-            challenge.Email = new string('x', 257);
-            validator.ShouldHaveValidationErrorFor(x => x.Email, challenge);
-            challenge.Email = new string('x', 7);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Email, challenge);
-            challenge.Email = new string('x', 256);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Email, challenge);
+            AssertMinMaxLength(x => x.Email, 7, 256);
         }
     }
 }

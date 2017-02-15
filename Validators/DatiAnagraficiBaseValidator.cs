@@ -21,7 +21,7 @@ namespace FatturaElettronica.Validators
         private void SetRules()
         {
             RuleFor(x => x.IdFiscaleIVA).SetValidator(new IdFiscaleIVAValidator());
-            RuleFor(x => x.CodiceFiscale).Length(11, 16);
+            RuleFor(x => x.CodiceFiscale).Length(11, 16).When(x => !string.IsNullOrEmpty(x.CodiceFiscale));
             RuleFor(x => x.Anagrafica).SetValidator(new AnagraficaValidator());
         }
     }

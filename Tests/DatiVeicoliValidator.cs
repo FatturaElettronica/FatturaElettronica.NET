@@ -1,9 +1,5 @@
-﻿using FluentValidation.TestHelper;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiVeicoli;
-using System;
 
 namespace Tests
 {
@@ -11,29 +7,19 @@ namespace Tests
     public class DatiVeicoliValidator: BaseClass<DatiVeicoli, FatturaElettronica.Validators.DatiVeicoliValidator>
     {
         [TestMethod]
-        public void TotalePercorsoCannotBeEmpty()
+        public void TotalePercorsoIsRequired()
         {
-            challenge.TotalePercorso = null;
-            validator.ShouldHaveValidationErrorFor(x => x.TotalePercorso, challenge);
-            challenge.TotalePercorso = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.TotalePercorso, challenge);
+            AssertRequired(x => x.TotalePercorso);
         }
         [TestMethod]
         public void TotalePercorsoMinMaxLength()
         {
-            challenge.TotalePercorso = new string('x', 16);
-            validator.ShouldHaveValidationErrorFor(x => x.TotalePercorso, challenge);
-            challenge.TotalePercorso = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TotalePercorso, challenge);
-            challenge.TotalePercorso = new string('x', 15);
-            validator.ShouldNotHaveValidationErrorFor(x => x.TotalePercorso, challenge);
+            AssertMinMaxLength(x => x.TotalePercorso, 1, 15);
         }
         [TestMethod]
-        public void DataCannotBeEmpty()
+        public void DataIsRequired()
         {
-            validator.ShouldHaveValidationErrorFor(x => x.Data, challenge);
-            challenge.Data = DateTime.MinValue;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Data, challenge);
+            AssertRequired(x => x.Data);
         }
     }
 }

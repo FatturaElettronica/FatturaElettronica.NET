@@ -5,7 +5,8 @@ using FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente;
 namespace Tests
 {
     [TestClass]
-    public class RappresentateFiscaleCessionarioCommittenteValidator : DenominazioneNomeCognomeValidator<RappresentanteFiscaleCessionarioCommittente, FatturaElettronica.Validators.RappresentanteFiscaleCessionarioCommittenteValidator>
+    public class RappresentateFiscaleCessionarioCommittenteValidator 
+        : DenominazioneNomeCognomeValidator<RappresentanteFiscaleCessionarioCommittente, FatturaElettronica.Validators.RappresentanteFiscaleCessionarioCommittenteValidator>
     {
         [TestMethod]
         public void IdFiscaleIVAHasChildValidator()

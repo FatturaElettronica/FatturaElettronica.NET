@@ -1,103 +1,63 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FluentValidation;
 
 namespace Tests
 {
     [TestClass]
-    public abstract class BaseDatiDocumentoValidator<TClass, TValidator>: BaseClass<TClass, TValidator>
+    public abstract class BaseDatiDocumentoValidator<TClass, TValidator>
+        : BaseClass<TClass, TValidator>
         where TClass : FatturaElettronica.Common.DatiDocumento
         where TValidator : IValidator<TClass>
     {
         [TestMethod]
-        public void IdDocumentoCannotBeEmpty()
+        public void IdDocumentoIsRequired()
         {
-            challenge.IdDocumento = null;
-            validator.ShouldHaveValidationErrorFor(x => x.IdDocumento, challenge);
-            challenge.IdDocumento = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.IdDocumento, challenge);
+            AssertRequired(x => x.IdDocumento);
         }
         [TestMethod]
         public void IdDocumentoMinMaxLength()
         {
-            challenge.IdDocumento = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.IdDocumento, challenge);
-            challenge.IdDocumento = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.IdDocumento, challenge);
-            challenge.IdDocumento = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.IdDocumento, challenge);
+            AssertMinMaxLength(x => x.IdDocumento, 1, 20);
         }
         [TestMethod]
-        public void NumItemCanBeEmpty()
+        public void NumItemIsOptional()
         {
-            challenge.NumItem = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumItem, challenge);
-            challenge.NumItem = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumItem, challenge);
+            AssertOptional(x => x.NumItem);
         }
         [TestMethod]
         public void NumItemMinMaxLength()
         {
-            challenge.NumItem = new string('x', 21);
-            validator.ShouldHaveValidationErrorFor(x => x.NumItem, challenge);
-            challenge.NumItem = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumItem, challenge);
-            challenge.NumItem = new string('x', 20);
-            validator.ShouldNotHaveValidationErrorFor(x => x.NumItem, challenge);
+            AssertMinMaxLength(x => x.NumItem, 1, 20);
         }
         [TestMethod]
-        public void CodiceCommessaCanBeEmpty()
+        public void CodiceCommessaIsOptional()
         {
-            challenge.CodiceCommessaConvenzione = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCommessaConvenzione, challenge);
-            challenge.CodiceCommessaConvenzione = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCommessaConvenzione, challenge);
+            AssertOptional(x => x.CodiceCommessaConvenzione);
         }
         [TestMethod]
         public void CodiceCommessaMinMaxLength()
         {
-            challenge.CodiceCommessaConvenzione = new string('x', 101);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceCommessaConvenzione, challenge);
-            challenge.CodiceCommessaConvenzione = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCommessaConvenzione, challenge);
-            challenge.CodiceCommessaConvenzione = new string('x', 100);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCommessaConvenzione, challenge);
+            AssertMinMaxLength(x => x.CodiceCommessaConvenzione, 1, 100);
         }
         [TestMethod]
-        public void CodiceCUPCanBeEmpty()
+        public void CodiceCUPIsOptional()
         {
-            challenge.CodiceCUP = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCUP, challenge);
-            challenge.CodiceCUP = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCUP, challenge);
+            AssertOptional(x => x.CodiceCUP);
         }
         [TestMethod]
         public void CodiceCUPMinMaxLength()
         {
-            challenge.CodiceCUP = new string('x', 16);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceCUP, challenge);
-            challenge.CodiceCUP = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCUP, challenge);
-            challenge.CodiceCUP = new string('x', 15);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCUP, challenge);
+            AssertMinMaxLength(x => x.CodiceCUP, 1, 15);
         }
         [TestMethod]
-        public void CodiceCIGCanBeEmpty()
+        public void CodiceCIGIsOptional()
         {
-            challenge.CodiceCIG = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCIG, challenge);
-            challenge.CodiceCIG = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCIG, challenge);
+            AssertOptional(x => x.CodiceCIG);
         }
         [TestMethod]
         public void CodiceCIGMinMaxLength()
         {
-            challenge.CodiceCIG = new string('x', 16);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceCIG, challenge);
-            challenge.CodiceCIG = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCIG, challenge);
-            challenge.CodiceCIG = new string('x', 15);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceCIG, challenge);
+            AssertMinMaxLength(x => x.CodiceCIG, 1, 15);
         }
     }
 }

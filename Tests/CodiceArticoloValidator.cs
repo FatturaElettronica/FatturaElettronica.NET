@@ -1,46 +1,31 @@
-﻿using FluentValidation.TestHelper;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
 
 namespace Tests
 {
     [TestClass]
-    public class CodiceArticoloValidator: BaseClass<CodiceArticolo, FatturaElettronica.Validators.CodiceArticoloValidator>
+    public class CodiceArticoloValidator
+        : BaseClass<CodiceArticolo, FatturaElettronica.Validators.CodiceArticoloValidator>
     {
         [TestMethod]
-        public void CodiceTipoCannotBeEmpty()
+        public void CodiceTipoIsRequired()
         {
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceTipo, challenge);
-            challenge.CodiceTipo = "x";
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceTipo, challenge);
+            AssertRequired(x => x.CodiceTipo);
         }
         [TestMethod]
         public void CodiceTipoMinMaxLength()
         {
-            challenge.CodiceTipo = new string('x', 36);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceTipo, challenge);
-            challenge.CodiceTipo = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceTipo, challenge);
-            challenge.CodiceTipo = new string('x', 35);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceTipo, challenge);
+            AssertMinMaxLength(x => x.CodiceTipo, 1, 35);
         }
         [TestMethod]
-        public void CodiceArticoloCannotBeEmpty()
+        public void CodiceValoreIsRequired()
         {
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceValore, challenge);
-            challenge.CodiceValore = "x";
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceValore, challenge);
+            AssertRequired(x => x.CodiceValore);
         }
         [TestMethod]
         public void CodiceValoreMinMaxLength()
         {
-            challenge.CodiceValore = new string('x', 36);
-            validator.ShouldHaveValidationErrorFor(x => x.CodiceValore, challenge);
-            challenge.CodiceValore = new string('x', 1);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceValore, challenge);
-            challenge.CodiceValore = new string('x', 35);
-            validator.ShouldNotHaveValidationErrorFor(x => x.CodiceValore, challenge);
+            AssertMinMaxLength(x => x.CodiceValore, 1, 35);
         }
     }
 }

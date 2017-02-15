@@ -1,46 +1,34 @@
 ﻿using FatturaElettronica.Common;
+using FatturaElettronica.Tabelle;
 using FatturaElettronica.Validators;
-using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
-    public class IdFiscaleValidator : BaseClass<IdFiscaleIVA, IdFiscaleIVAValidator>
+    public class IdFiscaleValidator 
+        : BaseClass<IdFiscaleIVA, IdFiscaleIVAValidator>
     {
 
         [TestMethod]
-        public void IdPaeseCannotBeEmpty()
+        public void IdPaeseIsRequired()
         {
-            challenge.IdPaese = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.IdPaese, challenge);
+            AssertRequired(x => x.IdPaese);
         }
         [TestMethod]
-        public void IdPaeseCanOnlyAcceptDomainValues()
+        public void IdPaeseOnlyAcceptsTableValues()
         {
-            challenge.IdPaese = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.IdPaese, challenge);
-            challenge.IdPaese = "XX";
-            validator.ShouldHaveValidationErrorFor(x => x.IdPaese, challenge);
-            challenge.IdPaese = "IT";
-            validator.ShouldNotHaveValidationErrorFor(x => x.IdPaese, challenge);
+            AssertOnlyAcceptsTableValues<IdPaese>(x => x.IdPaese);
         }
         [TestMethod]
-        public void IdCodiceCannotBeEmpty()
+        public void IdCodiceIsRequired()
         {
-            challenge.IdCodice = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.IdCodice, challenge);
+            AssertRequired(x => x.IdCodice);
         }
-
         [TestMethod]
         public void IdCodiceMinMaxLength()
         {
-            challenge.IdCodice = string.Empty;
-            validator.ShouldHaveValidationErrorFor(x => x.IdCodice, challenge);
-            challenge.IdCodice = new string('x', 29);
-            validator.ShouldHaveValidationErrorFor(x => x.IdCodice, challenge);
-            challenge.IdCodice = "1";
-            validator.ShouldNotHaveValidationErrorFor(x => x.IdCodice, challenge);
+            AssertMinMaxLength(x => x.IdCodice, 1, 28);
         }
     }
 }
