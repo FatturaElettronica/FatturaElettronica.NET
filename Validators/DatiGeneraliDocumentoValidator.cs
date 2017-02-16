@@ -11,7 +11,10 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.TipoDocumento).NotEmpty().SetValidator(new IsValidValidator<TipoDocumento>());
             RuleFor(x => x.Divisa).NotEmpty().SetValidator(new IsValidValidator<Divisa>());
             RuleFor(x => x.Numero).NotEmpty().Length(1, 20);
-            RuleFor(x => x.Numero).Matches(@"\d").WithMessage("Almeno un carattere numerico è necessario");
+            RuleFor(x => x.Numero)
+                .Matches(@"\d")
+                .WithMessage("Numero non contiene caratteri numerici")
+                .WithErrorCode("00411");
             RuleFor(x => x.DatiRitenuta).SetValidator(new DatiRitenutaValidator());
             RuleFor(x => x.DatiBollo).SetValidator(new DatiBolloValidator());
             RuleFor(x => x.DatiCassaPrevidenziale).SetCollectionValidator(new DatiCassaPrevidenzialeValidator());

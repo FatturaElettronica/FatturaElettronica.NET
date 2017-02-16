@@ -45,7 +45,7 @@ namespace Tests
         public void NumeroMustHaveAtLeatOneNumericChar()
         {
             challenge.Numero = "hello";
-            validator.ShouldHaveValidationErrorFor(x => x.Numero, challenge);
+            validator.ShouldHaveValidationErrorFor(x => x.Numero, challenge).WithErrorCode("00411");
             challenge.Numero = "hello1";
             validator.ShouldNotHaveValidationErrorFor(x => x.Numero, challenge);
         }
