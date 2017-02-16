@@ -1,7 +1,4 @@
-﻿using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
-using System.Collections.Generic;
+﻿using FatturaElettronica.BusinessObjects;
 using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
@@ -14,27 +11,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         public IscrizioneREA() { } 
         public IscrizioneREA(XmlReader r) : base(r) { } 
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("Ufficio",
-                new List<Validator> {
-                    new FRequiredValidator(),
-                    new FProvinciaValidator()
-                }));
-            rules.Add(new AndCompositeValidator("NumeroREA",
-                new List<Validator> {
-                    new FRequiredValidator(),
-                    new FLengthValidator(1, 20)
-                }));
-            rules.Add(new DomainValidator("SocioUnico", "Valori ammessi: [SU],[SM].", new Tabelle.SocioUnico().Codici));
-            rules.Add(new AndCompositeValidator("StatoLiquidazione",
-                new List<Validator> {
-                    new FRequiredValidator(),
-                    new DomainValidator("Valori ammessi: [LS],[LN].", new Tabelle.StatoLiquidazione().Codici)}));
-            return rules;
-        }
-
-        # region Properties 
         /// <summary>
         /// Sigla della provincia dell'Ufficio del registro delle imprese presso il quale è registata la società.
         /// </summary>
@@ -65,7 +41,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// </summary>
         [DataProperty]
         public string StatoLiquidazione { get; set; }
-        # endregion
-
     }
 }

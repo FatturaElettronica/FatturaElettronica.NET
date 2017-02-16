@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.Allegati
 {
@@ -14,17 +11,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.Allegati
         public Allegati() { }
         public Allegati(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("NomeAttachment", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 60)}));
-            rules.Add(new FLengthValidator("AlgoritmoCompressione", 1, 20));
-            rules.Add(new FLengthValidator("FormatoAttachment", 1, 10));
-            rules.Add(new FLengthValidator("DescrizioneAttachment", 1, 100));
-            rules.Add(new FRequiredValidator("Attachment"));
-            return rules;
-        }
-
-        #region Properties
         /// <summary>
         /// Nome dell'allegato.
         /// </summary>
@@ -54,6 +40,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.Allegati
         /// </summary>
         [DataProperty]
         public byte[] Attachment { get; set; }
-        #endregion
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.Common
 {
@@ -16,17 +13,6 @@ namespace FatturaElettronica.Common
 
         public DenominazioneNomeCognome() { } 
         public DenominazioneNomeCognome(XmlReader r) : base(r) { } 
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FLengthValidator("Denominazione", 1, 80));
-            rules.Add(new FLengthValidator("Nome", 1, 60));
-            rules.Add(new FLengthValidator("Cognome", 1, 60));
-            rules.Add(new FXorRequiredValidator(new []{"Denominazione", "CognomeNome"}));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -62,6 +48,5 @@ namespace FatturaElettronica.Common
                 return String.IsNullOrEmpty(r) ? null : r;
             }
         }
-        #endregion
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -15,15 +12,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     {
         public FatturaPrincipale() { }
         public FatturaPrincipale(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("NumeroFatturaPrincipale", new List<Validator>{new FRequiredValidator(), new FLengthValidator(1, 20)}));
-            rules.Add(new FRequiredValidator("DataFatturaPrincipale"));
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -42,6 +30,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public DateTime? DataFatturaPrincipale { get; set; }
-        #endregion
     }
 }

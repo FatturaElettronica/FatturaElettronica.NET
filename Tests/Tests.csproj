@@ -111,7 +111,6 @@
     <Compile Include="FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="DatiTrasmissioneValidator.cs" />
     <Compile Include="DeserializeAndSerialize.cs" />
-    <Compile Include="FatturaElettronicaTest.cs" />
     <Compile Include="FatturaElettronicaValidator.cs" />
     <Compile Include="IdFiscaleValidator.cs" />
     <Compile Include="IdTrasmittenteValidator.cs" />
@@ -119,10 +118,6 @@
     <Compile Include="TestHelpers.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
-      <Project>{06f90b65-7d19-46dc-8336-0f3335be6c76}</Project>
-      <Name>BusinessObjects</Name>
-    </ProjectReference>
     <ProjectReference Include="..\FatturaElettronica.csproj">
       <Project>{417b2f7c-a46b-49da-b5e5-150ecf084bcd}</Project>
       <Name>FatturaElettronica</Name>

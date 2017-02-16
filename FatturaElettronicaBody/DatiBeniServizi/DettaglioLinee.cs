@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -27,68 +25,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 
         public DettaglioLinee(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("NumeroLinea"));
-            rules.Add(new FTipoCessionePrestazioneValidator("TipoCessionePrestazione"));
-            rules.Add(new AndCompositeValidator("Descrizione", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 1000)}));
-            rules.Add(new FLengthValidator("UnitaMisura", 1, 10));
-            rules.Add(new FRequiredValidator("PrezzoUnitario"));
-            rules.Add(new FRequiredValidator("PrezzoTotale"));
-            rules.Add(new FSiValidator("Ritenuta"));
-            rules.Add(new FNaturaValidator("Natura"));
-            rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
-            rules.Add(new FPrezzoTotaleValidator("PrezzoTotale", "00423: il valore del campo PrezzoTotale non risulta calcolato secondo le regole definite nelle specifiche tecniche", ValidateAgainstErr00423));
-            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> {
-                new FRequiredValidator("AliquotaIVA"),
-                new FAliquotaIVAValidator("AliquotaIVA"),
-                new DelegateValidator("AliquotaIVA", "00400: sulla riga di dettaglio con aliquota IVA pari a zero deve essere presente il campo Natura.", ValidateAgainstErr00400),
-                new DelegateValidator("AliquotaIVA", "00401:  sulla riga di dettaglio con aliquota IVA diversa da zero non deve essere presente il campo Natura.", ValidateAgainstErr00401)
-                }));
-            return rules;
-        }
-		/// <summary>
-        /// Validate error 00423 from FatturaElettronicaPA v1.3
-        /// </summary>
-        /// <returns></returns>
-		internal bool ValidateAgainstErr00423()
-        {
-			var prezzo = PrezzoUnitario;
-			foreach (var sconto in ScontoMaggiorazione)
-            {
-
-                if (sconto.Importo == null && sconto.Percentuale == null) continue;
-
-                var importo = (decimal)((sconto.Importo != null && sconto.Importo != 0) ?  Math.Abs((decimal)sconto.Importo) : (prezzo * sconto.Percentuale) / 100);
-
-                if (sconto.Tipo == "SC")
-                    prezzo -= importo;
-                else
-                    prezzo += importo;
-
-            }
-            return PrezzoTotale == Math.Round((decimal)(prezzo * ((Quantita != null) ? Quantita : 1)), 2, MidpointRounding.AwayFromZero);
-        }
-
-		/// <summary>
-        /// Validate error 00400 from FatturaElettronicaPA v1.3
-        /// </summary>
-        /// <returns></returns>
-		private bool ValidateAgainstErr00400()
-        {
-            return AliquotaIVA != 0 || !string.IsNullOrEmpty(Natura);
-        }
-
-		/// <summary>
-        /// Validate error 00401 from FatturaElettronicaPA v1.3
-        /// </summary>
-        /// <returns></returns>
-		private bool ValidateAgainstErr00401()
-        {
-            return AliquotaIVA == 0 || string.IsNullOrEmpty(Natura);
-        }
-
-        #region Properties
         /// <summary>
         /// Numero della riga di dettaglio del documento.
         /// </summary>
@@ -187,6 +123,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         [DataProperty]
         public List<AltriDatiGestionali> AltriDatiGestionali { get { return _altriDatiGestionali; } }
-        #endregion
     }
 }

@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -12,28 +9,12 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.
         /// </summary>
-        public DatiAnagraficiCedentePrestatore() { }
-        public DatiAnagraficiCedentePrestatore(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules()
+        public DatiAnagraficiCedentePrestatore()
         {
             XmlOptions.ElementName = "DatiAnagrafici";
-
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("IdFiscaleIVA"));
-            rules.Add(new FLengthValidator("AlboProfessionale", 1, 60));
-            rules.Add(new FProvinciaValidator("ProvinciaAlbo"));
-            rules.Add(new FLengthValidator("NumeroIscrizioneAlbo", 1, 60));
-            rules.Add(new AndCompositeValidator("RegimeFiscale",
-                new List<Validator>
-                {
-                    new FRequiredValidator(),
-                    new FRegimeFiscaleValidator()
-                }));
-            return rules;
         }
+        public DatiAnagraficiCedentePrestatore(XmlReader r) : base(r) { }
 
-        #region Properties 
         /// <summary>
         /// Nome dell'albo professionale.
         /// </summary>
@@ -63,6 +44,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// </summary>
         [DataProperty (order:14)]
         public string RegimeFiscale { get; set; }
-        #endregion
     }
 }

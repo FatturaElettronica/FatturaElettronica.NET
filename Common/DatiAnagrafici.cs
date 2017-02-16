@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.Common
 {
@@ -23,14 +20,6 @@ namespace FatturaElettronica.Common
         }
         public DatiAnagrafici(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FLengthValidator("CodiceFiscale", 11,16));
-            rules.Add(new FRequiredValidator("Anagrafica"));
-            return rules;
-        }
-
-        # region Properties 
         /// <summary>
         /// Numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ed i restanti il codice
         /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
@@ -53,8 +42,5 @@ namespace FatturaElettronica.Common
         public Anagrafica Anagrafica { 
             get { return _anagrafica; }
         }
-
-        # endregion
-
     }
 }

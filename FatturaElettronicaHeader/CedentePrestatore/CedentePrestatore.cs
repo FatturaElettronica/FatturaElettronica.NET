@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 using FatturaElettronica.Common;
-using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -30,16 +27,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
             _contatti = new Contatti();
         }
         public CedentePrestatore(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiAnagrafici"));
-            rules.Add(new FRequiredValidator("Sede"));
-            rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -90,6 +77,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// </summary>
         [DataProperty]
         public string RiferimentoAmministrazione { get; set; }
-        #endregion
     }
 }

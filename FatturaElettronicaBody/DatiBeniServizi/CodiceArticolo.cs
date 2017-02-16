@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -11,20 +8,9 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// </summary>
     public class CodiceArticolo : Common.BusinessObject
     {
-
         public CodiceArticolo() { }
         public CodiceArticolo(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add( new AndCompositeValidator("CodiceTipo", new List<Validator> {new FRequiredValidator(), 
-                new FLengthValidator(1, 35)}));
-            rules.Add( new AndCompositeValidator("CodiceValore", new List<Validator> {new FRequiredValidator(), 
-                new FLengthValidator(1, 35)}));
-            return rules;
-        }
-
-        #region Properties
         /// <summary>
         /// Indica la tipologia di codice articolo (TARIC, CPV, EAN, SSC, ...)
         /// </summary>
@@ -36,6 +22,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         [DataProperty]
         public string CodiceValore { get; set; }
-        #endregion
     }
 }

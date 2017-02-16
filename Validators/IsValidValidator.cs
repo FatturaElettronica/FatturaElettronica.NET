@@ -1,5 +1,5 @@
 ﻿using System;
-using BusinessObjects;
+using FatturaElettronica.BusinessObjects;
 using FatturaElettronica.Tabelle;
 using FluentValidation.Validators;
 

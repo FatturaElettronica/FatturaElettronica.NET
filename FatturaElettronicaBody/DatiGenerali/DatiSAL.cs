@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -15,14 +12,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         public DatiSAL() { }
         public DatiSAL(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("RiferimentoFase"));
-            return rules;
-        }
-
-        #region Properties
-
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
@@ -32,6 +21,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public int RiferimentoFase { get; set; }
-        #endregion
     }
 }

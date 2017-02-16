@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -23,15 +20,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
             _indirizzoResa = new IndirizzoResa();
         }
         public DatiTrasporto(XmlReader r) : base(r) { }
-
-        // TODO: Implementare le regole per i DatiTrasporto
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -117,6 +105,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         [DataProperty]
         [IgnoreXmlDateFormat]
         public DateTime? DataOraConsegna { get; set; }
-        #endregion
     }
 }

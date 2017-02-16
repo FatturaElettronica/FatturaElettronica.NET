@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 using FatturaElettronica.Common;
-using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 {
@@ -28,15 +25,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
             _rappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
         }
         public CessionarioCommittente(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiAnagrafici"));
-            rules.Add(new FRequiredValidator("Sede"));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -73,6 +61,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { 
             get { return _rappresentanteFiscale; }
         }
-        #endregion
     }
 }

@@ -39,6 +39,12 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\BusinessObject.cs" />
+    <Compile Include="BusinessObjects\BusinessObjectBase.cs" />
+    <Compile Include="BusinessObjects\DataPropertyAttribute.cs" />
+    <Compile Include="BusinessObjects\IgnoreXmlDateFormat.cs" />
+    <Compile Include="BusinessObjects\JsonOptions.cs" />
+    <Compile Include="BusinessObjects\XmlOptions.cs" />
     <Compile Include="Common\DenominazioneNomeCognome.cs" />
     <Compile Include="Common\Anagrafica.cs">
       <SubType>
@@ -306,83 +312,6 @@
     <Compile Include="Validators\AnagraficaValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="Validators\DatiTrasmissioneValidator.cs" />
-    <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
-    <Compile Include="Validators\FPECDestinatarioValidator.cs" />
-    <Compile Include="Validators\FAliquotaIVAValidator.cs" />
-    <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FCountryValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FDateValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FDivisaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FEsigibilitaIVAValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FLengthValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FModalitaPagamentoValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FCausalePagamentoValidator.cs" />
-    <Compile Include="Validators\FNaturaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FPrezzoTotaleValidator.cs" />
-    <Compile Include="Validators\FProvinciaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FRegimeFiscaleValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FRequiredValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FSiValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoCassaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoCessionePrestazioneValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoDocumentoValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoRitenutaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoScontoMaggiorazioneValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FXorRequiredValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
     <Compile Include="Validators\IdFiscaleIVAValidator.cs" />
     <Compile Include="Validators\FatturaElettronicaValidator.cs" />
     <Compile Include="Validators\IdTrasmittenteValidator.cs" />
@@ -396,12 +325,10 @@
       <HintPath>packages\FluentValidation-Signed.6.2.1.0\lib\portable-net45+wp80+win8+wpa81\FluentValidation.dll</HintPath>
       <Private>True</Private>
     </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
-      <Project>{06f90b65-7d19-46dc-8336-0f3335be6c76}</Project>
-      <Name>BusinessObjects</Name>
-    </ProjectReference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

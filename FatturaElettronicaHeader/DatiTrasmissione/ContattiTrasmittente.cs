@@ -1,7 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
 {
@@ -39,13 +37,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
                 NotifyChanged();
             }
         }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new LengthValidator("Telefono", 5, 12));
-            rules.Add(new LengthValidator("Email", 7, 256));
-            return rules;
-        }
     }
-
 }

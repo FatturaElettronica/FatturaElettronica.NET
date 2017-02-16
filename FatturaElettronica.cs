@@ -1,16 +1,13 @@
-﻿using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using FatturaElettronica.BusinessObjects;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using System;
 using FatturaElettronica.Impostazioni;
 
-[assembly:InternalsVisibleTo("Tests,"+
-    "PublicKey=00240000048000009400000006020000002400005253413100040000010001002bc3d9fc3ae589"+
-    "2f31b57e84fbd4c108035bdac32363b22691795307395ad82e43f3da76e95f6851190228e6dac9"+
-    "5aa160072ea70ee1a62a01e1d5e905dd7845ece57d28eb2d63b366073740af1a05bc216ca0e205"+
-    "b7974ffb2b21289125bcffdaa556f95d7891c0167eef5473d1e016cdac83acaa1b4da9fe9a2b2c"+
+[assembly: InternalsVisibleTo("Tests," +
+    "PublicKey=00240000048000009400000006020000002400005253413100040000010001002bc3d9fc3ae589" +
+    "2f31b57e84fbd4c108035bdac32363b22691795307395ad82e43f3da76e95f6851190228e6dac9" +
+    "5aa160072ea70ee1a62a01e1d5e905dd7845ece57d28eb2d63b366073740af1a05bc216ca0e205" +
+    "b7974ffb2b21289125bcffdaa556f95d7891c0167eef5473d1e016cdac83acaa1b4da9fe9a2b2c" +
     "bf5200bf")]
 
 namespace FatturaElettronica
@@ -42,7 +39,23 @@ namespace FatturaElettronica
             base.ReadXml(r);
         }
 
-        #region Properties 
+        public static FatturaElettronica CreateInstance(Instance formato)
+        {
+            var f = new FatturaElettronica();
+
+            switch (formato)
+            {
+                case Instance.PubblicaAmministrazione:
+                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
+                    break;
+                case Instance.Privati:
+                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
+                    f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
+                    break;
+            }
+
+            return f;
+        }
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -64,32 +77,6 @@ namespace FatturaElettronica
         [DataProperty]
         public List<FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody {
             get { return _body; }
-        }
-
-        #endregion
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("FatturaElettronicaHeader"));
-            rules.Add(new FRequiredValidator("FatturaElettronicaBody"));
-            return rules;
-        }
-
-        public static FatturaElettronica CreateInstance(Instance formato)
-        {
-            var f = new FatturaElettronica();
-
-            switch (formato)
-            {
-                case Instance.PubblicaAmministrazione:
-                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
-                    break;
-                case Instance.Privati:
-                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
-                    f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
-                    break;
-            }
-
-            return f;
         }
 
     }

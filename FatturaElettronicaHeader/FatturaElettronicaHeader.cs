@@ -1,7 +1,4 @@
-﻿using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
-using System.Collections.Generic;
+﻿using FatturaElettronica.BusinessObjects;
 using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader
@@ -26,17 +23,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader
             _terzoIntermediarioOSoggettoEmittente = new TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente();
         }
         public FatturaElettronicaHeader(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiTrasmissione"));
-            rules.Add(new FRequiredValidator("CedentePrestatore"));
-            rules.Add(new FRequiredValidator("CessionarioCommittente"));
-            rules.Add(new DomainValidator("SoggettoEmittente", string.Empty, new Tabelle.SoggettoEmittente().Codici));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -81,6 +67,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader
         /// </summary>
         [DataProperty]
         public string SoggettoEmittente { get; set; }
-        #endregion
     }
 }

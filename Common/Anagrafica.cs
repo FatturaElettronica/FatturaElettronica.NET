@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.Common
 {
@@ -16,15 +12,6 @@ namespace FatturaElettronica.Common
 
         public Anagrafica() { } 
         public Anagrafica(XmlReader r) : base(r) { } 
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FLengthValidator("Titolo", 2, 10));
-            rules.Add(new FLengthValidator("CodEORI", 13, 17));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -42,6 +29,5 @@ namespace FatturaElettronica.Common
         [DataProperty]
         // ReSharper disable once InconsistentNaming
         public string CodEORI { get; set; }
-        #endregion
     }
 }

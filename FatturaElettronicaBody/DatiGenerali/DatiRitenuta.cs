@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -13,17 +10,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     {
         public DatiRitenuta() { }
         public DatiRitenuta(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("TipoRitenuta", new List<Validator>{new FRequiredValidator(), new FTipoRitenutaValidator()}));
-            rules.Add(new FRequiredValidator("ImportoRitenuta"));
-            rules.Add(new FRequiredValidator("AliquotaRitenuta"));
-            rules.Add(new AndCompositeValidator("CausalePagamento", new List<Validator>{new FRequiredValidator(), new FCausalePagamentoValidator()}));
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -52,6 +38,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public string CausalePagamento { get; set; }
-        #endregion
     }
 }

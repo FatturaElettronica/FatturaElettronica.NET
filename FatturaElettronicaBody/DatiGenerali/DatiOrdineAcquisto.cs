@@ -7,7 +7,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// </summary>
     public class DatiOrdineAcquisto : Common.DatiDocumento
     {
-
         public DatiOrdineAcquisto() { }
         public DatiOrdineAcquisto(XmlReader r) : base(r) { }
     }

@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.Common
 {
@@ -40,20 +37,6 @@ namespace FatturaElettronica.Common
                 _idCodice = CleanString(value);
                 NotifyChanged();
             }
-        }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            // IdPaese
-            rules.Add(
-                new AndCompositeValidator(
-                    "IdPaese", 
-                    new List<Validator> { new FRequiredValidator(), new FCountryValidator() }));
-            rules.Add(
-                new AndCompositeValidator( 
-                    "IdCodice", 
-                    new List<Validator> { new FRequiredValidator(), new FLengthValidator(1, 28) }));
-            return rules;
         }
     }
 }

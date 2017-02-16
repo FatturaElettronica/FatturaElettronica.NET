@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.Common
 {
@@ -22,14 +19,6 @@ namespace FatturaElettronica.Common
         }
         public RappresentanteFiscale(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiAnagrafici"));
-            return rules;
-        }
-
-        #region Properties 
-
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
@@ -41,6 +30,5 @@ namespace FatturaElettronica.Common
         public DatiAnagrafici DatiAnagrafici { 
             get { return _datiAnagrafici; }
         }
-        #endregion
     }
 }

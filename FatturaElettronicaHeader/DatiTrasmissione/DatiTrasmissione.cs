@@ -1,7 +1,4 @@
-﻿using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
-using System.Collections.Generic;
+﻿using FatturaElettronica.BusinessObjects;
 using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
@@ -28,24 +25,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
             _contattiTrasmittente = new ContattiTrasmittente();
         }
         public DatiTrasmissione(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("IdTrasmittente"));
-            rules.Add(
-                new AndCompositeValidator("ProgressivoInvio", 
-                    new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 10)}));
-            rules.Add(
-                new AndCompositeValidator("FormatoTrasmissione", 
-                    new List<Validator> {new FRequiredValidator(), new DomainValidator("Valori ammessi: [FPA12, FPR12]", new Tabelle.FormatoTrasmissione().Codici) }));
-            rules.Add(new AndCompositeValidator("CodiceDestinatario",
-                    new List<Validator> {new FRequiredValidator(), new FCodiceDestinatarioValidator() }));
-            rules.Add(new AndCompositeValidator("PECDestinatario",
-                    new List<Validator> {new FPECDestinatarioValidator(), new FLengthValidator(7, 256) }));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -115,6 +94,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
                 NotifyChanged();
             }
         }
-        #endregion
     }
 }
