@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentValidation.TestHelper;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
 
@@ -19,9 +20,17 @@ namespace Tests
             AssertOnlyAcceptsTableValues<TipoCassa>(x => x.TipoCassa);
         }
         [TestMethod]
-        public void NaturaIsRequired()
+        public void NaturaIsRequiredWhenAliquotaIsZero()
         {
-            AssertRequired(x => x.Natura);
+            challenge.AliquotaIVA = 0;
+            AssertRequired(x => x.Natura, expectedErrorCode:"00413");
+        }
+        [TestMethod]
+        public void NaturaIsNotAllowedWhenAliquotaIsNotZero()
+        {
+            challenge.AliquotaIVA = 1;
+            challenge.Natura = "N1";
+            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge).WithErrorCode("00414");
         }
         [TestMethod]
         public void NaturaOnlyAcceptsTableValues()
