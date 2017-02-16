@@ -67,6 +67,7 @@
     <Compile Include="BaseDatiDocumentoValidator.cs" />
     <Compile Include="AltriDatiGestionaliValidator.cs" />
     <Compile Include="AllegatiValidator.cs" />
+    <Compile Include="DatiAnagraficiCessionarioCommittenteValidator.cs" />
     <Compile Include="DatiPagamentoValidator.cs" />
     <Compile Include="DettaglioPagamentoValidator.cs" />
     <Compile Include="DatiVeicoliValidator.cs" />
@@ -106,7 +107,7 @@
     <Compile Include="SedeCessionarioCommittenteValidator.cs" />
     <Compile Include="StabileOrganizzazioneValidator.cs" />
     <Compile Include="SedeCedentePrestatoreValidator.cs" />
-    <Compile Include="DatiAnagraficCedentePrestatoreValidator.cs" />
+    <Compile Include="DatiAnagraficiCedentePrestatoreValidator.cs" />
     <Compile Include="FatturaElettronicaHeaderValidator.cs" />
     <Compile Include="DatiTrasmissioneValidator.cs" />
     <Compile Include="DeserializeAndSerialize.cs" />
