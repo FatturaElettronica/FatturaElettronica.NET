@@ -17,7 +17,22 @@ namespace Tests
         [TestMethod]
         public void TipoOnlyAcceptsTableValues()
         {
+            // Necessario per non incappare nell'errore 00437.
+            challenge.Importo = 1;
+
             AssertOnlyAcceptsTableValues<FatturaElettronica.Tabelle.ScontoMaggiorazione>(x => x.Tipo);
+        }
+        [TestMethod]
+        public void TipoValidateAgainstError00437()
+        {
+            challenge.Tipo = "SC";
+            challenge.Importo = null;
+            challenge.Percentuale = null;
+            validator.ShouldHaveValidationErrorFor(x => x.Tipo, challenge).WithErrorCode("00437");
+
+            challenge.Importo = 0;
+            challenge.Percentuale = 0;
+            validator.ShouldHaveValidationErrorFor(x => x.Tipo, challenge).WithErrorCode("00437");
         }
         [TestMethod]
         public void ImportoMustHaveValueUnlessPercentualeDoes()
