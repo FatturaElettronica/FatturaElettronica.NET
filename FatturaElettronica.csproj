@@ -39,8 +39,8 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BusinessObjects\BusinessObjectSerializable.cs" />
     <Compile Include="BusinessObjects\BusinessObject.cs" />
-    <Compile Include="BusinessObjects\BusinessObjectBase.cs" />
     <Compile Include="BusinessObjects\DataPropertyAttribute.cs" />
     <Compile Include="BusinessObjects\IgnoreXmlDateFormat.cs" />
     <Compile Include="BusinessObjects\JsonOptions.cs" />

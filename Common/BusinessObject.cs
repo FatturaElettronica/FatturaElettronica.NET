@@ -6,7 +6,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Represents a FatturaElettronica BusinesObject
     /// </summary>
-    public abstract class BusinessObject : BusinessObjects.BusinessObject
+    public abstract class BusinessObject : BusinessObjects.BusinessObjectSerializable
     {
 
         /// <summary>

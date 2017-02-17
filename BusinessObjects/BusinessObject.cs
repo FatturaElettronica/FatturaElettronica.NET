@@ -1,250 +1,194 @@
-﻿using System;
-using System.Collections;
-using System.Globalization;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using System.Xml;
-using System.Xml.Schema;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
+using System.Runtime.CompilerServices;
 
 namespace FatturaElettronica.BusinessObjects
 {
     /// <summary>
-    /// - XML (de)serialization;
-    /// - JSON serialization.
+    /// The class all domain objects must inherit from. 
+    ///
+    /// Currently supports:
+    /// - IEquatable so you can easily compare complex BusinessObjects togheter.
+    /// - Binding (INotififyPropertyChanged and IDataErrorInfo).
+    /// 
+    /// TODO:
+    /// - BeginEdit()/EndEdit() combination, and rollbacks for cancels (IEditableObject).
     /// </summary>
-    public class BusinessObject : 
-        BusinessObjectBase,
-        IXmlSerializable {
-        /// <summary>
-        /// Constructor.
-        /// </summary>
-        protected BusinessObject() { 
-            XmlOptions = new XmlOptions();
-        }
-        protected BusinessObject(XmlReader r) : this() { ReadXml(r); }
-
-        public XmlOptions XmlOptions { get; set; }
+    public abstract class BusinessObject:  
+        INotifyPropertyChanged,
+        IEquatable<BusinessObject>
+    {
 
         /// <summary>
-        /// Serializes the instance to JSON
+        /// Occurs when any properties are changed on this object.
         /// </summary>
-        /// <returns>A JSON string representing the class instance.</returns>
-        public virtual string ToJson() {
-            return ToJson(JsonOptions.None);
-        }
-        /// <summary>
-        /// Serializes the class to JSON.
-        /// </summary>
-        /// <param name="jsonOptions">JSON formatting options.</param>
-        /// <returns>A JSON string representing the class instance.</returns>
-        public virtual string ToJson(JsonOptions jsonOptions) {
-            var json = JsonConvert.SerializeObject(this, 
-                (jsonOptions == JsonOptions.Indented) ? Formatting.Indented : Formatting.None,
-                new JsonSerializerSettings { 
-                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                    DefaultValueHandling = DefaultValueHandling.Ignore,
-                    //NullValueHandling = NullValueHandling.Ignore,
-                });
-            return json;
-        }
-
-        #region XML
-        public XmlSchema GetSchema() { return null; }
+        public event PropertyChangedEventHandler PropertyChanged;
 
         /// <summary>
-        /// Serializes the current BusinessObject instance to a XML file.
+        /// A helper method that raises the PropertyChanged event for a property.
         /// </summary>
-        /// <param name="fileName">Name of the file to write to.</param>
-        public virtual void WriteXml(string fileName) {
-            var settings = new XmlWriterSettings {Indent = true};
-            using (var writer = XmlWriter.Create(new System.Text.StringBuilder(fileName), settings)) { WriteXml(writer); }
-        }
-
-        /// <summary>
-        /// Serializes the current BusinessObject instance to a XML stream.
-        /// </summary>
-        /// <param name="w">Active XML stream writer.</param>
-        /// <remarks>Writes only its inner content, not the outer element. Leaves the writer at the same depth.</remarks>
-        public virtual void WriteXml(XmlWriter w) {
-            foreach (var prop in GetAllDataProperties())
-            {
-                var propertyValue = prop.GetValue(this, null);
-                if (propertyValue == null && !XmlOptions.SerializeNullValues) continue;
-
-                // if it's a BusinessObject instance just let it flush it's own data.
-                var child = propertyValue as BusinessObject;
-                if (child != null) {
-                    if (child.IsEmpty() && XmlOptions.SerializeEmptyBusinessObjects == false) continue;
-                    w.WriteStartElement((string.IsNullOrEmpty(child.XmlOptions.ElementName) ?  child.GetType().Name : child.XmlOptions.ElementName));
-                    child.WriteXml(w);
-                    w.WriteEndElement();
-                    continue;
-                }
-
-                // if property type is List<T>, assume it's of BusinessObjects and try to fetch them all from XML.
-                if (IsListOfT(prop.PropertyType))
-                {
-                    WriteXmlList(prop.Name, propertyValue, w);
-                    continue;
-                }
-
-                if (propertyValue is string) {
-                    if (!string.IsNullOrEmpty(propertyValue.ToString()) || XmlOptions.SerializeEmptyStrings) {
-                        w.WriteElementString(prop.Name, propertyValue.ToString());
-                    }
-                    continue;
-                }
-                if (propertyValue is DateTime && XmlOptions.DateTimeFormat != null && !prop.GetCustomAttributes<IgnoreXmlDateFormat>().Any()) {
-                    w.WriteElementString(prop.Name, ((DateTime)propertyValue).ToString(XmlOptions.DateTimeFormat));
-                    continue;
-                }
-                if (propertyValue is decimal && XmlOptions.DecimalFormat != null) {
-                    w.WriteElementString(prop.Name, ((decimal)propertyValue).ToString(XmlOptions.DecimalFormat, CultureInfo.InvariantCulture));
-                    continue;
-                }
-
-                // all else fail so just let the value flush straight to XML.
-                w.WriteStartElement(prop.Name);
-                if (propertyValue != null) { 
-                    w.WriteValue(propertyValue); 
-                }
-                w.WriteEndElement();
-            }
-        }
-
-        /// <summary>
-        /// Deserializes a List of BusinessObject or strings to one or more XML elements.
-        /// </summary>
-        /// <param name="propertyName">Property name.</param>
-        /// <param name="propertyValue">Property value.</param>
-        /// <param name="w">Active XML stream writer.</param>
-        private static void WriteXmlList(string propertyName, object propertyValue, XmlWriter w)
+        protected virtual void NotifyChanged([CallerMemberName] string caller = "")
         {
-            var type = propertyValue.GetType();
-            var e = GetMethod(type, "GetEnumerator").Invoke(propertyValue, null) as IEnumerator;
+            NotifyChanged(new[]{caller});
+        }
 
-            while (e != null && e.MoveNext()) {
-                if (e.Current == null) continue;
-                var current = e.Current;
-                w.WriteStartElement(propertyName);
-                {
-                    if (current is BusinessObject) {
-                        ((BusinessObject)current).WriteXml(w);
-                    }
-                    else if (current is string)
-                    {
-                        w.WriteString((string) current);
-                    }
-                    else {
-                        w.WriteValue(e.Current);
-                    }
-                }
-                w.WriteEndElement();
+        /// <summary>
+        /// A helper method that raises the PropertyChanged event for a property.
+        /// </summary>
+        /// <param name="propertyNames">The names of the properties that changed.</param>
+        protected virtual void NotifyChanged(params string[] propertyNames)
+        {
+            foreach (var name in propertyNames)
+            {
+                OnPropertyChanged(new PropertyChangedEventArgs(name));
             }
         }
 
         /// <summary>
-        /// Deserializes the current BusinessObject from a XML stream.
+        /// Cleans a string by ensuring it isn't null and trimming it.
         /// </summary>
-        /// <param name="r">Active XML stream reader.</param>
-        /// <remarks>Reads the outer element. Leaves the reader at the same depth.</remarks>
-        // TODO Clear properties before reading from file
-        public virtual void ReadXml(XmlReader r) {
-            var isEmpty = r.IsEmptyElement;
-            
-            r.ReadStartElement();
-            if (isEmpty) return;
+        /// <param name="s">The string to clean.</param>
+        protected string CleanString(string s)
+        {
+            return (s ?? string.Empty).Trim();
+        }
+
+        /// <summary>
+        /// Raises the PropertyChanged event.
+        /// </summary>
+        /// <param name="e">Event arguments.</param>
+        protected virtual void OnPropertyChanged(PropertyChangedEventArgs e)
+        {
+            PropertyChanged?.Invoke(this, e);
+        }
+
+        /// <summary>
+        /// Checks wether a BusinessObject instance is empty.
+        /// </summary>
+        /// <returns>Returns true if the object is empty; false otherwise.</returns>
+        public virtual Boolean IsEmpty()
+        {
+            // TODO support more data types.
 
             var props = GetAllDataProperties().ToList();
-            while (r.NodeType == XmlNodeType.Element) {
-
-                var prop = props.FirstOrDefault(n => n.Name.Equals(r.Name));
-                if (prop == null) {
-                    // ignore unknown property.
-                    r.Skip();
+            var i = 0;
+            foreach (var prop in props) {
+                var v = prop.GetValue(this, null);
+                if (v == null) {
+                    i++;
                     continue;
                 }
-
-                var type = prop.PropertyType;
-                var value = prop.GetValue(this, null);
-
-                // if property type is BusinessObject, let it auto-load from XML.
-                if (IsBusinessObjectSubclass(type))
-                {
-                    ((BusinessObject)value).ReadXml(r);
+                if (v is string) {
+                    if (string.IsNullOrEmpty((string) v)) 
+                        i++;
                     continue;
                 }
-
-                // if property type is List<T>, try to fetch the list from XML.
-                if (IsListOfT(type))
-                {
-                    ReadXmlList(value, type, prop.Name, r);
-                    continue;
+                if (v is BusinessObject && ((BusinessObject)v).IsEmpty()) { 
+                    i++;
                 }
-
-                // ReadElementContentAs won't accept a nullable types.
-                if (type == typeof(DateTime?)) type = typeof(DateTime); 
-                if (type == typeof(decimal?)) type = typeof(decimal); 
-                if (type == typeof(int?)) type = typeof(int); 
-
-                prop.SetValue(this, r.ReadElementContentAs(type, null), null);
             }
-            r.ReadEndElement();
+            return i == props.Count();
         }
 
         /// <summary>
-        /// Serializes one or more XML elements into a List of BusinessObjects.
+        /// Provides a list of actual data properties for the current BusinessObject instance, sorted by writing order.
         /// </summary>
-        /// <param name="propertyValue">Property value. Must be a List of BusinessObject instances.</param>
-        /// <param name="propertyName">Property name.</param>
-        /// <param name="r">Active XML stream reader.</param>
-        private static void ReadXmlList(object propertyValue, Type propertyType, string propertyName, XmlReader r)
+        /// <remarks>Only properties flagged with the OrderedDataProperty attribute will be returned.</remarks>
+        /// <returns>A enumerable list of PropertyInfo instances.</returns>
+        protected IEnumerable<PropertyInfo> GetAllDataProperties()
         {
+            return GetType()
+                .GetRuntimeProperties()
+                .Where(pi => pi.GetCustomAttributes<DataProperty>(true).Any())
+                .OrderBy(pi => pi.GetCustomAttribute<DataProperty>(true).Order);
+        }
 
-            // retrieve type of list elements.
-            var elementType = propertyType.GetTypeInfo().GenericTypeArguments.Single();
 
-            // quit if it's not a BusinessObject subclass.
-            //if (!IsBusinessObjectSubclass(elementType)) return;
+        #region IEquatable
+        public bool Equals(BusinessObject other)
+        {
+            if (other == null)
+                return false;
 
-            // clear the list first.
-            // note that the 'canonical' call to GetRuntimeMethod returns null for some reason,
-            // see http://stackoverflow.com/questions/21307845/runtimereflectionextensions-getruntimemethod-does-not-work-as-expected
-            //var method = propertyType.GetRuntimeMethod("Clear", new[] { propertyType });
-            var method = GetMethod(propertyType, "Clear");
-            method.Invoke(propertyValue, null);
+            foreach (var prop in GetAllDataProperties()) {
+                var v1 = prop.GetValue(this, null);
+                var v2 = prop.GetValue(other, null);
 
-            method = GetMethod(propertyType, "Add");
-            while (r.NodeType == XmlNodeType.Element && r.Name == propertyName) {
-                if (IsBusinessObjectSubclass(elementType))
-                {
-                    // list items are expected to be of BusinessObject type.
-                    var bo = Activator.CreateInstance(elementType);
-                    ((BusinessObject)bo).ReadXml(r);
-                    method.Invoke(propertyValue, new[] { bo });
-                    continue;
-                }
-                if (elementType == typeof(string))
-                {
-                    method.Invoke(propertyValue, new [] { r.ReadElementContentAsString() });
-                    continue;
-                }
-                if (elementType == typeof(int))
-                {
-                    method.Invoke(propertyValue, new[] { r.ReadElementContentAs(elementType, null) });
+                if (IsListOfT(prop.PropertyType)) { 
+                    // We only support List<string>.
+                    if (!((List<string>) v1).SequenceEqual((List<string>) v2)) {
+                        return false;
+                    }    
+                } 
+                else {
+                    // Other types, and BusinessObject type.
+                    if ( v1 != v2 && !v1.Equals(v2)) {
+                        return false;
+                    }
                 }
             }
+            return true;
         }
-        private static bool IsBusinessObjectSubclass(Type type)
+
+        public override bool Equals(object obj)
         {
-            return typeof(BusinessObject).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo());
+            if (obj == null)
+                return false;
+
+            var o = obj as BusinessObject;
+            return o != null && GetType().Name == o.GetType().Name && Equals(o);
         }
-        private static MethodInfo GetMethod(Type type, string name)
+
+        public static bool operator == (BusinessObject o1, BusinessObject o2)
         {
-            return type.GetRuntimeMethods().First(x => x.Name.Contains(name));
+            if ((object)o1 == null || ((object)o2) == null)
+                return Equals(o1, o2);
+
+            return o1.Equals(o2);
+        }
+
+        public static bool operator != (BusinessObject o1, BusinessObject o2)
+        {
+            if (o1 == null || o2 == null)
+                return !Equals(o1, o2);
+
+            return !(o1.Equals(o2));
+        }
+
+        public override int GetHashCode()
+        {
+            return this.GetHashCodeFromFields(GetAllDataProperties());
+        }
+
+        public bool IsListOfT(Type type)
+        {
+            return type.GetTypeInfo().IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
         }
         #endregion
+    }
+    public static class ObjectExtensions
+    {
+        private const int SeedPrimeNumber = 691;
+        private const int FieldPrimeNumber = 397;
+        /// <summary>
+        /// Allows GetHashCode() method to return a Hash based ont the object properties.
+        /// </summary>
+        /// <param name="obj">The object fro which the hash is being generated.</param>
+        /// <param name="fields">The list of fields to include in the hash generation.</param>
+        /// <returns></returns>
+        public static int GetHashCodeFromFields(this object obj, params object[] fields)
+        {
+            unchecked
+            { //unchecked to prevent throwing overflow exception
+                var hashCode = SeedPrimeNumber;
+                foreach (var b in fields)
+                    if (b != null)
+                        hashCode *= FieldPrimeNumber + b.GetHashCode();
+                return hashCode;
+            }
+        }
     }
 }
