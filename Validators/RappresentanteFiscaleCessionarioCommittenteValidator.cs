@@ -8,7 +8,8 @@ namespace FatturaElettronica.Validators
     {
         public RappresentanteFiscaleCessionarioCommittenteValidator()
         {
-            RuleFor(x => x.IdFiscaleIVA).SetValidator(new IdFiscaleIVAValidator());
+            RuleFor(x => x.IdFiscaleIVA)
+                .SetValidator(new IdFiscaleIVAValidator());
         }
     }
 }

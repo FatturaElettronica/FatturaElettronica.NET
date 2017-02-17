@@ -7,8 +7,12 @@ namespace FatturaElettronica.Validators
     {
         public AltriDatiGestionaliValidator()
         {
-            RuleFor(x => x.TipoDato).NotEmpty().Length(1, 10);
-            RuleFor(x => x.RiferimentoTesto).Length(1, 60).When(x => !string.IsNullOrEmpty(x.RiferimentoTesto));
+            RuleFor(x => x.TipoDato)
+                .NotEmpty()
+                .Length(1, 10);
+            RuleFor(x => x.RiferimentoTesto)
+                .Length(1, 60)
+                .When(x => !string.IsNullOrEmpty(x.RiferimentoTesto));
         }
     }
 }

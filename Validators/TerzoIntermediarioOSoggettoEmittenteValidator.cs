@@ -7,7 +7,8 @@ namespace FatturaElettronica.Validators
     {
         public TerzoIntermediarioOSoggettoEmittenteValidator()
         {
-            RuleFor(x => x.DatiAnagrafici).SetValidator(new DatiAnagraficiTerzoIntermediarioValidator());
+            RuleFor(x => x.DatiAnagrafici)
+                .SetValidator(new DatiAnagraficiTerzoIntermediarioValidator());
         }
     }
 }

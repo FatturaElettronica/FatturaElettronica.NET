@@ -8,7 +8,9 @@ namespace FatturaElettronica.Validators
     {
         public DatiRiepilogoValidator()
         {
-            RuleFor(x => x.Natura).SetValidator(new IsValidValidator<Natura>()).Unless(x => string.IsNullOrEmpty(x.Natura));
+            RuleFor(x => x.Natura)
+                .SetValidator(new IsValidValidator<Natura>())
+                .When(x => !string.IsNullOrEmpty(x.Natura));
             RuleFor(x => x.Natura)
                 .Must(natura => !string.IsNullOrEmpty(natura))
                 .When(x => x.AliquotaIVA == 0)
@@ -27,8 +29,12 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.Imposta)
                 .Must((challenge, _) => ImpostaValidateAgainstError00421(challenge))
                 .WithErrorCode("00421");
-            RuleFor(x => x.EsigibilitaIVA).SetValidator(new IsValidValidator<EsigibilitaIVA>()).When(x => !string.IsNullOrEmpty(x.EsigibilitaIVA));
-            RuleFor(x => x.RiferimentoNormativo).Length(1, 100).When(x => !string.IsNullOrEmpty(x.RiferimentoNormativo));
+            RuleFor(x => x.EsigibilitaIVA)
+                .SetValidator(new IsValidValidator<EsigibilitaIVA>())
+                .When(x => !string.IsNullOrEmpty(x.EsigibilitaIVA));
+            RuleFor(x => x.RiferimentoNormativo)
+                .Length(1, 100)
+                .When(x => !string.IsNullOrEmpty(x.RiferimentoNormativo));
         }
         private bool ImpostaValidateAgainstError00421(DatiRiepilogo datiRiepilogo)
         {

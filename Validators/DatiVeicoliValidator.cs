@@ -7,8 +7,11 @@ namespace FatturaElettronica.Validators
     {
         public DatiVeicoliValidator()
         {
-            RuleFor(x => x.Data).NotNull();
-            RuleFor(x => x.TotalePercorso).NotEmpty().Length(1, 15);
+            RuleFor(x => x.Data)
+                .NotNull();
+            RuleFor(x => x.TotalePercorso)
+                .NotEmpty()
+                .Length(1, 15);
         }
     }
 }

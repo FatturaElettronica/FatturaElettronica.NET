@@ -6,8 +6,12 @@ namespace FatturaElettronica.Validators
     {
         public AnagraficaValidator()
         {
-            RuleFor(x => x.Titolo).Length(2, 10).When(x=>!string.IsNullOrEmpty(x.Titolo));
-            RuleFor(x => x.CodEORI).Length(13, 17).When(x => !string.IsNullOrEmpty(x.CodEORI));
+            RuleFor(x => x.Titolo)
+                .Length(2, 10)
+                .When(x=>!string.IsNullOrEmpty(x.Titolo));
+            RuleFor(x => x.CodEORI)
+                .Length(13, 17)
+                .When(x => !string.IsNullOrEmpty(x.CodEORI));
         }
     }
 }

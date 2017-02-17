@@ -7,8 +7,11 @@ namespace FatturaElettronica.Validators
     {
         public FatturaPrincipaleValidator()
         {
-            RuleFor(x => x.NumeroFatturaPrincipale).NotEmpty().Length(1, 20);
-            RuleFor(x => x.DataFatturaPrincipale).NotNull();
+            RuleFor(x => x.NumeroFatturaPrincipale)
+                .NotEmpty()
+                .Length(1, 20);
+            RuleFor(x => x.DataFatturaPrincipale)
+                .NotNull();
         }
     }
 }

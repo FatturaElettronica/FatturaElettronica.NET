@@ -6,8 +6,10 @@ namespace FatturaElettronica.Validators
     {
         public FatturaElettronicaValidator()
         {
-            RuleFor(dt => dt.FatturaElettronicaHeader).SetValidator(new FatturaElettronicaHeaderValidator());
-            RuleFor(dt => dt.FatturaElettronicaBody).SetCollectionValidator(new FatturaElettronicaBodyValidator());
+            RuleFor(dt => dt.FatturaElettronicaHeader)
+                .SetValidator(new FatturaElettronicaHeaderValidator());
+            RuleFor(dt => dt.FatturaElettronicaBody)
+                .SetCollectionValidator(new FatturaElettronicaBodyValidator());
         }
     }
 }

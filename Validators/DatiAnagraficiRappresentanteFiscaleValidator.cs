@@ -7,9 +7,13 @@ namespace FatturaElettronica.Validators
     {
         public DatiAnagraficiRappresentanteFiscaleValidator()
         {
-            RuleFor(x => x.IdFiscaleIVA).SetValidator(new IdFiscaleIVAValidator());
-            RuleFor(x => x.CodiceFiscale).Length(11, 16).When(x => !string.IsNullOrEmpty(x.CodiceFiscale));
-            RuleFor(x => x.Anagrafica).SetValidator(new AnagraficaValidator());
+            RuleFor(x => x.IdFiscaleIVA)
+                .SetValidator(new IdFiscaleIVAValidator());
+            RuleFor(x => x.CodiceFiscale)
+                .Length(11, 16)
+                .When(x => !string.IsNullOrEmpty(x.CodiceFiscale));
+            RuleFor(x => x.Anagrafica)
+                .SetValidator(new AnagraficaValidator());
         }
     }
 }

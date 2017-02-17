@@ -7,10 +7,14 @@ namespace FatturaElettronica.Validators
     {
         public DatiBeniServiziValidator()
         {
-            RuleFor(x => x.DettaglioLinee).SetCollectionValidator(new DettaglioLineeValidator());
-            RuleFor(x => x.DettaglioLinee).NotEmpty();
-            RuleFor(x => x.DatiRiepilogo).SetCollectionValidator(new DatiRiepilogoValidator());
-            RuleFor(x => x.DatiRiepilogo).NotEmpty();
+            RuleFor(x => x.DettaglioLinee)
+                .SetCollectionValidator(new DettaglioLineeValidator());
+            RuleFor(x => x.DettaglioLinee)
+                .NotEmpty();
+            RuleFor(x => x.DatiRiepilogo)
+                .SetCollectionValidator(new DatiRiepilogoValidator());
+            RuleFor(x => x.DatiRiepilogo)
+                .NotEmpty();
         }
     }
 }

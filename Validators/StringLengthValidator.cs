@@ -6,7 +6,8 @@ namespace FatturaElettronica.Validators
     {
         public StringLengthValidator(int min, int max)
         {
-            RuleFor(x => x).NotEmpty().Length(min, max);
+            RuleFor(x => x).NotEmpty()
+                .Length(min, max);
         }
     }
 }

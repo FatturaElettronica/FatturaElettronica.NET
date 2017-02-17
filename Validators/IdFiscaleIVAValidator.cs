@@ -8,8 +8,12 @@ namespace FatturaElettronica.Validators
     {
         public IdFiscaleIVAValidator()
         {
-            RuleFor(id => id.IdPaese).NotEmpty().SetValidator(new IsValidValidator<IdPaese>());
-            RuleFor(id => id.IdCodice).NotEmpty().Length(1, 28);
+            RuleFor(id => id.IdPaese)
+                .NotEmpty()
+                .SetValidator(new IsValidValidator<IdPaese>());
+            RuleFor(id => id.IdCodice)
+                .NotEmpty()
+                .Length(1, 28);
         }
     }
 }

@@ -8,10 +8,18 @@ namespace FatturaElettronica.Validators
     {
         public IscrizioneREAValidator()
         {
-            RuleFor(x => x.Ufficio).NotEmpty().SetValidator(new IsValidValidator<Provincia>());
-            RuleFor(x => x.NumeroREA).NotEmpty().Length(1, 20);
-            RuleFor(x => x.SocioUnico).SetValidator(new IsValidValidator<SocioUnico>()).Unless(x => string.IsNullOrEmpty(x.SocioUnico));
-            RuleFor(x => x.StatoLiquidazione).NotEmpty().SetValidator(new IsValidValidator<StatoLiquidazione>());
+            RuleFor(x => x.Ufficio)
+                .NotEmpty()
+                .SetValidator(new IsValidValidator<Provincia>());
+            RuleFor(x => x.NumeroREA)
+                .NotEmpty()
+                .Length(1, 20);
+            RuleFor(x => x.SocioUnico)
+                .SetValidator(new IsValidValidator<SocioUnico>())
+                .When(x => !string.IsNullOrEmpty(x.SocioUnico));
+            RuleFor(x => x.StatoLiquidazione)
+                .NotEmpty()
+                .SetValidator(new IsValidValidator<StatoLiquidazione>());
         }
     }
 }
