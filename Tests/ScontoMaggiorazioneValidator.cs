@@ -46,6 +46,9 @@ namespace Tests
             challenge.Importo = 1;
             validator.ShouldNotHaveValidationErrorFor(x => x.Importo, challenge);
             validator.ShouldNotHaveValidationErrorFor(x => x.Percentuale, challenge);
+            challenge.Importo = -1;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Importo, challenge);
+            validator.ShouldNotHaveValidationErrorFor(x => x.Percentuale, challenge);
         }
         [TestMethod]
         public void PercentualeMustHaveValueUnlessPercentualeDoes()
