@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -69,21 +70,30 @@ namespace FatturaElettronica.BusinessObjects
         /// Checks wether a BusinessObject instance is empty.
         /// </summary>
         /// <returns>Returns true if the object is empty; false otherwise.</returns>
-        public virtual Boolean IsEmpty()
+        public virtual bool IsEmpty()
         {
             // TODO support more data types.
 
             var props = GetAllDataProperties().ToList();
             var i = 0;
-            foreach (var prop in props) {
+            foreach (var prop in props)
+            {
+
+                // Default value for Lists is Count
+                if (prop.PropertyType.IsGenericList() && ((IList)prop.GetValue(this, null)).Count == 0)
+                {
+                    i++;
+                    continue;
+                }
+
                 var v = prop.GetValue(this, null);
                 if (v == null) {
                     i++;
                     continue;
                 }
-                if (v is string) {
-                    if (string.IsNullOrEmpty((string) v)) 
-                        i++;
+                if (v is string && string.IsNullOrEmpty((string) v))
+                {
+                    i++;
                     continue;
                 }
                 if (v is BusinessObject && ((BusinessObject)v).IsEmpty()) { 
@@ -107,7 +117,6 @@ namespace FatturaElettronica.BusinessObjects
         }
 
 
-        #region IEquatable
         public bool Equals(BusinessObject other)
         {
             if (other == null)
@@ -162,7 +171,6 @@ namespace FatturaElettronica.BusinessObjects
         {
             return this.GetHashCodeFromFields(GetAllDataProperties());
         }
-        #endregion
     }
     public static class ObjectExtensions
     {

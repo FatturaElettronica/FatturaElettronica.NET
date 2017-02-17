@@ -3,6 +3,7 @@ using System.Xml;
 using System.IO;
 using FatturaElettronica.Impostazioni;
 using System;
+using FatturaElettronica;
 
 namespace Tests
 {
@@ -41,10 +42,7 @@ namespace Tests
         {
             var f = Deserialize(filename);
 
-            var v = new FatturaElettronica.Validators.FatturaElettronicaValidator();
-
-            //var r = v.Validate(f);
-            //Assert.IsTrue(v.Validate(f).IsValid);
+            Assert.IsTrue(f.IsValid());
             ValidateInvoice(f, expectedFormat);
 
             // Serialize it back to disk, to another file
@@ -54,7 +52,8 @@ namespace Tests
 
             // Deserialize the new file and validate it
             var f2 = Deserialize("challenge.xml");
-            //Assert.IsTrue(v.Validate(f2).IsValid);
+
+            Assert.IsTrue(f2.IsValid());
             ValidateInvoice(f2, expectedFormat);
 
             File.Delete("challenge.xml");

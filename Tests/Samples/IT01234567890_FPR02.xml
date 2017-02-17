@@ -12,7 +12,6 @@ xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.
       <ProgressivoInvio>00001</ProgressivoInvio>
       <FormatoTrasmissione>FPR12</FormatoTrasmissione>
       <CodiceDestinatario>0000000</CodiceDestinatario>
-      
 	  <ContattiTrasmittente/>
 	  <PECDestinatario>betagamma@pec.it</PECDestinatario>
     </DatiTrasmissione>

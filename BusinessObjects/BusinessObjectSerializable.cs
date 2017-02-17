@@ -226,11 +226,13 @@ namespace FatturaElettronica.BusinessObjects
                     add.Invoke(propertyValue, new[] { bo });
                     continue;
                 }
+
                 if (argumentType == typeof(string))
                 {
                     add.Invoke(propertyValue, new [] { r.ReadElementContentAsString() });
                     continue;
                 }
+
                 if (argumentType == typeof(int))
                 {
                     add.Invoke(propertyValue, new[] { r.ReadElementContentAs(argumentType, null) });

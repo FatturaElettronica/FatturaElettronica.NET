@@ -13,7 +13,11 @@ namespace FatturaElettronica
             var instance = Activator.CreateInstance(type);
             var method = type.GetRuntimeMethod("Validate", new[] { obj.GetType() });
             return (ValidationResult)method.Invoke(instance, new [] {obj} );
-
+        }
+        
+        public static bool IsValid(this Common.BusinessObject obj)
+        {
+            return obj.Validate().IsValid;
         }
     }
 }
