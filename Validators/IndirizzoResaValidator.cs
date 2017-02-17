@@ -2,8 +2,5 @@
 
 namespace FatturaElettronica.Validators
 {
-    public class IndirizzoResaValidator : LocalitàBaseValidator<IndirizzoResa>
-    {
-        public IndirizzoResaValidator() : base(optional:true) { }
-    }
+    public class IndirizzoResaValidator : LocalitàBaseValidator<IndirizzoResa> { }
 }

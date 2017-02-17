@@ -62,7 +62,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="BaseRappresentanteFiscaleValidator.cs" />
     <Compile Include="BaseDatiDocumentoValidator.cs" />
     <Compile Include="AltriDatiGestionaliValidator.cs" />
     <Compile Include="AllegatiValidator.cs" />
