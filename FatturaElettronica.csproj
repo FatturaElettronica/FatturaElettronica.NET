@@ -42,6 +42,7 @@
     <Compile Include="BusinessObjects\BusinessObjectSerializable.cs" />
     <Compile Include="BusinessObjects\BusinessObject.cs" />
     <Compile Include="BusinessObjects\DataPropertyAttribute.cs" />
+    <Compile Include="BusinessObjects\TypeExtensions.cs" />
     <Compile Include="BusinessObjects\IgnoreXmlDateFormat.cs" />
     <Compile Include="BusinessObjects\JsonOptions.cs" />
     <Compile Include="BusinessObjects\XmlOptions.cs" />

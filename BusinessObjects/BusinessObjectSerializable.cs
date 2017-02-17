@@ -16,11 +16,13 @@ namespace FatturaElettronica.BusinessObjects
     /// </summary>
     public class BusinessObjectSerializable : 
         BusinessObject,
-        IXmlSerializable {
+        IXmlSerializable
+    {
         /// <summary>
         /// Constructor.
         /// </summary>
-        protected BusinessObjectSerializable() { 
+        protected BusinessObjectSerializable()
+        { 
             XmlOptions = new XmlOptions();
         }
         protected BusinessObjectSerializable(XmlReader r) : this() { ReadXml(r); }
@@ -31,7 +33,8 @@ namespace FatturaElettronica.BusinessObjects
         /// Serializes the instance to JSON
         /// </summary>
         /// <returns>A JSON string representing the class instance.</returns>
-        public virtual string ToJson() {
+        public virtual string ToJson()
+        {
             return ToJson(JsonOptions.None);
         }
         /// <summary>
@@ -39,7 +42,8 @@ namespace FatturaElettronica.BusinessObjects
         /// </summary>
         /// <param name="jsonOptions">JSON formatting options.</param>
         /// <returns>A JSON string representing the class instance.</returns>
-        public virtual string ToJson(JsonOptions jsonOptions) {
+        public virtual string ToJson(JsonOptions jsonOptions)
+        {
             var json = JsonConvert.SerializeObject(this, 
                 (jsonOptions == JsonOptions.Indented) ? Formatting.Indented : Formatting.None,
                 new JsonSerializerSettings { 
@@ -57,7 +61,8 @@ namespace FatturaElettronica.BusinessObjects
         /// Serializes the current BusinessObject instance to a XML file.
         /// </summary>
         /// <param name="fileName">Name of the file to write to.</param>
-        public virtual void WriteXml(string fileName) {
+        public virtual void WriteXml(string fileName)
+        {
             var settings = new XmlWriterSettings {Indent = true};
             using (var writer = XmlWriter.Create(new System.Text.StringBuilder(fileName), settings)) { WriteXml(writer); }
         }
@@ -67,7 +72,8 @@ namespace FatturaElettronica.BusinessObjects
         /// </summary>
         /// <param name="w">Active XML stream writer.</param>
         /// <remarks>Writes only its inner content, not the outer element. Leaves the writer at the same depth.</remarks>
-        public virtual void WriteXml(XmlWriter w) {
+        public virtual void WriteXml(XmlWriter w)
+        {
             foreach (var prop in GetAllDataProperties())
             {
                 var propertyValue = prop.GetValue(this, null);
@@ -84,7 +90,7 @@ namespace FatturaElettronica.BusinessObjects
                 }
 
                 // if property type is List<T>, assume it's of BusinessObjects and try to fetch them all from XML.
-                if (IsListOfT(prop.PropertyType))
+                if (prop.PropertyType.IsGenericList())
                 {
                     WriteXmlList(prop.Name, propertyValue, w);
                     continue;
@@ -123,7 +129,7 @@ namespace FatturaElettronica.BusinessObjects
         private static void WriteXmlList(string propertyName, object propertyValue, XmlWriter w)
         {
             var type = propertyValue.GetType();
-            var e = GetMethod(type, "GetEnumerator").Invoke(propertyValue, null) as IEnumerator;
+            var e = type.GetMethod("GetEnumerator").Invoke(propertyValue, null) as IEnumerator;
 
             while (e != null && e.MoveNext()) {
                 if (e.Current == null) continue;
@@ -151,7 +157,8 @@ namespace FatturaElettronica.BusinessObjects
         /// <param name="r">Active XML stream reader.</param>
         /// <remarks>Reads the outer element. Leaves the reader at the same depth.</remarks>
         // TODO Clear properties before reading from file
-        public virtual void ReadXml(XmlReader r) {
+        public virtual void ReadXml(XmlReader r)
+        {
             var isEmpty = r.IsEmptyElement;
             
             r.ReadStartElement();
@@ -171,14 +178,14 @@ namespace FatturaElettronica.BusinessObjects
                 var value = prop.GetValue(this, null);
 
                 // if property type is BusinessObject, let it auto-load from XML.
-                if (IsBusinessObjectSubclass(type))
+                if (type.IsSubclassOfBusinessObject())
                 {
                     ((BusinessObjectSerializable)value).ReadXml(r);
                     continue;
                 }
 
                 // if property type is List<T>, try to fetch the list from XML.
-                if (IsListOfT(type))
+                if (type.IsGenericList())
                 {
                     ReadXmlList(value, type, prop.Name, r);
                     continue;
@@ -213,12 +220,12 @@ namespace FatturaElettronica.BusinessObjects
             // note that the 'canonical' call to GetRuntimeMethod returns null for some reason,
             // see http://stackoverflow.com/questions/21307845/runtimereflectionextensions-getruntimemethod-does-not-work-as-expected
             //var method = propertyType.GetRuntimeMethod("Clear", new[] { propertyType });
-            var method = GetMethod(propertyType, "Clear");
+            var method = propertyType.GetMethod("Clear");
             method.Invoke(propertyValue, null);
 
-            method = GetMethod(propertyType, "Add");
+            method = propertyType.GetMethod("Add");
             while (r.NodeType == XmlNodeType.Element && r.Name == propertyName) {
-                if (IsBusinessObjectSubclass(elementType))
+                if (elementType.IsSubclassOfBusinessObject())
                 {
                     // list items are expected to be of BusinessObject type.
                     var bo = Activator.CreateInstance(elementType);
@@ -236,14 +243,6 @@ namespace FatturaElettronica.BusinessObjects
                     method.Invoke(propertyValue, new[] { r.ReadElementContentAs(elementType, null) });
                 }
             }
-        }
-        private static bool IsBusinessObjectSubclass(Type type)
-        {
-            return typeof(BusinessObjectSerializable).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo());
-        }
-        private static MethodInfo GetMethod(Type type, string name)
-        {
-            return type.GetRuntimeMethods().First(x => x.Name.Contains(name));
         }
         #endregion
     }

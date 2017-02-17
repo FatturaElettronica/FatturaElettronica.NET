@@ -117,7 +117,7 @@ namespace FatturaElettronica.BusinessObjects
                 var v1 = prop.GetValue(this, null);
                 var v2 = prop.GetValue(other, null);
 
-                if (IsListOfT(prop.PropertyType)) { 
+                if (prop.PropertyType.IsGenericList()) { 
                     // We only support List<string>.
                     if (!((List<string>) v1).SequenceEqual((List<string>) v2)) {
                         return false;
@@ -161,11 +161,6 @@ namespace FatturaElettronica.BusinessObjects
         public override int GetHashCode()
         {
             return this.GetHashCodeFromFields(GetAllDataProperties());
-        }
-
-        public bool IsListOfT(Type type)
-        {
-            return type.GetTypeInfo().IsGenericType && type.GetGenericTypeDefinition() == typeof(List<>);
         }
         #endregion
     }
