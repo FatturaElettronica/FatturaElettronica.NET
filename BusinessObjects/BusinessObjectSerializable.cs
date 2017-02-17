@@ -44,17 +44,12 @@ namespace FatturaElettronica.BusinessObjects
         /// <returns>A JSON string representing the class instance.</returns>
         public virtual string ToJson(JsonOptions jsonOptions)
         {
-            var json = JsonConvert.SerializeObject(this, 
-                (jsonOptions == JsonOptions.Indented) ? Formatting.Indented : Formatting.None,
-                new JsonSerializerSettings { 
-                    ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                    DefaultValueHandling = DefaultValueHandling.Ignore,
-                    //NullValueHandling = NullValueHandling.Ignore,
-                });
+            var json = JsonConvert.SerializeObject(
+                this, (jsonOptions == JsonOptions.Indented) ? Formatting.Indented : Formatting.None,
+                new JsonSerializerSettings { ReferenceLoopHandling = ReferenceLoopHandling.Serialize, DefaultValueHandling = DefaultValueHandling.Ignore });
             return json;
         }
 
-        #region XML
         public XmlSchema GetSchema() { return null; }
 
         /// <summary>
@@ -74,47 +69,49 @@ namespace FatturaElettronica.BusinessObjects
         /// <remarks>Writes only its inner content, not the outer element. Leaves the writer at the same depth.</remarks>
         public virtual void WriteXml(XmlWriter w)
         {
-            foreach (var prop in GetAllDataProperties())
+            foreach (var property in GetAllDataProperties())
             {
-                var propertyValue = prop.GetValue(this, null);
-                if (propertyValue == null && !XmlOptions.SerializeNullValues) continue;
+                var value = property.GetValue(this, null);
+                if (value == null && !XmlOptions.SerializeNullValues) continue;
 
                 // if it's a BusinessObject instance just let it flush it's own data.
-                var child = propertyValue as BusinessObjectSerializable;
+                var child = value as BusinessObjectSerializable;
                 if (child != null) {
                     if (child.IsEmpty() && XmlOptions.SerializeEmptyBusinessObjects == false) continue;
+                    
                     w.WriteStartElement((string.IsNullOrEmpty(child.XmlOptions.ElementName) ?  child.GetType().Name : child.XmlOptions.ElementName));
                     child.WriteXml(w);
                     w.WriteEndElement();
+
                     continue;
                 }
 
                 // if property type is List<T>, assume it's of BusinessObjects and try to fetch them all from XML.
-                if (prop.PropertyType.IsGenericList())
+                if (property.PropertyType.IsGenericList())
                 {
-                    WriteXmlList(prop.Name, propertyValue, w);
+                    WriteXmlList(property.Name, value, w);
                     continue;
                 }
 
-                if (propertyValue is string) {
-                    if (!string.IsNullOrEmpty(propertyValue.ToString()) || XmlOptions.SerializeEmptyStrings) {
-                        w.WriteElementString(prop.Name, propertyValue.ToString());
+                if (value is string) {
+                    if (!string.IsNullOrEmpty(value.ToString()) || XmlOptions.SerializeEmptyStrings) {
+                        w.WriteElementString(property.Name, value.ToString());
                     }
                     continue;
                 }
-                if (propertyValue is DateTime && XmlOptions.DateTimeFormat != null && !prop.GetCustomAttributes<IgnoreXmlDateFormat>().Any()) {
-                    w.WriteElementString(prop.Name, ((DateTime)propertyValue).ToString(XmlOptions.DateTimeFormat));
+                if (value is DateTime && XmlOptions.DateTimeFormat != null && !property.GetCustomAttributes<IgnoreXmlDateFormat>().Any()) {
+                    w.WriteElementString(property.Name, ((DateTime)value).ToString(XmlOptions.DateTimeFormat));
                     continue;
                 }
-                if (propertyValue is decimal && XmlOptions.DecimalFormat != null) {
-                    w.WriteElementString(prop.Name, ((decimal)propertyValue).ToString(XmlOptions.DecimalFormat, CultureInfo.InvariantCulture));
+                if (value is decimal && XmlOptions.DecimalFormat != null) {
+                    w.WriteElementString(property.Name, ((decimal)value).ToString(XmlOptions.DecimalFormat, CultureInfo.InvariantCulture));
                     continue;
                 }
 
                 // all else fail so just let the value flush straight to XML.
-                w.WriteStartElement(prop.Name);
-                if (propertyValue != null) { 
-                    w.WriteValue(propertyValue); 
+                w.WriteStartElement(property.Name);
+                if (value != null) { 
+                    w.WriteValue(value); 
                 }
                 w.WriteEndElement();
             }
@@ -124,12 +121,12 @@ namespace FatturaElettronica.BusinessObjects
         /// Deserializes a List of BusinessObject or strings to one or more XML elements.
         /// </summary>
         /// <param name="propertyName">Property name.</param>
-        /// <param name="propertyValue">Property value.</param>
+        /// <param name="value">Property value.</param>
         /// <param name="w">Active XML stream writer.</param>
-        private static void WriteXmlList(string propertyName, object propertyValue, XmlWriter w)
+        private static void WriteXmlList(string propertyName, object value, XmlWriter w)
         {
-            var type = propertyValue.GetType();
-            var e = type.GetMethod("GetEnumerator").Invoke(propertyValue, null) as IEnumerator;
+            var type = value.GetType();
+            var e = type.GetMethod("GetEnumerator").Invoke(value, null) as IEnumerator;
 
             while (e != null && e.MoveNext()) {
                 if (e.Current == null) continue;
@@ -156,7 +153,6 @@ namespace FatturaElettronica.BusinessObjects
         /// </summary>
         /// <param name="r">Active XML stream reader.</param>
         /// <remarks>Reads the outer element. Leaves the reader at the same depth.</remarks>
-        // TODO Clear properties before reading from file
         public virtual void ReadXml(XmlReader r)
         {
             var isEmpty = r.IsEmptyElement;
@@ -164,18 +160,18 @@ namespace FatturaElettronica.BusinessObjects
             r.ReadStartElement();
             if (isEmpty) return;
 
-            var props = GetAllDataProperties().ToList();
+            var properties = GetAllDataProperties().ToList();
             while (r.NodeType == XmlNodeType.Element) {
 
-                var prop = props.FirstOrDefault(n => n.Name.Equals(r.Name));
-                if (prop == null) {
+                var property = properties.FirstOrDefault(n => n.Name.Equals(r.Name));
+                if (property == null) {
                     // ignore unknown property.
                     r.Skip();
                     continue;
                 }
 
-                var type = prop.PropertyType;
-                var value = prop.GetValue(this, null);
+                var type = property.PropertyType;
+                var value = property.GetValue(this, null);
 
                 // if property type is BusinessObject, let it auto-load from XML.
                 if (type.IsSubclassOfBusinessObject())
@@ -187,7 +183,7 @@ namespace FatturaElettronica.BusinessObjects
                 // if property type is List<T>, try to fetch the list from XML.
                 if (type.IsGenericList())
                 {
-                    ReadXmlList(value, type, prop.Name, r);
+                    ReadXmlList(value, type, property.Name, r);
                     continue;
                 }
 
@@ -196,7 +192,7 @@ namespace FatturaElettronica.BusinessObjects
                 if (type == typeof(decimal?)) type = typeof(decimal); 
                 if (type == typeof(int?)) type = typeof(int); 
 
-                prop.SetValue(this, r.ReadElementContentAs(type, null), null);
+                property.SetValue(this, r.ReadElementContentAs(type, null), null);
             }
             r.ReadEndElement();
         }
@@ -210,40 +206,36 @@ namespace FatturaElettronica.BusinessObjects
         private static void ReadXmlList(object propertyValue, Type propertyType, string propertyName, XmlReader r)
         {
 
-            // retrieve type of list elements.
-            var elementType = propertyType.GetTypeInfo().GenericTypeArguments.Single();
+            var argumentType = propertyType.GetTypeInfo().GenericTypeArguments.Single();
 
-            // quit if it's not a BusinessObject subclass.
-            //if (!IsBusinessObjectSubclass(elementType)) return;
-
-            // clear the list first.
             // note that the 'canonical' call to GetRuntimeMethod returns null for some reason,
             // see http://stackoverflow.com/questions/21307845/runtimereflectionextensions-getruntimemethod-does-not-work-as-expected
             //var method = propertyType.GetRuntimeMethod("Clear", new[] { propertyType });
-            var method = propertyType.GetMethod("Clear");
-            method.Invoke(propertyValue, null);
+            var clear = propertyType.GetMethod("Clear");
+            clear.Invoke(propertyValue, null);
 
-            method = propertyType.GetMethod("Add");
-            while (r.NodeType == XmlNodeType.Element && r.Name == propertyName) {
-                if (elementType.IsSubclassOfBusinessObject())
+            var add = propertyType.GetMethod("Add");
+
+            while (r.NodeType == XmlNodeType.Element && r.Name == propertyName)
+            {
+                if (argumentType.IsSubclassOfBusinessObject())
                 {
                     // list items are expected to be of BusinessObject type.
-                    var bo = Activator.CreateInstance(elementType);
+                    var bo = Activator.CreateInstance(argumentType);
                     ((BusinessObjectSerializable)bo).ReadXml(r);
-                    method.Invoke(propertyValue, new[] { bo });
+                    add.Invoke(propertyValue, new[] { bo });
                     continue;
                 }
-                if (elementType == typeof(string))
+                if (argumentType == typeof(string))
                 {
-                    method.Invoke(propertyValue, new [] { r.ReadElementContentAsString() });
+                    add.Invoke(propertyValue, new [] { r.ReadElementContentAsString() });
                     continue;
                 }
-                if (elementType == typeof(int))
+                if (argumentType == typeof(int))
                 {
-                    method.Invoke(propertyValue, new[] { r.ReadElementContentAs(elementType, null) });
+                    add.Invoke(propertyValue, new[] { r.ReadElementContentAs(argumentType, null) });
                 }
             }
         }
-        #endregion
     }
 }
