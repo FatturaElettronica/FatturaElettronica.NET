@@ -11,7 +11,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.DatiGenerali).SetValidator(new DatiGeneraliValidator());
             RuleFor(x => x.DatiBeniServizi).SetValidator(new DatiBeniServiziValidator());
-            RuleFor(x => x.DatiBeniServizi).Must(x => x.IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
+            RuleFor(x => x.DatiBeniServizi).Must(x => !x.IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
             RuleFor(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta)
                 .Must((body, _) => DatiRitenutaAgainstDettaglioLinee(body))
                 .When(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.IsEmpty())
@@ -25,7 +25,11 @@ namespace FatturaElettronica.Validators
                 .Must((body, _) => DatiRiepilogoValidateAgainstError00419(body))
                 .WithMessage("DatiRiepilogo non presente in corrispondenza di almeno un valore DettaglioLinee.AliquiotaIVA o DatiCassaPrevidenziale.AliquotaIVA")
                 .WithErrorCode("00419");
-            RuleFor(x => x.DatiVeicoli).SetValidator(new DatiVeicoliValidator());
+
+            RuleFor(x => x.DatiVeicoli)
+                .SetValidator(new DatiVeicoliValidator())
+                .When(x=>!x.DatiVeicoli.IsEmpty());
+
             RuleFor(x => x.DatiPagamento).SetCollectionValidator(new DatiPagamentoValidator());
             RuleFor(x=>x.Allegati).SetCollectionValidator(new AllegatiValidator());
         }

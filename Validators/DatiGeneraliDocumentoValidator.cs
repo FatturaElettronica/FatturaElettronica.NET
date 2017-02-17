@@ -15,8 +15,15 @@ namespace FatturaElettronica.Validators
                 .Matches(@"\d")
                 .WithMessage("Numero non contiene caratteri numerici")
                 .WithErrorCode("00411");
-            RuleFor(x => x.DatiRitenuta).SetValidator(new DatiRitenutaValidator());
-            RuleFor(x => x.DatiBollo).SetValidator(new DatiBolloValidator());
+
+            RuleFor(x => x.DatiRitenuta)
+                .SetValidator(new DatiRitenutaValidator())
+                .When(x=>!x.DatiRitenuta.IsEmpty());
+
+            RuleFor(x => x.DatiBollo)
+                .SetValidator(new DatiBolloValidator())
+                .When(x=>!x.DatiBollo.IsEmpty());
+
             RuleFor(x => x.DatiCassaPrevidenziale).SetCollectionValidator(new DatiCassaPrevidenzialeValidator());
             RuleFor(x => x.DatiCassaPrevidenziale)
                 .Must((datiGeneraliDocumento, datiCassa) => { return (datiCassa.Count > 0) ? !datiGeneraliDocumento.DatiRitenuta.IsEmpty() : true; })

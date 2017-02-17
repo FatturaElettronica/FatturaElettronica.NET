@@ -7,10 +7,7 @@ namespace FatturaElettronica.Validators
     {
         public RappresentanteFiscaleValidator()
         {
-            When(x => !x.IsEmpty(), () =>
-            {
-                RuleFor(x => x.DatiAnagrafici).SetValidator(new DatiAnagraficiValidator());
-            });
+            RuleFor(x => x.DatiAnagrafici).SetValidator(new DatiAnagraficiRappresentanteFiscaleValidator());
         }
     }
 }

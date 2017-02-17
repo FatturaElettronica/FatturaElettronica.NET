@@ -12,7 +12,7 @@ namespace Tests
         [TestMethod]
         public void DatiAnagraficiHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiValidator));
+            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiCessionarioCommittenteValidator));
         }
         [TestMethod]
         public void SedeHasChildValidator()
@@ -22,13 +22,13 @@ namespace Tests
         [TestMethod]
         public void StabileOrganizzazioneHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            validator.ShouldHaveDelegatePropertyChildValidator(
                 x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.StabileOrganizzazioneValidator));
         }
         [TestMethod]
         public void RappresentateFiscaleHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            validator.ShouldHaveDelegatePropertyChildValidator(
                 x => x.RappresentanteFiscale, typeof(FatturaElettronica.Validators.RappresentanteFiscaleCessionarioCommittenteValidator));
         }
     }

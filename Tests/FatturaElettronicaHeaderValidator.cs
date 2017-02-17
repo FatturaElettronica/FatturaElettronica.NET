@@ -24,7 +24,7 @@ namespace Tests
         [TestMethod]
         public void RappresentanteFiscaleHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            validator.ShouldHaveDelegatePropertyChildValidator(
                 x => x.Rappresentante, typeof(FatturaElettronica.Validators.RappresentanteFiscaleValidator));
         }
         [TestMethod]
@@ -32,6 +32,12 @@ namespace Tests
         {
             validator.ShouldHaveChildValidator(
                 x => x.CessionarioCommittente, typeof(FatturaElettronica.Validators.CessionarioCommittenteValidator));
+        }
+        [TestMethod]
+        public void TerzoIntermediarioHasChildValidator()
+        {
+            validator.ShouldHaveDelegatePropertyChildValidator(
+                x => x.TerzoIntermediarioOSoggettoEmittente, typeof(FatturaElettronica.Validators.TerzoIntermediarioOSoggettoEmittenteValidator));
         }
         [TestMethod]
         public void SoggettoEmittenteIsOptional()

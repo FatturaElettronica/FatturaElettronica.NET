@@ -1,34 +1,31 @@
 ﻿using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
     [TestClass]
-    public class DatiAnagraficiVettoreValidator : BaseDatiAnagraficiValidator<DatiAnagraficiVettore, FatturaElettronica.Validators.DatiAnagraficiVettoreValidator>
+    public class DatiAnagraficiVettoreValidator : BaseClass<DatiAnagraficiVettore, FatturaElettronica.Validators.DatiAnagraficiVettoreValidator>
     {
-        [TestInitialize]
-        public new void Init()
+        [TestMethod]
+        public void IdFiscaleIVAHasChildValidator()
         {
-            base.Init();
-
-            // Abbiamo bisogno che l'istanza non sia Empty.
-            challenge.Anagrafica.Cognome = "x";
+            validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
         }
         [TestMethod]
-        public void ValidationIsPerformedWhenNotEmpty()
+        public void CodiceFiscaleIsOptional()
         {
-            var r = validator.Validate(challenge);
-            Assert.IsFalse(r.IsValid);
+            AssertOptional(x => x.CodiceFiscale);
         }
-
         [TestMethod]
-        public void IsValidWhenEmptyBecauseOptional()
+        public void CodiceFiscaleMinMaxLength()
         {
-            // Riportiamo istanza a Empty (vedi Init()).
-            challenge.Anagrafica.Cognome = null;
-
-            var r = validator.Validate(challenge);
-            Assert.IsTrue(r.IsValid);
+            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
+        }
+        [TestMethod]
+        public void AnagraficaHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.Anagrafica, typeof(FatturaElettronica.Validators.AnagraficaValidator));
         }
         [TestMethod]
         public void NumeroLicenzaIsOptional()
@@ -40,18 +37,5 @@ namespace Tests
         {
             AssertMinMaxLength(x => x.NumeroLicenzaGuida, 1, 20);
         }
-
-        // Questi test della Base class non devono essere eseuigiti per DatiAnagraficiVettore.
-        // Preferisco non usare Ignore perché risulterebbero Skipped. La soluzione attuale
-        // è non decorarli con TestMethod. In questo modo non sono test (solo per questa classe),
-        // che è esattamente quel che voglio senza essere costrettoa rinunciare al DRY offerto 
-        // dalla Base class.
-
-        //[TestMethod]
-        //[Ignore]
-        public new void IdFiscaleIVAHasChildValidator() { }
-        //[TestMethod]
-        //[Ignore]
-        public new void AnagraficaHasChildValidator() { }
     }
 }

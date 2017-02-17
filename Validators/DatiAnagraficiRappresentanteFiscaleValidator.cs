@@ -1,16 +1,15 @@
-﻿using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+﻿using FatturaElettronica.Common;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    public class DatiAnagraficiVettoreValidator : AbstractValidator<DatiAnagraficiVettore>
+    public class DatiAnagraficiRappresentanteFiscaleValidator : AbstractValidator<DatiAnagrafici>
     {
-        public DatiAnagraficiVettoreValidator()
+        public DatiAnagraficiRappresentanteFiscaleValidator()
         {
             RuleFor(x => x.IdFiscaleIVA).SetValidator(new IdFiscaleIVAValidator());
             RuleFor(x => x.CodiceFiscale).Length(11, 16).When(x => !string.IsNullOrEmpty(x.CodiceFiscale));
             RuleFor(x => x.Anagrafica).SetValidator(new AnagraficaValidator());
-            RuleFor(x => x.NumeroLicenzaGuida).Length(1,20).Unless(x => string.IsNullOrEmpty(x.NumeroLicenzaGuida));
         }
     }
 }

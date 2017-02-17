@@ -1,4 +1,5 @@
 ﻿using FluentValidation;
+using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
@@ -12,22 +13,7 @@ namespace Tests
         [TestMethod]
         public void DatiAnagraficiHasDelegateChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiValidator));
-
-        }
-        [TestMethod]
-        public void ValidationIsPerformedWhenNotEmpty()
-        {
-            challenge.DatiAnagrafici.Anagrafica.Cognome = "cognome";
-            var r = validator.Validate(challenge);
-            Assert.IsFalse(r.IsValid);
-        }
-
-        [TestMethod]
-        public void IsValidWhenEmptyBecauseOptional()
-        {
-            var r = validator.Validate(challenge);
-            Assert.IsTrue(r.IsValid);
+            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiRappresentanteFiscaleValidator));
         }
     }
 }

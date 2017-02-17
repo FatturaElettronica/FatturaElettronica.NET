@@ -52,12 +52,12 @@ namespace Tests
         [TestMethod]
         public void DatiRitenutaHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
         }
         [TestMethod]
         public void DatiBolloHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiBollo, typeof(FatturaElettronica.Validators.DatiBolloValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiBollo, typeof(FatturaElettronica.Validators.DatiBolloValidator));
         }
         [TestMethod]
         public void DatiCassaPrevidenzialeHasCollectionValidator()

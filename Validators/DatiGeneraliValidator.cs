@@ -24,8 +24,14 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiRicezione).SetCollectionValidator(new DatiRicezioneValidator());
             RuleFor(x => x.DatiFattureCollegate).SetCollectionValidator(new DatiFattureCollegateValidator());
             RuleFor(x => x.DatiDDT).SetCollectionValidator(new DatiDDTValidator());
-            RuleFor(x => x.DatiTrasporto).SetValidator(new DatiTrasportoValidator());
-            RuleFor(x => x.FatturaPrincipale).SetValidator(new FatturaPrincipaleValidator());
+
+            RuleFor(x => x.DatiTrasporto)
+                .SetValidator(new DatiTrasportoValidator())
+                .When(x=>!x.DatiTrasporto.IsEmpty());
+
+            RuleFor(x => x.FatturaPrincipale)
+                .SetValidator(new FatturaPrincipaleValidator())
+                .When(x=>!x.FatturaPrincipale.IsEmpty());
         }
     }
 }

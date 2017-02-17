@@ -21,18 +21,18 @@ namespace Tests
         [TestMethod]
         public void StabileOrganizzazioneHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            validator.ShouldHaveDelegatePropertyChildValidator(
                 x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.StabileOrganizzazioneValidator));
         }
         [TestMethod]
         public void IscrizioneREAHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.IscrizioneREAValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.IscrizioneREAValidator));
         }
         [TestMethod]
         public void ContattiHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x=>x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
         }
         [TestMethod]
         public void RiferimentoAmministrazioneMinMaxLength()

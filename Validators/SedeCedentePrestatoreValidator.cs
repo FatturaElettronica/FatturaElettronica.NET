@@ -1,6 +1,5 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class SedeCedentePrestatoreValidator : LocalitàBaseValidator<FatturaElettronicaHeader.CedentePrestatore.SedeCedentePrestatore>
-    {
-    }
+    public class SedeCedentePrestatoreValidator : 
+        LocalitàBaseValidator<FatturaElettronicaHeader.CedentePrestatore.SedeCedentePrestatore> { }
 }

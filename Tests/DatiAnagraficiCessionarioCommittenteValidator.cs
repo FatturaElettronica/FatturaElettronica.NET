@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -6,8 +7,32 @@ namespace Tests
 {
     [TestClass]
     public class DatiAnagraficiCessionarioCommittenteValidator 
-        : BaseDatiAnagraficiValidator<FatturaElettronica.Common.DatiAnagrafici, FatturaElettronica.Validators.DatiAnagraficiCessionarioCommittenteValidator>
+        : BaseClass<DatiAnagraficiCessionarioCommittente, 
+            FatturaElettronica.Validators.DatiAnagraficiCessionarioCommittenteValidator>
     {
+        [TestMethod]
+        public void IdFiscaleIVAHasChildValidator()
+        {
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IdFiscaleIVA, 
+                typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
+        }
+        [TestMethod]
+        public void CodiceFiscaleIsOptional()
+        {
+            challenge.IdFiscaleIVA.IdCodice = "x";
+            AssertOptional(x => x.CodiceFiscale);
+        }
+        [TestMethod]
+        public void CodiceFiscaleMinMaxLength()
+        {
+            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
+        }
+        [TestMethod]
+        public void AnagraficaHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.Anagrafica,
+                typeof(FatturaElettronica.Validators.AnagraficaValidator));
+        }
         [TestMethod]
         public void IdFiscaleIVAIsOptional()
         {
@@ -16,13 +41,6 @@ namespace Tests
 
             var r = validator.Validate(challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "IdFiscaleIVA"));
-        }
-        [TestMethod]
-        public new void CodiceFiscaleIsOptional()
-        {
-            challenge.IdFiscaleIVA.IdCodice = "x";
-
-            AssertOptional(x => x.CodiceFiscale);
         }
         [TestMethod]
         public void CodiceFiscaleOrIdFiscaleIVAMustHaveValue()

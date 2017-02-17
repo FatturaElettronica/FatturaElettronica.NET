@@ -10,7 +10,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     /// </summary>
     public class CessionarioCommittente : Common.BusinessObject
     {
-        private readonly DatiAnagrafici _datiAnagrafici;
+        private readonly DatiAnagraficiCessionarioCommittente _datiAnagrafici;
         private readonly SedeCessionarioCommittente _sede;
         private readonly StabileOrganizzazione _stabileOrganizzazione;
         private readonly RappresentanteFiscaleCessionarioCommittente _rappresentanteFiscale;
@@ -19,7 +19,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         public CessionarioCommittente() {
-            _datiAnagrafici = new DatiAnagrafici();
+            _datiAnagrafici = new DatiAnagraficiCessionarioCommittente();
             _sede = new SedeCessionarioCommittente();
             _stabileOrganizzazione = new StabileOrganizzazione();
             _rappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
@@ -34,7 +34,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Dati anagrafici, professionali e fiscali del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public DatiAnagrafici DatiAnagrafici { 
+        public DatiAnagraficiCessionarioCommittente DatiAnagrafici { 
             get { return _datiAnagrafici; }
         }
 

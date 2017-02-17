@@ -64,12 +64,12 @@ namespace Tests
         [TestMethod]
         public void DatiTrasportoHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiTrasporto, typeof(FatturaElettronica.Validators.DatiTrasportoValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiTrasporto, typeof(FatturaElettronica.Validators.DatiTrasportoValidator));
         }
         [TestMethod]
         public void FatturaPrincipaleHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.FatturaPrincipale, typeof(FatturaElettronica.Validators.FatturaPrincipaleValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.FatturaPrincipale, typeof(FatturaElettronica.Validators.FatturaPrincipaleValidator));
         }
     }
 }

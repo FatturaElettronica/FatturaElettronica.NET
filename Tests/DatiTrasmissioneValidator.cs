@@ -22,7 +22,7 @@ namespace Tests
         [TestMethod]
         public void ContattiTrasmittenteHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.ContattiTrasmittente, typeof(FatturaElettronica.Validators.ContattiTrasmittenteValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.ContattiTrasmittente, typeof(FatturaElettronica.Validators.ContattiTrasmittenteValidator));
         }
         [TestMethod]
         public void ProgressivoInvioMinMaxLength()

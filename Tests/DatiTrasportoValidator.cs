@@ -12,7 +12,7 @@ namespace Tests
         [TestMethod]
         public void DatiAnagraficiVettoreHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            validator.ShouldHaveDelegatePropertyChildValidator(
                 x => x.DatiAnagraficiVettore, typeof(FatturaElettronica.Validators.DatiAnagraficiVettoreValidator));
         }
         [TestMethod]
@@ -68,8 +68,7 @@ namespace Tests
         [TestMethod]
         public void IndirizzoResaHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
-                x => x.IndirizzoResa, typeof(FatturaElettronica.Validators.IndirizzoResaValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IndirizzoResa, typeof(FatturaElettronica.Validators.IndirizzoResaValidator));
         }
     }
 }

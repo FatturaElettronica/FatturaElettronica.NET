@@ -25,7 +25,9 @@ namespace FatturaElettronica.Validators
                 .When(dt => dt.FormatoTrasmissione == Impostazioni.FormatoTrasmissione.Privati)
                 .WithErrorCode("00427");
 
-            RuleFor(dt => dt.ContattiTrasmittente).SetValidator(new ContattiTrasmittenteValidator());
+            RuleFor(dt => dt.ContattiTrasmittente)
+                .SetValidator(new ContattiTrasmittenteValidator())
+                .When(x=>!x.ContattiTrasmittente.IsEmpty());
 
             RuleFor(dt => dt.PECDestinatario)
                 .NotEmpty()
