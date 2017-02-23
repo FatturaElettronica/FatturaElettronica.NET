@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace FatturaElettronica.BusinessObjects
+namespace FatturaElettronica.Common
 {
     public static class TypeExtensions
     {
@@ -14,7 +14,7 @@ namespace FatturaElettronica.BusinessObjects
 
         public static bool IsSubclassOfBusinessObject(this Type type)
         {
-            return typeof(BusinessObjectSerializable).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo());
+            return typeof(BaseClassSerializable).GetTypeInfo().IsAssignableFrom(type.GetTypeInfo());
         }
 
         public static bool IsGenericList(this Type type)

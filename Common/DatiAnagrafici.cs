@@ -1,12 +1,12 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Represents a DatiAnagrafici object
     /// </summary>
-    public class DatiAnagrafici : BusinessObject
+    public class DatiAnagrafici : BaseClassSerializable
     {
         private readonly IdFiscaleIVA _idFiscaleIva;
         private readonly Anagrafica _anagrafica;

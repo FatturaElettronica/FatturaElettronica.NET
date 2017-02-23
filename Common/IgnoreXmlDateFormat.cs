@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FatturaElettronica.BusinessObjects 
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Use this attribute to flag DateTime properties which should not be serialized to XML using the class XmlDateFormat property.

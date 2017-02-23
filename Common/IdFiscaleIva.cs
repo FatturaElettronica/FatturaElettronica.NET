@@ -1,5 +1,5 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
@@ -7,7 +7,7 @@ namespace FatturaElettronica.Common
     /// Numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ed i restanti il codice
     /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
     /// </summary>
-    public class IdFiscaleIVA : BusinessObject
+    public class IdFiscaleIVA : BaseClassSerializable
     {
         private string _idPaese;
         private string _idCodice;

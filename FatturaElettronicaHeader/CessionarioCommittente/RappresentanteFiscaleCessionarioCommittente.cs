@@ -1,5 +1,4 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
 using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente

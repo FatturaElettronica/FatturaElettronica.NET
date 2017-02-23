@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Da valorizzare nel caso di fattura accompagnatoria per inserire informazioni relative al trasporto.
     /// </summary>
-    public class DatiTrasporto : Common.BusinessObject
+    public class DatiTrasporto : Common.BaseClassSerializable
     {
         private readonly DatiAnagraficiVettore _datiAnagraficiVettore;
         private readonly IndirizzoResa _indirizzoResa;

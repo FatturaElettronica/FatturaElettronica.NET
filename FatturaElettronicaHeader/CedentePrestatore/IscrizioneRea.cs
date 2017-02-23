@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.BusinessObjects;
+﻿using FatturaElettronica.Common;
 using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// <summary>
     /// Represents a DatiAnagrafici object
     /// </summary>
-    public class IscrizioneREA : Common.BusinessObject
+    public class IscrizioneREA : Common.BaseClassSerializable
     {
         public IscrizioneREA() { } 
         public IscrizioneREA(XmlReader r) : base(r) { } 

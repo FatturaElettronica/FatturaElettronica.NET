@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
@@ -8,7 +8,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Represents a Anagrafica object
     /// </summary>
-    public class DenominazioneNomeCognome : BusinessObject
+    public class DenominazioneNomeCognome : BaseClassSerializable
     {
 
         public DenominazioneNomeCognome() { } 

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// <summary>
     /// Blocco sempre obbligatorio contenente natura, qualità e quantità dei beni / servizi formanti oggetto dell'operazione.
     /// </summary>
-    public class DatiBeniServizi : Common.BusinessObject
+    public class DatiBeniServizi : Common.BaseClassSerializable
     {
         private readonly List<DettaglioLinee> _dettaglioLinee;
         private readonly List<DatiRiepilogo> _datiRiepilogo;

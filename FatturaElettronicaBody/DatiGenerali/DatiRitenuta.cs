@@ -1,12 +1,12 @@
-﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+﻿using FatturaElettronica.Common;
+using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Dati relativi alla ritenuta.
     /// </summary>
-    public class DatiRitenuta : Common.BusinessObject
+    public class DatiRitenuta : Common.BaseClassSerializable
     {
         public DatiRitenuta() { }
         public DatiRitenuta(XmlReader r) : base(r) { }

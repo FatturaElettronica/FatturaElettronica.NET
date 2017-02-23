@@ -1,7 +1,7 @@
-﻿using FatturaElettronica.BusinessObjects;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using FatturaElettronica.Impostazioni;
+using FatturaElettronica.Common;
 
 [assembly: InternalsVisibleTo("Tests," +
     "PublicKey=00240000048000009400000006020000002400005253413100040000010001002bc3d9fc3ae589" +
@@ -12,7 +12,7 @@ using FatturaElettronica.Impostazioni;
 
 namespace FatturaElettronica
 {
-    public class FatturaElettronica : Common.BusinessObject
+    public class FatturaElettronica : Common.BaseClassSerializable
     {
         private readonly FatturaElettronicaHeader.FatturaElettronicaHeader _header;
         private readonly List<FatturaElettronicaBody.FatturaElettronicaBody> _body;

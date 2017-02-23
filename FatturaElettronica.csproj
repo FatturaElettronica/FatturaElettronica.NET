@@ -39,19 +39,15 @@
     <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="BusinessObjects\BusinessObjectSerializable.cs" />
-    <Compile Include="BusinessObjects\BusinessObject.cs" />
-    <Compile Include="BusinessObjects\DataPropertyAttribute.cs" />
-    <Compile Include="BusinessObjects\TypeExtensions.cs" />
-    <Compile Include="BusinessObjects\IgnoreXmlDateFormat.cs" />
-    <Compile Include="BusinessObjects\JsonOptions.cs" />
-    <Compile Include="BusinessObjects\XmlOptions.cs" />
+    <Compile Include="Common\BaseClassSerializable.cs" />
+    <Compile Include="Common\BaseClass.cs" />
+    <Compile Include="Common\DataPropertyAttribute.cs" />
+    <Compile Include="Common\TypeExtensions.cs" />
+    <Compile Include="Common\IgnoreXmlDateFormat.cs" />
+    <Compile Include="Common\JsonOptions.cs" />
+    <Compile Include="Common\XmlOptions.cs" />
     <Compile Include="Common\DenominazioneNomeCognome.cs" />
     <Compile Include="Common\Anagrafica.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\BusinessObject.cs">
       <SubType>
       </SubType>
     </Compile>

@@ -12,9 +12,9 @@
     using FatturaElettronica;
     using FatturaElettronica.Validators;
     using FatturaElettronica.Impostazioni;
-    using FatturaElettronica.BusinessObjects;
     using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
     using System.Xml;
+    using System.Diagnostics;
 
     // Instanzia una nuova fattura elettronica.
     var fattura = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);

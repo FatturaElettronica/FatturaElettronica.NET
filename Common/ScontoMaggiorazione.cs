@@ -1,11 +1,11 @@
-﻿using FatturaElettronica.BusinessObjects;
+﻿using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Eventuale sconto o maggiorazione applicati sul totale documento.
     /// </summary>
-    public class ScontoMaggiorazione : BusinessObject
+    public class ScontoMaggiorazione : BaseClassSerializable
     {
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.

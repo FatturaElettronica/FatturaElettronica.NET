@@ -1,5 +1,5 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -7,7 +7,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// Da valorizzare nei casi di fattura per stato di avanzamento.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class DatiSAL : Common.BusinessObject
+    public class DatiSAL : Common.BaseClassSerializable
     {
         public DatiSAL() { }
         public DatiSAL(XmlReader r) : base(r) { }

@@ -6,7 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 
-namespace FatturaElettronica.BusinessObjects
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// The class all domain objects must inherit from. 
@@ -18,9 +18,7 @@ namespace FatturaElettronica.BusinessObjects
     /// TODO:
     /// - BeginEdit()/EndEdit() combination, and rollbacks for cancels (IEditableObject).
     /// </summary>
-    public abstract class BusinessObject:  
-        INotifyPropertyChanged,
-        IEquatable<BusinessObject>
+    public abstract class BaseClass:  INotifyPropertyChanged, IEquatable<BaseClass>
     {
 
         /// <summary>
@@ -96,7 +94,7 @@ namespace FatturaElettronica.BusinessObjects
                     i++;
                     continue;
                 }
-                if (v is BusinessObject && ((BusinessObject)v).IsEmpty()) { 
+                if (v is BaseClass && ((BaseClass)v).IsEmpty()) { 
                     i++;
                 }
             }
@@ -117,7 +115,7 @@ namespace FatturaElettronica.BusinessObjects
         }
 
 
-        public bool Equals(BusinessObject other)
+        public bool Equals(BaseClass other)
         {
             if (other == null)
                 return false;
@@ -147,11 +145,11 @@ namespace FatturaElettronica.BusinessObjects
             if (obj == null)
                 return false;
 
-            var o = obj as BusinessObject;
+            var o = obj as BaseClass;
             return o != null && GetType().Name == o.GetType().Name && Equals(o);
         }
 
-        public static bool operator == (BusinessObject o1, BusinessObject o2)
+        public static bool operator == (BaseClass o1, BaseClass o2)
         {
             if ((object)o1 == null || ((object)o2) == null)
                 return Equals(o1, o2);
@@ -159,7 +157,7 @@ namespace FatturaElettronica.BusinessObjects
             return o1.Equals(o2);
         }
 
-        public static bool operator != (BusinessObject o1, BusinessObject o2)
+        public static bool operator != (BaseClass o1, BaseClass o2)
         {
             if (o1 == null || o2 == null)
                 return !Equals(o1, o2);

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiVeicoli
 {
     /// <summary>
     /// Dati relativi ai veicoli di cui all'art. 38 comma 4 del ddl 331 del 1993.
     /// </summary>
-    public class DatiVeicoli : Common.BusinessObject
+    public class DatiVeicoli : Common.BaseClassSerializable
     {
         public DatiVeicoli() { }
         public DatiVeicoli(XmlReader r) : base(r) { }

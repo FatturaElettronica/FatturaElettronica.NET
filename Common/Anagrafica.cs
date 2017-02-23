@@ -1,5 +1,4 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.Common
 {

@@ -1,12 +1,12 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
     /// <summary>
     /// Blocco sempre obbligatorio contenente i dati di riepilogo per ogni aliquota IVA o natura.
     /// </summary>
-    public class DatiRiepilogo : Common.BusinessObject
+    public class DatiRiepilogo : Common.BaseClassSerializable
     {
         public DatiRiepilogo() { }
         public DatiRiepilogo(XmlReader r) : base(r) { }

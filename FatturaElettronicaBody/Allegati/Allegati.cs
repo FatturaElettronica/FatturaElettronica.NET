@@ -1,12 +1,12 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.Allegati
 {
     /// <summary>
     /// Dati relativi ad eventuale allegato.
     /// </summary>
-    public class Allegati : Common.BusinessObject
+    public class Allegati : Common.BaseClassSerializable
     {
         public Allegati() { }
         public Allegati(XmlReader r) : base(r) { }

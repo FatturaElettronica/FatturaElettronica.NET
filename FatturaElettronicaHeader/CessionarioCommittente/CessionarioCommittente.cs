@@ -1,5 +1,4 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
 using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
@@ -8,7 +7,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     /// <summary>
     /// Dati relativi al cessionario/ committente.
     /// </summary>
-    public class CessionarioCommittente : Common.BusinessObject
+    public class CessionarioCommittente : Common.BaseClassSerializable
     {
         private readonly DatiAnagraficiCessionarioCommittente _datiAnagrafici;
         private readonly SedeCessionarioCommittente _sede;

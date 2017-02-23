@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// Blocco che consente di inserire, con riferimento ad una linea di dettaglio, diverse tipologie di informazioni utili ai fini
     /// amministrativi, gestionali, etc.
     /// </summary>
-    public class AltriDatiGestionali : Common.BusinessObject
+    public class AltriDatiGestionali : Common.BaseClassSerializable
     {
 
         public AltriDatiGestionali() { }

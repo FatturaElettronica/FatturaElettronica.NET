@@ -1,5 +1,5 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
@@ -7,7 +7,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Dati relativi al rappresentante fiscale del cedente / prestatore.
     /// </summary>
-    public abstract class RappresentanteFiscale : BusinessObject
+    public abstract class RappresentanteFiscale : BaseClassSerializable
     {
         private readonly DatiAnagrafici _datiAnagrafici;
 

@@ -14,7 +14,7 @@ namespace Tests
 {
     [TestClass]
     public abstract class BaseClass<TClass, TValidator> 
-        where TClass : FatturaElettronica.Common.BusinessObject
+        where TClass : FatturaElettronica.Common.BaseClassSerializable
         where TValidator : IValidator<TClass>
     {
         protected TValidator validator;

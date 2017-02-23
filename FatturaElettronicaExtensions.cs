@@ -6,7 +6,7 @@ namespace FatturaElettronica
 {
     public static class FatturaElettronicaExtensions
     {
-        public static ValidationResult Validate(this Common.BusinessObject obj)
+        public static ValidationResult Validate(this Common.BaseClassSerializable obj)
         {
             var type = Type.GetType(
                 string.Format("FatturaElettronica.Validators.{0}Validator", obj.GetType().Name));
@@ -15,7 +15,7 @@ namespace FatturaElettronica
             return (ValidationResult)method.Invoke(instance, new [] {obj} );
         }
         
-        public static bool IsValid(this Common.BusinessObject obj)
+        public static bool IsValid(this Common.BaseClassSerializable obj)
         {
             return obj.Validate().IsValid;
         }

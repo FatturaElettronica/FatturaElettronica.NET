@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Informazioni relative ad un documento a cui si fa riferimento.
     /// </summary>
-    public abstract class DatiDocumento : BusinessObject
+    public abstract class DatiDocumento : BaseClassSerializable
     {
         private readonly List<int> _riferimentoNumeroLinea;
 

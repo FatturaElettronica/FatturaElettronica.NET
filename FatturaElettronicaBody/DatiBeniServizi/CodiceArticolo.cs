@@ -1,12 +1,12 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
     /// <summary>
     /// Eventuale codifica dell'articolo.
     /// </summary>
-    public class CodiceArticolo : Common.BusinessObject
+    public class CodiceArticolo : Common.BaseClassSerializable
     {
         public CodiceArticolo() { }
         public CodiceArticolo(XmlReader r) : base(r) { }

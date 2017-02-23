@@ -1,13 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
 {
     /// <summary>
     /// Dati relativi al pagamento.
     /// </summary>
-    public class DatiPagamento : Common.BusinessObject
+    public class DatiPagamento : Common.BaseClassSerializable
     {
         private readonly List<DettaglioPagamento> _dettagliPagamento;
 

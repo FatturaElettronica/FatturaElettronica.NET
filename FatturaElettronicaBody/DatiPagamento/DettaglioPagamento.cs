@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
 {
     /// <summary>
     /// Dati di dettaglio del pagamento.
     /// </summary>
-    public class DettaglioPagamento : Common.BusinessObject
+    public class DettaglioPagamento : Common.BaseClassSerializable
     {
         public DettaglioPagamento() { }
         public DettaglioPagamento(XmlReader r) : base(r) { }

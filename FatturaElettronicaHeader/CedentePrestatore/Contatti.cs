@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.BusinessObjects;
+﻿using FatturaElettronica.Common;
 using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// <summary>
     /// Represents a Contatti object
     /// </summary>
-    public class Contatti : Common.BusinessObject
+    public class Contatti : Common.BaseClassSerializable
     {
         public Contatti() { } 
         public Contatti(XmlReader r) : base(r) { } 

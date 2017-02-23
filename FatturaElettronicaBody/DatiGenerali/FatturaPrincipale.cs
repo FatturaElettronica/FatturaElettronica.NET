@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// Da valorizzare nei casi di fatture per operazione accessorie, emesse dagli autotraportatori per usufruire delle
     /// agevolazioni in mteria di registrazione e pagamento IVA.
     /// </summary>
-    public class FatturaPrincipale : Common.BusinessObject
+    public class FatturaPrincipale : Common.BaseClassSerializable
     {
         public FatturaPrincipale() { }
         public FatturaPrincipale(XmlReader r) : base(r) { }

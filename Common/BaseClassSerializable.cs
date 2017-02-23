@@ -8,24 +8,26 @@ using System.Xml.Schema;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
 
-namespace FatturaElettronica.BusinessObjects
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// - XML (de)serialization;
     /// - JSON serialization.
     /// </summary>
-    public class BusinessObjectSerializable : 
-        BusinessObject,
-        IXmlSerializable
+    public class BaseClassSerializable : BaseClass, IXmlSerializable
     {
         /// <summary>
         /// Constructor.
         /// </summary>
-        protected BusinessObjectSerializable()
-        { 
-            XmlOptions = new XmlOptions();
+        protected BaseClassSerializable()
+        {
+            XmlOptions = new XmlOptions()
+            {
+                DateTimeFormat = "yyyy-MM-dd",
+                DecimalFormat = "0.00###"
+            };
         }
-        protected BusinessObjectSerializable(XmlReader r) : this() { ReadXml(r); }
+        protected BaseClassSerializable(XmlReader r) : this() { ReadXml(r); }
 
         public XmlOptions XmlOptions { get; set; }
 
@@ -75,11 +77,11 @@ namespace FatturaElettronica.BusinessObjects
                 if (value == null && !XmlOptions.SerializeNullValues) continue;
 
                 // if it's a BusinessObject instance just let it flush it's own data.
-                var child = value as BusinessObjectSerializable;
-                if (child != null) {
+                if (value is BaseClassSerializable child)
+                {
                     if (child.IsEmpty() && XmlOptions.SerializeEmptyBusinessObjects == false) continue;
-                    
-                    w.WriteStartElement((string.IsNullOrEmpty(child.XmlOptions.ElementName) ?  child.GetType().Name : child.XmlOptions.ElementName));
+
+                    w.WriteStartElement((string.IsNullOrEmpty(child.XmlOptions.ElementName) ? child.GetType().Name : child.XmlOptions.ElementName));
                     child.WriteXml(w);
                     w.WriteEndElement();
 
@@ -133,8 +135,8 @@ namespace FatturaElettronica.BusinessObjects
                 var current = e.Current;
                 w.WriteStartElement(propertyName);
                 {
-                    if (current is BusinessObjectSerializable) {
-                        ((BusinessObjectSerializable)current).WriteXml(w);
+                    if (current is BaseClassSerializable) {
+                        ((BaseClassSerializable)current).WriteXml(w);
                     }
                     else if (current is string)
                     {
@@ -176,7 +178,7 @@ namespace FatturaElettronica.BusinessObjects
                 // if property type is BusinessObject, let it auto-load from XML.
                 if (type.IsSubclassOfBusinessObject())
                 {
-                    ((BusinessObjectSerializable)value).ReadXml(r);
+                    ((BaseClassSerializable)value).ReadXml(r);
                     continue;
                 }
 
@@ -222,7 +224,7 @@ namespace FatturaElettronica.BusinessObjects
                 {
                     // list items are expected to be of BusinessObject type.
                     var bo = Activator.CreateInstance(argumentType);
-                    ((BusinessObjectSerializable)bo).ReadXml(r);
+                    ((BaseClassSerializable)bo).ReadXml(r);
                     add.Invoke(propertyValue, new[] { bo });
                     continue;
                 }

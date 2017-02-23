@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using FatturaElettronica.BusinessObjects;
+﻿using System.Xml;
 
 namespace FatturaElettronica.Common
 {
@@ -8,7 +6,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Represents a Anagrafica object
     /// </summary>
-    public abstract class Località : BusinessObject
+    public abstract class Località : BaseClassSerializable
     {
         /// <summary>
         /// Constructor.

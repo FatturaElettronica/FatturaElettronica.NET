@@ -1,9 +1,9 @@
-﻿using FatturaElettronica.BusinessObjects;
+﻿using FatturaElettronica.Common;
 using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader
 {
-    public class FatturaElettronicaHeader : Common.BusinessObject
+    public class FatturaElettronicaHeader : Common.BaseClassSerializable
     {
         private readonly DatiTrasmissione.DatiTrasmissione _datiTrasmissione;
         private readonly CedentePrestatore.CedentePrestatore _cedentePrestatore;

@@ -1,7 +1,7 @@
-﻿using System;
+﻿using FatturaElettronica.Common;
+using System;
 using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -9,7 +9,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// Nei casi di fattura differita per indicare il documento con cui è stato consegnato il bene.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class DatiDDT : Common.BusinessObject
+    public class DatiDDT : Common.BaseClassSerializable
     {
 
         private readonly List<int> _riferimentoNumeroLinea;

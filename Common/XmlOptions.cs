@@ -1,4 +1,4 @@
-﻿namespace FatturaElettronica.BusinessObjects
+﻿namespace FatturaElettronica.Common
 {
     /// <summary>
     /// XML serialization options for BusinessObject instances.

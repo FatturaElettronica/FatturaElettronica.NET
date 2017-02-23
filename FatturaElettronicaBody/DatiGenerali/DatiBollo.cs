@@ -1,12 +1,12 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Dati relativi al bollo.
     /// </summary>
-    public class DatiBollo : Common.BusinessObject
+    public class DatiBollo : Common.BaseClassSerializable
     {
         public DatiBollo() { }
         public DatiBollo(XmlReader r) : base(r) { }

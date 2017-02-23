@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
     /// <summary>
     /// Linee di dettaglio del documento (i campi del blocco si ripetono per ogni riga di dettaglio).
     /// </summary>
-    public class DettaglioLinee : Common.BusinessObject
+    public class DettaglioLinee : Common.BaseClassSerializable
     {
         private readonly List<CodiceArticolo> _codiceArticolo;
         private readonly List<Common.ScontoMaggiorazione> _scontoMaggiorazione;

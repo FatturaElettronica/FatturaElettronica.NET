@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody
 {
-    public class FatturaElettronicaBody : Common.BusinessObject
+    public class FatturaElettronicaBody : Common.BaseClassSerializable
     {
         private readonly DatiGenerali.DatiGenerali _datiGenerali;
         private readonly DatiBeniServizi.DatiBeniServizi _datiBeniServizi;

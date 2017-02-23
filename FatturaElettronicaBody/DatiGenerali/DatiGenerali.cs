@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using FatturaElettronica.Common;
+using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.BusinessObjects;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <summary>
     /// Dati generali del documento principale e dati dei documenti correlati.
     /// </summary>
-    public class DatiGenerali : Common.BusinessObject
+    public class DatiGenerali : Common.BaseClassSerializable
     {
         private readonly DatiGeneraliDocumento _datiGeneraliDocumento;
         private readonly List<DatiOrdineAcquisto> _datiOrdineAcquisto;

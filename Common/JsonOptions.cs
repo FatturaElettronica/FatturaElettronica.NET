@@ -1,4 +1,4 @@
-﻿namespace FatturaElettronica.BusinessObjects
+﻿namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Provides formatting optons for JSON output.

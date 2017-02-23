@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
 
-namespace FatturaElettronica.BusinessObjects 
+namespace FatturaElettronica.Common
 {
     
     /// <summary>

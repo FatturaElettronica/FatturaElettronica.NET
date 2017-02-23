@@ -56,7 +56,7 @@ namespace FatturaElettronica.Validators
                     totals.Add(r.AliquotaIVA, new Totals());
 
                 totals[r.AliquotaIVA].ImponibileImporto += r.ImponibileImporto;
-                totals[r.AliquotaIVA].Arrotondamento += (decimal)((r.Arrotondamento != null) ? r.Arrotondamento : 0);
+                totals[r.AliquotaIVA].Arrotondamento += r.Arrotondamento ?? 0;
             }
             foreach (var l in body.DatiBeniServizi.DettaglioLinee)
             {

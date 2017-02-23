@@ -1,12 +1,12 @@
 ﻿using System.Xml;
-using FatturaElettronica.BusinessObjects;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
 {
     /// <summary>
     /// Represents a ContattiTrasmittente object
     /// </summary>
-    public class ContattiTrasmittente : Common.BusinessObject
+    public class ContattiTrasmittente : Common.BaseClassSerializable
     {
         private string _telefono;
         private string _email;
