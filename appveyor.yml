@@ -1,0 +1,7 @@
+init:
+  tzutil /s "W. Europe Standard Time"
+before_build:
+  cmd: nuget restore
+build:
+  project: FatturaElettronica.sln
+  verbosity: minimal
