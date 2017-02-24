@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     /// <summary>
     /// Dati relativi al cessionario/ committente.
     /// </summary>
-    public class CessionarioCommittente : Common.BaseClassSerializable
+    public class CessionarioCommittente : BaseClassSerializable
     {
         private readonly DatiAnagraficiCessionarioCommittente _datiAnagrafici;
         private readonly SedeCessionarioCommittente _sede;

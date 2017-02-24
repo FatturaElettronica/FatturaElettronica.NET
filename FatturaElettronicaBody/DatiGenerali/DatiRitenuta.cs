@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <summary>
     /// Dati relativi alla ritenuta.
     /// </summary>
-    public class DatiRitenuta : Common.BaseClassSerializable
+    public class DatiRitenuta : BaseClassSerializable
     {
         public DatiRitenuta() { }
         public DatiRitenuta(XmlReader r) : base(r) { }

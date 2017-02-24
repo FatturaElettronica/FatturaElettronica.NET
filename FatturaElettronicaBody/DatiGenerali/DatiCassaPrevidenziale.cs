@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <summary>
     /// Dati relativi alla cassa previdenziale di appartenenza.
     /// </summary>
-    public class DatiCassaPrevidenziale : Common.BaseClassSerializable
+    public class DatiCassaPrevidenziale : BaseClassSerializable
     {
         public DatiCassaPrevidenziale() { }
         public DatiCassaPrevidenziale(XmlReader r) : base(r) { }

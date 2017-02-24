@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace FatturaElettronica.Impostazioni
+﻿namespace FatturaElettronica.Impostazioni
 {
     public enum Instance { PubblicaAmministrazione, Privati };
     public class Versione

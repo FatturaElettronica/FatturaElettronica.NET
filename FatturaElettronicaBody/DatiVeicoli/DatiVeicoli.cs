@@ -7,7 +7,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiVeicoli
     /// <summary>
     /// Dati relativi ai veicoli di cui all'art. 38 comma 4 del ddl 331 del 1993.
     /// </summary>
-    public class DatiVeicoli : Common.BaseClassSerializable
+    public class DatiVeicoli : BaseClassSerializable
     {
         public DatiVeicoli() { }
         public DatiVeicoli(XmlReader r) : base(r) { }

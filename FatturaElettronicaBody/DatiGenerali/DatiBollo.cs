@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <summary>
     /// Dati relativi al bollo.
     /// </summary>
-    public class DatiBollo : Common.BaseClassSerializable
+    public class DatiBollo : BaseClassSerializable
     {
         public DatiBollo() { }
         public DatiBollo(XmlReader r) : base(r) { }

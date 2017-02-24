@@ -9,7 +9,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// Nei casi di fattura differita per indicare il documento con cui è stato consegnato il bene.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class DatiDDT : Common.BaseClassSerializable
+    public class DatiDDT : BaseClassSerializable
     {
 
         private readonly List<int> _riferimentoNumeroLinea;

@@ -8,10 +8,10 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// <summary>
     /// Linee di dettaglio del documento (i campi del blocco si ripetono per ogni riga di dettaglio).
     /// </summary>
-    public class DettaglioLinee : Common.BaseClassSerializable
+    public class DettaglioLinee : BaseClassSerializable
     {
         private readonly List<CodiceArticolo> _codiceArticolo;
-        private readonly List<Common.ScontoMaggiorazione> _scontoMaggiorazione;
+        private readonly List<ScontoMaggiorazione> _scontoMaggiorazione;
         private readonly List<AltriDatiGestionali> _altriDatiGestionali;
 
         /// <summary>
@@ -19,7 +19,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         public DettaglioLinee() {
             _codiceArticolo = new List<CodiceArticolo>();
-            _scontoMaggiorazione = new List<Common.ScontoMaggiorazione>();
+            _scontoMaggiorazione = new List<ScontoMaggiorazione>();
             _altriDatiGestionali = new List<AltriDatiGestionali>();
         }
 
@@ -85,7 +85,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// maggiorazioni a "cascata").
         /// </summary>
         [DataProperty]
-        public List<Common.ScontoMaggiorazione> ScontoMaggiorazione { get { return _scontoMaggiorazione; } }
+        public List<ScontoMaggiorazione> ScontoMaggiorazione { get { return _scontoMaggiorazione; } }
 
         /// <summary>
         /// Importo totale del bene/servizio (che tiene conto di eventuali sconti/maggiorazioni) IVA esclusa.

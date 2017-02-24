@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// <summary>
     /// Represents a DatiAnagrafici object
     /// </summary>
-    public class IscrizioneREA : Common.BaseClassSerializable
+    public class IscrizioneREA : BaseClassSerializable
     {
         public IscrizioneREA() { } 
         public IscrizioneREA(XmlReader r) : base(r) { } 

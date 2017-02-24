@@ -4,7 +4,7 @@ using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody
 {
-    public class Body : Common.BaseClassSerializable
+    public class Body : BaseClassSerializable
     {
         private readonly DatiGenerali.DatiGenerali _datiGenerali;
         private readonly DatiBeniServizi.DatiBeniServizi _datiBeniServizi;

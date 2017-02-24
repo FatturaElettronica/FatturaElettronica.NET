@@ -7,7 +7,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
     /// <summary>
     /// Dati di dettaglio del pagamento.
     /// </summary>
-    public class DettaglioPagamento : Common.BaseClassSerializable
+    public class DettaglioPagamento : BaseClassSerializable
     {
         public DettaglioPagamento() { }
         public DettaglioPagamento(XmlReader r) : base(r) { }

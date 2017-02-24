@@ -7,7 +7,6 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
-using System.Xml.Linq;
 
 namespace FatturaElettronica.Common
 {
@@ -84,7 +83,7 @@ namespace FatturaElettronica.Common
                     var attribute = property.GetCustomAttributes(typeof(XmlElementAttribute), false)
                         .Cast<XmlElementAttribute>()
                         .FirstOrDefault();
-                    w.WriteStartElement((attribute == null ?  property.Name : attribute.ElementName));
+                    w.WriteStartElement(attribute == null ?  property.Name : attribute.ElementName);
                     child.WriteXml(w);
                     w.WriteEndElement();
 
@@ -181,7 +180,6 @@ namespace FatturaElettronica.Common
                 var type = property.PropertyType;
                 var value = property.GetValue(this, null);
 
-                // if property type is BusinessObject, let it auto-load from XML.
                 if (type.IsSubclassOfBusinessObject())
                 {
                     ((BaseClassSerializable)value).ReadXml(r);
@@ -209,7 +207,8 @@ namespace FatturaElettronica.Common
         /// Serializes one or more XML elements into a List of BusinessObjects.
         /// </summary>
         /// <param name="propertyValue">Property value. Must be a List of BusinessObject instances.</param>
-        /// <param name="elementName">Property name.</param>
+        /// <param name="propertyValue">Property type</param>
+        /// <param name="elementName">Element name.</param>
         /// <param name="r">Active XML stream reader.</param>
         private static void ReadXmlList(object propertyValue, Type propertyType, string elementName, XmlReader r)
         {

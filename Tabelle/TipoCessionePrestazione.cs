@@ -6,7 +6,6 @@
         {
             get
             {
-                // TODO add appropriate values for Nome
                 return new Tabella[] {
                     new TipoCessionePrestazione { Codice = "SC", Nome = "sconto"},
                     new TipoCessionePrestazione { Codice = "PR", Nome = "premio"},

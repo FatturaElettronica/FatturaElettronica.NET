@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators

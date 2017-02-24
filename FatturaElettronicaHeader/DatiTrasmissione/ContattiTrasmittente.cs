@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
     /// <summary>
     /// Represents a ContattiTrasmittente object
     /// </summary>
-    public class ContattiTrasmittente : Common.BaseClassSerializable
+    public class ContattiTrasmittente : BaseClassSerializable
     {
         private string _telefono;
         private string _email;

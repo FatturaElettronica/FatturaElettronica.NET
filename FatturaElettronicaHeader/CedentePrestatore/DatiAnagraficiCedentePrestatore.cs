@@ -4,7 +4,7 @@ using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
-    public class DatiAnagraficiCedentePrestatore : Common.DatiAnagrafici
+    public class DatiAnagraficiCedentePrestatore : DatiAnagrafici
     {
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.

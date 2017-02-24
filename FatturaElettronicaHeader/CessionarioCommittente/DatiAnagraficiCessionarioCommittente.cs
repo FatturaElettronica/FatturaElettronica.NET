@@ -3,7 +3,7 @@ using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 {
-    public class DatiAnagraficiCessionarioCommittente : Common.DatiAnagrafici
+    public class DatiAnagraficiCessionarioCommittente : DatiAnagrafici
     {
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cessionario / committente.

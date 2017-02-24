@@ -7,7 +7,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// Da valorizzare nei casi di fattura per stato di avanzamento.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class DatiSAL : Common.BaseClassSerializable
+    public class DatiSAL : BaseClassSerializable
     {
         public DatiSAL() { }
         public DatiSAL(XmlReader r) : base(r) { }

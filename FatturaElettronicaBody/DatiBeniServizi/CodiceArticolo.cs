@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// <summary>
     /// Eventuale codifica dell'articolo.
     /// </summary>
-    public class CodiceArticolo : Common.BaseClassSerializable
+    public class CodiceArticolo : BaseClassSerializable
     {
         public CodiceArticolo() { }
         public CodiceArticolo(XmlReader r) : base(r) { }

@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// <summary>
     /// Represents a Contatti object
     /// </summary>
-    public class Contatti : Common.BaseClassSerializable
+    public class Contatti : BaseClassSerializable
     {
         public Contatti() { } 
         public Contatti(XmlReader r) : base(r) { } 

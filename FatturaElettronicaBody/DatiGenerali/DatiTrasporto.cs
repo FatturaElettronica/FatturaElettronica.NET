@@ -7,7 +7,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <summary>
     /// Da valorizzare nel caso di fattura accompagnatoria per inserire informazioni relative al trasporto.
     /// </summary>
-    public class DatiTrasporto : Common.BaseClassSerializable
+    public class DatiTrasporto : BaseClassSerializable
     {
         private readonly DatiAnagraficiVettore _datiAnagraficiVettore;
         private readonly IndirizzoResa _indirizzoResa;

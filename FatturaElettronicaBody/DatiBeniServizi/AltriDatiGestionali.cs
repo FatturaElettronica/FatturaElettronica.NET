@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// Blocco che consente di inserire, con riferimento ad una linea di dettaglio, diverse tipologie di informazioni utili ai fini
     /// amministrativi, gestionali, etc.
     /// </summary>
-    public class AltriDatiGestionali : Common.BaseClassSerializable
+    public class AltriDatiGestionali : BaseClassSerializable
     {
 
         public AltriDatiGestionali() { }

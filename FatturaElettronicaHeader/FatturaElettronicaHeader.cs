@@ -3,7 +3,7 @@ using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader
 {
-    public class Header : Common.BaseClassSerializable
+    public class Header : BaseClassSerializable
     {
         private readonly DatiTrasmissione.DatiTrasmissione _datiTrasmissione;
         private readonly CedentePrestatore.CedentePrestatore _cedentePrestatore;

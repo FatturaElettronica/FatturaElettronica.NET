@@ -6,7 +6,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.Allegati
     /// <summary>
     /// Dati relativi ad eventuale allegato.
     /// </summary>
-    public class Allegati : Common.BaseClassSerializable
+    public class Allegati : BaseClassSerializable
     {
         public Allegati() { }
         public Allegati(XmlReader r) : base(r) { }

@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace FatturaElettronica.Tabelle
+﻿namespace FatturaElettronica.Tabelle
 {
     public class Divisa : Tabella
     {

@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <summary>
     /// Dati generali del documento principale e dati dei documenti correlati.
     /// </summary>
-    public class DatiGenerali : Common.BaseClassSerializable
+    public class DatiGenerali : BaseClassSerializable
     {
         private readonly DatiGeneraliDocumento _datiGeneraliDocumento;
         private readonly List<DatiOrdineAcquisto> _datiOrdineAcquisto;

@@ -3,7 +3,7 @@ using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
-    public class DatiAnagraficiVettore : Common.DatiAnagrafici
+    public class DatiAnagraficiVettore : DatiAnagrafici
     {
         public DatiAnagraficiVettore() { }
         public DatiAnagraficiVettore(XmlReader r) : base(r) { }

@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// <summary>
     /// Blocco sempre obbligatorio contenente natura, qualità e quantità dei beni / servizi formanti oggetto dell'operazione.
     /// </summary>
-    public class DatiBeniServizi : Common.BaseClassSerializable
+    public class DatiBeniServizi : BaseClassSerializable
     {
         private readonly List<DettaglioLinee> _dettaglioLinee;
         private readonly List<DatiRiepilogo> _datiRiepilogo;

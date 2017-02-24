@@ -7,7 +7,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
     /// <summary>
     /// Dati relativi al pagamento.
     /// </summary>
-    public class DatiPagamento : Common.BaseClassSerializable
+    public class DatiPagamento : BaseClassSerializable
     {
         private readonly List<DettaglioPagamento> _dettagliPagamento;
 

@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
     /// Informazioni che identificano univocamente il soggetto che trasmette, il documento trasmesso, 
     /// il formato in cui è stato trasmesso il documento, il soggetto destinatario.
     /// </summary>
-    public class DatiTrasmissione : Common.BaseClassSerializable
+    public class DatiTrasmissione : BaseClassSerializable
     {
         private readonly IdTrasmittente _idTrasmittente;
         private readonly ContattiTrasmittente _contattiTrasmittente;

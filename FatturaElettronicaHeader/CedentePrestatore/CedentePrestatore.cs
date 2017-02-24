@@ -8,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// <summary>
     /// Dati relativi al cedente / prestatore.
     /// </summary>
-    public class CedentePrestatore : Common.BaseClassSerializable
+    public class CedentePrestatore : BaseClassSerializable
     {
         private readonly DatiAnagraficiCedentePrestatore _datiAnagrafici;
         private readonly SedeCedentePrestatore _sede;
