@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using FatturaElettronica.Impostazioni;
 using FatturaElettronica.Common;
+using System.Xml.Serialization;
 
 [assembly: InternalsVisibleTo("Tests," +
     "PublicKey=00240000048000009400000006020000002400005253413100040000010001002bc3d9fc3ae589" +
@@ -12,20 +13,20 @@ using FatturaElettronica.Common;
 
 namespace FatturaElettronica
 {
-    public class FatturaElettronica : Common.BaseClassSerializable
+    public class Fattura : BaseClassSerializable
     {
-        private readonly FatturaElettronicaHeader.FatturaElettronicaHeader _header;
-        private readonly List<FatturaElettronicaBody.FatturaElettronicaBody> _body;
+        private readonly FatturaElettronicaHeader.Header _header;
+        private readonly List<FatturaElettronicaBody.Body> _body;
 
-        protected FatturaElettronica() {
-            _header = new FatturaElettronicaHeader.FatturaElettronicaHeader();
-            _body = new List<FatturaElettronicaBody.FatturaElettronicaBody>();
+        protected Fattura() {
+            _header = new FatturaElettronicaHeader.Header();
+            _body = new List<FatturaElettronicaBody.Body>();
         }
 
         public override void WriteXml(System.Xml.XmlWriter w)
         {
             w.WriteStartElement(RootElement.Prefix, RootElement.LocalName, RootElement.NameSpace);
-            w.WriteAttributeString("versione", FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione);
+            w.WriteAttributeString("versione", Header.DatiTrasmissione.FormatoTrasmissione);
             foreach (RootElement.XmlAttributeString a in RootElement.ExtraAttributes)
             {
                 w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
@@ -39,18 +40,18 @@ namespace FatturaElettronica
             base.ReadXml(r);
         }
 
-        public static FatturaElettronica CreateInstance(Instance formato)
+        public static Fattura CreateInstance(Instance formato)
         {
-            var f = new FatturaElettronica();
+            var f = new Fattura();
 
             switch (formato)
             {
                 case Instance.PubblicaAmministrazione:
-                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
+                    f.Header.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
                     break;
                 case Instance.Privati:
-                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
-                    f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
+                    f.Header.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
+                    f.Header.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
                     break;
             }
 
@@ -64,8 +65,8 @@ namespace FatturaElettronica
         /// <summary>
         /// Intestazione della comunicazione.
         /// </summary>
-        [DataProperty]
-        public FatturaElettronicaHeader.FatturaElettronicaHeader FatturaElettronicaHeader { 
+        [DataProperty][XmlElement(ElementName="FatturaElettronicaHeader")]
+        public FatturaElettronicaHeader.Header Header { 
             get { return _header; }
         }
 
@@ -74,8 +75,8 @@ namespace FatturaElettronica
         /// </summary>
         /// <remarks>Il blocco ha molteciplità 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete
         /// per ogni fattura componente il lotto stesso.</remarks>
-        [DataProperty]
-        public List<FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody {
+        [DataProperty][XmlElement(ElementName="FatturaElettronicaBody")]
+        public List<FatturaElettronicaBody.Body> Body {
             get { return _body; }
         }
 

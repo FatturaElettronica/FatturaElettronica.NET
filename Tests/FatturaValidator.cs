@@ -4,26 +4,26 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class FatturaElettronicaValidator : BaseClass<FatturaElettronica.FatturaElettronica, FatturaElettronica.Validators.FatturaElettronicaValidator>
+    public class FatturaValidator : BaseClass<FatturaElettronica.Fattura, FatturaElettronica.Validators.FatturaValidator>
     {
         [TestInitialize]
         public new void Init() 
         {
-            validator = new FatturaElettronica.Validators.FatturaElettronicaValidator();
-            challenge = FatturaElettronica.FatturaElettronica.CreateInstance(FatturaElettronica.Impostazioni.Instance.PubblicaAmministrazione);
+            validator = new FatturaElettronica.Validators.FatturaValidator();
+            challenge = FatturaElettronica.Fattura.CreateInstance(FatturaElettronica.Impostazioni.Instance.PubblicaAmministrazione);
         }
 
        [TestMethod]
        public void FatturaElettronicaHeaderHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
-                x => x.FatturaElettronicaHeader, typeof(FatturaElettronica.Validators.FatturaElettronicaHeaderValidator));
+                x => x.Header, typeof(FatturaElettronica.Validators.HeaderValidator));
         }
        [TestMethod]
        public void FatturaElettronicaBodyHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
-                x => x.FatturaElettronicaBody, typeof(FatturaElettronica.Validators.FatturaElettronicaBodyValidator));
+                x => x.Body, typeof(FatturaElettronica.Validators.BodyValidator));
         }
 
         // TODO 

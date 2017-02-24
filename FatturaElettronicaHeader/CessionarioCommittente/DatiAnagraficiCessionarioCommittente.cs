@@ -8,10 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cessionario / committente.
         /// </summary>
-        public DatiAnagraficiCessionarioCommittente()
-        {
-            XmlOptions.ElementName = "DatiAnagrafici";
-        }
+        public DatiAnagraficiCessionarioCommittente() { }
         public DatiAnagraficiCessionarioCommittente(XmlReader r) : base(r) { }
     }
 }

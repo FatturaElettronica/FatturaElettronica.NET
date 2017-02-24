@@ -9,10 +9,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.
         /// </summary>
-        public DatiAnagraficiCedentePrestatore()
-        {
-            XmlOptions.ElementName = "DatiAnagrafici";
-        }
+        public DatiAnagraficiCedentePrestatore() { }
         public DatiAnagraficiCedentePrestatore(XmlReader r) : base(r) { }
 
         /// <summary>

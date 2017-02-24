@@ -88,7 +88,7 @@
     <Compile Include="DenominazioneNomeCognomeValidator.cs" />
     <Compile Include="CessionarioCommittenteValidator.cs" />
     <Compile Include="DatiGeneraliValidator.cs" />
-    <Compile Include="FatturaElettronicaBodyValidator.cs" />
+    <Compile Include="BodyValidator.cs" />
     <Compile Include="DatiGeneraliDocumentoValidator.cs" />
     <Compile Include="ScontoMaggiorazioneValidator.cs" />
     <Compile Include="RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
@@ -105,10 +105,10 @@
     <Compile Include="StabileOrganizzazioneValidator.cs" />
     <Compile Include="SedeCedentePrestatoreValidator.cs" />
     <Compile Include="DatiAnagraficiCedentePrestatoreValidator.cs" />
-    <Compile Include="FatturaElettronicaHeaderValidator.cs" />
+    <Compile Include="HeaderValidator.cs" />
     <Compile Include="DatiTrasmissioneValidator.cs" />
     <Compile Include="DeserializeAndSerialize.cs" />
-    <Compile Include="FatturaElettronicaValidator.cs" />
+    <Compile Include="FatturaValidator.cs" />
     <Compile Include="IdFiscaleValidator.cs" />
     <Compile Include="IdTrasmittenteValidator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

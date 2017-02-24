@@ -7,6 +7,7 @@ using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
 using Newtonsoft.Json;
+using System.Xml.Linq;
 
 namespace FatturaElettronica.Common
 {
@@ -76,19 +77,20 @@ namespace FatturaElettronica.Common
                 var value = property.GetValue(this, null);
                 if (value == null && !XmlOptions.SerializeNullValues) continue;
 
-                // if it's a BusinessObject instance just let it flush it's own data.
                 var child = value as BaseClassSerializable;
                 if (child != null) {
                     if (child.IsEmpty() && XmlOptions.SerializeEmptyBusinessObjects == false) continue;
-                    
-                    w.WriteStartElement((string.IsNullOrEmpty(child.XmlOptions.ElementName) ?  child.GetType().Name : child.XmlOptions.ElementName));
+
+                    var attribute = property.GetCustomAttributes(typeof(XmlElementAttribute), false)
+                        .Cast<XmlElementAttribute>()
+                        .FirstOrDefault();
+                    w.WriteStartElement((attribute == null ?  property.Name : attribute.ElementName));
                     child.WriteXml(w);
                     w.WriteEndElement();
 
                     continue;
                 }
 
-                // if property type is List<T>, assume it's of BusinessObjects and try to fetch them all from XML.
                 if (property.PropertyType.IsGenericList())
                 {
                     WriteXmlList(property.Name, value, w);
@@ -165,9 +167,13 @@ namespace FatturaElettronica.Common
             var properties = GetAllDataProperties().ToList();
             while (r.NodeType == XmlNodeType.Element) {
 
-                var property = properties.FirstOrDefault(n => n.Name.Equals(r.Name));
+                var property = properties
+                    .Where(prop => prop.GetCustomAttributes(typeof(XmlElementAttribute), false)
+                        .Where(ca => ((XmlElementAttribute)ca).ElementName == r.Name).Any())
+                    .FirstOrDefault();
+                if (property == null)
+                    property = properties.FirstOrDefault(n => n.Name.Equals(r.Name));
                 if (property == null) {
-                    // ignore unknown property.
                     r.Skip();
                     continue;
                 }
@@ -185,7 +191,7 @@ namespace FatturaElettronica.Common
                 // if property type is List<T>, try to fetch the list from XML.
                 if (type.IsGenericList())
                 {
-                    ReadXmlList(value, type, property.Name, r);
+                    ReadXmlList(value, type, r.Name, r);
                     continue;
                 }
 
@@ -203,9 +209,9 @@ namespace FatturaElettronica.Common
         /// Serializes one or more XML elements into a List of BusinessObjects.
         /// </summary>
         /// <param name="propertyValue">Property value. Must be a List of BusinessObject instances.</param>
-        /// <param name="propertyName">Property name.</param>
+        /// <param name="elementName">Property name.</param>
         /// <param name="r">Active XML stream reader.</param>
-        private static void ReadXmlList(object propertyValue, Type propertyType, string propertyName, XmlReader r)
+        private static void ReadXmlList(object propertyValue, Type propertyType, string elementName, XmlReader r)
         {
 
             var argumentType = propertyType.GetTypeInfo().GenericTypeArguments.Single();
@@ -218,7 +224,7 @@ namespace FatturaElettronica.Common
 
             var add = propertyType.GetMethod("Add");
 
-            while (r.NodeType == XmlNodeType.Element && r.Name == propertyName)
+            while (r.NodeType == XmlNodeType.Element && r.Name == elementName)
             {
                 if (argumentType.IsSubclassOfBusinessObject())
                 {

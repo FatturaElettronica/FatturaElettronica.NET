@@ -13,13 +13,13 @@ namespace Tests
         [TestMethod]
         public void SerializePrivatiHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati));
+            SerializeAndAssertRootElementAttributes(FatturaElettronica.Fattura.CreateInstance(Instance.Privati));
         }
 
         [TestMethod]
         public void SerializePubblicaAmministrazioneHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione));
+            SerializeAndAssertRootElementAttributes(FatturaElettronica.Fattura.CreateInstance(Instance.PubblicaAmministrazione));
         }
 
         [TestMethod]
@@ -58,9 +58,9 @@ namespace Tests
 
             File.Delete("challenge.xml");
         }
-        private FatturaElettronica.FatturaElettronica Deserialize(string fileName)
+        private FatturaElettronica.Fattura Deserialize(string fileName)
         {
-            var f = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.Privati);
+            var f = FatturaElettronica.Fattura.CreateInstance(Instance.Privati);
             var s = new XmlReaderSettings {IgnoreWhitespace = true};
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
@@ -68,10 +68,10 @@ namespace Tests
             }
             return f;
         }
-        private void ValidateInvoice(FatturaElettronica.FatturaElettronica f, string expectedFormat)
+        private void ValidateInvoice(FatturaElettronica.Fattura f, string expectedFormat)
         {
 
-            var header = f.FatturaElettronicaHeader;
+            var header = f.Header;
 
             // DatiTrasmissione
             Assert.AreEqual("00001", header.DatiTrasmissione.ProgressivoInvio);
@@ -99,7 +99,7 @@ namespace Tests
             Assert.AreEqual("RM", header.CessionarioCommittente.Sede.Provincia);
             Assert.AreEqual("IT", header.CessionarioCommittente.Sede.Nazione);
 
-            var body = f.FatturaElettronicaBody[0];
+            var body = f.Body[0];
             // DatiGeneraliDocumento
             Assert.AreEqual("TD01", body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento);
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
@@ -182,7 +182,7 @@ namespace Tests
             Assert.AreEqual(new DateTime(2015, 01, 30), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento);
             Assert.AreEqual(36.08m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
-        private void SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaElettronica f)
+        private void SerializeAndAssertRootElementAttributes(FatturaElettronica.Fattura f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
             {
@@ -197,7 +197,7 @@ namespace Tests
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            Assert.AreEqual(f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(f.Header.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
                             foreach (RootElement.XmlAttributeString a in RootElement.ExtraAttributes)
                             {

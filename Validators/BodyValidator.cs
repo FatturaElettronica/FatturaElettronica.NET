@@ -5,9 +5,9 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    public class FatturaElettronicaBodyValidator : AbstractValidator<FatturaElettronicaBody.FatturaElettronicaBody>
+    public class BodyValidator : AbstractValidator<FatturaElettronicaBody.Body>
     {
-        public FatturaElettronicaBodyValidator()
+        public BodyValidator()
         {
             RuleFor(x => x.DatiGenerali)
                 .SetValidator(new DatiGeneraliValidator());
@@ -38,7 +38,7 @@ namespace FatturaElettronica.Validators
                 .SetCollectionValidator(new AllegatiValidator());
         }
 
-        private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.FatturaElettronicaBody body)
+        private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.Body body)
         {
             foreach (var linea in body.DatiBeniServizi.DettaglioLinee)
             {
@@ -46,7 +46,7 @@ namespace FatturaElettronica.Validators
             }
             return true;
         }
-        private bool DatiRiepilogoValidateAgainstError00422(FatturaElettronicaBody.FatturaElettronicaBody body)
+        private bool DatiRiepilogoValidateAgainstError00422(FatturaElettronicaBody.Body body)
         {
             var totals = new Dictionary<decimal, Totals>();
 
@@ -79,7 +79,7 @@ namespace FatturaElettronica.Validators
             }
             return true;
         }
-        private bool DatiRiepilogoValidateAgainstError00419(FatturaElettronicaBody.FatturaElettronicaBody body)
+        private bool DatiRiepilogoValidateAgainstError00419(FatturaElettronicaBody.Body body)
         {
             var hash = new HashSet<decimal>();
             foreach (var cp in body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale)

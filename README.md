@@ -16,18 +16,18 @@
     using System.Xml;
     using System.Diagnostics;
 
-    // Instanzia una nuova fattura elettronica.
-    var fattura = FatturaElettronica.FatturaElettronica.CreateInstance(Instance.PubblicaAmministrazione);
+    // Usare il factory method CreateInstance() per ottenere una istanza di Fattura.
+    var fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione);
 
     // Lettura da file XML compatibile con formato SDI 1.2.
     var r = XmlReader.Create("IT01234567890_11111.xml", new XmlReaderSettings { IgnoreWhitespace = true });
     fattura.ReadXml(r);
 
     // Modifica valore.
-    fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl";
+    fattura.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl";
 
     // Convalida del documento.
-    var validator = new FatturaElettronicaValidator();
+    var validator = new FatturaValidator();
     var result = validator.Validate(fattura);
     Debug.WriteLine(result.IsValid);
 
@@ -51,7 +51,7 @@
     Debug.WriteLine(anagrafica.Validate().IsValid);
 
     // Serializzazione XML in osservanza allo standard SDI 1.2.
-    using (var w = XmlWriter.Create("IT01234567890_11111.xml", new XmlWriterSettings { Indent = true })) 
+    using (var w = XmlWriter.Create("IT01234567890_11111.xml", new XmlWriterSettings { Indent = true }))
     {
         fattura.WriteXml(w);
     }

@@ -8,8 +8,8 @@ using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 namespace Tests
 {
     [TestClass]
-    public class FatturaElettronicaBodyValidator
-        : BaseClass<FatturaElettronicaBody, FatturaElettronica.Validators.FatturaElettronicaBodyValidator>
+    public class BodyValidator
+        : BaseClass<Body, FatturaElettronica.Validators.BodyValidator>
     {
         [TestMethod]
         public void DatiGeneraliHasChildValidator()

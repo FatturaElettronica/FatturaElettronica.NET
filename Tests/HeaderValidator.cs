@@ -6,8 +6,8 @@ using FatturaElettronica.Tabelle;
 namespace Tests
 {
     [TestClass]
-    public class FatturaElettronicaHeaderValidator
-        : BaseClass<FatturaElettronicaHeader, FatturaElettronica.Validators.FatturaElettronicaHeaderValidator>
+    public class HeaderValidator
+        : BaseClass<Header, FatturaElettronica.Validators.HeaderValidator>
     {
         [TestMethod]
         public void DatiTramissioneHasChildValidator()

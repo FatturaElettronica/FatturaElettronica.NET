@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using System.Xml.Serialization;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {

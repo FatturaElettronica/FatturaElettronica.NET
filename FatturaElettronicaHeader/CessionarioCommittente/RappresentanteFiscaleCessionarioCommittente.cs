@@ -12,8 +12,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 
         public RappresentanteFiscaleCessionarioCommittente() {
 
-            XmlOptions.ElementName = "RapprentanteFiscale";
-
             _idFiscaleIva = new IdFiscaleIVA();
         }
         public RappresentanteFiscaleCessionarioCommittente(XmlReader r) : base(r) { }

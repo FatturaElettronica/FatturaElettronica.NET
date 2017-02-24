@@ -26,9 +26,5 @@
         /// Wether emty strings should be serialized or not. Defaults to <value>false</value>.
         /// </summary>
         public bool SerializeEmptyStrings { get; set; }
-        /// <summary>
-        /// XML element name. If null (the default) the class name will be used instead.
-        /// </summary>
-        public string ElementName { get; set; }
     }
 }

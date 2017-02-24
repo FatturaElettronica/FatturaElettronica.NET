@@ -84,7 +84,7 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="FatturaElettronica.cs">
+    <Compile Include="Fattura.cs">
       <SubType>
       </SubType>
     </Compile>
@@ -292,7 +292,7 @@
     <Compile Include="Validators\DatiRitenutaValidator.cs" />
     <Compile Include="Validators\DatiGeneraliDocumentoValidator.cs" />
     <Compile Include="Validators\DatiGeneraliValidator.cs" />
-    <Compile Include="Validators\FatturaElettronicaBodyValidator.cs" />
+    <Compile Include="Validators\BodyValidator.cs" />
     <Compile Include="Validators\TerzoIntermediarioOSoggettoEmittenteValidator.cs" />
     <Compile Include="Validators\RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
     <Compile Include="Validators\DenominazioneNomeCognomeValidator.cs" />
@@ -308,10 +308,10 @@
     <Compile Include="Validators\CedentePrestatoreValidator.cs" />
     <Compile Include="Validators\ContattiTrasmittenteValidator.cs" />
     <Compile Include="Validators\AnagraficaValidator.cs" />
-    <Compile Include="Validators\FatturaElettronicaHeaderValidator.cs" />
+    <Compile Include="Validators\HeaderValidator.cs" />
     <Compile Include="Validators\DatiTrasmissioneValidator.cs" />
     <Compile Include="Validators\IdFiscaleIVAValidator.cs" />
-    <Compile Include="Validators\FatturaElettronicaValidator.cs" />
+    <Compile Include="Validators\FatturaValidator.cs" />
     <Compile Include="Validators\IdTrasmittenteValidator.cs" />
   </ItemGroup>
   <ItemGroup>
