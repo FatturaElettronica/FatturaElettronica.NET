@@ -77,11 +77,11 @@ namespace FatturaElettronica.Common
                 if (value == null && !XmlOptions.SerializeNullValues) continue;
 
                 // if it's a BusinessObject instance just let it flush it's own data.
-                if (value is BaseClassSerializable child)
-                {
+                var child = value as BaseClassSerializable;
+                if (child != null) {
                     if (child.IsEmpty() && XmlOptions.SerializeEmptyBusinessObjects == false) continue;
-
-                    w.WriteStartElement((string.IsNullOrEmpty(child.XmlOptions.ElementName) ? child.GetType().Name : child.XmlOptions.ElementName));
+                    
+                    w.WriteStartElement((string.IsNullOrEmpty(child.XmlOptions.ElementName) ?  child.GetType().Name : child.XmlOptions.ElementName));
                     child.WriteXml(w);
                     w.WriteEndElement();
 

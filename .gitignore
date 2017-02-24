@@ -158,3 +158,6 @@ $RECYCLE.BIN/
 # packages folder
 packages
 !packages/respositories.config
+
+# ConsoleApp, used for verifying README code
+ConsoleApp/
