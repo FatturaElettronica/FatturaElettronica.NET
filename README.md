@@ -36,6 +36,7 @@
     {
         Debug.WriteLine(error.PropertyName);
         Debug.WriteLine(error.ErrorMessage);
+        // Nei casi di errore 4xx supportati ErrorCode conterrà il codice errore (es: "00423").
         Debug.WriteLine(error.ErrorCode);
     }
 
@@ -60,6 +61,8 @@
     var json = fattura.ToJson(JsonOptions.Indented);
     Debug.WriteLine(json);
 ```
+### Limitazioni
+In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server. 
 
 ## Portable Class Library
 La libreria gira senza modifiche sui seguenti ambienti:
