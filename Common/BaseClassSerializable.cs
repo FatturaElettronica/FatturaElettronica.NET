@@ -76,14 +76,14 @@ namespace FatturaElettronica.Common
                 var value = property.GetValue(this, null);
                 if (value == null && !XmlOptions.SerializeNullValues) continue;
 
-                if (value is BaseClassSerializable child)
-                {
+                var child = value as BaseClassSerializable;
+                if (child != null) {
                     if (child.IsEmpty() && XmlOptions.SerializeEmptyBusinessObjects == false) continue;
 
                     var attribute = property.GetCustomAttributes(typeof(XmlElementAttribute), false)
                         .Cast<XmlElementAttribute>()
                         .FirstOrDefault();
-                    w.WriteStartElement(attribute == null ? property.Name : attribute.ElementName);
+                    w.WriteStartElement(attribute == null ?  property.Name : attribute.ElementName);
                     child.WriteXml(w);
                     w.WriteEndElement();
 
