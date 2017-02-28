@@ -6,7 +6,23 @@ v0.4.0
 
 Non ancora rilasciata.
 
-- hic sunt leones.
+- Rinominata classe FatturaElettronica in Fattura.
+- Rinominata classe FatturaElettronicaHeader in Header.
+- Rinominata classe FatturaElettronicaBody in Body.
+- Rinominata proprietà Fattura.FatturaElettronicaHeader in Fattura.Header.
+- Rinominata proprietà Fattura.FatturaElettronicaBody in Fattura.Body.
+- Alcune classi spostate da FatturaElettronica.Common a FatturaElettronica.Tabelle
+- Classe BusinessObjects.BusinessObjectBase rinominata FatturaElettronica.BaseClass.
+- Classe BusinessObjects.BusinessObject rinominata FatturaElettronica.BaseClassSerializable.
+- Classe FatturaElettronica.Common.BusinessObject eliminata.
+- Persa dipendenza dal package BusinessObjects.
+- Acquisita dipendenza dal package FluentValidation.
+- Aggiunto namespace FatturaElettronica.Validators.
+- Aggiunta serie di classi dedicate alla convalida (FatturaValidator; HeaderValidator; ecc.)
+- Rimosso metodo IsValid(). Al suo posto usare proprietà ValidationResult.IsValid.
+- Rimossa proprietà Error. Al suo posto usare ValidationFailure.Errors.
+- Nuovo extension method Fattura.Validate(). Equivalente a FatturaValidator.Validate() (shortcut).
+- Consultare il README per esempi di codice aggiornati.
 
 v0.3.7
 ======
