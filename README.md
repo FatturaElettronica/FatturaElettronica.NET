@@ -36,7 +36,7 @@
     {
         Debug.WriteLine(error.PropertyName);
         Debug.WriteLine(error.ErrorMessage);
-        // Nei casi di errore 4xx supportati ErrorCode conterrà il codice errore (es: "00423").
+        // Nei casi di errore 2xx e 4xx ErrorCode conterrà il codice errore (es: "00423").
         Debug.WriteLine(error.ErrorCode);
     }
 
