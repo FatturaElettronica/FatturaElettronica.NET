@@ -14,15 +14,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         public AltriDatiGestionali() { }
         public AltriDatiGestionali(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add( new AndCompositeValidator("TipoDato", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 10)}));
-            rules.Add(new FLengthValidator("RiferimentoTesto", 1, 60));
-
-            return rules;
-        }
-
-        #region Properties
         /// <summary>
         /// Codice che identifica la tipologia di informazione
         /// </summary>
