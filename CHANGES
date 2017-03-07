@@ -1,6 +1,14 @@
 Changelog
 =========
 
+v0.3.7
+======
+
+Rilasciata il 7.3.2017.
+
+- Fix: Errore in convalida del campo Riferimento Testo: sono consentiti fino a 
+  60 caratteri. Closes #33.
+
 v0.3.6
 ======
 

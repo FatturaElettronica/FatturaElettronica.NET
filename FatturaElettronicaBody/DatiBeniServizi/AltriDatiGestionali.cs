@@ -20,7 +20,8 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         protected override List<Validator> CreateRules() {
             var rules = base.CreateRules();
             rules.Add( new AndCompositeValidator("TipoDato", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 10)}));
-            rules.Add(new FLengthValidator("RiferimentoTesto", 1, 35));
+            rules.Add(new FLengthValidator("RiferimentoTesto", 1, 60));
+
             return rules;
         }
 
