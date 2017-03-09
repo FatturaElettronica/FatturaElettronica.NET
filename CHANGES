@@ -4,7 +4,7 @@ Changelog
 v0.4.0
 ======
 
-Non ancora rilasciata.
+Rilasciata il 9.3.2017.
 
 - Rinominata classe FatturaElettronica in Fattura.
 - Rinominata classe FatturaElettronicaHeader in Header.
