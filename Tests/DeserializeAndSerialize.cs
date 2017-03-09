@@ -27,7 +27,7 @@ namespace Tests
         {
             // Deserialize from an official example file 
             // (downloaded from http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm)
-            DeserializeAndThenSerialize("../../Samples/IT01234567890_FPA02.xml", FormatoTrasmissione.PubblicaAmministrazione);
+            DeserializeAndThenSerialize("Samples/IT01234567890_FPA02.xml", FormatoTrasmissione.PubblicaAmministrazione);
         }
 
         [TestMethod]
@@ -35,7 +35,7 @@ namespace Tests
         {
             // Deserialize from an official example file 
             // (downloaded from http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm)
-            DeserializeAndThenSerialize("../../Samples/IT01234567890_FPR02.xml", FormatoTrasmissione.Privati);
+            DeserializeAndThenSerialize("Samples/IT01234567890_FPR02.xml", FormatoTrasmissione.Privati);
         }
 
         private void DeserializeAndThenSerialize(string filename, string expectedFormat)
@@ -58,9 +58,9 @@ namespace Tests
 
             File.Delete("challenge.xml");
         }
-        private FatturaElettronica.Fattura Deserialize(string fileName)
+        private Fattura Deserialize(string fileName)
         {
-            var f = FatturaElettronica.Fattura.CreateInstance(Instance.Privati);
+            var f = Fattura.CreateInstance(Instance.Privati);
             var s = new XmlReaderSettings {IgnoreWhitespace = true};
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
