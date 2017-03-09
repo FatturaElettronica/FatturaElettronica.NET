@@ -64,7 +64,7 @@
 ### Limitazioni
 In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server. 
 
-## Portable Class Library
+## Portabilità
 La libreria gira senza modifiche sui seguenti ambienti:
 
 - NET Framework 4.5 e superiori,
