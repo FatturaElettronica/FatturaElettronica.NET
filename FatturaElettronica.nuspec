@@ -8,7 +8,7 @@
     <owners>$author$</owners>
     <language>it-IT</language>
     <licenseUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE</licenseUrl>
-    <projectUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</projectUrl>
+    <projectUrl>http://fatturaelettronicaopensource.org/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>$description$</description>
     <releaseNotes>First public release.</releaseNotes>
