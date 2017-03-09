@@ -1,14 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
+﻿using System.Xml;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
 {
     /// <summary>
     /// Represents a ContattiTrasmittente object
     /// </summary>
-    public class ContattiTrasmittente : Common.BusinessObject
+    public class ContattiTrasmittente : BaseClassSerializable
     {
         private string _telefono;
         private string _email;
@@ -39,13 +37,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
                 NotifyChanged();
             }
         }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new LengthValidator("Telefono", 5, 12));
-            rules.Add(new LengthValidator("Email", 7, 256));
-            return rules;
-        }
     }
-
 }

@@ -1,41 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
 {
     /// <summary>
     /// Dati di dettaglio del pagamento.
     /// </summary>
-    public class DettaglioPagamento : Common.BusinessObject
+    public class DettaglioPagamento : BaseClassSerializable
     {
         public DettaglioPagamento() { }
         public DettaglioPagamento(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FLengthValidator("Beneficiario", 1, 200));
-            rules.Add(new AndCompositeValidator("ModalitaPagamento",
-                new List<Validator> {new FRequiredValidator(), new FModalitaPagamentoValidator()}));
-            rules.Add(new FRequiredValidator("ImportoPagamento"));
-            rules.Add(new FLengthValidator("CodUfficioPostale", 1, 20));
-            rules.Add(new FLengthValidator("CognomeQuietanzante", 1, 60));
-            rules.Add(new FLengthValidator("NomeQuietanzante", 1, 60));
-            rules.Add(new FLengthValidator("CFQuietanzante", 16));
-            rules.Add(new FLengthValidator("TitoloQuietanzante", 2, 10));
-            rules.Add(new FLengthValidator("IstitutoFinanziario", 1, 60));
-            rules.Add(new FLengthValidator("IBAN", 15, 34));
-            rules.Add(new FLengthValidator("ABI", 5));
-            rules.Add(new FLengthValidator("CAB", 5));
-            rules.Add(new FLengthValidator("BIC", 8, 11));
-            rules.Add(new FLengthValidator("CodicePagamento", 1, 60));
-            return rules;
-        }
-
-        #region Properties
         /// <summary>
         /// Beneficiario del pagamento (utilizzabile se si intende indicare un beneficiario diverso dal cedente/prestatore).
         /// </summary>
@@ -169,6 +145,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
         /// </summary>
         [DataProperty]
         public string CodicePagamento { get; set; }
-        #endregion
     }
 }

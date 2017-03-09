@@ -1,29 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using FatturaElettronica.Common;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Dati relativi alla ritenuta.
     /// </summary>
-    public class DatiRitenuta : Common.BusinessObject
+    public class DatiRitenuta : BaseClassSerializable
     {
         public DatiRitenuta() { }
         public DatiRitenuta(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("TipoRitenuta", new List<Validator>{new FRequiredValidator(), new FTipoRitenutaValidator()}));
-            rules.Add(new FRequiredValidator("ImportoRitenuta"));
-            rules.Add(new FRequiredValidator("AliquotaRitenuta"));
-            rules.Add(new AndCompositeValidator("CausalePagamento", new List<Validator>{new FRequiredValidator(), new FCausalePagamentoValidator()}));
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -52,6 +38,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public string CausalePagamento { get; set; }
-        #endregion
     }
 }

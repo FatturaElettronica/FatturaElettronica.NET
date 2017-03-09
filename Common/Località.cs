@@ -1,8 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
 
 namespace FatturaElettronica.Common
 {
@@ -10,42 +6,13 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Represents a Anagrafica object
     /// </summary>
-    public abstract class Località : BusinessObject
+    public abstract class Località : BaseClassSerializable
     {
         /// <summary>
         /// Constructor.
         /// </summary>
         protected Località() { }
         protected Località(XmlReader r) : base(r) { } 
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator(
-                "Indirizzo",
-                new List<Validator>{
-                    new FRequiredValidator(), 
-                    new FLengthValidator(1, 60)}));
-            rules.Add(new FLengthValidator("NumeroCivico", 1, 8));
-            rules.Add(new AndCompositeValidator(
-                "CAP",
-                new List<Validator>{
-                    new FRequiredValidator(), 
-                    new FLengthValidator(5)}));
-            rules.Add(new AndCompositeValidator(
-                "Comune",
-                new List<Validator>{
-                    new FRequiredValidator(), 
-                    new FLengthValidator(1, 60)}));
-            rules.Add(new FProvinciaValidator("Provincia"));
-            rules.Add(new AndCompositeValidator(
-                "Nazione",
-                new List<Validator>{
-                    new FRequiredValidator(), 
-                    new FCountryValidator()}));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -86,7 +53,5 @@ namespace FatturaElettronica.Common
         /// </summary>
         [DataProperty]
         public string Nazione { get; set; }
-
-        #endregion
     }
 }

@@ -1,18 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
 using FatturaElettronica.Common;
-using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Dati generali del documento principale ed i dati dei documenti correlati.
     /// </summary>
-    public class DatiGeneraliDocumento : Common.BusinessObject
+    public class DatiGeneraliDocumento : BaseClassSerializable
     {
 
         private readonly DatiRitenuta _datiRitenuta;
@@ -32,27 +28,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
             _causale = new List<string>();
         }
         public DatiGeneraliDocumento(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new ListOfStringLengthValidator("Causale","Lunghezza massima 200", 1,200));
-            rules.Add(new AndCompositeValidator("TipoDocumento", new List<Validator>{new FRequiredValidator(), new FTipoDocumentoValidator()}));
-            rules.Add(new AndCompositeValidator("Divisa", new List<Validator>{new FRequiredValidator(), new FDivisaValidator()}));
-            rules.Add(new FRequiredValidator("Data"));
-            rules.Add(new FSiValidator("Art73"));
-            rules.Add(new AndCompositeValidator("Numero", new List<Validator>{
-                new FRequiredValidator(),
-                new FLengthValidator(1,20),
-            new DelegateValidator("00425: il Numero della fattura (campo 2.1.1.4 <Numero>) deve contenere almeno un carattere numerico", ValidateAgainstErr00425)}));
-            return rules;
-        }
-
-		private bool ValidateAgainstErr00425()
-        {
-            return Numero.IndexOfAny("0123456789".ToCharArray()) > -1;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -130,6 +105,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public string Art73 { get; set; }
-        #endregion
     }
 }

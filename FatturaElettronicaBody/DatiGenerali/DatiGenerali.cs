@@ -1,8 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using FatturaElettronica.Common;
+using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -10,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <summary>
     /// Dati generali del documento principale e dati dei documenti correlati.
     /// </summary>
-    public class DatiGenerali : Common.BusinessObject
+    public class DatiGenerali : BaseClassSerializable
     {
         private readonly DatiGeneraliDocumento _datiGeneraliDocumento;
         private readonly List<DatiOrdineAcquisto> _datiOrdineAcquisto;
@@ -41,35 +39,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
             _fatturaPrincipale = new FatturaPrincipale();
         }
         public DatiGenerali(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiGeneraliDocumento"));
-            rules.Add(new DelegateValidator(
-				"DatiGeneraliDocumento.Data", 
-				"00418:  la data del documento Nota di Credito (campo 2.1.1.3 <Data>) non può essere antecedente alla data della fattura collegata (campo 2.1.6.3 <Data>), riferita nello stesso file.", 
-				ValidateAgainstErr00418));
-            return rules;
-        }
-
-		/// <summary>
-        /// Validate error 00418 from FatturaElettronicaPA v1.3
-        /// </summary>
-        /// <returns></returns>
-		private bool ValidateAgainstErr00418()
-        {
-            if (DatiGeneraliDocumento.TipoDocumento == "TD04")
-            {
-				foreach (var fc in DatiFattureCollegate)
-				{
-					if (DatiGeneraliDocumento.Data < fc.Data) return false;
-				}
-            }
-            return true;
-
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -139,7 +108,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public FatturaPrincipale FatturaPrincipale { get { return _fatturaPrincipale; } }
-
-        #endregion
-        }
+    }
 }

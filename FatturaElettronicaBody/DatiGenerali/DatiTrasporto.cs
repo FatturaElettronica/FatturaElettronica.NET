@@ -1,16 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Da valorizzare nel caso di fattura accompagnatoria per inserire informazioni relative al trasporto.
     /// </summary>
-    public class DatiTrasporto : Common.BusinessObject
+    public class DatiTrasporto : BaseClassSerializable
     {
         private readonly DatiAnagraficiVettore _datiAnagraficiVettore;
         private readonly IndirizzoResa _indirizzoResa;
@@ -23,15 +20,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
             _indirizzoResa = new IndirizzoResa();
         }
         public DatiTrasporto(XmlReader r) : base(r) { }
-
-        // TODO: Implementare le regole per i DatiTrasporto
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -117,6 +105,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         [DataProperty]
         [IgnoreXmlDateFormat]
         public DateTime? DataOraConsegna { get; set; }
-        #endregion
     }
 }

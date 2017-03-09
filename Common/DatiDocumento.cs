@@ -1,16 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Informazioni relative ad un documento a cui si fa riferimento.
     /// </summary>
-    public abstract class DatiDocumento : BusinessObject
+    public abstract class DatiDocumento : BaseClassSerializable
     {
         private readonly List<int> _riferimentoNumeroLinea;
 
@@ -19,21 +17,6 @@ namespace FatturaElettronica.Common
             _riferimentoNumeroLinea = new List<int>();
         }
         protected DatiDocumento(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            // TODO validazione per RiferimentoNumeroLinea 2.1.2.1 che è una List<int> ma
-            // deve avere len 1..4 come fosse stringa.
-            //rules.Add(new FLengthValidator("RiferimentoNumeroLinea", 1, 4));
-            rules.Add(new AndCompositeValidator("IdDocumento", new List<Validator>{new FRequiredValidator(), new FLengthValidator(1, 20)}));
-            rules.Add(new FLengthValidator("NumItem", 1, 20));
-            rules.Add(new FLengthValidator("CodiceCommessaConvenzione", 1, 100));
-            rules.Add(new FLengthValidator("CodiceCUP", 1, 15));
-            rules.Add(new FLengthValidator("CodiceCIG", 1, 15));
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -85,6 +68,5 @@ namespace FatturaElettronica.Common
         [DataProperty]
         // ReSharper disable once InconsistentNaming
         public string CodiceCIG { get; set; }
-        #endregion
     }
 }

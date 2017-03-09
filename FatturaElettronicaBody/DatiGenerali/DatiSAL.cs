@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -10,18 +7,10 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// Da valorizzare nei casi di fattura per stato di avanzamento.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class DatiSAL : Common.BusinessObject
+    public class DatiSAL : BaseClassSerializable
     {
         public DatiSAL() { }
         public DatiSAL(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("RiferimentoFase"));
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -32,6 +21,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public int RiferimentoFase { get; set; }
-        #endregion
     }
 }

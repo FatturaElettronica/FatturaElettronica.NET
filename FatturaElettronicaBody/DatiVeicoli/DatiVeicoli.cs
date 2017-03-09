@@ -1,28 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiVeicoli
 {
     /// <summary>
     /// Dati relativi ai veicoli di cui all'art. 38 comma 4 del ddl 331 del 1993.
     /// </summary>
-    public class DatiVeicoli : Common.BusinessObject
+    public class DatiVeicoli : BaseClassSerializable
     {
         public DatiVeicoli() { }
         public DatiVeicoli(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("Data"));
-            rules.Add( new AndCompositeValidator("TotalePercorso", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 15)}));
-            return rules;
-        }
-
-        #region Properties
         /// <summary>
         /// Data di prima immatricolazione o iscrizione nei pubblici registri.
         /// </summary>
@@ -34,6 +23,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiVeicoli
         /// </summary>
         [DataProperty]
         public string TotalePercorso { get; set; }
-        #endregion
     }
 }
