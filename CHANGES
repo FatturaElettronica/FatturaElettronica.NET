@@ -6,6 +6,7 @@ v0.4.1
 
 Non ancora rilasciata.
 
+- Fix: Nomi delle nazioni ISO-3166 Alpha 2 sono in Inglese. Closes #35.
 - Fix: Elementi FatturaElettronicaBody sono serializzati come 'Body'. Closes #34.
 - Aggiunto file .editconfig
 

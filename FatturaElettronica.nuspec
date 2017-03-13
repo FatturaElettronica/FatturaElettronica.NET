@@ -10,7 +10,7 @@
     <licenseUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE</licenseUrl>
     <projectUrl>http://fatturaelettronicaopensource.org/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <iconUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET/raw/nuovo_pattern_di_convalida/Artwork/FatturaElettronica64x64.png</iconUrl>
+    <iconUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET/raw/master/Artwork/FatturaElettronica64x64.png</iconUrl>
     <description>$description$</description>
     <releaseNotes>First public release.</releaseNotes>
     <copyright>Copyright 2017 Nicola Iarocci and Gestionali Amica</copyright>
