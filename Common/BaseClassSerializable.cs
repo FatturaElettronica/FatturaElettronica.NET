@@ -73,6 +73,11 @@ namespace FatturaElettronica.Common
         {
             foreach (var property in GetAllDataProperties())
             {
+                var attribute = property.GetCustomAttributes(typeof(XmlElementAttribute), false)
+                    .Cast<XmlElementAttribute>()
+                    .FirstOrDefault();
+                var propertyName = attribute == null ?  property.Name : attribute.ElementName;
+
                 var value = property.GetValue(this, null);
                 if (value == null && !XmlOptions.SerializeNullValues) continue;
 
@@ -80,10 +85,7 @@ namespace FatturaElettronica.Common
                 if (child != null) {
                     if (child.IsEmpty() && XmlOptions.SerializeEmptyBusinessObjects == false) continue;
 
-                    var attribute = property.GetCustomAttributes(typeof(XmlElementAttribute), false)
-                        .Cast<XmlElementAttribute>()
-                        .FirstOrDefault();
-                    w.WriteStartElement(attribute == null ?  property.Name : attribute.ElementName);
+                    w.WriteStartElement(propertyName);
                     child.WriteXml(w);
                     w.WriteEndElement();
 
@@ -92,27 +94,27 @@ namespace FatturaElettronica.Common
 
                 if (property.PropertyType.IsGenericList())
                 {
-                    WriteXmlList(property.Name, value, w);
+                    WriteXmlList(propertyName, value, w);
                     continue;
                 }
 
                 if (value is string) {
                     if (!string.IsNullOrEmpty(value.ToString()) || XmlOptions.SerializeEmptyStrings) {
-                        w.WriteElementString(property.Name, value.ToString());
+                       w.WriteElementString(propertyName, value.ToString());
                     }
                     continue;
                 }
                 if (value is DateTime && XmlOptions.DateTimeFormat != null && !property.GetCustomAttributes<IgnoreXmlDateFormat>().Any()) {
-                    w.WriteElementString(property.Name, ((DateTime)value).ToString(XmlOptions.DateTimeFormat));
+                    w.WriteElementString(propertyName, ((DateTime)value).ToString(XmlOptions.DateTimeFormat));
                     continue;
                 }
                 if (value is decimal && XmlOptions.DecimalFormat != null) {
-                    w.WriteElementString(property.Name, ((decimal)value).ToString(XmlOptions.DecimalFormat, CultureInfo.InvariantCulture));
+                    w.WriteElementString(propertyName, ((decimal)value).ToString(XmlOptions.DecimalFormat, CultureInfo.InvariantCulture));
                     continue;
                 }
 
                 // all else fail so just let the value flush straight to XML.
-                w.WriteStartElement(property.Name);
+                w.WriteStartElement(propertyName);
                 if (value != null) { 
                     w.WriteValue(value); 
                 }

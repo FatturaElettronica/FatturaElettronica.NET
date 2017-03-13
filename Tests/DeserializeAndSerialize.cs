@@ -199,7 +199,7 @@ namespace Tests
                         {
                             Assert.AreEqual(f.Header.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
-                            foreach (RootElement.XmlAttributeString a in RootElement.ExtraAttributes)
+                            foreach (var a in RootElement.ExtraAttributes)
                             {
                                 Assert.AreEqual(a.value, r.GetAttribute(string.Format("{0}:{1}", a.Prefix, a.LocalName)));
                             }
