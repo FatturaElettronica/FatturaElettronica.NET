@@ -4,7 +4,7 @@ Changelog
 v0.4.2
 ======
 
-Non ancora rilasciata.
+Rilascata il 17.3.2017.
 
 - Fix: Convalida DatiCassaPrevidenziale.Natura va fatta solo quando Aliquota uguale a 
   zero. Closes #36.
