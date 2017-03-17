@@ -33,9 +33,18 @@ namespace Tests
             validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge).WithErrorCode("00414");
         }
         [TestMethod]
-        public void NaturaOnlyAcceptsTableValues()
+        public void NaturaOnlyAcceptsTableValuesWhenAliquotaIsZero()
         {
+            challenge.AliquotaIVA = 0;
             AssertOnlyAcceptsTableValues<Natura>(x => x.Natura);
+
+        }
+        [TestMethod]
+        public void NaturaIsOnlyValidatedWhenIsNotZero()
+        {
+            challenge.Natura = null;
+            challenge.AliquotaIVA = 1;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
         }
         [TestMethod]
         public void RiferimentoAmministrazioneIsOptional()

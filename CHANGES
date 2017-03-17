@@ -1,10 +1,18 @@
 Changelog
 =========
 
-v0.4.1
+v0.4.2
 ======
 
 Non ancora rilasciata.
+
+- Fix: Convalida DatiCassaPrevidenziale.Natura va fatta solo quando Aliquota uguale a 
+  zero. Closes #36.
+
+v0.4.1
+======
+
+Rilasciata il 14.3.2017.
 
 - Fix: Nomi delle nazioni ISO-3166 Alpha 2 sono in Inglese. Closes #35.
 - Fix: Elementi FatturaElettronicaBody sono serializzati come 'Body'. Closes #34.

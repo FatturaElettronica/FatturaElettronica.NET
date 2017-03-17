@@ -24,10 +24,11 @@ namespace FatturaElettronica.Validators
                 .NotEmpty()
                 .When(x => x.AliquotaIVA == 0).WithErrorCode("00413");
             RuleFor(x => x.Natura)
+                .SetValidator(new IsValidValidator<Natura>())
+                .When(x => x.AliquotaIVA == 0);
+            RuleFor(x => x.Natura)
                 .Empty()
                 .When(x => x.AliquotaIVA != 0).WithErrorCode("00414");
-            RuleFor(x=>x.Natura)
-                .SetValidator(new IsValidValidator<Natura>());
             RuleFor(x => x.RiferimentoAmministrazione)
                 .Length(1, 20)
                 .When(x=>!string.IsNullOrEmpty(x.RiferimentoAmministrazione));
