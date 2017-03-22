@@ -329,8 +329,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Artwork\FatturaElettronica420x420.png" />
-    <Content Include="Artwork\FatturaElettronica64x64.png" />
+    <None Include="Artwork\FatturaElettronica420x420.png" />
+    <None Include="Artwork\FatturaElettronica64x64.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
