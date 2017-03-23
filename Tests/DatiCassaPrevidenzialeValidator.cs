@@ -57,6 +57,11 @@ namespace Tests
             AssertMinMaxLength(x => x.RiferimentoAmministrazione, 1, 20);
         }
         [TestMethod]
+        public void RiferimentoAmministrazioneMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.RiferimentoAmministrazione);
+        }
+        [TestMethod]
         public void RitenutaIsOptional()
         {
             AssertOptional(x => x.Ritenuta);

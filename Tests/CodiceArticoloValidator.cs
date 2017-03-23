@@ -18,6 +18,11 @@ namespace Tests
             AssertMinMaxLength(x => x.CodiceTipo, 1, 35);
         }
         [TestMethod]
+        public void CodiceTipoMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.CodiceTipo);
+        }
+        [TestMethod]
         public void CodiceValoreIsRequired()
         {
             AssertRequired(x => x.CodiceValore);
@@ -26,6 +31,11 @@ namespace Tests
         public void CodiceValoreMinMaxLength()
         {
             AssertMinMaxLength(x => x.CodiceValore, 1, 35);
+        }
+        [TestMethod]
+        public void CodiceValoreMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.CodiceValore);
         }
     }
 }

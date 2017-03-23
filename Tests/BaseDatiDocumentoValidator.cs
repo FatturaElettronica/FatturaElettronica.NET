@@ -20,6 +20,11 @@ namespace Tests
             AssertMinMaxLength(x => x.IdDocumento, 1, 20);
         }
         [TestMethod]
+        public void IdDocumentMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.IdDocumento);
+        }
+        [TestMethod]
         public void NumItemIsOptional()
         {
             AssertOptional(x => x.NumItem);
@@ -30,9 +35,19 @@ namespace Tests
             AssertMinMaxLength(x => x.NumItem, 1, 20);
         }
         [TestMethod]
+        public void NumItemMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.NumItem);
+        }
+        [TestMethod]
         public void CodiceCommessaIsOptional()
         {
             AssertOptional(x => x.CodiceCommessaConvenzione);
+        }
+        [TestMethod]
+        public void CodiceCommessaMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.CodiceCommessaConvenzione);
         }
         [TestMethod]
         public void CodiceCommessaMinMaxLength()
@@ -50,6 +65,11 @@ namespace Tests
             AssertMinMaxLength(x => x.CodiceCUP, 1, 15);
         }
         [TestMethod]
+        public void CodiceCUPMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.CodiceCUP);
+        }
+        [TestMethod]
         public void CodiceCIGIsOptional()
         {
             AssertOptional(x => x.CodiceCIG);
@@ -58,6 +78,11 @@ namespace Tests
         public void CodiceCIGMinMaxLength()
         {
             AssertMinMaxLength(x => x.CodiceCIG, 1, 15);
+        }
+        [TestMethod]
+        public void CodiceCIGMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.CodiceCIG);
         }
     }
 }

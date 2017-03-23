@@ -13,6 +13,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode(expectedErrorCode)
                 .Length(1, 80)
                 .WithErrorCode(expectedErrorCode)
+                .Latin1SupplementValidator()
                 .When(x => string.IsNullOrEmpty(x.CognomeNome));
             RuleFor(x => x.Denominazione)
                 .Empty()
@@ -23,6 +24,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode(expectedErrorCode)
                 .Length(1, 60)
                 .WithErrorCode(expectedErrorCode)
+                .Latin1SupplementValidator()
                 .When(x => string.IsNullOrEmpty(x.Denominazione));
             RuleFor(x => x.Nome)
                 .Empty()
@@ -33,6 +35,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode(expectedErrorCode)
                 .Length(1, 60)
                 .WithErrorCode(expectedErrorCode)
+                .Latin1SupplementValidator()
                 .When(x => string.IsNullOrEmpty(x.Denominazione));
             RuleFor(x => x.Cognome)
                 .Empty()

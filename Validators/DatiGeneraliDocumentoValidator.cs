@@ -16,6 +16,7 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new IsValidValidator<Divisa>());
             RuleFor(x => x.Numero)
                 .NotEmpty()
+                .BasicLatinValidator()
                 .Length(1, 20);
             RuleFor(x => x.Numero)
                 .Matches(@"\d")
@@ -35,7 +36,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00415");
             RuleFor(x => x.ScontoMaggiorazione).SetCollectionValidator(new ScontoMaggiorazioneValidator());
             RuleFor(x => x.Causale)
-                .SetCollectionValidator(new StringLengthValidator(1, 200));
+                .SetCollectionValidator(new CausaleValidator(1, 200));
             RuleFor(x => x.Art73)
                 .Equal("SI")
                 .When(x => !string.IsNullOrEmpty(x.Art73));

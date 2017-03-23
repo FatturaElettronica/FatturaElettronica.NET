@@ -143,6 +143,27 @@ namespace Tests
             prop.SetValue(challenge, "SI");
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
         }
+        protected void AssertMustBeBasicLatin(Expression<Func<TClass, string>> outExpr)
+        {
+            var prop = GetProperty(outExpr);
+
+            // Important: test string not longer than 10. Must include a number.
+            prop.SetValue(challenge, "test ~tes1");
+            validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
+            prop.SetValue(challenge, "test Àtes1");
+            validator.ShouldHaveValidationErrorFor(outExpr, challenge);
+        }
+        protected void AssertMustBeLatin1Supplement(Expression<Func<TClass, string>> outExpr)
+        {
+            var prop = GetProperty(outExpr);
+
+            prop.SetValue(challenge, "test ~tes1");
+            validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
+            prop.SetValue(challenge, "test Àtes1");
+            validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
+            prop.SetValue(challenge, "test ›tes1");
+            validator.ShouldHaveValidationErrorFor(outExpr, challenge);
+        }
         private PropertyInfo GetProperty<T>(Expression<Func<TClass, T>> outExpr)
         {
             var expr = (MemberExpression)outExpr.Body;

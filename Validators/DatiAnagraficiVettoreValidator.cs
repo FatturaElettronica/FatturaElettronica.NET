@@ -14,6 +14,7 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new AnagraficaValidator());
             RuleFor(x => x.NumeroLicenzaGuida)
                 .Length(1,20)
+                .BasicLatinValidator()
                 .When(x => !string.IsNullOrEmpty(x.NumeroLicenzaGuida));
         }
     }

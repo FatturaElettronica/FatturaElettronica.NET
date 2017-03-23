@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentValidation.TestHelper;
 using FatturaElettronica.Common;
 
 namespace Tests
@@ -18,6 +19,11 @@ namespace Tests
             AssertMinMaxLength(x => x.Titolo, 2, 10);
         }
         [TestMethod]
+        public void TitoloMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.Titolo);
+        }
+        [TestMethod]
         public void CodEORIsOptional()
         {
             AssertOptional(x => x.CodEORI);
@@ -26,6 +32,11 @@ namespace Tests
         public void CodEORIMinMaxLength()
         {
             AssertMinMaxLength(x => x.CodEORI, 13, 17);
+        }
+        [TestMethod]
+        public void DenominazioneMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.Denominazione);
         }
     }
 }

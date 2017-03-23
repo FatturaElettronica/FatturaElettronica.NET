@@ -76,5 +76,10 @@ namespace Tests
         {
             AssertMinMaxLength(x => x.RiferimentoNormativo, 1, 100);
         }
+        [TestMethod]
+        public void RiferimentoNormativoMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.RiferimentoNormativo);
+        }
     }
 }

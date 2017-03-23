@@ -26,6 +26,11 @@ namespace Tests
             AssertMinMaxLength(x => x.MezzoTrasporto, 1, 80);
         }
         [TestMethod]
+        public void MezzoTrasportoMinMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.MezzoTrasporto);
+        }
+        [TestMethod]
         public void CausaleTrasportoIsOptional()
         {
             AssertOptional(x => x.CausaleTrasporto);
@@ -34,6 +39,11 @@ namespace Tests
         public void CausaleTrasportoMinMaxLength()
         {
             AssertMinMaxLength(x => x.CausaleTrasporto, 1, 100);
+        }
+        [TestMethod]
+        public void CausaleTrasportoMinMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.CausaleTrasporto);
         }
         [TestMethod]
         public void DescrizioneIsOptional()
@@ -46,6 +56,11 @@ namespace Tests
             AssertMinMaxLength(x => x.Descrizione, 1, 100);
         }
         [TestMethod]
+        public void DescrizioneMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.Descrizione);
+        }
+        [TestMethod]
         public void UnitaMisuraPesoIsOptional()
         {
             AssertOptional(x => x.UnitaMisuraPeso);
@@ -54,6 +69,11 @@ namespace Tests
         public void UnitaMisuraPesoMinMaxLength()
         {
             AssertMinMaxLength(x => x.UnitaMisuraPeso, 1, 10);
+        }
+        [TestMethod]
+        public void UnitaMisuraPesoMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.UnitaMisuraPeso);
         }
         [TestMethod]
         public void TipoResaIsOptional()

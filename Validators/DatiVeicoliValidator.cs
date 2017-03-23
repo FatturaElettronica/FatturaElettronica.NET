@@ -11,6 +11,7 @@ namespace FatturaElettronica.Validators
                 .NotNull();
             RuleFor(x => x.TotalePercorso)
                 .NotEmpty()
+                .BasicLatinValidator()
                 .Length(1, 15);
         }
     }

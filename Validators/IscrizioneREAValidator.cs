@@ -13,6 +13,7 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new IsValidValidator<Provincia>());
             RuleFor(x => x.NumeroREA)
                 .NotEmpty()
+                .BasicLatinValidator()
                 .Length(1, 20);
             RuleFor(x => x.SocioUnico)
                 .SetValidator(new IsValidValidator<SocioUnico>())

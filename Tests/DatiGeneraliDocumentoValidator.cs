@@ -42,6 +42,11 @@ namespace Tests
             AssertMinMaxLength(x => x.Numero, 1, 20, filler:'1');
         }
         [TestMethod]
+        public void NumeroMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.Numero);
+        }
+        [TestMethod]
         public void NumeroMustHaveAtLeatOneNumericChar()
         {
             challenge.Numero = "hello";
@@ -85,7 +90,7 @@ namespace Tests
         [TestMethod]
         public void CausaleHasCollectionValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.Causale, typeof(FatturaElettronica.Validators.StringLengthValidator));
+            validator.ShouldHaveChildValidator(x => x.Causale, typeof(CausaleValidator));
         }
         [TestMethod]
         public void Art73IsOptional()

@@ -40,6 +40,11 @@ namespace Tests
             AssertMinMaxLength(x => x.AlboProfessionale, 1, 60);
         }
         [TestMethod]
+        public void AlboProfessionaleMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.AlboProfessionale);
+        }
+        [TestMethod]
         public void ProvinciaAlboIsOptional()
         {
             AssertOptional(x => x.ProvinciaAlbo);
@@ -58,6 +63,11 @@ namespace Tests
         public void NumeroIscrizioneAlboMinMaxLength()
         {
             AssertMinMaxLength(x => x.NumeroIscrizioneAlbo, 1, 60);
+        }
+        [TestMethod]
+        public void NumeroIscrizioneAlboMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.NumeroIscrizioneAlbo);
         }
         [TestMethod]
         public void RegimeFiscaleIsRequired()

@@ -16,9 +16,11 @@ namespace FatturaElettronica.Validators
                 .SetCollectionValidator(new CodiceArticoloValidator());
             RuleFor(x=>x.Descrizione)
                 .NotEmpty()
-                .Length(1, 1000);
+                .Length(1, 1000)
+                .Latin1SupplementValidator();
             RuleFor(x => x.UnitaMisura)
                 .Length(1, 10)
+                .BasicLatinValidator()
                 .When(x => !string.IsNullOrEmpty(x.UnitaMisura));
             RuleFor(x => x.ScontoMaggiorazione)
                 .SetCollectionValidator(new ScontoMaggiorazioneValidator());
@@ -44,6 +46,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00401");
             RuleFor(x => x.RiferimentoAmministrazione)
                 .Length(1, 20)
+                .BasicLatinValidator()
                 .When(x => !string.IsNullOrEmpty(x.RiferimentoAmministrazione));
             RuleFor(x => x.AltriDatiGestionali)
                 .SetCollectionValidator(new AltriDatiGestionaliValidator());
