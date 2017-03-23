@@ -17,5 +17,10 @@ namespace Tests
         {
             AssertMinMaxLength(x => x.NumeroDDT, 1, 20);
         }
+        [TestMethod]
+        public void NumeroDDTMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.NumeroDDT);
+        }
     }
 }

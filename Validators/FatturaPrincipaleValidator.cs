@@ -9,6 +9,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.NumeroFatturaPrincipale)
                 .NotEmpty()
+                .BasicLatinValidator()
                 .Length(1, 20);
             RuleFor(x => x.DataFatturaPrincipale)
                 .NotNull();

@@ -17,6 +17,11 @@ namespace Tests
             AssertMinMaxLength(x => x.TotalePercorso, 1, 15);
         }
         [TestMethod]
+        public void TotalePercorsoMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.TotalePercorso);
+        }
+        [TestMethod]
         public void DataIsRequired()
         {
             AssertRequired(x => x.Data);

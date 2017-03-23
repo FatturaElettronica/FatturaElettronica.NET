@@ -1,5 +1,6 @@
 ﻿using FatturaElettronica.Tabelle;
 using FluentValidation;
+using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
@@ -20,6 +21,11 @@ namespace Tests
         public void IndirizzoMinMaxLength()
         {
             AssertMinMaxLength(x => x.Indirizzo, 1, 60);
+        }
+        [TestMethod]
+        public void IndirizzoMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.Indirizzo);
         }
         [TestMethod]
         public void NumeroCivicoIsOptional()
@@ -50,6 +56,11 @@ namespace Tests
         public void ComuneMinMaxLength()
         {
             AssertMinMaxLength(x => x.Comune, 1, 60);
+        }
+        [TestMethod]
+        public void ComuneMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.Indirizzo);
         }
         [TestMethod]
         public void ProvinciaOptional()

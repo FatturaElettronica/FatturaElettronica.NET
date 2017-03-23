@@ -19,6 +19,7 @@ namespace Tests
 
             AssertRequired(x => x.Denominazione, expectedErrorCode:"00200");
             AssertMinMaxLength(x => x.Denominazione, 1, 80, expectedErrorCode:"00200");
+            AssertMustBeLatin1Supplement(x => x.Denominazione);
         }
         [TestMethod]
         public void DenominazioneMustBeEmptyWhenNomeCognoneIsNotEmpty()
@@ -40,6 +41,7 @@ namespace Tests
 
             AssertRequired(x => x.Nome, expectedErrorCode:"00200");
             AssertMinMaxLength(x => x.Nome, 1, 60, expectedErrorCode:"00200");
+            AssertMustBeLatin1Supplement(x => x.Nome);
         }
         [TestMethod]
         public void NomeMustBeEmptyWhenDenominazioneIsNotEmpty()
@@ -61,6 +63,7 @@ namespace Tests
 
             AssertRequired(x => x.Cognome, expectedErrorCode:"00200");
             AssertMinMaxLength(x => x.Cognome, 1, 60, expectedErrorCode:"00200");
+            AssertMustBeLatin1Supplement(x => x.Cognome);
         }
         [TestMethod]
         public void CognomeMustBeEmptyWhenDenominazioneIsNotEmpty()

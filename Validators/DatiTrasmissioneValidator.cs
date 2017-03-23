@@ -12,6 +12,7 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new IdTrasmittenteValidator());
             RuleFor(dt => dt.ProgressivoInvio)
                 .NotEmpty()
+                .BasicLatinValidator()
                 .Length(1, 10);
             RuleFor(dt => dt.FormatoTrasmissione)
                 .NotEmpty()

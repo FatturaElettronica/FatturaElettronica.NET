@@ -10,7 +10,8 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.Indirizzo)
                 .NotEmpty()
-                .Length(1, 60);
+                .Length(1, 60)
+                .Latin1SupplementValidator();
             RuleFor(x => x.NumeroCivico)
                 .Length(1, 8)
                 .When(x => !string.IsNullOrEmpty(x.NumeroCivico));
@@ -19,7 +20,8 @@ namespace FatturaElettronica.Validators
                 .Length(5);
             RuleFor(x => x.Comune)
                 .NotEmpty()
-                .Length(1, 60);
+                .Length(1, 60)
+                .Latin1SupplementValidator();
             RuleFor(x => x.Provincia)
                 .SetValidator(new IsValidValidator<Provincia>())
                 .When(x => !string.IsNullOrEmpty(x.Provincia));

@@ -29,6 +29,11 @@ namespace Tests
             AssertMinMaxLength(x => x.NumeroREA, 1, 20);
         }
         [TestMethod]
+        public void NumeroREAMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.NumeroREA);
+        }
+        [TestMethod]
         public void SocioUnicoIsOptional()
         {
             AssertOptional(x => x.SocioUnico);

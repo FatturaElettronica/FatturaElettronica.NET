@@ -8,6 +8,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.Titolo)
                 .Length(2, 10)
+                .BasicLatinValidator()
                 .When(x=>!string.IsNullOrEmpty(x.Titolo));
             RuleFor(x => x.CodEORI)
                 .Length(13, 17)

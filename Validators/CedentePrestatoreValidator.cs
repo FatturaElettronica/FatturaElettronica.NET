@@ -21,6 +21,7 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new ContattiValidator())
                 .When(x=>!x.Contatti.IsEmpty());
             RuleFor(x => x.RiferimentoAmministrazione)
+                .BasicLatinValidator()
                 .Length(1, 20);
         }
     }

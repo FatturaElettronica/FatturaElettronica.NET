@@ -37,5 +37,10 @@ namespace Tests
         {
             AssertMinMaxLength(x => x.NumeroLicenzaGuida, 1, 20);
         }
+        [TestMethod]
+        public void NumeroLicenzaGuidaMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.NumeroLicenzaGuida);
+        }
     }
 }

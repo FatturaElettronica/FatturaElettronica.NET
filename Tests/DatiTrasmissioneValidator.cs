@@ -30,6 +30,11 @@ namespace Tests
             AssertMinMaxLength(x => x.ProgressivoInvio, 1, 10);
         }
         [TestMethod]
+        public void ProgressivoInvioMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.ProgressivoInvio);
+        }
+        [TestMethod]
         public void FormatoTrasmissioneIsRequired()
         {
             AssertRequired(x => x.FormatoTrasmissione);

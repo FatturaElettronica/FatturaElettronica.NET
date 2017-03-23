@@ -18,6 +18,11 @@ namespace Tests
             AssertMinMaxLength(x => x.NumeroFatturaPrincipale, 1, 20);
         }
         [TestMethod]
+        public void NumeroFatturaPrincipaleMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.NumeroFatturaPrincipale);
+        }
+        [TestMethod]
         public void DataFatturaPrincipaleIsRequired()
         {
             AssertRequired(x => x.DataFatturaPrincipale);

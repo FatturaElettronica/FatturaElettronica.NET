@@ -272,6 +272,7 @@
     <Compile Include="Validators\DatiRiepilogoValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
     <Compile Include="Validators\CodiceArticoloValidator.cs" />
+    <Compile Include="Validators\LatinValidators.cs" />
     <Compile Include="Validators\IsValidValidator.cs" />
     <Compile Include="Validators\DatiBeniServiziValidator.cs" />
     <Compile Include="Validators\DettaglioLineeValidator.cs" />
@@ -285,7 +286,7 @@
     <Compile Include="Validators\DatiOrdineAcquistoValidator.cs" />
     <Compile Include="Validators\DatiDocumentoValidator.cs" />
     <Compile Include="Validators\IndirizzoResaValidator.cs" />
-    <Compile Include="Validators\StringLengthValidator.cs" />
+    <Compile Include="Validators\CausaleValidator.cs" />
     <Compile Include="Validators\ScontoMaggiorazioneValidator.cs" />
     <Compile Include="Validators\DatiCassaPrevidenzialeValidator.cs" />
     <Compile Include="Validators\DatiBolloValidator.cs" />

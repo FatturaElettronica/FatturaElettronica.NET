@@ -6,6 +6,7 @@ v0.4.3
 
 Non ancora rilasciata.
 
+- Fix: Validazione conformità ai gruppi IsBasicLatin e IsLatin-1Supplement. Closes #29.
 - Fix: Non includere il folder Artwork nel package NuGet. Closes #37.
 
 v0.4.2

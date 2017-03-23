@@ -39,6 +39,11 @@ namespace Tests
             AssertMinMaxLength(x => x.Descrizione, 1, 1000);
         }
         [TestMethod]
+        public void DescrizioneMustBeLatin1Supplement()
+        {
+            AssertMustBeLatin1Supplement(x => x.Descrizione);
+        }
+        [TestMethod]
         public void UnitaMisuraIsOptional()
         {
             AssertOptional(x => x.UnitaMisura);
@@ -47,6 +52,11 @@ namespace Tests
         public void UnitaMisuraMinMaxLength()
         {
             AssertMinMaxLength(x => x.UnitaMisura, 1, 10);
+        }
+        [TestMethod]
+        public void UnitaMisuraMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.UnitaMisura);
         }
         [TestMethod]
         public void ScontoMaggioazioneHasChildValidator() 
@@ -155,6 +165,11 @@ namespace Tests
         public void RiferimentoAmministrazioneMinMaxLength()
         {
             AssertMinMaxLength(x => x.RiferimentoAmministrazione, 1, 20);
+        }
+        [TestMethod]
+        public void RiferimentoAmministrazioneMustBeBasicLatin()
+        {
+            AssertMustBeBasicLatin(x => x.RiferimentoAmministrazione);
         }
         [TestMethod]
         public void AltriDatiGestionaliHasChildValidator()

@@ -34,6 +34,7 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.EsigibilitaIVA));
             RuleFor(x => x.RiferimentoNormativo)
                 .Length(1, 100)
+                .Latin1SupplementValidator()
                 .When(x => !string.IsNullOrEmpty(x.RiferimentoNormativo));
         }
         private bool ImpostaValidateAgainstError00421(DatiRiepilogo datiRiepilogo)

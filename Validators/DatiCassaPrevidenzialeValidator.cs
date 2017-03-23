@@ -31,6 +31,7 @@ namespace FatturaElettronica.Validators
                 .When(x => x.AliquotaIVA != 0).WithErrorCode("00414");
             RuleFor(x => x.RiferimentoAmministrazione)
                 .Length(1, 20)
+                .BasicLatinValidator()
                 .When(x=>!string.IsNullOrEmpty(x.RiferimentoAmministrazione));
         }
     }
