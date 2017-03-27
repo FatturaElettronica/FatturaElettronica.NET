@@ -10,6 +10,7 @@ Questa versione recepisce le modifiche introdotte con la v1.2.1 delle specifiche
 
 - Regime Fiscale RF03 è abrogato. Viene restituito errore 00459 se utilizzato. 
 - Natura N5: descrizione aggiornata a "regime del margine / IVA non esposta in fattura".
+- Le proprietà Codice e Nome della classe astratta Tabella non sono più protette in scrittura.
 
 v0.4.3
 ======
