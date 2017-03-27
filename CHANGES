@@ -6,8 +6,10 @@ v0.5.0
 
 Non ancora rilasciata.
 
-- Regime Fiscale RF03 è abrogato a partire da v1.2.1 del 15 Marzo 2017. Viene restituito 
-  errore 00459 se utilizzato. Addresses #40.
+Questa versione recepisce le modifiche introdotte con la v1.2.1 delle specifiche tecniche PA.
+
+- Regime Fiscale RF03 è abrogato. Viene restituito errore 00459 se utilizzato. 
+- Natura N5: descrizione aggiornata a "regime del margine / IVA non esposta in fattura".
 
 v0.4.3
 ======
