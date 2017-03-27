@@ -3,7 +3,7 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/gft4hjbct0xgwogq?svg=true)](https://ci.appveyor.com/project/nicolaiarocci/fatturaelettronica-net)
 
 ## Caratteristiche
-- Lettura e scrittura nel [formato standard v1.2][pa] (XML).
+- Lettura e scrittura nel [formato standard v1.2.1][pa] (XML).
 - Supporta sia fatture elettroniche tra privati che con la Pubblica Amministrazione.
 - Convalida in osservanza delle specifiche tecniche ufficiali.
 - Supporto per la serializzazione in formato JSON
@@ -20,7 +20,7 @@
     // Usare il factory method CreateInstance() per ottenere una istanza di Fattura.
     var fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione);
 
-    // Lettura da file XML compatibile con formato SDI 1.2.
+    // Lettura da file XML compatibile con formato SDI 1.2.1.
     var r = XmlReader.Create("IT01234567890_11111.xml", new XmlReaderSettings { IgnoreWhitespace = true });
     fattura.ReadXml(r);
 
@@ -52,7 +52,7 @@
     // Oppure come già visto:
     Debug.WriteLine(anagrafica.Validate().IsValid);
 
-    // Serializzazione XML in osservanza allo standard SDI 1.2.
+    // Serializzazione XML in osservanza allo standard SDI 1.2.1.
     using (var w = XmlWriter.Create("IT01234567890_11111.xml", new XmlWriterSettings { Indent = true }))
     {
         fattura.WriteXml(w);
@@ -91,7 +91,7 @@ dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 ## Licenza
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.2.pdf 
+[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.2.1.pdf 
 [bo]: http://github.com/FatturaElettronica/BusinessObjects 
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
