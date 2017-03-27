@@ -272,6 +272,7 @@
     <Compile Include="Validators\DatiRiepilogoValidator.cs" />
     <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
     <Compile Include="Validators\CodiceArticoloValidator.cs" />
+    <Compile Include="Validators\RegimeFiscaleValidator.cs" />
     <Compile Include="Validators\LatinValidators.cs" />
     <Compile Include="Validators\IsValidValidator.cs" />
     <Compile Include="Validators\DatiBeniServiziValidator.cs" />
