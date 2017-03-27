@@ -29,7 +29,8 @@ namespace FatturaElettronica.Validators
                 .When(x=>!string.IsNullOrEmpty(x.NumeroIscrizioneAlbo));
             RuleFor(x => x.RegimeFiscale)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<RegimeFiscale>());
+                .SetValidator(new RegimeFiscaleValidator<RegimeFiscale>());
+
         }
     }
 }

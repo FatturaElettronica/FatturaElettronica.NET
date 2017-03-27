@@ -10,7 +10,6 @@
                 {
                     new RegimeFiscale { Codice = "RF01", Nome = "Ordinario" },
                     new RegimeFiscale { Codice = "RF02", Nome = "Contribuenti minimi (art.1, c.96-117, L. 244/07 )"},
-                    new RegimeFiscale { Codice = "RF03", Nome = "Nuove iniziative produttive (art.13, L. 388/00 )"},
                     new RegimeFiscale { Codice = "RF04", Nome = "Agricoultura e attività connesse e pesca (artt.34 e 34-bis, DPR 633/72 )"},
                     new RegimeFiscale { Codice = "RF05", Nome = "Vendita sali e tabacchi (art.74, c.1, DPR 633/72 )"},
                     new RegimeFiscale { Codice = "RF06", Nome = "Commercio fiammiferi (art.74, c.1, DPR 633/72 )"},

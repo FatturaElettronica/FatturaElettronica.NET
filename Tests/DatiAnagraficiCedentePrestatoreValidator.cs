@@ -77,7 +77,14 @@ namespace Tests
         [TestMethod]
         public void RegimeFiscaleOnlyAcceptsTableValues()
         {
-            AssertOnlyAcceptsTableValues<RegimeFiscale>(x => x.RegimeFiscale);
+            AssertOnlyAcceptsTableValues<FatturaElettronica.Tabelle.RegimeFiscale>(x => x.RegimeFiscale);
+        }
+        [TestMethod]
+        public void RegimeFiscaleRF03Abrogated()
+        {
+            // RF03 è abrogato a partire dalla v1.2.1 del 15 Marzo 2017.
+            challenge.RegimeFiscale = "RF03";
+            validator.ShouldHaveValidationErrorFor(x => x.RegimeFiscale, challenge).WithErrorCode("00459");
         }
     }
 }

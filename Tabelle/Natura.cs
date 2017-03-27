@@ -11,7 +11,7 @@
                     new Natura { Codice = "N2", Nome = "non soggette" },
                     new Natura { Codice = "N3", Nome = "non imponibili" },
                     new Natura { Codice = "N4", Nome = "esenti" },
-                    new Natura { Codice = "N5", Nome = "regime del margine" },
+                    new Natura { Codice = "N5", Nome = "regime del margine / IVA non esposta in fattura" },
                     new Natura { Codice = "N6", Nome = "inversione contabile (reverse charge)" },
                     new Natura { Codice = "N7", Nome = "IVA assolta in altro stato UE" }
                 };
