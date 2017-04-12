@@ -4,12 +4,7 @@ using FatturaElettronica.Impostazioni;
 using FatturaElettronica.Common;
 using System.Xml.Serialization;
 
-[assembly: InternalsVisibleTo("Tests," +
-    "PublicKey=00240000048000009400000006020000002400005253413100040000010001002bc3d9fc3ae589" +
-    "2f31b57e84fbd4c108035bdac32363b22691795307395ad82e43f3da76e95f6851190228e6dac9" +
-    "5aa160072ea70ee1a62a01e1d5e905dd7845ece57d28eb2d63b366073740af1a05bc216ca0e205" +
-    "b7974ffb2b21289125bcffdaa556f95d7891c0167eef5473d1e016cdac83acaa1b4da9fe9a2b2c" +
-    "bf5200bf")]
+[assembly: InternalsVisibleTo("Tests")]
 
 namespace FatturaElettronica
 {
