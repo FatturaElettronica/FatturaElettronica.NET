@@ -161,3 +161,6 @@ packages
 
 # ConsoleApp, used for verifying README code
 ConsoleApp/
+
+# Visual Studio per-machine and per-user settings
+.vs/
