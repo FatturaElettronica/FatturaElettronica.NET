@@ -117,10 +117,36 @@ xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.
         <PrezzoTotale>20.00</PrezzoTotale>
         <AliquotaIVA>22.00</AliquotaIVA>
       </DettaglioLinee>
+      <DettaglioLinee>
+        <NumeroLinea>3</NumeroLinea>
+        <Descrizione>TUBI RITORNO GASOLIO</Descrizione>
+        <Quantita>2.00</Quantita>
+        <UnitaMisura>Pezzo</UnitaMisura>
+        <PrezzoUnitario>5.00</PrezzoUnitario>
+        <ScontoMaggiorazione>
+          <Tipo>SC</Tipo>
+          <Importo>-1.71</Importo>
+        </ScontoMaggiorazione>
+        <PrezzoTotale>6.58</PrezzoTotale>
+        <AliquotaIVA>22.00</AliquotaIVA>
+      </DettaglioLinee>
+      <DettaglioLinee> 
+        <NumeroLinea>4</NumeroLinea> 
+        <Descrizione>TUBI RITORNO GASOLIO</Descrizione> 
+        <Quantita>1.00</Quantita> 
+        <UnitaMisura>Pezzo</UnitaMisura> 
+        <PrezzoUnitario>5.00</PrezzoUnitario> 
+        <ScontoMaggiorazione> 
+          <Tipo>SC</Tipo> 
+          <Percentuale>10.0</Percentuale> 
+        </ScontoMaggiorazione> 
+        <PrezzoTotale>4.50</PrezzoTotale> 
+        <AliquotaIVA>22.00</AliquotaIVA> 
+      </DettaglioLinee> 
       <DatiRiepilogo>
         <AliquotaIVA>22.00</AliquotaIVA>
-        <ImponibileImporto>25.00</ImponibileImporto>
-        <Imposta>5.50</Imposta>
+        <ImponibileImporto>36.08</ImponibileImporto>
+        <Imposta>7.94</Imposta>
         <EsigibilitaIVA>D</EsigibilitaIVA>
       </DatiRiepilogo>
     </DatiBeniServizi>
@@ -129,7 +155,7 @@ xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.
       <DettaglioPagamento>
         <ModalitaPagamento>MP01</ModalitaPagamento>
         <DataScadenzaPagamento>2015-01-30</DataScadenzaPagamento>
-        <ImportoPagamento>30.50</ImportoPagamento>
+        <ImportoPagamento>36.08</ImportoPagamento>
       </DettaglioPagamento>
     </DatiPagamento>
   </FatturaElettronicaBody>

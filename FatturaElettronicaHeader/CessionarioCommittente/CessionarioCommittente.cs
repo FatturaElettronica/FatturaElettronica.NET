@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
+﻿using System.Xml;
 using FatturaElettronica.Common;
-using FatturaElettronica.Validators;
+using System.Xml.Serialization;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 {
@@ -11,32 +8,23 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     /// <summary>
     /// Dati relativi al cessionario/ committente.
     /// </summary>
-    public class CessionarioCommittente : Common.BusinessObject
+    public class CessionarioCommittente : BaseClassSerializable
     {
-        private readonly DatiAnagrafici _datiAnagrafici;
-        private readonly Sede _sede;
+        private readonly DatiAnagraficiCessionarioCommittente _datiAnagrafici;
+        private readonly SedeCessionarioCommittente _sede;
         private readonly StabileOrganizzazione _stabileOrganizzazione;
-        private readonly RappresentanteFiscale _rappresentanteFiscale;
+        private readonly RappresentanteFiscaleCessionarioCommittente _rappresentanteFiscale;
 
         /// <summary>
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         public CessionarioCommittente() {
-            _datiAnagrafici = new DatiAnagrafici();
-            _sede = new Sede();
+            _datiAnagrafici = new DatiAnagraficiCessionarioCommittente();
+            _sede = new SedeCessionarioCommittente();
             _stabileOrganizzazione = new StabileOrganizzazione();
-            _rappresentanteFiscale = new RappresentanteFiscale();
+            _rappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
         }
         public CessionarioCommittente(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiAnagrafici"));
-            rules.Add(new FRequiredValidator("Sede"));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -46,7 +34,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Dati anagrafici, professionali e fiscali del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public DatiAnagrafici DatiAnagrafici { 
+        public DatiAnagraficiCessionarioCommittente DatiAnagrafici { 
             get { return _datiAnagrafici; }
         }
 
@@ -54,7 +42,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Dati della sede del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public Sede Sede { 
+        public SedeCessionarioCommittente Sede { 
             get { return _sede; }
         }
 
@@ -70,9 +58,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 <FormatoTrasmissione> = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
         /// </summary>
         [DataProperty]
-        public RappresentanteFiscale RappresentanteFiscale { 
+        public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { 
             get { return _rappresentanteFiscale; }
         }
-        #endregion
     }
 }

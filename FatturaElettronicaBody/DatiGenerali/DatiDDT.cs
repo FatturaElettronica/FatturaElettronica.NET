@@ -1,9 +1,7 @@
-﻿using System;
+﻿using FatturaElettronica.Common;
+using System;
 using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -11,7 +9,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// Nei casi di fattura differita per indicare il documento con cui è stato consegnato il bene.
     /// </summary>
     // ReSharper disable once InconsistentNaming
-    public class DatiDDT : Common.BusinessObject
+    public class DatiDDT : BaseClassSerializable
     {
 
         private readonly List<int> _riferimentoNumeroLinea;
@@ -25,15 +23,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 
 
         public DatiDDT(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("NumeroDDT", new List<Validator>{new FRequiredValidator(), new FLengthValidator(1,20)}));
-            rules.Add(new FRequiredValidator("DataDDT"));
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -58,6 +47,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public List<int> RiferimentoNumeroLinea { get { return _riferimentoNumeroLinea; }}
-        #endregion
     }
 }

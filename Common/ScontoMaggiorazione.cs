@@ -1,23 +1,12 @@
-﻿using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
-using System.Collections.Generic;
+﻿using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Eventuale sconto o maggiorazione applicati sul totale documento.
     /// </summary>
-    public class ScontoMaggiorazione : BusinessObject
+    public class ScontoMaggiorazione : BaseClassSerializable
     {
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("Tipo", new List<Validator>{new FRequiredValidator(), new FTipoScontoMaggiorazioneValidator()}));
-            return rules;
-        }
-
-        #region Properties
-
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
@@ -39,6 +28,5 @@ namespace FatturaElettronica.Common
         /// </summary>
         [DataProperty]
         public decimal? Importo { get; set; }
-        #endregion
     }
 }

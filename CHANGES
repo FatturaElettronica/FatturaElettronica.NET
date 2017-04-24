@@ -1,12 +1,118 @@
 Changelog
 =========
 
+v0.6.0
+======
+
+Non ancora rilasciata.
+
+- Assembly non più strong-named. Closes #41.
+- README: aggiunti esempi di introspezione e modifica degli elementi FatturaElettronicaBody. Closes #38.
+
+v0.5.0
+======
+
+Rilasciata il 30.3.2017.
+
+Questa versione recepisce le modifiche introdotte con la v1.2.1 delle specifiche tecniche PA.
+
+- Regime Fiscale RF03 è abrogato. Viene restituito errore 00459 se utilizzato. 
+- Natura N5: descrizione aggiornata a "regime del margine / IVA non esposta in fattura".
+- Le proprietà Codice e Nome della classe astratta Tabella non sono più protette in scrittura.
+
+v0.4.3
+======
+
+Rilasciata il 23.3.2017.
+
+- Fix: Validazione conformità ai gruppi IsBasicLatin e IsLatin-1Supplement. Closes #29.
+- Fix: Non includere il folder Artwork nel package NuGet. Closes #37.
+
+v0.4.2
+======
+
+Rilascata il 17.3.2017.
+
+- Fix: Convalida DatiCassaPrevidenziale.Natura va fatta solo quando Aliquota uguale a 
+  zero. Closes #36.
+
+v0.4.1
+======
+
+Rilasciata il 14.3.2017.
+
+- Fix: Nomi delle nazioni ISO-3166 Alpha 2 sono in Inglese. Closes #35.
+- Fix: Elementi FatturaElettronicaBody sono serializzati come 'Body'. Closes #34.
+- Aggiunto file .editconfig
+
+v0.4.0
+======
+
+Rilasciata il 9.3.2017.
+
+- Rinominata classe FatturaElettronica in Fattura.
+- Rinominata classe FatturaElettronicaHeader in Header.
+- Rinominata classe FatturaElettronicaBody in Body.
+- Rinominata proprietà Fattura.FatturaElettronicaHeader in Fattura.Header.
+- Rinominata proprietà Fattura.FatturaElettronicaBody in Fattura.Body.
+- Alcune classi spostate da FatturaElettronica.Common a FatturaElettronica.Tabelle
+- Classe BusinessObjects.BusinessObjectBase rinominata FatturaElettronica.BaseClass.
+- Classe BusinessObjects.BusinessObject rinominata FatturaElettronica.BaseClassSerializable.
+- Classe FatturaElettronica.Common.BusinessObject eliminata.
+- Persa dipendenza dal package BusinessObjects.
+- Acquisita dipendenza dal package FluentValidation.
+- Aggiunto namespace FatturaElettronica.Validators.
+- Aggiunta serie di classi dedicate alla convalida (FatturaValidator; HeaderValidator; ecc.)
+- Rimosso metodo IsValid(). Al suo posto usare proprietà ValidationResult.IsValid.
+- Rimossa proprietà Error. Al suo posto usare ValidationFailure.Errors.
+- Nuovo extension method Fattura.Validate(). Equivalente a FatturaValidator.Validate() (shortcut).
+- Consultare il README per esempi di codice aggiornati.
+
+v0.3.7
+======
+
+Rilasciata il 7.3.2017.
+
+- Fix: Errore in convalida del campo Riferimento Testo: sono consentiti fino a 
+  60 caratteri. Closes #33.
+
+v0.3.6
+======
+
+Rilasciata il 10.2.2017.
+
+- Aggiunto supporto per .NET Core.
+- Abbandonato supporto per .NET Framework 4.0 e Silverlight.
+- Fix: Falso negativo (errore 423) in convalida DettaglioLinee. Closes #31.
+- Fix: Correzione messaggio di errore per Divisa non corretta (Fabio Calvigioni).
+
+v0.3.5
+======
+
+Rilasciata il 2.2.2017.
+
+- Fix: Crash con ScontoMaggiorazione.Importo non impostato (null). Closes #28.
+
+v0.3.4
+======
+
+Rilasciata il 1.2.2017.
+
+- Fix: Crash quando ScontoMaggiorazione.Importo ha valore negativo. Closes #27.
+
 v0.3.3
 ======
 
 Rilasciata il 18.1.2017.
 
 - Fix: Consenti serializzazione di valori numerici fino a 5 decimali (minimo 2).
+
+v0.3.2
+======
+
+Non rilasciata.
+
+- Fix: Arrotonda valori numerici fino a 5 decimali (minimo 2).
 
 v0.3.2
 ======

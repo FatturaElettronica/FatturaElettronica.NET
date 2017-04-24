@@ -1,12 +1,9 @@
-﻿using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
-using System.Collections.Generic;
+﻿using FatturaElettronica.Common;
 using System.Xml;
 
 namespace FatturaElettronica.FatturaElettronicaHeader
 {
-    public class FatturaElettronicaHeader : Common.BusinessObject
+    public class Header : BaseClassSerializable
     {
         private readonly DatiTrasmissione.DatiTrasmissione _datiTrasmissione;
         private readonly CedentePrestatore.CedentePrestatore _cedentePrestatore;
@@ -18,25 +15,14 @@ namespace FatturaElettronica.FatturaElettronicaHeader
         /// <summary>
         /// Intestazione della Fattura Elettronica.
         /// </summary>
-        public FatturaElettronicaHeader() {
+        public Header() {
             _datiTrasmissione = new DatiTrasmissione.DatiTrasmissione();
             _cedentePrestatore = new CedentePrestatore.CedentePrestatore();
             _rappresentanteFiscale = new RappresentanteFiscale.RappresentanteFiscale();
             _cessionarioCommittente = new CessionarioCommittente.CessionarioCommittente();
             _terzoIntermediarioOSoggettoEmittente = new TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente();
         }
-        public FatturaElettronicaHeader(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiTrasmissione"));
-            rules.Add(new FRequiredValidator("CedentePrestatore"));
-            rules.Add(new FRequiredValidator("CessionarioCommittente"));
-            rules.Add(new DomainValidator("SoggettoEmittente", string.Empty, Common.SoggettoEmittente.Codici));
-            return rules;
-        }
-
-        #region Properties 
+        public Header(XmlReader r) : base(r) { }
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -81,6 +67,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader
         /// </summary>
         [DataProperty]
         public string SoggettoEmittente { get; set; }
-        #endregion
     }
 }

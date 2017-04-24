@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -11,20 +8,12 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// Blocco che consente di inserire, con riferimento ad una linea di dettaglio, diverse tipologie di informazioni utili ai fini
     /// amministrativi, gestionali, etc.
     /// </summary>
-    public class AltriDatiGestionali : Common.BusinessObject
+    public class AltriDatiGestionali : BaseClassSerializable
     {
 
         public AltriDatiGestionali() { }
         public AltriDatiGestionali(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add( new AndCompositeValidator("TipoDato", new List<Validator> {new FRequiredValidator(), new FLengthValidator(1, 10)}));
-            rules.Add(new FLengthValidator("RiferimentoTesto", 1, 35));
-            return rules;
-        }
-
-        #region Properties
         /// <summary>
         /// Codice che identifica la tipologia di informazione
         /// </summary>
@@ -48,6 +37,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         [DataProperty]
         public DateTime? RiferimentoData { get; set; }
-        #endregion
     }
 }

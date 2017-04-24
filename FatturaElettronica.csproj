@@ -10,8 +10,8 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>FatturaElettronica</RootNamespace>
     <AssemblyName>FatturaElettronica</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <TargetFrameworkProfile>Profile136</TargetFrameworkProfile>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Profile78</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
   </PropertyGroup>
@@ -33,18 +33,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>FatturaElettronica.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Common\BaseClassSerializable.cs" />
+    <Compile Include="Common\BaseClass.cs" />
+    <Compile Include="Common\DataPropertyAttribute.cs" />
+    <Compile Include="Common\TypeExtensions.cs" />
+    <Compile Include="Common\IgnoreXmlDateFormat.cs" />
+    <Compile Include="Common\JsonOptions.cs" />
+    <Compile Include="Common\XmlOptions.cs" />
     <Compile Include="Common\DenominazioneNomeCognome.cs" />
     <Compile Include="Common\Anagrafica.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\BusinessObject.cs">
       <SubType>
       </SubType>
     </Compile>
@@ -56,26 +60,19 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="Common\SoggettoEmittente.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\StatoLiquidazione.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\SocioUnico.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\RegimeFiscale.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\Provincia.cs">
-      <SubType>
-      </SubType>
-    </Compile>
+    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\DatiAnagraficiCessionarioCommittente.cs" />
+    <Compile Include="Tabelle\IdPaese.cs" />
+    <Compile Include="Tabelle\CondizioniPagamento.cs" />
+    <Compile Include="Tabelle\ModalitaPagamento.cs" />
+    <Compile Include="Tabelle\TipoCessionePrestazione.cs" />
+    <Compile Include="Tabelle\TipoResa.cs" />
+    <Compile Include="Tabelle\ScontoMaggiorazione.cs" />
+    <Compile Include="Tabelle\Natura.cs" />
+    <Compile Include="Tabelle\TipoCassa.cs" />
+    <Compile Include="Tabelle\Tabella.cs" />
+    <Compile Include="Tabelle\EsigibilitaIVA.cs" />
+    <Compile Include="Tabelle\TipoRitenuta.cs" />
+    <Compile Include="Common\RappresentanteFiscale.cs" />
     <Compile Include="Common\IdFiscaleIva.cs">
       <SubType>
       </SubType>
@@ -88,7 +85,7 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="FatturaElettronica.cs">
+    <Compile Include="Fattura.cs">
       <SubType>
       </SubType>
     </Compile>
@@ -196,6 +193,7 @@
       <SubType>
       </SubType>
     </Compile>
+    <Compile Include="FatturaElettronicaExtensions.cs" />
     <Compile Include="FatturaElettronicaHeader\CedentePrestatore\CedentePrestatore.cs">
       <SubType>
       </SubType>
@@ -204,7 +202,7 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\DatiAnagrafici.cs">
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\DatiAnagraficiCedentePrestatore.cs">
       <SubType>
       </SubType>
     </Compile>
@@ -212,7 +210,7 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\Sede.cs">
+    <Compile Include="FatturaElettronicaHeader\CedentePrestatore\SedeCedentePrestatore.cs">
       <SubType>
       </SubType>
     </Compile>
@@ -224,16 +222,12 @@
       <SubType>
       </SubType>
     </Compile>
-    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\RappresentanteFiscale.cs" />
-    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\Sede.cs">
+    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\RappresentanteFiscaleCessionarioCommittente.cs" />
+    <Compile Include="FatturaElettronicaHeader\CessionarioCommittente\SedeCessionarioCommittente.cs">
       <SubType>
       </SubType>
     </Compile>
     <Compile Include="FatturaElettronicaHeader\DatiTrasmissione\ContattiTrasmittente.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Common\FormatoTrasmissione.cs">
       <SubType>
       </SubType>
     </Compile>
@@ -259,100 +253,87 @@
     </Compile>
     <Compile Include="Impostazioni.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validators\FCodiceDestinatarioValidator.cs" />
-    <Compile Include="Validators\FPECDestinatarioValidator.cs" />
-    <Compile Include="Validators\FAliquotaIVAValidator.cs" />
-    <Compile Include="Validators\FCondizioniPagamentoValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FCountryValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FDateValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FDivisaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FEsigibilitaIVAValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FLengthValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FModalitaPagamentoValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FCausalePagamentoValidator.cs" />
-    <Compile Include="Validators\FNaturaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FPrezzoTotaleValidator.cs" />
-    <Compile Include="Validators\FProvinciaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FRegimeFiscaleValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FRequiredValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FSiValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoCassaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoCessionePrestazioneValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoDocumentoValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoRitenutaValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FTipoScontoMaggiorazioneValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
-    <Compile Include="Validators\FXorRequiredValidator.cs">
-      <SubType>
-      </SubType>
-    </Compile>
+    <Compile Include="Tabelle\CausalePagamento.cs" />
+    <Compile Include="Tabelle\Divisa.cs" />
+    <Compile Include="Tabelle\FormatoTrasmissione.cs" />
+    <Compile Include="Tabelle\Provincia.cs" />
+    <Compile Include="Tabelle\RegimeFiscale.cs" />
+    <Compile Include="Tabelle\SocioUnico.cs" />
+    <Compile Include="Tabelle\SoggettoEmittente.cs" />
+    <Compile Include="Tabelle\StatoLiquidazione.cs" />
+    <Compile Include="Tabelle\TipoDocumento.cs" />
+    <Compile Include="Validators\AltriDatiGestionaliValidator.cs" />
+    <Compile Include="Validators\AllegatiValidator.cs" />
+    <Compile Include="Validators\DatiAnagraficiRappresentanteFiscaleValidator.cs" />
+    <Compile Include="Validators\DatiAnagraficiTerzoIntermediarioValidator.cs" />
+    <Compile Include="Validators\DatiAnagraficiCessionarioCommittenteValidator.cs" />
+    <Compile Include="Validators\DettaglioPagamentoValidator.cs" />
+    <Compile Include="Validators\DatiPagamentoValidator.cs" />
+    <Compile Include="Validators\DatiVeicoliValidator.cs" />
+    <Compile Include="Validators\DatiRiepilogoValidator.cs" />
+    <Compile Include="Validators\DatiAnagraficiVettoreValidator.cs" />
+    <Compile Include="Validators\CodiceArticoloValidator.cs" />
+    <Compile Include="Validators\RegimeFiscaleValidator.cs" />
+    <Compile Include="Validators\LatinValidators.cs" />
+    <Compile Include="Validators\IsValidValidator.cs" />
+    <Compile Include="Validators\DatiBeniServiziValidator.cs" />
+    <Compile Include="Validators\DettaglioLineeValidator.cs" />
+    <Compile Include="Validators\FatturaPrincipaleValidator.cs" />
+    <Compile Include="Validators\DatiTrasportoValidator.cs" />
+    <Compile Include="Validators\DatiDDTValidator.cs" />
+    <Compile Include="Validators\DatiFattureCollegateValidator.cs" />
+    <Compile Include="Validators\DatiConvenzioneValidator.cs" />
+    <Compile Include="Validators\DatiRicezioneValidator.cs" />
+    <Compile Include="Validators\DatiContrattoValidator.cs" />
+    <Compile Include="Validators\DatiOrdineAcquistoValidator.cs" />
+    <Compile Include="Validators\DatiDocumentoValidator.cs" />
+    <Compile Include="Validators\IndirizzoResaValidator.cs" />
+    <Compile Include="Validators\CausaleValidator.cs" />
+    <Compile Include="Validators\ScontoMaggiorazioneValidator.cs" />
+    <Compile Include="Validators\DatiCassaPrevidenzialeValidator.cs" />
+    <Compile Include="Validators\DatiBolloValidator.cs" />
+    <Compile Include="Validators\DatiRitenutaValidator.cs" />
+    <Compile Include="Validators\DatiGeneraliDocumentoValidator.cs" />
+    <Compile Include="Validators\DatiGeneraliValidator.cs" />
+    <Compile Include="Validators\BodyValidator.cs" />
+    <Compile Include="Validators\TerzoIntermediarioOSoggettoEmittenteValidator.cs" />
+    <Compile Include="Validators\RappresentanteFiscaleCessionarioCommittenteValidator.cs" />
+    <Compile Include="Validators\DenominazioneNomeCognomeValidator.cs" />
+    <Compile Include="Validators\CessionarioCommittenteValidator.cs" />
+    <Compile Include="Validators\LocalitàBaseValidator.cs" />
+    <Compile Include="Validators\RappresentanteFiscaleValidator.cs" />
+    <Compile Include="Validators\ContattiValidator.cs" />
+    <Compile Include="Validators\SedeCessionarioCommittenteValidator.cs" />
+    <Compile Include="Validators\IscrizioneREAValidator.cs" />
+    <Compile Include="Validators\StabileOrganizzazioneValidator.cs" />
+    <Compile Include="Validators\SedeCedentePrestatoreValidator.cs" />
+    <Compile Include="Validators\DatiAnagraficiCedentePrestatoreValidator.cs" />
+    <Compile Include="Validators\CedentePrestatoreValidator.cs" />
+    <Compile Include="Validators\ContattiTrasmittenteValidator.cs" />
+    <Compile Include="Validators\AnagraficaValidator.cs" />
+    <Compile Include="Validators\HeaderValidator.cs" />
+    <Compile Include="Validators\DatiTrasmissioneValidator.cs" />
+    <Compile Include="Validators\IdFiscaleIVAValidator.cs" />
+    <Compile Include="Validators\FatturaValidator.cs" />
+    <Compile Include="Validators\IdTrasmittenteValidator.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="FatturaElettronica.snk" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>packages\Newtonsoft.Json.6.0.8\lib\portable-net40+sl5+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="FluentValidation, Version=6.2.1.0, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
+      <HintPath>packages\FluentValidation-Signed.6.2.1.0\lib\portable-net45+wp80+win8+wpa81\FluentValidation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BusinessObjects\BusinessObjects\BusinessObjects.csproj">
-      <Project>{06f90b65-7d19-46dc-8336-0f3335be6c76}</Project>
-      <Name>BusinessObjects</Name>
-    </ProjectReference>
+    <None Include="Artwork\FatturaElettronica420x420.png" />
+    <None Include="Artwork\FatturaElettronica64x64.png" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

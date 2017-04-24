@@ -1,9 +1,6 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
+﻿using System.Xml;
 using FatturaElettronica.Common;
-using FatturaElettronica.Validators;
+using System.Xml.Serialization;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -11,10 +8,10 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// <summary>
     /// Dati relativi al cedente / prestatore.
     /// </summary>
-    public class CedentePrestatore : Common.BusinessObject
+    public class CedentePrestatore : BaseClassSerializable
     {
-        private readonly DatiAnagrafici _datiAnagrafici;
-        private readonly Sede _sede;
+        private readonly DatiAnagraficiCedentePrestatore _datiAnagrafici;
+        private readonly SedeCedentePrestatore _sede;
         private readonly StabileOrganizzazione _stabileOrganizzazione;
         private readonly IscrizioneREA _iscrizioneREA;
         private readonly Contatti _contatti;
@@ -23,23 +20,13 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         public CedentePrestatore() {
-            _datiAnagrafici = new DatiAnagrafici();
-            _sede = new Sede();
+            _datiAnagrafici = new DatiAnagraficiCedentePrestatore();
+            _sede = new SedeCedentePrestatore();
             _stabileOrganizzazione = new StabileOrganizzazione();
             _iscrizioneREA = new IscrizioneREA();
             _contatti = new Contatti();
         }
         public CedentePrestatore(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DatiAnagrafici"));
-            rules.Add(new FRequiredValidator("Sede"));
-            rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -49,7 +36,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public DatiAnagrafici DatiAnagrafici { 
+        public DatiAnagraficiCedentePrestatore DatiAnagrafici { 
             get { return _datiAnagrafici; }
         }
 
@@ -57,7 +44,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Dati della sede del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public Sede Sede { 
+        public SedeCedentePrestatore Sede { 
             get { return _sede; }
         }
 
@@ -90,6 +77,5 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// </summary>
         [DataProperty]
         public string RiferimentoAmministrazione { get; set; }
-        #endregion
     }
 }

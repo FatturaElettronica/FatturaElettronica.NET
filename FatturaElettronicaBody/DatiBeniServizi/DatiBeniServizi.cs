@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -10,7 +8,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// <summary>
     /// Blocco sempre obbligatorio contenente natura, qualità e quantità dei beni / servizi formanti oggetto dell'operazione.
     /// </summary>
-    public class DatiBeniServizi : Common.BusinessObject
+    public class DatiBeniServizi : BaseClassSerializable
     {
         private readonly List<DettaglioLinee> _dettaglioLinee;
         private readonly List<DatiRiepilogo> _datiRiepilogo;
@@ -23,15 +21,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
             _datiRiepilogo = new List<DatiRiepilogo>();
         }
         public DatiBeniServizi(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("DettaglioLinee"));
-            rules.Add(new FRequiredValidator("DatiRiepilogo"));
-            return rules;
-        }
-
-        #region Properties 
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -48,6 +37,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         [DataProperty]
         public List<DatiRiepilogo> DatiRiepilogo { get { return _datiRiepilogo; } }
-        #endregion
         }
 }

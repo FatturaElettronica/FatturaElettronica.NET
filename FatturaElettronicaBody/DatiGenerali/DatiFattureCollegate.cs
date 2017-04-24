@@ -8,7 +8,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// <remarks>Riguarda i casi di invio di nota di credito e/o fatture di conguaglio a fronte di precedenti fatture di acconto.</remarks>
     public class DatiFattureCollegate : Common.DatiDocumento
     {
-
         public DatiFattureCollegate() { }
         public DatiFattureCollegate(XmlReader r) : base(r) { }
 

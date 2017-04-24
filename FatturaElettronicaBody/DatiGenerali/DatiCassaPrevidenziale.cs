@@ -1,31 +1,15 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
     /// <summary>
     /// Dati relativi alla cassa previdenziale di appartenenza.
     /// </summary>
-    public class DatiCassaPrevidenziale : Common.BusinessObject
+    public class DatiCassaPrevidenziale : BaseClassSerializable
     {
         public DatiCassaPrevidenziale() { }
         public DatiCassaPrevidenziale(XmlReader r) : base(r) { }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new FRequiredValidator("AlCassa"));
-            rules.Add(new FRequiredValidator("ImportoContributoCassa"));
-            rules.Add(new FNaturaValidator("Natura"));
-            rules.Add(new FLengthValidator("RiferimentoAmministrazione", 1, 20));
-            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> { new FRequiredValidator("AliquotaIVA"), new FAliquotaIVAValidator("AliquotaIVA") }));
-            rules.Add(new AndCompositeValidator("TipoCassa", new List<Validator>{new FRequiredValidator(), new FTipoCassaValidator()}));
-            return rules;
-        }
-
-        #region Properties
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -78,6 +62,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public string RiferimentoAmministrazione { get; set; }
-        #endregion
     }
 }

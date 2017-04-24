@@ -1,15 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
 {
     /// <summary>
     /// Dati relativi al pagamento.
     /// </summary>
-    public class DatiPagamento : Common.BusinessObject
+    public class DatiPagamento : BaseClassSerializable
     {
         private readonly List<DettaglioPagamento> _dettagliPagamento;
 
@@ -22,15 +20,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
 
         public DatiPagamento(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("CondizioniPagamento",
-                new List<Validator> {new FRequiredValidator(), new FCondizioniPagamentoValidator()}));
-            rules.Add(new FRequiredValidator("DettaglioPagamento"));
-            return rules;
-        }
-
-        #region Properties
         /// <summary>
         /// Condizioni di pagamento.
         /// </summary>
@@ -42,6 +31,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
         /// </summary>
         [DataProperty]
         public List<DettaglioPagamento> DettaglioPagamento { get { return _dettagliPagamento; }}
-        #endregion
     }
 }

@@ -1,50 +1,16 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
 {
     /// <summary>
     /// Blocco sempre obbligatorio contenente i dati di riepilogo per ogni aliquota IVA o natura.
     /// </summary>
-    public class DatiRiepilogo : Common.BusinessObject
+    public class DatiRiepilogo : BaseClassSerializable
     {
         public DatiRiepilogo() { }
         public DatiRiepilogo(XmlReader r) : base(r) { }
 
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            rules.Add(new AndCompositeValidator("AliquotaIVA", new List<Validator> { new FRequiredValidator("AliquotaIVA"), new FAliquotaIVAValidator("AliquotaIVA") }));
-            rules.Add(new FNaturaValidator("Natura"));
-            rules.Add(new FRequiredValidator("ImponibileImporto"));
-            rules.Add(new FRequiredValidator("Imposta"));
-            rules.Add(new FEsigibilitaIVAValidator("EsigibilitaIVA"));
-            rules.Add(new DelegateValidator("Natura", " 00420: nel blocco DatiRiepilogo con EsigibilitaIVA uguale a S il campo Natura non può assumere valore N6.", ValidateAgainstErr00420));
-            rules.Add(new DelegateValidator("Imposta", " 00421:  il valore del campo Imposta non risulta calcolato secondo le regole definite nelle specifiche tecniche.", ValidateAgainstErr00421));
-            return rules;
-        }
-
-		/// <summary>
-        /// Validate error 00420 from FatturaElettronicaPA v1.3
-        /// </summary>
-        /// <returns></returns>
-		private bool ValidateAgainstErr00420()
-        {
-            return !(Natura == "N6" && EsigibilitaIVA == "S");
-        }
-
-		/// <summary>
-        /// Validate error 00421 from FatturaElettronicaPA v1.3
-        /// </summary>
-        /// <returns></returns>
-		private bool ValidateAgainstErr00421()
-        {
-            return (Imposta == decimal.Parse(((AliquotaIVA * ImponibileImporto) / 100).ToString("0.00")));
-        }
-
-        #region Properties
         /// <summary>
         /// Aliquota (%) IVA.
         /// </summary>
@@ -93,6 +59,5 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         [DataProperty]
         public string RiferimentoNormativo { get; set; }
-        #endregion
     }
 }

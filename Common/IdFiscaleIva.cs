@@ -1,8 +1,5 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using BusinessObjects;
-using BusinessObjects.Validators;
-using FatturaElettronica.Validators;
+﻿using System.Xml;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
@@ -10,7 +7,7 @@ namespace FatturaElettronica.Common
     /// Numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ed i restanti il codice
     /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
     /// </summary>
-    public class IdFiscaleIVA : BusinessObject
+    public class IdFiscaleIVA : BaseClassSerializable
     {
         private string _idPaese;
         private string _idCodice;
@@ -40,20 +37,6 @@ namespace FatturaElettronica.Common
                 _idCodice = CleanString(value);
                 NotifyChanged();
             }
-        }
-
-        protected override List<Validator> CreateRules() {
-            var rules = base.CreateRules();
-            // IdPaese
-            rules.Add(
-                new AndCompositeValidator(
-                    "IdPaese", 
-                    new List<Validator> { new FRequiredValidator(), new FCountryValidator() }));
-            rules.Add(
-                new AndCompositeValidator( 
-                    "IdCodice", 
-                    new List<Validator> { new FRequiredValidator(), new FLengthValidator(1, 28) }));
-            return rules;
         }
     }
 }
