@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
 using FatturaElettronica.Tabelle;
+using System;
 
 namespace FatturaElettronica.Validators
 {
@@ -39,7 +40,7 @@ namespace FatturaElettronica.Validators
         }
         private bool ImpostaValidateAgainstError00421(DatiRiepilogo datiRiepilogo)
         {
-            return (datiRiepilogo.Imposta == decimal.Parse(((datiRiepilogo.AliquotaIVA * datiRiepilogo.ImponibileImporto) / 100).ToString("0.00")));
+            return (Math.Abs(datiRiepilogo.Imposta - decimal.Parse(((datiRiepilogo.AliquotaIVA * datiRiepilogo.ImponibileImporto) / 100).ToString("0.00"))) <= 0.01m);
         }
     }
 }
