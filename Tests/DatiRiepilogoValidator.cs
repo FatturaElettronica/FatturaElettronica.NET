@@ -49,11 +49,11 @@ namespace Tests
         [TestMethod]
         public void ImpostaValidateAgainstError00421()
         {
-            challenge.AliquotaIVA = 22m;
-            challenge.ImponibileImporto = 100m;
-            challenge.Imposta = 22m;
+            challenge.AliquotaIVA = 10;
+            challenge.ImponibileImporto = 70863.00m;
+            challenge.Imposta = 7086.29m;
             validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, challenge);
-            challenge.Imposta = 22.01m;
+            challenge.Imposta = 10.01m;
             validator.ShouldHaveValidationErrorFor(x => x.Imposta, challenge).WithErrorCode("00421");
         }
         [TestMethod]
