@@ -4,7 +4,7 @@ Changelog
 v0.6.0
 ======
 
-Non ancora rilasciata.
+Rilsciata il 27.4.2017.
 
 - Assembly non più strong-named. Closes #41.
 - README: aggiunti esempi di introspezione e modifica degli elementi FatturaElettronicaBody. Closes #38.
