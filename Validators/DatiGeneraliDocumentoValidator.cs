@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
+using System.Linq;
 
 namespace FatturaElettronica.Validators
 {
@@ -31,8 +32,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiCassaPrevidenziale)
                 .SetCollectionValidator(new DatiCassaPrevidenzialeValidator());
             RuleFor(x => x.DatiCassaPrevidenziale)
-                .Must((datiGeneraliDocumento, datiCassa) => { return (datiCassa.Count > 0) ? !datiGeneraliDocumento.DatiRitenuta.IsEmpty() : true; })
-                .WithMessage("DatiRitenuta non presente a fronte di DatiCassaPreviendiale.Ritenuta valorizzato")
+                .Must((datiGeneraliDocumento, datiCassa) => { return (datiCassa.Where(a => a.Ritenuta == "SI").Count() > 0) ? !datiGeneraliDocumento.DatiRitenuta.IsEmpty() : true; })
+                .WithMessage("DatiRitenuta non presente a fronte di DatiCassaPrevidenziale.Ritenuta valorizzato")
                 .WithErrorCode("00415");
             RuleFor(x => x.ScontoMaggiorazione).SetCollectionValidator(new ScontoMaggiorazioneValidator());
             RuleFor(x => x.Causale)

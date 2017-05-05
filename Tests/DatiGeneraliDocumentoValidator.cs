@@ -79,11 +79,15 @@ namespace Tests
         {
             challenge.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale { Ritenuta = "SI" });
             var r = validator.Validate(challenge);
-            Assert.IsFalse(r.IsValid);
-
             Assert.AreEqual("00415", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale").ErrorCode);
 
             challenge.DatiCassaPrevidenziale.Clear();
+            r = validator.Validate(challenge);
+            Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale"));
+
+            // test che falso errore di convalida sia risolto. Vedi:
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/44
+            challenge.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale { TipoCassa = "TC20", AlCassa=4, ImportoContributoCassa=46.56m, Natura="N5" });
             r = validator.Validate(challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale"));
         }

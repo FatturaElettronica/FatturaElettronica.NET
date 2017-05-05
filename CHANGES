@@ -1,10 +1,17 @@
 Changelog
 =========
 
+v0.6.1
+======
+
+Rilasciata il 5.5.2017.
+
+- Fix: Falso errore di convalida 00415 quando DatiCassaPrevidenziale è valorizzato ma non ha Ritenuta="SI". Closes #44.
+
 v0.6.0
 ======
 
-Rilsciata il 27.4.2017.
+Rilasciata il 27.4.2017.
 
 - Assembly non più strong-named. Closes #41.
 - README: aggiunti esempi di introspezione e modifica degli elementi FatturaElettronicaBody. Closes #38.
