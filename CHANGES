@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.6.2
+======
+
+Non ancora rilasciata.
+
+- Fix: Falso errore di convalida 00423 quando PrezzoTotale è valorizzato con piu di due decimali. Closes #45.
+
 v0.6.1
 ======
 

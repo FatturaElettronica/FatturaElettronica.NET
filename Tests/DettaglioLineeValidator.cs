@@ -117,6 +117,13 @@ namespace Tests
             challenge.Quantita = 2;
             challenge.PrezzoTotale = 42;
             validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, challenge).WithErrorCode("00423");
+
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/45
+            challenge.ScontoMaggiorazione.Clear();
+            challenge.PrezzoUnitario = 0.865951m;
+            challenge.Quantita = 98;
+            challenge.PrezzoTotale = 84.863198m;
+            validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
         }
 
         [TestMethod]
