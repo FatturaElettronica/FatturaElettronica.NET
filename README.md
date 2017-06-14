@@ -31,7 +31,7 @@ namespace DemoApp
 
             // Lettura da file XML compatibile con formato SDI 1.2.1.
             // (scaricato da http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm)
-            using (var r = XmlReader.Create("IT01234567890_FPA01.xml", new XmlReaderSettings { IgnoreWhitespace = true })) 
+            using (var r = XmlReader.Create("IT01234567890_FPA01.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true })) 
             {
                 fattura.ReadXml(r);
             }

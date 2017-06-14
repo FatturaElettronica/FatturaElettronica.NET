@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.6.3
+======
+
+Non ancora rilasciata.
+
+- README: Aggiunta opzione IgnoreComments a XmlReader per evitare crash nel caso di commenti nel XML. Closes #45.
+
 v0.6.2
 ======
 
