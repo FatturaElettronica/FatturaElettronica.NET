@@ -1,5 +1,6 @@
 ﻿using FatturaElettronica.Common;
 using System.Xml;
+using System.Xml.Serialization;
 
 namespace FatturaElettronica.FatturaElettronicaHeader
 {
@@ -44,7 +45,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader
         /// <summary>
         /// Dati relativi al rappresentante fiscale del cedente / prestatore.
         /// </summary>
-        [DataProperty]
+        [DataProperty][XmlElement(ElementName="RappresentanteFiscale")]
         public RappresentanteFiscale.RappresentanteFiscale Rappresentante { get { return _rappresentanteFiscale; } }
 
         /// <summary>

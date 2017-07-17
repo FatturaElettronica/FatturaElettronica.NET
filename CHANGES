@@ -6,6 +6,8 @@ v0.6.3
 
 Non ancora rilasciata.
 
+- Fix: RappresentanteFiscale viene erroneamente serializzato come 'Rappresentante' causando errore convalida 200 
+  da parte del sistema PA. Closes #49.
 - README: Aggiunta opzione IgnoreComments a XmlReader per evitare crash nel caso di commenti nel XML. Closes #45.
 
 v0.6.2
