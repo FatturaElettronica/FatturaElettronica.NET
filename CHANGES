@@ -1,10 +1,17 @@
 Changelog
 =========
 
+v0.7
+====
+
+Non ancora rilasciata
+
+- Abbandonato il profilo PCL in favore di NetStandard 1.1.
+
 v0.6.3
 ======
 
-Non ancora rilasciata.
+Rilasciata il 17.7.2017
 
 - Fix: RappresentanteFiscale viene erroneamente serializzato come 'Rappresentante' causando errore convalida 200 
   da parte del sistema PA. Closes #49.

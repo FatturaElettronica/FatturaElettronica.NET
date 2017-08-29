@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Impostazioni
+﻿using System.Runtime.CompilerServices;
+
+namespace FatturaElettronica.Impostazioni
 {
     public enum Instance { PubblicaAmministrazione, Privati };
     public class Versione
@@ -12,12 +14,12 @@
         public static string Privati { get { return string.Format("FPR{0}", Versione.Trasmissione.Replace(".", "")); } }
 
     }
-    internal class RootElement
+    public class RootElement
     {
-        internal static string Prefix { get { return "p"; } }
-        internal static string LocalName { get { return "FatturaElettronica"; } }
-        internal static string NameSpace { get { return "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"; } }
-        internal static XmlAttributeString[] ExtraAttributes
+        public static string Prefix { get { return "p"; } }
+        public static string LocalName { get { return "FatturaElettronica"; } }
+        public static string NameSpace { get { return "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"; } }
+        public static XmlAttributeString[] ExtraAttributes
         {
             get
             {
@@ -28,7 +30,7 @@
                 };
             }
         }
-        internal class XmlAttributeString
+        public class XmlAttributeString
         {
             public string Prefix;
             public string LocalName;

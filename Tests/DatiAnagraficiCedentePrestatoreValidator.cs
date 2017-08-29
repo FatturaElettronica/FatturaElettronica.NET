@@ -77,7 +77,7 @@ namespace Tests
         [TestMethod]
         public void RegimeFiscaleOnlyAcceptsTableValues()
         {
-            AssertOnlyAcceptsTableValues<FatturaElettronica.Tabelle.RegimeFiscale>(x => x.RegimeFiscale);
+            AssertOnlyAcceptsTableValues<RegimeFiscale>(x => x.RegimeFiscale, "RegimeFiscaleValidator`1");
         }
         [TestMethod]
         public void RegimeFiscaleRF03Abrogated()

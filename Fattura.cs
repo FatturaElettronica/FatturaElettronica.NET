@@ -1,10 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using FatturaElettronica.Impostazioni;
 using FatturaElettronica.Common;
 using System.Xml.Serialization;
-
-[assembly: InternalsVisibleTo("Tests")]
 
 namespace FatturaElettronica
 {

@@ -63,9 +63,9 @@ namespace Tests
             if (expectedErrorCode == null)
             {
                 if (typeof(T) == typeof(DateTime?) || typeof(T) == typeof(decimal?))
-                    expectedErrorCode = "notnull_error";
+                    expectedErrorCode = "NotNullValidator";
                 else
-                    expectedErrorCode = "notempty_error";
+                    expectedErrorCode = "NotEmptyValidator";
             }
 
             prop.SetValue(challenge, null);
@@ -83,7 +83,7 @@ namespace Tests
                 validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
             }
         }
-        protected void AssertMinMaxLength(Expression<Func<TClass, string>> outExpr, int min, int max, char filler='x', string expectedErrorCode="length_error")
+        protected void AssertMinMaxLength(Expression<Func<TClass, string>> outExpr, int min, int max, char filler='x', string expectedErrorCode="LengthValidator")
         {
             var prop = GetProperty(outExpr);
 
@@ -94,9 +94,10 @@ namespace Tests
             prop.SetValue(challenge, new string(filler, max));
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
         }
-        protected void AssertLength(Expression<Func<TClass, string>> outExpr, int length, char filler='x', string expectedErrorCode="exact_length_error")
+        protected void AssertLength(Expression<Func<TClass, string>> outExpr, int length, char filler='x', string expectedErrorCode="ExactLengthValidator")
         {
             var prop = GetProperty(outExpr);
+            var r = validator.Validate(challenge);
 
             prop.SetValue(challenge, new string(filler, length+1));
             validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
@@ -105,7 +106,7 @@ namespace Tests
             prop.SetValue(challenge, new string(filler, length));
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
         }
-        protected void AssertOnlyAcceptsTableValues<T>(Expression<Func<TClass, string>> outExpr, string expectedErrorCode=null) where T: Tabella, new()
+        protected void AssertOnlyAcceptsTableValues<T>(Expression<Func<TClass, string>> outExpr, string expectedErrorCode= "IsValidValidator`1") where T: Tabella, new()
         {
             var prop = GetProperty(outExpr);
 
@@ -131,7 +132,7 @@ namespace Tests
             var prop = GetProperty(outExpr);
             
             var r = validator.Validate(challenge);
-            Assert.AreEqual("notempty_error", r.Errors.FirstOrDefault(x => x.PropertyName == prop.Name).ErrorCode);
+            Assert.AreEqual("NotEmptyValidator", r.Errors.FirstOrDefault(x => x.PropertyName == prop.Name).ErrorCode);
 
         }
         protected void AssertOnlyAcceptsSIValue(Expression<Func<TClass, string>> outExpr)

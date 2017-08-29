@@ -95,19 +95,8 @@ namespace DemoApp
 In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server. 
 
 ## Portabilità
-La libreria gira senza modifiche sui seguenti ambienti:
+FatturaElettronica supporta .NET Standard v1.1, cosa che le permette di supportare un [ampio numero di piattaforme][netstandard].
 
-- NET Framework 4.5 e superiori,
-- NET Core 1.0 (*)
-- Windows 8
-- Windows Phone Silverlight 8
-- Xamarin.Android
-- Xamarin.iOS
-- Xamarin.iOS (Classic)
-
-Un file .snk è fornito per la firma dell'assembly, in modo che possa essere usato in contesti in cui lo *strong naming* sia necessario.
-
-(*) Il package è compatibile con NETCore. Una delle sue dipendenze, FluentValidation, purtroppo non lo è ancora.
 
 ## Installazione
 FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
@@ -126,3 +115,4 @@ FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestion
 [ga]: http://gestionaleamica.com
 [ni]: https://nicolaiarocci.com
 [nuget]: https://www.nuget.org/packages/FatturaElettronica/
+[netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md
