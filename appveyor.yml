@@ -1,8 +1,8 @@
+version: 1.0.{build}
+image: Visual Studio 2017
+build:
+  verbosity: minimal
 init:
   tzutil /s "W. Europe Standard Time"
-image: Visual Studio 2017
 before_build:
   cmd: nuget restore
-build:
-  project: FatturaElettronica.sln
-  verbosity: minimal
