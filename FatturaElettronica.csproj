@@ -11,7 +11,7 @@
     <Description>Fattura elettronica per le aziende e la pubblica amministrazione italiana</Description>
     <Copyright>Copyright © CIR2000 2017</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</PackageProjectUrl>
+    <PackageProjectUrl>http://fatturaelettronicaopensource.org</PackageProjectUrl>
     <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
   </PropertyGroup>
 
