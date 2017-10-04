@@ -4,7 +4,7 @@ Changelog
 v0.7
 ====
 
-Non ancora rilasciata
+Rilasciata il 4.10.2017
 
 - Spostata serializzazione su package indipendente FatturaElettronica.Core.
 - Abbandonato il profilo PCL in favore di NetStandard 1.1.
