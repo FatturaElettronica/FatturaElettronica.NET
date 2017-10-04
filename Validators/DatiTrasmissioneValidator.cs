@@ -33,10 +33,11 @@ namespace FatturaElettronica.Validators
                 .When(x=>!x.ContattiTrasmittente.IsEmpty());
             RuleFor(dt => dt.PECDestinatario)
                 .NotEmpty()
-                .Length(7,256)
                 .When(dt => dt.CodiceDestinatario == "0000000")
                 .WithMessage("{PropertyName} non valorizzato a fronte di Codice Destinatario con valore 0000000")
                 .WithErrorCode("00426");
+            RuleFor(dt => dt.PECDestinatario)
+                .Length(7, 256);
             RuleFor(dt => dt.PECDestinatario)
                 .Empty()
                 .When(dt => dt.CodiceDestinatario != "0000000")

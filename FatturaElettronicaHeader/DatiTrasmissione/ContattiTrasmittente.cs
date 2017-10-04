@@ -18,24 +18,12 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
         /// Contatto telefonico fisso o mobile.
         /// </summary>
         [DataProperty]
-        public string Telefono {
-            get { return _telefono; }
-            set {
-                _telefono = CleanString(value);
-                NotifyChanged();
-            }
-        }
+        public string Telefono { get; set; }
 
         /// <summary>
         /// Indirizzo di posta elettronica.
         /// </summary>
         [DataProperty]
-        public string Email {
-            get { return _email; }
-            set {
-                _email = CleanString(value);
-                NotifyChanged();
-            }
-        }
+        public string Email { get; set; }
     }
 }

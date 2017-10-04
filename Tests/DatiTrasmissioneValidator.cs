@@ -64,11 +64,10 @@ namespace Tests
             AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode:"00427");
         }
         [TestMethod]
-        public void PECDestinatarioMinMaxLengthWhenCodiceDestinatarioIs0000000()
+        public void PECDestinatarioMinMaxLength()
         {
             challenge.CodiceDestinatario = new string('0', 7);
-
-            AssertMinMaxLength(x => x.PECDestinatario, 7, 256, expectedErrorCode:"00426");
+            AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
         }
         [TestMethod]
         public void PECDestinatarioIsRequiredWhenCodiceDestinatarioIs0000000()
@@ -78,14 +77,12 @@ namespace Tests
             AssertRequired(x => x.PECDestinatario, expectedErrorCode:"00426");
         }
         [TestMethod]
-        public void PECDestinatarioIsOptionalWhenCodiceDestinatarioIsNot0000000()
+        public void PECDestinatarioIsEmptyWhenCodiceDestinatarioIsNot0000000()
         {
             challenge.CodiceDestinatario = "1234567";
 
             challenge.PECDestinatario = "x";
             validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge).WithErrorCode("00426");
-
-            AssertOptional(x => x.PECDestinatario);
         }
     }
 }
