@@ -37,6 +37,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="FatturaElettronica, Version=0.7.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FatturaElettronica.0.7.0\lib\netstandard1.1\FatturaElettronica.dll</HintPath>
+    </Reference>
     <Reference Include="FatturaElettronica.Core, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\FatturaElettronica.Core.0.1.0\lib\netstandard1.1\FatturaElettronica.Core.dll</HintPath>
     </Reference>
@@ -129,12 +132,6 @@
     <None Include="Samples\IT01234567890_FPR02.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\FatturaElettronica.csproj">
-      <Project>{0a1cfccb-0061-43e5-8392-c78b4156d2ca}</Project>
-      <Name>FatturaElettronica</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
