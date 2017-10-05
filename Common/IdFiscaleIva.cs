@@ -9,9 +9,6 @@ namespace FatturaElettronica.Common
     /// </summary>
     public class IdFiscaleIVA : BaseClassSerializable
     {
-        private string _idPaese;
-        private string _idCodice;
-
         public IdFiscaleIVA() { }
         public IdFiscaleIVA(XmlReader r) : base(r) { }
 

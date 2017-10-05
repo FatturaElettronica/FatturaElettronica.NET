@@ -8,9 +8,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
     /// </summary>
     public class ContattiTrasmittente : BaseClassSerializable
     {
-        private string _telefono;
-        private string _email;
-
         public ContattiTrasmittente() { }
         public ContattiTrasmittente(XmlReader r) : base(r) { }
 
