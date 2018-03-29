@@ -1,3 +1,5 @@
+<p align="center"><img src="logo/horizontal.png" alt="FatturaElettronica.NET" height="200px"></p>
+
 ﻿# Fattura Elettronica per piattaforme .NET [![Build status](https://ci.appveyor.com/api/projects/status/gft4hjbct0xgwogq?svg=true)](https://ci.appveyor.com/project/nicolaiarocci/fatturaelettronica-net)
 ## Caratteristiche
 - Lettura e scrittura nel [formato standard v1.2.1][pa] (XML).
