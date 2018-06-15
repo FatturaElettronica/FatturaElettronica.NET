@@ -1,6 +1,13 @@
 Changelog
 =========
 
+v0.8
+====
+
+Non rilasciata.
+
+- Passata la test suite da NET461 a NETCore. Closes #57.
+
 v0.7
 ====
 
