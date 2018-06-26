@@ -164,3 +164,4 @@ ConsoleApp/
 
 # Visual Studio per-machine and per-user settings
 .vs/
+.vscode/
