@@ -1,11 +1,14 @@
 ﻿# Fattura Elettronica per piattaforme .NET [![Build status](https://ci.appveyor.com/api/projects/status/gft4hjbct0xgwogq?svg=true)](https://ci.appveyor.com/project/nicolaiarocci/fatturaelettronica-net)
+
 ## Caratteristiche
-- Lettura e scrittura nel [formato standard v1.2.1][pa] (XML).
+
+- Lettura e scrittura nel formato aderente alle specifiche tecniche ([Allegato A, v1.1 del 22 Giugno 2018][pa]).
 - Supporta sia fatture elettroniche tra privati che con la Pubblica Amministrazione.
 - Convalida in osservanza delle specifiche tecniche ufficiali.
 - Supporto per la serializzazione in formato JSON
 
 ## Utilizzo
+
 ```cs
 using FatturaElettronica;
 using FatturaElettronica.Validators;
@@ -26,9 +29,8 @@ namespace DemoApp
             // Usare il factory method CreateInstance() per ottenere una istanza di Fattura.
             var fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione);
 
-            // Lettura da file XML compatibile con formato SDI 1.2.1.
-            // (scaricato da http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm)
-            using (var r = XmlReader.Create("IT01234567890_FPA01.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true })) 
+            // Lettura da file XML
+            using (var r = XmlReader.Create("IT01234567890_FPA01.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
             {
                 fattura.ReadXml(r);
             }
@@ -62,7 +64,7 @@ namespace DemoApp
             // Per brevità è possibile usare un extension method.
             result = fattura.Validate();
             Console.WriteLine(result.IsValid);
-            
+
             // Sono disponibili validatori per ogni classe esposta da FatturaElettronica.
             var anagrafica = new DatiAnagraficiCedentePrestatore();
             var anagraficaValidator = new DatiAnagraficiCedentePrestatoreValidator();
@@ -75,7 +77,7 @@ namespace DemoApp
             //  Modifica proprietà Body
             fattura.Body[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
 
-            // Serializzazione XML in osservanza allo standard SDI 1.2.1.
+            // Serializzazione XML
             using (var w = XmlWriter.Create("IT01234567890_FPA01.xml", new XmlWriterSettings { Indent = true }))
             {
                 fattura.WriteXml(w);
@@ -88,26 +90,31 @@ namespace DemoApp
     }
 }
 ```
+
 ### Limitazioni
-In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server. 
+
+In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server.
 
 ## Portabilità
+
 FatturaElettronica supporta .NET Standard v1.1, cosa che le permette di supportare un [ampio numero di piattaforme][netstandard].
 
-
 ## Installazione
+
 FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
 
+```powershell
+    PM> Install-Package FatturaElettronica
 ```
-	PM> Install-Package FatturaElettronica
-```
+
 dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 
 ## Licenza
+
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: http://www.fatturapa.gov.it/export/fatturazione/sdi/Specifiche_tecniche_del_formato_FatturaPA_v1.2.1.pdf 
-[bo]: http://github.com/FatturaElettronica/BusinessObjects 
+[pa]: https://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/ST+Fatturazione+elettronica+-+Allegato+A/Allegato+A+-+Specifiche+tecniche+vers+1.1_22062018.pdf
+[bo]: http://github.com/FatturaElettronica/BusinessObjects
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
 [ni]: https://nicolaiarocci.com

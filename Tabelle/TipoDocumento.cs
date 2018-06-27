@@ -13,7 +13,8 @@
                     new TipoDocumento { Codice = "TD03", Nome = "acconto/anticipo su parcella" },
                     new TipoDocumento { Codice = "TD04", Nome = "nota di credito" },
                     new TipoDocumento { Codice = "TD05", Nome = "nota di debito" },
-                    new TipoDocumento { Codice = "TD06", Nome = "parcella" }
+                    new TipoDocumento { Codice = "TD06", Nome = "parcella" },
+                    new TipoDocumento { Codice = "TD20", Nome = "autofattura" }
                 };
 
             }

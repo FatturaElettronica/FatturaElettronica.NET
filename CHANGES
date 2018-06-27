@@ -6,6 +6,9 @@ v0.8
 
 Non rilasciata.
 
+- Recepite specifiche tecniche Allegato A del 22.6.2018. Closes #52.
+- New: rimossi controlli su campo PECDestinatario. Addresses #52.
+- New: supporto per TipoDocumento TD020 autofattura. Addresses #52
 - Passata la test suite da NET461 a NETCore. Closes #57.
 
 v0.7
@@ -30,21 +33,21 @@ v0.6.2
 
 Rilasciata il 23.5.2017.
 
-- Fix: Falso errore di convalida 00423 quando PrezzoTotale è valorizzato con piu di due decimali. Closes #45.
+- Fix: Falso errore di convalida 00423 quando PrezzoTotale ï¿½ valorizzato con piu di due decimali. Closes #45.
 
 v0.6.1
 ======
 
 Rilasciata il 5.5.2017.
 
-- Fix: Falso errore di convalida 00415 quando DatiCassaPrevidenziale è valorizzato ma non ha Ritenuta="SI". Closes #44.
+- Fix: Falso errore di convalida 00415 quando DatiCassaPrevidenziale ï¿½ valorizzato ma non ha Ritenuta="SI". Closes #44.
 
 v0.6.0
 ======
 
 Rilasciata il 27.4.2017.
 
-- Assembly non più strong-named. Closes #41.
+- Assembly non piï¿½ strong-named. Closes #41.
 - README: aggiunti esempi di introspezione e modifica degli elementi FatturaElettronicaBody. Closes #38.
 
 v0.5.1
@@ -61,16 +64,16 @@ Rilasciata il 30.3.2017.
 
 Questa versione recepisce le modifiche introdotte con la v1.2.1 delle specifiche tecniche PA.
 
-- Regime Fiscale RF03 è abrogato. Viene restituito errore 00459 se utilizzato. 
+- Regime Fiscale RF03 ï¿½ abrogato. Viene restituito errore 00459 se utilizzato. 
 - Natura N5: descrizione aggiornata a "regime del margine / IVA non esposta in fattura".
-- Le proprietà Codice e Nome della classe astratta Tabella non sono più protette in scrittura.
+- Le proprietï¿½ Codice e Nome della classe astratta Tabella non sono piï¿½ protette in scrittura.
 
 v0.4.3
 ======
 
 Rilasciata il 23.3.2017.
 
-- Fix: Validazione conformità ai gruppi IsBasicLatin e IsLatin-1Supplement. Closes #29.
+- Fix: Validazione conformitï¿½ ai gruppi IsBasicLatin e IsLatin-1Supplement. Closes #29.
 - Fix: Non includere il folder Artwork nel package NuGet. Closes #37.
 
 v0.4.2
@@ -98,8 +101,8 @@ Rilasciata il 9.3.2017.
 - Rinominata classe FatturaElettronica in Fattura.
 - Rinominata classe FatturaElettronicaHeader in Header.
 - Rinominata classe FatturaElettronicaBody in Body.
-- Rinominata proprietà Fattura.FatturaElettronicaHeader in Fattura.Header.
-- Rinominata proprietà Fattura.FatturaElettronicaBody in Fattura.Body.
+- Rinominata proprietï¿½ Fattura.FatturaElettronicaHeader in Fattura.Header.
+- Rinominata proprietï¿½ Fattura.FatturaElettronicaBody in Fattura.Body.
 - Alcune classi spostate da FatturaElettronica.Common a FatturaElettronica.Tabelle
 - Classe BusinessObjects.BusinessObjectBase rinominata FatturaElettronica.BaseClass.
 - Classe BusinessObjects.BusinessObject rinominata FatturaElettronica.BaseClassSerializable.
@@ -108,8 +111,8 @@ Rilasciata il 9.3.2017.
 - Acquisita dipendenza dal package FluentValidation.
 - Aggiunto namespace FatturaElettronica.Validators.
 - Aggiunta serie di classi dedicate alla convalida (FatturaValidator; HeaderValidator; ecc.)
-- Rimosso metodo IsValid(). Al suo posto usare proprietà ValidationResult.IsValid.
-- Rimossa proprietà Error. Al suo posto usare ValidationFailure.Errors.
+- Rimosso metodo IsValid(). Al suo posto usare proprietï¿½ ValidationResult.IsValid.
+- Rimossa proprietï¿½ Error. Al suo posto usare ValidationFailure.Errors.
 - Nuovo extension method Fattura.Validate(). Equivalente a FatturaValidator.Validate() (shortcut).
 - Consultare il README per esempi di codice aggiornati.
 
@@ -166,15 +169,15 @@ Rilasciata il 17.1.2017.
 
 - Fix: Convalida errore 00415. Se almeno un DatiCassaPrevidenziale ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato. Closes #22.
 - Fix: Convalida errore 00411. Se almeno un DettaglioLinee ha Ritenuta = "SI", allora DatiRitenuta deve essere valorizzato. Closes #22.
-- Fix: Convalida errore 00423 nel caso di campo Quantità a null. Closes #20.
+- Fix: Convalida errore 00423 nel caso di campo Quantitï¿½ a null. Closes #20.
 
 v0.3.1
 ======
 
 Rilasciata il 16.1.2017.
 
-- New: aggiunte proprietà Sigla e Sigle[] alla classe FormatoTrasmissione
-- New: aggiunta proprietà Descrizione alla classe FormatoTrasmissione
+- New: aggiunte proprietï¿½ Sigla e Sigle[] alla classe FormatoTrasmissione
+- New: aggiunta proprietï¿½ Descrizione alla classe FormatoTrasmissione
 
 v0.3
 =====
@@ -184,16 +187,16 @@ Rilasciata il 13.1.2017
 BREAKING CHANGES
 ----------------
 Questa release introduce una serie di cambianti importanti che rompono la
-compatibilità con l'API precedente.
+compatibilitï¿½ con l'API precedente.
 
 - Il package NuGet cambia nome. Ora si chiama FatturaElettronica (era FatturaElettronicaPA).
 - Il namespace diventa FatturaElettronica (era FatturaElettronicaPA)
-- Il package FatturaElettronicaPA verrà marcato come obsoleto su NuGet.
-- Il costruttore della classe FatturaElettronica è ora protetto.
+- Il package FatturaElettronicaPA verrï¿½ marcato come obsoleto su NuGet.
+- Il costruttore della classe FatturaElettronica ï¿½ ora protetto.
 - Usare il factory method CreateInstance() per ottenere una istanza della classe.
 - CreateInstance() consente di scegliere se ottenere una fattura tra soggetti privati o per la Pubblica Amministrazione.
-- La fattura restituita da CreateInstance() ha già il campo FormatoTrasmissione correttamente impostato a FPA12 o FPR12.
-- Nel caso di fattura tra privati, per default la fattura ha il CodiceDestinatario impostato a "0000000" (sarà cura del utente impostare in seguito il nuovo campo PECDestinatario o aggiornare il CodiceDestinatario col codice canale del destinatario)
+- La fattura restituita da CreateInstance() ha giï¿½ il campo FormatoTrasmissione correttamente impostato a FPA12 o FPR12.
+- Nel caso di fattura tra privati, per default la fattura ha il CodiceDestinatario impostato a "0000000" (sarï¿½ cura del utente impostare in seguito il nuovo campo PECDestinatario o aggiornare il CodiceDestinatario col codice canale del destinatario)
 
 Altre modifiche
 ---------------
@@ -215,7 +218,7 @@ v0.2.6
 
 Rilasciata il 13.1.2017
 
-- Questa release serve solo a segnalare su NuGet che FatturaElettronicaPA è obsoleto.
+- Questa release serve solo a segnalare su NuGet che FatturaElettronicaPA ï¿½ obsoleto.
 - Scaricare e installare il package FatturaElettronica v0.3 e successivi da ora in poi.
 
 v0.2.5
@@ -301,7 +304,7 @@ Rilasciata il 31.7.2015
 - Fix: 2.1.9.13 DataOraConsegna serializza a MinValue quando non valorizzato. Closes #10.
 - Fix: 2.2.1.16.4 RiferimentoData serializza a MinValue quando non valorizzato.
 - Fix: 2.4.2.5 DataScadenzaPagamento serializza a MinValue quando non valorizzato. Closes #10.
-- Fix: 2.4.2.18 DataLimitePagamentoAnticipato è di tipo errato (decimal? invece di DateTime?).
+- Fix: 2.4.2.18 DataLimitePagamentoAnticipato ï¿½ di tipo errato (decimal? invece di DateTime?).
 
 v0.1.5
 ======
