@@ -4,7 +4,7 @@ Changelog
 v0.8
 ====
 
-Non rilasciata.
+Rilasciata il 3.7.2018
 
 - Recepite specifiche tecniche Allegato A del 22.6.2018. Closes #52.
 - New: rimossi controlli su campo PECDestinatario. Addresses #52.
