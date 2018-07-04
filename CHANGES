@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.8.1
+======
+
+- Fix: errore lunghezza PECDestinatario in v0.8. Closes #58.
+
 v0.8
 ====
 
