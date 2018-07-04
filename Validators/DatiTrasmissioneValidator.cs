@@ -30,9 +30,10 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00427");
             RuleFor(dt => dt.ContattiTrasmittente)
                 .SetValidator(new ContattiTrasmittenteValidator())
-                .When(x=>!x.ContattiTrasmittente.IsEmpty());
+                .When(x => !x.ContattiTrasmittente.IsEmpty());
             RuleFor(dt => dt.PECDestinatario)
-                .Length(7, 256);
+                .Length(7, 256)
+                .When(x => !string.IsNullOrEmpty(x.PECDestinatario));
         }
     }
 }
