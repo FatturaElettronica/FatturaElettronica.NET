@@ -12,6 +12,10 @@ namespace FatturaElettronica.Filename
         public FatturaElettronicaFilename(IdFiscaleIVA idFiscale)
         {
             _idFiscaleIVA = idFiscale ?? throw new ArgumentNullException("Id Fiscale non specificato");
+            if (_idFiscaleIVA.IdPaese == null || _idFiscaleIVA.IdPaese.Length < 2)
+                throw new ArgumentException("IdPaese non specificato");
+            if (_idFiscaleIVA.IdCodice == null)
+                throw new ArgumentException("IdCodice non specificato");
         }
         /// <summary>
         /// Restituisce il nome del file partendo dall'ultimo numero di fattura staccata

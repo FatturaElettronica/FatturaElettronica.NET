@@ -78,7 +78,10 @@ namespace DemoApp
             fattura.Body[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
 
             // Serializzazione XML
-            using (var w = XmlWriter.Create("IT01234567890_FPA01.xml", new XmlWriterSettings { Indent = true }))
+            int incrementaleUltimaFattura = 100;
+            var filenameGenerator = new FatturaElettronicaFilename(new Common.IdFiscaleIVA() { IdPaese = "IT", IdCodice = "0123456789" });
+            var filename = filenameGenerator.FileName(incrementaleUltimaFattura);
+            using (var w = XmlWriter.Create(filename, new XmlWriterSettings { Indent = true }))
             {
                 fattura.WriteXml(w);
             }
