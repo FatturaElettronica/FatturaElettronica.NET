@@ -33,7 +33,7 @@ namespace FatturaElettronica.Test
         {
             var filenameGenerator = new FatturaElettronicaFilename(new Common.IdFiscaleIVA() { IdPaese = "IT", IdCodice = "0123456789" });
             var filename = filenameGenerator.FileName("C");
-            Assert.IsTrue(filename == "IT0123456789_D");
+            Assert.IsTrue(filename == "IT0123456789_D.xml");
         }
 
         [TestMethod]
