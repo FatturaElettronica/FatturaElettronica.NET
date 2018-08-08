@@ -41,7 +41,10 @@ namespace FatturaElettronica.Filename
         /// <returns></returns>
         private string GetNextFilename(int lastNumber)
         {
-            return ToString(++lastNumber);
+            string value = ToString(++lastNumber);
+            if (value.Length > 5)
+                throw new OverflowException("Il progressivo è troppo elevato");
+            return value.PadLeft(5, '0');
         }
 
         /// <summary>

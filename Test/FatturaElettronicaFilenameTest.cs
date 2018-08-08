@@ -33,7 +33,7 @@ namespace FatturaElettronica.Test
         {
             var filenameGenerator = new FatturaElettronicaFilename(new Common.IdFiscaleIVA() { IdPaese = "IT", IdCodice = "0123456789" });
             var filename = filenameGenerator.FileName("C");
-            Assert.IsTrue(filename == "IT0123456789_D.xml");
+            Assert.IsTrue(filename == "IT0123456789_0000D.xml");
         }
 
         [TestMethod]
@@ -41,7 +41,15 @@ namespace FatturaElettronica.Test
         {
             var filenameGenerator = new FatturaElettronicaFilename(new Common.IdFiscaleIVA() { IdPaese = "IT", IdCodice = "0123456789" });
             var filename = filenameGenerator.FileName(62);
-            Assert.IsTrue(filename == "IT0123456789_11.xml");
+            Assert.IsTrue(filename == "IT0123456789_00011.xml");
+        }
+
+        [TestMethod]
+        public void ProgressivoInvioOverflow()
+        {
+            var filenameGenerator = new FatturaElettronicaFilename(new Common.IdFiscaleIVA() { IdPaese = "IT", IdCodice = "0123456789" });
+            Assert.ThrowsException<OverflowException>(() => filenameGenerator.FileName("zzzzz"));
+            Assert.ThrowsException<OverflowException>(() => filenameGenerator.FileName(916_132_831));
         }
     }
 }
