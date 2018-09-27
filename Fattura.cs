@@ -2,6 +2,7 @@
 using FatturaElettronica.Impostazioni;
 using FatturaElettronica.Common;
 using System.Xml.Serialization;
+using FatturaElettronica.Filename;
 
 namespace FatturaElettronica
 {
@@ -48,6 +49,28 @@ namespace FatturaElettronica
             }
 
             return f;
+        }
+
+        /// <summary>
+        /// Filename
+        /// </summary>
+        /// <param name="idFiscaleIVA"></param>
+        /// <param name="lastBillingNumber"></param>
+        /// <returns></returns>
+        public static string Filename(IdFiscaleIVA idFiscaleIVA, int lastBillingNumber)
+        {
+            return new FatturaElettronicaFilename(idFiscaleIVA).FileName(lastBillingNumber);
+        }
+
+        /// <summary>
+        /// Filename
+        /// </summary>
+        /// <param name="idFiscaleIVA"></param>
+        /// <param name="lastBillingNumber"></param>
+        /// <returns></returns>
+        public static string Filename(IdFiscaleIVA idFiscaleIVA, string lastBillingNumber)
+        {
+            return new FatturaElettronicaFilename(idFiscaleIVA).FileName(lastBillingNumber);
         }
 
         /// IMPORTANT
