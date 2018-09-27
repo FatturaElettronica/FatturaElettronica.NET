@@ -109,6 +109,9 @@ FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
 
 dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 
+## Estensioni
+[FatturaElettronica.Extensions][fex] aggiunge features a FatturaElettronica.NET, come la lettura di file firmati digitalmente (.p7m).
+
 ## Licenza
 
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
@@ -120,3 +123,4 @@ FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestion
 [ni]: https://nicolaiarocci.com
 [nuget]: https://www.nuget.org/packages/FatturaElettronica/
 [netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md
+[fex]: http://github.com/FatturaElettronica/FatturaElettronica.Extensions
