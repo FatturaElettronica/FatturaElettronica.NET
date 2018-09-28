@@ -4,8 +4,7 @@ using FluentValidation.Validators;
 
 namespace FatturaElettronica.Validators
 {
-    public class IsValidValidator<T> : PropertyValidator 
-        where T : Tabella, new()
+    public class IsValidValidator<T> : PropertyValidator where T : Tabella, new()
     {
         public IsValidValidator() : base("'{PropertyName}' valori accettati: {AcceptedValues}") { }
 

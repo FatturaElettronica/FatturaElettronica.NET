@@ -1,6 +1,5 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
-using System.Xml.Serialization;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
 {
@@ -10,19 +9,14 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     /// </summary>
     public class CessionarioCommittente : BaseClassSerializable
     {
-        private readonly DatiAnagraficiCessionarioCommittente _datiAnagrafici;
-        private readonly SedeCessionarioCommittente _sede;
-        private readonly StabileOrganizzazione _stabileOrganizzazione;
-        private readonly RappresentanteFiscaleCessionarioCommittente _rappresentanteFiscale;
-
         /// <summary>
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         public CessionarioCommittente() {
-            _datiAnagrafici = new DatiAnagraficiCessionarioCommittente();
-            _sede = new SedeCessionarioCommittente();
-            _stabileOrganizzazione = new StabileOrganizzazione();
-            _rappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
+            DatiAnagrafici = new DatiAnagraficiCessionarioCommittente();
+            Sede = new SedeCessionarioCommittente();
+            StabileOrganizzazione = new StabileOrganizzazione();
+            RappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
         }
         public CessionarioCommittente(XmlReader r) : base(r) { }
 
@@ -34,32 +28,24 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Dati anagrafici, professionali e fiscali del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public DatiAnagraficiCessionarioCommittente DatiAnagrafici { 
-            get { return _datiAnagrafici; }
-        }
+        public DatiAnagraficiCessionarioCommittente DatiAnagrafici { get; }
 
         /// <summary>
         /// Dati della sede del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public SedeCessionarioCommittente Sede { 
-            get { return _sede; }
-        }
+        public SedeCessionarioCommittente Sede { get; }
 
         /// <summary>
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 FormatoTrasmissione = "FPR12" (fattura tra privati), nel caso di cessionario/committente non residente e con stabile organizzazione in Italia.
         /// </summary>
         [DataProperty]
-        public StabileOrganizzazione StabileOrganizzazione { 
-            get { return _stabileOrganizzazione; }
-        }
+        public StabileOrganizzazione StabileOrganizzazione { get; }
 
         /// <summary>
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 <FormatoTrasmissione> = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
         /// </summary>
         [DataProperty]
-        public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { 
-            get { return _rappresentanteFiscale; }
-        }
+        public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { get; }
     }
 }

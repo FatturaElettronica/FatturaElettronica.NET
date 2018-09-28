@@ -6,7 +6,7 @@ namespace FatturaElettronica.Validators
 {
     public abstract class LatinBaseValidator<T> : PropertyValidator 
     {
-        private Charsets _charset;
+        private readonly Charsets _charset;
 
 
         public LatinBaseValidator(Charsets charset) 

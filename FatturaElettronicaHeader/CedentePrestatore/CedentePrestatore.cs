@@ -1,6 +1,5 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
-using System.Xml.Serialization;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -10,21 +9,15 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
     /// </summary>
     public class CedentePrestatore : BaseClassSerializable
     {
-        private readonly DatiAnagraficiCedentePrestatore _datiAnagrafici;
-        private readonly SedeCedentePrestatore _sede;
-        private readonly StabileOrganizzazione _stabileOrganizzazione;
-        private readonly IscrizioneREA _iscrizioneREA;
-        private readonly Contatti _contatti;
-
         /// <summary>
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         public CedentePrestatore() {
-            _datiAnagrafici = new DatiAnagraficiCedentePrestatore();
-            _sede = new SedeCedentePrestatore();
-            _stabileOrganizzazione = new StabileOrganizzazione();
-            _iscrizioneREA = new IscrizioneREA();
-            _contatti = new Contatti();
+            DatiAnagrafici = new DatiAnagraficiCedentePrestatore();
+            Sede = new SedeCedentePrestatore();
+            StabileOrganizzazione1 = new StabileOrganizzazione();
+            IscrizioneREA1 = new IscrizioneREA();
+            Contatti1 = new Contatti();
         }
         public CedentePrestatore(XmlReader r) : base(r) { }
 
@@ -36,24 +29,20 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public DatiAnagraficiCedentePrestatore DatiAnagrafici { 
-            get { return _datiAnagrafici; }
-        }
+        public DatiAnagraficiCedentePrestatore DatiAnagrafici { get; }
 
         /// <summary>
         /// Dati della sede del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public SedeCedentePrestatore Sede { 
-            get { return _sede; }
-        }
+        public SedeCedentePrestatore Sede { get; }
 
         /// <summary>
         /// Nei casi di cedente / prestatore non residente.
         /// </summary>
         [DataProperty]
         public StabileOrganizzazione StabileOrganizzazione { 
-            get { return _stabileOrganizzazione; }
+            get { return StabileOrganizzazione1; }
         }
 
         /// <summary>
@@ -61,7 +50,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// </summary>
         [DataProperty]
         public IscrizioneREA IscrizioneREA  { 
-            get { return _iscrizioneREA; }
+            get { return IscrizioneREA1; }
         }
 
         /// <summary>
@@ -69,7 +58,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// </summary>
         [DataProperty]
         public Contatti Contatti { 
-            get { return _contatti; }
+            get { return Contatti1; }
         }
 
         /// <summary>
@@ -77,5 +66,11 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// </summary>
         [DataProperty]
         public string RiferimentoAmministrazione { get; set; }
+
+        public StabileOrganizzazione StabileOrganizzazione1 { get; }
+
+        public IscrizioneREA IscrizioneREA1 { get; }
+
+        public Contatti Contatti1 { get; }
     }
 }

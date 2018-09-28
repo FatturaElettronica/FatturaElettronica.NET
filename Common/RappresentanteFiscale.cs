@@ -1,21 +1,18 @@
 ﻿using System.Xml;
-using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
-
     /// <summary>
     /// Dati relativi al rappresentante fiscale del cedente / prestatore.
     /// </summary>
     public abstract class RappresentanteFiscale : BaseClassSerializable
     {
-        private readonly DatiAnagrafici _datiAnagrafici;
 
         /// <summary>
         /// Dati relativi al rappresentante fiscale del cedente / prestatore.
         /// </summary>
         public RappresentanteFiscale() {
-            _datiAnagrafici = new DatiAnagrafici();
+            DatiAnagrafici = new DatiAnagrafici();
         }
         public RappresentanteFiscale(XmlReader r) : base(r) { }
 
@@ -27,8 +24,6 @@ namespace FatturaElettronica.Common
         /// Dati anagrafici del rappresentante fiscae del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public DatiAnagrafici DatiAnagrafici { 
-            get { return _datiAnagrafici; }
-        }
+        public DatiAnagrafici DatiAnagrafici { get; }
     }
 }

@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.8.2
+======
+
+- Cleanup and refactoring: use auto-properties; remove unnecessary usings.
+
 v0.8.1
 ======
 

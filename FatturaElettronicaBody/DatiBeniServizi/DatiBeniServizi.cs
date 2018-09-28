@@ -10,15 +10,12 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// </summary>
     public class DatiBeniServizi : BaseClassSerializable
     {
-        private readonly List<DettaglioLinee> _dettaglioLinee;
-        private readonly List<DatiRiepilogo> _datiRiepilogo;
-
         /// <summary>
         /// Blocco sempre obbligatorio contenente natura, qualità e quantità dei beni / servizi formanti oggetto dell'operazione.
         /// </summary>
         public DatiBeniServizi() {
-            _dettaglioLinee = new List<DettaglioLinee>();
-            _datiRiepilogo = new List<DatiRiepilogo>();
+            DettaglioLinee = new List<DettaglioLinee>();
+            DatiRiepilogo = new List<DatiRiepilogo>();
         }
         public DatiBeniServizi(XmlReader r) : base(r) { }
 
@@ -30,12 +27,12 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// Dati generali del documento principale.
         /// </summary>
         [DataProperty]
-        public List<DettaglioLinee> DettaglioLinee { get { return _dettaglioLinee; } }
+        public List<DettaglioLinee> DettaglioLinee { get; }
 
         /// <summary>
         /// Blocco sempre obbligatorio contenente i dati di riepilogo per ogni aliquota IVA o natura.
         /// </summary>
         [DataProperty]
-        public List<DatiRiepilogo> DatiRiepilogo { get { return _datiRiepilogo; } }
-        }
+        public List<DatiRiepilogo> DatiRiepilogo { get; }
+    }
 }

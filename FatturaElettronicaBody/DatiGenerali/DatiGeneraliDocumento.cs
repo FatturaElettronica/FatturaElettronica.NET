@@ -10,22 +10,15 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// </summary>
     public class DatiGeneraliDocumento : BaseClassSerializable
     {
-
-        private readonly DatiRitenuta _datiRitenuta;
-        private readonly DatiBollo _datiBollo;
-        private readonly List<DatiCassaPrevidenziale> _datiCassaPrevidenziale;
-        private readonly List<ScontoMaggiorazione> _scontoMaggiorazione;
-        private readonly List<string> _causale;
-
         /// <summary>
         /// Dati generali del documento principale ed i dati dei documenti correlati.
         /// </summary>
         public DatiGeneraliDocumento() {
-            _datiRitenuta = new DatiRitenuta();
-            _datiBollo = new DatiBollo();
-            _datiCassaPrevidenziale = new List<DatiCassaPrevidenziale>();
-            _scontoMaggiorazione = new List<ScontoMaggiorazione>();
-            _causale = new List<string>();
+            DatiRitenuta = new DatiRitenuta();
+            DatiBollo = new DatiBollo();
+            DatiCassaPrevidenziale = new List<DatiCassaPrevidenziale>();
+            ScontoMaggiorazione = new List<ScontoMaggiorazione>();
+            Causale = new List<string>();
         }
         public DatiGeneraliDocumento(XmlReader r) : base(r) { }
 
@@ -61,25 +54,25 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Dati della ritenuta.
         /// </summary>
         [DataProperty]
-        public DatiRitenuta DatiRitenuta { get { return _datiRitenuta; } }
+        public DatiRitenuta DatiRitenuta { get; }
 
         /// <summary>
         /// Dati del bollo.
         /// </summary>
         [DataProperty]
-        public DatiBollo DatiBollo { get { return _datiBollo; } }
+        public DatiBollo DatiBollo { get; }
 
         /// <summary>
         /// Blocco dati relativi alla cassa previdenziale di appartenenenza.
         /// </summary>
         [DataProperty]
-        public List<DatiCassaPrevidenziale> DatiCassaPrevidenziale { get { return _datiCassaPrevidenziale; } }
+        public List<DatiCassaPrevidenziale> DatiCassaPrevidenziale { get; }
 
         /// <summary>
         /// Eventuali sconti o maggiorazioni applicati sul totale documento.
         /// </summary>
         [DataProperty]
-        public List<ScontoMaggiorazione> ScontoMaggiorazione { get { return _scontoMaggiorazione; } }
+        public List<ScontoMaggiorazione> ScontoMaggiorazione { get; }
 
         /// <summary>
         /// Importo totale del documento al netto dell'eventuale sconto e comprensivo di imposta a debito del cessionario /committente.
@@ -97,7 +90,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Descrizione della causale del documento.
         /// </summary>
         [DataProperty]
-        public List<string> Causale { get { return _causale; }}
+        public List<string> Causale { get; }
 
         /// <summary>
         /// Indica se il documento è stato emesso secondo modalità e termini stabiliti con decreto ministeriale ai sensi art. 73

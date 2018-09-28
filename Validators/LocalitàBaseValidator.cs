@@ -1,5 +1,4 @@
-﻿using FatturaElettronica.Common;
-using FatturaElettronica.Tabelle;
+﻿using FatturaElettronica.Tabelle;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators

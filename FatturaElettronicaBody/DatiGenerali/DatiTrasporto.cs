@@ -9,27 +9,24 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     /// </summary>
     public class DatiTrasporto : BaseClassSerializable
     {
-        private readonly DatiAnagraficiVettore _datiAnagraficiVettore;
-        private readonly IndirizzoResa _indirizzoResa;
-
         /// <summary>
         /// Da valorizzare nel caso di fattura accompagnatoria per inserire informazioni relative al trasporto.
         /// </summary>
         public DatiTrasporto() {
-            _datiAnagraficiVettore = new DatiAnagraficiVettore();
-            _indirizzoResa = new IndirizzoResa();
+            DatiAnagraficiVettore = new DatiAnagraficiVettore();
+            IndirizzoResa = new IndirizzoResa();
         }
         public DatiTrasporto(XmlReader r) : base(r) { }
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
-        
+
         /// <summary>
         /// Dati fiscali e anagrafici del vettore.
         /// </summary>
         [DataProperty]
-        public DatiAnagraficiVettore DatiAnagraficiVettore { get { return _datiAnagraficiVettore; } }
+        public DatiAnagraficiVettore DatiAnagraficiVettore { get; }
 
         /// <summary>
         /// Mezzo utilizzato per il trasporto.
@@ -97,7 +94,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Indirizzo di resa.
         /// </summary>
         [DataProperty]
-        public IndirizzoResa IndirizzoResa { get { return _indirizzoResa; }}
+        public IndirizzoResa IndirizzoResa { get; }
 
         /// <summary>
         /// Data e ora della consegna della merce.

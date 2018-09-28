@@ -9,13 +9,11 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
     /// </summary>
     public class DatiPagamento : BaseClassSerializable
     {
-        private readonly List<DettaglioPagamento> _dettagliPagamento;
-
         /// <summary>
         /// Dati relativi al pagamento.
         /// </summary>
         public DatiPagamento() {
-            _dettagliPagamento = new List<DettaglioPagamento>();
+            DettaglioPagamento = new List<DettaglioPagamento>();
         }
 
         public DatiPagamento(XmlReader r) : base(r) { }
@@ -30,6 +28,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
         /// Dati di dettaglio del pagamento.
         /// </summary>
         [DataProperty]
-        public List<DettaglioPagamento> DettaglioPagamento { get { return _dettagliPagamento; }}
+        public List<DettaglioPagamento> DettaglioPagamento { get; }
     }
 }

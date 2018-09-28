@@ -1,5 +1,4 @@
 ﻿using System.Xml;
-using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
@@ -8,15 +7,12 @@ namespace FatturaElettronica.Common
     /// </summary>
     public class DatiAnagrafici : BaseClassSerializable
     {
-        private readonly IdFiscaleIVA _idFiscaleIva;
-        private readonly Anagrafica _anagrafica;
-
         /// <summary>
         /// Dati anagrafici, professionali e fiscali
         /// </summary>
         public DatiAnagrafici() {
-            _idFiscaleIva = new IdFiscaleIVA();
-            _anagrafica = new Anagrafica();
+            IdFiscaleIVA = new IdFiscaleIVA();
+            Anagrafica1 = new Anagrafica();
         }
         public DatiAnagrafici(XmlReader r) : base(r) { }
 
@@ -24,10 +20,8 @@ namespace FatturaElettronica.Common
         /// Numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ed i restanti il codice
         /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
         /// </summary>
-        [DataProperty(order:0)]
-        public IdFiscaleIVA IdFiscaleIVA { 
-            get { return _idFiscaleIva; }
-        }
+        [DataProperty(order: 0)]
+        public IdFiscaleIVA IdFiscaleIVA { get; }
 
         /// <summary>
         /// Numero di Codice Fiscale.
@@ -40,7 +34,9 @@ namespace FatturaElettronica.Common
         /// </summary>
         [DataProperty(order:2)]
         public Anagrafica Anagrafica { 
-            get { return _anagrafica; }
+            get { return Anagrafica1; }
         }
+
+        public Anagrafica Anagrafica1 { get; }
     }
 }

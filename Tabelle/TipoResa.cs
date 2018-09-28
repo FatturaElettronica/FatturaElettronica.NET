@@ -6,7 +6,7 @@
         {
             get
             {
-                // TODO add appropriate values for Nome
+                // TODO: add appropriate values for Nome
                 return new Tabella[] {
                     new TipoResa{ Codice = "EXW", Nome = string.Empty },
                     new TipoResa{ Codice = "FCA", Nome = string.Empty },

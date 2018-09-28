@@ -6,22 +6,15 @@ namespace FatturaElettronica.FatturaElettronicaHeader
 {
     public class Header : BaseClassSerializable
     {
-        private readonly DatiTrasmissione.DatiTrasmissione _datiTrasmissione;
-        private readonly CedentePrestatore.CedentePrestatore _cedentePrestatore;
-        private readonly RappresentanteFiscale.RappresentanteFiscale _rappresentanteFiscale;
-        private readonly CessionarioCommittente.CessionarioCommittente _cessionarioCommittente;
-        private readonly TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente 
-            _terzoIntermediarioOSoggettoEmittente;
-
         /// <summary>
         /// Intestazione della Fattura Elettronica.
         /// </summary>
         public Header() {
-            _datiTrasmissione = new DatiTrasmissione.DatiTrasmissione();
-            _cedentePrestatore = new CedentePrestatore.CedentePrestatore();
-            _rappresentanteFiscale = new RappresentanteFiscale.RappresentanteFiscale();
-            _cessionarioCommittente = new CessionarioCommittente.CessionarioCommittente();
-            _terzoIntermediarioOSoggettoEmittente = new TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente();
+            DatiTrasmissione = new DatiTrasmissione.DatiTrasmissione();
+            CedentePrestatore = new CedentePrestatore.CedentePrestatore();
+            Rappresentante = new RappresentanteFiscale.RappresentanteFiscale();
+            CessionarioCommittente = new CessionarioCommittente.CessionarioCommittente();
+            TerzoIntermediarioOSoggettoEmittente = new TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente();
         }
         public Header(XmlReader r) : base(r) { }
 
@@ -34,33 +27,32 @@ namespace FatturaElettronica.FatturaElettronicaHeader
         /// il formato in cui è stato trasmesso il documento, il soggetto destinatario.
         /// </summary>
         [DataProperty]
-        public DatiTrasmissione.DatiTrasmissione DatiTrasmissione { get { return _datiTrasmissione; } }
+        public DatiTrasmissione.DatiTrasmissione DatiTrasmissione { get; }
 
         /// <summary>
         /// Dati relativi al cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public CedentePrestatore.CedentePrestatore CedentePrestatore { get { return _cedentePrestatore; } }
+        public CedentePrestatore.CedentePrestatore CedentePrestatore { get; }
 
         /// <summary>
         /// Dati relativi al rappresentante fiscale del cedente / prestatore.
         /// </summary>
-        [DataProperty][XmlElement(ElementName="RappresentanteFiscale")]
-        public RappresentanteFiscale.RappresentanteFiscale Rappresentante { get { return _rappresentanteFiscale; } }
+        [DataProperty]
+        [XmlElement(ElementName = "RappresentanteFiscale")]
+        public RappresentanteFiscale.RappresentanteFiscale Rappresentante { get; }
 
         /// <summary>
         /// Dati relativi al cessionario / committente
         /// </summary>
         [DataProperty]
-        public CessionarioCommittente.CessionarioCommittente CessionarioCommittente { get { return _cessionarioCommittente; } }
+        public CessionarioCommittente.CessionarioCommittente CessionarioCommittente { get; }
 
         /// <summary>
         /// Dati relativi al soggetto che emette fattura per conto del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente TerzoIntermediarioOSoggettoEmittente {
-            get { return _terzoIntermediarioOSoggettoEmittente; }
-        }
+        public TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente TerzoIntermediarioOSoggettoEmittente { get; }
 
         /// <summary>
         /// Nei casi di documenti emessi da un soggetto diverso dal cedente / prestatore, indica se la fattura sia stata

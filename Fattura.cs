@@ -7,12 +7,9 @@ namespace FatturaElettronica
 {
     public class Fattura : BaseClassSerializable
     {
-        private readonly FatturaElettronicaHeader.Header _header;
-        private readonly List<FatturaElettronicaBody.Body> _body;
-
         protected Fattura() {
-            _header = new FatturaElettronicaHeader.Header();
-            _body = new List<FatturaElettronicaBody.Body>();
+            Header = new FatturaElettronicaHeader.Header();
+            Body = new List<FatturaElettronicaBody.Body>();
         }
 
         public override void WriteXml(System.Xml.XmlWriter w)
@@ -57,20 +54,18 @@ namespace FatturaElettronica
         /// <summary>
         /// Intestazione della comunicazione.
         /// </summary>
-        [DataProperty][XmlElement(ElementName="FatturaElettronicaHeader")]
-        public FatturaElettronicaHeader.Header Header { 
-            get { return _header; }
-        }
+        [DataProperty]
+        [XmlElement(ElementName = "FatturaElettronicaHeader")]
+        public FatturaElettronicaHeader.Header Header { get; }
 
         /// <summary>
         /// Lotto di fatture incluse nella comunicazione.
         /// </summary>
         /// <remarks>Il blocco ha molteciplità 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete
         /// per ogni fattura componente il lotto stesso.</remarks>
-        [DataProperty][XmlElement(ElementName="FatturaElettronicaBody")]
-        public List<FatturaElettronicaBody.Body> Body {
-            get { return _body; }
-        }
+        [DataProperty]
+        [XmlElement(ElementName = "FatturaElettronicaBody")]
+        public List<FatturaElettronicaBody.Body> Body { get; }
 
     }
 }

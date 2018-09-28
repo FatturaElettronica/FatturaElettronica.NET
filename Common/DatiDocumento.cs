@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Xml;
-using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Common
 {
@@ -10,11 +9,9 @@ namespace FatturaElettronica.Common
     /// </summary>
     public abstract class DatiDocumento : BaseClassSerializable
     {
-        private readonly List<int> _riferimentoNumeroLinea;
-
         protected DatiDocumento()
         {
-            _riferimentoNumeroLinea = new List<int>();
+            RiferimentoNumeroLinea = new List<int>();
         }
         protected DatiDocumento(XmlReader r) : base(r) { }
 
@@ -27,8 +24,8 @@ namespace FatturaElettronica.Common
         /// </summary>
         /// <remarks>Se il riferimento è all'intera fattura non viene valorizzato.</remarks>
         [DataProperty]
-        public List<int> RiferimentoNumeroLinea { get { return _riferimentoNumeroLinea; }}
-        
+        public List<int> RiferimentoNumeroLinea { get; }
+
         /// <summary>
         /// Numero del documento a cui si fa riferimento.
         /// </summary>

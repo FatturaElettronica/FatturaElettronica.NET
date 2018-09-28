@@ -10,17 +10,13 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
     /// </summary>
     public class DettaglioLinee : BaseClassSerializable
     {
-        private readonly List<CodiceArticolo> _codiceArticolo;
-        private readonly List<ScontoMaggiorazione> _scontoMaggiorazione;
-        private readonly List<AltriDatiGestionali> _altriDatiGestionali;
-
         /// <summary>
         /// Linee di dettaglio del documento (i campi del blocco si ripetono per ogni riga di dettaglio).
         /// </summary>
         public DettaglioLinee() {
-            _codiceArticolo = new List<CodiceArticolo>();
-            _scontoMaggiorazione = new List<ScontoMaggiorazione>();
-            _altriDatiGestionali = new List<AltriDatiGestionali>();
+            CodiceArticolo = new List<CodiceArticolo>();
+            ScontoMaggiorazione = new List<ScontoMaggiorazione>();
+            AltriDatiGestionali = new List<AltriDatiGestionali>();
         }
 
         public DettaglioLinee(XmlReader r) : base(r) { }
@@ -41,7 +37,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// Eventuale codifica dell'articolo (la molteplicità N del blocco consente di gestire la presenza di più codifiche).
         /// </summary>
         [DataProperty]
-        public List<CodiceArticolo> CodiceArticolo { get { return _codiceArticolo; } }
+        public List<CodiceArticolo> CodiceArticolo { get; }
 
         /// <summary>
         /// Natura e quantità dell'oggetto della cessione/prestazione; può fare anche riferimento ad un precedente documento emesso
@@ -85,7 +81,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// maggiorazioni a "cascata").
         /// </summary>
         [DataProperty]
-        public List<ScontoMaggiorazione> ScontoMaggiorazione { get { return _scontoMaggiorazione; } }
+        public List<ScontoMaggiorazione> ScontoMaggiorazione { get; }
 
         /// <summary>
         /// Importo totale del bene/servizio (che tiene conto di eventuali sconti/maggiorazioni) IVA esclusa.
@@ -122,6 +118,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// fini amministrativi, gestionali, etc.
         /// </summary>
         [DataProperty]
-        public List<AltriDatiGestionali> AltriDatiGestionali { get { return _altriDatiGestionali; } }
+        public List<AltriDatiGestionali> AltriDatiGestionali { get; }
     }
 }

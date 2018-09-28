@@ -1,5 +1,4 @@
-﻿using System.Runtime.CompilerServices;
-
+﻿//TODO: rename to Settings, or Configuration, or Defaults?
 namespace FatturaElettronica.Impostazioni
 {
     public enum Instance { PubblicaAmministrazione, Privati };

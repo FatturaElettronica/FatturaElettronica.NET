@@ -1,7 +1,7 @@
-﻿using FatturaElettronica.Common;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Xml;
+using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
 {
@@ -11,14 +11,11 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
     // ReSharper disable once InconsistentNaming
     public class DatiDDT : BaseClassSerializable
     {
-
-        private readonly List<int> _riferimentoNumeroLinea;
-
         /// <summary>
         /// Nei casi di fattura differita per indicare il documento con cui è stato consegnato il bene.
         /// </summary>
         public DatiDDT() {
-            _riferimentoNumeroLinea = new List<int>();
+            RiferimentoNumeroLinea = new List<int>();
         }
 
 
@@ -46,6 +43,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Linea di dettaglio della fattura cui si riferisce il DDT (non viene valorizzato se il riferimento è all'intera fattura).
         /// </summary>
         [DataProperty]
-        public List<int> RiferimentoNumeroLinea { get { return _riferimentoNumeroLinea; }}
+        public List<int> RiferimentoNumeroLinea { get; }
     }
 }

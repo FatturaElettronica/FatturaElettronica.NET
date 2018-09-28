@@ -1,6 +1,4 @@
-﻿using System;
-using System.Xml;
-using FatturaElettronica.Common;
+﻿using System.Xml;
 
 namespace FatturaElettronica.Common
 {
@@ -45,7 +43,7 @@ namespace FatturaElettronica.Common
             get
             {
                 var r = ((Cognome ?? string.Empty) + " " + (Nome ?? string.Empty)).Trim();
-                return String.IsNullOrEmpty(r) ? null : r;
+                return string.IsNullOrEmpty(r) ? null : r;
             }
         }
     }
