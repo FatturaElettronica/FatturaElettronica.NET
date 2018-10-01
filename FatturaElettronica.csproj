@@ -1,15 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>0.8.1</Version>
+    <Version>0.8.2</Version>
     <PackageId>FatturaElettronica</PackageId>
     <Authors>Nicola Iarocci</Authors>
     <Company>CIR 2000</Company>
     <Product>FatturaElettronica.NET</Product>
     <Description>Fattura elettronica per le aziende e la pubblica amministrazione italiana</Description>
-    <Copyright>Copyright © CIR2000 2017-2018</Copyright>
+    <Copyright>Copyright © CIR2000 2017-2019</Copyright>
     <PackageLicenseUrl>https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>http://fatturaelettronicaopensource.org</PackageProjectUrl>
     <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
