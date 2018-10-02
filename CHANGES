@@ -1,10 +1,17 @@
 Changelog
 =========
 
+v0.8.3
+======
+
+Released on October 2, 2018.
+
+- Fix: DettaglioLineeValidator: 00423 non supporta tolleranca di 1 centesimo. Closes #66.
+
 v0.8.2
 ======
 
-Released on October 1, 2017.
+Released on October 1, 2018.
 
 - FatturaElettronica.Core dependency bumped to v0.2.
 - Cleanup and refactoring: use auto-properties; remove unnecessary usings.
