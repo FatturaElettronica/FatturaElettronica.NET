@@ -8,8 +8,8 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(dt => dt.Header)
                 .SetValidator(new HeaderValidator());
-            RuleFor(dt => dt.Body)
-                .SetCollectionValidator(new BodyValidator());
+            RuleForEach(dt => dt.Body)
+                .SetValidator(new BodyValidator());
         }
     }
 }

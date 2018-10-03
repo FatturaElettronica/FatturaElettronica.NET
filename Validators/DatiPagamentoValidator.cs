@@ -11,8 +11,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.CondizioniPagamento)
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<CondizioniPagamento>());
-            RuleFor(x => x.DettaglioPagamento)
-                .SetCollectionValidator(new DettaglioPagamentoValidator());
+            RuleForEach(x => x.DettaglioPagamento)
+                .SetValidator(new DettaglioPagamentoValidator());
             RuleFor(x => x.DettaglioPagamento)
                 .NotEmpty();
         }

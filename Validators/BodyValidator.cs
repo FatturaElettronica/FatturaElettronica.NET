@@ -31,10 +31,10 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiVeicoli)
                 .SetValidator(new DatiVeicoliValidator())
                 .When(x=>!x.DatiVeicoli.IsEmpty());
-            RuleFor(x => x.DatiPagamento)
-                .SetCollectionValidator(new DatiPagamentoValidator());
-            RuleFor(x=>x.Allegati)
-                .SetCollectionValidator(new AllegatiValidator());
+            RuleForEach(x => x.DatiPagamento)
+                .SetValidator(new DatiPagamentoValidator());
+            RuleForEach(x=>x.Allegati)
+                .SetValidator(new AllegatiValidator());
         }
 
         private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.Body body)
