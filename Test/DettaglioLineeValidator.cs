@@ -138,6 +138,14 @@ namespace Tests
             validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
             challenge.PrezzoTotale = 20.48m;
             validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, challenge).WithErrorCode("00423");
+
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/71
+            challenge.ScontoMaggiorazione.Clear();
+            challenge.ScontoMaggiorazione.Add(new FatturaElettronica.Common.ScontoMaggiorazione { Importo = 0, Tipo = "SC" });
+            challenge.PrezzoUnitario = 1m;
+            challenge.Quantita = 1;
+            challenge.PrezzoTotale = 1m;
+            validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
         }
 
         [TestMethod]

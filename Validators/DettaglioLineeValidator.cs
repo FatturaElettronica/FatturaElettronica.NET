@@ -61,7 +61,7 @@ namespace FatturaElettronica.Validators
                 if (sconto.Importo == null && sconto.Percentuale == null) continue;
 
                 var importo = 
-                    (decimal)((sconto.Importo != null && sconto.Importo != 0) 
+                    (decimal)((sconto.Importo != null) 
                     ? Math.Abs((decimal)sconto.Importo) 
                     : (prezzo * sconto.Percentuale) / 100);
 
