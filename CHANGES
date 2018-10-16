@@ -4,6 +4,8 @@ Changelog
 v0.8.5
 ======
 
+Released on October 16, 2018.
+
 - New: Validazione errore 00426 per campo 1.1.6 PECDestinatario. Closes #74.
 - Fix: errore descrizione in RegimeFiscale "RF17". Closes #72.
 - Fix: "Nullable object must have a value" in validazione di blocco ScontoMaggiorazione con Importo = 0. Closes #71.
