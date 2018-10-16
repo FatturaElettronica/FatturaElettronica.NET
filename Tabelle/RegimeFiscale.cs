@@ -23,7 +23,7 @@
                     new RegimeFiscale { Codice = "RF14", Nome = "Rivendita beni usati, oggetti d'arte, d'antiquariato o da collezione (art.36, DL 41/95 )"},
                     new RegimeFiscale { Codice = "RF15", Nome = "Agenzie di vendite all'asta di oggetti d'arte, antiquariato o da collezione (art.40-bis, DL 41/95 )"},
                     new RegimeFiscale { Codice = "RF16", Nome = "IVA per cassa P.A. (art.6, c.5, DPR 633/72 )"},
-                    new RegimeFiscale { Codice = "RF17", Nome = "IVA per cassa soggetti con vol. d'affari inferiore ad euro 200.000 (art.7, DL 185/2008 )"},
+                    new RegimeFiscale { Codice = "RF17", Nome = "IVA per cassa (art. 32-bis, DL 83/2012)"},
                     new RegimeFiscale { Codice = "RF18", Nome = "Altro" },
                     new RegimeFiscale { Codice = "RF19", Nome = "Regime forfettario (art.1, c.54-89, L. 190/2014 )" }
                 };

@@ -4,6 +4,7 @@ Changelog
 v0.8.5
 ======
 
+- Fix: errore descrizione in RegimeFiscale "RF17". Closes #72.
 - Fix: "Nullable object must have a value" in validazione di blocco ScontoMaggiorazione con Importo = 0. Closes #71.
 
 v0.8.4
