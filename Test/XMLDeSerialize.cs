@@ -8,7 +8,7 @@ using FatturaElettronica;
 namespace Tests
 {
     [TestClass]
-    public class DeserializeAndSerialize
+    public class XMLDeSerialize
     {
         [TestMethod]
         public void SerializePrivatiHeader()
@@ -46,7 +46,8 @@ namespace Tests
             ValidateInvoice(f, expectedFormat);
 
             // Serialize it back to disk, to another file
-            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true })) {
+            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true }))
+            {
                 f.WriteXml(w);
             }
 
@@ -61,7 +62,7 @@ namespace Tests
         private Fattura Deserialize(string fileName)
         {
             var f = Fattura.CreateInstance(Instance.Privati);
-            var s = new XmlReaderSettings {IgnoreWhitespace = true};
+            var s = new XmlReaderSettings { IgnoreWhitespace = true };
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
                 f.ReadXml(r);
@@ -191,7 +192,7 @@ namespace Tests
 
             using (var r = XmlReader.Create("test"))
             {
-               while (r.Read())
+                while (r.Read())
                 {
                     if (r.NodeType == XmlNodeType.Element)
                     {

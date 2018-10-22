@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using Newtonsoft.Json;
 
 namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -12,7 +13,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// <summary>
         /// Dati relativi al cedente / prestatore.
         /// </summary>
-        public CedentePrestatore() {
+        public CedentePrestatore()
+        {
             DatiAnagrafici = new DatiAnagraficiCedentePrestatore();
             Sede = new SedeCedentePrestatore();
             StabileOrganizzazione1 = new StabileOrganizzazione();
@@ -41,7 +43,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Nei casi di cedente / prestatore non residente.
         /// </summary>
         [DataProperty]
-        public StabileOrganizzazione StabileOrganizzazione { 
+        public StabileOrganizzazione StabileOrganizzazione
+        {
             get { return StabileOrganizzazione1; }
         }
 
@@ -49,7 +52,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Nei casi di società iscritte nel registro delle imprese ai sensi dell'art. 2250 del codice civile.
         /// </summary>
         [DataProperty]
-        public IscrizioneREA IscrizioneREA  { 
+        public IscrizioneREA IscrizioneREA
+        {
             get { return IscrizioneREA1; }
         }
 
@@ -57,7 +61,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         /// Contatti del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public Contatti Contatti { 
+        public Contatti Contatti
+        {
             get { return Contatti1; }
         }
 
@@ -67,10 +72,13 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore
         [DataProperty]
         public string RiferimentoAmministrazione { get; set; }
 
+        [JsonIgnore]
         public StabileOrganizzazione StabileOrganizzazione1 { get; }
 
+        [JsonIgnore]
         public IscrizioneREA IscrizioneREA1 { get; }
 
+        [JsonIgnore]
         public Contatti Contatti1 { get; }
     }
 }
