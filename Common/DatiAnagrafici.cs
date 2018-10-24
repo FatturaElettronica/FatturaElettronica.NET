@@ -14,7 +14,7 @@ namespace FatturaElettronica.Common
         public DatiAnagrafici()
         {
             IdFiscaleIVA = new IdFiscaleIVA();
-            Anagrafica1 = new Anagrafica();
+            Anagrafica = new Anagrafica();
         }
         public DatiAnagrafici(XmlReader r) : base(r) { }
 
@@ -23,7 +23,7 @@ namespace FatturaElettronica.Common
         /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
         /// </summary>
         [DataProperty(order: 0)]
-        public IdFiscaleIVA IdFiscaleIVA { get; }
+        public IdFiscaleIVA IdFiscaleIVA { get; set; }
 
         /// <summary>
         /// Numero di Codice Fiscale.
@@ -35,12 +35,7 @@ namespace FatturaElettronica.Common
         /// Dati anagrafici identificativi del soggetto. 
         /// </summary>
         [DataProperty(order: 2)]
-        public Anagrafica Anagrafica
-        {
-            get { return Anagrafica1; }
-        }
+        public Anagrafica Anagrafica { get; set; }
 
-        [JsonIgnore]
-        public Anagrafica Anagrafica1 { get; }
     }
 }

@@ -12,7 +12,8 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
         /// <summary>
         /// Dati relativi al pagamento.
         /// </summary>
-        public DatiPagamento() {
+        public DatiPagamento()
+        {
             DettaglioPagamento = new List<DettaglioPagamento>();
         }
 
@@ -28,6 +29,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiPagamento
         /// Dati di dettaglio del pagamento.
         /// </summary>
         [DataProperty]
-        public List<DettaglioPagamento> DettaglioPagamento { get; }
+        public List<DettaglioPagamento> DettaglioPagamento { get; set; }
     }
 }

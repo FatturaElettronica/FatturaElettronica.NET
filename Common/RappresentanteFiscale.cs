@@ -11,7 +11,8 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Dati relativi al rappresentante fiscale del cedente / prestatore.
         /// </summary>
-        public RappresentanteFiscale() {
+        public RappresentanteFiscale()
+        {
             DatiAnagrafici = new DatiAnagrafici();
         }
         public RappresentanteFiscale(XmlReader r) : base(r) { }
@@ -24,6 +25,6 @@ namespace FatturaElettronica.Common
         /// Dati anagrafici del rappresentante fiscae del cedente / prestatore.
         /// </summary>
         [DataProperty]
-        public DatiAnagrafici DatiAnagrafici { get; }
+        public DatiAnagrafici DatiAnagrafici { get; set; }
     }
 }

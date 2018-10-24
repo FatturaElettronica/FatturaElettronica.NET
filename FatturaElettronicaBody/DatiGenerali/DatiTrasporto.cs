@@ -12,7 +12,8 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Da valorizzare nel caso di fattura accompagnatoria per inserire informazioni relative al trasporto.
         /// </summary>
-        public DatiTrasporto() {
+        public DatiTrasporto()
+        {
             DatiAnagraficiVettore = new DatiAnagraficiVettore();
             IndirizzoResa = new IndirizzoResa();
         }
@@ -26,7 +27,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Dati fiscali e anagrafici del vettore.
         /// </summary>
         [DataProperty]
-        public DatiAnagraficiVettore DatiAnagraficiVettore { get; }
+        public DatiAnagraficiVettore DatiAnagraficiVettore { get; set; }
 
         /// <summary>
         /// Mezzo utilizzato per il trasporto.
@@ -94,7 +95,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Indirizzo di resa.
         /// </summary>
         [DataProperty]
-        public IndirizzoResa IndirizzoResa { get; }
+        public IndirizzoResa IndirizzoResa { get; set; }
 
         /// <summary>
         /// Data e ora della consegna della merce.

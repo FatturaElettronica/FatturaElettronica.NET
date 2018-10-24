@@ -24,20 +24,20 @@ namespace FatturaElettronica.Common
         /// </summary>
         /// <remarks>Se il riferimento è all'intera fattura non viene valorizzato.</remarks>
         [DataProperty]
-        public List<int> RiferimentoNumeroLinea { get; }
+        public List<int> RiferimentoNumeroLinea { get; set; }
 
         /// <summary>
         /// Numero del documento a cui si fa riferimento.
         /// </summary>
         [DataProperty]
         public string IdDocumento { get; set; }
-        
+
         /// <summary>
         /// Data del documento a cui si fa riferimento.
         /// </summary>
         [DataProperty]
         public DateTime? Data { get; set; }
-        
+
         /// <summary>
         /// Identificativo della singola voce all'interno del documento 
         /// (ad esempio, nel caso di ordine di acquisto, è il numero della linea dell'ordine di acquisto, oppure, nel caso di 

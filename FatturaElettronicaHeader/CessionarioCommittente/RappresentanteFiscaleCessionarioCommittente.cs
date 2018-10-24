@@ -8,7 +8,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     /// </summary>
     public class RappresentanteFiscaleCessionarioCommittente : DenominazioneNomeCognome
     {
-        public RappresentanteFiscaleCessionarioCommittente() {
+        public RappresentanteFiscaleCessionarioCommittente()
+        {
 
             IdFiscaleIVA = new IdFiscaleIVA();
         }
@@ -19,6 +20,6 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
         /// </summary>
         [DataProperty]
-        public IdFiscaleIVA IdFiscaleIVA { get; }
+        public IdFiscaleIVA IdFiscaleIVA { get; set; }
     }
 }

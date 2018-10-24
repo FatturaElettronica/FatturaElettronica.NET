@@ -5,6 +5,7 @@ v0.9
 ====
 
 - New: FromJson() de-serializza stream JSON.
+- Fix: Make subclass properties writable. Closes #76.
 - Fix: ToJson() serializza proprietà che non dovrebbero comparire nel JON.
 
 v0.8.5

@@ -7,7 +7,8 @@ namespace FatturaElettronica
 {
     public class Fattura : BaseClassSerializable
     {
-        protected Fattura() {
+        protected Fattura()
+        {
             Header = new FatturaElettronicaHeader.Header();
             Body = new List<FatturaElettronicaBody.Body>();
         }
@@ -24,7 +25,8 @@ namespace FatturaElettronica
             w.WriteEndElement();
         }
 
-        public override void ReadXml(System.Xml.XmlReader r) {
+        public override void ReadXml(System.Xml.XmlReader r)
+        {
             r.MoveToContent();
             base.ReadXml(r);
         }
@@ -56,7 +58,7 @@ namespace FatturaElettronica
         /// </summary>
         [DataProperty]
         [XmlElement(ElementName = "FatturaElettronicaHeader")]
-        public FatturaElettronicaHeader.Header Header { get; }
+        public FatturaElettronicaHeader.Header Header { get; set; }
 
         /// <summary>
         /// Lotto di fatture incluse nella comunicazione.
@@ -65,7 +67,7 @@ namespace FatturaElettronica
         /// per ogni fattura componente il lotto stesso.</remarks>
         [DataProperty]
         [XmlElement(ElementName = "FatturaElettronicaBody")]
-        public List<FatturaElettronicaBody.Body> Body { get; }
+        public List<FatturaElettronicaBody.Body> Body { get; set; }
 
     }
 }
