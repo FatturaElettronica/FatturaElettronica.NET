@@ -5,9 +5,10 @@ v0.9
 ====
 
 - New: FromJson() de-serializza stream JSON.
-- Fix: Make subclass properties writable. Closes #76.
+- Fix: PECDestinatario può essere vuoto quando CodiceDestinatario è 0000000. Closes #75.
+- Fix: Le proprietà di tipo Class non sono scrivibili. Closes #76.
 - Fix: ToJson() serializza proprietà che non dovrebbero comparire nel JON.
-- Test project now runs as a NetCore 2.1 app. Addresses FatturaElettronica/FatturaElettronica.Core#4.
+- I test ora girano come app NetCore 2.1. Addresses FatturaElettronica/FatturaElettronica.Core#4.
 
 v0.8.5
 ======
