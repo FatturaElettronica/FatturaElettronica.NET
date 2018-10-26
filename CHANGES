@@ -4,6 +4,8 @@ Changelog
 v0.9
 ====
 
+Released on October 26, 2018.
+
 - New: FromJson() de-serializza stream JSON.
 - Fix: PECDestinatario può essere vuoto quando CodiceDestinatario è 0000000. Closes #75.
 - Fix: Le proprietà di tipo Class non sono scrivibili. Closes #76.
