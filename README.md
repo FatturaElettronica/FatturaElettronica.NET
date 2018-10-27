@@ -5,7 +5,7 @@
 - Lettura e scrittura nel formato aderente alle specifiche tecniche ([Allegato A, v1.1 del 22 Giugno 2018][pa]).
 - Supporta sia fatture elettroniche tra privati che con la Pubblica Amministrazione.
 - Convalida in osservanza delle specifiche tecniche ufficiali.
-- Supporto per la serializzazione in formato JSON
+- Supporto per de-serializzazione in formato JSON
 
 ## Utilizzo
 
@@ -86,6 +86,10 @@ namespace DemoApp
             // Serializzazione JSON.
             var json = fattura.ToJson(JsonOptions.Indented);
             Console.WriteLine(json);
+
+            // Deserializzazione da JSON.
+            var fatturaFromJson = Fattura.CreateInstance(Instance.Privati);
+            fatturaFromJson.FromJson(new JsonTextReader(new StringReader(json)));
         }
     }
 }
