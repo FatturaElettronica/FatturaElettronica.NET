@@ -119,6 +119,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// fini amministrativi, gestionali, etc.
         /// </summary>
         [DataProperty]
-        public List<AltriDatiGestionali> AltriDatiGestionali { get; }
+        public List<AltriDatiGestionali> AltriDatiGestionali { get; set; }
     }
 }
