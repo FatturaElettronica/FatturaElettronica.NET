@@ -1,6 +1,11 @@
 Changelog
 =========
 
+v0.9.1
+======
+
+- Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
+
 v0.9
 ====
 
