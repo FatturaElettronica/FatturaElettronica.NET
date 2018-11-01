@@ -39,10 +39,8 @@ namespace FatturaElettronica.Validators
                 .Latin1SupplementValidator()
                 .When(x => !string.IsNullOrEmpty(x.IstitutoFinanziario));
             RuleFor(x => x.IBAN)
-                .Length(15, 34)
+                .Matches(@"[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{11,30}")
                 .When(x => !string.IsNullOrEmpty(x.IBAN));
-            RuleFor(x => x.IBAN)
-                .Matches(@"[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{11,30}");
             RuleFor(x => x.ABI)
                 .Length(5)
                 .When(x => !string.IsNullOrEmpty(x.ABI));

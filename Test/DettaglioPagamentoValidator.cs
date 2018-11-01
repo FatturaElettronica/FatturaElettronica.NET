@@ -125,11 +125,6 @@ namespace Tests
             AssertOptional(x => x.IBAN);
         }
         [TestMethod]
-        public void IBANMinMaxLength()
-        {
-            AssertMinMaxLength(x => x.IBAN, 15, 34);
-        }
-        [TestMethod]
         public void IBANMustBeValid()
         {
             challenge.IBAN = "hello";
