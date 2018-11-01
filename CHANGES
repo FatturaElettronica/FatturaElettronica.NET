@@ -8,6 +8,7 @@ v0.9.1
 - Fix: Campi RiferimentoNumero dovrebbe essere opzionale (Gaetano). Pull #82.
 - Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
 - Bump: Newtonsoft.Json to 11.0.2.
+- Bump: MSTest.TestFrameworkto 1.3.2.
 
 v0.9
 ====
