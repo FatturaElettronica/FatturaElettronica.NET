@@ -30,7 +30,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// Campo in cui inserire un valore numerico riferito alla tipologia di informazione.
         /// </summary>
         [DataProperty]
-        public decimal RiferimentoNumero { get; set; }
+        public decimal? RiferimentoNumero { get; set; }
 
         /// <summary>
         /// Campo in cui inserire una data riferita alla tiplogia di informazione.
