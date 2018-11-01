@@ -11,7 +11,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.Beneficiario)
                 .Length(1, 200)
                 .Latin1SupplementValidator()
-                .When(x=>!string.IsNullOrEmpty(x.Beneficiario));
+                .When(x => !string.IsNullOrEmpty(x.Beneficiario));
             RuleFor(x => x.ModalitaPagamento)
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<ModalitaPagamento>());
@@ -41,6 +41,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.IBAN)
                 .Length(15, 34)
                 .When(x => !string.IsNullOrEmpty(x.IBAN));
+            RuleFor(x => x.IBAN)
+                .Matches(@"[a-zA-Z]{2}[0-9]{2}[a-zA-Z0-9]{11,30}");
             RuleFor(x => x.ABI)
                 .Length(5)
                 .When(x => !string.IsNullOrEmpty(x.ABI));

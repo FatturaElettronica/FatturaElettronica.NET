@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.FatturaElettronicaBody.DatiPagamento;
 using FatturaElettronica.Tabelle;
+using FluentValidation.TestHelper;
 
 namespace Tests
 {
@@ -127,6 +128,16 @@ namespace Tests
         public void IBANMinMaxLength()
         {
             AssertMinMaxLength(x => x.IBAN, 15, 34);
+        }
+        [TestMethod]
+        public void IBANMustBeValid()
+        {
+            challenge.IBAN = "hello";
+            validator.ShouldHaveValidationErrorFor(x => x.IBAN, challenge);
+            challenge.IBAN = "IBAN IT17 X060 5502 1000 0000 1234 567";
+            validator.ShouldHaveValidationErrorFor(x => x.IBAN, challenge);
+            challenge.IBAN = "IBANIT17X0605502100000001234567";
+            validator.ShouldNotHaveValidationErrorFor(x => x.IBAN, challenge);
         }
         [TestMethod]
         public void ABIIsOptional()
