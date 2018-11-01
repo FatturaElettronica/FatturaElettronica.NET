@@ -7,6 +7,7 @@ v0.9.1
 - Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closes #84.
 - Fix: Campo RiferimentoNumero dovrebbe essere opzionale (Gaetano). Pull #82.
 - Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
+- Fix: Header e Body vanno JSON-serializzati come FatturaElettronicaHeader e FatturaElettronicaBody. Closes #83.
 - Bump: FatturaElettronica.Core to 0.5.
 - Bump: Newtonsoft.Json to 11.0.2.
 - Bump: MSTest.TestFramework to 1.3.2.
