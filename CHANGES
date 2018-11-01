@@ -4,10 +4,10 @@ Changelog
 v0.9.1
 ======
 
-- Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closses #84.
-- Fix; Campi RiferimentoNumero dovrebbe essere opzionale (Gaetano). Pull #82.
+- Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closes #84.
+- Fix: Campi RiferimentoNumero dovrebbe essere opzionale (Gaetano). Pull #82.
 - Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
-- Bump: newtonsoft.json to 11.0.2.
+- Bump: Newtonsoft.Json to 11.0.2.
 
 v0.9
 ====
