@@ -2,6 +2,7 @@
 using FatturaElettronica.Impostazioni;
 using FatturaElettronica.Common;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
 
 namespace FatturaElettronica
 {
@@ -58,6 +59,7 @@ namespace FatturaElettronica
         /// </summary>
         [DataProperty]
         [XmlElement(ElementName = "FatturaElettronicaHeader")]
+        [JsonProperty(PropertyName = "FatturaElettronicaHeader")]
         public FatturaElettronicaHeader.Header Header { get; set; }
 
         /// <summary>
@@ -67,6 +69,7 @@ namespace FatturaElettronica
         /// per ogni fattura componente il lotto stesso.</remarks>
         [DataProperty]
         [XmlElement(ElementName = "FatturaElettronicaBody")]
+        [JsonProperty(PropertyName = "FatturaElettronicaBody")]
         public List<FatturaElettronicaBody.Body> Body { get; set; }
 
     }
