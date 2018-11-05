@@ -69,19 +69,5 @@ namespace Tests
             challenge.CodiceDestinatario = new string('0', 7);
             AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
         }
-        [TestMethod]
-        public void PECDestinatarioShouldBeEmptyWhenCodiceDestinatarioIsDifferentThan0000000()
-        {
-            challenge.CodiceDestinatario = new string('1', 7);
-
-            challenge.PECDestinatario = "mail@mail.com";
-            validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge).WithErrorCode("00426");
-
-            challenge.PECDestinatario = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-
-            challenge.PECDestinatario = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-        }
     }
 }
