@@ -72,7 +72,7 @@ namespace Tests
         private void ValidateInvoice(FatturaElettronica.Fattura f, string expectedFormat)
         {
 
-            var header = f.Header;
+            var header = f.FatturaElettronicaHeader;
 
             // DatiTrasmissione
             Assert.AreEqual("00001", header.DatiTrasmissione.ProgressivoInvio);
@@ -100,7 +100,7 @@ namespace Tests
             Assert.AreEqual("RM", header.CessionarioCommittente.Sede.Provincia);
             Assert.AreEqual("IT", header.CessionarioCommittente.Sede.Nazione);
 
-            var body = f.Body[0];
+            var body = f.FatturaElettronicaBody[0];
             // DatiGeneraliDocumento
             Assert.AreEqual("TD01", body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento);
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
@@ -198,7 +198,7 @@ namespace Tests
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            Assert.AreEqual(f.Header.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {

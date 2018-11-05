@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    public class HeaderValidator : AbstractValidator<FatturaElettronicaHeader.Header>
+    public class FatturaElettronicaHeaderValidator : AbstractValidator<FatturaElettronicaHeader.FatturaElettronicaHeader>
     {
-        public HeaderValidator()
+        public FatturaElettronicaHeaderValidator()
         {
             RuleFor(x => x.DatiTrasmissione)
                 .SetValidator(new DatiTrasmissioneValidator());
@@ -13,12 +13,12 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new CedentePrestatoreValidator());
             RuleFor(x => x.Rappresentante)
                 .SetValidator(new RappresentanteFiscaleValidator())
-                .When(x=>!x.Rappresentante.IsEmpty());
+                .When(x => !x.Rappresentante.IsEmpty());
             RuleFor(x => x.CessionarioCommittente)
                 .SetValidator(new CessionarioCommittenteValidator());
             RuleFor(x => x.TerzoIntermediarioOSoggettoEmittente)
                 .SetValidator(new TerzoIntermediarioOSoggettoEmittenteValidator())
-                .When(x=>!x.TerzoIntermediarioOSoggettoEmittente.IsEmpty());
+                .When(x => !x.TerzoIntermediarioOSoggettoEmittente.IsEmpty());
             RuleFor(x => x.SoggettoEmittente)
                 .SetValidator(new IsValidValidator<SoggettoEmittente>())
                 .When(x => !string.IsNullOrEmpty(x.SoggettoEmittente));

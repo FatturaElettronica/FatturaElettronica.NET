@@ -4,12 +4,12 @@ using FatturaElettronica.Common;
 
 namespace FatturaElettronica.FatturaElettronicaBody
 {
-    public class Body : BaseClassSerializable
+    public class FatturaElettronicaBody : BaseClassSerializable
     {
         /// <summary>
         /// Fattura inclusa nella conunicazione.
         /// </summary>
-        public Body()
+        public FatturaElettronicaBody()
         {
             DatiGenerali = new DatiGenerali.DatiGenerali();
             DatiBeniServizi = new DatiBeniServizi.DatiBeniServizi();
@@ -17,7 +17,7 @@ namespace FatturaElettronica.FatturaElettronicaBody
             DatiPagamento = new List<DatiPagamento.DatiPagamento>();
             Allegati = new List<Allegati.Allegati>();
         }
-        public Body(XmlReader r) : base(r) { }
+        public FatturaElettronicaBody(XmlReader r) : base(r) { }
 
         /// <summary>
         /// Dati generali del documento principale.
