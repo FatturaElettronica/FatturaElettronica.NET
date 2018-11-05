@@ -34,10 +34,6 @@ namespace FatturaElettronica.Validators
             RuleFor(dt => dt.PECDestinatario)
                 .Length(7, 256)
                 .When(x => !string.IsNullOrEmpty(x.PECDestinatario));
-            RuleFor(x => x.PECDestinatario)
-                .Empty()
-                .When(x => x.CodiceDestinatario != "0000000")
-                .WithErrorCode("00426");
         }
     }
 }
