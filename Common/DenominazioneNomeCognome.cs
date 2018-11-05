@@ -1,4 +1,5 @@
 ﻿using System.Xml;
+using Newtonsoft.Json;
 
 namespace FatturaElettronica.Common
 {
@@ -9,8 +10,8 @@ namespace FatturaElettronica.Common
     public class DenominazioneNomeCognome : BaseClassSerializable
     {
 
-        public DenominazioneNomeCognome() { } 
-        public DenominazioneNomeCognome(XmlReader r) : base(r) { } 
+        public DenominazioneNomeCognome() { }
+        public DenominazioneNomeCognome(XmlReader r) : base(r) { }
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -38,6 +39,7 @@ namespace FatturaElettronica.Common
         /// Returns Cognome and Nome as a single value.
         /// </summary>
         /// <remarks>This is not a OrderedDataProperty so it will not be serialized to XML.</remarks>
+        [JsonIgnore]
         public string CognomeNome
         {
             get

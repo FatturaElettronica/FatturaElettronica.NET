@@ -23,6 +23,18 @@ namespace Tests
             challenge.FromJson(new JsonTextReader(new StringReader(json)));
             Assert.IsTrue(challenge.Validate().IsValid);
         }
+        [TestMethod]
+        public void NomeCognomeIsIgnored()
+        {
+            var f = Fattura.CreateInstance(Instance.Privati);
+            var anagrafica = f.Header.CedentePrestatore.DatiAnagrafici.Anagrafica;
+
+            anagrafica.Nome = "nome";
+            var json = f.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.ToJson();
+
+            Assert.AreEqual("nome", anagrafica.CognomeNome);
+            Assert.IsFalse(json.Contains("CognomeNome"));
+        }
         private Fattura Deserialize(string fileName)
         {
             var f = Fattura.CreateInstance(Instance.Privati);
