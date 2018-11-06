@@ -16,11 +16,9 @@
                     new TipoResa{ Codice = "CIF", Nome = string.Empty },
                     new TipoResa{ Codice = "CPT", Nome = string.Empty },
                     new TipoResa{ Codice = "CIP", Nome = string.Empty },
-                    new TipoResa{ Codice = "DAF", Nome = string.Empty },
-                    new TipoResa{ Codice = "DES", Nome = string.Empty },
-                    new TipoResa{ Codice = "DEQ", Nome = string.Empty },
-                    new TipoResa{ Codice = "DDU", Nome = string.Empty },
-                    new TipoResa{ Codice = "DDP", Nome = string.Empty },
+                    new TipoResa{ Codice = "DAT", Nome = string.Empty },
+                    new TipoResa{ Codice = "DAP", Nome = string.Empty },
+                    new TipoResa{ Codice = "DDP", Nome = string.Empty },                   
                 };
             } 
         }
