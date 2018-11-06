@@ -27,10 +27,10 @@ namespace Tests
         public void NomeCognomeIsIgnored()
         {
             var f = Fattura.CreateInstance(Instance.Privati);
-            var anagrafica = f.Header.CedentePrestatore.DatiAnagrafici.Anagrafica;
+            var anagrafica = f.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.Anagrafica;
 
             anagrafica.Nome = "nome";
-            var json = f.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.ToJson();
+            var json = f.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.Anagrafica.ToJson();
 
             Assert.AreEqual("nome", anagrafica.CognomeNome);
             Assert.IsFalse(json.Contains("CognomeNome"));

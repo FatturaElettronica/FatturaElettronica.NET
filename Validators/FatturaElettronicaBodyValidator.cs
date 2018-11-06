@@ -4,9 +4,9 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    public class BodyValidator : AbstractValidator<FatturaElettronicaBody.Body>
+    public class FatturaElettronicaBodyValidator : AbstractValidator<FatturaElettronicaBody.FatturaElettronicaBody>
     {
-        public BodyValidator()
+        public FatturaElettronicaBodyValidator()
         {
             RuleFor(x => x.DatiGenerali)
                 .SetValidator(new DatiGeneraliValidator());
@@ -30,14 +30,14 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00419");
             RuleFor(x => x.DatiVeicoli)
                 .SetValidator(new DatiVeicoliValidator())
-                .When(x=>!x.DatiVeicoli.IsEmpty());
+                .When(x => !x.DatiVeicoli.IsEmpty());
             RuleForEach(x => x.DatiPagamento)
                 .SetValidator(new DatiPagamentoValidator());
-            RuleForEach(x=>x.Allegati)
+            RuleForEach(x => x.Allegati)
                 .SetValidator(new AllegatiValidator());
         }
 
-        private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.Body body)
+        private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.FatturaElettronicaBody body)
         {
             foreach (var linea in body.DatiBeniServizi.DettaglioLinee)
             {
@@ -45,7 +45,7 @@ namespace FatturaElettronica.Validators
             }
             return true;
         }
-        private bool DatiRiepilogoValidateAgainstError00422(FatturaElettronicaBody.Body body)
+        private bool DatiRiepilogoValidateAgainstError00422(FatturaElettronicaBody.FatturaElettronicaBody body)
         {
             var totals = new Dictionary<decimal, Totals>();
 
@@ -72,13 +72,13 @@ namespace FatturaElettronica.Validators
                 totals[c.AliquotaIVA].ImportoContrCassa += c.ImportoContributoCassa;
             }
 
-			foreach (var t in totals.Values)
+            foreach (var t in totals.Values)
             {
                 if (Math.Abs(t.ImponibileImporto - (t.PrezzoTotale + t.ImportoContrCassa + t.Arrotondamento)) >= 1) return false;
             }
             return true;
         }
-        private bool DatiRiepilogoValidateAgainstError00419(FatturaElettronicaBody.Body body)
+        private bool DatiRiepilogoValidateAgainstError00419(FatturaElettronicaBody.FatturaElettronicaBody body)
         {
             var hash = new HashSet<decimal>();
             foreach (var cp in body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale)
