@@ -3,8 +3,8 @@ Changelog
 
 v0.10
 ======
-- Breaking: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
-- Breaking: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
+- BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
+- BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
 - Fix: Anagrafica.CognomeNome non deve essere serializzato in JSON. Closes #86.
 - Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closes #84.
 - Fix: Campo RiferimentoNumero dovrebbe essere opzionale (Gaetano). Pull #82.
