@@ -11,7 +11,7 @@
                     new TipoResa{ Codice = "FCA", Nome = "Franco Vettore" },
                     new TipoResa{ Codice = "FAS", Nome = "Franco lungo bordo" },
                     new TipoResa{ Codice = "FOB", Nome = "Franco a bordo" },
-                    new TipoResa{ Codice = "CFR", Nome = string.Empty },
+                    new TipoResa{ Codice = "CFR", Nome = "Costo e Nolo" },
                     new TipoResa{ Codice = "CIF", Nome = "Costo, assicurazione e nolo" },
                     new TipoResa{ Codice = "CPT", Nome = "Trasporto pagato fino a" },
                     new TipoResa{ Codice = "CIP", Nome = "Trasporto e assicurazione pagati fino a" },
