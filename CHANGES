@@ -5,9 +5,10 @@ v0.10
 ======
 - BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
 - BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
+- Fix: Rimosso controllo 00426 su campo PECDestinatario (Gaetano Pizzol). Pull #88.
 - Fix: Anagrafica.CognomeNome non deve essere serializzato in JSON. Closes #86.
 - Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closes #84.
-- Fix: Campo RiferimentoNumero dovrebbe essere opzionale (Gaetano). Pull #82.
+- Fix: Campo RiferimentoNumero dovrebbe essere opzionale (Gaetano Pizzol). Pull #82.
 - Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
 - Fix: Header e Body vanno JSON-serializzati come FatturaElettronicaHeader e FatturaElettronicaBody. Closes #83.
 - Bump: FatturaElettronica.Core to 0.5.
