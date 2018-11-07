@@ -11,13 +11,16 @@
 
 ```cs
 using FatturaElettronica;
-using FatturaElettronica.Validators;
+using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
+using FatturaElettronica.Validators;
 using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
 
-using System.Xml;
-using FatturaElettronica.Common;
 using System;
+using System.Xml;
+using System.IO;
+
+using Newtonsoft.Json;
 
 namespace DemoApp
 {
@@ -36,9 +39,9 @@ namespace DemoApp
             }
 
             // Ogni file di fattura contiene un array di elementi FatturaElettronicaBody.
-            Console.WriteLine($"Numero di documenti: {fattura.Body.Count}.");
+            Console.WriteLine($"Numero di documenti: {fattura.FatturaElettronicaBody.Count}.");
             Console.WriteLine("Documenti inclusi nel file FatturaPA:");
-            foreach(var doc in fattura.Body)
+            foreach (var doc in fattura.FatturaElettronicaBody)
             {
                 Console.WriteLine($"Numero: {doc.DatiGenerali.DatiGeneraliDocumento.Numero}");
                 Console.WriteLine($"Data: {doc.DatiGenerali.DatiGeneraliDocumento.Data.ToShortDateString()}");
@@ -73,9 +76,9 @@ namespace DemoApp
             Console.WriteLine(anagrafica.Validate().IsValid);
 
             // Modifica proprietà Header.
-            fattura.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl";
+            fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl";
             //  Modifica proprietà Body
-            fattura.Body[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
+            fattura.FatturaElettronicaBody[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
 
             // Serializzazione XML
             using (var w = XmlWriter.Create("IT01234567890_FPA01.xml", new XmlWriterSettings { Indent = true }))
