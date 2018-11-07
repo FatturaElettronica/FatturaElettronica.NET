@@ -12,7 +12,7 @@
 ```cs
 using FatturaElettronica;
 using FatturaElettronica.Validators;
-using FatturaElettronica.Impostazioni;
+using FatturaElettronica.Defaults;
 using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
 
 using System.Xml;
@@ -114,6 +114,7 @@ FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
 dalla Package Console, oppure usare il comando equivalente in Visual Studio.
 
 ## Estensioni
+
 [FatturaElettronica.Extensions][fex] aggiunge features a FatturaElettronica.NET, come la lettura di file firmati digitalmente (.p7m).
 
 ## Licenza
