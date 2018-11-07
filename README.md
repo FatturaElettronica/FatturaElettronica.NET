@@ -107,11 +107,19 @@ FatturaElettronica supporta .NET Standard v1.1, cosa che le permette di supporta
 
 FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
 
-```powershell
+Dalla command line con .NET Core:
+
+```Shell
+    $ dotnet add package FatturaElettronica
+```
+
+Oppure in Package Console:
+
+```PowerShell
     PM> Install-Package FatturaElettronica
 ```
 
-dalla Package Console, oppure usare il comando equivalente in Visual Studio.
+Oppure usare il comando equivalente in Visual Studio.
 
 ## Estensioni
 
