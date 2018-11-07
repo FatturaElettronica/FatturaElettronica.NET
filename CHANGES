@@ -5,6 +5,8 @@ v0.10
 ======
 - BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
 - BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
+
+- Fix: Aggiornati codici INCOTERMS (Marco Tessitore). Pull #89.
 - Fix: Rimosso controllo 00426 su campo PECDestinatario (Gaetano Pizzol). Pull #88.
 - Fix: Anagrafica.CognomeNome non deve essere serializzato in JSON. Closes #86.
 - Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closes #84.
