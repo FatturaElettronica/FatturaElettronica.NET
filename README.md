@@ -2,10 +2,10 @@
 
 ## Caratteristiche
 
-- Lettura e scrittura nel formato aderente alle specifiche tecniche ([Allegato A, v1.1 del 22 Giugno 2018][pa]).
-- Supporta sia fatture elettroniche tra privati che con la Pubblica Amministrazione.
-- Convalida in osservanza delle specifiche tecniche ufficiali.
-- Supporto per de-serializzazione in formato JSON
+- Lettura e scrittura nel formato XML conforme alle [specifiche tecniche ufficiali][pa].
+- Convalida offline in osservanza alle specifiche tecniche.
+- Supporto sia per fatture elettroniche tra privati che verso la Pubblica Amministrazione.
+- Supporto per de/serializzazione JSON.
 
 ## Utilizzo
 
@@ -104,25 +104,25 @@ In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato de
 
 ## Portabilità
 
-FatturaElettronica supporta .NET Standard v1.1, cosa che le permette di supportare un [ampio numero di piattaforme][netstandard].
+FatturaElettronica supporta .NET Standard v1.1 cosa che le permette di supportare un [ampio numero di piattaforme][netstandard].
 
 ## Installazione
 
-FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
+FatturaElettronica è su [NuGet][nuget].
 
-Dalla command line con .NET Core:
+Dalla command line, con .NET Core:
 
 ```Shell
     $ dotnet add package FatturaElettronica
 ```
 
-Oppure in Package Console:
+Dalla Package Console, in Visual Studio:
 
 ```PowerShell
     PM> Install-Package FatturaElettronica
 ```
 
-Oppure usare il comando equivalente in Visual Studio.
+Oppure usare il comando equivalente nella UI di Visual Studio.
 
 ## Estensioni
 
@@ -132,7 +132,7 @@ Oppure usare il comando equivalente in Visual Studio.
 
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: https://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/ST+Fatturazione+elettronica+-+Allegato+A/Allegato+A+-+Specifiche+tecniche+vers+1.1_22062018.pdf
+[pa]: http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm
 [bo]: http://github.com/FatturaElettronica/BusinessObjects
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE
 [ga]: http://gestionaleamica.com
