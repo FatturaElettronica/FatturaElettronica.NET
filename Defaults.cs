@@ -1,5 +1,4 @@
-﻿//TODO: rename to Settings, or Configuration, or Defaults?
-namespace FatturaElettronica.Impostazioni
+﻿namespace FatturaElettronica.Defaults
 {
     public enum Instance { PubblicaAmministrazione, Privati };
     public class Versione

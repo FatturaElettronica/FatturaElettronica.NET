@@ -5,6 +5,7 @@ v0.10
 ======
 - BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
 - BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
+- BREAKING: namespace FatturaElettronica.Impostazioni rinominato FatturaElettronica.Defaults.
 
 - Fix: Aggiornati codici INCOTERMS (Marco Tessitore). Pull #89.
 - Fix: Rimosso controllo 00426 su campo PECDestinatario (Gaetano Pizzol). Pull #88.
@@ -13,6 +14,7 @@ v0.10
 - Fix: Campo RiferimentoNumero dovrebbe essere opzionale (Gaetano Pizzol). Pull #82.
 - Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
 - Fix: Header e Body vanno JSON-serializzati come FatturaElettronicaHeader e FatturaElettronicaBody. Closes #83.
+
 - Bump: FatturaElettronica.Core to 0.5.
 - Bump: Newtonsoft.Json to 11.0.2.
 - Bump: MSTest.TestFramework to 1.3.2.

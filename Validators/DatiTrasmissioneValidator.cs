@@ -22,11 +22,11 @@ namespace FatturaElettronica.Validators
                 .NotEmpty();
             RuleFor(dt => dt.CodiceDestinatario)
                 .Length(6)
-                .When(dt => dt.FormatoTrasmissione == Impostazioni.FormatoTrasmissione.PubblicaAmministrazione)
+                .When(dt => dt.FormatoTrasmissione == Defaults.FormatoTrasmissione.PubblicaAmministrazione)
                 .WithErrorCode("00427");
             RuleFor(dt => dt.CodiceDestinatario)
                 .Length(7)
-                .When(dt => dt.FormatoTrasmissione == Impostazioni.FormatoTrasmissione.Privati)
+                .When(dt => dt.FormatoTrasmissione == Defaults.FormatoTrasmissione.Privati)
                 .WithErrorCode("00427");
             RuleFor(dt => dt.ContattiTrasmittente)
                 .SetValidator(new ContattiTrasmittenteValidator())

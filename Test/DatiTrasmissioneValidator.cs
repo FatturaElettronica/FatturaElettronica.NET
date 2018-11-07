@@ -53,14 +53,14 @@ namespace Tests
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPA12()
         {
             // Quando FormatoTrasmissione = FPA12 ProgressivioInvio.Lenght = 6.
-            challenge.FormatoTrasmissione = FatturaElettronica.Impostazioni.FormatoTrasmissione.PubblicaAmministrazione;
+            challenge.FormatoTrasmissione = FatturaElettronica.Defaults.FormatoTrasmissione.PubblicaAmministrazione;
             AssertLength(x => x.CodiceDestinatario, 6, expectedErrorCode: "00427");
         }
         [TestMethod]
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPR12()
         {
             // Quando FormatoTrasmissione = FPR12 ProgressivioInvio.Lenght = 7.
-            challenge.FormatoTrasmissione = FatturaElettronica.Impostazioni.FormatoTrasmissione.Privati;
+            challenge.FormatoTrasmissione = FatturaElettronica.Defaults.FormatoTrasmissione.Privati;
             AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00427");
         }
         [TestMethod]

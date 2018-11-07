@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using FatturaElettronica.Impostazioni;
+using FatturaElettronica.Defaults;
 using FatturaElettronica.Common;
 using System.Xml.Serialization;
 using Newtonsoft.Json;

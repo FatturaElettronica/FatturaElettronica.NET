@@ -1,7 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
 using System.IO;
-using FatturaElettronica.Impostazioni;
+using FatturaElettronica.Defaults;
 using System;
 using FatturaElettronica;
 using Newtonsoft.Json;
