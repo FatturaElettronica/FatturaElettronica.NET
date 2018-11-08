@@ -1,8 +1,9 @@
 Changelog
 =========
 
-v0.10
-======
+In development
+==============
+
 - BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
 - BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
 - BREAKING: namespace FatturaElettronica.Impostazioni rinominato FatturaElettronica.Defaults.
