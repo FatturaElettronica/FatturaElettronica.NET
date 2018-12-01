@@ -126,7 +126,7 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 
 ## Estensioni
 
-[FatturaElettronica.Extensions][fex] aggiunge features a FatturaElettronica.NET, come la lettura di file firmati digitalmente (.p7m).
+[FatturaElettronica.Extensions][fex] aggiunge features a FatturaElettronica.NET, come la lettura e creazione di file firmati digitalmente (.p7m).
 
 ## Licenza
 
