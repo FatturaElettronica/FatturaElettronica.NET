@@ -4,6 +4,7 @@ Changelog
 In Development
 ==============
 
+- Fix: Titolo e CodEORI ignorano ordinamento. Closes #103.
 - Fix: controllo UnitaMisura consente campo vuoto. Closes #102.
 
 v1.0.1

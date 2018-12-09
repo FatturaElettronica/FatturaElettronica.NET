@@ -86,6 +86,7 @@ namespace Tests
             Assert.AreEqual("IT", header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese);
             Assert.AreEqual("01234567890", header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdCodice);
             Assert.AreEqual("SOCIETA' ALPHA SRL", header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione);
+            Assert.AreEqual("Titolo", header.CedentePrestatore.DatiAnagrafici.Anagrafica.Titolo);
             Assert.AreEqual("RF01", header.CedentePrestatore.DatiAnagrafici.RegimeFiscale);
             Assert.AreEqual("VIALE ROMA 543", header.CedentePrestatore.Sede.Indirizzo);
             Assert.AreEqual("07100", header.CedentePrestatore.Sede.CAP);
@@ -94,6 +95,7 @@ namespace Tests
             // CessionarioCommittente
             Assert.AreEqual("09876543210", header.CessionarioCommittente.DatiAnagrafici.CodiceFiscale);
             Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "BETA GAMMA" : "AMMINISTRAZIONE BETA", header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Denominazione);
+            Assert.AreEqual("Titolo", header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Titolo);
             Assert.AreEqual("VIA TORINO 38-B", header.CessionarioCommittente.Sede.Indirizzo);
             Assert.AreEqual("00145", header.CessionarioCommittente.Sede.CAP);
             Assert.AreEqual("ROMA", header.CessionarioCommittente.Sede.Comune);
