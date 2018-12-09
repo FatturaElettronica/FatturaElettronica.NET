@@ -113,7 +113,7 @@ FatturaElettronica è su [NuGet][nuget].
 Dalla command line, con .NET Core:
 
 ```Shell
-    $ dotnet add package FatturaElettronica
+    dotnet add package FatturaElettronica
 ```
 
 Dalla Package Console, in Visual Studio:

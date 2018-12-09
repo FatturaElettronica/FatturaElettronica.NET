@@ -6,7 +6,7 @@ using FatturaElettronica.Tabelle;
 namespace Tests
 {
     [TestClass]
-    public class DettaglioLineeValidator: BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
+    public class DettaglioLineeValidator : BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
     {
         [TestMethod]
         public void TipoCessionePrestazioneIsOptional()
@@ -44,11 +44,6 @@ namespace Tests
             AssertMustBeLatin1Supplement(x => x.Descrizione);
         }
         [TestMethod]
-        public void UnitaMisuraIsOptional()
-        {
-            AssertOptional(x => x.UnitaMisura);
-        }
-        [TestMethod]
         public void UnitaMisuraMinMaxLength()
         {
             AssertMinMaxLength(x => x.UnitaMisura, 1, 10);
@@ -59,7 +54,7 @@ namespace Tests
             AssertMustBeBasicLatin(x => x.UnitaMisura);
         }
         [TestMethod]
-        public void ScontoMaggioazioneHasChildValidator() 
+        public void ScontoMaggioazioneHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.ScontoMaggiorazione, typeof(FatturaElettronica.Validators.ScontoMaggiorazioneValidator));
         }

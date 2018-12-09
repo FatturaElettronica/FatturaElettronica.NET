@@ -14,14 +14,13 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.TipoCessionePrestazione));
             RuleForEach(x => x.CodiceArticolo)
                 .SetValidator(new CodiceArticoloValidator());
-            RuleFor(x=>x.Descrizione)
+            RuleFor(x => x.Descrizione)
                 .NotEmpty()
                 .Length(1, 1000)
                 .Latin1SupplementValidator();
             RuleFor(x => x.UnitaMisura)
                 .Length(1, 10)
-                .BasicLatinValidator()
-                .When(x => !string.IsNullOrEmpty(x.UnitaMisura));
+                .BasicLatinValidator();
             RuleForEach(x => x.ScontoMaggiorazione)
                 .SetValidator(new ScontoMaggiorazioneValidator());
             RuleFor(x => x.PrezzoTotale)
@@ -54,15 +53,15 @@ namespace FatturaElettronica.Validators
 
         private bool PrezzoTotaleValidateAgainstError00423(DettaglioLinee challenge)
         {
-			var prezzo = challenge.PrezzoUnitario;
-			foreach (var sconto in challenge.ScontoMaggiorazione)
+            var prezzo = challenge.PrezzoUnitario;
+            foreach (var sconto in challenge.ScontoMaggiorazione)
             {
 
                 if (sconto.Importo == null && sconto.Percentuale == null) continue;
 
-                var importo = 
-                    (decimal)((sconto.Importo != null) 
-                    ? Math.Abs((decimal)sconto.Importo) 
+                var importo =
+                    (decimal)((sconto.Importo != null)
+                    ? Math.Abs((decimal)sconto.Importo)
                     : (prezzo * sconto.Percentuale) / 100);
 
                 if (sconto.Tipo == "SC")

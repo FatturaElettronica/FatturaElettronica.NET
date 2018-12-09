@@ -1,6 +1,11 @@
 Changelog
 =========
 
+In Development
+==============
+
+- Fix: controllo UnitaMisura consente campo vuoto. Closes #102.
+
 v1.0.1
 ======
  
