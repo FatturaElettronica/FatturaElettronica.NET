@@ -4,20 +4,25 @@ Changelog
 In Development
 ==============
 
+v1.0.2
+======
+ 
+Released on December 20, 2018.
+
 - Fix: Titolo e CodEORI ignorano ordinamento. Closes #103.
 - Fix: controllo UnitaMisura consente campo vuoto. Closes #102.
 
 v1.0.1
 ======
  
- Released on November 9, 2018.
+Released on November 9, 2018.
 
 - Bump: FatturaElettronica.Core to 1.0.
 
 v1.0
 ====
  
- Released on November 9, 2018.
+Released on November 9, 2018.
 
 - BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
 - BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
