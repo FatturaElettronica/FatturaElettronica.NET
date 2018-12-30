@@ -4,6 +4,11 @@ Changelog
 In Development
 ==============
 
+v1.0.3
+======
+ 
+- Fix: UnitaMisura è opzionale. Addresses #102.
+
 v1.0.2
 ======
  
