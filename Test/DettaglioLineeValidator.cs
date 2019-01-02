@@ -210,5 +210,19 @@ namespace Tests
         {
             AssertCollectionCanBeEmpty(x => x.AltriDatiGestionali);
         }
+        [TestMethod]
+        public void QuantitaIsOptional()
+        {
+            AssertOptional(x => x.Quantita);
+        }
+        [TestMethod]
+        public void QuantitaCannotBeNegative()
+        {
+            challenge.Quantita = -1;
+            validator.ShouldHaveValidationErrorFor(x => x.Quantita, challenge);
+
+            challenge.Quantita = 0;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Quantita, challenge);
+        }
     }
 }

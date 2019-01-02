@@ -50,6 +50,8 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.RiferimentoAmministrazione));
             RuleForEach(x => x.AltriDatiGestionali)
                 .SetValidator(new AltriDatiGestionaliValidator());
+            RuleFor(x => x.Quantita)
+                .GreaterThanOrEqualTo(0);
         }
 
         private bool PrezzoTotaleValidateAgainstError00423(DettaglioLinee challenge)

@@ -9,8 +9,9 @@ v1.0.5
  
 Unreleased.
 
+- New: costruttore classe Fattura ora è pubblico. Closes #99.
+- Fix: Quantità non può assumere valore negativo. Closes #115.
 - Fix: Small typos. Closes #116.
-- New: costruttore classe Fattura ora è pubblico. Il metodo statico CreateInstance rimane disponibile come helper. Closes #99.
 
 v1.0.4
 ======
