@@ -4,12 +4,13 @@ Changelog
 In Development
 ==============
 
-v1.0.4
+v1.0.5
 ======
  
 Unreleased.
 
 - Fix: Small typos. Closes #116.
+- New: costruttore classe Fattura ora è pubblico. Il metodo statico CreateInstance rimane disponibile come helper. Closes #99.
 
 v1.0.4
 ======

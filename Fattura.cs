@@ -8,7 +8,7 @@ namespace FatturaElettronica
 {
     public class Fattura : BaseClassSerializable
     {
-        protected Fattura()
+        public Fattura()
         {
             FatturaElettronicaHeader = new FatturaElettronicaHeader.FatturaElettronicaHeader();
             FatturaElettronicaBody = new List<FatturaElettronicaBody.FatturaElettronicaBody>();

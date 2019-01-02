@@ -29,8 +29,11 @@ namespace DemoApp
         static void Main(string[] args)
         {
 
-            // Usare il factory method CreateInstance() per ottenere una istanza di Fattura.
-            var fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione);
+            var fattura = new Fattura();
+            // In alternativa usare CreateInstance() per ottenere una istanza già tipizzata.
+            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000"
+            // FormatoTrasmissione = "FPR12":
+            fattura = Fattura.CreateInstance(Instance.Privati);
 
             // Lettura da file XML
             using (var r = XmlReader.Create("IT01234567890_FPA01.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
@@ -91,7 +94,7 @@ namespace DemoApp
             Console.WriteLine(json);
 
             // Deserializzazione da JSON.
-            var fatturaFromJson = Fattura.CreateInstance(Instance.Privati);
+            var fatturaFromJson = new Fattura();
             fatturaFromJson.FromJson(new JsonTextReader(new StringReader(json)));
         }
     }

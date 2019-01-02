@@ -10,7 +10,7 @@ namespace Tests
         public new void Init()
         {
             validator = new FatturaElettronica.Validators.FatturaValidator();
-            challenge = FatturaElettronica.Fattura.CreateInstance(FatturaElettronica.Defaults.Instance.PubblicaAmministrazione);
+            challenge = new FatturaElettronica.Fattura();
         }
 
         [TestMethod]
