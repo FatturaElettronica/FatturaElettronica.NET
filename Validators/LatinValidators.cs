@@ -4,13 +4,13 @@ using FluentValidation.Validators;
 
 namespace FatturaElettronica.Validators
 {
-    public abstract class LatinBaseValidator<T> : PropertyValidator 
+    public abstract class LatinBaseValidator<T> : PropertyValidator
     {
         private readonly Charsets _charset;
 
 
-        public LatinBaseValidator(Charsets charset) 
-            : base($"Testo contentente caratteri non validi ({(charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")})")
+        public LatinBaseValidator(Charsets charset)
+            : base($"Testo contenente caratteri non validi ({(charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")})")
         {
             _charset = charset;
         }
@@ -43,11 +43,13 @@ namespace FatturaElettronica.Validators
     public enum Charsets { BasicLatin, Latin1Supplement };
     public static class MyValidatorExtensions
     {
-       public static IRuleBuilderOptions<T, TElement> BasicLatinValidator<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder) {
-          return ruleBuilder.SetValidator(new BasicLatinValidator<T>());
-       }
-       public static IRuleBuilderOptions<T, TElement> Latin1SupplementValidator<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder) {
-          return ruleBuilder.SetValidator(new Latin1SupplementValidator<T>());
-       }
+        public static IRuleBuilderOptions<T, TElement> BasicLatinValidator<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new BasicLatinValidator<T>());
+        }
+        public static IRuleBuilderOptions<T, TElement> Latin1SupplementValidator<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder)
+        {
+            return ruleBuilder.SetValidator(new Latin1SupplementValidator<T>());
+        }
     }
 }
