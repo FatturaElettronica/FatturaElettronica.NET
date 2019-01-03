@@ -84,7 +84,7 @@ namespace DemoApp
             fattura.FatturaElettronicaBody[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
 
             // Serializzazione XML
-            using (var w = XmlWriter.Create("IT01234567890_FPA01.xml", new XmlWriterSettings { Indent = true }))
+            using (var w = XmlWriter.Create("IT01234567890_FPA01.xml", new XmlWriterSettings { Indent = true, Encoding = new UTF8Encoding(false) }))
             {
                 fattura.WriteXml(w);
             }
