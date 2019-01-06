@@ -4,12 +4,14 @@ Changelog
 In Development
 ==============
 
-v1.0.5
-======
+v1.1
+====
  
 Unreleased.
 
+- New: NetStandard 2.0 aggiunto ai target framework (Federico Dipuma). Closes #119.
 - New: costruttore classe Fattura ora è pubblico. Closes #99.
+- New: performance migliorata (Federico Dipuma). See #120.
 - Fix: Quantità non può assumere valore negativo. Closes #115.
 - Fix: Small typos. Closes #116.
 
