@@ -1,14 +1,14 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Xml;
 using System.IO;
-using FatturaElettronica.Impostazioni;
+using FatturaElettronica.Defaults;
 using System;
 using FatturaElettronica;
 
 namespace Tests
 {
     [TestClass]
-    public class DeserializeAndSerialize
+    public class XMLDeSerialize
     {
         [TestMethod]
         public void SerializePrivatiHeader()
@@ -46,7 +46,8 @@ namespace Tests
             ValidateInvoice(f, expectedFormat);
 
             // Serialize it back to disk, to another file
-            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true })) {
+            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true }))
+            {
                 f.WriteXml(w);
             }
 
@@ -61,7 +62,7 @@ namespace Tests
         private Fattura Deserialize(string fileName)
         {
             var f = Fattura.CreateInstance(Instance.Privati);
-            var s = new XmlReaderSettings {IgnoreWhitespace = true};
+            var s = new XmlReaderSettings { IgnoreWhitespace = true };
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
                 f.ReadXml(r);
@@ -71,7 +72,7 @@ namespace Tests
         private void ValidateInvoice(FatturaElettronica.Fattura f, string expectedFormat)
         {
 
-            var header = f.Header;
+            var header = f.FatturaElettronicaHeader;
 
             // DatiTrasmissione
             Assert.AreEqual("00001", header.DatiTrasmissione.ProgressivoInvio);
@@ -85,6 +86,7 @@ namespace Tests
             Assert.AreEqual("IT", header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese);
             Assert.AreEqual("01234567890", header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdCodice);
             Assert.AreEqual("SOCIETA' ALPHA SRL", header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione);
+            Assert.AreEqual("Titolo", header.CedentePrestatore.DatiAnagrafici.Anagrafica.Titolo);
             Assert.AreEqual("RF01", header.CedentePrestatore.DatiAnagrafici.RegimeFiscale);
             Assert.AreEqual("VIALE ROMA 543", header.CedentePrestatore.Sede.Indirizzo);
             Assert.AreEqual("07100", header.CedentePrestatore.Sede.CAP);
@@ -93,13 +95,14 @@ namespace Tests
             // CessionarioCommittente
             Assert.AreEqual("09876543210", header.CessionarioCommittente.DatiAnagrafici.CodiceFiscale);
             Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "BETA GAMMA" : "AMMINISTRAZIONE BETA", header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Denominazione);
+            Assert.AreEqual("Titolo", header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Titolo);
             Assert.AreEqual("VIA TORINO 38-B", header.CessionarioCommittente.Sede.Indirizzo);
             Assert.AreEqual("00145", header.CessionarioCommittente.Sede.CAP);
             Assert.AreEqual("ROMA", header.CessionarioCommittente.Sede.Comune);
             Assert.AreEqual("RM", header.CessionarioCommittente.Sede.Provincia);
             Assert.AreEqual("IT", header.CessionarioCommittente.Sede.Nazione);
 
-            var body = f.Body[0];
+            var body = f.FatturaElettronicaBody[0];
             // DatiGeneraliDocumento
             Assert.AreEqual("TD01", body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento);
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
@@ -191,13 +194,13 @@ namespace Tests
 
             using (var r = XmlReader.Create("test"))
             {
-               while (r.Read())
+                while (r.Read())
                 {
                     if (r.NodeType == XmlNodeType.Element)
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            Assert.AreEqual(f.Header.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {

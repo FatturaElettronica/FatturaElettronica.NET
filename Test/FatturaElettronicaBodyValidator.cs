@@ -8,8 +8,8 @@ using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
 namespace Tests
 {
     [TestClass]
-    public class BodyValidator
-        : BaseClass<Body, FatturaElettronica.Validators.BodyValidator>
+    public class FatturaElettronicaBodyValidator
+        : BaseClass<FatturaElettronicaBody, FatturaElettronica.Validators.FatturaElettronicaBodyValidator>
     {
         [TestMethod]
         public void DatiGeneraliHasChildValidator()
@@ -43,8 +43,8 @@ namespace Tests
         [TestMethod]
         public void DatiRitenutaValidateAgainstError00422()
         {
-            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 10m, PrezzoTotale = 100m});
-            challenge.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 10m, ImponibileImporto = 101m});
+            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee { AliquotaIVA = 10m, PrezzoTotale = 100m });
+            challenge.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo { AliquotaIVA = 10m, ImponibileImporto = 101m });
             var r = validator.Validate(challenge);
             Assert.AreEqual("00422", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi.DatiRiepilogo").ErrorCode);
 
@@ -55,9 +55,9 @@ namespace Tests
         [TestMethod]
         public void DatiRitenutaValidateAgainstError00419()
         {
-            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 1 });
-            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 2 });
-            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 3 });
+            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee { AliquotaIVA = 1 });
+            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee { AliquotaIVA = 2 });
+            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee { AliquotaIVA = 3 });
 
             challenge.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale { AliquotaIVA = 4 });
 

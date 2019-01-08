@@ -101,6 +101,7 @@
                     new Provincia { Codice = "SI", Nome = "Siena" },
                     new Provincia { Codice = "SR", Nome = "Siracusa" },
                     new Provincia { Codice = "SO", Nome = "Sondrio" },
+                    new Provincia { Codice = "SU", Nome = "Sud Sardegna" },
                     new Provincia { Codice = "TA", Nome = "Taranto" },
                     new Provincia { Codice = "TE", Nome = "Teramo" },
                     new Provincia { Codice = "TR", Nome = "Terni" },

@@ -2,22 +2,25 @@
 
 ## Caratteristiche
 
-- Lettura e scrittura nel formato aderente alle specifiche tecniche ([Allegato A, v1.1 del 22 Giugno 2018][pa]).
-- Supporta sia fatture elettroniche tra privati che con la Pubblica Amministrazione.
-- Convalida in osservanza delle specifiche tecniche ufficiali.
-- Supporto per la serializzazione in formato JSON
+- Lettura e scrittura nel formato XML conforme alle [specifiche tecniche ufficiali][pa].
+- Convalida offline in osservanza alle specifiche tecniche.
+- Supporto sia per fatture elettroniche tra privati che verso la Pubblica Amministrazione.
+- Supporto per de/serializzazione JSON.
 
 ## Utilizzo
 
 ```cs
 using FatturaElettronica;
+using FatturaElettronica.Common;
+using FatturaElettronica.Defaults;
 using FatturaElettronica.Validators;
-using FatturaElettronica.Impostazioni;
 using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
 
-using System.Xml;
-using FatturaElettronica.Common;
 using System;
+using System.Xml;
+using System.IO;
+
+using Newtonsoft.Json;
 
 namespace DemoApp
 {
@@ -26,8 +29,11 @@ namespace DemoApp
         static void Main(string[] args)
         {
 
-            // Usare il factory method CreateInstance() per ottenere una istanza di Fattura.
-            var fattura = Fattura.CreateInstance(Instance.PubblicaAmministrazione);
+            var fattura = new Fattura();
+            // In alternativa usare CreateInstance() per ottenere una istanza già tipizzata.
+            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000"
+            // FormatoTrasmissione = "FPR12":
+            fattura = Fattura.CreateInstance(Instance.Privati);
 
             // Lettura da file XML
             using (var r = XmlReader.Create("IT01234567890_FPA01.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
@@ -36,9 +42,9 @@ namespace DemoApp
             }
 
             // Ogni file di fattura contiene un array di elementi FatturaElettronicaBody.
-            Console.WriteLine($"Numero di documenti: {fattura.Body.Count}.");
+            Console.WriteLine($"Numero di documenti: {fattura.FatturaElettronicaBody.Count}.");
             Console.WriteLine("Documenti inclusi nel file FatturaPA:");
-            foreach(var doc in fattura.Body)
+            foreach (var doc in fattura.FatturaElettronicaBody)
             {
                 Console.WriteLine($"Numero: {doc.DatiGenerali.DatiGeneraliDocumento.Numero}");
                 Console.WriteLine($"Data: {doc.DatiGenerali.DatiGeneraliDocumento.Data.ToShortDateString()}");
@@ -73,9 +79,9 @@ namespace DemoApp
             Console.WriteLine(anagrafica.Validate().IsValid);
 
             // Modifica proprietà Header.
-            fattura.Header.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl";
+            fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl";
             //  Modifica proprietà Body
-            fattura.Body[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
+            fattura.FatturaElettronicaBody[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
 
             // Serializzazione XML
             using (var w = XmlWriter.Create("IT01234567890_FPA01.xml", new XmlWriterSettings { Indent = true }))
@@ -86,6 +92,10 @@ namespace DemoApp
             // Serializzazione JSON.
             var json = fattura.ToJson(JsonOptions.Indented);
             Console.WriteLine(json);
+
+            // Deserializzazione da JSON.
+            var fatturaFromJson = new Fattura();
+            fatturaFromJson.FromJson(new JsonTextReader(new StringReader(json)));
         }
     }
 }
@@ -97,26 +107,35 @@ In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato de
 
 ## Portabilità
 
-FatturaElettronica supporta .NET Standard v1.1, cosa che le permette di supportare un [ampio numero di piattaforme][netstandard].
+FatturaElettronica supporta .NET Standard v1.1 cosa che le permette di supportare un [ampio numero di piattaforme][netstandard].
 
 ## Installazione
 
-FatturaElettronica è su [NuGet][nuget] quindi tutto quel che serve è eseguire:
+FatturaElettronica è su [NuGet][nuget].
 
-```powershell
+Dalla command line, con .NET Core:
+
+```Shell
+    dotnet add package FatturaElettronica
+```
+
+Dalla Package Console, in Visual Studio:
+
+```PowerShell
     PM> Install-Package FatturaElettronica
 ```
 
-dalla Package Console, oppure usare il comando equivalente in Visual Studio.
+Oppure usare il comando equivalente nella UI di Visual Studio.
 
 ## Estensioni
-[FatturaElettronica.Extensions][fex] aggiunge features a FatturaElettronica.NET, come la lettura di file firmati digitalmente (.p7m).
+
+[FatturaElettronica.Extensions][fex] aggiunge features a FatturaElettronica.NET, come la lettura e creazione di file firmati digitalmente (.p7m).
 
 ## Licenza
 
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
 
-[pa]: https://www.agenziaentrate.gov.it/wps/file/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/ST+Fatturazione+elettronica+-+Allegato+A/Allegato+A+-+Specifiche+tecniche+vers+1.1_22062018.pdf
+[pa]: http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm
 [bo]: http://github.com/FatturaElettronica/BusinessObjects
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE
 [ga]: http://gestionaleamica.com

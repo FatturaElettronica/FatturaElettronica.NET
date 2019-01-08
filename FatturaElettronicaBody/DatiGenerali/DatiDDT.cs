@@ -14,7 +14,8 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Nei casi di fattura differita per indicare il documento con cui è stato consegnato il bene.
         /// </summary>
-        public DatiDDT() {
+        public DatiDDT()
+        {
             RiferimentoNumeroLinea = new List<int>();
         }
 
@@ -24,7 +25,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
-        
+
         /// <summary>
         /// Numero del documento di trasporto.
         /// </summary>
@@ -43,6 +44,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Linea di dettaglio della fattura cui si riferisce il DDT (non viene valorizzato se il riferimento è all'intera fattura).
         /// </summary>
         [DataProperty]
-        public List<int> RiferimentoNumeroLinea { get; }
+        public List<int> RiferimentoNumeroLinea { get; set; }
     }
 }

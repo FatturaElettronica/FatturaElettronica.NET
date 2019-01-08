@@ -12,7 +12,8 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Dati generali del documento principale e dati dei documenti correlati.
         /// </summary>
-        public DatiGenerali() {
+        public DatiGenerali()
+        {
             DatiGeneraliDocumento = new DatiGeneraliDocumento();
             DatiOrdineAcquisto = new List<DatiOrdineAcquisto>();
             DatiContratto = new List<DatiContratto>();
@@ -34,45 +35,45 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// Dati generali del documento principale.
         /// </summary>
         [DataProperty]
-        public DatiGeneraliDocumento DatiGeneraliDocumento { get; }
+        public DatiGeneraliDocumento DatiGeneraliDocumento { get; set; }
 
         /// <summary>
         /// Informazioni relative agli ordini di acquisto.
         /// </summary>
         [DataProperty]
-        public List<DatiOrdineAcquisto> DatiOrdineAcquisto { get; }
+        public List<DatiOrdineAcquisto> DatiOrdineAcquisto { get; set; }
 
         /// <summary>
         /// Informazioni relative ai contratti.
         /// </summary>
         [DataProperty]
-        public List<DatiContratto> DatiContratto { get; }
+        public List<DatiContratto> DatiContratto { get; set; }
 
         /// <summary>
         /// Informazioni relative alle convenzioni.
         /// </summary>
         [DataProperty]
-        public List<DatiConvenzione> DatiConvenzione { get; }
+        public List<DatiConvenzione> DatiConvenzione { get; set; }
 
         /// <summary>
         /// Informazioni relative ai dati presenti sul sistema gestionale in uso presso la PA (Agenzie Fiscali) riguardanti la fase di ricezione.
         /// </summary>
         [DataProperty]
-        public List<DatiRicezione> DatiRicezione { get; }
+        public List<DatiRicezione> DatiRicezione { get; set; }
 
         /// <summary>
         /// Informazioni relative alle fatture precedentemente trasmesse e alle quali si collega il documento presente.
         /// Riguarda i casi di invio di nota di credito e/o di fatture di conguaglio a fronte di precedenti fatture di accounto.
         /// </summary>
         [DataProperty]
-        public List<DatiFattureCollegate> DatiFattureCollegate { get; }
+        public List<DatiFattureCollegate> DatiFattureCollegate { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare nei casi di fattura per stato di avanzamento.
         /// </summary>
         [DataProperty]
         // ReSharper disable once InconsistentNaming
-        public List<DatiSAL> DatiSAL { get; }
+        public List<DatiSAL> DatiSAL { get; set; }
 
         /// <summary>
         /// Da valorizzarei nei casi di fattura differita per indicare il documento con cui è stato consegnato il bene.
@@ -80,19 +81,19 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         // ReSharper disable once InconsistentNaming
-        public List<DatiDDT> DatiDDT { get; }
+        public List<DatiDDT> DatiDDT { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare nei casi di fattura accompagnatoria per inserire informazioni relative al trasporto.
         /// </summary>
         [DataProperty]
-        public DatiTrasporto DatiTrasporto { get; }
+        public DatiTrasporto DatiTrasporto { get; set; }
 
         /// <summary>
         /// Da valorizzare nei casi di fatture per operazioni accessorie, emesse dagli autotrasportatori per usufruire delle
         /// agevolazioni in materia di registrazioni e pagamento dell'IVA.
         /// </summary>
         [DataProperty]
-        public FatturaPrincipale FatturaPrincipale { get; }
+        public FatturaPrincipale FatturaPrincipale { get; set; }
     }
 }

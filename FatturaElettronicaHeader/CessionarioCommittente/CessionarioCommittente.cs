@@ -12,7 +12,8 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// <summary>
         /// Dati relativi al cedente / prestatore.
         /// </summary>
-        public CessionarioCommittente() {
+        public CessionarioCommittente()
+        {
             DatiAnagrafici = new DatiAnagraficiCessionarioCommittente();
             Sede = new SedeCessionarioCommittente();
             StabileOrganizzazione = new StabileOrganizzazione();
@@ -28,24 +29,24 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
         /// Dati anagrafici, professionali e fiscali del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public DatiAnagraficiCessionarioCommittente DatiAnagrafici { get; }
+        public DatiAnagraficiCessionarioCommittente DatiAnagrafici { get; set; }
 
         /// <summary>
         /// Dati della sede del cessionario / committente.
         /// </summary>
         [DataProperty]
-        public SedeCessionarioCommittente Sede { get; }
+        public SedeCessionarioCommittente Sede { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 FormatoTrasmissione = "FPR12" (fattura tra privati), nel caso di cessionario/committente non residente e con stabile organizzazione in Italia.
         /// </summary>
         [DataProperty]
-        public StabileOrganizzazione StabileOrganizzazione { get; }
+        public StabileOrganizzazione StabileOrganizzazione { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 <FormatoTrasmissione> = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
         /// </summary>
         [DataProperty]
-        public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { get; }
+        public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { get; set; }
     }
 }

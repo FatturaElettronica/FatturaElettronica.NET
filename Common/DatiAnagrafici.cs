@@ -1,4 +1,5 @@
 ﻿using System.Xml;
+using Newtonsoft.Json;
 
 namespace FatturaElettronica.Common
 {
@@ -10,9 +11,10 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Dati anagrafici, professionali e fiscali
         /// </summary>
-        public DatiAnagrafici() {
+        public DatiAnagrafici()
+        {
             IdFiscaleIVA = new IdFiscaleIVA();
-            Anagrafica1 = new Anagrafica();
+            Anagrafica = new Anagrafica();
         }
         public DatiAnagrafici(XmlReader r) : base(r) { }
 
@@ -21,22 +23,19 @@ namespace FatturaElettronica.Common
         /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
         /// </summary>
         [DataProperty(order: 0)]
-        public IdFiscaleIVA IdFiscaleIVA { get; }
+        public IdFiscaleIVA IdFiscaleIVA { get; set; }
 
         /// <summary>
         /// Numero di Codice Fiscale.
         /// </summary>
-        [DataProperty(order:1)]
+        [DataProperty(order: 1)]
         public string CodiceFiscale { get; set; }
 
         /// <summary>
         /// Dati anagrafici identificativi del soggetto. 
         /// </summary>
-        [DataProperty(order:2)]
-        public Anagrafica Anagrafica { 
-            get { return Anagrafica1; }
-        }
+        [DataProperty(order: 2)]
+        public Anagrafica Anagrafica { get; set; }
 
-        public Anagrafica Anagrafica1 { get; }
     }
 }

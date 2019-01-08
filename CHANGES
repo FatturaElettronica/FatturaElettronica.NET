@@ -1,9 +1,112 @@
 Changelog
 =========
 
+In Development
+==============
+
+v1.1
+====
+ 
+Unreleased.
+
+- New: NetStandard 2.0 aggiunto ai target framework (Federico Dipuma). Closes #119.
+- New: costruttore classe Fattura ora è pubblico. Closes #99.
+- New: performance migliorata (Federico Dipuma). See #120.
+- Fix: Quantità non può assumere valore negativo. Closes #115.
+- Fix: Small typos. Closes #116.
+
+v1.0.4
+======
+ 
+Released on January 2, 2019
+
+- Fix: Aggiunta "Sud Sardegna" alla lista provincie (Massimo Linossi). Pull #111.
+
+v1.0.3
+======
+ 
+Released on December 30, 2018
+
+- Fix: UnitaMisura è opzionale. Addresses #102.
+
+v1.0.2
+======
+ 
+Released on December 20, 2018.
+
+- Fix: Titolo e CodEORI ignorano ordinamento. Closes #103.
+- Fix: controllo UnitaMisura consente campo vuoto. Closes #102.
+
+v1.0.1
+======
+ 
+Released on November 9, 2018.
+
+- Bump: FatturaElettronica.Core to 1.0.
+
+v1.0
+====
+ 
+Released on November 9, 2018.
+
+- BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
+- BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
+- BREAKING: namespace FatturaElettronica.Impostazioni rinominato FatturaElettronica.Defaults.
+
+- Fix: Aggiornati codici INCOTERMS (Marco Tessitore). Pull #89; Pull #91.
+- Fix: Rimosso controllo 00426 su campo PECDestinatario (Gaetano Pizzol). Pull #88.
+- Fix: Anagrafica.CognomeNome non deve essere serializzato in JSON. Closes #86.
+- Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closes #84.
+- Fix: Campo RiferimentoNumero dovrebbe essere opzionale (Gaetano Pizzol). Pull #82.
+- Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
+- Fix: Header e Body vanno JSON-serializzati come FatturaElettronicaHeader e FatturaElettronicaBody. Closes #83.
+
+- Bump: FatturaElettronica.Core to 0.5.
+- Bump: Newtonsoft.Json to 11.0.2.
+- Bump: MSTest.TestFramework to 1.3.2.
+- Bump: MSTest.TestAdapter to 1.3.2.
+- Bump: Microsoft.NET.Test.Sdk to 15.9.0.
+
+v0.9
+====
+
+Released on October 26, 2018.
+
+- New: FromJson() de-serializza stream JSON.
+- Fix: PECDestinatario può essere vuoto quando CodiceDestinatario è 0000000. Closes #75.
+- Fix: Le proprietà di tipo Class non sono scrivibili. Closes #76.
+- Fix: ToJson() serializza proprietà che non dovrebbero comparire nel JON.
+- I test ora girano come app NetCore 2.1. Addresses FatturaElettronica/FatturaElettronica.Core#4.
+
+v0.8.5
+======
+
+Released on October 16, 2018.
+
+- New: Validazione errore 00426 per campo 1.1.6 PECDestinatario. Closes #74.
+- Fix: errore descrizione in RegimeFiscale "RF17". Closes #72.
+- Fix: "Nullable object must have a value" in validazione di blocco ScontoMaggiorazione con Importo = 0. Closes #71.
+
+v0.8.4
+======
+
+Released on October 4, 2018.
+
+- Upgrade: FluentValidation to v8.0.100.
+
+v0.8.3
+======
+
+Released on October 2, 2018.
+
+- Fix: DettaglioLineeValidator: 00423 non supporta tolleranca di 1 centesimo. Closes #66.
+
 v0.8.2
 ======
 
+Released on October 1, 2018.
+
+- FatturaElettronica.Core dependency bumped to v0.2.
 - Cleanup and refactoring: use auto-properties; remove unnecessary usings.
 
 v0.8.1

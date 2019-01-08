@@ -29,7 +29,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
         /// Identificativo univoco del soggetto trasmittente.
         /// </summary>
         [DataProperty]
-        public IdTrasmittente IdTrasmittente { get; }
+        public IdTrasmittente IdTrasmittente { get; set; }
 
         /// <summary>
         /// Progressivo univoco, attribuito dal soggetto che trasmette, relativo ad ogni singolo documento fattura.
@@ -54,7 +54,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione
         /// Dati relativi ai contatti del trasmittente.
         /// </summary>
         [DataProperty]
-        public ContattiTrasmittente ContattiTrasmittente { get; }
+        public ContattiTrasmittente ContattiTrasmittente { get; set; }
 
         /// <summary>
         /// Inidirizzo PEC al quale inviare il documento.

@@ -6,7 +6,7 @@ using FatturaElettronica.Tabelle;
 namespace Tests
 {
     [TestClass]
-    public class DettaglioLineeValidator: BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
+    public class DettaglioLineeValidator : BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
     {
         [TestMethod]
         public void TipoCessionePrestazioneIsOptional()
@@ -59,7 +59,7 @@ namespace Tests
             AssertMustBeBasicLatin(x => x.UnitaMisura);
         }
         [TestMethod]
-        public void ScontoMaggioazioneHasChildValidator() 
+        public void ScontoMaggioazioneHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.ScontoMaggiorazione, typeof(FatturaElettronica.Validators.ScontoMaggiorazioneValidator));
         }
@@ -124,6 +124,28 @@ namespace Tests
             challenge.Quantita = 98;
             challenge.PrezzoTotale = 84.863198m;
             validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
+
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/66
+            challenge.PrezzoUnitario = 20.5m;
+            challenge.Quantita = 1;
+            challenge.PrezzoTotale = 20.5m;
+            validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
+            challenge.PrezzoTotale = 20.51m;
+            validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
+            challenge.PrezzoTotale = 20.52m;
+            validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, challenge).WithErrorCode("00423");
+            challenge.PrezzoTotale = 20.49m;
+            validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
+            challenge.PrezzoTotale = 20.48m;
+            validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, challenge).WithErrorCode("00423");
+
+            // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/71
+            challenge.ScontoMaggiorazione.Clear();
+            challenge.ScontoMaggiorazione.Add(new FatturaElettronica.Common.ScontoMaggiorazione { Importo = 0, Tipo = "SC" });
+            challenge.PrezzoUnitario = 1m;
+            challenge.Quantita = 1;
+            challenge.PrezzoTotale = 1m;
+            validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
         }
 
         [TestMethod]
@@ -187,6 +209,20 @@ namespace Tests
         public void AltriDatiGestionaliCollectionCanBeEmpty()
         {
             AssertCollectionCanBeEmpty(x => x.AltriDatiGestionali);
+        }
+        [TestMethod]
+        public void QuantitaIsOptional()
+        {
+            AssertOptional(x => x.Quantita);
+        }
+        [TestMethod]
+        public void QuantitaCannotBeNegative()
+        {
+            challenge.Quantita = -1;
+            validator.ShouldHaveValidationErrorFor(x => x.Quantita, challenge);
+
+            challenge.Quantita = 0;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Quantita, challenge);
         }
     }
 }

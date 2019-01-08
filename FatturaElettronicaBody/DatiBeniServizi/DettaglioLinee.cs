@@ -13,7 +13,8 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// <summary>
         /// Linee di dettaglio del documento (i campi del blocco si ripetono per ogni riga di dettaglio).
         /// </summary>
-        public DettaglioLinee() {
+        public DettaglioLinee()
+        {
             CodiceArticolo = new List<CodiceArticolo>();
             ScontoMaggiorazione = new List<ScontoMaggiorazione>();
             AltriDatiGestionali = new List<AltriDatiGestionali>();
@@ -37,7 +38,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// Eventuale codifica dell'articolo (la molteplicità N del blocco consente di gestire la presenza di più codifiche).
         /// </summary>
         [DataProperty]
-        public List<CodiceArticolo> CodiceArticolo { get; }
+        public List<CodiceArticolo> CodiceArticolo { get; set; }
 
         /// <summary>
         /// Natura e quantità dell'oggetto della cessione/prestazione; può fare anche riferimento ad un precedente documento emesso
@@ -81,7 +82,7 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// maggiorazioni a "cascata").
         /// </summary>
         [DataProperty]
-        public List<ScontoMaggiorazione> ScontoMaggiorazione { get; }
+        public List<ScontoMaggiorazione> ScontoMaggiorazione { get; set; }
 
         /// <summary>
         /// Importo totale del bene/servizio (che tiene conto di eventuali sconti/maggiorazioni) IVA esclusa.
@@ -118,6 +119,6 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// fini amministrativi, gestionali, etc.
         /// </summary>
         [DataProperty]
-        public List<AltriDatiGestionali> AltriDatiGestionali { get; }
+        public List<AltriDatiGestionali> AltriDatiGestionali { get; set; }
     }
 }

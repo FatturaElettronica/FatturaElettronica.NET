@@ -13,7 +13,8 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// <summary>
         /// Blocco sempre obbligatorio contenente natura, qualità e quantità dei beni / servizi formanti oggetto dell'operazione.
         /// </summary>
-        public DatiBeniServizi() {
+        public DatiBeniServizi()
+        {
             DettaglioLinee = new List<DettaglioLinee>();
             DatiRiepilogo = new List<DatiRiepilogo>();
         }
@@ -27,12 +28,12 @@ namespace FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi
         /// Dati generali del documento principale.
         /// </summary>
         [DataProperty]
-        public List<DettaglioLinee> DettaglioLinee { get; }
+        public List<DettaglioLinee> DettaglioLinee { get; set; }
 
         /// <summary>
         /// Blocco sempre obbligatorio contenente i dati di riepilogo per ogni aliquota IVA o natura.
         /// </summary>
         [DataProperty]
-        public List<DatiRiepilogo> DatiRiepilogo { get; }
+        public List<DatiRiepilogo> DatiRiepilogo { get; set; }
     }
 }

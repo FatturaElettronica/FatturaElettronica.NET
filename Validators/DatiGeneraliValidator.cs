@@ -19,18 +19,18 @@ namespace FatturaElettronica.Validators
                 })
             .WithMessage("Data antecedente a una o più date in DatiFattureCollegate")
             .WithErrorCode("00418");
-            RuleFor(x => x.DatiOrdineAcquisto)
-                .SetCollectionValidator(new DatiOrdineAcquistoValidator());
-            RuleFor(x => x.DatiContratto)
-                .SetCollectionValidator(new DatiContrattoValidator());
-            RuleFor(x => x.DatiConvenzione)
-                .SetCollectionValidator(new DatiConvenzioneValidator());
-            RuleFor(x => x.DatiRicezione)
-                .SetCollectionValidator(new DatiRicezioneValidator());
-            RuleFor(x => x.DatiFattureCollegate)
-                .SetCollectionValidator(new DatiFattureCollegateValidator());
-            RuleFor(x => x.DatiDDT)
-                .SetCollectionValidator(new DatiDDTValidator());
+            RuleForEach(x => x.DatiOrdineAcquisto)
+                .SetValidator(new DatiOrdineAcquistoValidator());
+            RuleForEach(x => x.DatiContratto)
+                .SetValidator(new DatiContrattoValidator());
+            RuleForEach(x => x.DatiConvenzione)
+                .SetValidator(new DatiConvenzioneValidator());
+            RuleForEach(x => x.DatiRicezione)
+                .SetValidator(new DatiRicezioneValidator());
+            RuleForEach(x => x.DatiFattureCollegate)
+                .SetValidator(new DatiFattureCollegateValidator());
+            RuleForEach(x => x.DatiDDT)
+                .SetValidator(new DatiDDTValidator());
             RuleFor(x => x.DatiTrasporto)
                 .SetValidator(new DatiTrasportoValidator())
                 .When(x=>!x.DatiTrasporto.IsEmpty());
