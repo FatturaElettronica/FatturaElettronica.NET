@@ -1,21 +1,27 @@
 ﻿using System.Collections.Generic;
-using FatturaElettronica.Impostazioni;
+using FatturaElettronica.Defaults;
 using FatturaElettronica.Common;
 using System.Xml.Serialization;
+using Newtonsoft.Json;
+using System.Xml;
+using System.IO;
+using System.Text;
+using System;
 
 namespace FatturaElettronica
 {
     public class Fattura : BaseClassSerializable
     {
-        protected Fattura() {
-            Header = new FatturaElettronicaHeader.Header();
-            Body = new List<FatturaElettronicaBody.Body>();
+        public Fattura()
+        {
+            FatturaElettronicaHeader = new FatturaElettronicaHeader.FatturaElettronicaHeader();
+            FatturaElettronicaBody = new List<FatturaElettronicaBody.FatturaElettronicaBody>();
         }
 
         public override void WriteXml(System.Xml.XmlWriter w)
         {
             w.WriteStartElement(RootElement.Prefix, RootElement.LocalName, RootElement.NameSpace);
-            w.WriteAttributeString("versione", Header.DatiTrasmissione.FormatoTrasmissione);
+            w.WriteAttributeString("versione", FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione);
             foreach (var a in RootElement.ExtraAttributes)
             {
                 w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
@@ -24,9 +30,28 @@ namespace FatturaElettronica
             w.WriteEndElement();
         }
 
-        public override void ReadXml(System.Xml.XmlReader r) {
+        public override void ReadXml(System.Xml.XmlReader r)
+        {
             r.MoveToContent();
             base.ReadXml(r);
+        }
+
+        public void ReadXml(string xml)
+        {
+            var preambleByte = Encoding.UTF8.GetPreamble();
+            string _byteOrderMarkUtf8 = System.Text.Encoding.UTF8.GetString(preambleByte, 0, preambleByte.Length);
+            if (xml.StartsWith(_byteOrderMarkUtf8, StringComparison.Ordinal))
+            {
+                int index = xml.IndexOf('<');
+                if (index > 0)
+                {
+                    xml = xml.Substring(index, xml.Length - index);
+                }
+            }
+
+            var r = XmlReader.Create(new StringReader(xml), new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true });
+
+            ReadXml(r);
         }
 
         public static Fattura CreateInstance(Instance formato)
@@ -36,11 +61,11 @@ namespace FatturaElettronica
             switch (formato)
             {
                 case Instance.PubblicaAmministrazione:
-                    f.Header.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
+                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
                     break;
                 case Instance.Privati:
-                    f.Header.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
-                    f.Header.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
+                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
+                    f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
                     break;
             }
 
@@ -55,8 +80,7 @@ namespace FatturaElettronica
         /// Intestazione della comunicazione.
         /// </summary>
         [DataProperty]
-        [XmlElement(ElementName = "FatturaElettronicaHeader")]
-        public FatturaElettronicaHeader.Header Header { get; }
+        public FatturaElettronicaHeader.FatturaElettronicaHeader FatturaElettronicaHeader { get; set; }
 
         /// <summary>
         /// Lotto di fatture incluse nella comunicazione.
@@ -64,8 +88,7 @@ namespace FatturaElettronica
         /// <remarks>Il blocco ha molteciplità 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete
         /// per ogni fattura componente il lotto stesso.</remarks>
         [DataProperty]
-        [XmlElement(ElementName = "FatturaElettronicaBody")]
-        public List<FatturaElettronicaBody.Body> Body { get; }
+        public List<FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody { get; set; }
 
     }
 }
