@@ -1,9 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Xml;
+﻿using System;
 using System.IO;
-using FatturaElettronica.Defaults;
-using System;
+using System.Text;
+using System.Xml;
 using FatturaElettronica;
+using FatturaElettronica.Defaults;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {
@@ -38,6 +39,22 @@ namespace Tests
             DeserializeAndThenSerialize("Samples/IT01234567890_FPR02.xml", FormatoTrasmissione.Privati);
         }
 
+        [TestMethod]
+        public void DeserializeAndThenSerializeOfficialPRSampleByte()
+        {
+            var b = File.ReadAllBytes("Samples/IT01234567890_FPR02.xml");
+
+            DeserializeAndThenSerialize(b, FormatoTrasmissione.Privati);
+        }
+
+        [TestMethod]
+        public void DeserializeAndThenSerializeOfficialPRSampleByteBOM()
+        {
+            var b = File.ReadAllBytes("Samples/IT01234567890_FPR03_BOM.xml");
+
+            DeserializeAndThenSerialize(b, FormatoTrasmissione.Privati);
+        }
+
         private void DeserializeAndThenSerialize(string filename, string expectedFormat)
         {
             var f = Deserialize(filename);
@@ -67,6 +84,36 @@ namespace Tests
             {
                 f.ReadXml(r);
             }
+            return f;
+        }
+
+        private void DeserializeAndThenSerialize(byte[] b, string expectedFormat)
+        {
+            var f = Deserialize(b);
+
+            Assert.IsTrue(f.Validate().IsValid);
+            ValidateInvoice(f, expectedFormat);
+
+            // Serialize it back to disk, to another file
+            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true }))
+            {
+                f.WriteXml(w);
+            }
+
+            // Deserialize the new file and validate it
+            var f2 = Deserialize("challenge.xml");
+
+            Assert.IsTrue(f2.Validate().IsValid);
+            ValidateInvoice(f2, expectedFormat);
+
+            File.Delete("challenge.xml");
+        }
+        private Fattura Deserialize(byte[] b)
+        {
+            var f = Fattura.CreateInstance(Instance.Privati);
+
+            f.ReadXml(b);
+
             return f;
         }
         private void ValidateInvoice(FatturaElettronica.Fattura f, string expectedFormat)

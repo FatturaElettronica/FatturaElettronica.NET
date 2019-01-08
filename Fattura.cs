@@ -34,8 +34,10 @@ namespace FatturaElettronica
             base.ReadXml(r);
         }
 
-        public void ReadXml(string xml)
+        public void ReadXml(byte[] b)
         {
+            var xml = Encoding.UTF8.GetString(b, 0, b.Length);
+
             var preambleByte = Encoding.UTF8.GetPreamble();
             var byteOrderMarkUtf8 = System.Text.Encoding.UTF8.GetString(preambleByte, 0, preambleByte.Length);
             if (xml.StartsWith(byteOrderMarkUtf8, StringComparison.Ordinal))
