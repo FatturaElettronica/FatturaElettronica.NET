@@ -1,12 +1,10 @@
-﻿using System.Collections.Generic;
-using FatturaElettronica.Defaults;
-using FatturaElettronica.Common;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
-using System.Xml;
+﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using System;
+using System.Xml;
+using FatturaElettronica.Common;
+using FatturaElettronica.Defaults;
 
 namespace FatturaElettronica
 {
@@ -39,10 +37,10 @@ namespace FatturaElettronica
         public void ReadXml(string xml)
         {
             var preambleByte = Encoding.UTF8.GetPreamble();
-            string _byteOrderMarkUtf8 = System.Text.Encoding.UTF8.GetString(preambleByte, 0, preambleByte.Length);
-            if (xml.StartsWith(_byteOrderMarkUtf8, StringComparison.Ordinal))
+            var byteOrderMarkUtf8 = System.Text.Encoding.UTF8.GetString(preambleByte, 0, preambleByte.Length);
+            if (xml.StartsWith(byteOrderMarkUtf8, StringComparison.Ordinal))
             {
-                int index = xml.IndexOf('<');
+                var index = xml.IndexOf('<');
                 if (index > 0)
                 {
                     xml = xml.Substring(index, xml.Length - index);
