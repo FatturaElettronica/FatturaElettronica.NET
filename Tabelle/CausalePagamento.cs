@@ -6,7 +6,6 @@
         {
             get
             {
-                // TODO: add appropriate values for Nome
                 return new Tabella[] {
                     new CausalePagamento{ Codice = "A", Nome = "prestazioni di lavoro autonomo rientranti nell’esercizio di arte o professione abituale"},
                     new CausalePagamento{ Codice = "B", Nome = "utilizzazione economica, da parte dell’autore o dell’inventore, di opere dell’ingegno, di brevetti industriali e di processi, formule o informazioni relativi ad esperienze acquisite in campo industriale, commerciale o scientifico"},
