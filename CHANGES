@@ -9,7 +9,7 @@ v1.1.1
  
 Unreleased
 
-- Fix: Supporto per 8 decimali nel PrezzoUnitario. Closes #125.
+- Fix: Supporto per 8 decimali nel PrezzoUnitario (Claudio Lepri). Pull #130; Closes #125.
 - Bump FatturaElettronica.Core a 1.1.1.
 
 v1.1
