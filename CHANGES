@@ -7,7 +7,7 @@ In Development
 v1.1
 ====
  
-Unreleased.
+Released on January 6, 2019
 
 - New: NetStandard 2.0 aggiunto ai target framework (Federico Dipuma). Closes #119.
 - New: costruttore classe Fattura ora è pubblico. Closes #99.
