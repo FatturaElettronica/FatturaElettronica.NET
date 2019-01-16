@@ -56,7 +56,7 @@ namespace FatturaElettronica.Validators
 
         private bool PrezzoTotaleValidateAgainstError00423(DettaglioLinee challenge)
         {
-            var prezzo = Math.Round(challenge.PrezzoUnitario, 8);
+            var prezzo = Math.Round(challenge.PrezzoUnitario, 8, MidpointRounding.AwayFromZero);
             foreach (var sconto in challenge.ScontoMaggiorazione)
             {
 
