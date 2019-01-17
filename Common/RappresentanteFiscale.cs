@@ -22,7 +22,7 @@ namespace FatturaElettronica.Common
         /// Also, properties must be listed with the precise order in the specification.
 
         /// <summary>
-        /// Dati anagrafici del rappresentante fiscae del cedente / prestatore.
+        /// Dati anagrafici del rappresentante fiscale del cedente / prestatore.
         /// </summary>
         [DataProperty]
         public DatiAnagrafici DatiAnagrafici { get; set; }
