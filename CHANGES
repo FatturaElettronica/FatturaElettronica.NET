@@ -7,7 +7,7 @@ In Development
 v1.1.1
 ======
  
-Unreleased
+Released on January 17, 2019
 
 - Fix: Tabella CausalePagamento completata coi nomi di ogni pagamento (Michael Mairegger). Pull #127.
 - Fix: Convalida Provincia non conforme ai controlli lato AgEntrate. Closes #129.
