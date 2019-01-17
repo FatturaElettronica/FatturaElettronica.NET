@@ -13,7 +13,7 @@ using System.Collections.Generic;
 namespace Tests
 {
     [TestClass]
-    public abstract class BaseClass<TClass, TValidator> 
+    public abstract class BaseClass<TClass, TValidator>
         where TClass : FatturaElettronica.Common.BaseClassSerializable
         where TValidator : IValidator<TClass>
     {
@@ -36,13 +36,13 @@ namespace Tests
             var r2 = validator.Validate(challenge);
 
             // ValidationResult equality operatore has not been implemented.
-            for (var i=0; i<=r1.Errors.Count-1;i++)
+            for (var i = 0; i <= r1.Errors.Count - 1; i++)
             {
                 Assert.AreEqual(r1.Errors[i].PropertyName, r2.Errors[i].PropertyName);
                 Assert.AreEqual(r1.Errors[i].ErrorMessage, r2.Errors[i].ErrorMessage);
             }
         }
-        protected void AssertOptional<T>(Expression<Func<TClass, T>> outExpr )
+        protected void AssertOptional<T>(Expression<Func<TClass, T>> outExpr)
         {
             var prop = GetProperty(outExpr);
 
@@ -56,7 +56,7 @@ namespace Tests
             }
 
         }
-        protected void AssertRequired<T>(Expression<Func<TClass, T>> outExpr, string expectedErrorCode=null)
+        protected void AssertRequired<T>(Expression<Func<TClass, T>> outExpr, string expectedErrorCode = null)
         {
             var prop = GetProperty(outExpr);
 
@@ -83,30 +83,30 @@ namespace Tests
                 validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
             }
         }
-        protected void AssertMinMaxLength(Expression<Func<TClass, string>> outExpr, int min, int max, char filler='x', string expectedErrorCode="LengthValidator")
+        protected void AssertMinMaxLength(Expression<Func<TClass, string>> outExpr, int min, int max, char filler = 'x', string expectedErrorCode = "LengthValidator")
         {
             var prop = GetProperty(outExpr);
 
-            prop.SetValue(challenge, new string(filler, max+1));
+            prop.SetValue(challenge, new string(filler, max + 1));
             validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
             prop.SetValue(challenge, new string(filler, min));
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
             prop.SetValue(challenge, new string(filler, max));
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
         }
-        protected void AssertLength(Expression<Func<TClass, string>> outExpr, int length, char filler='x', string expectedErrorCode="ExactLengthValidator")
+        protected void AssertLength(Expression<Func<TClass, string>> outExpr, int length, char filler = 'x', string expectedErrorCode = "ExactLengthValidator")
         {
             var prop = GetProperty(outExpr);
             var r = validator.Validate(challenge);
 
-            prop.SetValue(challenge, new string(filler, length+1));
+            prop.SetValue(challenge, new string(filler, length + 1));
             validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
-            prop.SetValue(challenge, new string(filler, length-1));
+            prop.SetValue(challenge, new string(filler, length - 1));
             validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
             prop.SetValue(challenge, new string(filler, length));
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
         }
-        protected void AssertOnlyAcceptsTableValues<T>(Expression<Func<TClass, string>> outExpr, string expectedErrorCode= "IsValidValidator`1") where T: Tabella, new()
+        protected void AssertOnlyAcceptsTableValues<T>(Expression<Func<TClass, string>> outExpr, string expectedErrorCode = "IsValidValidator`1") where T : Tabella, new()
         {
             var prop = GetProperty(outExpr);
 
@@ -130,7 +130,7 @@ namespace Tests
         public void AssertCollectionCannotBeEmpty<T>(Expression<Func<TClass, List<T>>> outExpr)
         {
             var prop = GetProperty(outExpr);
-            
+
             var r = validator.Validate(challenge);
             Assert.AreEqual("NotEmptyValidator", r.Errors.FirstOrDefault(x => x.PropertyName == prop.Name).ErrorCode);
 
@@ -164,6 +164,22 @@ namespace Tests
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
             prop.SetValue(challenge, "test ›tes1");
             validator.ShouldHaveValidationErrorFor(outExpr, challenge);
+        }
+        protected void AssertProvinciaOnlyAcceptsValidValues(Expression<Func<TClass, string>> outExpr)
+        {
+            var prop = GetProperty(outExpr);
+
+            prop.SetValue(challenge, "mi");
+            validator.ShouldHaveValidationErrorFor(outExpr, challenge);
+
+            prop.SetValue(challenge, "M");
+            validator.ShouldHaveValidationErrorFor(outExpr, challenge);
+
+            prop.SetValue(challenge, "MIL");
+            validator.ShouldHaveValidationErrorFor(outExpr, challenge);
+
+            prop.SetValue(challenge, "MI");
+            validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
         }
         private PropertyInfo GetProperty<T>(Expression<Func<TClass, T>> outExpr)
         {

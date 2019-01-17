@@ -10,7 +10,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.Ufficio)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<Provincia>());
+                .Matches(@"^[A-Z]{2}$");
             RuleFor(x => x.NumeroREA)
                 .NotEmpty()
                 .BasicLatinValidator()

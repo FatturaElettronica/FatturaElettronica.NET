@@ -10,6 +10,7 @@ v1.1.1
 Unreleased
 
 - New: Tabella CausalePagamento completata coi nomi di ogni pagamento (Michael Mairegger). Pull #127.
+- Fix: Convalida Provincia non conforme ai controlli lato AgEntrate. Closes #129.
 - Fix: CessionarioCommittente.RappresentanteFiscale, errore "sequenza tag errata". Closes #133.
 - Fix: Supporto per 8 decimali nel PrezzoUnitario (Claudio Lepri). Pull #130; Closes #125.
 - Bump FatturaElettronica.Core a 1.1.1.

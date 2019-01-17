@@ -4,7 +4,7 @@ using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
 
 namespace FatturaElettronica.Validators
 {
-    public class DatiAnagraficiCedentePrestatoreValidator : 
+    public class DatiAnagraficiCedentePrestatoreValidator :
         AbstractValidator<DatiAnagraficiCedentePrestatore>
     {
         public DatiAnagraficiCedentePrestatoreValidator()
@@ -19,14 +19,14 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.AlboProfessionale)
                 .Length(1, 60)
                 .Latin1SupplementValidator()
-                .When(x=>!string.IsNullOrEmpty(x.AlboProfessionale));
+                .When(x => !string.IsNullOrEmpty(x.AlboProfessionale));
             RuleFor(x => x.ProvinciaAlbo)
-                .SetValidator(new IsValidValidator<Provincia>())
+                .Matches(@"^[A-Z]{2}$")
                 .When(x => !string.IsNullOrEmpty(x.ProvinciaAlbo));
             RuleFor(x => x.NumeroIscrizioneAlbo)
                 .Length(1, 60)
                 .BasicLatinValidator()
-                .When(x=>!string.IsNullOrEmpty(x.NumeroIscrizioneAlbo));
+                .When(x => !string.IsNullOrEmpty(x.NumeroIscrizioneAlbo));
             RuleFor(x => x.RegimeFiscale)
                 .NotEmpty()
                 .SetValidator(new RegimeFiscaleValidator<RegimeFiscale>());

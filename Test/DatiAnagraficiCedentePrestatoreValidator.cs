@@ -5,7 +5,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Tests
 {
     [TestClass]
-    public class DatiAnagraficiCedentePrestatoreValidator 
+    public class DatiAnagraficiCedentePrestatoreValidator
         : BaseClass<FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore.DatiAnagraficiCedentePrestatore,
             FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator>
     {
@@ -50,9 +50,9 @@ namespace Tests
             AssertOptional(x => x.ProvinciaAlbo);
         }
         [TestMethod]
-        public void ProvinciaAlboOnlyAcceptsTableValues()
+        public void ProvinciaAlboOnlyAcceptsValidValues()
         {
-            AssertOnlyAcceptsTableValues<Provincia>(x => x.ProvinciaAlbo);
+            AssertProvinciaOnlyAcceptsValidValues(x => x.ProvinciaAlbo);
         }
         [TestMethod]
         public void NumeroIscrizioneAlboIsOptional()
