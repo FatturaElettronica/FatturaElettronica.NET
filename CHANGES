@@ -4,6 +4,11 @@ Changelog
 In Development
 ==============
 
+Unreleased
+==========
+
+- Fix: Validazione ScontoMaggiorazione dovrebbe accettare Importo o Percentuale a 0. Closes #136.
+
 v1.1.1
 ======
  

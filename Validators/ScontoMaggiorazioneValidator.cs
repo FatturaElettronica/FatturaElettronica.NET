@@ -16,10 +16,10 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00437");
             RuleFor(x => x.Importo)
                 .NotNull()
-                .Must(x => x != 0).When(x => x.Percentuale == null);
+                .When(x => x.Percentuale == null);
             RuleFor(x => x.Percentuale)
                 .NotNull()
-                .GreaterThan(0).When(x => x.Importo == null);
+                .When(x => x.Importo == null);
         }
     }
 }
