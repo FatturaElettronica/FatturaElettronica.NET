@@ -7,6 +7,13 @@ In Development
 Unreleased
 ==========
 
+- hic sunt leones.
+
+v1.1.2
+======
+ 
+Released on January 21, 2019
+
 - Fix: Validazione ScontoMaggiorazione dovrebbe accettare Importo o Percentuale a 0. Closes #136.
 
 v1.1.1
