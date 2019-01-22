@@ -134,6 +134,7 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 ## Licenza
 
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionale Amica][ga] rilasciato sotto licenza [BSD][bsd].
+Artwork by [Kalamun][rp]
 
 [pa]: https://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/?page=ivacomimp
 [bo]: http://github.com/FatturaElettronica/BusinessObjects
@@ -143,3 +144,4 @@ FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestion
 [nuget]: https://www.nuget.org/packages/FatturaElettronica/
 [netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md
 [fex]: http://github.com/FatturaElettronica/FatturaElettronica.Extensions
+[rp]: http://www.kalamun.org/

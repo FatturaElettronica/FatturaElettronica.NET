@@ -7,6 +7,7 @@ In Development
 v1.1.3
 ======
  
+- New: nuovo logo per il progetto FatturaElettronica, by Roberto "Kalamun" Pasini. Closes 101.
 - Fix: Link obsoleto alle specifiche tecniche ufficiali. Closes #139.
 - Fix: ScontoMaggiorazione deve accettare Importo o Percentuale a 0. Addresses #136.
 - Fix: ScontoMaggiorazione non deve accettare Importo e Percentuale entrambi valorizzati. Addresses #136.
