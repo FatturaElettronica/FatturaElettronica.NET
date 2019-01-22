@@ -11,15 +11,12 @@ namespace FatturaElettronica.Validators
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<Tabelle.ScontoMaggiorazione>());
             RuleFor(x => x.Tipo)
-                .Must((challenge, _) => !((challenge.Importo == 0 || challenge.Importo == null) && (challenge.Percentuale == 0 || challenge.Percentuale == null)))
+                .Must((challenge, _) => challenge.Importo != null || challenge.Percentuale != null)
                 .WithMessage("Percentuale e Importo non presenti a fronte di Tipo valorizzato")
                 .WithErrorCode("00437");
-            RuleFor(x => x.Importo)
-                .NotNull()
-                .When(x => x.Percentuale == null);
-            RuleFor(x => x.Percentuale)
-                .NotNull()
-                .When(x => x.Importo == null);
+            RuleFor(x => x.Tipo)
+                .Must((challenge, _) => challenge.Importo == null || challenge.Percentuale == null)
+                .WithErrorCode("00200");
         }
     }
 }
