@@ -15,6 +15,7 @@ using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Validators;
 using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
+using FatturaElettronica.FatturaElettronicaBody;
 
 using System;
 using System.Xml;
@@ -36,7 +37,7 @@ namespace DemoApp
             fattura = Fattura.CreateInstance(Instance.Privati);
 
             // Lettura da file XML
-            using (var r = XmlReader.Create("IT01234567890_FPA01.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
+            using (var r = XmlReader.Create("/Users/Nicola/Downloads/test-sconti.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
             {
                 fattura.ReadXml(r);
             }
@@ -82,6 +83,11 @@ namespace DemoApp
             fattura.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.Anagrafica.Denominazione = "Bianchi Srl";
             //  Modifica proprietà Body
             fattura.FatturaElettronicaBody[0].DatiGenerali.DatiGeneraliDocumento.Numero = "12345";
+
+            // Aggiunta di un nuovo elemento Body.
+            var body = new FatturaElettronicaBody();
+            body.DatiGenerali.DatiGeneraliDocumento.Numero = "99";
+            fattura.FatturaElettronicaBody.Add(body);
 
             // Serializzazione XML
             using (var w = XmlWriter.Create("IT01234567890_FPA01.xml", new XmlWriterSettings { Indent = true }))
