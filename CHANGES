@@ -4,6 +4,7 @@ Changelog
 In Development
 ==============
 
+- Fix: IdPaese.Irlanda è duplicato mentre Islanda è assente. Closes #144.
 - README: aggiunto esempio di inserimento elemento Body. Addresses #141.
 
 v1.1.3
