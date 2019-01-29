@@ -14,9 +14,6 @@ namespace FatturaElettronica.Validators
                 .Must((challenge, _) => challenge.Importo != null || challenge.Percentuale != null)
                 .WithMessage("Percentuale e Importo non presenti a fronte di Tipo valorizzato")
                 .WithErrorCode("00437");
-            RuleFor(x => x.Tipo)
-                .Must((challenge, _) => challenge.Importo == null || challenge.Percentuale == null)
-                .WithErrorCode("00200");
         }
     }
 }

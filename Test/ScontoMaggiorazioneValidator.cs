@@ -37,10 +37,6 @@ namespace Tests
             challenge.Importo = 0;
             challenge.Percentuale = null;
             validator.ShouldNotHaveValidationErrorFor(x => x.Tipo, challenge);
-
-            challenge.Importo = 0;
-            challenge.Percentuale = 0;
-            validator.ShouldHaveValidationErrorFor(x => x.Tipo, challenge).WithErrorCode("00200");
         }
     }
 }

@@ -4,6 +4,7 @@ Changelog
 In Development
 ==============
 
+- Fix: ScontoMaggiorazione può accettare sia Importo che Percentuale. Closes #146.
 - Fix: IdPaese.Irlanda è duplicato mentre Islanda è assente. Closes #144.
 - README: aggiunto esempio di inserimento elemento Body. Addresses #141.
 
