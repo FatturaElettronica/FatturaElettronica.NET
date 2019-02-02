@@ -6,6 +6,13 @@ In Development
 
 - hic sunt leones
 
+v1.1.5
+=======
+
+Released on February 2, 2019
+
+- Fix: Tabella CausalePagamento aggiornata al 2019. Closes #151.
+
 v1.1.4
 =======
 
