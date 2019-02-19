@@ -10,7 +10,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente
     public class CessionarioCommittente : BaseClassSerializable
     {
         /// <summary>
-        /// Dati relativi al cedente / prestatore.
+        /// Dati relativi al cessionario / committente.
         /// </summary>
         public CessionarioCommittente()
         {

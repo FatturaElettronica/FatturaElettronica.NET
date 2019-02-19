@@ -9,7 +9,8 @@
                 return new Tabella[]
                 {
                     new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.PubblicaAmministrazione, Nome = "Fattura verso la PA" },
-                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.Privati, Nome = "Fattura verso privati" }
+                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.Privati, Nome = "Fattura verso privati" },
+                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.Semplificata, Nome = "Fattura verso privati in forma semplificata" }
                 };
             }
         }
