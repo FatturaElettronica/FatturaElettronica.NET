@@ -1,15 +1,17 @@
 ﻿namespace FatturaElettronica.Defaults
 {
-    public enum Instance { PubblicaAmministrazione, Privati };
+    public enum Instance { PubblicaAmministrazione, Privati, Semplificata };
     public class Versione
     {
         public static string Trasmissione { get { return "1.2"; } }
         public static string Controlli { get { return "1.4"; } }
+        public static string TrasmissioneSemplificata { get { return "1.0"; } }
     }
     public class FormatoTrasmissione
     {
         public static string PubblicaAmministrazione { get { return string.Format("FPA{0}", Versione.Trasmissione.Replace(".", "")); } }
         public static string Privati { get { return string.Format("FPR{0}", Versione.Trasmissione.Replace(".", "")); } }
+        public static string Semplificata { get { return string.Format("FSM{0}", Versione.TrasmissioneSemplificata.Replace(".", "")); } }
 
     }
     public class RootElement

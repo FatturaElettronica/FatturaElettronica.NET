@@ -23,6 +23,9 @@
     <None Update="Samples\IT01234567890_FPR02.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Samples\IT01234567890_FSM10.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using FatturaElettronica.Tabelle;
 using FluentValidation;
-using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
+using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 
 namespace FatturaElettronica.Validators
 {

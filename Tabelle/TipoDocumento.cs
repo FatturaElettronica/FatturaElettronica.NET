@@ -14,6 +14,9 @@
                     new TipoDocumento { Codice = "TD04", Nome = "nota di credito" },
                     new TipoDocumento { Codice = "TD05", Nome = "nota di debito" },
                     new TipoDocumento { Codice = "TD06", Nome = "parcella" },
+                    new TipoDocumento { Codice = "TD07", Nome = "fattura semplificata" },
+                    new TipoDocumento { Codice = "TD08", Nome = "nota di credito semplificata" },
+                    new TipoDocumento { Codice = "TD09", Nome = "nota di debito semplificata" },
                     new TipoDocumento { Codice = "TD20", Nome = "autofattura" }
                 };
 
