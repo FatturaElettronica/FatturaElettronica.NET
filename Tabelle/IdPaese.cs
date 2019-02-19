@@ -108,7 +108,7 @@
                     new IdPaese { Nome = "Honduras", Codice = "HN" },
                     new IdPaese { Nome = "Hong Kong", Codice = "HK" },
                     new IdPaese { Nome = "Ungheria", Codice = "HU" },
-                    new IdPaese { Nome = "Irlanda", Codice = "IS" },
+                    new IdPaese { Nome = "Islanda", Codice = "IS" },
                     new IdPaese { Nome = "India", Codice = "IN" },
                     new IdPaese { Nome = "Indonesia", Codice = "ID" },
                     new IdPaese { Nome = "Iran", Codice = "IR" },
@@ -257,7 +257,7 @@
                     new IdPaese { Nome = "Zambia", Codice = "ZM" },
                     new IdPaese { Nome = "Zimbabwe", Codice = "ZW" },
                 };
-            } 
+            }
         }
     }
 }

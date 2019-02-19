@@ -22,11 +22,11 @@ namespace FatturaElettronica.Validators
                 .NotEmpty();
             RuleFor(dt => dt.CodiceDestinatario)
                 .Length(6)
-                .When(dt => dt.FormatoTrasmissione == Impostazioni.FormatoTrasmissione.PubblicaAmministrazione)
+                .When(dt => dt.FormatoTrasmissione == Defaults.FormatoTrasmissione.PubblicaAmministrazione)
                 .WithErrorCode("00427");
             RuleFor(dt => dt.CodiceDestinatario)
                 .Length(7)
-                .When(dt => dt.FormatoTrasmissione == Impostazioni.FormatoTrasmissione.Privati)
+                .When(dt => dt.FormatoTrasmissione == Defaults.FormatoTrasmissione.Privati)
                 .WithErrorCode("00427");
             RuleFor(dt => dt.ContattiTrasmittente)
                 .SetValidator(new ContattiTrasmittenteValidator())
@@ -34,10 +34,6 @@ namespace FatturaElettronica.Validators
             RuleFor(dt => dt.PECDestinatario)
                 .Length(7, 256)
                 .When(x => !string.IsNullOrEmpty(x.PECDestinatario));
-            RuleFor(x => x.PECDestinatario)
-                .Empty()
-                .When(x => x.CodiceDestinatario != "0000000")
-                .WithErrorCode("00426");
         }
     }
 }

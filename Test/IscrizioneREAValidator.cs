@@ -1,11 +1,12 @@
 ﻿using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
 using FatturaElettronica.Tabelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentValidation.TestHelper;
 
 namespace Tests
 {
     [TestClass]
-    public class IscrizioneREAValidator 
+    public class IscrizioneREAValidator
         : BaseClass<IscrizioneREA, FatturaElettronica.Validators.IscrizioneREAValidator>
     {
         [TestMethod]
@@ -14,9 +15,9 @@ namespace Tests
             AssertRequired(x => x.Ufficio);
         }
         [TestMethod]
-        public void UfficioOnlyAcceptsTableValues()
+        public void UfficioOnlyAcceptsValidValues()
         {
-            AssertOnlyAcceptsTableValues<Provincia>(x => x.Ufficio);
+            AssertProvinciaOnlyAcceptsValidValues(x => x.Ufficio);
         }
         [TestMethod]
         public void NumeroREAIsRequired()

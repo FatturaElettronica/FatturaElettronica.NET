@@ -4,12 +4,12 @@ using System.Xml.Serialization;
 
 namespace FatturaElettronica.FatturaElettronicaHeader
 {
-    public class Header : BaseClassSerializable
+    public class FatturaElettronicaHeader : BaseClassSerializable
     {
         /// <summary>
         /// Intestazione della Fattura Elettronica.
         /// </summary>
-        public Header()
+        public FatturaElettronicaHeader()
         {
             DatiTrasmissione = new DatiTrasmissione.DatiTrasmissione();
             CedentePrestatore = new CedentePrestatore.CedentePrestatore();
@@ -17,7 +17,7 @@ namespace FatturaElettronica.FatturaElettronicaHeader
             CessionarioCommittente = new CessionarioCommittente.CessionarioCommittente();
             TerzoIntermediarioOSoggettoEmittente = new TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente();
         }
-        public Header(XmlReader r) : base(r) { }
+        public FatturaElettronicaHeader(XmlReader r) : base(r) { }
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.

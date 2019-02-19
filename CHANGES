@@ -1,6 +1,118 @@
 Changelog
 =========
 
+In Development
+==============
+
+- hic sunt leones
+
+v1.1.5
+=======
+
+Released on February 2, 2019
+
+- Fix: Tabella CausalePagamento aggiornata al 2019. Closes #151.
+
+v1.1.4
+=======
+
+Released on January 31, 2019
+
+- Fix: ScontoMaggiorazione può accettare sia Importo che Percentuale. Closes #146.
+- Fix: IdPaese.Irlanda è duplicato mentre Islanda è assente. Closes #144.
+- README: aggiunto esempio di inserimento elemento Body. Addresses #141.
+
+v1.1.3
+======
+
+Released on January 23, 2019
+ 
+- New: nuovo logo per il progetto FatturaElettronica, by Roberto "Kalamun" Pasini. Closes 101.
+- Fix: Link obsoleto alle specifiche tecniche ufficiali. Closes #139.
+- Fix: ScontoMaggiorazione deve accettare Importo o Percentuale a 0. Addresses #136.
+- Fix: ScontoMaggiorazione non deve accettare Importo e Percentuale entrambi valorizzati. Addresses #136.
+
+v1.1.2
+======
+ 
+Released on January 21, 2019
+
+- Fix: Validazione ScontoMaggiorazione dovrebbe accettare Importo o Percentuale a 0. Closes #136.
+
+v1.1.1
+======
+ 
+Released on January 17, 2019
+
+- Fix: Tabella CausalePagamento completata coi nomi di ogni pagamento (Michael Mairegger). Pull #127.
+- Fix: Convalida Provincia non conforme ai controlli lato AgEntrate. Closes #129.
+- Fix: CessionarioCommittente.RappresentanteFiscale, errore "sequenza tag errata". Closes #133.
+- Fix: Supporto per 8 decimali nel PrezzoUnitario (Claudio Lepri). Pull #130; Closes #125.
+- Bump FatturaElettronica.Core a 1.1.1.
+
+v1.1
+====
+ 
+Released on January 6, 2019
+
+- New: NetStandard 2.0 aggiunto ai target framework (Federico Dipuma). Closes #119.
+- New: costruttore classe Fattura ora è pubblico. Closes #99.
+- New: performance migliorata (Federico Dipuma). See #120.
+- Fix: Quantità non può assumere valore negativo. Closes #115.
+- Fix: Small typos. Closes #116.
+
+v1.0.4
+======
+ 
+Released on January 2, 2019
+
+- Fix: Aggiunta "Sud Sardegna" alla lista provincie (Massimo Linossi). Pull #111.
+
+v1.0.3
+======
+ 
+Released on December 30, 2018
+
+- Fix: UnitaMisura è opzionale. Addresses #102.
+
+v1.0.2
+======
+ 
+Released on December 20, 2018.
+
+- Fix: Titolo e CodEORI ignorano ordinamento. Closes #103.
+- Fix: controllo UnitaMisura consente campo vuoto. Closes #102.
+
+v1.0.1
+======
+ 
+Released on November 9, 2018.
+
+- Bump: FatturaElettronica.Core to 1.0.
+
+v1.0
+====
+ 
+Released on November 9, 2018.
+
+- BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
+- BREAKING: proprietà Fattura.Body rinominata in FatturaElettronicaBody. Closes #83.
+- BREAKING: namespace FatturaElettronica.Impostazioni rinominato FatturaElettronica.Defaults.
+
+- Fix: Aggiornati codici INCOTERMS (Marco Tessitore). Pull #89; Pull #91.
+- Fix: Rimosso controllo 00426 su campo PECDestinatario (Gaetano Pizzol). Pull #88.
+- Fix: Anagrafica.CognomeNome non deve essere serializzato in JSON. Closes #86.
+- Fix: DettaglioPagamento.IBAN deve essere formalmente corretto. Closes #84.
+- Fix: Campo RiferimentoNumero dovrebbe essere opzionale (Gaetano Pizzol). Pull #82.
+- Fix: Aggiunto setter mancante a DettaglioLinee.AltriDatiGestionali. Addresses #81.
+- Fix: Header e Body vanno JSON-serializzati come FatturaElettronicaHeader e FatturaElettronicaBody. Closes #83.
+
+- Bump: FatturaElettronica.Core to 0.5.
+- Bump: Newtonsoft.Json to 11.0.2.
+- Bump: MSTest.TestFramework to 1.3.2.
+- Bump: MSTest.TestAdapter to 1.3.2.
+- Bump: Microsoft.NET.Test.Sdk to 15.9.0.
+
 v0.9
 ====
 

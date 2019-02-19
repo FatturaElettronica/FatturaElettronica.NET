@@ -9,8 +9,8 @@ namespace FatturaElettronica.Common
     public class Anagrafica : DenominazioneNomeCognome
     {
 
-        public Anagrafica() { } 
-        public Anagrafica(XmlReader r) : base(r) { } 
+        public Anagrafica() { }
+        public Anagrafica(XmlReader r) : base(r) { }
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -19,13 +19,13 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Gets or sets the Titolo.
         /// </summary>
-        [DataProperty]
+        [DataProperty(order: 3)]
         public string Titolo { get; set; }
 
         /// <summary>
         /// Gets or sets the CodEORI.
         /// </summary>
-        [DataProperty]
+        [DataProperty(order: 4)]
         // ReSharper disable once InconsistentNaming
         public string CodEORI { get; set; }
     }

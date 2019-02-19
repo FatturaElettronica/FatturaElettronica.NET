@@ -7,23 +7,23 @@ namespace Tests
     public class FatturaValidator : BaseClass<FatturaElettronica.Fattura, FatturaElettronica.Validators.FatturaValidator>
     {
         [TestInitialize]
-        public new void Init() 
+        public new void Init()
         {
             validator = new FatturaElettronica.Validators.FatturaValidator();
-            challenge = FatturaElettronica.Fattura.CreateInstance(FatturaElettronica.Impostazioni.Instance.PubblicaAmministrazione);
+            challenge = new FatturaElettronica.Fattura();
         }
 
-       [TestMethod]
-       public void FatturaElettronicaHeaderHasChildValidator()
+        [TestMethod]
+        public void FatturaElettronicaHeaderHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
-                x => x.Header, typeof(FatturaElettronica.Validators.HeaderValidator));
+                x => x.FatturaElettronicaHeader, typeof(FatturaElettronica.Validators.FatturaElettronicaHeaderValidator));
         }
-       [TestMethod]
-       public void FatturaElettronicaBodyHasChildValidator()
+        [TestMethod]
+        public void FatturaElettronicaBodyHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
-                x => x.Body, typeof(FatturaElettronica.Validators.BodyValidator));
+                x => x.FatturaElettronicaBody, typeof(FatturaElettronica.Validators.FatturaElettronicaBodyValidator));
         }
     }
 }

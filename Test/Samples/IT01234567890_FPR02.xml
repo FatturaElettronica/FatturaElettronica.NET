@@ -23,6 +23,7 @@ xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.
         </IdFiscaleIVA>
         <Anagrafica>
           <Denominazione>SOCIETA' ALPHA SRL</Denominazione>
+          <Titolo>Titolo</Titolo>
         </Anagrafica>
         <RegimeFiscale>RF01</RegimeFiscale>
       </DatiAnagrafici>
@@ -39,6 +40,7 @@ xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.
         <CodiceFiscale>09876543210</CodiceFiscale>
         <Anagrafica>
           <Denominazione>BETA GAMMA</Denominazione>
+          <Titolo>Titolo</Titolo>
         </Anagrafica>
       </DatiAnagrafici>
       <Sede>
@@ -48,6 +50,13 @@ xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.
         <Provincia>RM</Provincia>
         <Nazione>IT</Nazione>
       </Sede>
+      <RappresentanteFiscale>
+        <IdFiscaleIVA>
+          <IdPaese>IT</IdPaese>
+          <IdCodice>01234567891</IdCodice>
+        </IdFiscaleIVA>
+        <Denominazione>Rappresentante fiscale</Denominazione>
+      </RappresentanteFiscale>
     </CessionarioCommittente>
   </FatturaElettronicaHeader>
   <FatturaElettronicaBody>

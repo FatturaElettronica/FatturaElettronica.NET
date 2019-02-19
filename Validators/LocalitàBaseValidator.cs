@@ -22,7 +22,7 @@ namespace FatturaElettronica.Validators
                 .Length(1, 60)
                 .Latin1SupplementValidator();
             RuleFor(x => x.Provincia)
-                .SetValidator(new IsValidValidator<Provincia>())
+                .Matches(@"^[A-Z]{2}$")
                 .When(x => !string.IsNullOrEmpty(x.Provincia));
             RuleFor(id => id.Nazione)
                 .NotEmpty()

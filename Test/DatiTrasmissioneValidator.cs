@@ -53,14 +53,14 @@ namespace Tests
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPA12()
         {
             // Quando FormatoTrasmissione = FPA12 ProgressivioInvio.Lenght = 6.
-            challenge.FormatoTrasmissione = FatturaElettronica.Impostazioni.FormatoTrasmissione.PubblicaAmministrazione;
+            challenge.FormatoTrasmissione = FatturaElettronica.Defaults.FormatoTrasmissione.PubblicaAmministrazione;
             AssertLength(x => x.CodiceDestinatario, 6, expectedErrorCode: "00427");
         }
         [TestMethod]
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPR12()
         {
             // Quando FormatoTrasmissione = FPR12 ProgressivioInvio.Lenght = 7.
-            challenge.FormatoTrasmissione = FatturaElettronica.Impostazioni.FormatoTrasmissione.Privati;
+            challenge.FormatoTrasmissione = FatturaElettronica.Defaults.FormatoTrasmissione.Privati;
             AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00427");
         }
         [TestMethod]
@@ -68,20 +68,6 @@ namespace Tests
         {
             challenge.CodiceDestinatario = new string('0', 7);
             AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
-        }
-        [TestMethod]
-        public void PECDestinatarioShouldBeEmptyWhenCodiceDestinatarioIsDifferentThan0000000()
-        {
-            challenge.CodiceDestinatario = new string('1', 7);
-
-            challenge.PECDestinatario = "mail@mail.com";
-            validator.ShouldHaveValidationErrorFor(x => x.PECDestinatario, challenge).WithErrorCode("00426");
-
-            challenge.PECDestinatario = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario, challenge);
-
-            challenge.PECDestinatario = string.Empty;
-            validator.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario, challenge);
         }
     }
 }

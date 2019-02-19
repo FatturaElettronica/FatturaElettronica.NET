@@ -6,7 +6,7 @@ using FatturaElettronica.Tabelle;
 namespace Tests
 {
     [TestClass]
-    public class DettaglioLineeValidator: BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
+    public class DettaglioLineeValidator : BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
     {
         [TestMethod]
         public void TipoCessionePrestazioneIsOptional()
@@ -59,7 +59,7 @@ namespace Tests
             AssertMustBeBasicLatin(x => x.UnitaMisura);
         }
         [TestMethod]
-        public void ScontoMaggioazioneHasChildValidator() 
+        public void ScontoMaggioazioneHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.ScontoMaggiorazione, typeof(FatturaElettronica.Validators.ScontoMaggiorazioneValidator));
         }
@@ -146,6 +146,20 @@ namespace Tests
             challenge.Quantita = 1;
             challenge.PrezzoTotale = 1m;
             validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
+
+            //numero massimo di decimali
+            challenge.ScontoMaggiorazione.Clear();
+            challenge.PrezzoUnitario = 0.12345678m;
+            challenge.Quantita = 1000000000;
+            challenge.PrezzoTotale = challenge.PrezzoUnitario * challenge.Quantita.Value;
+            validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, challenge);
+
+            //Errore 00423 per prezzo unitario per arrotondamento
+            challenge.ScontoMaggiorazione.Clear();
+            challenge.PrezzoUnitario = 0.123456789m;
+            challenge.Quantita = 10000000000;
+            challenge.PrezzoTotale = challenge.PrezzoUnitario * challenge.Quantita.Value;
+            validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, challenge).WithErrorCode("00423");
         }
 
         [TestMethod]
@@ -209,6 +223,20 @@ namespace Tests
         public void AltriDatiGestionaliCollectionCanBeEmpty()
         {
             AssertCollectionCanBeEmpty(x => x.AltriDatiGestionali);
+        }
+        [TestMethod]
+        public void QuantitaIsOptional()
+        {
+            AssertOptional(x => x.Quantita);
+        }
+        [TestMethod]
+        public void QuantitaCannotBeNegative()
+        {
+            challenge.Quantita = -1;
+            validator.ShouldHaveValidationErrorFor(x => x.Quantita, challenge);
+
+            challenge.Quantita = 0;
+            validator.ShouldNotHaveValidationErrorFor(x => x.Quantita, challenge);
         }
     }
 }

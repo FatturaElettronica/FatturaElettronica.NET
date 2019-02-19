@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns2:FatturaElettronicaSemplificata versione="FSM10" 
+    xmlns:ns2="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.0">
+    <FatturaElettronicaHeader>
+        <DatiTrasmissione>
+            <IdTrasmittente>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>01234567890</IdCodice>
+            </IdTrasmittente>
+            <ProgressivoInvio>00001</ProgressivoInvio>
+            <FormatoTrasmissione>FSM10</FormatoTrasmissione>
+            <CodiceDestinatario>0000000</CodiceDestinatario>
+            <PECDestinatario>betagamma@pec.it</PECDestinatario>
+        </DatiTrasmissione>
+        <CedentePrestatore>
+            <IdFiscaleIVA>
+                <IdPaese>IT</IdPaese>
+                <IdCodice>01234567890</IdCodice>
+            </IdFiscaleIVA>
+          <Denominazione>SOCIETA' ALPHA SRL</Denominazione>
+           <Sede>
+        <Indirizzo>VIALE ROMA 543</Indirizzo>
+        <CAP>07100</CAP>
+        <Comune>SASSARI</Comune>
+        <Provincia>SS</Provincia>
+        <Nazione>IT</Nazione>
+      </Sede>
+            <RegimeFiscale>RF01</RegimeFiscale>
+        </CedentePrestatore>
+        <CessionarioCommittente>
+            <IdentificativiFiscali>
+                <IdFiscaleIVA>
+                    <IdPaese>IT</IdPaese>
+                    <IdCodice>09876543210</IdCodice>
+                </IdFiscaleIVA>
+            </IdentificativiFiscali>
+            <AltriDatiIdentificativi>
+                <Denominazione>BETA GAMMA</Denominazione>
+                <Sede>
+                    <Indirizzo>VIA TORINO 38-B</Indirizzo>
+        <CAP>00145</CAP>
+        <Comune>ROMA</Comune>
+        <Provincia>RM</Provincia>
+        <Nazione>IT</Nazione>
+                </Sede>
+            </AltriDatiIdentificativi>
+        </CessionarioCommittente>
+    </FatturaElettronicaHeader>
+    <FatturaElettronicaBody>
+        <DatiGenerali>
+            <DatiGeneraliDocumento>
+                <TipoDocumento>TD07</TipoDocumento>
+                <Divisa>EUR</Divisa>
+                <Data>2019-01-01</Data>
+                <Numero>123</Numero>
+            </DatiGeneraliDocumento>
+        </DatiGenerali>
+        <DatiBeniServizi>
+            <Descrizione>LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI</Descrizione>
+            <Importo>25.00</Importo>
+            <DatiIVA>
+                <Aliquota>22.00</Aliquota>
+            </DatiIVA>
+        </DatiBeniServizi>
+    </FatturaElettronicaBody>
+</ns2:FatturaElettronicaSemplificata>
