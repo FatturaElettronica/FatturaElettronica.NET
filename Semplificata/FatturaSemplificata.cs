@@ -2,7 +2,7 @@
 using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
 
-namespace FatturaElettronica
+namespace FatturaElettronica.Semplificata
 {
     public class FatturaSemplificata : BaseClassSerializable
     {
