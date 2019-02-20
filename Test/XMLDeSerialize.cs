@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using FatturaElettronica;
 using FatturaElettronica.Defaults;
+using FatturaElettronica.Semplificata;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
@@ -25,7 +26,7 @@ namespace Tests
         [TestMethod]
         public void SerializeFatturaSemplificataHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaSemplificata.CreateInstance());
+            SerializeAndAssertRootElementAttributes(FatturaSemplificata.CreateInstance());
         }
 
         [TestMethod]
@@ -233,7 +234,7 @@ namespace Tests
             Assert.AreEqual(36.08m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
 
-        private void ValidateInvoice(FatturaElettronica.FatturaSemplificata f, string expectedFormat)
+        private void ValidateInvoice(FatturaSemplificata f, string expectedFormat)
         {
             var header = f.FatturaElettronicaHeader;
 
@@ -305,7 +306,7 @@ namespace Tests
             }
             File.Delete("test");
         }
-        private void SerializeAndAssertRootElementAttributes(FatturaElettronica.FatturaSemplificata f)
+        private void SerializeAndAssertRootElementAttributes(FatturaSemplificata f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
             {
