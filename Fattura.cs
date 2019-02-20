@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using FatturaElettronica.Defaults;
 using FatturaElettronica.Common;
-using System.Xml.Serialization;
-using Newtonsoft.Json;
+using FatturaElettronica.Defaults;
 
 namespace FatturaElettronica
 {
