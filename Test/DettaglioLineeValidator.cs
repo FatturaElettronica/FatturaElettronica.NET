@@ -1,10 +1,10 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
-using FatturaElettronica.Tabelle;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
+    using FatturaElettronica.Tabelle;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class DettaglioLineeValidator : BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
     {

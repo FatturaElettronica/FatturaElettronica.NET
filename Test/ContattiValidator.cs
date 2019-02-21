@@ -1,10 +1,11 @@
-﻿using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
+
     [TestClass]
-    public class ContattiValidator 
+    public class ContattiValidator
         : BaseClass<Contatti, FatturaElettronica.Validators.ContattiValidator>
     {
         [TestMethod]

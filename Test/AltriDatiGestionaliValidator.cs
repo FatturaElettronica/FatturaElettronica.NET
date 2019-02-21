@@ -1,5 +1,5 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 
 namespace Tests
 {

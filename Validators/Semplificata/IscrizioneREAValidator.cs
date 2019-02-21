@@ -3,7 +3,7 @@ using FatturaElettronica.Tabelle;
 using FatturaElettronica.Validators;
 using FluentValidation;
 
-namespace FatturaElettronica.Semplificata.Validators
+namespace FatturaElettronica.Validators.Semplificata
 {
     public class IscrizioneREAValidator : AbstractValidator<IscrizioneREA>
     {

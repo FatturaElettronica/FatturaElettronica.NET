@@ -1,5 +1,5 @@
 ﻿using System;
-using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 using FatturaElettronica.Tabelle;
 using FluentValidation;
 

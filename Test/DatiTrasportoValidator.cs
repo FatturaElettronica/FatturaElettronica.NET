@@ -1,7 +1,6 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests
 {

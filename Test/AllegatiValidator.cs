@@ -1,8 +1,8 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.Allegati;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.Allegati;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class AllegatiValidator
         : BaseClass<Allegati, FatturaElettronica.Validators.AllegatiValidator>

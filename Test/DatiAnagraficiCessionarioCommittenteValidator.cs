@@ -1,19 +1,19 @@
-﻿using System.Linq;
-using FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente;
-using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Tests
+﻿namespace Tests
 {
+    using System.Linq;
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class DatiAnagraficiCessionarioCommittenteValidator 
-        : BaseClass<DatiAnagraficiCessionarioCommittente, 
+    public class DatiAnagraficiCessionarioCommittenteValidator
+        : BaseClass<DatiAnagraficiCessionarioCommittente,
             FatturaElettronica.Validators.DatiAnagraficiCessionarioCommittenteValidator>
     {
         [TestMethod]
         public void IdFiscaleIVAHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IdFiscaleIVA, 
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IdFiscaleIVA,
                 typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
         }
         [TestMethod]

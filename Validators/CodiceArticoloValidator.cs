@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 
 namespace FatturaElettronica.Validators
 {

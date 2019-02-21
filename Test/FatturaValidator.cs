@@ -1,16 +1,17 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class FatturaValidator : BaseClass<FatturaElettronica.Fattura, FatturaElettronica.Validators.FatturaValidator>
+    public class FatturaValidator : BaseClass<Fattura, FatturaElettronica.Validators.FatturaValidator>
     {
         [TestInitialize]
         public new void Init()
         {
             validator = new FatturaElettronica.Validators.FatturaValidator();
-            challenge = new FatturaElettronica.Fattura();
+            challenge = new Fattura();
         }
 
         [TestMethod]

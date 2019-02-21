@@ -3,6 +3,7 @@ using System.IO;
 using System.Xml;
 using FatturaElettronica;
 using FatturaElettronica.Defaults;
+using FatturaElettronica.Ordinaria;
 using FatturaElettronica.Semplificata;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -14,13 +15,13 @@ namespace Tests
         [TestMethod]
         public void SerializePrivatiHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaElettronica.Fattura.CreateInstance(Instance.Privati));
+            SerializeAndAssertRootElementAttributes(Fattura.CreateInstance(Instance.Privati));
         }
 
         [TestMethod]
         public void SerializePubblicaAmministrazioneHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaElettronica.Fattura.CreateInstance(Instance.PubblicaAmministrazione));
+            SerializeAndAssertRootElementAttributes(Fattura.CreateInstance(Instance.PubblicaAmministrazione));
         }
 
         [TestMethod]
@@ -117,7 +118,7 @@ namespace Tests
             }
             return f;
         }
-        private void ValidateInvoice(FatturaElettronica.Fattura f, string expectedFormat)
+        private void ValidateInvoice(Fattura f, string expectedFormat)
         {
 
             var header = f.FatturaElettronicaHeader;
@@ -274,11 +275,11 @@ namespace Tests
             // DatiBeniServizi
             Assert.AreEqual("LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI", body.DatiBeniServizi[0].Descrizione);
             Assert.AreEqual(25m, body.DatiBeniServizi[0].Importo);
-            Assert.AreEqual(22m, body.DatiBeniServizi[0].DatiIVA[0].Aliquota);
+            Assert.AreEqual(22m, body.DatiBeniServizi[0].DatiIVA.Aliquota);
             Assert.AreEqual(null, body.DatiBeniServizi[0].Natura);
             Assert.AreEqual(null, body.DatiBeniServizi[0].RiferimentoNormativo);
         }
-        private void SerializeAndAssertRootElementAttributes(FatturaElettronica.Fattura f)
+        private void SerializeAndAssertRootElementAttributes(Fattura f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
             {

@@ -1,9 +1,8 @@
-﻿using FatturaElettronica.Common;
-using System.Xml;
-using System.Xml.Serialization;
-
-namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader
+﻿namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader
 {
+    using System.Xml;
+    using FatturaElettronica.Common;
+
     public class FatturaElettronicaHeader : BaseClassSerializable
     {
         /// <summary>

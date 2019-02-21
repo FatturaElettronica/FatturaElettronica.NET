@@ -1,15 +1,15 @@
-﻿using System.Collections.Generic;
-using FatturaElettronica.Common;
-using FatturaElettronica.Defaults;
-
-namespace FatturaElettronica.Semplificata
+﻿namespace FatturaElettronica.Semplificata
 {
+    using System.Collections.Generic;
+    using FatturaElettronica.Common;
+    using FatturaElettronica.Defaults;
+
     public class FatturaSemplificata : BaseClassSerializable
     {
         public FatturaSemplificata()
         {
-            FatturaElettronicaHeader = new Semplificata.FatturaElettronicaHeader.FatturaElettronicaHeader();
-            FatturaElettronicaBody = new List<Semplificata.FatturaElettronicaBody.FatturaElettronicaBody>();
+            FatturaElettronicaHeader = new FatturaElettronicaHeader.FatturaElettronicaHeader();
+            FatturaElettronicaBody = new List<FatturaElettronicaBody.FatturaElettronicaBody>();
         }
 
         public override void WriteXml(System.Xml.XmlWriter w)
@@ -47,7 +47,7 @@ namespace FatturaElettronica.Semplificata
         /// Intestazione della comunicazione.
         /// </summary>
         [DataProperty]
-        public Semplificata.FatturaElettronicaHeader.FatturaElettronicaHeader FatturaElettronicaHeader { get; set; }
+        public FatturaElettronicaHeader.FatturaElettronicaHeader FatturaElettronicaHeader { get; set; }
 
         /// <summary>
         /// Lotto di fatture incluse nella comunicazione.
@@ -55,7 +55,7 @@ namespace FatturaElettronica.Semplificata
         /// <remarks>Il blocco ha molteciplità 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete
         /// per ogni fattura componente il lotto stesso.</remarks>
         [DataProperty]
-        public List<Semplificata.FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody { get; set; }
+        public List<FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody { get; set; }
 
     }
 }

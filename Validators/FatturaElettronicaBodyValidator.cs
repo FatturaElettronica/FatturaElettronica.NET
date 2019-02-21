@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    public class FatturaElettronicaBodyValidator : AbstractValidator<FatturaElettronicaBody.FatturaElettronicaBody>
+    public class FatturaElettronicaBodyValidator : AbstractValidator<FatturaElettronicaBody>
     {
         public FatturaElettronicaBodyValidator()
         {
@@ -18,7 +19,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta)
                 .Must((body, _) => DatiRitenutaAgainstDettaglioLinee(body))
                 .When(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.IsEmpty())
-                .WithMessage("DatiRitenuta non presente a fronte di almeno un blocco DettaglioLinee con Ritenuta ugualie a SI")
+                .WithMessage("DatiRitenuta non presente a fronte di almeno un blocco DettaglioLinee con Ritenuta uguale a SI")
                 .WithErrorCode("00411");
             RuleFor(x => x.DatiBeniServizi.DatiRiepilogo)
                 .Must((body, _) => DatiRiepilogoValidateAgainstError00422(body))
@@ -37,7 +38,7 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new AllegatiValidator());
         }
 
-        private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody.FatturaElettronicaBody body)
+        private bool DatiRitenutaAgainstDettaglioLinee(FatturaElettronicaBody body)
         {
             foreach (var linea in body.DatiBeniServizi.DettaglioLinee)
             {
@@ -45,7 +46,7 @@ namespace FatturaElettronica.Validators
             }
             return true;
         }
-        private bool DatiRiepilogoValidateAgainstError00422(FatturaElettronicaBody.FatturaElettronicaBody body)
+        private bool DatiRiepilogoValidateAgainstError00422(FatturaElettronicaBody body)
         {
             var totals = new Dictionary<decimal, Totals>();
 
@@ -78,7 +79,7 @@ namespace FatturaElettronica.Validators
             }
             return true;
         }
-        private bool DatiRiepilogoValidateAgainstError00419(FatturaElettronicaBody.FatturaElettronicaBody body)
+        private bool DatiRiepilogoValidateAgainstError00419(FatturaElettronicaBody body)
         {
             var hash = new HashSet<decimal>();
             foreach (var cp in body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale)

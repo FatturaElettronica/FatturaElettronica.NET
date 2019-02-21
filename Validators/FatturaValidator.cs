@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using FatturaElettronica.Ordinaria;
+using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {

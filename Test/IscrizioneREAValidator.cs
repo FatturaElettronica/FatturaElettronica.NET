@@ -1,7 +1,6 @@
-﻿using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 using FatturaElettronica.Tabelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentValidation.TestHelper;
 
 namespace Tests
 {

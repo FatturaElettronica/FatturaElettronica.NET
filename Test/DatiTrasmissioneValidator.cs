@@ -1,10 +1,10 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaHeader.DatiTrasmissione;
-using FatturaElettronica.Tabelle;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione;
+    using FatturaElettronica.Tabelle;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class DatiTrasmissioneValidator
         : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>

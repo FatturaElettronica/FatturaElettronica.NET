@@ -1,12 +1,11 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
-using FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class CessionarioCommittenteValidator 
+    public class CessionarioCommittenteValidator
         : BaseClass<CessionarioCommittente, FatturaElettronica.Validators.CessionarioCommittenteValidator>
     {
         [TestMethod]

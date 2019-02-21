@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
 using System.Linq;
 
@@ -22,7 +22,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.Numero)
                 .Matches(@"\d")
                 .WithMessage("Numero non contiene caratteri numerici")
-                .WithErrorCode("00411");
+                .WithErrorCode("00425");
             RuleFor(x => x.DatiRitenuta)
                 .SetValidator(new DatiRitenutaValidator())
                 .When(x=>!x.DatiRitenuta.IsEmpty());

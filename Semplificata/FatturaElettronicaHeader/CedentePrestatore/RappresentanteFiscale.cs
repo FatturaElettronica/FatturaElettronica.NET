@@ -1,16 +1,17 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using Newtonsoft.Json;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader
 {
     /// <summary>
-    /// Dati relativi al rappresentante fiscale del cedente / prestatore.
+    /// Dati relativi al rappresentante fiscale del cessionario / committente.
     /// </summary>
     public class RappresentanteFiscale : BaseClassSerializable
     {
 
         /// <summary>
-        /// Dati relativi al rappresentante fiscale del cedente / prestatore.
+        /// Dati relativi al rappresentante fiscale del cessionario / committente.
         /// </summary>
         public RappresentanteFiscale()
         {
@@ -45,5 +46,19 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader
         /// </summary>
         [DataProperty(order: 3)]
         public string Cognome { get; set; }
+
+        /// <summary>
+        /// Returns Cognome and Nome as a single value.
+        /// </summary>
+        /// <remarks>This is not a OrderedDataProperty so it will not be serialized to XML.</remarks>
+        [JsonIgnore]
+        public string CognomeNome
+        {
+            get
+            {
+                var r = ((Cognome ?? string.Empty) + " " + (Nome ?? string.Empty)).Trim();
+                return string.IsNullOrEmpty(r) ? null : r;
+            }
+        }
     }
 }

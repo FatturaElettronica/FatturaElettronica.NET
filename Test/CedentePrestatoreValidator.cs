@@ -1,11 +1,11 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class CedentePrestatoreValidator 
+    public class CedentePrestatoreValidator
         : BaseClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
     {
         [TestMethod]
@@ -32,7 +32,7 @@ namespace Tests
         [TestMethod]
         public void ContattiHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x=>x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
         }
         [TestMethod]
         public void RiferimentoAmministrazioneMinMaxLength()

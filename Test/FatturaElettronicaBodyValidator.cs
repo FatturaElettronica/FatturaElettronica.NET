@@ -1,12 +1,12 @@
-﻿using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody;
-using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
-using System.Linq;
-using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
-
-namespace Tests
+﻿namespace Tests
 {
+    using System.Linq;
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class FatturaElettronicaBodyValidator
         : BaseClass<FatturaElettronicaBody, FatturaElettronica.Validators.FatturaElettronicaBodyValidator>

@@ -1,10 +1,10 @@
-﻿using FluentValidation.TestHelper;
-using System.Linq;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FluentValidation.TestHelper;
+    using System.Linq;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
+
     [TestClass]
     public class DatiBeniServiziValidator
         : BaseClass<DatiBeniServizi, FatturaElettronica.Validators.DatiBeniServiziValidator>

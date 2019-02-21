@@ -1,0 +1,37 @@
+﻿namespace FatturaElettronica.Validators.Semplificata
+{
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using FatturaElettronica.Semplificata.FatturaElettronicaBody;
+    using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
+    using FluentValidation;
+
+    public class FatturaElettronicaBodyValidator : AbstractValidator<FatturaElettronicaBody>
+    {
+        public FatturaElettronicaBodyValidator()
+        {
+            RuleFor(x => x.DatiGenerali)
+                .SetValidator(new DatiGeneraliValidator());
+            RuleForEach(x => x.DatiBeniServizi)
+                .SetValidator(new DatiBeniServiziValidator());
+            RuleFor(x => x.DatiBeniServizi)
+                .NotEmpty();
+
+            RuleFor(x => x.DatiBeniServizi)
+                .Must((fatturaElettronicaBody, datiBeniServizi) => ImportoTotaleValidateAgainstError00460(fatturaElettronicaBody,datiBeniServizi))
+                .WithMessage("Importo totale superiore al limite previsto per le fatture semplificate ai sensi del DPR 633/72, art. 21bis")
+                .WithErrorCode("00460");
+
+            RuleForEach(x => x.Allegati)
+                .SetValidator(new AllegatiValidator());
+        }
+
+        private bool ImportoTotaleValidateAgainstError00460(FatturaElettronicaBody fatturaElettronicaBody, List<DatiBeniServizi> datiBeniServizi)
+        {
+            var importoTotale = datiBeniServizi.Sum(x => x.Importo);
+
+            return importoTotale > 100M && fatturaElettronicaBody.DatiGenerali.DatiFatturaRettificata.IsEmpty();
+        }
+    }
+}

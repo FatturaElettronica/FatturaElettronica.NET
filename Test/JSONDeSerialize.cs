@@ -5,6 +5,7 @@ using FatturaElettronica.Defaults;
 using System;
 using FatturaElettronica;
 using Newtonsoft.Json;
+using FatturaElettronica.Ordinaria;
 
 namespace Tests
 {

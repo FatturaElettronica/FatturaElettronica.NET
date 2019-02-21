@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 
 namespace FatturaElettronica.Validators
 {

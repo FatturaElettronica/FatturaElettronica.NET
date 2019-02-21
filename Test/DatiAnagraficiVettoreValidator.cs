@@ -1,9 +1,9 @@
-﻿using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
-using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class DatiAnagraficiVettoreValidator : BaseClass<DatiAnagraficiVettore, FatturaElettronica.Validators.DatiAnagraficiVettoreValidator>
     {

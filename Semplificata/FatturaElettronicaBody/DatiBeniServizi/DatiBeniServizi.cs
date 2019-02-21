@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Xml;
-using FatturaElettronica.Common;
-
-namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
+﻿namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
 {
+    using System.Xml;
+    using FatturaElettronica.Common;
+
     /// <summary>
     /// Blocco sempre obbligatorio contenente natura, qualità e quantità dei beni / servizi formanti oggetto dell'operazione.
     /// </summary>
@@ -14,7 +13,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         public DatiBeniServizi()
         {
-            DatiIVA = new List<DatiIVA>();
+            DatiIVA = new DatiIVA();
         }
         public DatiBeniServizi(XmlReader r) : base(r) { }
 
@@ -38,7 +37,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
         /// Dati relativi all'imposta sul valore aggiunto.
         /// </summary>
         [DataProperty]
-        public List<DatiIVA> DatiIVA { get; set; }
+        public DatiIVA DatiIVA { get; set; }
 
         /// <summary>
         /// L'elemento serve per indicare il motivo (Natura dell'operazione) per il quale l'emittente della fattura non indica aliquota IVA.

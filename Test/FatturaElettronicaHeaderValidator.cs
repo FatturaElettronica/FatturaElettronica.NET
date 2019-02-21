@@ -1,10 +1,10 @@
-﻿using FluentValidation.TestHelper;
-using FatturaElettronica.FatturaElettronicaHeader;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.Tabelle;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader;
+    using FatturaElettronica.Tabelle;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class FatturaElettronicaHeaderValidator
         : BaseClass<FatturaElettronicaHeader, FatturaElettronica.Validators.FatturaElettronicaHeaderValidator>

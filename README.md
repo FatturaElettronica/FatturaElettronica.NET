@@ -5,6 +5,7 @@
 - Lettura e scrittura nel formato XML conforme alle [specifiche tecniche ufficiali][pa].
 - Convalida offline in osservanza alle specifiche tecniche.
 - Supporto sia per fatture elettroniche tra privati che verso la Pubblica Amministrazione.
+- Supporto per fatture elettroniche semplificate.
 - Supporto per de/serializzazione JSON.
 
 ## Utilizzo
@@ -14,8 +15,8 @@ using FatturaElettronica;
 using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Validators;
-using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
-using FatturaElettronica.FatturaElettronicaBody;
+using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
 
 using System;
 using System.Xml;

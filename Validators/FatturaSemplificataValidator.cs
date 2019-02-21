@@ -1,14 +1,14 @@
-﻿using FatturaElettronica.Semplificata;
-using FluentValidation;
-
-namespace FatturaElettronica.Validators
+﻿namespace FatturaElettronica.Validators.Semplificata
 {
+    using FatturaElettronica.Semplificata;
+    using FluentValidation;
+
     public class FatturaSemplificataValidator : AbstractValidator<FatturaSemplificata>
     {
         public FatturaSemplificataValidator()
         {
             RuleFor(dt => dt.FatturaElettronicaHeader)
-                .SetValidator(new Semplificata.Validators.FatturaElettronicaHeaderValidator());
+                .SetValidator(new FatturaElettronicaHeaderValidator());
             //RuleForEach(dt => dt.FatturaElettronicaBody)
             //    .SetValidator(new FatturaElettronicaBodyValidator());
         }

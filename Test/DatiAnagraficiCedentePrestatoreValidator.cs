@@ -1,12 +1,13 @@
-﻿using FatturaElettronica.Tabelle;
-using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+    using FatturaElettronica.Tabelle;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class DatiAnagraficiCedentePrestatoreValidator
-        : BaseClass<FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore.DatiAnagraficiCedentePrestatore,
+        : BaseClass<DatiAnagraficiCedentePrestatore,
             FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator>
     {
         [TestMethod]

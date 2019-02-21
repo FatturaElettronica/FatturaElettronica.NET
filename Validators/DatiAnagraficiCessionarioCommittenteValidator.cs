@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente;
+using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
 
 namespace FatturaElettronica.Validators
 {

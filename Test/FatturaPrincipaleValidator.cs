@@ -1,11 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
-using System;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
-    public class FatturaPrincipaleValidator: BaseClass<FatturaPrincipale, FatturaElettronica.Validators.FatturaPrincipaleValidator>
+    public class FatturaPrincipaleValidator : BaseClass<FatturaPrincipale, FatturaElettronica.Validators.FatturaPrincipaleValidator>
     {
         [TestMethod]
         public void NumeroFatturaPrincipaleIsRequired()

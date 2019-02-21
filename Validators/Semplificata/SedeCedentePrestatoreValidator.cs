@@ -1,7 +1,7 @@
-﻿using FatturaElettronica.Validators;
-
-namespace FatturaElettronica.Semplificata.Validators
+﻿namespace FatturaElettronica.Validators.Semplificata
 {
-    public class SedeCedentePrestatoreValidator : 
-        LocalitàBaseValidator<Semplificata.FatturaElettronicaHeader.CedentePrestatore.SedeCedentePrestatore> { }
+    using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePrestatore;
+
+    public class SedeCedentePrestatoreValidator : LocalitàBaseValidator<SedeCedentePrestatore>
+    { }
 }

@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.FatturaElettronicaBody.DatiPagamento;
-using FatturaElettronica.Tabelle;
-using FluentValidation.TestHelper;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
+    using FatturaElettronica.Tabelle;
+    using FluentValidation.TestHelper;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class DettaglioPagamentoValidator
         : BaseClass<DettaglioPagamento, FatturaElettronica.Validators.DettaglioPagamentoValidator>

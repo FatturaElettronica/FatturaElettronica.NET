@@ -1,10 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Tests
+﻿namespace Tests
 {
+    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class SedeCedentePrestatoreValidator 
-        : BaseLocalitàValidator<FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore.SedeCedentePrestatore, FatturaElettronica.Validators.SedeCedentePrestatoreValidator>
+        : BaseLocalitàValidator<SedeCedentePrestatore, FatturaElettronica.Validators.SedeCedentePrestatoreValidator>
     {
     }
 }

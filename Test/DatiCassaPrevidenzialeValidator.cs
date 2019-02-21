@@ -1,10 +1,10 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FluentValidation.TestHelper;
-using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
-using FatturaElettronica.Tabelle;
-
-namespace Tests
+﻿namespace Tests
 {
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+    using FluentValidation.TestHelper;
+    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+    using FatturaElettronica.Tabelle;
+
     [TestClass]
     public class DatiCassaPrevidenzialeValidator
         : BaseClass<DatiCassaPrevidenziale, FatturaElettronica.Validators.DatiCassaPrevidenzialeValidator>
