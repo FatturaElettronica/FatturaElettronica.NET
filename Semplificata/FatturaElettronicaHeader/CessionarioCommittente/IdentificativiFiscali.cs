@@ -1,8 +1,8 @@
-﻿using System.Xml;
-using FatturaElettronica.Common;
-
-namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
+﻿namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
 {
+    using System.Xml;
+    using FatturaElettronica.Common;
+
     /// <summary>
     /// Identificativi fiscali del cessionario/commitente
     /// </summary>

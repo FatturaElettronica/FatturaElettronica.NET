@@ -1,9 +1,9 @@
-﻿using System.Xml;
-using FatturaElettronica.Common;
-using Newtonsoft.Json;
-
-namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
+﻿namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
 {
+    using System.Xml;
+    using FatturaElettronica.Common;
+    using Newtonsoft.Json;
+
     /// <summary>
     /// Altri dati identificativi del cessionario / committente.
     /// </summary>
@@ -16,6 +16,8 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCo
         public AltriDatiIdentificativi()
         {
             Sede = new SedeCessionarioCommittente();
+            StabileOrganizzazione = new StabileOrganizzazione();
+            RappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
         }
         public AltriDatiIdentificativi(XmlReader r) : base(r) { }
 

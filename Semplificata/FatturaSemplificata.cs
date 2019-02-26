@@ -35,6 +35,7 @@
             var f = new FatturaSemplificata();
 
             f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Semplificata;
+            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
 
             return f;
         }

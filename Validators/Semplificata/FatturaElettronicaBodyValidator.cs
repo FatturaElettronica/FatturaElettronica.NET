@@ -16,7 +16,7 @@
             RuleForEach(x => x.DatiBeniServizi)
                 .SetValidator(new DatiBeniServiziValidator());
             RuleFor(x => x.DatiBeniServizi)
-                .NotEmpty();
+                .NotEmpty().WithMessage("DatiBeniServizi è obbligatorio");
 
             RuleFor(x => x.DatiBeniServizi)
                 .Must((fatturaElettronicaBody, datiBeniServizi) => ImportoTotaleValidateAgainstError00460(fatturaElettronicaBody,datiBeniServizi))
@@ -31,7 +31,14 @@
         {
             var importoTotale = datiBeniServizi.Sum(x => x.Importo);
 
-            return importoTotale > 100M && fatturaElettronicaBody.DatiGenerali.DatiFatturaRettificata.IsEmpty();
+            if(importoTotale > 100M)
+            {
+                return !fatturaElettronicaBody.DatiGenerali.DatiFatturaRettificata.IsEmpty();
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

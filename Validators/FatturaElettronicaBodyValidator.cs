@@ -14,8 +14,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiBeniServizi)
                 .SetValidator(new DatiBeniServiziValidator());
             RuleFor(x => x.DatiBeniServizi)
-                .Must(x => !x
-                .IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
+                .Must(x => !x.IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
             RuleFor(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta)
                 .Must((body, _) => DatiRitenutaAgainstDettaglioLinee(body))
                 .When(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.IsEmpty())

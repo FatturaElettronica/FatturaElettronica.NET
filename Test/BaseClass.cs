@@ -79,7 +79,7 @@ namespace Tests
             }
             if (typeof(T) == typeof(decimal))
             {
-                prop.SetValue(challenge, 0);
+                prop.SetValue(challenge, 0m);
                 validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
             }
         }

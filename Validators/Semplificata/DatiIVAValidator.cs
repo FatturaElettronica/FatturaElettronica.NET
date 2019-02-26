@@ -1,8 +1,5 @@
 ﻿namespace FatturaElettronica.Validators.Semplificata
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
     using FluentValidation;
 
