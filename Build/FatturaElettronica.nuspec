@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>FatturaElettronica</id>
-    <version>1.1.6-beta</version>
+    <version>1.1.6-rc1</version>
     <authors>Nicola Iarocci</authors>
     <owners>Nicola Iarocci</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
