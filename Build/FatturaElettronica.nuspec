@@ -5,11 +5,7 @@
     <version>1.1.6-rc1</version>
     <authors>Nicola Iarocci</authors>
     <owners>Nicola Iarocci</owners>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <licenseUrl>https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/LICENSE</licenseUrl>
-    <projectUrl>http://fatturaelettronicaopensource.org/</projectUrl>
-    <description>Fattura elettronica per le aziende e la pubblica amministrazione italiana</description>
-    <copyright>Copyright © CIR2000 2017-2019</copyright>
+
     <dependencies>
       <group targetFramework=".NETStandard1.1">
         <dependency id="FatturaElettronica.Core" version="1.1.1" exclude="Build,Analyzers" />
