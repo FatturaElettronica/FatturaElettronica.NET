@@ -5,7 +5,7 @@
     <version>1.1.6-rc1</version>
     <authors>Nicola Iarocci</authors>
     <owners>Nicola Iarocci</owners>
-
+    <description>Fattura elettronica per le aziende e la pubblica amministrazione italiana</description>   
     <dependencies>
       <group targetFramework=".NETStandard1.1">
         <dependency id="FatturaElettronica.Core" version="1.1.1" exclude="Build,Analyzers" />
