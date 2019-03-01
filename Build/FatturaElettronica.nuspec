@@ -26,7 +26,7 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="..\netstandard1.1\FatturaElettronica.dll" target="lib\netstandard1.1\FatturaElettronica.dll" />
-    <file src="..\netstandard2.0\FatturaElettronica.dll" target="lib\netstandard2.0\FatturaElettronica.dll" />
+    <file src="..bin\Release\netstandard1.1\FatturaElettronica.dll" target="lib\netstandard1.1\FatturaElettronica.dll" />
+    <file src="..bin\Release\netstandard2.0\FatturaElettronica.dll" target="lib\netstandard2.0\FatturaElettronica.dll" />
   </files>
 </package>
