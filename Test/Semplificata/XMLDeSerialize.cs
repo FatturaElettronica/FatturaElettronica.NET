@@ -17,7 +17,6 @@
             SerializeAndAssertRootElementAttributes(FatturaSemplificata.CreateInstance());
         }
 
-        [Ignore("Finchè non ci sarà il nuovo pacchetto di FAtturaElettornica.Core")]
         [TestMethod]
         public void DeserializeAndThenSerializeOfficialSMSample()
         {
