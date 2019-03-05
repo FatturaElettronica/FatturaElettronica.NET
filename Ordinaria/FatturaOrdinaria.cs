@@ -4,48 +4,35 @@
     using FatturaElettronica.Common;
     using FatturaElettronica.Defaults;
 
-    public class Fattura : BaseClassSerializable
+    public class FatturaOrdinaria : FatturaBase
     {
-        public Fattura()
+        public FatturaOrdinaria()
         {
             FatturaElettronicaHeader = new FatturaElettronicaHeader.FatturaElettronicaHeader();
             FatturaElettronicaBody = new List<FatturaElettronicaBody.FatturaElettronicaBody>();
         }
-
-        public override void WriteXml(System.Xml.XmlWriter w)
+        public static FatturaOrdinaria CreateInstance(Instance formato)
         {
-            w.WriteStartElement(RootElement.Prefix, RootElement.LocalName, RootElement.NameSpace);
-            w.WriteAttributeString("versione", FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione);
-            foreach (var a in RootElement.ExtraAttributes)
-            {
-                w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
-            }
-            base.WriteXml(w);
-            w.WriteEndElement();
-        }
-
-        public override void ReadXml(System.Xml.XmlReader r)
-        {
-            r.MoveToContent();
-            base.ReadXml(r);
-        }
-
-        public static Fattura CreateInstance(Instance formato)
-        {
-            var f = new Fattura();
+            var fattura = new FatturaOrdinaria();
 
             switch (formato)
             {
                 case Instance.PubblicaAmministrazione:
-                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
+                    fattura.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
                     break;
                 case Instance.Privati:
-                    f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
-                    f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
+                    fattura = new FatturaOrdinaria();
+                    fattura.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
+                    fattura.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
                     break;
             }
 
-            return f;
+            return fattura;
+        }
+
+        protected override string GetFormatoTrasmissione()
+        {
+            return FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione;
         }
 
         /// IMPORTANT

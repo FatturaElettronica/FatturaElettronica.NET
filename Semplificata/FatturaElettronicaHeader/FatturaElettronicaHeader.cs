@@ -6,7 +6,7 @@
     public class FatturaElettronicaHeader : BaseClassSerializable
     {
         /// <summary>
-        /// Intestazione della Fattura Elettronica.
+        /// Intestazione della FatturaOrdinaria Elettronica.
         /// </summary>
         public FatturaElettronicaHeader()
         {

@@ -14,13 +14,13 @@
         [TestMethod]
         public void SerializePrivatiHeader()
         {
-            SerializeAndAssertRootElementAttributes(Fattura.CreateInstance(Instance.Privati));
+            SerializeAndAssertRootElementAttributes(FatturaOrdinaria.CreateInstance(Instance.Privati));
         }
 
         [TestMethod]
         public void SerializePubblicaAmministrazioneHeader()
         {
-            SerializeAndAssertRootElementAttributes(Fattura.CreateInstance(Instance.PubblicaAmministrazione));
+            SerializeAndAssertRootElementAttributes(FatturaOrdinaria.CreateInstance(Instance.PubblicaAmministrazione));
         }
 
         [TestMethod]
@@ -61,9 +61,9 @@
             File.Delete("challenge.xml");
         }
 
-        private Fattura Deserialize(string fileName)
+        private FatturaOrdinaria Deserialize(string fileName)
         {
-            var f = Fattura.CreateInstance(Instance.Privati);
+            var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
             var s = new XmlReaderSettings { IgnoreWhitespace = true };
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
@@ -72,7 +72,7 @@
             return f;
         }
 
-        private void ValidateInvoice(Fattura f, string expectedFormat)
+        private void ValidateInvoice(FatturaOrdinaria f, string expectedFormat)
         {
 
             var header = f.FatturaElettronicaHeader;
@@ -189,7 +189,7 @@
             Assert.AreEqual(36.08m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
 
-        private void SerializeAndAssertRootElementAttributes(Fattura f)
+        private void SerializeAndAssertRootElementAttributes(FatturaBase f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
             {
@@ -204,7 +204,7 @@
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            Assert.AreEqual(f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(((FatturaOrdinaria) f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {

@@ -1,6 +1,6 @@
 ﻿namespace FatturaElettronica.Defaults
 {
-    public enum Instance { PubblicaAmministrazione, Privati };
+    public enum Instance { PubblicaAmministrazione, Privati, Semplificata };
     public class Versione
     {
         public static string Trasmissione { get { return "1.2"; } }

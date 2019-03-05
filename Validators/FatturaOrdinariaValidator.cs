@@ -3,9 +3,9 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    public class FatturaValidator : AbstractValidator<Fattura>
+    public class FatturaOrdinariaValidator : AbstractValidator<FatturaOrdinaria>
     {
-        public FatturaValidator()
+        public FatturaOrdinariaValidator()
         {
             RuleFor(dt => dt.FatturaElettronicaHeader)
                 .SetValidator(new FatturaElettronicaHeaderValidator());

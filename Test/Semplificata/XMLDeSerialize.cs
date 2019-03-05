@@ -9,28 +9,26 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class XMLDeSerialize
+    public class XmlDeSerialize
     {
         [TestMethod]
         public void SerializeFatturaSemplificataHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaSemplificata.CreateInstance());
+            SerializeAndAssertRootElementAttributes(FatturaSemplificata.CreateInstance(Instance.Semplificata));
         }
 
         [TestMethod]
-        public void DeserializeAndThenSerializeOfficialSMSample()
+        public void DeserializeAndThenSerializeOfficialSample()
         {
-            // Deserialize from an official example file 
-            // (downloaded from http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm)
-            DeserializeAndThenSerializeSM("Samples/IT01234567890_FSM10.xml", FormatoTrasmissione.Semplificata);
+            DeserializeAndThenSerialize("Samples/IT01234567890_FSM10.xml");
         }
 
-        private void DeserializeAndThenSerializeSM(string filename, string expectedFormat)
+        private void DeserializeAndThenSerialize(string filename)
         {
-            var f = DeserializeSM(filename);
+            var f = Deserialize(filename);
 
             Assert.IsTrue(f.Validate().IsValid);
-            ValidateInvoice(f, expectedFormat);
+            ValidateInvoice(f);
 
             // Serialize it back to disk, to another file
             using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true }))
@@ -39,17 +37,17 @@
             }
 
             // Deserialize the new file and validate it
-            var f2 = DeserializeSM("challenge.xml");
+            var f2 = Deserialize("challenge.xml");
 
             Assert.IsTrue(f2.Validate().IsValid);
-            ValidateInvoice(f2, expectedFormat);
+            ValidateInvoice(f2);
 
             File.Delete("challenge.xml");
         }
 
-        private FatturaSemplificata DeserializeSM(string fileName)
+        private FatturaSemplificata Deserialize(string fileName)
         {
-            var f = FatturaSemplificata.CreateInstance();
+            var f = FatturaSemplificata.CreateInstance(Instance.Semplificata);
             var s = new XmlReaderSettings { IgnoreWhitespace = true };
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
@@ -58,7 +56,7 @@
             return f;
         }
 
-        private void ValidateInvoice(FatturaSemplificata f, string expectedFormat)
+        private void ValidateInvoice(FatturaSemplificata f)
         {
             var header = f.FatturaElettronicaHeader;
 
@@ -103,7 +101,7 @@
             Assert.AreEqual(null, body.DatiBeniServizi[0].RiferimentoNormativo);
         }
 
-        private void SerializeAndAssertRootElementAttributes(FatturaSemplificata f)
+        private void SerializeAndAssertRootElementAttributes(FatturaBase f)
         {
             using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
             {
@@ -118,7 +116,7 @@
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            Assert.AreEqual(f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(((FatturaSemplificata)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {

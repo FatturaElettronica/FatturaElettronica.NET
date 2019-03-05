@@ -1,11 +1,10 @@
-﻿using FatturaElettronica.Defaults;
-using FatturaElettronica.Ordinaria;
-using FatturaElettronica.Semplificata;
-using FluentValidation.TestHelper;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Semplificata.Tests
+﻿namespace Semplificata.Tests
 {
+    using FatturaElettronica;
+    using FatturaElettronica.Defaults;
+    using FatturaElettronica.Semplificata;
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
+
     [TestClass]
     public class FatturaSemplificataCreateInstance
     {
@@ -14,7 +13,8 @@ namespace Semplificata.Tests
         [TestMethod]
         public void CreateSemplificataInstance()
         {
-            challenge = FatturaSemplificata.CreateInstance();
+            challenge = FatturaSemplificata.CreateInstance(Instance.Semplificata);
+
             Assert.AreEqual(FormatoTrasmissione.Semplificata, challenge.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione);
             Assert.AreEqual("0000000", challenge.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario);
         }

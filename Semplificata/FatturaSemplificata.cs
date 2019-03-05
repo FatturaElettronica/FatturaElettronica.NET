@@ -4,7 +4,7 @@
     using FatturaElettronica.Common;
     using FatturaElettronica.Defaults;
 
-    public class FatturaSemplificata : BaseClassSerializable
+    public class FatturaSemplificata : FatturaBase
     {
         public FatturaSemplificata()
         {
@@ -12,32 +12,25 @@
             FatturaElettronicaBody = new List<FatturaElettronicaBody.FatturaElettronicaBody>();
         }
 
-        public override void WriteXml(System.Xml.XmlWriter w)
+        public static FatturaSemplificata CreateInstance(Instance formato)
         {
-            w.WriteStartElement(RootElement.Prefix, RootElement.LocalName, RootElement.NameSpace);
-            w.WriteAttributeString("versione", FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione);
-            foreach (var a in RootElement.ExtraAttributes)
+
+            var fatturaSemplificata = new FatturaSemplificata();
+
+            switch (formato)
             {
-                w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
+                case Instance.Semplificata:
+                    fatturaSemplificata.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Semplificata;
+                    fatturaSemplificata.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
+                    break;
             }
-            base.WriteXml(w);
-            w.WriteEndElement();
+
+            return fatturaSemplificata;
         }
 
-        public override void ReadXml(System.Xml.XmlReader r)
+        protected override string GetFormatoTrasmissione()
         {
-            r.MoveToContent();
-            base.ReadXml(r);
-        }
-
-        public static FatturaSemplificata CreateInstance()
-        {
-            var f = new FatturaSemplificata();
-
-            f.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Semplificata;
-            f.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
-
-            return f;
+            return FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione;
         }
 
         /// IMPORTANT

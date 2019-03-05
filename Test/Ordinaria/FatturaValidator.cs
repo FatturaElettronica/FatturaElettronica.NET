@@ -6,13 +6,13 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class FatturaValidator : BaseClass<Fattura, FatturaElettronica.Validators.FatturaValidator>
+    public class FatturaValidator : BaseClass<FatturaOrdinaria, FatturaElettronica.Validators.FatturaOrdinariaValidator>
     {
         [TestInitialize]
         public new void Init()
         {
-            validator = new FatturaElettronica.Validators.FatturaValidator();
-            challenge = new Fattura();
+            validator = new FatturaElettronica.Validators.FatturaOrdinariaValidator();
+            challenge = new FatturaOrdinaria();
         }
 
         [TestMethod]

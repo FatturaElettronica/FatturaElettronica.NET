@@ -7,7 +7,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody
     public class FatturaElettronicaBody : BaseClassSerializable
     {
         /// <summary>
-        /// Fattura inclusa nella conunicazione.
+        /// FatturaOrdinaria inclusa nella conunicazione.
         /// </summary>
         public FatturaElettronicaBody()
         {
