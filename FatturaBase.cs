@@ -1,9 +1,9 @@
-﻿namespace FatturaElettronica
-{
-    using System.Xml;
-    using FatturaElettronica.Common;
-    using FatturaElettronica.Defaults;
+﻿using System.Xml;
+using FatturaElettronica.Common;
+using FatturaElettronica.Defaults;
 
+namespace FatturaElettronica
+{
     public abstract class FatturaBase : BaseClassSerializable
     {
         public override void ReadXml(XmlReader r)
