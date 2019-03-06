@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1;netstandard2.0</TargetFrameworks>
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <Version>1.1.5</Version>
     <PackageId>FatturaElettronica</PackageId>
     <Authors>Nicola Iarocci</Authors>
@@ -18,19 +18,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Build\**" />
     <Compile Remove="Tests\**" />
     <Compile Remove="Test\**" />
-    <EmbeddedResource Remove="Build\**" />
     <EmbeddedResource Remove="Tests\**" />
     <EmbeddedResource Remove="Test\**" />
-    <None Remove="Build\**" />
     <None Remove="Tests\**" />
     <None Remove="Test\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Build\FatturaElettronica.nuspec" />
+    <None Include="bin\Debug\FatturaElettronica.nuspec" />
   </ItemGroup>
 
   <ItemGroup>
