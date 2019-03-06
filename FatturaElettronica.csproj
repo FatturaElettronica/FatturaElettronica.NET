@@ -13,8 +13,8 @@
     <PackageLicenseUrl>https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>http://fatturaelettronicaopensource.org</PackageProjectUrl>
     <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
-    <AssemblyVersion>1.1.6.0</AssemblyVersion>
-    <FileVersion>1.1.6.0</FileVersion>
+    <AssemblyVersion>1.1.5.0</AssemblyVersion>
+    <FileVersion>1.1.5.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
