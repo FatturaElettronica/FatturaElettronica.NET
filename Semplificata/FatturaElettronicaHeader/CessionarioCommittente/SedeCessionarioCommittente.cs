@@ -1,8 +1,8 @@
-﻿namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
-{
-    using System.Xml;
+﻿using System.Xml;
 
-    public class SedeCessionarioCommittente : Common.Località
+namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
+{
+  public class SedeCessionarioCommittente : Common.Località
     {
         public SedeCessionarioCommittente() { } 
 

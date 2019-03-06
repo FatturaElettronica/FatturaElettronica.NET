@@ -1,9 +1,9 @@
-﻿namespace FatturaElettronica.Semplificata
-{
-    using System.Collections.Generic;
-    using FatturaElettronica.Common;
-    using FatturaElettronica.Defaults;
+﻿using System.Collections.Generic;
+using FatturaElettronica.Common;
+using FatturaElettronica.Defaults;
 
+namespace FatturaElettronica.Semplificata
+{
     public class FatturaSemplificata : FatturaBase
     {
         public FatturaSemplificata()

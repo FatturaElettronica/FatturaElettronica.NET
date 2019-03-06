@@ -1,12 +1,12 @@
-﻿namespace Semplificata.Tests
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaHeader.DatiTrasmissione;
-    using FatturaElettronica.Tabelle;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.DatiTrasmissione;
+using FatturaElettronica.Tabelle;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+namespace Semplificata.Tests
+{
+   [TestClass]
     public class DatiTrasmissioneValidator
         : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.Semplificata.DatiTrasmissioneValidator>
     {

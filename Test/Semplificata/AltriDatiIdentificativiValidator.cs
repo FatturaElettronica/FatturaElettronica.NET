@@ -1,10 +1,10 @@
-﻿namespace Semplificata.Tests
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Semplificata.Tests
+{
     [TestClass]
     public class AltriDatiIdentificativiValidator : BaseClass<AltriDatiIdentificativi, FatturaElettronica.Validators.Semplificata.AltriDatiIdentificativiValidator>
     {

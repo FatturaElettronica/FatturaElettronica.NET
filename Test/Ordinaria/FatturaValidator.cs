@@ -1,10 +1,10 @@
-﻿namespace Ordinaria.Tests
-{
-    using FatturaElettronica.Ordinaria;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Ordinaria;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Ordinaria.Tests
+{
     [TestClass]
     public class FatturaValidator : BaseClass<FatturaOrdinaria, FatturaElettronica.Validators.FatturaOrdinariaValidator>
     {

@@ -1,9 +1,9 @@
-﻿namespace Semplificata.Tests
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaBody.Allegati;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.Allegati;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Semplificata.Tests
+{
     [TestClass]
     public class AllegatiValidator : BaseClass<Allegati, FatturaElettronica.Validators.Semplificata.AllegatiValidator>
     {

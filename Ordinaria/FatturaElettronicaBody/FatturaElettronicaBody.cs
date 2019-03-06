@@ -1,10 +1,10 @@
-﻿namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
-{
-    using System.Collections.Generic;
-    using System.Xml;
-    using FatturaElettronica.Common;
+﻿using System.Collections.Generic;
+using System.Xml;
+using FatturaElettronica.Common;
 
-    public class FatturaElettronicaBody : BaseClassSerializable
+namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
+{
+   public class FatturaElettronicaBody : BaseClassSerializable
     {
         /// <summary>
         /// FatturaOrdinaria inclusa nella conunicazione.

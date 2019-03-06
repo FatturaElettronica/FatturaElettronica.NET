@@ -1,11 +1,11 @@
-﻿namespace Semplificata.Tests
-{
-    using System.Linq;
-    using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Semplificata.Tests
+{
     [TestClass]
     public class IdentificativiFiscaliValidator : BaseClass<IdentificativiFiscali, FatturaElettronica.Validators.Semplificata.IdentificativiFiscaliValidator>
     {

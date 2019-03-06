@@ -1,14 +1,14 @@
-﻿namespace Ordinaria.Tests
-{
-    using System.Linq;
-    using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
-    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
-    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.Linq;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+namespace Ordinaria.Tests
+{
+   [TestClass]
     public class FatturaElettronicaBodyValidator
         : BaseClass<FatturaElettronicaBody, FatturaElettronica.Validators.FatturaElettronicaBodyValidator>
     {

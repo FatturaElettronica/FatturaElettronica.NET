@@ -1,10 +1,10 @@
-﻿namespace Semplificata.Tests
-{
-    using FatturaElettronica.Semplificata;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Semplificata;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Semplificata.Tests
+{
     [TestClass]
     public class FatturaSemplificataValidator : BaseClass<FatturaSemplificata, FatturaElettronica.Validators.Semplificata.FatturaSemplificataValidator>
     {

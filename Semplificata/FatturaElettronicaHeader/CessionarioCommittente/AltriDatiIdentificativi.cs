@@ -1,9 +1,9 @@
-﻿namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
-{
-    using System.Xml;
-    using FatturaElettronica.Common;
-    using Newtonsoft.Json;
+﻿using System.Xml;
+using FatturaElettronica.Common;
+using Newtonsoft.Json;
 
+namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
+{
     /// <summary>
     /// Altri dati identificativi del cessionario / committente.
     /// </summary>

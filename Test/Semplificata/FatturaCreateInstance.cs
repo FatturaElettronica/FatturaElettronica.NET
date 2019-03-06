@@ -1,10 +1,10 @@
-﻿namespace Semplificata.Tests
-{
-    using FatturaElettronica;
-    using FatturaElettronica.Defaults;
-    using FatturaElettronica.Semplificata;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica;
+using FatturaElettronica.Defaults;
+using FatturaElettronica.Semplificata;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Semplificata.Tests
+{
     [TestClass]
     public class FatturaSemplificataCreateInstance
     {

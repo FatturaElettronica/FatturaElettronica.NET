@@ -1,9 +1,9 @@
-﻿namespace Ordinaria.Tests
-{
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
-    using global::Tests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+using Tests;
 
+namespace Ordinaria.Tests
+{
     [TestClass]
     public class DatiBolloValidator
         : BaseClass<DatiBollo, FatturaElettronica.Validators.DatiBolloValidator>

@@ -1,10 +1,10 @@
-﻿namespace FatturaElettronica.Validators.Semplificata
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaHeader;
-    using FatturaElettronica.Tabelle;
-    using FatturaElettronica.Validators;
-    using FluentValidation;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader;
+using FatturaElettronica.Tabelle;
+using FatturaElettronica.Validators;
+using FluentValidation;
 
+namespace FatturaElettronica.Validators.Semplificata
+{
     public class FatturaElettronicaHeaderValidator : AbstractValidator<FatturaElettronicaHeader>
     {
         public FatturaElettronicaHeaderValidator()

@@ -1,12 +1,12 @@
-﻿namespace Semplificata.Tests
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
-    using FatturaElettronica.Tabelle;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
+using FatturaElettronica.Tabelle;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+namespace Semplificata.Tests
+{
+   [TestClass]
     public class DatiBeniServiziValidator : BaseClass<DatiBeniServizi, FatturaElettronica.Validators.Semplificata.DatiBeniServiziValidator>
     {
         [TestMethod]

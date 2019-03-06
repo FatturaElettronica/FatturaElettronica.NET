@@ -1,11 +1,11 @@
-﻿namespace Ordinaria.Tests
-{
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-    using FluentValidation.TestHelper;
-    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
-    using FatturaElettronica.Tabelle;
-    using global::Tests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FluentValidation.TestHelper;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Tabelle;
+using Tests;
 
+namespace Ordinaria.Tests
+{
     [TestClass]
     public class DatiCassaPrevidenzialeValidator
         : BaseClass<DatiCassaPrevidenziale, FatturaElettronica.Validators.DatiCassaPrevidenzialeValidator>

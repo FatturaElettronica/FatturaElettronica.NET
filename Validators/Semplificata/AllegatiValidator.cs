@@ -1,8 +1,8 @@
-﻿namespace FatturaElettronica.Validators.Semplificata
-{
-    using FluentValidation;
-    using FatturaElettronica.Semplificata.FatturaElettronicaBody.Allegati;
+﻿using FluentValidation;
+using FatturaElettronica.Semplificata.FatturaElettronicaBody.Allegati;
 
+namespace FatturaElettronica.Validators.Semplificata
+{
     public class AllegatiValidator : AbstractValidator<Allegati>
     {
         public AllegatiValidator()

@@ -1,10 +1,10 @@
-﻿namespace Ordinaria.Tests
-{
-    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
-    using FatturaElettronica.Tabelle;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+using FatturaElettronica.Tabelle;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Ordinaria.Tests
+{
     [TestClass]
     public class IscrizioneREAValidator
         : BaseClass<IscrizioneREA, FatturaElettronica.Validators.IscrizioneREAValidator>

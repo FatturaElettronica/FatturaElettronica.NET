@@ -1,10 +1,10 @@
-﻿namespace Ordinaria.Tests
-{
-    using FatturaElettronica;
-    using FatturaElettronica.Defaults;
-    using FatturaElettronica.Ordinaria;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica;
+using FatturaElettronica.Defaults;
+using FatturaElettronica.Ordinaria;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Ordinaria.Tests
+{
     [TestClass]
     public class FatturaCreateInstance
     {

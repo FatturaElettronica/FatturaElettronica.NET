@@ -1,10 +1,10 @@
-﻿namespace Tests
-{
-    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.RappresentanteFiscale;
-    using FluentValidation.TestHelper;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.RappresentanteFiscale;
+using FluentValidation.TestHelper;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+namespace Tests
+{
+   [TestClass]
     public class RappresentanteFiscaleValidator :
         BaseClass<RappresentanteFiscale, FatturaElettronica.Validators.RappresentanteFiscaleValidator>
     {

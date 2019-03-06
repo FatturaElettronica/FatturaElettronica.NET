@@ -1,11 +1,11 @@
-﻿namespace Semplificata.Tests
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePrestatore;
-    using FatturaElettronica.Tabelle;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePrestatore;
+using FatturaElettronica.Tabelle;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Semplificata.Tests
+{
     [TestClass]
     public class CedentePrestatoreValidator
         : BaseClass<CedentePrestatore, FatturaElettronica.Validators.Semplificata.CedentePrestatoreValidator>

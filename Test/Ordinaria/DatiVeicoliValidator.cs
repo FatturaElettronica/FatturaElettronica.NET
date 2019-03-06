@@ -1,10 +1,10 @@
-﻿namespace Ordinaria.Tests
-{
-    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiVeicoli;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiVeicoli;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+namespace Ordinaria.Tests
+{
+  [TestClass]
     public class DatiVeicoliValidator : BaseClass<DatiVeicoli, FatturaElettronica.Validators.DatiVeicoliValidator>
     {
         [TestMethod]

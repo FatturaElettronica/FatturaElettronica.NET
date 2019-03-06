@@ -1,8 +1,8 @@
-﻿namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore
-{
-    using System.Xml;
-    using FatturaElettronica.Common;
+﻿using System.Xml;
+using FatturaElettronica.Common;
 
+namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore
+{
     /// <summary>
     /// Dati relativi al cedente / prestatore.
     /// </summary>

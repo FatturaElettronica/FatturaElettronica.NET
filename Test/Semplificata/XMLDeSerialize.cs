@@ -1,13 +1,13 @@
-﻿namespace Semplificata.Tests
-{
-    using System;
-    using System.IO;
-    using System.Xml;
-    using FatturaElettronica;
-    using FatturaElettronica.Defaults;
-    using FatturaElettronica.Semplificata;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.IO;
+using System.Xml;
+using FatturaElettronica;
+using FatturaElettronica.Defaults;
+using FatturaElettronica.Semplificata;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace Semplificata.Tests
+{
     [TestClass]
     public class XmlDeSerialize
     {

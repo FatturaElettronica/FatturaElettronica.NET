@@ -1,9 +1,9 @@
-﻿namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
-{
-    using System.Xml;
-    using FatturaElettronica.Common;
+﻿using System.Xml;
+using FatturaElettronica.Common;
 
-    /// <summary>
+namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
+{
+     /// <summary>
     /// Blocco sempre obbligatorio contenente natura, qualità e quantità dei beni / servizi formanti oggetto dell'operazione.
     /// </summary>
     public class DatiBeniServizi : BaseClassSerializable

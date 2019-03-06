@@ -1,10 +1,10 @@
-﻿namespace Ordinaria.Tests
-{
-    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+namespace Ordinaria.Tests
+{
+     [TestClass]
     public class SedeCessionarioCommittenteValidator
         : BaseLocalitàValidator<SedeCessionarioCommittente, FatturaElettronica.Validators.SedeCessionarioCommittenteValidator>
     {

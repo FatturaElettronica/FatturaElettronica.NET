@@ -1,5 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests;
 
 namespace Ordinaria.Tests

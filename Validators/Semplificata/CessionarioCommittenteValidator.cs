@@ -1,8 +1,8 @@
-﻿namespace FatturaElettronica.Validators.Semplificata
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
-    using FluentValidation;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
+using FluentValidation;
 
+namespace FatturaElettronica.Validators.Semplificata
+{
     public class CessionarioCommittenteValidator : AbstractValidator<CessionarioCommittente>
     {
         public CessionarioCommittenteValidator()

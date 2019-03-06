@@ -1,10 +1,10 @@
-﻿namespace FatturaElettronica.Ordinaria
-{
-    using System.Collections.Generic;
-    using FatturaElettronica.Common;
-    using FatturaElettronica.Defaults;
+﻿using System.Collections.Generic;
+using FatturaElettronica.Common;
+using FatturaElettronica.Defaults;
 
-    public class FatturaOrdinaria : FatturaBase
+namespace FatturaElettronica.Ordinaria
+{
+   public class FatturaOrdinaria : FatturaBase
     {
         public FatturaOrdinaria()
         {

@@ -1,8 +1,9 @@
-﻿namespace Ordinaria.Tests
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tests;
+
+namespace Ordinaria.Tests
 {
-    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
     public class ContattiTrasmittenteValidator

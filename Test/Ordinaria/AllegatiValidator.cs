@@ -1,9 +1,9 @@
-﻿namespace Ordinaria.Tests
-{
-    using FatturaElettronica.Ordinaria.FatturaElettronicaBody.Allegati;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.Allegati;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tests;
 
+namespace Ordinaria.Tests
+{
     [TestClass]
     public class AllegatiValidator
         : BaseClass<Allegati, FatturaElettronica.Validators.AllegatiValidator>

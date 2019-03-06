@@ -1,7 +1,7 @@
-﻿namespace FatturaElettronica.Validators.Semplificata
-{
-    using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
 
+namespace FatturaElettronica.Validators.Semplificata
+{
     public class RappresentanteFiscaleCessionarioCommittenteValidator : DenominazioneNomeCognomeValidator<RappresentanteFiscaleCessionarioCommittente>
     {
         public RappresentanteFiscaleCessionarioCommittenteValidator()

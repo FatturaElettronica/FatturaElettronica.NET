@@ -1,12 +1,12 @@
-﻿namespace Ordinaria.Tests
-{
-    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
-    using FatturaElettronica.Tabelle;
-    using FluentValidation.TestHelper;
-    using global::Tests;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+using FatturaElettronica.Tabelle;
+using FluentValidation.TestHelper;
+using Tests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-    [TestClass]
+namespace Ordinaria.Tests
+{
+   [TestClass]
     public class DatiAnagraficiCedentePrestatoreValidator
         : BaseClass<DatiAnagraficiCedentePrestatore,
             FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator>

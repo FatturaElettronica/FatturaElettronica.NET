@@ -1,12 +1,12 @@
-﻿namespace FatturaElettronica.Validators.Semplificata
-{
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using FatturaElettronica.Semplificata.FatturaElettronicaBody;
-    using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
-    using FluentValidation;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using FatturaElettronica.Semplificata.FatturaElettronicaBody;
+using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
+using FluentValidation;
 
+namespace FatturaElettronica.Validators.Semplificata
+{
     public class FatturaElettronicaBodyValidator : AbstractValidator<FatturaElettronicaBody>
     {
         public FatturaElettronicaBodyValidator()
