@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.FatturaElettronicaBody.DatiBeniServizi;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators

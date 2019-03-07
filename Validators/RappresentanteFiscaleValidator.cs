@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.FatturaElettronicaHeader.RappresentanteFiscale;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.RappresentanteFiscale;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators

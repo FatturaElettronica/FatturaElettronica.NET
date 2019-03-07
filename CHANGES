@@ -4,6 +4,10 @@ Changelog
 In Development
 ==============
 
+- New: Supporto per fattura semplificata (Gaetano Pizzol). Closes #137.
+- BREAKING: classe Fattura (Fattura.cs) rinominata FatturaOrdinaria (Ordinaria/FatturaOrdinaria.cs).
+- BREAKING: gerarchia di classi per fattura ordinaria spostata nel namespace FatturaElettronica.Ordinaria.
+
 - Bump FatturaElettronica.Core a 1.1.2.
 
 v1.1.5

@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.FatturaElettronicaBody.DatiGenerali;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators

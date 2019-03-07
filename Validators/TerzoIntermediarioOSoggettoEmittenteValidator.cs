@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.FatturaElettronicaHeader.TerzoIntermediarioOSoggettoEmittente;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.TerzoIntermediarioOSoggettoEmittente;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators

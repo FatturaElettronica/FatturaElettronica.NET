@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using FatturaElettronica.FatturaElettronicaBody.DatiVeicoli;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiVeicoli;
 
 namespace FatturaElettronica.Validators
 {

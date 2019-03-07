@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.FatturaElettronicaHeader.CedentePrestatore;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 using FatturaElettronica.Tabelle;
 using FluentValidation;
 

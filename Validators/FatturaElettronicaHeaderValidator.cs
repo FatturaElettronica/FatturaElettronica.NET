@@ -1,9 +1,10 @@
-﻿using FatturaElettronica.Tabelle;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader;
+using FatturaElettronica.Tabelle;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
 {
-    public class FatturaElettronicaHeaderValidator : AbstractValidator<FatturaElettronicaHeader.FatturaElettronicaHeader>
+    public class FatturaElettronicaHeaderValidator : AbstractValidator<FatturaElettronicaHeader>
     {
         public FatturaElettronicaHeaderValidator()
         {

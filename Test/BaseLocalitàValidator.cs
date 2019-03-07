@@ -1,6 +1,5 @@
 ﻿using FatturaElettronica.Tabelle;
 using FluentValidation;
-using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Tests

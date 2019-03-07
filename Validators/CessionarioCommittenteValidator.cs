@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.FatturaElettronicaHeader.CessionarioCommittente;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
