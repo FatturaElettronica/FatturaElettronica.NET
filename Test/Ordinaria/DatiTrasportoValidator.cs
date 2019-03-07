@@ -1,5 +1,6 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
+using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests;
 
@@ -89,6 +90,18 @@ namespace Ordinaria.Tests
         public void IndirizzoResaHasChildValidator()
         {
             validator.ShouldHaveDelegatePropertyChildValidator(x => x.IndirizzoResa, typeof(FatturaElettronica.Validators.IndirizzoResaValidator));
+        }
+        [TestMethod]
+        public void PesoNettoMaxValue()
+        {
+            validator.ShouldHaveValidationErrorFor(x => x.PesoNetto, 10000m);
+            validator.ShouldNotHaveValidationErrorFor(x => x.PesoNetto, 9999.99m);
+        }
+        [TestMethod]
+        public void PesoLordoMaxValue()
+        {
+            validator.ShouldHaveValidationErrorFor(x => x.PesoLordo, 10000m);
+            validator.ShouldNotHaveValidationErrorFor(x => x.PesoLordo, 9999.99m);
         }
     }
 }
