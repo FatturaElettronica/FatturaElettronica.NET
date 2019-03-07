@@ -4,25 +4,26 @@
 
 - Lettura e scrittura nel formato XML conforme alle [specifiche tecniche ufficiali][pa].
 - Convalida offline in osservanza alle specifiche tecniche.
-- Supporto sia per fatture elettroniche tra privati che verso la Pubblica Amministrazione.
-- Supporto per fatture elettroniche semplificate.
-- Supporto per de/serializzazione JSON.
+- Fatture elettroniche ordinarie.
+- Fatture elettroniche semplificate.
+- De/serializzazione JSON.
 
 ## Utilizzo
 
 ```cs
-using FatturaElettronica;
+using FatturaElettronica.Ordinaria;
 using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Validators;
-using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
+using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 
 using System;
 using System.Xml;
 using System.IO;
 
 using Newtonsoft.Json;
+using FatturaElettronica;
 
 namespace DemoApp
 {
@@ -31,14 +32,14 @@ namespace DemoApp
         static void Main(string[] args)
         {
 
-            var fattura = new Fattura();
+            var fattura = new FatturaOrdinaria();
             // In alternativa usare CreateInstance() per ottenere una istanza già tipizzata.
-            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000"
+            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000" 
             // FormatoTrasmissione = "FPR12":
-            fattura = Fattura.CreateInstance(Instance.Privati);
+            fattura = FatturaOrdinaria.CreateInstance(Instance.Privati);
 
             // Lettura da file XML
-            using (var r = XmlReader.Create("/Users/Nicola/Downloads/test-sconti.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
+            using (var r = XmlReader.Create("IT01234567890_12345.xml", new XmlReaderSettings { IgnoreWhitespace = true, IgnoreComments = true }))
             {
                 fattura.ReadXml(r);
             }
@@ -56,7 +57,7 @@ namespace DemoApp
             }
 
             // Convalida del documento.
-            var validator = new FatturaValidator();
+            var validator = new FatturaOrdinariaValidator();
             var result = validator.Validate(fattura);
             Console.WriteLine(result.IsValid);
 
@@ -101,7 +102,7 @@ namespace DemoApp
             Console.WriteLine(json);
 
             // Deserializzazione da JSON.
-            var fatturaFromJson = new Fattura();
+            var fatturaFromJson = new FatturaOrdinaria();
             fatturaFromJson.FromJson(new JsonTextReader(new StringReader(json)));
         }
     }
