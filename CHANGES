@@ -16,6 +16,7 @@ In Development
 - Bump FluentValidation to 8.1.3.
 - Bump Newtonsoft.Json to 12.0.1.
 - Bump MSTest.TestAdapter to 1.4.0
+- Bump MSTest.TestFramework to 1.4.0
 
 v1.1.5
 =======
