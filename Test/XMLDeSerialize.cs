@@ -125,7 +125,7 @@
                 // DatiContratto
                 Assert.AreEqual(1, body.DatiGenerali.DatiContratto[0].RiferimentoNumeroLinea[0]);
                 Assert.AreEqual("123", body.DatiGenerali.DatiContratto[0].IdDocumento);
-                Assert.AreEqual(new DateTime(2016, 9, 1), body.DatiGenerali.DatiContratto[0].Data);
+                Assert.AreEqual(new DateTime(2016, 9, 1), body.DatiGenerali.DatiContratto[0].Data.Value);
                 Assert.AreEqual("5", body.DatiGenerali.DatiContratto[0].NumItem);
                 Assert.AreEqual("123abc", body.DatiGenerali.DatiContratto[0].CodiceCUP);
                 Assert.AreEqual("456def", body.DatiGenerali.DatiContratto[0].CodiceCIG);
@@ -185,7 +185,7 @@
             // DatiPagamento
             Assert.AreEqual("TP01", body.DatiPagamento[0].CondizioniPagamento);
             Assert.AreEqual("MP01", body.DatiPagamento[0].DettaglioPagamento[0].ModalitaPagamento);
-            Assert.AreEqual(new DateTime(2015, 01, 30), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento);
+            Assert.AreEqual(new DateTime(2015, 01, 30), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento.Value);
             Assert.AreEqual(36.08m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
 
@@ -204,7 +204,7 @@
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            Assert.AreEqual(((FatturaOrdinaria) f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {

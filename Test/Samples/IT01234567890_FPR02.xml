@@ -84,7 +84,7 @@ xsi:schemaLocation="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.
 	    <Denominazione>Trasporto spa</Denominazione>
 	  </Anagrafica>
 	</DatiAnagraficiVettore>
-	<DataOraConsegna>2012-10-22T16:46:12.000+02:00</DataOraConsegna>
+	<DataOraConsegna>2012-10-22T16:46:12</DataOraConsegna>
       </DatiTrasporto>
     </DatiGenerali>
     <DatiBeniServizi>
