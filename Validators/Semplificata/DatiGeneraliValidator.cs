@@ -11,7 +11,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .SetValidator(new DatiGeneraliDocumentoValidator());
             RuleFor(x => x.DatiFatturaRettificata)
                 .SetValidator(new DatiFatturaRettificataValidator())
-                .When(x => !x.DatiFatturaRettificata.IsEmpty());
+                .When(x => x.DatiFatturaRettificata != null && !x.DatiFatturaRettificata.IsEmpty());
             RuleFor(x => x.DatiFatturaRettificata.DataFR)
                 .Must((datigenerali, data) =>
                 {

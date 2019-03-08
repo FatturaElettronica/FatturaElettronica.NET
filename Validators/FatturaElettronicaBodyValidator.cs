@@ -30,7 +30,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00419");
             RuleFor(x => x.DatiVeicoli)
                 .SetValidator(new DatiVeicoliValidator())
-                .When(x => !x.DatiVeicoli.IsEmpty());
+                .When(x => x.DatiVeicoli != null && !x.DatiVeicoli.IsEmpty());
             RuleForEach(x => x.DatiPagamento)
                 .SetValidator(new DatiPagamentoValidator());
             RuleForEach(x => x.Allegati)

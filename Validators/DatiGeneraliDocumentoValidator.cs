@@ -25,17 +25,18 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00425");
             RuleFor(x => x.DatiRitenuta)
                 .SetValidator(new DatiRitenutaValidator())
-                .When(x=>!x.DatiRitenuta.IsEmpty());
+                .When(x => x.DatiRitenuta != null && !x.DatiRitenuta.IsEmpty());
             RuleFor(x => x.DatiBollo)
                 .SetValidator(new DatiBolloValidator())
-                .When(x=>!x.DatiBollo.IsEmpty());
+                .When(x => x.DatiBollo != null && !x.DatiBollo.IsEmpty());
             RuleForEach(x => x.DatiCassaPrevidenziale)
                 .SetValidator(new DatiCassaPrevidenzialeValidator());
             RuleFor(x => x.DatiCassaPrevidenziale)
                 .Must((datiGeneraliDocumento, datiCassa) => { return (datiCassa.Where(a => a.Ritenuta == "SI").Count() > 0) ? !datiGeneraliDocumento.DatiRitenuta.IsEmpty() : true; })
                 .WithMessage("DatiRitenuta non presente a fronte di DatiCassaPrevidenziale.Ritenuta valorizzato")
                 .WithErrorCode("00415");
-            RuleForEach(x => x.ScontoMaggiorazione).SetValidator(new ScontoMaggiorazioneValidator());
+            RuleForEach(x => x.ScontoMaggiorazione)
+                .SetValidator(new ScontoMaggiorazioneValidator());
             RuleForEach(x => x.Causale)
                 .SetValidator(new CausaleValidator(1, 200));
             RuleFor(x => x.Art73)

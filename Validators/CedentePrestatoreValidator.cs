@@ -13,13 +13,13 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new SedeCedentePrestatoreValidator());
             RuleFor(x => x.StabileOrganizzazione)
                 .SetValidator(new StabileOrganizzazioneValidator())
-                .When(x=>!x.StabileOrganizzazione.IsEmpty());
+                .When(x => x.StabileOrganizzazione != null && !x.StabileOrganizzazione.IsEmpty());
             RuleFor(x => x.IscrizioneREA)
                 .SetValidator(new IscrizioneREAValidator())
-                .When(x=>!x.IscrizioneREA.IsEmpty());
+                .When(x => x.IscrizioneREA != null && !x.IscrizioneREA.IsEmpty());
             RuleFor(x => x.Contatti)
                 .SetValidator(new ContattiValidator())
-                .When(x=>!x.Contatti.IsEmpty());
+                .When(x => x.Contatti != null && !x.Contatti.IsEmpty());
             RuleFor(x => x.RiferimentoAmministrazione)
                 .BasicLatinValidator()
                 .Length(1, 20);

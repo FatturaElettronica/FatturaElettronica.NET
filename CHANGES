@@ -8,7 +8,9 @@ In Development
 - BREAKING: classe Fattura (Fattura.cs) rinominata FatturaOrdinaria (Ordinaria/FatturaOrdinaria.cs).
 - BREAKING: gerarchia di classi per fattura ordinaria spostata nel namespace FatturaElettronica.Ordinaria.
 
+- Fix: Proprietà di tipo oggetto opzionali sollevano "Object reference not set to an instance of an object" quando nulle. Closes #165.
 - Fix: DatiTrasporto.PesoLordo e DatiTrasporto.PesoNetto non possono superare il valore 9999.99m. Closes #157.
+
 - Bump FatturaElettronica.Core a 1.1.2.
 
 v1.1.5

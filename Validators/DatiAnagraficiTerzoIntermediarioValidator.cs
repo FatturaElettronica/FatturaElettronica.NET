@@ -9,7 +9,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.IdFiscaleIVA)
                 .SetValidator(new IdFiscaleIVAValidator())
-                .When(x=>!x.IdFiscaleIVA.IsEmpty());
+                .When(x => x.IdFiscaleIVA != null && !x.IdFiscaleIVA.IsEmpty());
             RuleFor(x => x.CodiceFiscale)
                 .Length(11, 16)
                 .When(x => !string.IsNullOrEmpty(x.CodiceFiscale));

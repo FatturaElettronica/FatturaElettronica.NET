@@ -10,7 +10,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiGeneraliDocumento)
                 .SetValidator(new DatiGeneraliDocumentoValidator());
             RuleFor(x => x.DatiGeneraliDocumento.Data)
-                .Must((datigenerali, data) => {
+                .Must((datigenerali, data) =>
+                {
                     foreach (var fc in datigenerali.DatiFattureCollegate)
                     {
                         if (data < fc.Data) return false;
@@ -33,10 +34,10 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new DatiDDTValidator());
             RuleFor(x => x.DatiTrasporto)
                 .SetValidator(new DatiTrasportoValidator())
-                .When(x=>!x.DatiTrasporto.IsEmpty());
+                .When(x => x.DatiTrasporto != null && !x.DatiTrasporto.IsEmpty());
             RuleFor(x => x.FatturaPrincipale)
                 .SetValidator(new FatturaPrincipaleValidator())
-                .When(x=>!x.FatturaPrincipale.IsEmpty());
+                .When(x => x.FatturaPrincipale != null && !x.FatturaPrincipale.IsEmpty());
         }
     }
 }

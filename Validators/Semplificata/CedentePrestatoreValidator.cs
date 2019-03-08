@@ -53,10 +53,10 @@ namespace FatturaElettronica.Validators.Semplificata
                 .SetValidator(new SedeCedentePrestatoreValidator());
             RuleFor(x => x.StabileOrganizzazione)
                 .SetValidator(new StabileOrganizzazioneValidator())
-                .When(x => !x.StabileOrganizzazione.IsEmpty());
+                .When(x => x.StabileOrganizzazione != null && !x.StabileOrganizzazione.IsEmpty());
             RuleFor(x => x.IscrizioneREA)
                 .SetValidator(new IscrizioneREAValidator())
-                .When(x => !x.IscrizioneREA.IsEmpty());
+                .When(x => x.IscrizioneREA != null && !x.IscrizioneREA.IsEmpty());
             RuleFor(x => x.RegimeFiscale)
                 .NotEmpty()
                 .SetValidator(new RegimeFiscaleValidator<RegimeFiscale>());

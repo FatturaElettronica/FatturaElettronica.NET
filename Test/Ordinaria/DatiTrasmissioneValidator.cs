@@ -3,12 +3,14 @@ using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FatturaElettronica.Ordinaria;
+using FatturaElettronica.Validators;
 
 namespace Ordinaria.Tests
 {
-   [TestClass]
+    [TestClass]
     public class DatiTrasmissioneValidator
-        : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
+         : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
     {
         [TestMethod]
         public void IdTrasmittenteHasChildValidator()
@@ -69,6 +71,12 @@ namespace Ordinaria.Tests
         {
             challenge.CodiceDestinatario = new string('0', 7);
             AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
+        }
+        [TestMethod]
+        public void test()
+        {
+            challenge.ContattiTrasmittente = null;
+            var result = validator.Validate(challenge);
         }
     }
 }

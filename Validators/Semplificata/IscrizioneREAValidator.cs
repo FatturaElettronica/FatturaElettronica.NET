@@ -17,7 +17,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .Length(1, 20);
             RuleFor(x => x.SocioUnico)
                 .SetValidator(new IsValidValidator<SocioUnico>())
-                .When(x => !string.IsNullOrEmpty(x.SocioUnico));
+                .When(x => x.SocioUnico != null && !string.IsNullOrEmpty(x.SocioUnico));
             RuleFor(x => x.StatoLiquidazione)
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<StatoLiquidazione>());
