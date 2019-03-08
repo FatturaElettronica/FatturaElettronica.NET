@@ -14,6 +14,7 @@ In Development
 - Bump FatturaElettronica.Core a 1.1.2.
 - Bump Microsoft.NET.Test.Sdk to 16.0.1.
 - Bump FluentValidation to 8.1.3.
+- Bump Newtonsoft.Json to 12.0.1.
 
 v1.1.5
 =======
