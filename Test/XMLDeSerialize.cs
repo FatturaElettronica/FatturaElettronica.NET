@@ -109,7 +109,7 @@
             // DatiGeneraliDocumento
             Assert.AreEqual("TD01", body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento);
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
-            Assert.AreEqual(new DateTime(2014, 12, 18), body.DatiGenerali.DatiGeneraliDocumento.Data);
+            Assert.AreEqual(new DateTime(2014, 12, 18).ToUniversalTime(), body.DatiGenerali.DatiGeneraliDocumento.Data.ToUniversalTime());
             Assert.AreEqual("123", body.DatiGenerali.DatiGeneraliDocumento.Numero);
             Assert.AreEqual("LA FATTURA FA RIFERIMENTO AD UNA OPERAZIONE AAAA BBBBBBBBBBBBBBBBBB CCC DDDDDDDDDDDDDDD E FFFFFFFFFFFFFFFFFFFF GGGGGGGGGG HHHHHHH II LLLLLLLLLLLLLLLLL MMM NNNNN OO PPPPPPPPPPP QQQQ RRRR SSSSSSSSSSSSSS", body.DatiGenerali.DatiGeneraliDocumento.Causale[0]);
             Assert.AreEqual("SEGUE DESCRIZIONE CAUSALE NEL CASO IN CUI NON SIANO STATI SUFFICIENTI 200 CARATTERI AAAAAAAAAAA BBBBBBBBBBBBBBBBB", body.DatiGenerali.DatiGeneraliDocumento.Causale[1]);
@@ -125,7 +125,7 @@
                 // DatiContratto
                 Assert.AreEqual(1, body.DatiGenerali.DatiContratto[0].RiferimentoNumeroLinea[0]);
                 Assert.AreEqual("123", body.DatiGenerali.DatiContratto[0].IdDocumento);
-                Assert.AreEqual(new DateTime(2016, 9, 1), body.DatiGenerali.DatiContratto[0].Data);
+                Assert.AreEqual(new DateTime(2016, 9, 1).ToUniversalTime(), body.DatiGenerali.DatiContratto[0].Data.Value.ToUniversalTime());
                 Assert.AreEqual("5", body.DatiGenerali.DatiContratto[0].NumItem);
                 Assert.AreEqual("123abc", body.DatiGenerali.DatiContratto[0].CodiceCUP);
                 Assert.AreEqual("456def", body.DatiGenerali.DatiContratto[0].CodiceCIG);
@@ -148,7 +148,7 @@
             Assert.AreEqual("24681012141", body.DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdCodice);
             Assert.AreEqual("Trasporto spa", body.DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Denominazione);
             // DataOraConsegna
-            Assert.AreEqual(new DateTime(2012, 10, 22, 16, 46, 12), body.DatiGenerali.DatiTrasporto.DataOraConsegna);
+            Assert.AreEqual(new DateTime(2012, 10, 22, 16, 46, 12).ToUniversalTime(), body.DatiGenerali.DatiTrasporto.DataOraConsegna.Value.ToUniversalTime());
             // DatiBeniServizi
             Assert.AreEqual(1, body.DatiBeniServizi.DettaglioLinee[0].NumeroLinea);
             Assert.AreEqual("LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI", body.DatiBeniServizi.DettaglioLinee[0].Descrizione);
@@ -185,7 +185,7 @@
             // DatiPagamento
             Assert.AreEqual("TP01", body.DatiPagamento[0].CondizioniPagamento);
             Assert.AreEqual("MP01", body.DatiPagamento[0].DettaglioPagamento[0].ModalitaPagamento);
-            Assert.AreEqual(new DateTime(2015, 01, 30), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento);
+            Assert.AreEqual(new DateTime(2015, 01, 30).ToUniversalTime(), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento.Value.ToUniversalTime());
             Assert.AreEqual(36.08m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
 
@@ -204,7 +204,7 @@
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
                         {
-                            Assert.AreEqual(((FatturaOrdinaria) f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                            Assert.AreEqual(((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {

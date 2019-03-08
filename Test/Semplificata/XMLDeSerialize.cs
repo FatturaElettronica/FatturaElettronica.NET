@@ -91,7 +91,7 @@ namespace Semplificata.Tests
             // DatiGeneraliDocumento
             Assert.AreEqual("TD07", body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento);
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
-            Assert.AreEqual(new DateTime(2019, 01, 01), body.DatiGenerali.DatiGeneraliDocumento.Data);
+            Assert.AreEqual(new DateTime(2019, 01, 01).ToUniversalTime(), body.DatiGenerali.DatiGeneraliDocumento.Data.ToUniversalTime());
             Assert.AreEqual("123", body.DatiGenerali.DatiGeneraliDocumento.Numero);
             // DatiBeniServizi
             Assert.AreEqual("LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI", body.DatiBeniServizi[0].Descrizione);
