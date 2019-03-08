@@ -12,6 +12,7 @@ In Development
 - Fix: DatiTrasporto.PesoLordo e DatiTrasporto.PesoNetto non possono superare il valore 9999.99m. Closes #157.
 
 - Bump FatturaElettronica.Core a 1.1.2.
+- Bump Microsoft.NET.Test.Sdk to 16.0.1.
 
 v1.1.5
 =======
