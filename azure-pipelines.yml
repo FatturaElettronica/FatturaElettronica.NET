@@ -11,10 +11,9 @@ pool:
 
 variables:
   buildConfiguration: 'Release'
-  targetFramework: 'netstandard2.0'
 
 steps:
-- script: dotnet build --configuration $(buildConfiguration) --framework $(targetFramework)
+- script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
 - task: DotNetCoreCLI@2
   inputs:
