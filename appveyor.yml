@@ -1,7 +1,9 @@
+# currently appveyor is disabled in favor of azure pipelines.
+# to re-enable it, we need to activate the corresponding github webhook.
 version: 1.0.{build}
 image: Visual Studio 2017
-init:
-  tzutil /s "W. Europe Standard Time"
+#init:
+#  tzutil /s "W. Europe Standard Time"
 before_build:
   cmd: nuget restore
 build:

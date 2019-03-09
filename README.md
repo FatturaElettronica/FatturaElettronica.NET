@@ -1,4 +1,4 @@
-﻿# Fattura Elettronica per piattaforme .NET [![Build status](https://ci.appveyor.com/api/projects/status/gft4hjbct0xgwogq?svg=true)](https://ci.appveyor.com/project/nicolaiarocci/fatturaelettronica-net)
+﻿# Fattura Elettronica per piattaforme .NET [![Build Status](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_apis/build/status/FatturaElettronica.FatturaElettronica.NET?branchName=master)](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_build/latest?definitionId=1&branchName=master)
 
 ## Caratteristiche
 
@@ -34,7 +34,7 @@ namespace DemoApp
 
             var fattura = new FatturaOrdinaria();
             // In alternativa usare CreateInstance() per ottenere una istanza già tipizzata.
-            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000" 
+            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000"
             // FormatoTrasmissione = "FPR12":
             fattura = FatturaOrdinaria.CreateInstance(Instance.Privati);
 
