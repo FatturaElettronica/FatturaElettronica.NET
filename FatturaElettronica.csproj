@@ -10,10 +10,14 @@
     <Product>FatturaElettronica.NET</Product>
     <Description>Fattura elettronica per le aziende e la pubblica amministrazione italiana</Description>
     <Copyright>Copyright © CIR2000 2017-2019</Copyright>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/LICENSE</PackageLicenseUrl>
     <PackageProjectUrl>https://fatturaelettronicaopensource.org</PackageProjectUrl>
     <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
+
+<ItemGroup>
+    <None Include="LICENSE.txt" Pack="true" PackagePath=""/>
+</ItemGroup>
 
   <ItemGroup>
     <Compile Remove="Tests\**" />
