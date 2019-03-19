@@ -4,12 +4,19 @@ Changelog
 In Development
 ==============
 
+- hic sunt leones
+
+v2.0.1
+======
+
+Released on March 19, 2019
+
 - Fix: il root node della fattura semplificata ha il nome sbagliato. Closes #176.
 
 v2.0
 ====
 
-Released on March 13, 2019.
+Released on March 13, 2019
 
 - New: Supporto per fattura semplificata (Gaetano Pizzol). Closes #137.
 - BREAKING: classe Fattura (Fattura.cs) rinominata FatturaOrdinaria (Ordinaria/FatturaOrdinaria.cs).
