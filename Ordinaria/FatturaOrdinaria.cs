@@ -40,6 +40,11 @@ namespace FatturaElettronica.Ordinaria
             return "FatturaElettronica";
         }
 
+        protected override string GetNameSpace()
+        {
+            return "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2";
+        }
+
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.

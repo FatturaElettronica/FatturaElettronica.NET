@@ -205,7 +205,7 @@
                         if (r.Prefix == RootElement.Prefix && r.LocalName == "FatturaElettronica")
                         {
                             Assert.AreEqual(((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
-                            Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);
+                            Assert.AreEqual("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2", r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {
                                 Assert.AreEqual(a.value, r.GetAttribute(string.Format("{0}:{1}", a.Prefix, a.LocalName)));
