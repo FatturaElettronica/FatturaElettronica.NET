@@ -4,6 +4,13 @@ Changelog
 In Development
 ==============
 
+- hic sunt leones
+
+v2.0.2
+======
+
+Released on March 19, 2019
+
 - Fix: il root node della fattura semplificata ha il namespace sbagliato. Addresses #176.
 
 v2.0.1
