@@ -33,6 +33,11 @@ namespace FatturaElettronica.Semplificata
             return FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione;
         }
 
+        protected override string GetLocalName()
+        {
+            return "FatturaElettronicaSemplificata";
+        }
+
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
@@ -50,6 +55,5 @@ namespace FatturaElettronica.Semplificata
         /// per ogni fattura componente il lotto stesso.</remarks>
         [DataProperty]
         public List<FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody { get; set; }
-
     }
 }

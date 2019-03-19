@@ -202,7 +202,7 @@
                 {
                     if (r.NodeType == XmlNodeType.Element)
                     {
-                        if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
+                        if (r.Prefix == RootElement.Prefix && r.LocalName == "FatturaElettronica")
                         {
                             Assert.AreEqual(((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);

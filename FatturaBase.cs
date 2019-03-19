@@ -14,7 +14,7 @@ namespace FatturaElettronica
 
         public override void WriteXml(XmlWriter w)
         {
-            w.WriteStartElement(RootElement.Prefix, RootElement.LocalName, RootElement.NameSpace);
+            w.WriteStartElement(RootElement.Prefix, GetLocalName(), RootElement.NameSpace);
             w.WriteAttributeString("versione", GetFormatoTrasmissione());
             foreach (var a in RootElement.ExtraAttributes)
             {
@@ -25,5 +25,6 @@ namespace FatturaElettronica
         }
 
         protected abstract string GetFormatoTrasmissione();
+        protected abstract string GetLocalName();
     }
 }

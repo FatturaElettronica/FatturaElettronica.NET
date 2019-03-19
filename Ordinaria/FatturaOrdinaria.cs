@@ -4,7 +4,7 @@ using FatturaElettronica.Defaults;
 
 namespace FatturaElettronica.Ordinaria
 {
-   public class FatturaOrdinaria : FatturaBase
+    public class FatturaOrdinaria : FatturaBase
     {
         public FatturaOrdinaria()
         {
@@ -33,6 +33,11 @@ namespace FatturaElettronica.Ordinaria
         protected override string GetFormatoTrasmissione()
         {
             return FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione;
+        }
+
+        protected override string GetLocalName()
+        {
+            return "FatturaElettronica";
         }
 
         /// IMPORTANT

@@ -114,7 +114,7 @@ namespace Semplificata.Tests
                 {
                     if (r.NodeType == XmlNodeType.Element)
                     {
-                        if (r.Prefix == RootElement.Prefix && r.LocalName == RootElement.LocalName)
+                        if (r.Prefix == RootElement.Prefix && r.LocalName == "FatturaElettronicaSemplificata")
                         {
                             Assert.AreEqual(((FatturaSemplificata)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
                             Assert.AreEqual(RootElement.NameSpace, r.NamespaceURI);

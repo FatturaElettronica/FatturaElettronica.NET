@@ -17,7 +17,6 @@
     public class RootElement
     {
         public static string Prefix { get { return "p"; } }
-        public static string LocalName { get { return "FatturaElettronica"; } }
         public static string NameSpace { get { return "http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2"; } }
         public static XmlAttributeString[] ExtraAttributes
         {
