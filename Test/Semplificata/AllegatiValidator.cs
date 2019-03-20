@@ -1,6 +1,6 @@
-﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.Allegati;
-using Tests;
+﻿using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using FatturaElettronica.Common;
 
 namespace Semplificata.Tests
 {

@@ -1,4 +1,4 @@
-﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.Allegati;
+﻿using FatturaElettronica.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests;
 
