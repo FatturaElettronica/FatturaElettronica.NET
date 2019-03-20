@@ -1,7 +1,6 @@
 ﻿using System.Xml;
-using FatturaElettronica.Common;
 
-namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.Allegati
+namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Dati relativi ad eventuale allegato.

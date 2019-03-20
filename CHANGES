@@ -4,7 +4,7 @@ Changelog
 In Development
 ==============
 
-- hic sunt leones
+- Refactoring: classe Allegati spostata in FatturaElettronica.Common (gminutillo). Closes #179.
 
 v2.0.2
 ======

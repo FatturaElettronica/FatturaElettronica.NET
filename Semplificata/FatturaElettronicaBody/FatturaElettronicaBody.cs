@@ -13,7 +13,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody
         {
             DatiGenerali = new DatiGenerali.DatiGenerali();
             DatiBeniServizi = new List<DatiBeniServizi.DatiBeniServizi>();
-            Allegati = new List<Allegati.Allegati>();
+            Allegati = new List<Allegati>();
         }
         public FatturaElettronicaBody(XmlReader r) : base(r) { }
 
@@ -33,6 +33,6 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody
         /// Dati relativi ad eventuali allegati.
         /// </summary>
         [DataProperty]
-        public List<Allegati.Allegati> Allegati { get; set; }
+        public List<Allegati> Allegati { get; set; }
     }
 }
