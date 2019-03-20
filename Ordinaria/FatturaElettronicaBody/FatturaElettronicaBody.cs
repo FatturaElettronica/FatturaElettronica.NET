@@ -15,7 +15,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
             DatiBeniServizi = new DatiBeniServizi.DatiBeniServizi();
             DatiVeicoli = new DatiVeicoli.DatiVeicoli();
             DatiPagamento = new List<DatiPagamento.DatiPagamento>();
-            Allegati = new List<Allegati.Allegati>();
+            Allegati = new List<Allegati>();
         }
         public FatturaElettronicaBody(XmlReader r) : base(r) { }
 
@@ -47,6 +47,6 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
         /// Dati relativi ad eventuali allegati.
         /// </summary>
         [DataProperty]
-        public List<Allegati.Allegati> Allegati { get; set; }
+        public List<Allegati> Allegati { get; set; }
     }
 }
