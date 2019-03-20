@@ -4,7 +4,7 @@ using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
 {
-   public class FatturaElettronicaBody : BaseClassSerializable
+    public class FatturaElettronicaBody : BaseClassSerializable
     {
         /// <summary>
         /// FatturaOrdinaria inclusa nella conunicazione.

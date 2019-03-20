@@ -2,6 +2,7 @@
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Common;
 using FluentValidation.TestHelper;
 using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
