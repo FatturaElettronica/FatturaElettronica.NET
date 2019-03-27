@@ -16,7 +16,9 @@ namespace FatturaElettronica.Validators.Semplificata
                 .When(x => x.AltriDatiIdentificativi == null);
 
             RuleFor(x => x.AltriDatiIdentificativi)
-                .SetValidator(new AltriDatiIdentificativiValidator());
+                .SetValidator(new AltriDatiIdentificativiValidator())
+                .When(x => x.AltriDatiIdentificativi != null || !x.AltriDatiIdentificativi.IsEmpty());
+            
 
             RuleFor(x => x.AltriDatiIdentificativi)
                 .NotEmpty()
