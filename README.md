@@ -1,4 +1,6 @@
-﻿# Fattura Elettronica per .NET [![Build Status](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_apis/build/status/FatturaElettronica.FatturaElettronica.NET?branchName=master)](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_build/latest?definitionId=1&branchName=master) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=FatturaElettronica/FatturaElettronica.NET)](https://dependabot.com)
+﻿# Fattura Elettronica per .NET 
+
+[![Build Status](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_apis/build/status/FatturaElettronica.FatturaElettronica.NET?branchName=master)](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_build/latest?definitionId=1&branchName=master) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=FatturaElettronica/FatturaElettronica.NET)](https://dependabot.com)
 
 ## Caratteristiche
 
@@ -7,7 +9,7 @@
 - Fatture elettroniche ordinarie.
 - Fatture elettroniche semplificate.
 - De/serializzazione JSON.
-- Supporto per [NET Standard v1.1][netstandard].
+- Compatibile con [NET Standard v1.1][netstandard].
 
 ## Installazione
 
@@ -133,7 +135,7 @@ namespace DemoApp
 }
 ```
 
-### Limitazioni
+## Limitazioni
 
 In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server.
 

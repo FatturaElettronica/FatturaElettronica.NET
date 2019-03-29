@@ -1,3 +1,1 @@
-# FatturaElettronica.NET
-
-Hic sunt leones.
+[!include[<Fattura Elettronica per .NET>](<../README.md>)]

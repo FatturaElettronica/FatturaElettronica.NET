@@ -1,1 +1,2 @@
-# [Getting Started](index.md)
+# [Introduzione](index.md)
+# [Changelog](changelog.md)
