@@ -2,8 +2,6 @@
 
 [![Build Status](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_apis/build/status/FatturaElettronica.FatturaElettronica.NET?branchName=master)](https://dev.azure.com/FatturaElettronicaNET/FatturaElettronica/_build/latest?definitionId=1&branchName=master) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=FatturaElettronica/FatturaElettronica.NET)](https://dependabot.com)
 
-Sito web e docs: https://fatturaelettronicaopensource.org/
-
 ## Caratteristiche
 
 - Lettura e scrittura nel formato XML conforme alle [specifiche tecniche ufficiali][pa].
@@ -34,11 +32,17 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 ## Licenza
 
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionali Amica][ga] rilasciato sotto licenza [BSD][bsd].
-Artwork by [Kalamun][rp]
+Artwork by [Kalamun][rp].
 
-## Limitazioni
+## Documentazione
 
-In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server.
+- [Sito web](https://fatturaelettronicaopensource.org/)
+
+## Estensioni
+
+Il progetto [FatturaElettronica.Extensions][fex] offre una serie di
+importanti extension methods, inclusi quelli per lettura e scrittura di
+fatture con firma digitale.
 
 [pa]: https://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/?page=ivacomimp
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt

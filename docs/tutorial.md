@@ -232,3 +232,7 @@ namespace DemoApp
     }
 }
 ```
+
+## Limitazioni
+
+In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server.
