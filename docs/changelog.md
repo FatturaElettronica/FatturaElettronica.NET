@@ -1,1 +1,1 @@
-[!include[<Changelog>](<../CHANGES.md>)]
+[!include[<Cronologia>](<../CHANGES.md>)]

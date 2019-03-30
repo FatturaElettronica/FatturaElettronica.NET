@@ -1,4 +1,5 @@
 # [Inroduzione](index.md)
 # [Guida all'uso](tutorial.md)
-# [Changelog](changelog.md)
+# [Domande frequenti](faq.md)
+# [Cronologia](changelog.md)
 # [API Reference](../../obj/api/FatturaElettronica/)
