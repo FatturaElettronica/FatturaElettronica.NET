@@ -4,6 +4,7 @@ Changelog
 In Development
 --------------
 
+- Docs: aggiunto folder `docs` con documentazione progetto.
 - Refactoring: classe Allegati spostata in FatturaElettronica.Common ([#179][179])
 
 [179]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/179
