@@ -2,26 +2,29 @@ Changelog
 =========
 
 In Development
-==============
+--------------
 
-- Refactoring: classe Allegati spostata in FatturaElettronica.Common (gminutillo). Closes #179.
+- Docs: aggiunto folder `docs` con documentazione progetto.
+- Refactoring: classe Allegati spostata in FatturaElettronica.Common ([#179][179])
+
+[179]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/179
 
 v2.0.2
-======
+------
 
 Released on March 19, 2019
 
 - Fix: il root node della fattura semplificata ha il namespace sbagliato. Addresses #176.
 
 v2.0.1
-======
+------
 
 Released on March 19, 2019
 
 - Fix: il root node della fattura semplificata ha il nome sbagliato. Closes #176.
 
 v2.0
-====
+----
 
 Released on March 13, 2019
 
@@ -43,14 +46,14 @@ Released on March 13, 2019
 - Switch CI da AppVeyor ad Azure Pipelines.
 
 v1.1.5
-=======
+-------
 
 Released on February 2, 2019
 
 - Fix: Tabella CausalePagamento aggiornata al 2019. Closes #151.
 
 v1.1.4
-=======
+-------
 
 Released on January 31, 2019
 
@@ -59,25 +62,25 @@ Released on January 31, 2019
 - README: aggiunto esempio di inserimento elemento Body. Addresses #141.
 
 v1.1.3
-======
+------
 
 Released on January 23, 2019
- 
+
 - New: nuovo logo per il progetto FatturaElettronica, by Roberto "Kalamun" Pasini. Closes 101.
 - Fix: Link obsoleto alle specifiche tecniche ufficiali. Closes #139.
 - Fix: ScontoMaggiorazione deve accettare Importo o Percentuale a 0. Addresses #136.
 - Fix: ScontoMaggiorazione non deve accettare Importo e Percentuale entrambi valorizzati. Addresses #136.
 
 v1.1.2
-======
- 
+------
+
 Released on January 21, 2019
 
 - Fix: Validazione ScontoMaggiorazione dovrebbe accettare Importo o Percentuale a 0. Closes #136.
 
 v1.1.1
-======
- 
+------
+
 Released on January 17, 2019
 
 - Fix: Tabella CausalePagamento completata coi nomi di ogni pagamento (Michael Mairegger). Pull #127.
@@ -87,8 +90,8 @@ Released on January 17, 2019
 - Bump FatturaElettronica.Core a 1.1.1.
 
 v1.1
-====
- 
+----
+
 Released on January 6, 2019
 
 - New: NetStandard 2.0 aggiunto ai target framework (Federico Dipuma). Closes #119.
@@ -98,37 +101,37 @@ Released on January 6, 2019
 - Fix: Small typos. Closes #116.
 
 v1.0.4
-======
- 
+------
+
 Released on January 2, 2019
 
 - Fix: Aggiunta "Sud Sardegna" alla lista provincie (Massimo Linossi). Pull #111.
 
 v1.0.3
-======
- 
+------
+
 Released on December 30, 2018
 
 - Fix: UnitaMisura è opzionale. Addresses #102.
 
 v1.0.2
-======
- 
+------
+
 Released on December 20, 2018.
 
 - Fix: Titolo e CodEORI ignorano ordinamento. Closes #103.
 - Fix: controllo UnitaMisura consente campo vuoto. Closes #102.
 
 v1.0.1
-======
- 
+------
+
 Released on November 9, 2018.
 
 - Bump: FatturaElettronica.Core to 1.0.
 
 v1.0
-====
- 
+----
+
 Released on November 9, 2018.
 
 - BREAKING: proprietà Fattura.Header rinominata in FatturaElettronicaHeader. Closes #83.
@@ -150,7 +153,7 @@ Released on November 9, 2018.
 - Bump: Microsoft.NET.Test.Sdk to 15.9.0.
 
 v0.9
-====
+----
 
 Released on October 26, 2018.
 
@@ -161,7 +164,7 @@ Released on October 26, 2018.
 - I test ora girano come app NetCore 2.1. Addresses FatturaElettronica/FatturaElettronica.Core#4.
 
 v0.8.5
-======
+------
 
 Released on October 16, 2018.
 
@@ -170,21 +173,21 @@ Released on October 16, 2018.
 - Fix: "Nullable object must have a value" in validazione di blocco ScontoMaggiorazione con Importo = 0. Closes #71.
 
 v0.8.4
-======
+------
 
 Released on October 4, 2018.
 
 - Upgrade: FluentValidation to v8.0.100.
 
 v0.8.3
-======
+------
 
 Released on October 2, 2018.
 
 - Fix: DettaglioLineeValidator: 00423 non supporta tolleranca di 1 centesimo. Closes #66.
 
 v0.8.2
-======
+------
 
 Released on October 1, 2018.
 
@@ -192,14 +195,14 @@ Released on October 1, 2018.
 - Cleanup and refactoring: use auto-properties; remove unnecessary usings.
 
 v0.8.1
-======
+------
 
 Rilasciata il 4.7.2018
 
 - Fix: errore lunghezza PECDestinatario in v0.8. Closes #58.
 
 v0.8
-====
+----
 
 Rilasciata il 3.7.2018
 
@@ -209,7 +212,7 @@ Rilasciata il 3.7.2018
 - Passata la test suite da NET461 a NETCore. Closes #57.
 
 v0.7
-====
+----
 
 Rilasciata il 4.10.2017
 
@@ -217,30 +220,30 @@ Rilasciata il 4.10.2017
 - Abbandonato il profilo PCL in favore di NetStandard 1.1.
 
 v0.6.3
-======
+------
 
 Rilasciata il 17.7.2017
 
-- Fix: RappresentanteFiscale viene erroneamente serializzato come 'Rappresentante' causando errore convalida 200 
+- Fix: RappresentanteFiscale viene erroneamente serializzato come 'Rappresentante' causando errore convalida 200
   da parte del sistema PA. Closes #49.
 - README: Aggiunta opzione IgnoreComments a XmlReader per evitare crash nel caso di commenti nel XML. Closes #45.
 
 v0.6.2
-======
+------
 
 Rilasciata il 23.5.2017.
 
 - Fix: Falso errore di convalida 00423 quando PrezzoTotale � valorizzato con piu di due decimali. Closes #45.
 
 v0.6.1
-======
+------
 
 Rilasciata il 5.5.2017.
 
 - Fix: Falso errore di convalida 00415 quando DatiCassaPrevidenziale � valorizzato ma non ha Ritenuta="SI". Closes #44.
 
 v0.6.0
-======
+------
 
 Rilasciata il 27.4.2017.
 
@@ -248,25 +251,25 @@ Rilasciata il 27.4.2017.
 - README: aggiunti esempi di introspezione e modifica degli elementi FatturaElettronicaBody. Closes #38.
 
 v0.5.1
-======
+------
 
 Rilasciata il 26.4.2017.
 
 - Fix: Errore 00421 non tiene conto della tolleranza garantita di 0.01 centesimi. Closes #43.
 
 v0.5.0
-======
+------
 
 Rilasciata il 30.3.2017.
 
 Questa versione recepisce le modifiche introdotte con la v1.2.1 delle specifiche tecniche PA.
 
-- Regime Fiscale RF03 � abrogato. Viene restituito errore 00459 se utilizzato. 
+- Regime Fiscale RF03 � abrogato. Viene restituito errore 00459 se utilizzato.
 - Natura N5: descrizione aggiornata a "regime del margine / IVA non esposta in fattura".
 - Le propriet� Codice e Nome della classe astratta Tabella non sono pi� protette in scrittura.
 
 v0.4.3
-======
+------
 
 Rilasciata il 23.3.2017.
 
@@ -274,15 +277,15 @@ Rilasciata il 23.3.2017.
 - Fix: Non includere il folder Artwork nel package NuGet. Closes #37.
 
 v0.4.2
-======
+------
 
 Rilascata il 17.3.2017.
 
-- Fix: Convalida DatiCassaPrevidenziale.Natura va fatta solo quando Aliquota uguale a 
+- Fix: Convalida DatiCassaPrevidenziale.Natura va fatta solo quando Aliquota uguale a
   zero. Closes #36.
 
 v0.4.1
-======
+------
 
 Rilasciata il 14.3.2017.
 
@@ -291,7 +294,7 @@ Rilasciata il 14.3.2017.
 - Aggiunto file .editconfig
 
 v0.4.0
-======
+------
 
 Rilasciata il 9.3.2017.
 
@@ -314,15 +317,15 @@ Rilasciata il 9.3.2017.
 - Consultare il README per esempi di codice aggiornati.
 
 v0.3.7
-======
+------
 
 Rilasciata il 7.3.2017.
 
-- Fix: Errore in convalida del campo Riferimento Testo: sono consentiti fino a 
-  60 caratteri. Closes #33.
+- Fix: Errore in convalida del campo Riferimento Testo: sono consentiti fino
+  a 60 caratteri. Closes #33.
 
 v0.3.6
-======
+------
 
 Rilasciata il 10.2.2017.
 
@@ -332,35 +335,29 @@ Rilasciata il 10.2.2017.
 - Fix: Correzione messaggio di errore per Divisa non corretta (Fabio Calvigioni).
 
 v0.3.5
-======
+------
 
 Rilasciata il 2.2.2017.
 
 - Fix: Crash con ScontoMaggiorazione.Importo non impostato (null). Closes #28.
 
 v0.3.4
-======
+------
 
 Rilasciata il 1.2.2017.
 
 - Fix: Crash quando ScontoMaggiorazione.Importo ha valore negativo. Closes #27.
 
 v0.3.3
-======
+------
 
 Rilasciata il 18.1.2017.
 
 - Fix: Consenti serializzazione di valori numerici fino a 5 decimali (minimo 2).
-
-v0.3.2
-======
-
-Non rilasciata.
-
 - Fix: Arrotonda valori numerici fino a 5 decimali (minimo 2).
 
 v0.3.2
-======
+------
 
 Rilasciata il 17.1.2017.
 
@@ -369,7 +366,7 @@ Rilasciata il 17.1.2017.
 - Fix: Convalida errore 00423 nel caso di campo Quantit� a null. Closes #20.
 
 v0.3.1
-======
+------
 
 Rilasciata il 16.1.2017.
 
@@ -377,12 +374,13 @@ Rilasciata il 16.1.2017.
 - New: aggiunta propriet� Descrizione alla classe FormatoTrasmissione
 
 v0.3
-=====
+-----
 
 Rilasciata il 13.1.2017
 
 BREAKING CHANGES
 ----------------
+
 Questa release introduce una serie di cambianti importanti che rompono la
 compatibilit� con l'API precedente.
 
@@ -397,6 +395,7 @@ compatibilit� con l'API precedente.
 
 Altre modifiche
 ---------------
+
 - New: attributo xmlns:ds nel root elemento del documento xml.
 - New: attributo xmlns:xsi nel root elemento del documento xml.
 - New: attributo xsi:schemaLocation nel root elemento del documento xml.
@@ -411,7 +410,7 @@ Altre modifiche
 - Aggiunta la test suite. Mancano test delle convalide implementate prima della v0.3.
 
 v0.2.6
-======
+------
 
 Rilasciata il 13.1.2017
 
@@ -419,7 +418,7 @@ Rilasciata il 13.1.2017
 - Scaricare e installare il package FatturaElettronica v0.3 e successivi da ora in poi.
 
 v0.2.5
-======
+------
 
 Rilasciata il 17.6.2016
 
@@ -427,21 +426,21 @@ Rilasciata il 17.6.2016
   decimale. Closes #19.
 
 v0.2.4
-======
+------
 
 Rilasciata il 25.5.2016
 
 - Fix: Validazione 00423: calcolo in base a percentuale sconto. Closes #18.
 
 v0.2.3
-======
+------
 
 Rilasciata il 24.5.2016
 
 - Fix: Serializzare valori decimali con piu' di 2 decimali.
 
 v0.2.2
-======
+------
 
 Rilasciata il 24.5.2016
 
@@ -450,7 +449,7 @@ Rilasciata il 24.5.2016
 - Fix: Errore 00424 non consente aliquota IVA impostata al valore 1.
 
 v0.2.1
-======
+------
 
 Rilasciata il 23.5.2016
 
@@ -458,7 +457,7 @@ Rilasciata il 23.5.2016
   aggiornate.
 
 v0.2
-====
+----
 
 Rilasciata il 20.5.2016
 
@@ -472,14 +471,14 @@ Rilasciata il 20.5.2016
 - New: Errore 00425 aggiunto alla convalida. Addresses #16.
 
 v0.1.8
-======
+------
 
 Rilasciata il 24.8.2015
 
 - Fix: 2.1.8.3 RiferimentoNumeroLinea in deserializzazione manda applicazione in loop. Closes #14.
 
 v0.1.7
-======
+------
 
 Rilasciata il 7.8.2015
 
@@ -488,7 +487,7 @@ Rilasciata il 7.8.2015
 - Upgrade to BusinessObjects v0.1.4
 
 v0.1.6
-======
+------
 
 Rilasciata il 31.7.2015
 
@@ -497,14 +496,14 @@ Rilasciata il 31.7.2015
 - Fix: 2.1.2.1 RiferimentoNumeroLinea non gestito come lista 0..N, ma come valore singolo.
 - Fix: 2.1.2.1 RiferimentoNumeroLinea in deserializzazione si ha errore conversione Nullable. Closes #9.
 - Fix: 2.1.1.11 Causale. Se sono presenti 2+ righe allora il codice va in loop. Closes #8.
-- Fix: Crash in deserializzazione di tag XML vuoti (es: <ContattiTrasmittente />). Closes #7.
+- Fix: Crash in deserializzazione di tag XML vuoti (es: `<ContattiTrasmittente />`). Closes #7.
 - Fix: 2.1.9.13 DataOraConsegna serializza a MinValue quando non valorizzato. Closes #10.
 - Fix: 2.2.1.16.4 RiferimentoData serializza a MinValue quando non valorizzato.
 - Fix: 2.4.2.5 DataScadenzaPagamento serializza a MinValue quando non valorizzato. Closes #10.
 - Fix: 2.4.2.18 DataLimitePagamentoAnticipato � di tipo errato (decimal? invece di DateTime?).
 
 v0.1.5
-======
+------
 
 Rilasciata il 15.7.2015
 
@@ -512,7 +511,7 @@ Rilasciata il 15.7.2015
 - Fix: 2.4.2.2 ModalitaPagamento: non veniva convalidato valore MP05.
 
 v0.1.4
-======
+------
 
 Rilasciata il 14.7.2015
 
@@ -520,7 +519,7 @@ Rilasciata il 14.7.2015
 - Fix: Convalida di FatturaElettronicaBody. Chiude #4.
 
 v0.1.3
-======
+------
 
 Rilasciata il 7.4.2015
 
@@ -529,7 +528,7 @@ Rilasciata il 7.4.2015
 - Fix: ReadXML crash su valori Decimal?
 
 v0.1.2
-======
+------
 
 Rilasciata il 16.2.2015
 
@@ -538,14 +537,14 @@ Rilasciata il 16.2.2015
 - Supporto per valore RF19 per campo RegimeFiscale.
 
 v0.1.1
-======
+------
 
 Rilasciata il 16.2.2015
 
 - Supporto per Split Payment.
 
 v0.1
-====
+----
 
 Rilasciata il 9.2.2015
 
