@@ -4,9 +4,11 @@ Changelog
 In Development
 --------------
 
+- Fix: errore validazione DettaglioLinee.TotalPrice ([#181](181))
 - Docs: aggiunto folder `docs` con documentazione progetto.
 - Refactoring: classe Allegati spostata in FatturaElettronica.Common ([#179][179])
 
+[181]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/181
 [179]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/179
 
 v2.0.2
