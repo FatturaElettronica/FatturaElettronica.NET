@@ -4,6 +4,11 @@ Changelog
 In Development
 --------------
 
+v2.0.3
+------
+
+Released on April 8, 2019
+
 - Fix: errore validazione DettaglioLinee.TotalPrice ([#181][181])
 - Refactoring: classe Allegati spostata in FatturaElettronica.Common ([#179][179])
 - Docs: aggiunto folder `docs` con documentazione progetto.
