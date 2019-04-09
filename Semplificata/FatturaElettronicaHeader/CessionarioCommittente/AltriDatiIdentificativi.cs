@@ -7,7 +7,6 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCo
     /// <summary>
     /// Altri dati identificativi del cessionario / committente.
     /// </summary>
-    /// <seealso cref="FatturaElettronica.Common.BaseClassSerializable" />
     public class AltriDatiIdentificativi : BaseClassSerializable
     {
         /// <summary>
@@ -25,7 +24,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCo
         /// Numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ed i restanti il codice
         /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
         /// </summary>
-        
+
         /// <summary>
         /// Gets or sets the Denominazione.
         /// </summary>

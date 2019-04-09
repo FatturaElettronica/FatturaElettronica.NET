@@ -6,7 +6,6 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
     /// <summary>
     /// Dati relativi all'imposta sul valore aggiunto.
     /// </summary>
-    /// <seealso cref="FatturaElettronica.Common.BaseClassSerializable" />
     public class DatiIVA : BaseClassSerializable
     {
         /// <summary>

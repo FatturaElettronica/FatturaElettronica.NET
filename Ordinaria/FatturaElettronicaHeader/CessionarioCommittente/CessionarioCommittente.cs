@@ -44,7 +44,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommi
         public StabileOrganizzazione StabileOrganizzazione { get; set; }
 
         /// <summary>
-        /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 <FormatoTrasmissione> = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
+        /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 FormatoTrasmissione = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
         /// </summary>
         [DataProperty]
         public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { get; set; }

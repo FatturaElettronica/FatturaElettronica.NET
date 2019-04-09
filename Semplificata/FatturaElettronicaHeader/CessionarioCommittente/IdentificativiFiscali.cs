@@ -2,11 +2,10 @@
 using FatturaElettronica.Common;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
-{   
+{
     /// <summary>
     /// Identificativi fiscali del cessionario/commitente
     /// </summary>
-    /// <seealso cref="FatturaElettronica.Common.BaseClassSerializable" />
     public class IdentificativiFiscali : BaseClassSerializable
     {
         /// <summary>
