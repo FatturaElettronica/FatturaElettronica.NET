@@ -1,16 +1,19 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 using FluentValidation;
 using FluentValidation.Validators;
 
 namespace FatturaElettronica.Validators
 {
+
     public abstract class LatinBaseValidator<T> : PropertyValidator
     {
         private readonly Charsets _charset;
 
-
         public LatinBaseValidator(Charsets charset)
-            : base($"Testo contenente caratteri non validi ({(charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")})")
+            : base($"Testo contenente caratteri non validi ({(charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")}). valori non accettati: {{NonLatinCode}}")
         {
             _charset = charset;
         }
@@ -29,6 +32,38 @@ namespace FatturaElettronica.Validators
                     break;
             }
             return Regex.Match(context.PropertyValue.ToString(), challenge).Success;
+        }
+
+        protected override void PrepareMessageFormatterForValidationError(PropertyValidatorContext context)
+        {
+            base.PrepareMessageFormatterForValidationError(context);
+
+            var invalidLetters = new HashSet<char>();
+            if (context.PropertyValue != null)
+            {
+                foreach (var letter in context.PropertyValue.ToString())
+                {
+                    int upperLimit;
+                    switch (_charset)
+                    {
+                        case Charsets.BasicLatin:
+                            upperLimit = 0x7F;
+                            break;
+                        case Charsets.Latin1Supplement:
+                            upperLimit = 0xFF;
+                            break;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+
+                    if (letter > upperLimit)
+                    {
+                        invalidLetters.Add(letter);
+                    }
+                }
+            }
+            
+            context.MessageFormatter.AppendArgument("NonLatinCode", new string(invalidLetters.ToArray()));
         }
     }
 
