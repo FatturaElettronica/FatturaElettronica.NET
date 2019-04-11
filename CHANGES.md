@@ -4,8 +4,10 @@ Changelog
 In Development
 --------------
 
+- Aggiunto badge NuGet al README ([#188][188])
 - `LatinBaseValidator` ora indica quali sono i caratteri non accettati ([#185][185]).
 
+[188]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/188
 [185]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/185
 
 v2.0.3
