@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
--hic sunt leones
+- hic sunt leones
 
 v2.0.4
 ------
