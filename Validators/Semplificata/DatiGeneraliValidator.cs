@@ -15,7 +15,7 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.DatiFatturaRettificata.DataFR)
                 .Must((datigenerali, data) =>
                 {
-                    return datigenerali.DatiGeneraliDocumento.Data < data;
+                    return datigenerali.DatiGeneraliDocumento.Data >= data;
                 })
             .WithMessage("Data antecedente a data fattura rettificata")
             .WithErrorCode("00418")
