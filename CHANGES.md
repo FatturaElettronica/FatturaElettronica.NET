@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+-hic sunt leones
+
+v2.0.4
+------
+
+Released on April 16, 2019
+
 - Fix: falso errore 00418 "Data antecedente a data fattura rettificata" ([#190][190])
 - Aggiunto badge NuGet al README ([#188][188])
 - `LatinBaseValidator` ora indica quali sono i caratteri non accettati ([#185][185]).
