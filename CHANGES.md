@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones.
+
+v2.0.5
+------
+
+Released on April 23, 2019
+
 - Fix: validatore CausalePagamento da aggiornare per unico 2019 ([#191][191])
 - Test refactoring and cleanup.
 
