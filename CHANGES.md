@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Fix: validatore CausalePagamento da aggiornare per unico 2019 ([#191][191])
+
+[191]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/191
 
 v2.0.4
 ------
