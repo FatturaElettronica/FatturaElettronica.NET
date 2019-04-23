@@ -72,11 +72,5 @@ namespace Ordinaria.Tests
             challenge.CodiceDestinatario = new string('0', 7);
             AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
         }
-        [TestMethod]
-        public void test()
-        {
-            challenge.ContattiTrasmittente = null;
-            var result = validator.Validate(challenge);
-        }
     }
 }

@@ -5,6 +5,7 @@ In Development
 --------------
 
 - Fix: validatore CausalePagamento da aggiornare per unico 2019 ([#191][191])
+- Test refactoring and cleanup.
 
 [191]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/191
 
@@ -15,7 +16,7 @@ Released on April 16, 2019
 
 - Fix: falso errore 00418 "Data antecedente a data fattura rettificata" ([#190][190])
 - Aggiunto badge NuGet al README ([#188][188])
-- `LatinBaseValidator` ora indica quali sono i caratteri non accettati ([#185][185]).
+- `LatinBaseValidator` ora indica quali sono i caratteri non accettati ([#185][185])
 
 [190]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/190
 [188]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/188

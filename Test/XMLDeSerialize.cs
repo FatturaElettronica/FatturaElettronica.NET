@@ -64,7 +64,6 @@
         private FatturaOrdinaria Deserialize(string fileName)
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            var s = new XmlReaderSettings { IgnoreWhitespace = true };
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
                 f.ReadXml(r);

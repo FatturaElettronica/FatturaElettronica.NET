@@ -69,7 +69,6 @@ namespace Tests
             }
 
             prop.SetValue(challenge, null);
-            var r = validator.Validate(challenge);
             validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
 
             if (typeof(T) == typeof(string))
@@ -97,7 +96,6 @@ namespace Tests
         protected void AssertLength(Expression<Func<TClass, string>> outExpr, int length, char filler = 'x', string expectedErrorCode = "ExactLengthValidator")
         {
             var prop = GetProperty(outExpr);
-            var r = validator.Validate(challenge);
 
             prop.SetValue(challenge, new string(filler, length + 1));
             validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
@@ -111,7 +109,6 @@ namespace Tests
             var prop = GetProperty(outExpr);
 
             prop.SetValue(challenge, "hello");
-            var r = validator.Validate(challenge);
             validator.ShouldHaveValidationErrorFor(outExpr, challenge).WithErrorCode(expectedErrorCode);
 
             foreach (var codice in new T().Codici)

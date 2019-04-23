@@ -48,7 +48,6 @@ namespace Semplificata.Tests
         private FatturaSemplificata Deserialize(string fileName)
         {
             var f = FatturaSemplificata.CreateInstance(Instance.Semplificata);
-            var s = new XmlReaderSettings { IgnoreWhitespace = true };
             using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
             {
                 f.ReadXml(r);
