@@ -75,14 +75,16 @@ namespace Semplificata.Tests
             validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, challenge);
         }
         [TestMethod]
+        [System.Obsolete]
         public void SedeHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.Semplificata.SedeCessionarioCommittenteValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void StabileOrganizzazioneHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.Semplificata.StabileOrganizzazioneValidator));
+            validator.ShouldHaveChildValidator(x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.Semplificata.StabileOrganizzazioneValidator));
         }
     }
 }

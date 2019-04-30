@@ -13,6 +13,7 @@ namespace Ordinaria.Tests
          : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.DatiTrasmissioneValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdTrasmittenteHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdTrasmittente, typeof(FatturaElettronica.Validators.IdTrasmittenteValidator));
@@ -23,9 +24,10 @@ namespace Ordinaria.Tests
             AssertRequired(x => x.ProgressivoInvio);
         }
         [TestMethod]
+        [System.Obsolete]
         public void ContattiTrasmittenteHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.ContattiTrasmittente, typeof(FatturaElettronica.Validators.ContattiTrasmittenteValidator));
+            validator.ShouldHaveChildValidator(x => x.ContattiTrasmittente, typeof(FatturaElettronica.Validators.ContattiTrasmittenteValidator));
         }
         [TestMethod]
         public void ProgressivoInvioMinMaxLength()

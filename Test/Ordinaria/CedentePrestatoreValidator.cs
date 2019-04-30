@@ -11,30 +11,35 @@ namespace Ordinaria.Tests
         : BaseClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void DatiAnagraficiHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void SedeHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.SedeCedentePrestatoreValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void StabileOrganizzazioneHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(
+            validator.ShouldHaveChildValidator(
                 x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.StabileOrganizzazioneValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void IscrizioneREAHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.IscrizioneREAValidator));
+            validator.ShouldHaveChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.IscrizioneREAValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void ContattiHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
+            validator.ShouldHaveChildValidator(x => x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
         }
         [TestMethod]
         public void RiferimentoAmministrazioneMinMaxLength()

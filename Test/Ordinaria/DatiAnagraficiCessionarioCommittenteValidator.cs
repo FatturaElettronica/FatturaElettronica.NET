@@ -12,9 +12,10 @@ namespace Ordinaria.Tests
             FatturaElettronica.Validators.DatiAnagraficiCessionarioCommittenteValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdFiscaleIVAHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IdFiscaleIVA,
+            validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA,
                 typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
         }
         [TestMethod]
@@ -29,6 +30,7 @@ namespace Ordinaria.Tests
             AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
         }
         [TestMethod]
+        [System.Obsolete]
         public void AnagraficaHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Anagrafica,

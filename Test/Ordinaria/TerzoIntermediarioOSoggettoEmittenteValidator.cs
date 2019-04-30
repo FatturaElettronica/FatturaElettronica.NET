@@ -10,6 +10,7 @@ namespace Ordinaria.Tests
         BaseClass<TerzoIntermediarioOSoggettoEmittente, FatturaElettronica.Validators.TerzoIntermediarioOSoggettoEmittenteValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void DatiAnagraficiHasDelegateChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiTerzoIntermediarioValidator));

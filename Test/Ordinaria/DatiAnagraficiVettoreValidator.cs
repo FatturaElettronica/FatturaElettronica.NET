@@ -8,6 +8,7 @@ namespace Tests
     public class DatiAnagraficiVettoreValidator : BaseClass<DatiAnagraficiVettore, FatturaElettronica.Validators.DatiAnagraficiVettoreValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdFiscaleIVAHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
@@ -23,6 +24,7 @@ namespace Tests
             AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
         }
         [TestMethod]
+        [System.Obsolete]
         public void AnagraficaHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Anagrafica, typeof(FatturaElettronica.Validators.AnagraficaValidator));

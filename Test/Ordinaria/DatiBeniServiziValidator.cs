@@ -11,6 +11,7 @@ namespace Ordinaria.Tests
         : BaseClass<DatiBeniServizi, FatturaElettronica.Validators.DatiBeniServiziValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void DettaglioLineeHasCollectionValidator()
         {
             validator.ShouldHaveChildValidator(
@@ -27,6 +28,7 @@ namespace Ordinaria.Tests
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioLinee"));
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiRiepilogoCollectionValidator()
         {
             validator.ShouldHaveChildValidator(

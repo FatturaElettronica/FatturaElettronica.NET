@@ -11,12 +11,14 @@ namespace Semplificata.Tests
         : BaseClass<FatturaElettronicaBody, FatturaElettronica.Validators.Semplificata.FatturaElettronicaBodyValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void DatiGeneraliHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
                 x => x.DatiGenerali, typeof(FatturaElettronica.Validators.Semplificata.DatiGeneraliValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiBeniServiziHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
@@ -29,6 +31,7 @@ namespace Semplificata.Tests
             Assert.AreEqual("DatiBeniServizi è obbligatorio", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi").ErrorMessage);
         }
         [TestMethod]
+        [System.Obsolete]
         public void AllegatiHasChildValidator()
         {
             validator.ShouldHaveChildValidator(

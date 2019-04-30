@@ -5,10 +5,11 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Semplificata.Tests
 {
-   [TestClass]
+    [TestClass]
     public class CessionarioCommittenteValidator : BaseClass<CessionarioCommittente, FatturaElettronica.Validators.Semplificata.CessionarioCommittenteValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdentificativiFiscaliHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdentificativiFiscali, typeof(FatturaElettronica.Validators.Semplificata.IdentificativiFiscaliValidator));
@@ -21,6 +22,7 @@ namespace Semplificata.Tests
             AssertRequired(x => x.IdentificativiFiscali, expectedErrorCode: "00431");
         }
         [TestMethod]
+        [System.Obsolete]
         public void AltriDatiIdentificativiHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.AltriDatiIdentificativi, typeof(FatturaElettronica.Validators.Semplificata.AltriDatiIdentificativiValidator));

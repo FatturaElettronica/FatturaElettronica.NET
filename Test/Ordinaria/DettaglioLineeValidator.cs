@@ -20,6 +20,7 @@ namespace Ordinaria.Tests
             AssertOnlyAcceptsTableValues<TipoCessionePrestazione>(x => x.TipoCessionePrestazione);
         }
         [TestMethod]
+        [System.Obsolete]
         public void CodiceArticoloHasCollectionValidator()
         {
             validator.ShouldHaveChildValidator(x => x.CodiceArticolo, typeof(FatturaElettronica.Validators.CodiceArticoloValidator));
@@ -60,6 +61,7 @@ namespace Ordinaria.Tests
             AssertMustBeBasicLatin(x => x.UnitaMisura);
         }
         [TestMethod]
+        [System.Obsolete]
         public void ScontoMaggioazioneHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.ScontoMaggiorazione, typeof(FatturaElettronica.Validators.ScontoMaggiorazioneValidator));
@@ -223,6 +225,7 @@ namespace Ordinaria.Tests
             AssertMustBeBasicLatin(x => x.RiferimentoAmministrazione);
         }
         [TestMethod]
+        [System.Obsolete]
         public void AltriDatiGestionaliHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.AltriDatiGestionali, typeof(FatturaElettronica.Validators.AltriDatiGestionaliValidator));

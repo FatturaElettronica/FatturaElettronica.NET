@@ -6,11 +6,12 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Semplificata.Tests
 {
-   [TestClass]
+    [TestClass]
     public class DatiTrasmissioneValidator
-        : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.Semplificata.DatiTrasmissioneValidator>
+         : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.Semplificata.DatiTrasmissioneValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdTrasmittenteHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdTrasmittente, typeof(FatturaElettronica.Validators.IdTrasmittenteValidator));

@@ -6,12 +6,13 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ordinaria.Tests
 {
-   [TestClass]
+    [TestClass]
     public class DatiAnagraficiCedentePrestatoreValidator
-        : BaseClass<DatiAnagraficiCedentePrestatore,
-            FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator>
+         : BaseClass<DatiAnagraficiCedentePrestatore,
+             FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdFiscaleIVAHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
@@ -27,6 +28,7 @@ namespace Ordinaria.Tests
             AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
         }
         [TestMethod]
+        [System.Obsolete]
         public void AnagraficaHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Anagrafica, typeof(FatturaElettronica.Validators.AnagraficaValidator));

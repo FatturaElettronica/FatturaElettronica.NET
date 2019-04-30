@@ -9,17 +9,19 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Ordinaria.Tests
 {
-   [TestClass]
+    [TestClass]
     public class FatturaElettronicaBodyValidator
-        : BaseClass<FatturaElettronicaBody, FatturaElettronica.Validators.FatturaElettronicaBodyValidator>
+         : BaseClass<FatturaElettronicaBody, FatturaElettronica.Validators.FatturaElettronicaBodyValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void DatiGeneraliHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
                 x => x.DatiGenerali, typeof(FatturaElettronica.Validators.DatiGeneraliValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiBeniServiziHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
@@ -74,18 +76,21 @@ namespace Ordinaria.Tests
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi.DatiRiepilogo"));
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiVeicoliHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
                 x => x.DatiGenerali, typeof(FatturaElettronica.Validators.DatiGeneraliValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiPagamentoHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
                 x => x.DatiPagamento, typeof(FatturaElettronica.Validators.DatiPagamentoValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void AllegatiHasChildValidator()
         {
             validator.ShouldHaveChildValidator(

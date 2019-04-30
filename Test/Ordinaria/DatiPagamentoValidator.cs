@@ -21,6 +21,7 @@ namespace Ordinaria.Tests
             AssertOnlyAcceptsTableValues<CondizioniPagamento>(x => x.CondizioniPagamento);
         }
         [TestMethod]
+        [System.Obsolete]
         public void DettaglioPagamentoHasChildValidator()
         {
             validator.ShouldHaveChildValidator(

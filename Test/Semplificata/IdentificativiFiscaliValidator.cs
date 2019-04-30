@@ -10,6 +10,7 @@ namespace Semplificata.Tests
     public class IdentificativiFiscaliValidator : BaseClass<IdentificativiFiscali, FatturaElettronica.Validators.Semplificata.IdentificativiFiscaliValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdFiscaleIVAHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));

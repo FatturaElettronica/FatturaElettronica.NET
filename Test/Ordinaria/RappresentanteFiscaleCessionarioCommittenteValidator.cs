@@ -10,6 +10,7 @@ namespace Ordinaria.Tests
         : DenominazioneNomeCognomeValidator<RappresentanteFiscaleCessionarioCommittente, FatturaElettronica.Validators.RappresentanteFiscaleCessionarioCommittenteValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdFiscaleIVAHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));

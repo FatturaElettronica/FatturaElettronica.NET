@@ -11,9 +11,10 @@ namespace Ordinaria.Tests
         : BaseClass<DatiTrasporto, FatturaElettronica.Validators.DatiTrasportoValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void DatiAnagraficiVettoreHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(
+            validator.ShouldHaveChildValidator(
                 x => x.DatiAnagraficiVettore, typeof(FatturaElettronica.Validators.DatiAnagraficiVettoreValidator));
         }
         [TestMethod]
@@ -87,9 +88,10 @@ namespace Ordinaria.Tests
             AssertOnlyAcceptsTableValues<TipoResa>(x => x.TipoResa);
         }
         [TestMethod]
+        [System.Obsolete]
         public void IndirizzoResaHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IndirizzoResa, typeof(FatturaElettronica.Validators.IndirizzoResaValidator));
+            validator.ShouldHaveChildValidator(x => x.IndirizzoResa, typeof(FatturaElettronica.Validators.IndirizzoResaValidator));
         }
         [TestMethod]
         public void PesoNettoMaxValue()

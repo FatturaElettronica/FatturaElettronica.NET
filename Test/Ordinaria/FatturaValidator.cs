@@ -16,12 +16,14 @@ namespace Ordinaria.Tests
         }
 
         [TestMethod]
+        [System.Obsolete]
         public void FatturaElettronicaHeaderHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
                 x => x.FatturaElettronicaHeader, typeof(FatturaElettronica.Validators.FatturaElettronicaHeaderValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void FatturaElettronicaBodyHasChildValidator()
         {
             validator.ShouldHaveChildValidator(

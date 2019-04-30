@@ -11,6 +11,7 @@ namespace Semplificata.Tests
         : BaseClass<CedentePrestatore, FatturaElettronica.Validators.Semplificata.CedentePrestatoreValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void IdFiscaleIVAHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
@@ -92,20 +93,23 @@ namespace Semplificata.Tests
             validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, challenge);
         }
         [TestMethod]
+        [System.Obsolete]
         public void SedeHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.Semplificata.SedeCedentePrestatoreValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void StabileOrganizzazioneHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(
+            validator.ShouldHaveChildValidator(
                 x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.Semplificata.StabileOrganizzazioneValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void IscrizioneREAHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.Semplificata.IscrizioneREAValidator));
+            validator.ShouldHaveChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.Semplificata.IscrizioneREAValidator));
         }
         [TestMethod]
         public void RegimeFiscaleIsRequired()

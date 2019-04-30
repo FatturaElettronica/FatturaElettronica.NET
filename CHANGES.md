@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Bump FluentValidation to 8.3.0.
 
 v2.0.5
 ------

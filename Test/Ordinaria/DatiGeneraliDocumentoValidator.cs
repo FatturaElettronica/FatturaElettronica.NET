@@ -40,7 +40,7 @@ namespace Ordinaria.Tests
         [TestMethod]
         public void NumeroMinMaxLength()
         {
-            AssertMinMaxLength(x => x.Numero, 1, 20, filler:'1');
+            AssertMinMaxLength(x => x.Numero, 1, 20, filler: '1');
         }
         [TestMethod]
         public void NumeroMustBeBasicLatin()
@@ -56,21 +56,25 @@ namespace Ordinaria.Tests
             validator.ShouldNotHaveValidationErrorFor(x => x.Numero, challenge);
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiRitenutaHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
+            validator.ShouldHaveChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiBolloHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiBollo, typeof(FatturaElettronica.Validators.DatiBolloValidator));
+            validator.ShouldHaveChildValidator(x => x.DatiBollo, typeof(FatturaElettronica.Validators.DatiBolloValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void DatiCassaPrevidenzialeHasCollectionValidator()
         {
             validator.ShouldHaveChildValidator(x => x.DatiCassaPrevidenziale, typeof(FatturaElettronica.Validators.DatiCassaPrevidenzialeValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void ScontoMaggiorazioneHasCollectionValidator()
         {
             validator.ShouldHaveChildValidator(x => x.ScontoMaggiorazione, typeof(FatturaElettronica.Validators.ScontoMaggiorazioneValidator));
@@ -88,11 +92,12 @@ namespace Ordinaria.Tests
 
             // test che falso errore di convalida sia risolto. Vedi:
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/44
-            challenge.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale { TipoCassa = "TC20", AlCassa=4, ImportoContributoCassa=46.56m, Natura="N5" });
+            challenge.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale { TipoCassa = "TC20", AlCassa = 4, ImportoContributoCassa = 46.56m, Natura = "N5" });
             r = validator.Validate(challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale"));
         }
         [TestMethod]
+        [System.Obsolete]
         public void CausaleHasCollectionValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Causale, typeof(CausaleValidator));

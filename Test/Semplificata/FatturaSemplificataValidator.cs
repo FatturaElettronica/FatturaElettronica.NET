@@ -16,12 +16,14 @@ namespace Semplificata.Tests
         }
 
         [TestMethod]
+        [System.Obsolete]
         public void FatturaElettronicaHeaderHasChildValidator()
         {
             validator.ShouldHaveChildValidator(
                 x => x.FatturaElettronicaHeader, typeof(FatturaElettronica.Validators.Semplificata.FatturaElettronicaHeaderValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void FatturaElettronicaBodyHasChildValidator()
         {
             validator.ShouldHaveChildValidator(

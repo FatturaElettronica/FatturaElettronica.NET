@@ -10,25 +10,29 @@ namespace Ordinaria.Tests
         : BaseClass<CessionarioCommittente, FatturaElettronica.Validators.CessionarioCommittenteValidator>
     {
         [TestMethod]
+        [System.Obsolete]
         public void DatiAnagraficiHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiCessionarioCommittenteValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void SedeHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.SedeCessionarioCommittenteValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void StabileOrganizzazioneHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(
+            validator.ShouldHaveChildValidator(
                 x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.StabileOrganizzazioneValidator));
         }
         [TestMethod]
+        [System.Obsolete]
         public void RappresentateFiscaleHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(
+            validator.ShouldHaveChildValidator(
                 x => x.RappresentanteFiscale, typeof(FatturaElettronica.Validators.RappresentanteFiscaleCessionarioCommittenteValidator));
         }
     }
