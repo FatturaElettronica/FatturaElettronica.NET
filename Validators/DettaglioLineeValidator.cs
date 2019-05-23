@@ -20,8 +20,7 @@ namespace FatturaElettronica.Validators
                 .Latin1SupplementValidator();
             RuleFor(x => x.UnitaMisura)
                 .Length(1, 10)
-                .BasicLatinValidator()
-                .When(x => !string.IsNullOrEmpty(x.UnitaMisura));
+                .BasicLatinValidator();
             RuleForEach(x => x.ScontoMaggiorazione)
                 .SetValidator(new ScontoMaggiorazioneValidator());
             RuleFor(x => x.PrezzoTotale)
