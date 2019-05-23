@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: CausalePagamento: ZO e M2 sostituiti rispettivamente da Z e M ([#191][191])
 
 v2.0.5
 ------

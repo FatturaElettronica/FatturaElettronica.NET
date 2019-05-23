@@ -22,7 +22,6 @@
                     new CausalePagamento{ Codice = "L1", Nome = "redditi derivanti dall’utilizzazione economica di opere dell’ingegno, di brevetti industriali e di processi, formule e informazioni relativi a esperienze acquisite in campo industriale, commerciale o scientifico, che sono percepiti da soggetti che abbiano acquistato a titolo oneroso i diritti alla loro utilizzazione"},
                     new CausalePagamento{ Codice = "M", Nome = "prestazioni di lavoro autonomo non esercitate abitualmente"},
                     new CausalePagamento{ Codice = "M1", Nome = "redditi derivanti dall’assunzione di obblighi di fare, di non fare o permettere"},
-                    new CausalePagamento{ Codice = "M2", Nome = "prestazioni di lavoro autonomo non esercitate abitualmente per le quali sussiste l’obbligo di iscrizione alla Gestione Separata ENPAPI"},
                     new CausalePagamento{ Codice = "N", Nome = "indennità di trasferta, rimborso forfetario di spese, premi e compensi erogati: – nell’esercizio diretto di attività sportive dilettantistiche; – in relazione a rapporti di collaborazione coordinata e continuativa di carattere amministrativo-gestionale di natura non professionale resi a favore di società e associazioni sportive dilettantistiche e di cori, bande e filodrammatiche da parte del direttore e dei collaboratori tecnici"},
                     new CausalePagamento{ Codice = "O", Nome = "prestazioni di lavoro autonomo non esercitate abitualmente, per le quali non sussiste l’obbligo di iscrizione alla gestione separata (Circ. INPS n. 104/2001)"},
                     new CausalePagamento{ Codice = "O1", Nome = "redditi derivanti dall’assunzione di obblighi di fare, di non fare o permettere, per le quali non sussiste l’obbligo di iscrizione alla gestione separata (Circ. INPS n. 104/2001)"},
@@ -38,7 +37,12 @@
                     new CausalePagamento{ Codice = "W", Nome = "corrispettivi erogati nel 2017 per prestazioni relative a contratti d’appalto cui si sono resi applicabili le disposizioni contenute nell’art. 25-ter del D.P.R. n. 600 del 29 settembre 1973"},
                     new CausalePagamento{ Codice = "X", Nome = "canoni corrisposti nel 2004 da società o enti residenti ovvero da stabili organizzazioni di società estere di cui all’art. 26-quater, comma 1, lett. a) e b) del D.P.R. 600 del 29 settembre 1973, a società o stabili organizzazioni di società, situate in altro stato membro dell’Unione Europea in presenza dei requisiti di cui al citato art. 26-quater, del D.P.R. 600 del 29 settembre 1973, per i quali è stato effettuato, nell’anno 2006, il rimborso della ritenuta ai sensi dell’art. 4 del D.Lgs. 30 maggio 2005 n. 143"},
                     new CausalePagamento{ Codice = "Y", Nome = "canoni corrisposti dal 1° gennaio 2005 al 26 luglio 2005 da società o enti residenti ovvero da stabili organizzazioni di società estere di cui all’art. 26-quater, comma 1, lett. a) e b) del D.P.R. n. 600 del 29 settembre 1973, a società o stabili organizzazioni di società, situate in altro stato membro dell’Unione Europea in presenza dei requisiti di cui al citato art. 26-quater, del D.P.R. n. 600 del 29 settembre 1973, per i quali è stato effettuato, nell’anno 2006, il rimborso della ritenuta ai sensi dell’art. 4 del D.Lgs. 30 maggio 2005 n. 143"},
-                    new CausalePagamento{ Codice = "ZO", Nome = "titolo diverso dai precedenti"},
+
+                    // Vedi https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/191#issuecomment-493911791
+                    new CausalePagamento{ Codice = "Z", Nome = "titolo diverso dai precedenti"},
+                    new CausalePagamento{ Codice = "M", Nome = "prestazioni di lavoro autonomo non esercitate abitualmente per le quali sussiste l’obbligo di iscrizione alla Gestione Separata ENPAPI"},
+                    // new CausalePagamento{ Codice = "ZO", Nome = "titolo diverso dai precedenti"},
+                    // new CausalePagamento{ Codice = "M2", Nome = "prestazioni di lavoro autonomo non esercitate abitualmente per le quali sussiste l’obbligo di iscrizione alla Gestione Separata ENPAPI"},
                 };
             }
         }
