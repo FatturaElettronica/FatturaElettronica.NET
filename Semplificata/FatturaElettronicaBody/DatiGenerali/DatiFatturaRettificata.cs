@@ -21,7 +21,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
-        
+
         /// <summary>
         /// Numero progressivo della fattura rettificata.
         /// </summary>
@@ -32,7 +32,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
         /// Data della fattura rettificata.
         /// </summary>
         [DataProperty]
-        public DateTime DataFR { get; set; }
+        public DateTime? DataFR { get; set; }
 
         /// <summary>
         /// Indicazioni specifiche degli elelementi oggetto di rettifica.
