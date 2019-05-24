@@ -22,7 +22,7 @@ namespace Semplificata.Tests
         [TestMethod]
         public void AltriDatiIdentificativiHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.AltriDatiIdentificativi, typeof(FatturaElettronica.Validators.Semplificata.AltriDatiIdentificativiValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.AltriDatiIdentificativi, typeof(FatturaElettronica.Validators.Semplificata.AltriDatiIdentificativiValidator));
         }
     }
 }
