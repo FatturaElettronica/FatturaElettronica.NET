@@ -2,10 +2,11 @@
 using FluentValidation.TestHelper;
 using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Linq;
 
 namespace Semplificata.Tests
 {
-   [TestClass]
+    [TestClass]
     public class CessionarioCommittenteValidator : BaseClass<CessionarioCommittente, FatturaElettronica.Validators.Semplificata.CessionarioCommittenteValidator>
     {
         [TestMethod]
@@ -13,24 +14,15 @@ namespace Semplificata.Tests
         {
             validator.ShouldHaveChildValidator(x => x.IdentificativiFiscali, typeof(FatturaElettronica.Validators.Semplificata.IdentificativiFiscaliValidator));
         }
-        [TestMethod]
-        public void IdentificativiFiscaliIsRequiredWhenAltriDatiIdentificativiIsEmptyValidator()
+        public void IdentificativiFiscaliCannotBeEmpty()
         {
-            challenge.AltriDatiIdentificativi = null;
-
-            AssertRequired(x => x.IdentificativiFiscali, expectedErrorCode: "00431");
+            var r = validator.Validate(challenge);
+            Assert.AreEqual("IdentificativiFiscali è obbligatorio", r.Errors.FirstOrDefault(x => x.PropertyName == "IdentificativiFiscali").ErrorMessage);
         }
         [TestMethod]
         public void AltriDatiIdentificativiHasChildValidator()
         {
             validator.ShouldHaveChildValidator(x => x.AltriDatiIdentificativi, typeof(FatturaElettronica.Validators.Semplificata.AltriDatiIdentificativiValidator));
-        }
-        [TestMethod]
-        public void AltriDatiIdentificativiIsRequiredWhenIdentificativiFiscaliIsEmptyValidator()
-        {
-            challenge.IdentificativiFiscali = null;
-
-            AssertRequired(x => x.AltriDatiIdentificativi, expectedErrorCode: "00431");
         }
     }
 }

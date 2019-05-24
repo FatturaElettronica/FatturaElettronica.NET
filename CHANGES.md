@@ -4,10 +4,12 @@ Changelog
 In Development
 --------------
 
+- Fix: Validazione AltriDatiIdentificativi in FatturaSemplificata ([#203](203))
 - Fix: UnitaMisura vuota deve sollevare errore di validazione ([#204](204))
 - Fix: DatiFatturaRettificata.DataFR dovrebe essere nullabile ([#200](200))
 - Fix: CausalePagamento: ZO e M2 sostituiti rispettivamente da Z e M ([#191][191c])
 
+[203]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/203
 [204]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/204
 [200]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/200
 [191c]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/191#issuecomment-493911791

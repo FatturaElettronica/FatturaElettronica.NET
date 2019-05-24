@@ -8,21 +8,12 @@ namespace FatturaElettronica.Validators.Semplificata
         public CessionarioCommittenteValidator()
         {
             RuleFor(x => x.IdentificativiFiscali)
-               .SetValidator(new IdentificativiFiscaliValidator());
-
+                .SetValidator(new IdentificativiFiscaliValidator());
             RuleFor(x => x.IdentificativiFiscali)
-                .NotEmpty()
-                .WithErrorCode("00431")
-                .When(x => x.AltriDatiIdentificativi == null);
-
+                .Must(x => !x.IsEmpty()).WithMessage("IdentificativiFiscali è obbligatorio");
             RuleFor(x => x.AltriDatiIdentificativi)
-                .SetValidator(new AltriDatiIdentificativiValidator());
-
-            RuleFor(x => x.AltriDatiIdentificativi)
-                .NotEmpty()
-                .WithErrorCode("00431")
-                .When(x => x.IdentificativiFiscali == null);
-
+                .SetValidator(new AltriDatiIdentificativiValidator())
+                .When(x => x.AltriDatiIdentificativi != null && !x.AltriDatiIdentificativi.IsEmpty());
         }
     }
 }
