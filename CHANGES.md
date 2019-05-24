@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v2.0.6
+------
+
+Released on May 24, 2019
+
 - Fix: FatturaSemplificata convalidata con TipoDocumento valido per Ordinaria ([#205][205])
 - Fix: FatturaSemplificata convalidata con Natura valida per Ordinaria ([#205][205])
 - Fix: Validazione AltriDatiIdentificativi in FatturaSemplificata ([#203][203])
