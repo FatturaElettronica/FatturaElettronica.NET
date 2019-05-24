@@ -10,7 +10,7 @@ namespace FatturaElettronica.Validators.Semplificata
         {
             RuleFor(x => x.TipoDocumento)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<TipoDocumento>());
+                .SetValidator(new IsValidValidator<TipoDocumentoSemplificata>());
             RuleFor(x => x.Divisa)
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<Divisa>());

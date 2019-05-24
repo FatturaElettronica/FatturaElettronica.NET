@@ -4,11 +4,14 @@ Changelog
 In Development
 --------------
 
+- Fix: FatturaSemplificata convalidata con TipoDocumento valido per Ordinaria ([#205][205])
+- Fix: FatturaSemplificata convalidata con Natura valida per Ordinaria ([#205][205])
 - Fix: Validazione AltriDatiIdentificativi in FatturaSemplificata ([#203][203])
 - Fix: UnitaMisura vuota deve sollevare errore di validazione ([#204][204])
 - Fix: DatiFatturaRettificata.DataFR dovrebe essere nullabile ([#200][200])
 - Fix: CausalePagamento: ZO e M2 sostituiti rispettivamente da Z e M ([#191][191c])
 
+[205]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/205
 [203]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/203
 [204]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/204
 [200]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/200

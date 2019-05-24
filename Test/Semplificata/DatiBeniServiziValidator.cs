@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Semplificata.Tests
 {
-   [TestClass]
+    [TestClass]
     public class DatiBeniServiziValidator : BaseClass<DatiBeniServizi, FatturaElettronica.Validators.Semplificata.DatiBeniServiziValidator>
     {
         [TestMethod]
@@ -34,12 +34,12 @@ namespace Semplificata.Tests
         [TestMethod]
         public void NaturaOnlyAcceptsTableValues()
         {
-            AssertOnlyAcceptsTableValues<Natura>(x => x.Natura);
+            AssertOnlyAcceptsTableValues<NaturaSemplificata>(x => x.Natura);
         }
         [TestMethod]
         public void NaturaValidateAgainstError00401()
         {
-            challenge.DatiIVA.Aliquota= 22m;
+            challenge.DatiIVA.Aliquota = 22m;
             challenge.DatiIVA.Imposta = 0m;
             challenge.Natura = "N1";
             validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge).WithErrorCode("00401");
