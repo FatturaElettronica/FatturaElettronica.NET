@@ -146,7 +146,7 @@ namespace DemoApp
 
             var fattura = new FatturaOrdinaria();
             // In alternativa usare CreateInstance() per ottenere una istanza già tipizzata.
-            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000" 
+            // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000"
             // FormatoTrasmissione = "FPR12":
             fattura = FatturaOrdinaria.CreateInstance(Instance.Privati);
 
