@@ -18,11 +18,12 @@ anche per una instanza di `FatturaSemplificata`.
 ## Caricare la fattura da XML
 
 ```cs
-    // Lettura da file XML
+            // Lettura da file XML
     var readerSettings = new XmlReaderSettings
     {
         IgnoreWhitespace = true,
-        IgnoreComments = true
+        IgnoreComments = true,
+        IgnoreProcessingInstructions = true
     };
     using (var r = XmlReader.Create("IT01234567890_12345.xml", readerSettings))
     {
@@ -153,7 +154,9 @@ namespace DemoApp
             var readerSettings = new XmlReaderSettings
             {
                 IgnoreWhitespace = true,
-                IgnoreComments = true
+                IgnoreComments = true,
+                IgnoreProcessingInstructions = true
+
             };
             using (var r = XmlReader.Create("IT01234567890_12345.xml", readerSettings))
             {

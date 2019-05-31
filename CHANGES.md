@@ -4,7 +4,10 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Tutorial: Aggiunto `IgnoreProcessingInstructions` a `XmlReaderSettings` per evitare crash quando
+  nodi "processing instructions" (es: `xml-stylesheet`) sono presenti nel XML. ([#209][209])
+
+[209]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/209
 
 v2.0.6
 ------
