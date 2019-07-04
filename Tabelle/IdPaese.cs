@@ -256,6 +256,7 @@
                     new IdPaese { Nome = "Yemen", Codice = "YE" },
                     new IdPaese { Nome = "Zambia", Codice = "ZM" },
                     new IdPaese { Nome = "Zimbabwe", Codice = "ZW" },
+                    new IdPaese { Nome = "Kosovo", Codice = "XK" },
                 };
             }
         }
