@@ -4,9 +4,11 @@ Changelog
 In Development
 --------------
 
+- Fix: Aggiunto il Kosovo alla tabella IdPaese ([#214][214])
 - Tutorial: Aggiunto `IgnoreProcessingInstructions` a `XmlReaderSettings` per evitare crash quando
   nodi "processing instructions" (es: `xml-stylesheet`) sono presenti nel XML. ([#209][209])
 
+[214]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/214
 [209]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/209
 
 v2.0.6

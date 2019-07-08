@@ -14,6 +14,7 @@ Collaboratori
 
 - Claudio Lepri
 - Diego Martelli
+- Emanuele Curati
 - Fabio Calvigioni
 - Federico Dipuma
 - Gaetano Pizzol
