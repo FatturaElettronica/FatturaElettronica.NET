@@ -1,4 +1,4 @@
-# [Inroduzione](index.md)
+# [Introduzione](index.md)
 # [Guida all'uso](tutorial.md)
 # [Domande frequenti](faq.md)
 # [Cronologia](changelog.md)
