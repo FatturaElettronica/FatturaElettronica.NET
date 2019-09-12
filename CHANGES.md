@@ -4,10 +4,12 @@ Changelog
 In Development
 --------------
 
+- Fix: refuso in TOC.md ([#221][221])
 - Fix: Aggiunto il Kosovo alla tabella IdPaese ([#214][214])
 - Tutorial: Aggiunto `IgnoreProcessingInstructions` a `XmlReaderSettings` per evitare crash quando
   nodi "processing instructions" (es: `xml-stylesheet`) sono presenti nel XML. ([#209][209])
 
+[221]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/221
 [214]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/214
 [209]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/209
 
