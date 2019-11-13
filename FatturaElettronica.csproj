@@ -3,15 +3,15 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard1.1;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>2.0.6</Version>
+    <Version>2.0.7</Version>
     <PackageId>FatturaElettronica</PackageId>
-    <Authors>Nicola Iarocci</Authors>
+    <Authors>Nicola Iarocci,ZephirPFS47</Authors>
     <Company>CIR 2000</Company>
     <Product>FatturaElettronica.NET</Product>
     <Description>Fattura elettronica per le aziende e la pubblica amministrazione italiana</Description>
     <Copyright>Copyright © CIR2000 2017-2019</Copyright>
     <PackageProjectUrl>https://fatturaelettronicaopensource.org</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
+    <RepositoryUrl>https://github.com/ZephirPFS47/FatturaElettronica.NET</RepositoryUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
   </PropertyGroup>
 
