@@ -4,6 +4,7 @@ Changelog
 In Development
 --------------
 
+- Test suite aggiornata a NetCore 3.0
 - Fix: refuso in TOC.md ([#221][221])
 - Fix: Aggiunto il Kosovo alla tabella IdPaese ([#214][214])
 - Tutorial: Aggiunto `IgnoreProcessingInstructions` a `XmlReaderSettings` per evitare crash quando
