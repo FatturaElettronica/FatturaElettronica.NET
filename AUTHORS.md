@@ -21,6 +21,7 @@ Collaboratori
 - Marco Tessitore
 - Massimo Linossi
 - Michael Mairegger
+- ZephirPFS47
 - gminutillo
 
 [NI]: https://nicolaiarocci.com
