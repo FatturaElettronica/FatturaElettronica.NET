@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones.
+
+v2.0.7
+------
+
+Released on November 28, 2019
+
 - Fix: errore nell'ordine dei campi CedentePrestatore in fattura semplificata ([#220][220])
 - Test suite aggiornata a NetCore 3.0
 - Fix: refuso in TOC.md ([#221][221])
