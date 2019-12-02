@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: convalida fattura semplificata, importo massimo portato a 400 euro ([#233][233])
 
 v2.0.7
 ------
@@ -18,6 +18,7 @@ Released on November 28, 2019
 - Tutorial: Aggiunto `IgnoreProcessingInstructions` a `XmlReaderSettings` per evitare crash quando
   nodi "processing instructions" (es: `xml-stylesheet`) sono presenti nel XML. ([#209][209])
 
+[233]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/233
 [220]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/220
 [221]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/221
 [214]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/214
