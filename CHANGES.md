@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones.
+
+v2.0.8
+------
+
+Released on December 2m 2019
+
 - Fix: convalida fattura semplificata, importo massimo portato a 400 euro ([#233][233])
 
 v2.0.7
