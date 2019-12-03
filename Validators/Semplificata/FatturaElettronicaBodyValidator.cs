@@ -29,7 +29,7 @@ namespace FatturaElettronica.Validators.Semplificata
 
         private bool ImportoTotaleValidateAgainstError00460(FatturaElettronicaBody fatturaElettronicaBody, List<DatiBeniServizi> datiBeniServizi)
         {
-            var importoTotale = datiBeniServizi.Sum(x => x.Importo);
+            var importoTotale = datiBeniServizi.Sum(x => x.Importo * (1 + x.DatiIVA.Aliquota / 100));
             
             if(importoTotale > 400)
             {
