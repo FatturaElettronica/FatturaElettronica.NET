@@ -28,7 +28,7 @@ namespace FatturaElettronica.Semplificata
             return fatturaSemplificata;
         }
 
-        protected override string GetFormatoTrasmissione()
+        public override string GetFormatoTrasmissione()
         {
             return FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione;
         }

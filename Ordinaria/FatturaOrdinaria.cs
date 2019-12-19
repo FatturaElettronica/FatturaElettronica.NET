@@ -30,7 +30,7 @@ namespace FatturaElettronica.Ordinaria
             return fattura;
         }
 
-        protected override string GetFormatoTrasmissione()
+        public override string GetFormatoTrasmissione()
         {
             return FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione;
         }
