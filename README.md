@@ -34,6 +34,17 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionali Amica][ga] rilasciato sotto licenza [BSD][bsd].
 Artwork by [Kalamun][rp].
 
+### Sponsorship
+
+Se usi FatturaElettronica.NET o qualcun altro dei miei progetti in un
+prodotto che genera profitto, buon senso vorrebbe che tu sponsorizzassi la
+mia attività open source. Contribuiresti a far sì che il progetto su cui si
+basa il tuo prodotto rimanga sano, attivo, e mantenuto nel tempo. Avresti
+inoltre, se lo desideri, un premio in visibilità per te o la tua azienda.
+Ogni singola sottoscrizione ha un impatto significante.
+
+Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
+
 ## Documentazione
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
@@ -52,3 +63,4 @@ fatture con firma digitale.
 [netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md
 [fex]: http://github.com/FatturaElettronica/FatturaElettronica.Extensions
 [rp]: http://www.kalamun.org/
+[ghs]: https://github.com/sponsors/nicolaiarocci
