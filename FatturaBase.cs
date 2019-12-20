@@ -40,7 +40,7 @@ namespace FatturaElettronica
                 }
                 var att = r.GetAttribute("versione");
 
-                if (att == FormatoTrasmissione.Semplificata)//(r.LocalName.Contains("Semplificata"))
+                if (att == FormatoTrasmissione.Semplificata)
                     ret = Semplificata.FatturaSemplificata.CreateInstance(Instance.Semplificata);
                 else
                     ret = Ordinaria.FatturaOrdinaria.CreateInstance(
