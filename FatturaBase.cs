@@ -23,13 +23,6 @@ namespace FatturaElettronica
             base.WriteXml(w);
             w.WriteEndElement();
         }
-        //public static FatturaBase CreateInstanceFromXml(string xmlPath)
-        //{
-        //    using (var fileStream = new FileStream(filePath, FileMode.Open, FileAccess.Read))
-        //    {
-        //        return CreateInstanceFromXml(fileStream);
-        //    }
-        //}
 
         public static FatturaBase CreateInstanceFromXml(System.IO.Stream stream)
         {
