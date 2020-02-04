@@ -30,7 +30,11 @@ namespace Semplificata.Tests
         {
             AssertRequired(x => x.Importo);
         }
-
+        [TestMethod]
+        public void DatiIVAHasChildValidator()
+        {
+            validator.ShouldHaveChildValidator(x => x.DatiIVA, typeof(FatturaElettronica.Validators.Semplificata.DatiIVAValidator));
+        }
         [TestMethod]
         public void NaturaOnlyAcceptsTableValues()
         {

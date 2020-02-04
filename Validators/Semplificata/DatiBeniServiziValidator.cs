@@ -15,7 +15,7 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.Importo)
                 .NotEmpty<DatiBeniServizi, decimal>();
             RuleFor(x => x.DatiIVA)
-                .NotEmpty();
+                .SetValidator(new DatiIVAValidator());
             RuleFor(x => x.Natura)
                 .Must(natura => !string.IsNullOrEmpty(natura))
                 .When(x => x.DatiIVA.Aliquota == 0m && x.DatiIVA.Imposta == 0m)

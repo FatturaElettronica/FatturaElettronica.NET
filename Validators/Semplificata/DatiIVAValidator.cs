@@ -7,8 +7,12 @@ namespace FatturaElettronica.Validators.Semplificata
     {
         public DatiIVAValidator()
         {
-            RuleFor(x => x.Imposta);
-            RuleFor(x => x.Aliquota);
+            RuleFor(x => x.Imposta)
+                .NotNull()
+                .When(x => x.Aliquota == null);
+            RuleFor(x => x.Aliquota)
+                .NotNull()
+                .When(x => x.Imposta == null);
         }
     }
 }
