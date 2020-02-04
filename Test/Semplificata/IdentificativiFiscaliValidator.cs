@@ -12,7 +12,8 @@ namespace Semplificata.Tests
         [TestMethod]
         public void IdFiscaleIVAHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
+            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IdFiscaleIVA,
+                typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
         }
         [TestMethod]
         public void CodiceFiscaleIsOptional()
