@@ -4,9 +4,11 @@ Changelog
 In Development
 --------------
 
-- Fix: Semplificata.DatiBeniServizi.DatiIVA: Aliquota oppure Importo deve essere valorizzato ([#238][238])
-- Fix: Semplificata.CessionarioCommittente.IdFiscaleIva va convalidato quando valorizzato ([#242][242])
+- New: FatturaBase.CreateInstanceFromXml() restituisce una istanza di FatturaOrdinaria o FatturaSemplificata ([#240][240])
+- Fix: Semplificata.DatiBeniServizi.DatiIVA: Aliquota o Importo obbligatori ([#238][238])
+- Fix: Semplificata.CessionarioCommittente.IdFiscaleIva va convalidato se valorizzato ([#242][242])
 
+[240]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/240
 [238]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/238
 [242]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/242
 
