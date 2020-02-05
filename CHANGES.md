@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- New: FatturaBase.CreateInstanceFromXml() restituisce una istanza di FatturaOrdinaria o FatturaSemplificata ([#240][240])
+- New: `FatturaBase.CreateInstanceFromXml()` carica stream XML e restituisce una istanza di FatturaOrdinaria o FatturaSemplificata ([#240][240])
 - Fix: Semplificata.DatiBeniServizi.DatiIVA: Aliquota o Importo obbligatori ([#238][238])
 - Fix: Semplificata.CessionarioCommittente.IdFiscaleIva va convalidato se valorizzato ([#242][242])
 
