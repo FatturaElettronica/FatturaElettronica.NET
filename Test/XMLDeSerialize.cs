@@ -39,6 +39,17 @@
             DeserializeAndThenSerialize("Samples/IT01234567890_FPR02.xml", FormatoTrasmissione.Privati);
         }
 
+        [TestMethod]
+        public void DeserializeAnyType()
+        {
+            var f = DeserializeAny("Samples/IT01234567890_FPA02.xml");
+            Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.PubblicaAmministrazione);
+            f = DeserializeAny("Samples/IT01234567890_FPR02.xml");
+            Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.Privati);
+            f = DeserializeAny("Samples/IT01234567890_FSM10.xml");
+            Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.Semplificata);
+        }
+
         private void DeserializeAndThenSerialize(string filename, string expectedFormat)
         {
             var f = Deserialize(filename);
@@ -69,6 +80,14 @@
                 f.ReadXml(r);
             }
             return f;
+        }
+
+        private FatturaBase DeserializeAny(string fileName)
+        {
+            using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+            {
+                return FatturaBase.CreateInstanceFromXml(fileStream);
+            }
         }
 
         private void ValidateInvoice(FatturaOrdinaria f, string expectedFormat)

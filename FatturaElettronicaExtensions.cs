@@ -10,7 +10,8 @@ namespace FatturaElettronica
         private static readonly ConcurrentDictionary<string, IValidator> ValidatorsCache = new ConcurrentDictionary<string, IValidator>();
         public static ValidationResult Validate<T>(this T obj) where T : Common.BaseClassSerializable
         {
-            string name = (typeof(T).FullName.Contains("Semplificata") ? "Semplificata." : string.Empty) + typeof(T).Name;
+            var t = obj.GetType();
+            string name = (t.FullName.Contains("Semplificata") ? "Semplificata." : string.Empty) + t.Name;
 
             var validator = ValidatorsCache.GetOrAdd(name, n =>
             {
