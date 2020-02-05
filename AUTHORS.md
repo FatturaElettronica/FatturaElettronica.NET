@@ -21,6 +21,7 @@ Collaboratori
 - Marco Tessitore
 - Massimo Linossi
 - Michael Mairegger
+- Puma
 - ZephirPFS47
 - gminutillo
 
