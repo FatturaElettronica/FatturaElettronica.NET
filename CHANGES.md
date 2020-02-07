@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones.
+
+v 2.1.0
+-------
+
+Released on February 7, 2020
+
 - New: `FatturaBase.CreateInstanceFromXml()` carica stream XML e restituisce una istanza di FatturaOrdinaria o FatturaSemplificata ([#240][240])
 - Fix: Semplificata.DatiBeniServizi.DatiIVA: Aliquota o Importo obbligatori ([#238][238])
 - Fix: Semplificata.CessionarioCommittente.IdFiscaleIva va convalidato se valorizzato ([#242][242])
@@ -15,7 +22,7 @@ In Development
 v2.0.8
 ------
 
-Released on December 2m 2019
+Released on December 2, 2019
 
 - Fix: convalida fattura semplificata, importo massimo portato a 400 euro ([#233][233])
 
