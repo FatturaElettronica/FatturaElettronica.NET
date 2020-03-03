@@ -17,7 +17,7 @@ namespace FatturaElettronica.Validators
                 .Must(x => !x.IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
             RuleFor(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta)
                 .Must((body, _) => DatiRitenutaAgainstDettaglioLinee(body))
-                .When(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.IsEmpty())
+                .When(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.Count==0)
                 .WithMessage("DatiRitenuta non presente a fronte di almeno un blocco DettaglioLinee con Ritenuta uguale a SI")
                 .WithErrorCode("00411");
             RuleFor(x => x.DatiBeniServizi.DatiRiepilogo)
