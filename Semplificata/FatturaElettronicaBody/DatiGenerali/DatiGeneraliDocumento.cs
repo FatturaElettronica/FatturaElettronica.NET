@@ -45,5 +45,11 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         [DataProperty]
         public string Numero { get; set; }
+        
+        /// <summary>
+        /// Bollo assolto ai sendi del decreto MEF 17 giugno 2014 (art.6).
+        /// </summary>
+        [DataProperty]
+        public string BolloVirtuale { get; set; }
     }
 }

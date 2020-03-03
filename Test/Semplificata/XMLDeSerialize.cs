@@ -27,6 +27,7 @@ namespace Semplificata.Tests
         {
             var f = Deserialize(filename);
 
+            var r = f.Validate();
             Assert.IsTrue(f.Validate().IsValid);
             ValidateInvoice(f);
 

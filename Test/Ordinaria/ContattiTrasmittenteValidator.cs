@@ -26,11 +26,6 @@ namespace Ordinaria.Tests
             AssertOptional(x => x.Email);
         }
         [TestMethod]
-        public void EmailMinMaxLength()
-        {
-            AssertMinMaxLength(x => x.Email, 7, 256);
-        }
-        [TestMethod]
         public void EmailMustBeValid()
         {
             challenge.Email = "not really";
