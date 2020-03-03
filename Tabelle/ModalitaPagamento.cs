@@ -28,7 +28,8 @@
                     new ModalitaPagamento { Codice = "MP19", Nome = "SEPA Direct Debit" },
                     new ModalitaPagamento { Codice = "MP20", Nome = "SEPA Direct Debit CORE" },
                     new ModalitaPagamento { Codice = "MP21", Nome = "SEPA Direct Debit B2B" },
-                    new ModalitaPagamento { Codice = "MP22", Nome = "Trattenuta su somme già riscosse" }
+                    new ModalitaPagamento { Codice = "MP22", Nome = "Trattenuta su somme già riscosse" },
+                    new ModalitaPagamento { Codice = "MP23", Nome = "PagoPA" }
                 };
             }
         }
