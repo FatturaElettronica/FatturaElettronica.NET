@@ -35,6 +35,27 @@ namespace Ordinaria.Tests
         }
 
         [TestMethod]
+        public void BodyValidateAgainstError00444()
+        {
+            var body = new FatturaElettronicaBody();
+            body.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {Natura = "N1"});
+            body.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {Natura = "N2"});
+            body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(
+                new DatiCassaPrevidenziale {Natura = "N3"});
+            body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {Natura = "N1"});
+            challenge.FatturaElettronicaBody.Add(body);
+
+            var result = validator.Validate(challenge);
+            Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
+
+            body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {Natura = "N2"});
+            Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
+
+            body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {Natura = "N3"});
+            result = validator.Validate(challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
+        }
+        [TestMethod]
         public void BodyValidateAgainstError00443()
         {
             var body = new FatturaElettronicaBody();
