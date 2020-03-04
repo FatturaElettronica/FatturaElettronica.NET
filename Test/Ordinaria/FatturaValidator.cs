@@ -36,7 +36,34 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
-        public void FatturaValidateAainstError00472()
+        public void FatturaValidateAgainstError00473()
+        {
+            var tipiDocumento = new string[] {"TD17", "TD18", "TD19"};
+            var cedente = challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
+
+            cedente.IdFiscaleIVA = new IdFiscaleIVA {IdPaese = "IT"};
+            var body = new FatturaElettronicaBody();
+            challenge.FatturaElettronicaBody.Add(body);
+
+            foreach (var tipoDocumento in tipiDocumento)
+            {
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Assert.IsNotNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
+            }
+
+            body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
+            Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
+
+            cedente.IdFiscaleIVA = new IdFiscaleIVA {IdPaese = "XX"};
+            foreach (var tipoDocumento in tipiDocumento)
+            {
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
+            }
+        }
+
+        [TestMethod]
+        public void FatturaValidateAgainstError00472()
         {
             var cedente = challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
             var cessionario = challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;

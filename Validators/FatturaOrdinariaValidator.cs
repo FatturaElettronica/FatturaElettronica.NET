@@ -21,6 +21,11 @@ namespace FatturaElettronica.Validators
                 .WithMessage(
                     "Il tipo documento ‘autofattura per splafonamento’ non ammette l’indicazione in fattura di un cedente diverso dal cessionario")
                 .WithErrorCode("00472");
+            RuleFor(x => x)
+                .Must((fattura, _) => FatturaValidateAgainstError00473(fattura))
+                .WithMessage(
+                    "I valori TD17, TD18 e TD19 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano")
+                .WithErrorCode("00473");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .SetValidator(new FatturaElettronicaBodyValidator());
             RuleForEach(x => x.FatturaElettronicaBody)
@@ -35,15 +40,28 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00444");
         }
 
+        private bool FatturaValidateAgainstError00473(FatturaOrdinaria fatturaOrdinaria)
+        {
+            
+            var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
+
+            if (cedente.IdFiscaleIVA.IdPaese != "IT")
+                return true;
+            
+            var tipiDocumento = new string[] {"TD17", "TD18", "TD19"};
+            
+            return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
+                !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
+        }
         private bool FatturaValidateAgainstError00472(FatturaOrdinaria fatturaOrdinaria)
         {
             var bodies =
                 fatturaOrdinaria.FatturaElettronicaBody.Where(x =>
                     x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD21");
-            
+
             if (!bodies.Any())
                 return true;
-            
+
             var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
             var cessionario =
                 fatturaOrdinaria.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
@@ -51,6 +69,7 @@ namespace FatturaElettronica.Validators
             return cedente.IdFiscaleIVA.ToString() == cessionario.IdFiscaleIVA.ToString() &&
                    cedente.CodiceFiscale == cessionario.CodiceFiscale;
         }
+
         private bool FatturaValidateAgainstError00471(FatturaOrdinaria fatturaOrdinaria)
         {
             var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
