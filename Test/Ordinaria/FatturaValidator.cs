@@ -1,4 +1,6 @@
 ﻿using System.Linq;
+using FatturaElettronica;
+using FatturaElettronica.Common;
 using FatturaElettronica.Ordinaria;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
@@ -35,6 +37,46 @@ namespace Ordinaria.Tests
         }
 
         [TestMethod]
+        public void FatturaValidateAgainstError00471()
+        {
+            var tipiDocumento = new string[] {"TD16", "TD17", "TD18", "TD19", "TD20"};
+            var cedente = challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
+            var cessionario = challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
+            var id123 = new IdFiscaleIVA {IdPaese = "IT", IdCodice = "123"};
+            var id456 = new IdFiscaleIVA {IdPaese = "IT", IdCodice = "456"};
+
+            foreach (var tipoDocumento in tipiDocumento)
+            {
+                var body = new FatturaElettronicaBody();
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                challenge.FatturaElettronicaBody.Add(body);
+
+                cedente.CodiceFiscale = null;
+                cessionario.CodiceFiscale = null;
+
+                cedente.IdFiscaleIVA = id123;
+                cessionario.IdFiscaleIVA = id123;
+                var result = challenge.Validate();
+                Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
+
+                cedente.IdFiscaleIVA = id456;
+                result = challenge.Validate();
+                Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
+
+                cedente.IdFiscaleIVA = new IdFiscaleIVA();
+                cessionario.IdFiscaleIVA = new IdFiscaleIVA();
+                cedente.CodiceFiscale = "123";
+                cessionario.CodiceFiscale = "123";
+                result = challenge.Validate();
+                Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
+
+                cessionario.CodiceFiscale = "456";
+                result = challenge.Validate();
+                Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
+            }
+        }
+
+        [TestMethod]
         public void BodyValidateAgainstError00444()
         {
             var body = new FatturaElettronicaBody();
@@ -55,6 +97,7 @@ namespace Ordinaria.Tests
             result = validator.Validate(challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
         }
+
         [TestMethod]
         public void BodyValidateAgainstError00443()
         {
