@@ -15,7 +15,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         public DatiGeneraliDocumento()
         {
-            DatiRitenuta = new DatiRitenuta();
+            DatiRitenuta = new List<DatiRitenuta>();
             DatiBollo = new DatiBollo();
             DatiCassaPrevidenziale = new List<DatiCassaPrevidenziale>();
             ScontoMaggiorazione = new List<ScontoMaggiorazione>();
@@ -55,7 +55,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// Dati della ritenuta.
         /// </summary>
         [DataProperty]
-        public DatiRitenuta DatiRitenuta { get; set; }
+        public List<DatiRitenuta> DatiRitenuta { get; set; }
 
         /// <summary>
         /// Dati del bollo.
