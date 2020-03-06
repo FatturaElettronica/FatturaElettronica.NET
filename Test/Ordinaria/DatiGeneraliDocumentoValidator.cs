@@ -56,9 +56,9 @@ namespace Ordinaria.Tests
             validator.ShouldNotHaveValidationErrorFor(x => x.Numero, challenge);
         }
         [TestMethod]
-        public void DatiRitenutaHasChildValidator()
+        public void DatiRitenutaHasCollectionValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
+            validator.ShouldHaveChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
         }
         [TestMethod]
         public void DatiBolloHasChildValidator()
