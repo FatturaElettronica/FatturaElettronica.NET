@@ -11,7 +11,7 @@ namespace Ordinaria.Tests
         [TestMethod]
         public void ImportoBolloIsOptional()
         {
-            AssertIsOptional(x => x.ImportoBollo);
+            AssertOptional(x => x.ImportoBollo);
         }
         [TestMethod]
         public void BolloVirtualeIsRequired()
