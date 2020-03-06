@@ -10,8 +10,6 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.BolloVirtuale)
                 .NotEmpty()
                 .Equal("SI");
-            RuleFor(x => x.ImportoBollo)
-                .NotNull();
         }
     }
 }

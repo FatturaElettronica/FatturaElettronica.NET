@@ -9,9 +9,9 @@ namespace Ordinaria.Tests
         : BaseClass<DatiBollo, FatturaElettronica.Validators.DatiBolloValidator>
     {
         [TestMethod]
-        public void ImportoBolloIsRequired()
+        public void ImportoBolloIsOptional()
         {
-            AssertRequired(x => x.ImportoBollo);
+            AssertIsOptional(x => x.ImportoBollo);
         }
         [TestMethod]
         public void BolloVirtualeIsRequired()
