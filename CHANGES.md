@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: Attributo `schemaLocation` causava problemi con alcuni client Java. ([#250][250])
+
+[250]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/250
 
 v 2.1.0
 -------
