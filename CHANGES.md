@@ -6,6 +6,15 @@ In Development
 
 - hic sunt leones.
 
+v 2.1.1
+-------
+
+Released on March 20, 2020
+
+- Fix: Attributo `schemaLocation` causava problemi con alcuni client Java. ([#250][250])
+
+[250]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/250
+
 v 2.1.0
 -------
 
