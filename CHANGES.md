@@ -4,7 +4,10 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: NullReferenceException nel metodo Equals ([Core#42][Core#42])
+- Aggiornata dipendenza FatturaElettronica.Core a 2.0.1.
+
+[Core#42]: https://github.com/FatturaElettronica/FatturaElettronica.Core/issues/42
 
 v 3.0-beta.1
 ------------
