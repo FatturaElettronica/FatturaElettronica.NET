@@ -25,13 +25,13 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// Importo dellla ritenuta.
         /// </summary>
         [DataProperty]
-        public decimal? ImportoRitenuta { get; set; }
+        public decimal ImportoRitenuta { get; set; }
         
         /// <summary>
         /// Aliquota (%) della ritenuta.
         /// </summary>
         [DataProperty]
-        public decimal? AliquotaRitenuta { get; set; }
+        public decimal AliquotaRitenuta { get; set; }
         
         /// <summary>
         /// Causale del pagamento (quella del modello 770).
