@@ -16,10 +16,15 @@ namespace FatturaElettronica
         {
             w.WriteStartElement(RootElement.Prefix, GetLocalName(), GetNameSpace());
             w.WriteAttributeString("versione", GetFormatoTrasmissione());
+            if (!string.IsNullOrEmpty(SistemaEmittente))
+            {
+                w.WriteAttributeString("SistemaEmittente", SistemaEmittente);
+            }
             foreach (var a in RootElement.ExtraAttributes)
             {
                 w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
             }
+
             base.WriteXml(w);
             w.WriteEndElement();
         }
@@ -27,40 +32,41 @@ namespace FatturaElettronica
         public static FatturaBase CreateInstanceFromXml(System.IO.Stream stream)
         {
             FatturaBase ret;
-            using (var r = XmlReader.Create(stream, new XmlReaderSettings
-            {
-                IgnoreWhitespace = true,
-                IgnoreComments = true,
-                IgnoreProcessingInstructions = true
-            }))
+            using (var r = XmlReader.Create(stream,
+                new XmlReaderSettings
+                {
+                    IgnoreWhitespace = true, IgnoreComments = true, IgnoreProcessingInstructions = true
+                }))
             {
                 while (r.Read() && !r.LocalName.Contains("Fattura"))
                 {
-
                 }
+
                 var att = r.GetAttribute("versione");
 
                 if (att == FormatoTrasmissione.Semplificata)
                     ret = Semplificata.FatturaSemplificata.CreateInstance(Instance.Semplificata);
                 else
                     ret = Ordinaria.FatturaOrdinaria.CreateInstance(
-                        att == FormatoTrasmissione.PubblicaAmministrazione ? Instance.PubblicaAmministrazione : Instance.Privati);
+                        att == FormatoTrasmissione.PubblicaAmministrazione
+                            ? Instance.PubblicaAmministrazione
+                            : Instance.Privati);
                 stream.Position = 0;
             }
-            using (var r = XmlReader.Create(stream, new XmlReaderSettings
-            {
-                IgnoreWhitespace = true,
-                IgnoreComments = true,
-                IgnoreProcessingInstructions = true
-            }))
-            {
 
+            using (var r = XmlReader.Create(stream,
+                new XmlReaderSettings
+                {
+                    IgnoreWhitespace = true, IgnoreComments = true, IgnoreProcessingInstructions = true
+                }))
+            {
                 ret.ReadXml(r);
             }
 
             return ret;
         }
 
+        public string SistemaEmittente { get; set; } 
         public abstract string GetFormatoTrasmissione();
         protected abstract string GetLocalName();
         protected abstract string GetNameSpace();
