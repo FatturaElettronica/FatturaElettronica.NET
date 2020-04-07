@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FatturaElettronica;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
@@ -30,6 +31,22 @@ namespace Ordinaria.Tests
         {
             var r = validator.Validate(challenge);
             Assert.AreEqual("DatiBeniServizi è obbligatorio", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi").ErrorMessage);
+        }
+        [TestMethod]
+        public void TipoDocumentoValidateAgainstError00474()
+        {
+            challenge.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD21";
+            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee { AliquotaIVA = 1m });
+            challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee { AliquotaIVA = 0m });
+            
+            Assert.IsNotNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00474"));
+
+            challenge.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
+            Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00474"));
+            
+            challenge.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD21";
+            challenge.DatiBeniServizi.DettaglioLinee[1].AliquotaIVA = 2m;
+            Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00474"));
         }
         [TestMethod]
         public void DatiRitenutaValidateAgainstError00411()

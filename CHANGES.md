@@ -4,8 +4,20 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: NullReferenceException nel metodo Equals ([Core#42][Core#42])
+- Aggiornata dipendenza FatturaElettronica.Core a 2.0.1.
 
+[Core#42]: https://github.com/FatturaElettronica/FatturaElettronica.Core/issues/42
+
+v 3.0-beta.1
+------------
+
+Released on March 20, 2020
+
+- Supporto per le specifiche tecniche v1.6 aggiornate il 28.2.2020 e utilizzabili a partire dal 4 maggio 2020. Si veda:
+
+  - [Allegato A - Specifiche tecniche versione 1.6 (pdf)](https://www.agenziaentrate.gov.it/portale/documents/20143/2370834/Allegato+A+-+Specifiche+tecniche+vers+1.6_.pdf/a9917ec2-29a3-4f4a-a7d0-93af96fcaad5)
+  
 v 2.1.1
 -------
 

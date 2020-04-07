@@ -11,10 +11,6 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.TipoRitenuta)
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<TipoRitenuta>());
-            RuleFor(x => x.ImportoRitenuta)
-                .NotNull();
-            RuleFor(x => x.AliquotaRitenuta)
-                .NotNull();
             RuleFor(x => x.CausalePagamento)
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<CausalePagamento>());

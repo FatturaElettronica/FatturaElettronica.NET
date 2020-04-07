@@ -42,14 +42,14 @@ namespace Tests
                 Assert.AreEqual(r1.Errors[i].ErrorMessage, r2.Errors[i].ErrorMessage);
             }
         }
-        protected void AssertOptional<T>(Expression<Func<TClass, T>> outExpr)
+        protected void AssertOptional<T>(Expression<Func<TClass, T>> outExpr, bool emptyStringAllowed=true)
         {
             var prop = GetProperty(outExpr);
 
             prop.SetValue(challenge, null);
             validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);
 
-            if (typeof(T) == typeof(string))
+            if (emptyStringAllowed && typeof(T) == typeof(string))
             {
                 prop.SetValue(challenge, string.Empty);
                 validator.ShouldNotHaveValidationErrorFor(outExpr, challenge);

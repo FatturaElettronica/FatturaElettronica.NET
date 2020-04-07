@@ -14,13 +14,25 @@
         [TestMethod]
         public void SerializePrivatiHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaOrdinaria.CreateInstance(Instance.Privati));
+            var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
+            
+            Assert.IsNull(f.SistemaEmittente);
+            SerializeAndAssertRootElementAttributes(f);
+            
+            f.SistemaEmittente = "sistema emittente";
+            SerializeAndAssertRootElementAttributes(f);
         }
 
         [TestMethod]
         public void SerializePubblicaAmministrazioneHeader()
         {
-            SerializeAndAssertRootElementAttributes(FatturaOrdinaria.CreateInstance(Instance.PubblicaAmministrazione));
+            var f = FatturaOrdinaria.CreateInstance(Instance.PubblicaAmministrazione);
+            
+            Assert.IsNull(f.SistemaEmittente);
+            SerializeAndAssertRootElementAttributes(f);
+            
+            f.SistemaEmittente = "sistema emittente";
+            SerializeAndAssertRootElementAttributes(f);
         }
 
         [TestMethod]
@@ -218,19 +230,17 @@
             {
                 while (r.Read())
                 {
-                    if (r.NodeType == XmlNodeType.Element)
+                    if (r.NodeType != XmlNodeType.Element) continue;
+                    if (r.Prefix != RootElement.Prefix || r.LocalName != "FatturaElettronica") continue;
+                    
+                    Assert.AreEqual(((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+                    Assert.AreEqual(f.SistemaEmittente, r.GetAttribute("SistemaEmittente"));
+                    Assert.AreEqual("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2", r.NamespaceURI);
+                    foreach (var a in RootElement.ExtraAttributes)
                     {
-                        if (r.Prefix == RootElement.Prefix && r.LocalName == "FatturaElettronica")
-                        {
-                            Assert.AreEqual(((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
-                            Assert.AreEqual("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2", r.NamespaceURI);
-                            foreach (var a in RootElement.ExtraAttributes)
-                            {
-                                Assert.AreEqual(a.value, r.GetAttribute(string.Format("{0}:{1}", a.Prefix, a.LocalName)));
-                            }
-                            break;
-                        }
+                        Assert.AreEqual(a.value, r.GetAttribute(string.Format("{0}:{1}", a.Prefix, a.LocalName)));
                     }
+                    break;
                 }
             }
             File.Delete("test");

@@ -22,5 +22,10 @@ namespace FatturaElettronica.Common
         /// </summary>
         [DataProperty]
         public string IdCodice { get; set; }
+
+        public override string ToString()
+        {
+            return IdPaese + IdCodice;
+        }
     }
 }

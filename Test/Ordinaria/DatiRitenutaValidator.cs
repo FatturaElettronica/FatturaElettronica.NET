@@ -19,16 +19,6 @@ namespace Ordinaria.Tests
             AssertOnlyAcceptsTableValues<TipoRitenuta>(x => x.TipoRitenuta);
         }
         [TestMethod]
-        public void ImportoRitenutaIsRequired()
-        {
-            AssertRequired(x => x.ImportoRitenuta);
-        }
-        [TestMethod]
-        public void AliquotaRitenutaIsRequired()
-        {
-            AssertRequired(x => x.AliquotaRitenuta);
-        }
-        [TestMethod]
         public void CausalePagamentoIsRequired()
         {
             AssertRequired(x => x.CausalePagamento);

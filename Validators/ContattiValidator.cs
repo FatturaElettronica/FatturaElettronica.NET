@@ -14,7 +14,7 @@ namespace FatturaElettronica.Validators
                 .Length(5, 12)
                 .When(x => !string.IsNullOrEmpty(x.Fax));
             RuleFor(x => x.Email)
-                .Length(7, 256)
+                .EmailAddress()
                 .When(x=>!string.IsNullOrEmpty(x.Email));
         }
     }

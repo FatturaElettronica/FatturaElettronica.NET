@@ -58,7 +58,7 @@ namespace Ordinaria.Tests
         [TestMethod]
         public void DatiRitenutaHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
+            validator.ShouldHaveChildValidator(x => x.DatiRitenuta, typeof(FatturaElettronica.Validators.DatiRitenutaValidator));
         }
         [TestMethod]
         public void DatiBolloHasChildValidator()

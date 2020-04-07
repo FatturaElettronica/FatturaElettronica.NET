@@ -1,4 +1,5 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Tests;
 
@@ -34,9 +35,14 @@ namespace Ordinaria.Tests
             AssertOptional(x => x.Email);
         }
         [TestMethod]
-        public void EmailMinMaxLength()
+        public void EmailMustBeValid()
         {
-            AssertMinMaxLength(x => x.Email, 7, 256);
+            challenge.Email = "not really";
+           validator.ShouldHaveValidationErrorFor(x=>x.Email,challenge);
+            challenge.Email = "not@really";
+            validator.ShouldHaveValidationErrorFor(x=>x.Email,challenge);
+            challenge.Email = "maybe@we.can";
+            validator.ShouldNotHaveValidationErrorFor(x=>x.Email,challenge);
         }
     }
 }
