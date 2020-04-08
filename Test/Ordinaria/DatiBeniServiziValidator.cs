@@ -2,9 +2,8 @@
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class DatiBeniServiziValidator
@@ -13,23 +12,23 @@ namespace Ordinaria.Tests
         [TestMethod]
         public void DettaglioLineeHasCollectionValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.DettaglioLinee, typeof(FatturaElettronica.Validators.DettaglioLineeValidator));
         }
         [TestMethod]
         public void DettaglioLineeCollectionCannotBeEmpty()
         {
-            var r = validator.Validate(challenge);
+            var r = Validator.Validate(Challenge);
             Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioLinee"));
 
-            challenge.DettaglioLinee.Add(new DettaglioLinee());
-            r = validator.Validate(challenge);
+            Challenge.DettaglioLinee.Add(new DettaglioLinee());
+            r = Validator.Validate(Challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioLinee"));
         }
         [TestMethod]
         public void DatiRiepilogoCollectionValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.DatiRiepilogo, typeof(FatturaElettronica.Validators.DatiRiepilogoValidator));
         }
         [TestMethod]

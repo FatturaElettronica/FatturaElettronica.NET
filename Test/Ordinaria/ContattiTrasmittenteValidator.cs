@@ -1,11 +1,9 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
-
     [TestClass]
     public class ContattiTrasmittenteValidator
         : BaseClass<ContattiTrasmittente, FatturaElettronica.Validators.ContattiTrasmittenteValidator>
@@ -15,25 +13,28 @@ namespace Ordinaria.Tests
         {
             AssertOptional(x => x.Telefono);
         }
+
         [TestMethod]
         public void TelefonoMinMaxLength()
         {
             AssertMinMaxLength(x => x.Telefono, 5, 12);
         }
+
         [TestMethod]
         public void EmailIsOptional()
         {
             AssertOptional(x => x.Email);
         }
+
         [TestMethod]
         public void EmailMustBeValid()
         {
-            challenge.Email = "not really";
-            validator.ShouldHaveValidationErrorFor(x=>x.Email,challenge);
-            challenge.Email = "not@really";
-            validator.ShouldHaveValidationErrorFor(x=>x.Email,challenge);
-            challenge.Email = "maybe@we.can";
-            validator.ShouldNotHaveValidationErrorFor(x=>x.Email,challenge);
+            Challenge.Email = "not really";
+            Validator.ShouldHaveValidationErrorFor(x => x.Email, Challenge);
+            Challenge.Email = "not@really";
+            Validator.ShouldHaveValidationErrorFor(x => x.Email, Challenge);
+            Challenge.Email = "maybe@we.can";
+            Validator.ShouldNotHaveValidationErrorFor(x => x.Email, Challenge);
         }
     }
 }

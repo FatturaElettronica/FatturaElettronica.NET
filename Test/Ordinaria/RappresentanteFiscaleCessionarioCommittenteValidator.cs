@@ -1,18 +1,19 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
 using FluentValidation.TestHelper;
-using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class RappresentateFiscaleCessionarioCommittenteValidator
-        : DenominazioneNomeCognomeValidator<RappresentanteFiscaleCessionarioCommittente, FatturaElettronica.Validators.RappresentanteFiscaleCessionarioCommittenteValidator>
+        : DenominazioneNomeCognomeValidator<RappresentanteFiscaleCessionarioCommittente,
+            Validators.RappresentanteFiscaleCessionarioCommittenteValidator>
     {
         [TestMethod]
         public void IdFiscaleIVAHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
+            Validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA,
+                typeof(Validators.IdFiscaleIVAValidator));
         }
     }
 }

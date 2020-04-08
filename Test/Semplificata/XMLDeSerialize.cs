@@ -6,7 +6,7 @@ using FatturaElettronica.Defaults;
 using FatturaElettronica.Semplificata;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Semplificata.Tests
+namespace FatturaElettronica.Test.Semplificata
 {
     [TestClass]
     public class XmlDeSerialize
@@ -31,7 +31,7 @@ namespace Semplificata.Tests
             ValidateInvoice(f);
 
             // Serialize it back to disk, to another file
-            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true }))
+            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings {Indent = true}))
             {
                 f.WriteXml(w);
             }
@@ -48,10 +48,11 @@ namespace Semplificata.Tests
         private FatturaSemplificata Deserialize(string fileName)
         {
             var f = FatturaSemplificata.CreateInstance(Instance.Semplificata);
-            using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
+            using (var r = XmlReader.Create(fileName, new XmlReaderSettings {IgnoreWhitespace = true}))
             {
                 f.ReadXml(r);
             }
+
             return f;
         }
 
@@ -93,7 +94,9 @@ namespace Semplificata.Tests
             Assert.AreEqual(new DateTime(2019, 01, 01), body.DatiGenerali.DatiGeneraliDocumento.Data);
             Assert.AreEqual("123", body.DatiGenerali.DatiGeneraliDocumento.Numero);
             // DatiBeniServizi
-            Assert.AreEqual("LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI", body.DatiBeniServizi[0].Descrizione);
+            Assert.AreEqual(
+                "LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI",
+                body.DatiBeniServizi[0].Descrizione);
             Assert.AreEqual(25m, body.DatiBeniServizi[0].Importo);
             Assert.AreEqual(22m, body.DatiBeniServizi[0].DatiIVA.Aliquota);
             Assert.AreEqual(null, body.DatiBeniServizi[0].Natura);
@@ -102,7 +105,7 @@ namespace Semplificata.Tests
 
         private void SerializeAndAssertRootElementAttributes(FatturaBase f)
         {
-            using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
+            using (var w = XmlWriter.Create("test", new XmlWriterSettings {Indent = true}))
             {
                 f.WriteXml(w);
             }
@@ -115,17 +118,23 @@ namespace Semplificata.Tests
                     {
                         if (r.Prefix == RootElement.Prefix && r.LocalName == "FatturaElettronicaSemplificata")
                         {
-                            Assert.AreEqual(((FatturaSemplificata)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
-                            Assert.AreEqual("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.0", r.NamespaceURI);
+                            Assert.AreEqual(
+                                ((FatturaSemplificata) f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione,
+                                r.GetAttribute("versione"));
+                            Assert.AreEqual("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.0",
+                                r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {
-                                Assert.AreEqual(a.value, r.GetAttribute(string.Format("{0}:{1}", a.Prefix, a.LocalName)));
+                                Assert.AreEqual(a.value,
+                                    r.GetAttribute($"{a.Prefix}:{a.LocalName}"));
                             }
+
                             break;
                         }
                     }
                 }
             }
+
             File.Delete("test");
         }
     }

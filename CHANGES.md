@@ -4,9 +4,13 @@ Changelog
 In Development
 --------------
 
+- FatturaElettronica.Extensions incorporato in FatturaElettronica.NET ([#255][255])
+- Abbandonata dipendenza da FatturaElettronica.Extensions ([#255][255])
+
 - Fix: NullReferenceException nel metodo Equals ([Core#42][Core#42])
 - Aggiornata dipendenza FatturaElettronica.Core a 2.0.1.
 
+[255]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/255
 [Core#42]: https://github.com/FatturaElettronica/FatturaElettronica.Core/issues/42
 
 v 3.0-beta.1

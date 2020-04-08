@@ -1,11 +1,7 @@
-﻿using System.Linq;
-using FatturaElettronica.Semplificata.FatturaElettronicaBody;
-using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali;
-using FluentValidation.TestHelper;
-using Tests;
+﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Semplificata.Tests
+namespace FatturaElettronica.Test.Semplificata
 {
     [TestClass]
     public class DatiGeneraliDocumentoValidator
@@ -14,12 +10,13 @@ namespace Semplificata.Tests
         [TestMethod]
         public void BolloVirtualeIsOptional()
         {
-            AssertOptional(x=>x.BolloVirtuale, emptyStringAllowed:false);
+            AssertOptional(x => x.BolloVirtuale, emptyStringAllowed: false);
         }
+
         [TestMethod]
         public void BolloVirtualeOnlyAcceptsSIValue()
         {
-            AssertOnlyAcceptsSIValue(x=>x.BolloVirtuale);
+            AssertOnlyAcceptsSIValue(x => x.BolloVirtuale);
         }
     }
 }

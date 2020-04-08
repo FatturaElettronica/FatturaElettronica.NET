@@ -2,7 +2,7 @@
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class DatiAnagraficiVettoreValidator : BaseClass<DatiAnagraficiVettore, FatturaElettronica.Validators.DatiAnagraficiVettoreValidator>
@@ -10,7 +10,7 @@ namespace Tests
         [TestMethod]
         public void IdFiscaleIVAHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(FatturaElettronica.Validators.IdFiscaleIVAValidator));
+            Validator.ShouldHaveChildValidator(x => x.IdFiscaleIVA, typeof(Validators.IdFiscaleIVAValidator));
         }
         [TestMethod]
         public void CodiceFiscaleIsOptional()
@@ -25,7 +25,7 @@ namespace Tests
         [TestMethod]
         public void AnagraficaHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.Anagrafica, typeof(FatturaElettronica.Validators.AnagraficaValidator));
+            Validator.ShouldHaveChildValidator(x => x.Anagrafica, typeof(Validators.AnagraficaValidator));
         }
         [TestMethod]
         public void NumeroLicenzaIsOptional()

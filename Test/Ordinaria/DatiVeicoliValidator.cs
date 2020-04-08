@@ -1,10 +1,9 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiVeicoli;
-using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
-  [TestClass]
+    [TestClass]
     public class DatiVeicoliValidator : BaseClass<DatiVeicoli, FatturaElettronica.Validators.DatiVeicoliValidator>
     {
         [TestMethod]
@@ -12,16 +11,19 @@ namespace Ordinaria.Tests
         {
             AssertRequired(x => x.TotalePercorso);
         }
+
         [TestMethod]
         public void TotalePercorsoMinMaxLength()
         {
             AssertMinMaxLength(x => x.TotalePercorso, 1, 15);
         }
+
         [TestMethod]
         public void TotalePercorsoMustBeBasicLatin()
         {
             AssertMustBeBasicLatin(x => x.TotalePercorso);
         }
+
         [TestMethod]
         public void DataIsRequired()
         {

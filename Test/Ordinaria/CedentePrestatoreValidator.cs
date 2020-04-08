@@ -1,11 +1,9 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
-
     [TestClass]
     public class CedentePrestatoreValidator
         : BaseClass<CedentePrestatore, FatturaElettronica.Validators.CedentePrestatoreValidator>
@@ -13,34 +11,44 @@ namespace Ordinaria.Tests
         [TestMethod]
         public void DatiAnagraficiHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiAnagrafici,
+                typeof(FatturaElettronica.Validators.DatiAnagraficiCedentePrestatoreValidator));
         }
+
         [TestMethod]
         public void SedeHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.Sede, typeof(FatturaElettronica.Validators.SedeCedentePrestatoreValidator));
+            Validator.ShouldHaveChildValidator(x => x.Sede,
+                typeof(FatturaElettronica.Validators.SedeCedentePrestatoreValidator));
         }
+
         [TestMethod]
         public void StabileOrganizzazioneHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(
-                x => x.StabileOrganizzazione, typeof(FatturaElettronica.Validators.StabileOrganizzazioneValidator));
+            Validator.ShouldHaveDelegatePropertyChildValidator(
+                x => x.StabileOrganizzazione, typeof(Validators.StabileOrganizzazioneValidator));
         }
+
         [TestMethod]
         public void IscrizioneREAHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.IscrizioneREA, typeof(FatturaElettronica.Validators.IscrizioneREAValidator));
+            Validator.ShouldHaveDelegatePropertyChildValidator(x => x.IscrizioneREA,
+                typeof(FatturaElettronica.Validators.IscrizioneREAValidator));
         }
+
         [TestMethod]
         public void ContattiHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.Contatti, typeof(FatturaElettronica.Validators.ContattiValidator));
+            Validator.ShouldHaveDelegatePropertyChildValidator(x => x.Contatti,
+                typeof(FatturaElettronica.Validators.ContattiValidator));
         }
+
         [TestMethod]
         public void RiferimentoAmministrazioneMinMaxLength()
         {
             AssertMinMaxLength(x => x.RiferimentoAmministrazione, 1, 20);
         }
+
         [TestMethod]
         public void RiferimentoAmministrazioneMustBeBasicLatin()
         {

@@ -2,9 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
 using FatturaElettronica.Tabelle;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class DatiPagamentoValidator
@@ -15,17 +14,20 @@ namespace Ordinaria.Tests
         {
             AssertRequired(x => x.CondizioniPagamento);
         }
+
         [TestMethod]
         public void CondizioniPagamentoOnlyAcceptsTableValues()
         {
             AssertOnlyAcceptsTableValues<CondizioniPagamento>(x => x.CondizioniPagamento);
         }
+
         [TestMethod]
         public void DettaglioPagamentoHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.DettaglioPagamento, typeof(FatturaElettronica.Validators.DettaglioPagamentoValidator));
         }
+
         [TestMethod]
         public void DettaglioPagamentoCollectionCannotBeEmpty()
         {

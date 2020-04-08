@@ -1,15 +1,15 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.1;netstandard2.0</TargetFrameworks>
+    <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.0-beta.2</Version>
+    <Version>3.0-beta.3</Version>
     <PackageId>FatturaElettronica</PackageId>
     <Authors>Nicola Iarocci</Authors>
     <Company>CIR 2000</Company>
     <Product>FatturaElettronica.NET</Product>
     <Description>Fattura elettronica per le aziende e la pubblica amministrazione italiana</Description>
-    <Copyright>Copyright © CIR2000 2017-2019</Copyright>
+    <Copyright>Copyright © CIR2000 2017-2020</Copyright>
     <PackageProjectUrl>https://fatturaelettronicaopensource.org</PackageProjectUrl>
     <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
@@ -33,6 +33,8 @@
     <PackageReference Include="FatturaElettronica.Core" Version="2.0.1" />
     <PackageReference Include="FluentValidation" Version="8.1.3" />
     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Portable.BouncyCastle" Version="1.8.6.7" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="4.7.0" />
     <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" Condition="$(TargetFramework) == 'netstandard1.1'" />
   </ItemGroup>
 

@@ -6,7 +6,6 @@ using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
 namespace FatturaElettronica.Test.Ordinaria
 {
@@ -16,14 +15,14 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestInitialize]
         public new void Init()
         {
-            validator = new Validators.FatturaOrdinariaValidator();
-            challenge = new FatturaOrdinaria();
+            Validator = new Validators.FatturaOrdinariaValidator();
+            Challenge = new FatturaOrdinaria();
         }
 
         [TestMethod]
         public void FatturaElettronicaHeaderHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.FatturaElettronicaHeader,
                 typeof(Validators.FatturaElettronicaHeaderValidator));
         }
@@ -31,73 +30,73 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void FatturaElettronicaBodyHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.FatturaElettronicaBody, typeof(Validators.FatturaElettronicaBodyValidator));
         }
 
         [TestMethod]
         public void FatturaValidateAgainstError00473()
         {
-            var tipiDocumento = new string[] {"TD17", "TD18", "TD19"};
-            var cedente = challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
+            var tipiDocumento = new[] {"TD17", "TD18", "TD19"};
+            var cedente = Challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
 
             cedente.IdFiscaleIVA = new IdFiscaleIVA {IdPaese = "IT"};
             var body = new FatturaElettronicaBody();
-            challenge.FatturaElettronicaBody.Add(body);
+            Challenge.FatturaElettronicaBody.Add(body);
 
             foreach (var tipoDocumento in tipiDocumento)
             {
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
-                Assert.IsNotNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
+                Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
             }
 
             body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
-            Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
+            Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
 
             cedente.IdFiscaleIVA = new IdFiscaleIVA {IdPaese = "XX"};
             foreach (var tipoDocumento in tipiDocumento)
             {
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
-                Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
+                Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
             }
         }
 
         [TestMethod]
         public void FatturaValidateAgainstError00472()
         {
-            var cedente = challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
-            var cessionario = challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
+            var cedente = Challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
+            var cessionario = Challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
             var id123 = new IdFiscaleIVA {IdPaese = "IT", IdCodice = "123"};
             var id456 = new IdFiscaleIVA {IdPaese = "IT", IdCodice = "456"};
 
             var body = new FatturaElettronicaBody();
             body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD21";
-            challenge.FatturaElettronicaBody.Add(body);
+            Challenge.FatturaElettronicaBody.Add(body);
 
             cedente.IdFiscaleIVA = id123;
             cessionario.IdFiscaleIVA = id456;
-            Assert.IsNotNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+            Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
             cessionario.IdFiscaleIVA = id123;
-            Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+            Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
             cedente.CodiceFiscale = "123";
             cedente.CodiceFiscale = "456";
-            Assert.IsNotNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+            Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
             cedente.CodiceFiscale = "123";
-            Assert.IsNotNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+            Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
             body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
-            Assert.IsNull(challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+            Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
         }
 
         [TestMethod]
         public void FatturaValidateAgainstError00471()
         {
-            var tipiDocumento = new string[] {"TD16", "TD17", "TD18", "TD19", "TD20"};
-            var cedente = challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
-            var cessionario = challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
+            var tipiDocumento = new[] {"TD16", "TD17", "TD18", "TD19", "TD20"};
+            var cedente = Challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
+            var cessionario = Challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
             var id123 = new IdFiscaleIVA {IdPaese = "IT", IdCodice = "123"};
             var id456 = new IdFiscaleIVA {IdPaese = "IT", IdCodice = "456"};
 
@@ -105,29 +104,29 @@ namespace FatturaElettronica.Test.Ordinaria
             {
                 var body = new FatturaElettronicaBody();
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
-                challenge.FatturaElettronicaBody.Add(body);
+                Challenge.FatturaElettronicaBody.Add(body);
 
                 cedente.CodiceFiscale = null;
                 cessionario.CodiceFiscale = null;
 
                 cedente.IdFiscaleIVA = id123;
                 cessionario.IdFiscaleIVA = id123;
-                var result = challenge.Validate();
+                var result = Challenge.Validate();
                 Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
 
                 cedente.IdFiscaleIVA = id456;
-                result = challenge.Validate();
+                result = Challenge.Validate();
                 Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
 
                 cedente.IdFiscaleIVA = new IdFiscaleIVA();
                 cessionario.IdFiscaleIVA = new IdFiscaleIVA();
                 cedente.CodiceFiscale = "123";
                 cessionario.CodiceFiscale = "123";
-                result = challenge.Validate();
+                result = Challenge.Validate();
                 Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
 
                 cessionario.CodiceFiscale = "456";
-                result = challenge.Validate();
+                result = Challenge.Validate();
                 Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
             }
         }
@@ -141,16 +140,16 @@ namespace FatturaElettronica.Test.Ordinaria
             body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(
                 new DatiCassaPrevidenziale {Natura = "N3"});
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {Natura = "N1"});
-            challenge.FatturaElettronicaBody.Add(body);
+            Challenge.FatturaElettronicaBody.Add(body);
 
-            var result = validator.Validate(challenge);
+            var result = Validator.Validate(Challenge);
             Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
 
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {Natura = "N2"});
             Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
 
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {Natura = "N3"});
-            result = validator.Validate(challenge);
+            result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
         }
 
@@ -163,16 +162,16 @@ namespace FatturaElettronica.Test.Ordinaria
             body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(
                 new DatiCassaPrevidenziale {AliquotaIVA = 3m});
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 1m});
-            challenge.FatturaElettronicaBody.Add(body);
+            Challenge.FatturaElettronicaBody.Add(body);
 
-            var result = validator.Validate(challenge);
+            var result = Validator.Validate(Challenge);
             Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00443"));
 
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 2m});
             Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00443"));
 
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 3m});
-            result = validator.Validate(challenge);
+            result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00443"));
         }
     }
