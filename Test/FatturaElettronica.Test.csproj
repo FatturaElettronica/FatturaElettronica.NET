@@ -27,9 +27,6 @@
     <None Update="Samples\IT01234567890_FSM10.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-  </ItemGroup>
-  
-  <ItemGroup>
     <None Update="Samples\fatturaPA_v1.2.1.xsl">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

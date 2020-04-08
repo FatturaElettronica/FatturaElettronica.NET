@@ -1,0 +1,6 @@
+<Playlist Version="1.0">
+<Add Test="Test.Extensions.SignedFileExtensionsTest.ReadXMLSignedThrowsOnNonSignedFile" />
+<Add Test="Test.Extensions.SignedFileExtensionsTest.ReadXMLSigned" />
+<Add Test="Test.Extensions.SignedFileExtensionsTest.ReadXML" />
+<Add Test="Test.Extensions.SignedFileExtensionsTest.SignXmlThrowsOnFail" />
+</Playlist>

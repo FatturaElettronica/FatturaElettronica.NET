@@ -1,1 +1,0 @@
-<Playlist Version="1.0"><Add Test="Test.SignedFile.ReadXMLSignedThrowsOnNonSignedFile" /><Add Test="Test.SignedFile.ReadXMLSigned" /><Add Test="Test.SignedFile.ReadXML" /><Add Test="Test.SignedFile.SignXmlThrowsOnFail" /></Playlist>
