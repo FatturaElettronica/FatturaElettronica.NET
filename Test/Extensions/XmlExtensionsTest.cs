@@ -32,7 +32,7 @@ namespace FatturaElettronica.Test.Extensions
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
             f.FatturaElettronicaHeader.DatiTrasmissione.ProgressivoInvio = "99";
 
-            string outFile = Path.GetTempFileName();
+            var outFile = Path.GetTempFileName();
             f.WriteXml(outFile);
 
             var challenge = FatturaOrdinaria.CreateInstance(Instance.Privati);

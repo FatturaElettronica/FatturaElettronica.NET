@@ -4,8 +4,13 @@ Changelog
 In Development
 --------------
 
-- FatturaElettronica.Extensions incorporato in FatturaElettronica.NET ([#255][255])
-- Abbandonata dipendenza da FatturaElettronica.Extensions ([#255][255])
+- `CreateInstanceFromXml` può ora leggere file firmati digitalmente (.p7m)
+- Abbandonata dipendenza da FatturaElettronica.Extensions, che ora è incorporato ([#255][255])
+
+v 3.0-beta.2
+------------
+
+Released on April 6, 2020
 
 - Fix: NullReferenceException nel metodo Equals ([Core#42][Core#42])
 - Aggiornata dipendenza FatturaElettronica.Core a 2.0.1.

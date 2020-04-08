@@ -101,25 +101,5 @@ namespace FatturaElettronica.Test.Extensions
             Assert.ThrowsException<SignatureException>(() =>
                 f.WriteXmlSigned("Samples/notreally.pfx", "idsrv3test", "Samples/IT02182030391_32.xml.p7m"));
         }
-
-        [TestMethod]
-        public void CreateInstanceFromXmlSigned()
-        {
-            var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            using (var inputStream = new FileStream("Samples/IT02182030391_31.xml.p7m", FileMode.Open, FileAccess.Read))
-            {
-                f.CreateInstanceFromXmlSigned(inputStream);
-            }
-
-            Assert.AreEqual("FPR12", f.GetFormatoTrasmissione());
-
-            using (var inputStream =
-                new FileStream("Samples/IT02182030391_31.Base64.xml.p7m", FileMode.Open, FileAccess.Read))
-            {
-                f.CreateInstanceFromXmlSigned(inputStream);
-            }
-
-            Assert.AreEqual("FPR12", f.GetFormatoTrasmissione());
-        }
     }
 }

@@ -3,7 +3,6 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
-using FatturaElettronica.Ordinaria;
 using Org.BouncyCastle.Cms;
 using Org.BouncyCastle.X509.Store;
 
@@ -33,39 +32,6 @@ namespace FatturaElettronica.Extensions
                 validateSignature);
         }
 
-        public static FatturaBase CreateInstanceFromXmlSigned(this FatturaBase fattura, Stream stream,
-            bool validateSignature = true)
-        {
-            var f = new FatturaOrdinaria();
-            try
-            {
-                using (var signedStream = GetSignedStream(stream, validateSignature))
-                {
-                    var newStream = new MemoryStream();
-                    signedStream.WriteTo(newStream);
-                    newStream.Position = 0;
-                    return FatturaBase.CreateInstanceFromXml(newStream);
-                }
-            }
-            catch (CmsException)
-            {
-                stream.Position = 0;
-                return f.CreateInstanceFromXmlSignedBase64(stream, validateSignature);
-            }
-        }
-
-        private static FatturaBase CreateInstanceFromXmlSignedBase64(this FatturaBase fattura, Stream stream,
-            bool validateSignature = true)
-        {
-            byte[] converted;
-            using (var reader = new StreamReader(stream))
-            {
-                converted = Convert.FromBase64String(reader.ReadToEnd());
-            }
-
-            var f = new FatturaOrdinaria();
-            return f.CreateInstanceFromXmlSigned(new MemoryStream(converted), validateSignature);
-        }
 
         public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = true)
         {
@@ -75,7 +41,7 @@ namespace FatturaElettronica.Extensions
             }
         }
 
-        private static MemoryStream GetSignedStream(Stream stream, bool validateSignature)
+        public static MemoryStream GetSignedStream(Stream stream, bool validateSignature)
         {
             var signedFile = new CmsSignedData(stream);
             if (validateSignature)
