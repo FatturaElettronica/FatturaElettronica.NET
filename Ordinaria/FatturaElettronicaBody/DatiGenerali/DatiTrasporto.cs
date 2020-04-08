@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
 {
@@ -26,82 +27,82 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Dati fiscali e anagrafici del vettore.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiAnagraficiVettore DatiAnagraficiVettore { get; set; }
 
         /// <summary>
         /// Mezzo utilizzato per il trasporto.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string MezzoTrasporto { get; set; }
 
         /// <summary>
         /// Causale del trasporto.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string CausaleTrasporto { get; set; }
 
         /// <summary>
         /// Numero dei colli trasportati.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public int? NumeroColli { get; set; }
 
         /// <summary>
         /// Descrizione (natura, qualità, aspetto...) relativa ai colli trasportati.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Descrizione { get; set; }
 
         /// <summary>
         /// Unità di misura riferita al peso della merce.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string UnitaMisuraPeso { get; set; }
 
         /// <summary>
         /// Peso lordo della merce.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? PesoLordo { get; set; }
 
         /// <summary>
         /// Peso netto della merce.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? PesoNetto { get; set; }
 
         /// <summary>
         /// Data e ora del ritiro della merce.
         /// </summary>
-        [DataProperty]
-        [IgnoreXmlDateFormat]
+        [Core.DataProperty]
+        [Core.IgnoreXmlDateFormat]
         public DateTime? DataOraRitiro { get; set; }
 
         /// <summary>
         /// Data e ora del trasporto.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DateTime? DataInizioTrasporto { get; set; }
 
         /// <summary>
         /// Codifica del termine di resa espresso secondo lo standard ICC-Camera di Commercio Internazionale (Incoterms).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string TipoResa { get; set; }
 
 
         /// <summary>
         /// Indirizzo di resa.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public IndirizzoResa IndirizzoResa { get; set; }
 
         /// <summary>
         /// Data e ora della consegna della merce.
         /// </summary>
-        [DataProperty]
-        [IgnoreXmlDateFormat]
+        [Core.DataProperty]
+        [Core.IgnoreXmlDateFormat]
         public DateTime? DataOraConsegna { get; set; }
     }
 }

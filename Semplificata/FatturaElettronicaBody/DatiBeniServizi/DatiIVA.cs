@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -17,13 +18,13 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
         /// <summary>
         /// Ammontare dell'imposta. Si può indicare in alternativa all'elemento informativo 2,2,3,2
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? Imposta { get; set; }
 
         /// <summary>
         /// Aliquota (%) IVA applicata. Si può indicare in alternativa all'elemento informativo 2,2,3,1
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? Aliquota { get; set; }
     }
 }

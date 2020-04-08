@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento
 {
@@ -22,13 +23,13 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento
         /// <summary>
         /// Condizioni di pagamento.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string CondizioniPagamento { get; set; }
 
         /// <summary>
         /// Dati di dettaglio del pagamento.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<DettaglioPagamento> DettaglioPagamento { get; set; }
     }
 }

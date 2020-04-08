@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
 {
@@ -18,14 +19,14 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Bollo virtuale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string BolloVirtuale { get; set; }
         
 
         /// <summary>
         /// Importo del bollo.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? ImportoBollo { get; set; }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
 using Newtonsoft.Json;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -31,31 +32,31 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePresta
         /// Numero di identificazione fiscale ai fini IVA; i primi due caratteri rappresentano il paese ed i restanti il codice
         /// vero e proprio che, per i residenti in Italia, corrisponde al numero di partita IVA.
         /// </summary>
-        [DataProperty(order: 0)]
+        [Core.DataProperty(order: 0)]
         public IdFiscaleIVA IdFiscaleIVA { get; set; }
 
         /// <summary>
         /// Numero di Codice Fiscale.
         /// </summary>
-        [DataProperty(order: 1)]
+        [Core.DataProperty(order: 1)]
         public string CodiceFiscale { get; set; }
 
         /// <summary>
         /// Gets or sets the Denominazione.
         /// </summary>
-        [DataProperty(order: 2)]
+        [Core.DataProperty(order: 2)]
         public string Denominazione { get; set; }
 
         /// <summary>
         /// Gets or sets the Nome.
         /// </summary>
-        [DataProperty(order: 3)]
+        [Core.DataProperty(order: 3)]
         public string Nome { get; set; }
 
         /// <summary>
         /// Gets or sets the Cognome.
         /// </summary>
-        [DataProperty(order: 4)]
+        [Core.DataProperty(order: 4)]
         public string Cognome { get; set; }
 
         /// <summary>
@@ -75,37 +76,37 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePresta
         /// <summary>
         /// Dati della sede del cedente / prestatore.
         /// </summary>
-        [DataProperty(order: 5)]
+        [Core.DataProperty(order: 5)]
         public SedeCedentePrestatore Sede { get; set; }
 
         /// <summary>
         /// Nei casi di cedente / prestatore non residente.
         /// </summary>
-        [DataProperty(order: 6)]
+        [Core.DataProperty(order: 6)]
         public StabileOrganizzazione StabileOrganizzazione { get; set; }
 
         /// <summary>
         /// Rappresentante fiscale
         /// </summary>
-        [DataProperty(order: 7)]
+        [Core.DataProperty(order: 7)]
         public RappresentanteFiscale RappresentanteFiscale { get; set; }
 
         /// <summary>
         /// Nei casi di società iscritte nel registro delle imprese ai sensi dell'art. 2250 del codice civile.
         /// </summary>
-        [DataProperty(order: 8)]
+        [Core.DataProperty(order: 8)]
         public IscrizioneREA IscrizioneREA { get; set; }
 
         /// <summary>
         /// Codice identificativo del cedente / prestatore a fini amministrativi-contabili.
         /// </summary>
-        [DataProperty(order: 9)]
+        [Core.DataProperty(order: 9)]
         public string RiferimentoAmministrazione { get; set; }
 
         /// <summary>
         /// Regime fiscale.
         /// </summary>
-        [DataProperty(order: 10)]
+        [Core.DataProperty(order: 10)]
         public string RegimeFiscale { get; set; }
     }
 }

@@ -4,8 +4,11 @@ Changelog
 In Development
 --------------
 
-- `CreateInstanceFromXml` può ora leggere file firmati digitalmente (.p7m)
-- Abbandonata dipendenza da FatturaElettronica.Extensions, che ora è incorporato ([#255][255])
+- `CreateInstanceFromXml` ora leggere anche file firmati digitalmente (.p7m)
+- Incorporato FatturaElettronica.Core ([#255][255])
+- Incorporato FatturaElettronica.Extensions ([#255][255])
+- Persa dipendenza da FatturaElettronica.Core ([#255][255])
+- Persa dipendenza da FatturaElettronica.Extensions ([#255][255])
 
 v 3.0-beta.2
 ------------

@@ -5,7 +5,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Dati relativi al rappresentante fiscale del cedente / prestatore.
     /// </summary>
-    public abstract class RappresentanteFiscale : BaseClassSerializable
+    public abstract class RappresentanteFiscale : Core.BaseClassSerializable
     {
 
         /// <summary>
@@ -24,7 +24,7 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Dati anagrafici del rappresentante fiscale del cedente / prestatore.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiAnagrafici DatiAnagrafici { get; set; }
     }
 }

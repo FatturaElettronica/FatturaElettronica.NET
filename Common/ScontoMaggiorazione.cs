@@ -5,7 +5,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Eventuale sconto o maggiorazione applicati sul totale documento.
     /// </summary>
-    public class ScontoMaggiorazione : BaseClassSerializable
+    public class ScontoMaggiorazione : Core.BaseClassSerializable
     {
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
@@ -14,19 +14,19 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Indica se trattasi di sconto o di maggiorazione.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Tipo { get; set; }
 
         /// <summary>
         /// Percentuale di sconto o di maggiorazione.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? Percentuale { get; set; }
 
         /// <summary>
         /// Importo dello sconto o della maggiorazione.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? Importo { get; set; }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using FatturaElettronica.Core;
 using FatturaElettronica.Tabelle;
 using FluentValidation;
 using FluentValidation.Results;
@@ -13,7 +14,7 @@ namespace FatturaElettronica.Test
 {
     [TestClass]
     public abstract class BaseClass<TClass, TValidator>
-        where TClass : FatturaElettronica.Common.BaseClassSerializable
+        where TClass : BaseClassSerializable
         where TValidator : IValidator<TClass>
     {
         protected TValidator Validator;
