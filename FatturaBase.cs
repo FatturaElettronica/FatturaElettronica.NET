@@ -91,10 +91,10 @@ namespace FatturaElettronica
         {
             try
             {
-                using (var signedStream = SignedFileExtensions.GetSignedStream(stream, validateSignature))
+                using (var parsed = SignedFileExtensions.ParseSignature(stream, validateSignature))
                 {
                     var newStream = new MemoryStream();
-                    signedStream.WriteTo(newStream);
+                    parsed.WriteTo(newStream);
                     newStream.Position = 0;
                     return CreateInstanceFromXml(newStream);
                 }

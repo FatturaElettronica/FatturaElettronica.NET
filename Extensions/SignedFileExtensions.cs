@@ -35,13 +35,13 @@ namespace FatturaElettronica.Extensions
 
         public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = true)
         {
-            using (var signedStream = GetSignedStream(stream, validateSignature))
+            using (var parsed = ParseSignature(stream, validateSignature))
             {
-                fattura.ReadXml(signedStream);
+                fattura.ReadXml(parsed);
             }
         }
 
-        public static MemoryStream GetSignedStream(Stream stream, bool validateSignature)
+        public static MemoryStream ParseSignature(Stream stream, bool validateSignature)
         {
             var signedFile = new CmsSignedData(stream);
             if (validateSignature)
