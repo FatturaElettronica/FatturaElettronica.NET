@@ -14,6 +14,10 @@ Released on April 9, 2020
 - Incorporato FatturaElettronica.Extensions ([#255][255])
 - Persa dipendenza da FatturaElettronica.Core ([#255][255])
 - Persa dipendenza da FatturaElettronica.Extensions ([#255][255])
+- Ricordarsi di rimuovere le dipendenze da FatturaElettronica.Extensions e 
+  FatturaElettronica.Core.
+- La API di FatturaElettronica.Core, ora incorporata in questo package, è stata
+  spostata dal namespace `FatturaElettronica.Common` a `FatturaElettronica.Core`.
 
 v 3.0-beta.2
 ------------
