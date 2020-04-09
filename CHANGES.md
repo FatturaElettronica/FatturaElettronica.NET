@@ -4,6 +4,11 @@ Changelog
 In Development
 --------------
 
+v 3.0-beta.3
+------------
+
+Released on April 9, 2020
+
 - `CreateInstanceFromXml` ora leggere anche file firmati digitalmente (.p7m)
 - Incorporato FatturaElettronica.Core ([#255][255])
 - Incorporato FatturaElettronica.Extensions ([#255][255])
