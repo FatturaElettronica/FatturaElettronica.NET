@@ -9,7 +9,7 @@ v 3.0-beta.3
 
 Released on April 9, 2020
 
-- `CreateInstanceFromXml` ora leggere anche file firmati digitalmente (.p7m)
+- `CreateInstanceFromXml` ora leggere anche file firmati digitalmente (.p7m) ([#256][256]) 
 - Incorporato FatturaElettronica.Core ([#255][255])
 - Incorporato FatturaElettronica.Extensions ([#255][255])
 - Persa dipendenza da FatturaElettronica.Core ([#255][255])
@@ -18,6 +18,8 @@ Released on April 9, 2020
   FatturaElettronica.Core.
 - La API di FatturaElettronica.Core, ora incorporata in questo package, è stata
   spostata dal namespace `FatturaElettronica.Common` a `FatturaElettronica.Core`.
+  
+[256]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/256
 
 v 3.0-beta.2
 ------------
