@@ -26,7 +26,7 @@ funzionalità o semplificano il lavoro quotidiano con le fatture elettroniche.
 - `FatturaElettronicaFileNameGenerator`: classe per la generazione di nomi file conformi allo standard fattura elettronica.
 
 > [!note]
-> A partire dalla v3 di FatturaElettronica, le Extensions sono incluse nel package principale e non più rilasciate come package a parte.
+> A partire dalla v3 di FatturaElettronica le Extensions sono incluse nel package principale e non più rilasciate come package a parte.
 
 *Extensions utilizza BouncyCastle, Copyright (c) 2000 - 2017 The Legion of the Bouncy Castle Inc. ([licenza][bc]).*
 
