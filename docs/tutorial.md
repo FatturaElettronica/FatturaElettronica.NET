@@ -13,12 +13,13 @@ anche per una instanza di `FatturaSemplificata`.
     // Questa chiamata restituisce fattura con CodiceDestinatario = "0000000"
     // FormatoTrasmissione = "FPR12":
     fattura = FatturaOrdinaria.CreateInstance(Instance.Privati);
+
 ```
 
 ## Caricare la fattura da XML
 
 ```cs
-            // Lettura da file XML
+    // Lettura da file XML
     var readerSettings = new XmlReaderSettings
     {
         IgnoreWhitespace = true,
@@ -30,6 +31,21 @@ anche per una instanza di `FatturaSemplificata`.
         fattura.ReadXml(r);
     }
 ```
+
+In alternativa `CreateInstanceFromXml` restituisce una istanza di `FatturaOrdinaria` o `FatturaSemplificata`
+a seconda dei contenuti del file:
+
+```
+    using var stream = new FileStream("IT02182030391_31.xml.p7m", FileMode.Open, FileAccess.Read);
+    var fattura = FatturaBase.CreateInstanceFromXml(stream);
+
+    Console.WriteLine(fattura.GetFormatoTrasmissione())
+    // "FSM10"
+```
+
+`CreateInstanceFromXml` supporta sia file XML puri (*.xml*) che firmati digitalment (*.p7m*), eventualmente anche 
+codificati Base64. Questa comodità ha un costo, ovvero un leggero impatto sulle prestazioni in quanto è necessaria 
+una pre-scasione dello stream per determinarne il formato e la tipologia di fattura.
 
 ## Consultare la fattura
 

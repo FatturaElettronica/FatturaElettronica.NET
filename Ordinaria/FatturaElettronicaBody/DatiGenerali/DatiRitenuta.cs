@@ -1,5 +1,6 @@
 ﻿using FatturaElettronica.Common;
 using System.Xml;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
 {
@@ -18,25 +19,25 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Tipologia della ritenuta.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string TipoRitenuta { get; set; }
         
         /// <summary>
         /// Importo dellla ritenuta.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal ImportoRitenuta { get; set; }
         
         /// <summary>
         /// Aliquota (%) della ritenuta.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal AliquotaRitenuta { get; set; }
         
         /// <summary>
         /// Causale del pagamento (quella del modello 770).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string CausalePagamento { get; set; }
     }
 }

@@ -1,7 +1,7 @@
 using FatturaElettronica.Common;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace FatturaElettronica.Test
+namespace FatturaElettronica.Test.Common
 {
     [TestClass]
     public class IdFiscaleIva
@@ -18,6 +18,5 @@ namespace FatturaElettronica.Test
             idFiscale = new IdFiscaleIVA();
             Assert.AreEqual(string.Empty, idFiscale.ToString());
         }
-        
     }
 }

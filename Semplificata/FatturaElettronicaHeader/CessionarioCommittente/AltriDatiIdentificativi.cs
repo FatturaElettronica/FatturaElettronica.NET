@@ -1,6 +1,7 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
 using Newtonsoft.Json;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente
 {
@@ -28,37 +29,37 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCo
         /// <summary>
         /// Gets or sets the Denominazione.
         /// </summary>
-        [DataProperty(order: 0)]
+        [Core.DataProperty(order: 0)]
         public string Denominazione { get; set; }
 
         /// <summary>
         /// Gets or sets the Nome.
         /// </summary>
-        [DataProperty(order: 1)]
+        [Core.DataProperty(order: 1)]
         public string Nome { get; set; }
 
         /// <summary>
         /// Gets or sets the Cognome.
         /// </summary>
-        [DataProperty(order: 2)]
+        [Core.DataProperty(order: 2)]
         public string Cognome { get; set; }
 
         /// <summary>
         /// Dati della sede del cessionario / committente.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public SedeCessionarioCommittente Sede { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare nei casi di cessionario/committente non residente e con stabile organizzazione in Italia.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public StabileOrganizzazione StabileOrganizzazione { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare nei casi in cui il cessionario/committente si avvalga di un rappresentante fiscale in Italia.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { get; set; }
 
         /// <summary>

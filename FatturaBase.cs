@@ -1,6 +1,12 @@
-﻿using System.Xml;
+﻿using System;
+using System.IO;
+using System.Xml;
 using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
+using FatturaElettronica.Extensions;
+using FatturaElettronica.Ordinaria;
+using Org.BouncyCastle.Cms;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica
 {
@@ -20,6 +26,7 @@ namespace FatturaElettronica
             {
                 w.WriteAttributeString("SistemaEmittente", SistemaEmittente);
             }
+
             foreach (var a in RootElement.ExtraAttributes)
             {
                 w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
@@ -29,7 +36,20 @@ namespace FatturaElettronica
             w.WriteEndElement();
         }
 
-        public static FatturaBase CreateInstanceFromXml(System.IO.Stream stream)
+        public static FatturaBase CreateInstanceFromXml(Stream stream)
+        {
+            try
+            {
+                return CreateInstanceFromPlainXml(stream);
+            }
+            catch (XmlException)
+            {
+                stream.Position = 0;
+                return CreateInstanceFromXmlSigned(stream);
+            }
+        }
+
+        private static FatturaBase CreateInstanceFromPlainXml(Stream stream)
         {
             FatturaBase ret;
             using (var r = XmlReader.Create(stream,
@@ -47,7 +67,7 @@ namespace FatturaElettronica
                 if (att == FormatoTrasmissione.Semplificata)
                     ret = Semplificata.FatturaSemplificata.CreateInstance(Instance.Semplificata);
                 else
-                    ret = Ordinaria.FatturaOrdinaria.CreateInstance(
+                    ret = FatturaOrdinaria.CreateInstance(
                         att == FormatoTrasmissione.PubblicaAmministrazione
                             ? Instance.PubblicaAmministrazione
                             : Instance.Privati);
@@ -66,7 +86,39 @@ namespace FatturaElettronica
             return ret;
         }
 
-        public string SistemaEmittente { get; set; } 
+        private static FatturaBase CreateInstanceFromXmlSigned(Stream stream,
+            bool validateSignature = true)
+        {
+            try
+            {
+                using (var parsed = SignedFileExtensions.ParseSignature(stream, validateSignature))
+                {
+                    var newStream = new MemoryStream();
+                    parsed.WriteTo(newStream);
+                    newStream.Position = 0;
+                    return CreateInstanceFromXml(newStream);
+                }
+            }
+            catch (CmsException)
+            {
+                stream.Position = 0;
+                return CreateInstanceFromXmlSignedBase64(stream, validateSignature);
+            }
+        }
+
+        private static FatturaBase CreateInstanceFromXmlSignedBase64(Stream stream,
+            bool validateSignature = true)
+        {
+            byte[] converted;
+            using (var reader = new StreamReader(stream))
+            {
+                converted = Convert.FromBase64String(reader.ReadToEnd());
+            }
+
+            return CreateInstanceFromXmlSigned(new MemoryStream(converted), validateSignature);
+        }
+
+        public string SistemaEmittente { get; set; }
         public abstract string GetFormatoTrasmissione();
         protected abstract string GetLocalName();
         protected abstract string GetNameSpace();

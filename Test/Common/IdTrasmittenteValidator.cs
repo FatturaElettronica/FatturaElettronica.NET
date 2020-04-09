@@ -1,7 +1,7 @@
 ﻿using FatturaElettronica.Validators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
+namespace FatturaElettronica.Test.Common
 {
     [TestClass]
     public class IdTrasmittenteValidator

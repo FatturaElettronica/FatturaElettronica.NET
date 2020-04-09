@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaBody
 {
@@ -20,19 +21,19 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody
         /// <summary>
         /// Dati generali del documento principale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiGenerali.DatiGenerali DatiGenerali { get; set; }
 
         /// <summary>
         /// Blocco semre obbligatorio contenente natura qualità e quantità dei beni/servizi oggetto dell'operazione.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<DatiBeniServizi.DatiBeniServizi> DatiBeniServizi { get; set; }
 
         /// <summary>
         /// Dati relativi ad eventuali allegati.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<Allegati> Allegati { get; set; }
     }
 }

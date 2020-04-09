@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
 {
@@ -25,31 +26,31 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Dati generali del documento principale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string TipoDocumento { get; set; }
 
         /// <summary>
         /// Codice espresso secondo lo standard ISO 4217 alpha-3:2001 della valuta utilizzata per l'indicazione degli importi.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Divisa { get; set; }
 
         /// <summary>
         /// Data del documento.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DateTime Data { get; set; }
 
         /// <summary>
         /// Numero progressivo del documento.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Numero { get; set; }
         
         /// <summary>
         /// Bollo assolto ai sendi del decreto MEF 17 giugno 2014 (art.6).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string BolloVirtuale { get; set; }
     }
 }

@@ -6,7 +6,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Represents a Anagrafica object
     /// </summary>
-    public abstract class Località : BaseClassSerializable
+    public abstract class Località : Core.BaseClassSerializable
     {
         /// <summary>
         /// Constructor.
@@ -21,37 +21,37 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Indirizzo (nome della via, piazza etc.)
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Indirizzo { get; set; }
 
         /// <summary>
         /// Numero civico riferito all'indirizzo (non indicare se già presente nel campo indirizzo).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string NumeroCivico { get; set; }
 
         /// <summary>
         /// Codice Avviamento Postale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string CAP { get; set; }
 
         /// <summary>
         /// Comune.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Comune { get; set; }
 
         /// <summary>
         /// Sigla della provincia di appartenenza del comune.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Provincia { get; set; }
 
         /// <summary>
         /// Codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Nazione { get; set; }
     }
 }

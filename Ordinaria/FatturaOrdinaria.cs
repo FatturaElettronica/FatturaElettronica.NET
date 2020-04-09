@@ -52,7 +52,7 @@ namespace FatturaElettronica.Ordinaria
         /// <summary>
         /// Intestazione della comunicazione.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public FatturaElettronicaHeader.FatturaElettronicaHeader FatturaElettronicaHeader { get; set; }
 
         /// <summary>
@@ -60,7 +60,7 @@ namespace FatturaElettronica.Ordinaria
         /// </summary>
         /// <remarks>Il blocco ha molteciplità 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete
         /// per ogni fattura componente il lotto stesso.</remarks>
-        [DataProperty]
+        [Core.DataProperty]
         public List<FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody { get; set; }
 
     }

@@ -1,18 +1,19 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.TerzoIntermediarioOSoggettoEmittente;
 using FluentValidation.TestHelper;
-using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class TerzoIntermediarioOSoggettoEmittenteValidator :
-        BaseClass<TerzoIntermediarioOSoggettoEmittente, FatturaElettronica.Validators.TerzoIntermediarioOSoggettoEmittenteValidator>
+        BaseClass<TerzoIntermediarioOSoggettoEmittente,
+            FatturaElettronica.Validators.TerzoIntermediarioOSoggettoEmittenteValidator>
     {
         [TestMethod]
         public void DatiAnagraficiHasDelegateChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiTerzoIntermediarioValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiAnagrafici,
+                typeof(FatturaElettronica.Validators.DatiAnagraficiTerzoIntermediarioValidator));
         }
     }
 }

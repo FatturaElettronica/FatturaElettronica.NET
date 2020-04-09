@@ -2,16 +2,17 @@
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
-   [TestClass]
+    [TestClass]
     public class RappresentanteFiscaleValidator :
         BaseClass<RappresentanteFiscale, FatturaElettronica.Validators.RappresentanteFiscaleValidator>
     {
         [TestMethod]
         public void DatiAnagraficiHasDelegateChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiAnagrafici, typeof(FatturaElettronica.Validators.DatiAnagraficiRappresentanteFiscaleValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiAnagrafici,
+                typeof(Validators.DatiAnagraficiRappresentanteFiscaleValidator));
         }
     }
 }

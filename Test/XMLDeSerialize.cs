@@ -1,13 +1,12 @@
-﻿namespace Tests
-{
-    using System;
-    using System.IO;
-    using System.Xml;
-    using FatturaElettronica;
-    using FatturaElettronica.Defaults;
-    using FatturaElettronica.Ordinaria;
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System;
+using System.IO;
+using System.Xml;
+using FatturaElettronica.Defaults;
+using FatturaElettronica.Ordinaria;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
+namespace FatturaElettronica.Test
+{
     [TestClass]
     public class XMLDeSerialize
     {
@@ -15,10 +14,10 @@
         public void SerializePrivatiHeader()
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            
+
             Assert.IsNull(f.SistemaEmittente);
             SerializeAndAssertRootElementAttributes(f);
-            
+
             f.SistemaEmittente = "sistema emittente";
             SerializeAndAssertRootElementAttributes(f);
         }
@@ -27,10 +26,10 @@
         public void SerializePubblicaAmministrazioneHeader()
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.PubblicaAmministrazione);
-            
+
             Assert.IsNull(f.SistemaEmittente);
             SerializeAndAssertRootElementAttributes(f);
-            
+
             f.SistemaEmittente = "sistema emittente";
             SerializeAndAssertRootElementAttributes(f);
         }
@@ -55,11 +54,17 @@
         public void DeserializeAnyType()
         {
             var f = DeserializeAny("Samples/IT01234567890_FPA02.xml");
-            Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.PubblicaAmministrazione);
+            Assert.IsTrue(f.Validate().IsValid &&
+                          f.GetFormatoTrasmissione() == FormatoTrasmissione.PubblicaAmministrazione);
             f = DeserializeAny("Samples/IT01234567890_FPR02.xml");
             Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.Privati);
             f = DeserializeAny("Samples/IT01234567890_FSM10.xml");
             Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.Semplificata);
+            
+            f = DeserializeAny("Samples/IT02182030391_31.xml.p7m");
+            Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.Privati);
+            f = DeserializeAny("Samples/IT02182030391_31.Base64.xml.p7m");
+            Assert.IsTrue(f.Validate().IsValid && f.GetFormatoTrasmissione() == FormatoTrasmissione.Privati);
         }
 
         private void DeserializeAndThenSerialize(string filename, string expectedFormat)
@@ -70,7 +75,7 @@
             ValidateInvoice(f, expectedFormat);
 
             // Serialize it back to disk, to another file
-            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings { Indent = true }))
+            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings {Indent = true}))
             {
                 f.WriteXml(w);
             }
@@ -87,33 +92,33 @@
         private FatturaOrdinaria Deserialize(string fileName)
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
+            using (var r = XmlReader.Create(fileName, new XmlReaderSettings {IgnoreWhitespace = true}))
             {
                 f.ReadXml(r);
             }
+
             return f;
         }
 
         private FatturaBase DeserializeAny(string fileName)
         {
-            using (var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read))
-            {
-                return FatturaBase.CreateInstanceFromXml(fileStream);
-            }
+            using var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
+            return FatturaBase.CreateInstanceFromXml(fileStream);
         }
 
         private void ValidateInvoice(FatturaOrdinaria f, string expectedFormat)
         {
-
             var header = f.FatturaElettronicaHeader;
 
             // DatiTrasmissione
             Assert.AreEqual("00001", header.DatiTrasmissione.ProgressivoInvio);
-            Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "0000000" : "AAAAAA", header.DatiTrasmissione.CodiceDestinatario);
+            Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "0000000" : "AAAAAA",
+                header.DatiTrasmissione.CodiceDestinatario);
 
             Assert.AreEqual("IT", header.DatiTrasmissione.IdTrasmittente.IdPaese);
             Assert.AreEqual("01234567890", header.DatiTrasmissione.IdTrasmittente.IdCodice);
-            Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "betagamma@pec.it" : null, header.DatiTrasmissione.PECDestinatario);
+            Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "betagamma@pec.it" : null,
+                header.DatiTrasmissione.PECDestinatario);
 
             // CedentePrestatore
             Assert.AreEqual("IT", header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese);
@@ -127,7 +132,8 @@
             Assert.AreEqual("IT", header.CedentePrestatore.Sede.Nazione);
             // CessionarioCommittente
             Assert.AreEqual("09876543210", header.CessionarioCommittente.DatiAnagrafici.CodiceFiscale);
-            Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "BETA GAMMA" : "AMMINISTRAZIONE BETA", header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Denominazione);
+            Assert.AreEqual((expectedFormat == FormatoTrasmissione.Privati) ? "BETA GAMMA" : "AMMINISTRAZIONE BETA",
+                header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Denominazione);
             Assert.AreEqual("Titolo", header.CessionarioCommittente.DatiAnagrafici.Anagrafica.Titolo);
             Assert.AreEqual("VIA TORINO 38-B", header.CessionarioCommittente.Sede.Indirizzo);
             Assert.AreEqual("00145", header.CessionarioCommittente.Sede.CAP);
@@ -141,8 +147,12 @@
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
             Assert.AreEqual(new DateTime(2014, 12, 18), body.DatiGenerali.DatiGeneraliDocumento.Data);
             Assert.AreEqual("123", body.DatiGenerali.DatiGeneraliDocumento.Numero);
-            Assert.AreEqual("LA FATTURA FA RIFERIMENTO AD UNA OPERAZIONE AAAA BBBBBBBBBBBBBBBBBB CCC DDDDDDDDDDDDDDD E FFFFFFFFFFFFFFFFFFFF GGGGGGGGGG HHHHHHH II LLLLLLLLLLLLLLLLL MMM NNNNN OO PPPPPPPPPPP QQQQ RRRR SSSSSSSSSSSSSS", body.DatiGenerali.DatiGeneraliDocumento.Causale[0]);
-            Assert.AreEqual("SEGUE DESCRIZIONE CAUSALE NEL CASO IN CUI NON SIANO STATI SUFFICIENTI 200 CARATTERI AAAAAAAAAAA BBBBBBBBBBBBBBBBB", body.DatiGenerali.DatiGeneraliDocumento.Causale[1]);
+            Assert.AreEqual(
+                "LA FATTURA FA RIFERIMENTO AD UNA OPERAZIONE AAAA BBBBBBBBBBBBBBBBBB CCC DDDDDDDDDDDDDDD E FFFFFFFFFFFFFFFFFFFF GGGGGGGGGG HHHHHHH II LLLLLLLLLLLLLLLLL MMM NNNNN OO PPPPPPPPPPP QQQQ RRRR SSSSSSSSSSSSSS",
+                body.DatiGenerali.DatiGeneraliDocumento.Causale[0]);
+            Assert.AreEqual(
+                "SEGUE DESCRIZIONE CAUSALE NEL CASO IN CUI NON SIANO STATI SUFFICIENTI 200 CARATTERI AAAAAAAAAAA BBBBBBBBBBBBBBBBB",
+                body.DatiGenerali.DatiGeneraliDocumento.Causale[1]);
             // DatiOrdineAcquisto
             Assert.AreEqual(1, body.DatiGenerali.DatiOrdineAcquisto[0].RiferimentoNumeroLinea[0]);
             Assert.AreEqual("66685", body.DatiGenerali.DatiOrdineAcquisto[0].IdDocumento);
@@ -176,12 +186,15 @@
             // DatiAnagraficiVettore
             Assert.AreEqual("IT", body.DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdPaese);
             Assert.AreEqual("24681012141", body.DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.IdFiscaleIVA.IdCodice);
-            Assert.AreEqual("Trasporto spa", body.DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Denominazione);
+            Assert.AreEqual("Trasporto spa",
+                body.DatiGenerali.DatiTrasporto.DatiAnagraficiVettore.Anagrafica.Denominazione);
             // DataOraConsegna
             Assert.AreEqual(new DateTime(2012, 10, 22, 16, 46, 12), body.DatiGenerali.DatiTrasporto.DataOraConsegna);
             // DatiBeniServizi
             Assert.AreEqual(1, body.DatiBeniServizi.DettaglioLinee[0].NumeroLinea);
-            Assert.AreEqual("LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI", body.DatiBeniServizi.DettaglioLinee[0].Descrizione);
+            Assert.AreEqual(
+                "LA DESCRIZIONE DELLA FORNITURA PUO' SUPERARE I CENTO CARATTERI CHE RAPPRESENTAVANO IL PRECEDENTE LIMITE DIMENSIONALE. TALE LIMITE NELLA NUOVA VERSIONE E' STATO PORTATO A MILLE CARATTERI",
+                body.DatiBeniServizi.DettaglioLinee[0].Descrizione);
             Assert.AreEqual(5m, body.DatiBeniServizi.DettaglioLinee[0].Quantita);
             Assert.AreEqual(1m, body.DatiBeniServizi.DettaglioLinee[0].PrezzoUnitario);
             Assert.AreEqual(5m, body.DatiBeniServizi.DettaglioLinee[0].PrezzoTotale);
@@ -215,13 +228,14 @@
             // DatiPagamento
             Assert.AreEqual("TP01", body.DatiPagamento[0].CondizioniPagamento);
             Assert.AreEqual("MP01", body.DatiPagamento[0].DettaglioPagamento[0].ModalitaPagamento);
-            Assert.AreEqual(new DateTime(2015, 01, 30), body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento.Value);
+            Assert.AreEqual(new DateTime(2015, 01, 30),
+                body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento.Value);
             Assert.AreEqual(36.08m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
 
         private void SerializeAndAssertRootElementAttributes(FatturaBase f)
         {
-            using (var w = XmlWriter.Create("test", new XmlWriterSettings { Indent = true }))
+            using (var w = XmlWriter.Create("test", new XmlWriterSettings {Indent = true}))
             {
                 f.WriteXml(w);
             }
@@ -232,17 +246,21 @@
                 {
                     if (r.NodeType != XmlNodeType.Element) continue;
                     if (r.Prefix != RootElement.Prefix || r.LocalName != "FatturaElettronica") continue;
-                    
-                    Assert.AreEqual(((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione, r.GetAttribute("versione"));
+
+                    Assert.AreEqual(
+                        ((FatturaOrdinaria) f).FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione,
+                        r.GetAttribute("versione"));
                     Assert.AreEqual(f.SistemaEmittente, r.GetAttribute("SistemaEmittente"));
                     Assert.AreEqual("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2", r.NamespaceURI);
                     foreach (var a in RootElement.ExtraAttributes)
                     {
-                        Assert.AreEqual(a.value, r.GetAttribute(string.Format("{0}:{1}", a.Prefix, a.LocalName)));
+                        Assert.AreEqual(a.value, r.GetAttribute($"{a.Prefix}:{a.LocalName}"));
                     }
+
                     break;
                 }
             }
+
             File.Delete("test");
         }
     }

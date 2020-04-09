@@ -1,13 +1,11 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using System.IO;
 using System.Xml;
-using System.IO;
 using FatturaElettronica.Defaults;
-using System;
-using FatturaElettronica;
-using Newtonsoft.Json;
 using FatturaElettronica.Ordinaria;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Newtonsoft.Json;
 
-namespace Tests
+namespace FatturaElettronica.Test
 {
     [TestClass]
     public class JSONDeSerialize
@@ -24,10 +22,11 @@ namespace Tests
             challenge.FromJson(new JsonTextReader(new StringReader(json)));
             Assert.IsTrue(challenge.Validate().IsValid);
         }
+
         [TestMethod]
         public void NomeCognomeIsIgnored()
         {
-            FatturaOrdinaria f = FatturaOrdinaria.CreateInstance(Instance.Privati);
+            var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
             var anagrafica = f.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.Anagrafica;
 
             anagrafica.Nome = "nome";
@@ -36,15 +35,16 @@ namespace Tests
             Assert.AreEqual("nome", anagrafica.CognomeNome);
             Assert.IsFalse(json.Contains("CognomeNome"));
         }
+
         private FatturaOrdinaria Deserialize(string fileName)
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            using (var r = XmlReader.Create(fileName, new XmlReaderSettings { IgnoreWhitespace = true }))
+            using (var r = XmlReader.Create(fileName, new XmlReaderSettings {IgnoreWhitespace = true}))
             {
                 f.ReadXml(r);
             }
+
             return f;
         }
-
     }
 }

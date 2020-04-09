@@ -3,74 +3,90 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using System;
 using System.Linq;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
-    public class DatiGeneraliValidator: BaseClass<DatiGenerali, FatturaElettronica.Validators.DatiGeneraliValidator>
+    public class DatiGeneraliValidator : BaseClass<DatiGenerali, FatturaElettronica.Validators.DatiGeneraliValidator>
     {
         [TestMethod]
         public void DatiGeneraliDocumentoHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.DatiGeneraliDocumento, typeof(FatturaElettronica.Validators.DatiGeneraliDocumentoValidator));
         }
+
         [TestMethod]
         public void DatiGeneraliDocumentoCannotPredateDatiFattureCollegate()
         {
-            challenge.DatiGeneraliDocumento.Data = DateTime.Now.AddDays(-1);
-            challenge.DatiFattureCollegate.Add(
-                new DatiFattureCollegate { Data = DateTime.Now });
+            Challenge.DatiGeneraliDocumento.Data = DateTime.Now.AddDays(-1);
+            Challenge.DatiFattureCollegate.Add(
+                new DatiFattureCollegate {Data = DateTime.Now});
 
-            var r = validator.Validate(challenge);
+            var r = Validator.Validate(Challenge);
             Assert.IsFalse(r.IsValid);
 
-            Assert.AreEqual("00418", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGeneraliDocumento.Data").ErrorCode);
+            Assert.AreEqual("00418",
+                r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGeneraliDocumento.Data")?.ErrorCode);
 
-            challenge.DatiGeneraliDocumento.Data = DateTime.Now;
-            r = validator.Validate(challenge);
+            Challenge.DatiGeneraliDocumento.Data = DateTime.Now;
+            r = Validator.Validate(Challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGeneraliDocumento.Data"));
         }
+
         [TestMethod]
         public void DatiOrdineAcquistoHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiOrdineAcquisto, typeof(FatturaElettronica.Validators.DatiOrdineAcquistoValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiOrdineAcquisto,
+                typeof(Validators.DatiOrdineAcquistoValidator));
         }
+
         [TestMethod]
         public void DatiContrattoHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiContratto, typeof(FatturaElettronica.Validators.DatiContrattoValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiContratto,
+                typeof(FatturaElettronica.Validators.DatiContrattoValidator));
         }
+
         [TestMethod]
         public void DatiConvenzioneHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiConvenzione, typeof(FatturaElettronica.Validators.DatiConvenzioneValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiConvenzione,
+                typeof(FatturaElettronica.Validators.DatiConvenzioneValidator));
         }
+
         [TestMethod]
         public void DatiRicezioneHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiRicezione, typeof(FatturaElettronica.Validators.DatiRicezioneValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiRicezione,
+                typeof(FatturaElettronica.Validators.DatiRicezioneValidator));
         }
+
         [TestMethod]
         public void DatiFattureCollegateHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiFattureCollegate, typeof(FatturaElettronica.Validators.DatiFattureCollegateValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiFattureCollegate,
+                typeof(FatturaElettronica.Validators.DatiFattureCollegateValidator));
         }
+
         [TestMethod]
         public void DatiDDTHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.DatiDDT, typeof(FatturaElettronica.Validators.DatiDDTValidator));
+            Validator.ShouldHaveChildValidator(x => x.DatiDDT, typeof(FatturaElettronica.Validators.DatiDDTValidator));
         }
+
         [TestMethod]
         public void DatiTrasportoHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiTrasporto, typeof(FatturaElettronica.Validators.DatiTrasportoValidator));
+            Validator.ShouldHaveDelegatePropertyChildValidator(x => x.DatiTrasporto,
+                typeof(FatturaElettronica.Validators.DatiTrasportoValidator));
         }
+
         [TestMethod]
         public void FatturaPrincipaleHasChildValidator()
         {
-            validator.ShouldHaveDelegatePropertyChildValidator(x => x.FatturaPrincipale, typeof(FatturaElettronica.Validators.FatturaPrincipaleValidator));
+            Validator.ShouldHaveDelegatePropertyChildValidator(x => x.FatturaPrincipale,
+                typeof(FatturaElettronica.Validators.FatturaPrincipaleValidator));
         }
     }
 }
