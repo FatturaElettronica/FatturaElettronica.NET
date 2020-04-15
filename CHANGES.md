@@ -4,8 +4,10 @@ Changelog
 In Development
 --------------
 
-In development
---------------
+v 3.0-beta.4
+------------
+
+Released on April 15, 2020
 
 - `CreateInstanceFromXml` accetta argomento `validateSignature` con default a `false` ([#258][258]) 
 
