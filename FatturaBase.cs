@@ -36,7 +36,7 @@ namespace FatturaElettronica
             w.WriteEndElement();
         }
 
-        public static FatturaBase CreateInstanceFromXml(Stream stream)
+        public static FatturaBase CreateInstanceFromXml(Stream stream, bool validateSignature = false)
         {
             try
             {
@@ -45,7 +45,7 @@ namespace FatturaElettronica
             catch (XmlException)
             {
                 stream.Position = 0;
-                return CreateInstanceFromXmlSigned(stream);
+                return CreateInstanceFromXmlSigned(stream, validateSignature);
             }
         }
 

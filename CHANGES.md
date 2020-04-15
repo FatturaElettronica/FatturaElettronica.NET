@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+In development
+--------------
+
+- `CreateInstanceFromXml` accetta argomento `validateSignature` con default a `false` ([#258][258]) 
+
+[258]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/258
+
 v 3.0-beta.3
 ------------
 
