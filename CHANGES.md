@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones.
+
+v 3.0-beta.5
+------------
+
+Released on April 20, 2020
+
 - Tabella `CausalePagamento` accetta valori Y,K,V2,Z durante il periodo di transizione ([#259][259]) 
 
 [259]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/259
