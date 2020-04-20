@@ -36,6 +36,13 @@
                     new CausalePagamento{ Codice = "O1", Nome = "redditi derivanti dall’assunzione di obblighi di fare, di non fare o permettere, per le quali non sussiste l’obbligo di iscrizione alla gestione separata (Circ. INPS n. 104/2001)"},
                     new CausalePagamento{ Codice = "V1", Nome = "redditi derivanti da attività commerciali non esercitate abitualmente (ad esempio, provvigioni corrisposte per prestazioni occasionali ad agente o rappresentante di commercio, mediatore, procacciatore d’affari)"},
                     new CausalePagamento{ Codice = "ZO", Nome = "titolo diverso dai precedenti"},
+                    
+                    // Valori accettati nel periodo transitorio tra specifiche v1.5 e v1.6 - verranno rimossi.
+                    // vedi https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/259
+                    new CausalePagamento{ Codice = "J", Nome = "compensi corrisposti ai raccoglitori occasionali di tartufi non identificati ai fini dell’imposta sul valore aggiunto, in relazione alla cessione di tartufi"},
+                    new CausalePagamento{ Codice = "K", Nome = "assegni di servizio civile universale di cui all’art.16 del D.lgs. n. 40 del 6 marzo 2017"},
+                    new CausalePagamento{ Codice = "V2", Nome = "redditi derivanti dalle prestazioni non esercitate abitualmente rese dagli incaricati alla vendita diretta a domicilio"},
+                    new CausalePagamento{ Codice = "Z", Nome = "titolo diverso dai precedenti"},
                 };
             }
         }

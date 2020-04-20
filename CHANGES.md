@@ -4,6 +4,10 @@ Changelog
 In Development
 --------------
 
+- Tabella `CausalePagamento` accetta valori Y,K,V2,Z durante il periodo di transizione ([#259][259]) 
+
+[259]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/259
+
 v 3.0-beta.4
 ------------
 
