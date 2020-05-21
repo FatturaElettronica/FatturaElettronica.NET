@@ -4,6 +4,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
 using FatturaElettronica.Core;
+using FatturaElettronica.Extensions;
 using FatturaElettronica.Tabelle;
 using FluentValidation;
 using FluentValidation.Results;

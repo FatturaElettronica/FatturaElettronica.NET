@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using FatturaElettronica.Common;
+using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;

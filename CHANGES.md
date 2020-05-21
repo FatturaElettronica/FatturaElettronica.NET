@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Passaggio a C# 8.0 e (piccolo) refactoring.
 
 v 3.0-beta.5
 ------------

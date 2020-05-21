@@ -72,16 +72,14 @@ namespace FatturaElettronica.Core
                 }
 
                 var v = prop.GetValue(this, null);
-                if (v == null)
+                switch (v)
                 {
-                    i++;
-                    continue;
-                }
-
-                if (v is string s && string.IsNullOrEmpty(s))
-                {
-                    i++;
-                    continue;
+                    case null:
+                        i++;
+                        continue;
+                    case string s when string.IsNullOrEmpty(s):
+                        i++;
+                        continue;
                 }
 
                 if (IsNumericType(prop.PropertyType) && v.Equals(0))
@@ -90,15 +88,14 @@ namespace FatturaElettronica.Core
                     continue;
                 }
 
-                if (v is DateTime && v.Equals(DateTime.MinValue))
+                switch (v)
                 {
-                    i++;
-                    continue;
-                }
-
-                if (v is BaseClass @class && @class.IsEmpty())
-                {
-                    i++;
+                    case DateTime _ when v.Equals(DateTime.MinValue):
+                        i++;
+                        continue;
+                    case BaseClass @class when @class.IsEmpty():
+                        i++;
+                        break;
                 }
             }
 
@@ -161,7 +158,7 @@ namespace FatturaElettronica.Core
 
         public static bool operator ==(BaseClass o1, BaseClass o2)
         {
-            if ((object) o1 == null || ((object) o2) == null)
+            if ((object) o1 == null || (object) o2 == null)
                 return Equals(o1, o2);
 
             return o1.Equals(o2);
@@ -172,7 +169,7 @@ namespace FatturaElettronica.Core
             if (o1 == null || o2 == null)
                 return !Equals(o1, o2);
 
-            return !(o1.Equals(o2));
+            return !o1.Equals(o2);
         }
 
         public override int GetHashCode()

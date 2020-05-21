@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Xml;
-using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
@@ -91,13 +90,11 @@ namespace FatturaElettronica
         {
             try
             {
-                using (var parsed = SignedFileExtensions.ParseSignature(stream, validateSignature))
-                {
-                    var newStream = new MemoryStream();
-                    parsed.WriteTo(newStream);
-                    newStream.Position = 0;
-                    return CreateInstanceFromXml(newStream);
-                }
+                using var parsed = SignedFileExtensions.ParseSignature(stream, validateSignature);
+                var newStream = new MemoryStream();
+                parsed.WriteTo(newStream);
+                newStream.Position = 0;
+                return CreateInstanceFromXml(newStream);
             }
             catch (CmsException)
             {

@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
-using FluentValidation;
-using FluentValidation.Results;
 using System.Reflection;
 using FatturaElettronica.Core;
+using FluentValidation;
+using FluentValidation.Results;
 
-namespace FatturaElettronica
+namespace FatturaElettronica.Extensions
 {
     public static class FatturaElettronicaExtensions
     {

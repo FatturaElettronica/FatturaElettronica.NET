@@ -14,6 +14,7 @@
     <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <NoWarn>NU5105</NoWarn>
+    <LangVersion>8</LangVersion>
   </PropertyGroup>
 
 <ItemGroup>

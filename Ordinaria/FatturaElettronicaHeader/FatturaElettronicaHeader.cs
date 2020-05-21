@@ -1,9 +1,8 @@
-﻿namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader
-{
-    using FatturaElettronica.Common;
-    using System.Xml;
-    using System.Xml.Serialization;
+﻿using System.Xml;
+using System.Xml.Serialization;
 
+namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader
+{
     public class FatturaElettronicaHeader : Core.BaseClassSerializable
     {
         /// <summary>
@@ -15,14 +14,17 @@
             CedentePrestatore = new CedentePrestatore.CedentePrestatore();
             Rappresentante = new RappresentanteFiscale.RappresentanteFiscale();
             CessionarioCommittente = new CessionarioCommittente.CessionarioCommittente();
-            TerzoIntermediarioOSoggettoEmittente = new TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente();
+            TerzoIntermediarioOSoggettoEmittente =
+                new TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente();
         }
-        public FatturaElettronicaHeader(XmlReader r) : base(r) { }
+
+        public FatturaElettronicaHeader(XmlReader r) : base(r)
+        {
+        }
 
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
-
         /// <summary>
         /// Informazioni che identificano univocamente il soggetto che trasmette, il documento trasmesso, 
         /// il formato in cui è stato trasmesso il documento, il soggetto destinatario.
@@ -53,7 +55,8 @@
         /// Dati relativi al soggetto che emette fattura per conto del cedente / prestatore.
         /// </summary>
         [Core.DataProperty]
-        public TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente TerzoIntermediarioOSoggettoEmittente { get; set; }
+        public TerzoIntermediarioOSoggettoEmittente.TerzoIntermediarioOSoggettoEmittente
+            TerzoIntermediarioOSoggettoEmittente { get; set; }
 
         /// <summary>
         /// Nei casi di documenti emessi da un soggetto diverso dal cedente / prestatore, indica se la fattura sia stata

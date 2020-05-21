@@ -23,7 +23,7 @@ namespace FatturaElettronica.Core
         /// </summary>
         protected BaseClassSerializable()
         {
-            XmlOptions = new XmlOptions() {DateTimeFormat = "yyyy-MM-dd", DecimalFormat = "0.00######"};
+            XmlOptions = new XmlOptions {DateTimeFormat = "yyyy-MM-dd", DecimalFormat = "0.00######"};
         }
 
         protected BaseClassSerializable(XmlReader r)
@@ -274,7 +274,7 @@ namespace FatturaElettronica.Core
         public virtual string ToJson(JsonOptions jsonOptions)
         {
             var json = JsonConvert.SerializeObject(
-                this, (jsonOptions == JsonOptions.Indented) ? Formatting.Indented : Formatting.None,
+                this, jsonOptions == JsonOptions.Indented ? Formatting.Indented : Formatting.None,
                 new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
@@ -481,10 +481,8 @@ namespace FatturaElettronica.Core
                     continue;
                 }
 
-                if (argumentType == typeof(int))
-                {
-                    if (add != null) add.Invoke(propertyValue, new[] {r.ReadElementContentAs(argumentType, null)});
-                }
+                if (argumentType != typeof(int)) continue;
+                if (add != null) add.Invoke(propertyValue, new[] {r.ReadElementContentAs(argumentType, null)});
             }
         }
 
