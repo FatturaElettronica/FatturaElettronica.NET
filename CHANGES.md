@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones.
+
+v 3.0-beta.6
+------------
+
+Released on May 21, 2020
+
 - Passaggio a C# 8.0 e (piccolo) refactoring.
 
 v 3.0-beta.5
