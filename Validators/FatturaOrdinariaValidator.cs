@@ -66,7 +66,7 @@ namespace FatturaElettronica.Validators
             var cessionario =
                 fatturaOrdinaria.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
 
-            return cedente.IdFiscaleIVA.ToString() == cessionario.IdFiscaleIVA.ToString() &&
+            return cedente.IdFiscaleIVA?.ToString() == cessionario.IdFiscaleIVA?.ToString() &&
                    cedente.CodiceFiscale == cessionario.CodiceFiscale;
         }
 
@@ -76,7 +76,7 @@ namespace FatturaElettronica.Validators
             var cessionario =
                 fatturaOrdinaria.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
 
-            if (cedente.IdFiscaleIVA.ToString() != cessionario.IdFiscaleIVA.ToString())
+            if (cedente.IdFiscaleIVA?.ToString() != cessionario.IdFiscaleIVA?.ToString())
                 return true;
             if (cedente.CodiceFiscale != cessionario.CodiceFiscale)
                 return true;

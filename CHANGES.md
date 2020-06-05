@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: CessionarioCommittente.IdFiscaleIva va convalidato solo quando valorizzato ([#263][263])
+
+[263]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/263
 
 v 3.0-beta.6
 ------------
