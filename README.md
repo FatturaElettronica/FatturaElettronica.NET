@@ -9,7 +9,7 @@
 - Fatture elettroniche ordinarie.
 - Fatture elettroniche semplificate.
 - De/serializzazione JSON.
-- Compatibile con [NET Standard v1.1][netstandard].
+- Compatibile con [NET Standard v2.0][netstandard].
 
 ## Installazione
 
@@ -54,6 +54,6 @@ Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
 [ga]: http://gestionaleamica.com
 [ni]: https://nicolaiarocci.com
 [nuget]: https://www.nuget.org/packages/FatturaElettronica/
-[netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md
+[netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md
 [rp]: http://www.kalamun.org/
 [ghs]: https://github.com/sponsors/nicolaiarocci
