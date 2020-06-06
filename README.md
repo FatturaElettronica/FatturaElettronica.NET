@@ -49,7 +49,7 @@ Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
 
-[pa]: https://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/?page=ivacomimp
+[pa]: https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.6.1
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt
 [ga]: http://gestionaleamica.com
 [ni]: https://nicolaiarocci.com
