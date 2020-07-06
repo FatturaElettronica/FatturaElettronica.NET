@@ -152,6 +152,10 @@ namespace FatturaElettronica.Test.Ordinaria
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {Natura = "N3"});
             result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
+            
+            body.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {Natura = null});
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
         }
 
         [TestMethod]

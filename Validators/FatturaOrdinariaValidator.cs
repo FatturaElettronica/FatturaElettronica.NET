@@ -42,17 +42,17 @@ namespace FatturaElettronica.Validators
 
         private bool FatturaValidateAgainstError00473(FatturaOrdinaria fatturaOrdinaria)
         {
-            
             var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
 
             if (cedente.IdFiscaleIVA.IdPaese != "IT")
                 return true;
-            
+
             var tipiDocumento = new string[] {"TD17", "TD18", "TD19"};
-            
+
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
         }
+
         private bool FatturaValidateAgainstError00472(FatturaOrdinaria fatturaOrdinaria)
         {
             var bodies =
@@ -92,8 +92,8 @@ namespace FatturaElettronica.Validators
             var cassaPrevidenziale = body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale;
             var dettaglioLinee = body.DatiBeniServizi.DettaglioLinee;
 
-            var nature = dettaglioLinee.Select(x => x.Natura)
-                .Concat(cassaPrevidenziale.Select(x => x.Natura))
+            var nature = dettaglioLinee.Where(x => x.Natura != null).Select(x => x.Natura)
+                .Concat(cassaPrevidenziale.Where(x => x.Natura != null).Select(x => x.Natura))
                 .ToArray();
 
             var riepilogo = body.DatiBeniServizi.DatiRiepilogo.Select(x => x.Natura);
