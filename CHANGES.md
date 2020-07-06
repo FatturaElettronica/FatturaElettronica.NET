@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.0.1
+-------
+
+Released on July 6, 2020
+
 - Fix: Validazione per errore 00444 dovrebbe tenere conto dei valori null ([#269][269])
 
 [269]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/269
