@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: Validazione per errore 00444 dovrebbe tenere conto dei valori null ([#269][269])
+
+[269]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/269
 
 v 3.0
 -----
