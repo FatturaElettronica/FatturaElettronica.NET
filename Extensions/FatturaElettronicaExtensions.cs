@@ -22,7 +22,8 @@ namespace FatturaElettronica.Extensions
                 return (IValidator)Activator.CreateInstance(type);
             });
 
-            return validator.Validate(obj);
+            var context = new ValidationContext<T>(obj);
+            return validator.Validate(context);
         }
     }
 }
