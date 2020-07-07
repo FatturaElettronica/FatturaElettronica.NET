@@ -4,9 +4,16 @@ Changelog
 In Development
 --------------
 
-- Aggiornata dipendenza FluentValidation a 9.0.
-- Come conseguenza del passaggio a FluentValidation 9, la convalida dei campi email è ora allineata 
-  al `EmailAddressAttribute` di NETCore e viene solo controllato che il campo contenga un carattere `@`.
+- hic sunt leones.
+
+v 3.0.2
+-------
+
+Released on July 7, 2020
+
+- Aggiornata dipendenza FluentValidation a 9.0 ([#271][271])
+
+[271]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/271
 
 v 3.0.1
 -------
