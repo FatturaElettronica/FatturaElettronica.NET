@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Aggiornata dipendenza FluentValidation a 9.0.
+- Come conseguenza del passaggio a FluentValidation 9, la convalida dei campi email è ora allineata 
+  al `EmailAddressAttribute` di NETCore e viene solo controllato che il campo contenga un carattere `@`.
 
 v 3.0.1
 -------

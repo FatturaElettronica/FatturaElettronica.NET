@@ -1,4 +1,5 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione;
+using FatturaElettronica.Validators;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

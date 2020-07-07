@@ -1,5 +1,6 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 using FluentValidation;
+using FluentValidation.Validators;
 
 namespace FatturaElettronica.Validators
 {
@@ -14,7 +15,9 @@ namespace FatturaElettronica.Validators
                 .Length(5, 12)
                 .When(x => !string.IsNullOrEmpty(x.Fax));
             RuleFor(x => x.Email)
-                .EmailAddress()
+#pragma warning disable 618
+                .EmailAddress(EmailValidationMode.Net4xRegex)
+#pragma warning restore 618
                 .When(x=>!string.IsNullOrEmpty(x.Email));
         }
     }
