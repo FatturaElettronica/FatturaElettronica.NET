@@ -62,11 +62,24 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
+        public void CodiceDestinatarioMustBeValid()
+        {
+            Challenge.CodiceDestinatario = "hello";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "Subm70N";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "Sub-70N";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "SUBM70N";
+            Validator.ShouldNotHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+        }
+
+        [TestMethod]
         public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPA12()
         {
             // Quando FormatoTrasmissione = FPA12 ProgressivioInvio.Lenght = 6.
             Challenge.FormatoTrasmissione = Defaults.FormatoTrasmissione.PubblicaAmministrazione;
-            AssertLength(x => x.CodiceDestinatario, 6, expectedErrorCode: "00427");
+            AssertLength(x => x.CodiceDestinatario, 6, expectedErrorCode: "00427", filler: 'X');
         }
 
         [TestMethod]
@@ -74,7 +87,7 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             // Quando FormatoTrasmissione = FPR12 ProgressivioInvio.Lenght = 7.
             Challenge.FormatoTrasmissione = Defaults.FormatoTrasmissione.Privati;
-            AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00427");
+            AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00427", filler: 'X');
         }
 
         [TestMethod]

@@ -53,11 +53,24 @@ namespace FatturaElettronica.Test.Semplificata
         }
 
         [TestMethod]
-        public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPR12()
+        public void CodiceDestinatarioMustBeValid()
+        {
+            Challenge.CodiceDestinatario = "hello";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "Subm70N";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "Sub-70N";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "SUBM70N";
+            Validator.ShouldNotHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+        }
+
+        [TestMethod]
+        public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFSM10()
         {
             // Quando FormatoTrasmissione = FSM10 ProgressivioInvio.Lenght = 7.
             Challenge.FormatoTrasmissione = Defaults.FormatoTrasmissione.Semplificata;
-            AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00311");
+            AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00311", filler: 'X');
         }
 
         [TestMethod]

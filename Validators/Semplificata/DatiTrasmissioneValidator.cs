@@ -22,6 +22,9 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(dt => dt.CodiceDestinatario)
                 .NotEmpty();
             RuleFor(dt => dt.CodiceDestinatario)
+                .Matches(@"^[A-Z0-9]+$")
+                .When(x => !string.IsNullOrEmpty(x.CodiceDestinatario));
+            RuleFor(dt => dt.CodiceDestinatario)
                 .Length(7)
                 .When(dt => dt.FormatoTrasmissione == Defaults.FormatoTrasmissione.Semplificata)
                 .WithErrorCode("00311");
