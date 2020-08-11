@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Fix: `CodiceDestinatario` dovrebbe essere maiuscolo e non contenere altri caratteri al di fuori di A-Z 0-9 ([#272][272)
+
+[272]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/272
 
 v 3.0.2
 -------
