@@ -19,6 +19,7 @@ Collaboratori
 - Fabio Calvigioni
 - Federico Dipuma
 - Gaetano Pizzol
+- Luca Borghini
 - Luca Marcato
 - Marco Tessitore
 - Massimo Linossi

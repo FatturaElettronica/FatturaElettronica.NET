@@ -21,6 +21,9 @@ namespace FatturaElettronica.Validators
             RuleFor(dt => dt.CodiceDestinatario)
                 .NotEmpty();
             RuleFor(dt => dt.CodiceDestinatario)
+                .Matches(@"^[A-Z0-9]+$")
+                .When(x => !string.IsNullOrEmpty(x.CodiceDestinatario));
+            RuleFor(dt => dt.CodiceDestinatario)
                 .Length(6)
                 .When(dt => dt.FormatoTrasmissione == Defaults.FormatoTrasmissione.PubblicaAmministrazione)
                 .WithErrorCode("00427");
