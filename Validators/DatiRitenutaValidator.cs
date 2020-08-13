@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using FatturaElettronica.Extensions;
+using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
 
@@ -14,6 +15,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.CausalePagamento)
                 .NotEmpty()
                 .SetValidator(new IsValidValidator<CausalePagamento>());
+            RuleFor(x => x.ImportoRitenuta)
+                .ScalePrecision2DecimalType();
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using FatturaElettronica.Extensions;
+using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
 
@@ -33,6 +34,10 @@ namespace FatturaElettronica.Validators
                 .Length(1, 20)
                 .BasicLatinValidator()
                 .When(x=>!string.IsNullOrEmpty(x.RiferimentoAmministrazione));
+            RuleFor(x => x.ImportoContributoCassa)
+                .ScalePrecision2DecimalType();
+            RuleFor(x => x.ImponibileCassa)
+                .ScalePrecision2DecimalType();
         }
     }
 }

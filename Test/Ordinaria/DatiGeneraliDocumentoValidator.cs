@@ -129,5 +129,17 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertOnlyAcceptsSIValue(x => x.Art73);
         }
+        
+        [TestMethod]
+        public void PenalitaPagamentiRitardati()
+        {
+            AssertDecimalType(x => x.ImportoTotaleDocumento, 2, 13);
+        }
+        
+        [TestMethod]
+        public void ImportoPagamento()
+        {
+            AssertDecimalType(x => x.Arrotondamento, 2, 13);
+        }
     }
 }

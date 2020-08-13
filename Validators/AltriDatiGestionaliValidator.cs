@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using FatturaElettronica.Extensions;
+using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 
 namespace FatturaElettronica.Validators
@@ -15,6 +16,8 @@ namespace FatturaElettronica.Validators
                 .Length(1, 60)
                 .Latin1SupplementValidator()
                 .When(x => !string.IsNullOrEmpty(x.RiferimentoTesto));
+            RuleFor(x => x.RiferimentoNumero)
+                .ScalePrecision8DecimalType();
         }
     }
 }

@@ -267,5 +267,11 @@ namespace FatturaElettronica.Test.Ordinaria
             Challenge.Quantita = 0;
             Validator.ShouldNotHaveValidationErrorFor(x => x.Quantita, Challenge);
         }
+        
+        [TestMethod]
+        public void PrezzoUnitario()
+        {
+            AssertDecimalType(x => x.PrezzoUnitario, 8, 19);
+        }
     }
 }

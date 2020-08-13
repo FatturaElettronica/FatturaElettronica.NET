@@ -2,6 +2,7 @@
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 using FatturaElettronica.Tabelle;
 using System;
+using FatturaElettronica.Extensions;
 
 namespace FatturaElettronica.Validators
 {
@@ -37,6 +38,14 @@ namespace FatturaElettronica.Validators
                 .Length(1, 100)
                 .Latin1SupplementValidator()
                 .When(x => !string.IsNullOrEmpty(x.RiferimentoNormativo));
+            RuleFor(x => x.SpeseAccessorie)
+                .ScalePrecision2DecimalType();
+            RuleFor(x => x.ImponibileImporto)
+                .ScalePrecision2DecimalType();
+            RuleFor(x => x.Imposta)
+                .ScalePrecision2DecimalType();
+            RuleFor(x => x.Arrotondamento)
+                .ScalePrecision8DecimalType();
         }
         private bool ImpostaValidateAgainstError00421(DatiRiepilogo datiRiepilogo)
         {

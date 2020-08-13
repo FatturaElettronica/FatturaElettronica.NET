@@ -1,4 +1,5 @@
 ﻿using System;
+using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
 using FatturaElettronica.Tabelle;
 using FluentValidation;
@@ -51,6 +52,10 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new AltriDatiGestionaliValidator());
             RuleFor(x => x.Quantita)
                 .GreaterThanOrEqualTo(0);
+            RuleFor(x => x.PrezzoUnitario)
+                .ScalePrecision8DecimalType();
+            RuleFor(x => x.PrezzoTotale)
+                .ScalePrecision8DecimalType();
         }
 
         private bool PrezzoTotaleValidateAgainstError00423(DettaglioLinee challenge)

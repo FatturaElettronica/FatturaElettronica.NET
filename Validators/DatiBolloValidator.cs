@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using FatturaElettronica.Extensions;
+using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 
 namespace FatturaElettronica.Validators
@@ -10,6 +11,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.BolloVirtuale)
                 .NotEmpty()
                 .Equal("SI");
+            RuleFor(x => x.ImportoBollo)
+                .ScalePrecision2DecimalType();
         }
     }
 }
