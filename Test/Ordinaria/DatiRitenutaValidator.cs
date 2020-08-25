@@ -30,5 +30,11 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertOnlyAcceptsTableValues<CausalePagamento>(x => x.CausalePagamento);
         }
+        
+        [TestMethod]
+        public void ImponibileImporto()
+        {
+            AssertDecimalType(x => x.ImportoRitenuta, 2, 13);
+        }
     }
 }

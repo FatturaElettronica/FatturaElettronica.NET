@@ -71,5 +71,17 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertOnlyAcceptsSIValue(x => x.Ritenuta);
         }
+        
+        [TestMethod]
+        public void ImportoContributoCassa()
+        {
+            AssertDecimalType(x => x.ImportoContributoCassa, 2, 13);
+        }
+        
+        [TestMethod]
+        public void ImponibileCassa()
+        {
+            AssertDecimalType(x => x.ImponibileCassa, 2, 13);
+        }
     }
 }

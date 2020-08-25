@@ -44,6 +44,10 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.Art73)
                 .Equal("SI")
                 .When(x => !string.IsNullOrEmpty(x.Art73));
+            RuleFor(x => x.ImportoTotaleDocumento)
+                .ScalePrecision(2, 13);
+            RuleFor(x => x.Arrotondamento)
+                .ScalePrecision(2, 13);
         }
     }
 }

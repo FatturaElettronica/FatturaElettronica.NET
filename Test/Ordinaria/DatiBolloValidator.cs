@@ -17,5 +17,11 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertOnlyAcceptsSIValue(x => x.BolloVirtuale);
         }
+        
+        [TestMethod]
+        public void ImportoBollo()
+        {
+            AssertDecimalType(x => x.ImportoBollo, 2, 13);
+        }
     }
 }

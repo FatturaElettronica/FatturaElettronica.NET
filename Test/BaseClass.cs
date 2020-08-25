@@ -198,5 +198,43 @@ namespace FatturaElettronica.Test
             var expr = (MemberExpression) outExpr.Body;
             return (PropertyInfo) expr.Member;
         }
+
+        protected void AssertDecimalType(Expression<Func<TClass, decimal?>> outExpr, int scale, int precision)
+        {
+            var maxValue = (decimal) Math.Pow(10, precision - scale) - 1;
+            var prop = GetProperty(outExpr);
+            prop.SetValue(Challenge,maxValue + 1);
+            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            
+            prop.SetValue(Challenge,maxValue);
+            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            
+            var decimalValueValid = (decimal)Math.Pow(10, -scale);
+            prop.SetValue(Challenge, decimalValueValid);
+            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            
+            var decimalValueInvalid = (decimal)Math.Pow(10, -scale - 1);
+            prop.SetValue(Challenge, decimalValueInvalid);
+            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+        }
+        
+        protected void AssertDecimalType(Expression<Func<TClass, decimal>> outExpr, int scale, int precision)
+        {
+            var maxValue = (decimal) Math.Pow(10, precision - scale) - 1;
+            var prop = GetProperty(outExpr);
+            prop.SetValue(Challenge,maxValue + 1);
+            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            
+            prop.SetValue(Challenge,maxValue);
+            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            
+            var decimalValueValid = (decimal)Math.Pow(10, -scale);
+            prop.SetValue(Challenge, decimalValueValid);
+            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            
+            var decimalValueInvalid = (decimal)Math.Pow(10, -scale - 1);
+            prop.SetValue(Challenge, decimalValueInvalid);
+            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+        }
     }
 }

@@ -90,5 +90,23 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertMustBeLatin1Supplement(x => x.RiferimentoNormativo);
         }
+        
+        [TestMethod]
+        public void SpeseAccessorie()
+        {
+            AssertDecimalType(x => x.SpeseAccessorie, 2, 13);
+        }
+        
+        [TestMethod]
+        public void ImponibileImporto()
+        {
+            AssertDecimalType(x => x.ImponibileImporto, 2, 13);
+        }
+        
+        [TestMethod]
+        public void Arrotondamento()
+        {
+            AssertDecimalType(x => x.Arrotondamento, 8, 19);
+        }
     }
 }

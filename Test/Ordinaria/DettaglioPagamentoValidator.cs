@@ -1,4 +1,6 @@
-﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
+﻿using System;
+using System.Linq;
+using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -210,6 +212,24 @@ namespace FatturaElettronica.Test.Ordinaria
         public void CodicePagamentoMustBeBasicLatin()
         {
             AssertMustBeBasicLatin(x => x.CodicePagamento);
+        }
+
+        [TestMethod]
+        public void ScontoPagamentoAnticipato()
+        {
+            AssertDecimalType(x => x.ScontoPagamentoAnticipato, 2, 13);
+        }
+        
+        [TestMethod]
+        public void PenalitaPagamentiRitardati()
+        {
+            AssertDecimalType(x => x.PenalitaPagamentiRitardati, 2, 13);
+        }
+        
+        [TestMethod]
+        public void ImportoPagamento()
+        {
+            AssertDecimalType(x => x.ImportoPagamento, 2, 13);
         }
     }
 }

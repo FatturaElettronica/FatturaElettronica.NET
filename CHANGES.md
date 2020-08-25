@@ -4,8 +4,10 @@ Changelog
 In Development
 --------------
 
+- Fix: I tipi decimali dovrebbero essere convalidati per verificare che abbiano 2 o 11 decimali ([#275][275])
 - Fix: `CodiceDestinatario` dovrebbe essere maiuscolo e non contenere altri caratteri al di fuori di A-Z 0-9 ([#272][272])
 
+[275]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/275
 [272]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/272
 
 v 3.0.2

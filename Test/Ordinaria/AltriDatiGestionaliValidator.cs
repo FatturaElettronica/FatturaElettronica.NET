@@ -42,5 +42,11 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertMustBeLatin1Supplement(x => x.RiferimentoTesto);
         }
+        
+        [TestMethod]
+        public void RiferimentoNumero()
+        {
+            AssertDecimalType(x => x.RiferimentoNumero, 8, 19);
+        }
     }
 }

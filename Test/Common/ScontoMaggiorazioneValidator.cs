@@ -39,5 +39,11 @@ namespace FatturaElettronica.Test.Common
             Challenge.Percentuale = null;
             Validator.ShouldNotHaveValidationErrorFor(x => x.Tipo, Challenge);
         }
+        
+        [TestMethod]
+        public void Importo()
+        {
+            AssertDecimalType(x => x.Importo, 8, 19);
+        }
     }
 }

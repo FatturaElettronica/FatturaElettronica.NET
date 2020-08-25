@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using FatturaElettronica.Extensions;
+using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
 using FatturaElettronica.Tabelle;
 
@@ -54,6 +55,12 @@ namespace FatturaElettronica.Validators
                 .Length(1, 60)
                 .BasicLatinValidator()
                 .When(x => !string.IsNullOrEmpty(x.CodicePagamento));
+            RuleFor(x => x.ScontoPagamentoAnticipato)
+                .ScalePrecision2DecimalType();
+            RuleFor(x => x.PenalitaPagamentiRitardati)
+                .ScalePrecision2DecimalType();
+            RuleFor(x => x.ImportoPagamento)
+                .ScalePrecision2DecimalType();
         }
     }
 }
