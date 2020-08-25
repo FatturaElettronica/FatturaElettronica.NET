@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.0.3
+-------
+
+Released on August 25, 2020
+
 - Fix: I tipi decimali dovrebbero essere convalidati per verificare che abbiano 2 o 11 decimali ([#275][275])
 - Fix: `CodiceDestinatario` dovrebbe essere maiuscolo e non contenere altri caratteri al di fuori di A-Z 0-9 ([#272][272])
 
