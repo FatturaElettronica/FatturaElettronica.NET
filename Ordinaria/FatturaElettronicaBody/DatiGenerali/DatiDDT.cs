@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
 {
@@ -29,21 +30,21 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Numero del documento di trasporto.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         // ReSharper disable once InconsistentNaming
         public string NumeroDDT { get; set; }
 
         /// <summary>
         /// Data del documento di trasporto.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         // ReSharper disable once InconsistentNaming
         public DateTime DataDDT { get; set; }
 
         /// <summary>
         /// Linea di dettaglio della fattura cui si riferisce il DDT (non viene valorizzato se il riferimento è all'intera fattura).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<int> RiferimentoNumeroLinea { get; set; }
     }
 }

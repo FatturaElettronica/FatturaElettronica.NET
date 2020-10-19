@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiVeicoli
 {
@@ -15,13 +16,13 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiVeicoli
         /// <summary>
         /// Data di prima immatricolazione o iscrizione nei pubblici registri.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DateTime? Data { get; set; }
 
         /// <summary>
         /// Totale chilometri percorsi, oppure totale ora navigate o volate.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string TotalePercorso { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -28,37 +29,37 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestator
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cedente / prestatore.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiAnagraficiCedentePrestatore DatiAnagrafici { get; set; }
 
         /// <summary>
         /// Dati della sede del cedente / prestatore.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public SedeCedentePrestatore Sede { get; set; }
 
         /// <summary>
         /// Nei casi di cedente / prestatore non residente.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public StabileOrganizzazione StabileOrganizzazione { get; set; }
 
         /// <summary>
         /// Nei casi di società iscritte nel registro delle imprese ai sensi dell'art. 2250 del codice civile.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public IscrizioneREA IscrizioneREA { get; set; }
 
         /// <summary>
         /// Contatti del cedente / prestatore.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public Contatti Contatti { get; set; }
 
         /// <summary>
         /// Codice identificativo del cedente / prestatore a fini amministrativi-contabili.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string RiferimentoAmministrazione { get; set; }
     }
 }

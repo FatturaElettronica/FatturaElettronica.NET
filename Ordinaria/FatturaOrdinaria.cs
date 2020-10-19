@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
 
 namespace FatturaElettronica.Ordinaria
@@ -11,6 +10,7 @@ namespace FatturaElettronica.Ordinaria
             FatturaElettronicaHeader = new FatturaElettronicaHeader.FatturaElettronicaHeader();
             FatturaElettronicaBody = new List<FatturaElettronicaBody.FatturaElettronicaBody>();
         }
+
         public static FatturaOrdinaria CreateInstance(Instance formato)
         {
             var fattura = new FatturaOrdinaria();
@@ -18,7 +18,8 @@ namespace FatturaElettronica.Ordinaria
             switch (formato)
             {
                 case Instance.PubblicaAmministrazione:
-                    fattura.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.PubblicaAmministrazione;
+                    fattura.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione =
+                        FormatoTrasmissione.PubblicaAmministrazione;
                     break;
                 case Instance.Privati:
                     fattura = new FatturaOrdinaria();
@@ -48,11 +49,10 @@ namespace FatturaElettronica.Ordinaria
         /// IMPORTANT
         /// Each data property must be flagged with the Order attribute or it will be ignored.
         /// Also, properties must be listed with the precise order in the specification.
-
         /// <summary>
         /// Intestazione della comunicazione.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public FatturaElettronicaHeader.FatturaElettronicaHeader FatturaElettronicaHeader { get; set; }
 
         /// <summary>
@@ -60,8 +60,7 @@ namespace FatturaElettronica.Ordinaria
         /// </summary>
         /// <remarks>Il blocco ha molteciplità 1 nel caso di fattura singola; nel caso di lotto di fatture, si ripete
         /// per ogni fattura componente il lotto stesso.</remarks>
-        [DataProperty]
+        [Core.DataProperty]
         public List<FatturaElettronicaBody.FatturaElettronicaBody> FatturaElettronicaBody { get; set; }
-
     }
 }

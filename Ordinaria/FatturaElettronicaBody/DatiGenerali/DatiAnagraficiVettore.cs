@@ -11,7 +11,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Numero identificativo della licenza di guida (es. numero patente).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string NumeroLicenzaGuida { get; set; }
     }
 }

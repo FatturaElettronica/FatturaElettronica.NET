@@ -1,6 +1,7 @@
 ﻿using FatturaElettronica.Common;
 using System.Collections.Generic;
 using System.Xml;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
 {
@@ -26,14 +27,14 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Dati generali del documento principale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiGeneraliDocumento DatiGeneraliDocumento { get; set; }
 
         /// <summary>
         /// Blocco contenente le informazioni relative alla fattura rettificata. 
         /// Vale per le fatture emesse ai sensi dell'articolo 26 DPR 633/72
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiFatturaRettificata DatiFatturaRettificata { get; set; }
     }
 }

@@ -6,19 +6,18 @@ using FluentValidation.Internal;
 using FluentValidation.TestHelper;
 using FluentValidation.Validators;
 
-namespace Tests
+namespace FatturaElettronica.Test
 {
     public static class TestHelpers
     {
         public static void ShouldHaveDelegatePropertyChildValidator<T, TProperty>(this IValidator<T> validator,
-                Expression<Func<T, TProperty>> expression, Type propertyValidatorType)
+            Expression<Func<T, TProperty>> expression, Type propertyValidatorType)
         {
             var descriptor = validator.CreateDescriptor();
             var expressionMemberName = expression.GetMember().Name;
             var matchingValidators = descriptor.GetValidatorsForMember(expressionMemberName).ToArray();
             var propertyValidatorTypes = matchingValidators
-                .OfType<DelegatingValidator>()
-                .Select(v => ((ChildValidatorAdaptor)v.InnerValidator).ValidatorType);
+                .Select(v => ((ChildValidatorAdaptor<T,TProperty>) v).ValidatorType);
 
             if (propertyValidatorTypes.All(x => x != propertyValidatorType))
             {

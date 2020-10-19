@@ -1,5 +1,6 @@
 ﻿using FluentValidation;
 using FatturaElettronica.Common;
+using FatturaElettronica.Extensions;
 
 namespace FatturaElettronica.Validators
 {
@@ -14,6 +15,8 @@ namespace FatturaElettronica.Validators
                 .Must((challenge, _) => challenge.Importo != null || challenge.Percentuale != null)
                 .WithMessage("Percentuale e Importo non presenti a fronte di Tipo valorizzato")
                 .WithErrorCode("00437");
+            RuleFor(x => x.Importo)
+                .ScalePrecision8DecimalType();
         }
     }
 }

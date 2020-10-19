@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
 {
@@ -19,7 +20,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Fase dello stato di avanzamento cui il documento si riferisce.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public int RiferimentoFase { get; set; }
     }
 }

@@ -1,18 +1,12 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class DatiBolloValidator
         : BaseClass<DatiBollo, FatturaElettronica.Validators.DatiBolloValidator>
     {
-        [TestMethod]
-        public void ImportoBolloIsRequired()
-        {
-            AssertRequired(x => x.ImportoBollo);
-        }
         [TestMethod]
         public void BolloVirtualeIsRequired()
         {
@@ -22,6 +16,12 @@ namespace Ordinaria.Tests
         public void BolloVirtualeOnlyAcceptsSIValue()
         {
             AssertOnlyAcceptsSIValue(x => x.BolloVirtuale);
+        }
+        
+        [TestMethod]
+        public void ImportoBollo()
+        {
+            AssertDecimalType(x => x.ImportoBollo, 2, 13);
         }
     }
 }

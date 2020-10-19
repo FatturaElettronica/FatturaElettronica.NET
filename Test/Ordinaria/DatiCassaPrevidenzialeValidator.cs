@@ -2,9 +2,8 @@
 using FluentValidation.TestHelper;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class DatiCassaPrevidenzialeValidator
@@ -23,29 +22,29 @@ namespace Ordinaria.Tests
         [TestMethod]
         public void NaturaIsRequiredWhenAliquotaIsZero()
         {
-            challenge.AliquotaIVA = 0;
+            Challenge.AliquotaIVA = 0;
             AssertRequired(x => x.Natura, expectedErrorCode:"00413");
         }
         [TestMethod]
         public void NaturaIsNotAllowedWhenAliquotaIsNotZero()
         {
-            challenge.AliquotaIVA = 1;
-            challenge.Natura = "N1";
-            validator.ShouldHaveValidationErrorFor(x => x.Natura, challenge).WithErrorCode("00414");
+            Challenge.AliquotaIVA = 1;
+            Challenge.Natura = "N1";
+            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00414");
         }
         [TestMethod]
         public void NaturaOnlyAcceptsTableValuesWhenAliquotaIsZero()
         {
-            challenge.AliquotaIVA = 0;
+            Challenge.AliquotaIVA = 0;
             AssertOnlyAcceptsTableValues<Natura>(x => x.Natura);
 
         }
         [TestMethod]
         public void NaturaIsOnlyValidatedWhenIsNotZero()
         {
-            challenge.Natura = null;
-            challenge.AliquotaIVA = 1;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Natura, challenge);
+            Challenge.Natura = null;
+            Challenge.AliquotaIVA = 1;
+            Validator.ShouldNotHaveValidationErrorFor(x => x.Natura, Challenge);
         }
         [TestMethod]
         public void RiferimentoAmministrazioneIsOptional()
@@ -71,6 +70,18 @@ namespace Ordinaria.Tests
         public void RitenutaOnlyAcceptSIValue()
         {
             AssertOnlyAcceptsSIValue(x => x.Ritenuta);
+        }
+        
+        [TestMethod]
+        public void ImportoContributoCassa()
+        {
+            AssertDecimalType(x => x.ImportoContributoCassa, 2, 13);
+        }
+        
+        [TestMethod]
+        public void ImponibileCassa()
+        {
+            AssertDecimalType(x => x.ImponibileCassa, 2, 13);
         }
     }
 }

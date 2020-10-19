@@ -1,10 +1,9 @@
 ﻿using System.Linq;
 using FatturaElettronica.Semplificata.FatturaElettronicaBody;
 using FluentValidation.TestHelper;
-using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Semplificata.Tests
+namespace FatturaElettronica.Test.Semplificata
 {
     [TestClass]
     public class FatturaElettronicaBodyValidator
@@ -13,25 +12,29 @@ namespace Semplificata.Tests
         [TestMethod]
         public void DatiGeneraliHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.DatiGenerali, typeof(FatturaElettronica.Validators.Semplificata.DatiGeneraliValidator));
         }
+
         [TestMethod]
         public void DatiBeniServiziHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.DatiBeniServizi, typeof(FatturaElettronica.Validators.Semplificata.DatiBeniServiziValidator));
         }
+
         [TestMethod]
         public void DatiBeniServiziCannotBeEmpty()
         {
-            var r = validator.Validate(challenge);
-            Assert.AreEqual("DatiBeniServizi è obbligatorio", r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi").ErrorMessage);
+            var r = Validator.Validate(Challenge);
+            Assert.AreEqual("DatiBeniServizi è obbligatorio",
+                r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi")?.ErrorMessage);
         }
+
         [TestMethod]
         public void AllegatiHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(
+            Validator.ShouldHaveChildValidator(
                 x => x.Allegati, typeof(FatturaElettronica.Validators.Semplificata.AllegatiValidator));
         }
     }

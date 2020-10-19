@@ -23,16 +23,18 @@ namespace FatturaElettronica.Validators
                 .Matches(@"\d")
                 .WithMessage("Numero non contiene caratteri numerici")
                 .WithErrorCode("00425");
-            RuleFor(x => x.DatiRitenuta)
-                .SetValidator(new DatiRitenutaValidator())
-                .When(x => x.DatiRitenuta != null && !x.DatiRitenuta.IsEmpty());
+            RuleForEach(x => x.DatiRitenuta)
+                .SetValidator(new DatiRitenutaValidator());
             RuleFor(x => x.DatiBollo)
                 .SetValidator(new DatiBolloValidator())
                 .When(x => x.DatiBollo != null && !x.DatiBollo.IsEmpty());
             RuleForEach(x => x.DatiCassaPrevidenziale)
                 .SetValidator(new DatiCassaPrevidenzialeValidator());
             RuleFor(x => x.DatiCassaPrevidenziale)
-                .Must((datiGeneraliDocumento, datiCassa) => { return (datiCassa.Where(a => a.Ritenuta == "SI").Count() > 0) ? !datiGeneraliDocumento.DatiRitenuta.IsEmpty() : true; })
+                .Must((datiGeneraliDocumento, datiCassa) =>
+                {
+                    return (datiCassa.Count(a => a.Ritenuta == "SI") <= 0) || datiGeneraliDocumento.DatiRitenuta.Count > 0;
+                })
                 .WithMessage("DatiRitenuta non presente a fronte di DatiCassaPrevidenziale.Ritenuta valorizzato")
                 .WithErrorCode("00415");
             RuleForEach(x => x.ScontoMaggiorazione)
@@ -42,6 +44,10 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.Art73)
                 .Equal("SI")
                 .When(x => !string.IsNullOrEmpty(x.Art73));
+            RuleFor(x => x.ImportoTotaleDocumento)
+                .ScalePrecision(2, 13);
+            RuleFor(x => x.Arrotondamento)
+                .ScalePrecision(2, 13);
         }
     }
 }

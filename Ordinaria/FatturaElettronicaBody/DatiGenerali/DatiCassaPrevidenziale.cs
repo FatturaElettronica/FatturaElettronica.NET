@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
 {
@@ -18,49 +19,49 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Tipologia della cassa previdenziale di appartenenza.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string TipoCassa { get; set; }
 
         /// <summary>
         /// Aliquota (%) del contributo, se previsto, per la cassa di appartenenza.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal AlCassa { get; set; }
 
         /// <summary>
         /// Importo del contributo per la cassa di appartenenza.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal ImportoContributoCassa { get; set; }
 
         /// <summary>
         /// Importo sul quale applicare il contributo cassa previdenziale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal ImponibileCassa { get; set; }
 
         /// <summary>
         /// Aliquota (%) IVA applicata.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal AliquotaIVA { get; set; }
 
         /// <summary>
         /// Indica se il contributo cassa è soggetto a ritenuta.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Ritenuta { get; set; }
 
         /// <summary>
         /// Nei casi di Aliquota IVA pari a zero.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Natura { get; set; }
 
         /// <summary>
         /// Codice identificativo ai fini amministrativo-contabili.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string RiferimentoAmministrazione { get; set; }
     }
 }

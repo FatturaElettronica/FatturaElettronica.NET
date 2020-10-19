@@ -1,9 +1,8 @@
 ﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tests;
 
-namespace Semplificata.Tests
+namespace FatturaElettronica.Test.Semplificata
 {
     [TestClass]
     public class DatiIVAValidator : BaseClass<DatiIVA, FatturaElettronica.Validators.Semplificata.DatiIVAValidator>
@@ -11,20 +10,20 @@ namespace Semplificata.Tests
         [TestMethod]
         public void AliquotaOImportoRequired()
         {
-            challenge.Imposta = null;
-            challenge.Aliquota = null;
-            validator.ShouldHaveValidationErrorFor(x => x.Imposta, challenge);
-            validator.ShouldHaveValidationErrorFor(x => x.Aliquota, challenge);
+            Challenge.Imposta = null;
+            Challenge.Aliquota = null;
+            Validator.ShouldHaveValidationErrorFor(x => x.Imposta, Challenge);
+            Validator.ShouldHaveValidationErrorFor(x => x.Aliquota, Challenge);
 
-            challenge.Aliquota = null;
-            challenge.Imposta = 0m;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, challenge);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Aliquota, challenge);
+            Challenge.Aliquota = null;
+            Challenge.Imposta = 0m;
+            Validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, Challenge);
+            Validator.ShouldNotHaveValidationErrorFor(x => x.Aliquota, Challenge);
 
-            challenge.Aliquota = 0m;
-            challenge.Imposta = null;
-            validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, challenge);
-            validator.ShouldNotHaveValidationErrorFor(x => x.Aliquota, challenge);
+            Challenge.Aliquota = 0m;
+            Challenge.Imposta = null;
+            Validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, Challenge);
+            Validator.ShouldNotHaveValidationErrorFor(x => x.Aliquota, Challenge);
         }
     }
 }

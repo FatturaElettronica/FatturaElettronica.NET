@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -14,50 +15,50 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
         /// <summary>
         /// Aliquota (%) IVA.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal AliquotaIVA { get; set; }
 
         /// <summary>
         /// Natura delle operazioni qualora non rientrino tra quelle imponibili.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Natura { get; set; }
 
         /// <summary>
         /// Corrispettivi relativi alle cessioni accessorie (es. imballaggi etc.) qualora presenti.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? SpeseAccessorie { get; set; }
 
         /// <summary>
         /// Arrotondamento sull'imponibili o sull'imposta.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal? Arrotondamento { get; set; }
 
         /// <summary>
         /// Questo valore rappresenta: base imponibile per le operazioni soggette ad IVA; importo, per le operazioni che non 
         /// rientrano tra quelle imponibili.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal ImponibileImporto { get; set; }
 
         /// <summary>
         /// Imposta risultante dall'applicazione dell'aliquota IVA all'imponibile.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal Imposta { get; set; }
 
         /// <summary>
         /// Eseigibilità IVA (immediata ai sensi Art. 6 comma 5 del DPR 633 1972, oppure differita).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string EsigibilitaIVA { get; set; }
 
         /// <summary>
         /// Norma di riferimento (obbligatoria nei casi in cui Natura è valorizzato).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string RiferimentoNormativo { get; set; }
     }
 }

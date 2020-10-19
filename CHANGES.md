@@ -4,8 +4,108 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- hic sunt leones
 
+v 3.0.3
+-------
+
+Released on August 25, 2020
+
+- Fix: I tipi decimali dovrebbero essere convalidati per verificare che abbiano 2 o 11 decimali ([#275][275])
+- Fix: `CodiceDestinatario` dovrebbe essere maiuscolo e non contenere altri caratteri al di fuori di A-Z 0-9 ([#272][272])
+
+[275]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/275
+[272]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/272
+
+v 3.0.2
+-------
+
+Released on July 7, 2020
+
+- Aggiornata dipendenza FluentValidation a 9.0 ([#271][271])
+
+[271]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/271
+
+v 3.0.1
+-------
+
+Released on July 6, 2020
+
+- Fix: Validazione per errore 00444 dovrebbe tenere conto dei valori null ([#269][269])
+
+[269]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/269
+
+v 3.0
+-----
+
+Released on June 5, 2020
+
+- Fix: CessionarioCommittente.IdFiscaleIva va convalidato solo quando valorizzato ([#263][263])
+
+[263]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/263
+
+v 3.0-beta.6
+------------
+
+Released on May 21, 2020
+
+- Passaggio a C# 8.0 e (piccolo) refactoring.
+
+v 3.0-beta.5
+------------
+
+Released on April 20, 2020
+
+- Tabella `CausalePagamento` accetta valori Y,K,V2,Z durante il periodo di transizione ([#259][259]) 
+
+[259]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/259
+
+v 3.0-beta.4
+------------
+
+Released on April 15, 2020
+
+- `CreateInstanceFromXml` accetta argomento `validateSignature` con default a `false` ([#258][258]) 
+
+[258]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/258
+
+v 3.0-beta.3
+------------
+
+Released on April 9, 2020
+
+- `CreateInstanceFromXml` ora leggere anche file firmati digitalmente (.p7m) ([#256][256]) 
+- Incorporato FatturaElettronica.Core ([#255][255])
+- Incorporato FatturaElettronica.Extensions ([#255][255])
+- Persa dipendenza da FatturaElettronica.Core ([#255][255])
+- Persa dipendenza da FatturaElettronica.Extensions ([#255][255])
+- Ricordarsi di rimuovere le dipendenze da FatturaElettronica.Extensions e 
+  FatturaElettronica.Core.
+- La API di FatturaElettronica.Core, ora incorporata in questo package, è stata
+  spostata dal namespace `FatturaElettronica.Common` a `FatturaElettronica.Core`.
+  
+[256]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/256
+
+v 3.0-beta.2
+------------
+
+Released on April 6, 2020
+
+- Fix: NullReferenceException nel metodo Equals ([Core#42][Core#42])
+- Aggiornata dipendenza FatturaElettronica.Core a 2.0.1.
+
+[255]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/255
+[Core#42]: https://github.com/FatturaElettronica/FatturaElettronica.Core/issues/42
+
+v 3.0-beta.1
+------------
+
+Released on March 20, 2020
+
+- Supporto per le specifiche tecniche v1.6 aggiornate il 28.2.2020 e utilizzabili a partire dal 4 maggio 2020. Si veda:
+
+  - [Allegato A - Specifiche tecniche versione 1.6 (pdf)](https://www.agenziaentrate.gov.it/portale/documents/20143/2370834/Allegato+A+-+Specifiche+tecniche+vers+1.6_.pdf/a9917ec2-29a3-4f4a-a7d0-93af96fcaad5)
+  
 v 2.1.1
 -------
 

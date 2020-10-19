@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
 {
@@ -25,19 +26,19 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
         /// <summary>
         /// Numero progressivo della fattura rettificata.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string NumeroFR { get; set; }
 
         /// <summary>
         /// Data della fattura rettificata.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DateTime? DataFR { get; set; }
 
         /// <summary>
         /// Indicazioni specifiche degli elelementi oggetto di rettifica.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string ElementiRettificati { get; set; }
     }
 }

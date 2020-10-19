@@ -9,7 +9,7 @@
 - Fatture elettroniche ordinarie.
 - Fatture elettroniche semplificate.
 - De/serializzazione JSON.
-- Compatibile con [NET Standard v1.1][netstandard].
+- Compatibile con [NET Standard v2.0][netstandard].
 
 ## Installazione
 
@@ -49,18 +49,11 @@ Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
 
-## Estensioni
-
-Il progetto [FatturaElettronica.Extensions][fex] offre una serie di
-importanti extension methods, inclusi quelli per lettura e scrittura di
-fatture con firma digitale.
-
-[pa]: https://www.agenziaentrate.gov.it/wps/content/Nsilib/Nsi/Schede/Comunicazioni/Fatture+e+corrispettivi/Fatture+e+corrispettivi+ST/ST+invio+di+fatturazione+elettronica/?page=ivacomimp
+[pa]: https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.6.1
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt
 [ga]: http://gestionaleamica.com
 [ni]: https://nicolaiarocci.com
 [nuget]: https://www.nuget.org/packages/FatturaElettronica/
-[netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard1.1.md
-[fex]: http://github.com/FatturaElettronica/FatturaElettronica.Extensions
+[netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md
 [rp]: http://www.kalamun.org/
 [ghs]: https://github.com/sponsors/nicolaiarocci

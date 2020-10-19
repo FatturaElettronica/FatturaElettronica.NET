@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -24,31 +25,31 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
         /// <summary>
         /// Natura e quantità dell'oggetto della cessione/prestazione
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Descrizione { get; set; }
 
         /// <summary>
         /// Ammontare complessivo (comprensivo di imposta).
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public decimal Importo { get; set; }
 
         /// <summary>
         /// Dati relativi all'imposta sul valore aggiunto.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiIVA DatiIVA { get; set; }
 
         /// <summary>
         /// L'elemento serve per indicare il motivo (Natura dell'operazione) per il quale l'emittente della fattura non indica aliquota IVA.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Natura { get; set; }
 
         /// <summary>
         /// Norma di riferimento.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string RiferimentoNormativo { get; set; }
     }
 }

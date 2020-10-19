@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -14,13 +15,13 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
         /// <summary>
         /// Indica la tipologia di codice articolo (TARIC, CPV, EAN, SSC, ...)
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string CodiceTipo { get; set; }
 
         /// <summary>
         /// Indica il valore del codice articolo corrispondente alla tipologia riportata nel campo CodiceTipo.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string CodiceValore { get; set; }
     }
 }

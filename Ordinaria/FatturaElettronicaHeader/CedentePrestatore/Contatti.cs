@@ -1,5 +1,6 @@
 ﻿using FatturaElettronica.Common;
 using System.Xml;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore
 {
@@ -16,19 +17,19 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestator
         /// <summary>
         /// Contatto telefonico fisso o mobile.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Telefono { get; set; }
 
         /// <summary>
         /// Numero di fax.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Fax { get; set; }
 
         /// <summary>
         /// Indirizzo di posta elettronica.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Email { get; set; }
     }
 }

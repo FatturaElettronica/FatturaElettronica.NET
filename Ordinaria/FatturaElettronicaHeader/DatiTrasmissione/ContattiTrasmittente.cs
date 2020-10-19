@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione
 {
@@ -14,13 +15,13 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione
         /// <summary>
         /// Contatto telefonico fisso o mobile.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Telefono { get; set; }
 
         /// <summary>
         /// Indirizzo di posta elettronica.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string Email { get; set; }
     }
 }

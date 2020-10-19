@@ -1,6 +1,7 @@
 # [Introduzione](index.md)
 # [Guida all'uso](tutorial.md)
+# [Estensioni](extensions.md)
 # [Domande frequenti](faq.md)
 # [Cronologia](changelog.md)
-# [API Reference](../../obj/api/FatturaElettronica/)
+# [API Reference](/docs/api/FatturaElettronica)
 # [Autori](authors.md)

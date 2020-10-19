@@ -1,8 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
-using Tests;
 
-namespace Ordinaria.Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public class DatiContrattoValidator

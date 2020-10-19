@@ -2,7 +2,7 @@
 using FluentValidation;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Tests
+namespace FatturaElettronica.Test.Ordinaria
 {
     [TestClass]
     public abstract class BaseLocalitàValidator<TClass, TValidator>
@@ -16,66 +16,79 @@ namespace Tests
         {
             AssertRequired(x => x.Indirizzo);
         }
+
         [TestMethod]
         public void IndirizzoMinMaxLength()
         {
             AssertMinMaxLength(x => x.Indirizzo, 1, 60);
         }
+
         [TestMethod]
         public void IndirizzoMustBeLatin1Supplement()
         {
             AssertMustBeLatin1Supplement(x => x.Indirizzo);
         }
+
         [TestMethod]
         public void NumeroCivicoIsOptional()
         {
             AssertOptional(x => x.NumeroCivico);
         }
+
         [TestMethod]
         public void NumeroCivicoMinMaxLength()
         {
             AssertMinMaxLength(x => x.NumeroCivico, 1, 8);
         }
+
         [TestMethod]
         public void CAPIsRequired()
         {
             AssertRequired(x => x.CAP);
         }
+
         [TestMethod]
         public void CAPLength()
         {
             AssertLength(x => x.CAP, 5);
         }
+
         [TestMethod]
         public void ComuneIsRequired()
         {
             AssertRequired(x => x.Comune);
         }
+
         [TestMethod]
         public void ComuneMinMaxLength()
         {
             AssertMinMaxLength(x => x.Comune, 1, 60);
         }
+
         [TestMethod]
         public void ComuneMustBeLatin1Supplement()
         {
             AssertMustBeLatin1Supplement(x => x.Indirizzo);
         }
+
         [TestMethod]
         public void ProvinciaOptional()
         {
             AssertOptional(x => x.Provincia);
         }
+
         [TestMethod]
         public void ProvinciaOnlyAcceptsValidValues()
         {
             AssertProvinciaOnlyAcceptsValidValues(x => x.Provincia);
         }
+
         [TestMethod]
         public void NazioneIsRequired()
         {
             AssertRequired(x => x.Nazione);
         }
+
         [TestMethod]
         public void NazioneOnlyAcceptsTableValues()
         {

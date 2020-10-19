@@ -1,6 +1,7 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
 using Newtonsoft.Json;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader
 {
@@ -26,25 +27,25 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader
         /// <summary>
         /// Dati anagrafici del rappresentante fiscale del cedente / prestatore.
         /// </summary>
-        [DataProperty(order: 0)]
+        [Core.DataProperty(order: 0)]
         public IdFiscaleIVA IdFiscaleIVA { get; set; }
 
         /// <summary>
         /// Gets or sets the Denominazione.
         /// </summary>
-        [DataProperty(order: 1)]
+        [Core.DataProperty(order: 1)]
         public string Denominazione { get; set; }
 
         /// <summary>
         /// Gets or sets the Nome.
         /// </summary>
-        [DataProperty(order: 2)]
+        [Core.DataProperty(order: 2)]
         public string Nome { get; set; }
 
         /// <summary>
         /// Gets or sets the Cognome.
         /// </summary>
-        [DataProperty(order: 3)]
+        [Core.DataProperty(order: 3)]
         public string Cognome { get; set; }
 
         /// <summary>

@@ -1,61 +1,82 @@
 ﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.DatiTrasmissione;
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
-using Tests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Semplificata.Tests
+namespace FatturaElettronica.Test.Semplificata
 {
-   [TestClass]
+    [TestClass]
     public class DatiTrasmissioneValidator
         : BaseClass<DatiTrasmissione, FatturaElettronica.Validators.Semplificata.DatiTrasmissioneValidator>
     {
         [TestMethod]
         public void IdTrasmittenteHasChildValidator()
         {
-            validator.ShouldHaveChildValidator(x => x.IdTrasmittente, typeof(FatturaElettronica.Validators.IdTrasmittenteValidator));
+            Validator.ShouldHaveChildValidator(x => x.IdTrasmittente,
+                typeof(Validators.IdTrasmittenteValidator));
         }
+
         [TestMethod]
         public void ProgressivoInvioIsRequired()
         {
             AssertRequired(x => x.ProgressivoInvio);
         }
+
         [TestMethod]
         public void ProgressivoInvioMinMaxLength()
         {
             AssertMinMaxLength(x => x.ProgressivoInvio, 1, 10);
         }
+
         [TestMethod]
         public void ProgressivoInvioMustBeBasicLatin()
         {
             AssertMustBeBasicLatin(x => x.ProgressivoInvio);
         }
+
         [TestMethod]
         public void FormatoTrasmissioneIsRequired()
         {
             AssertRequired(x => x.FormatoTrasmissione);
         }
+
         [TestMethod]
         public void FormatoTrasmissioneOnlyAcceptsTableValues()
         {
             AssertOnlyAcceptsTableValues<FormatoTrasmissione>(x => x.FormatoTrasmissione, expectedErrorCode: "00428");
         }
+
         [TestMethod]
         public void CodiceDestinatarioIsRequired()
         {
             AssertRequired(x => x.CodiceDestinatario);
         }
+
         [TestMethod]
-        public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFPR12()
+        public void CodiceDestinatarioMustBeValid()
+        {
+            Challenge.CodiceDestinatario = "hello";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "Subm70N";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "Sub-70N";
+            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            Challenge.CodiceDestinatario = "SUBM70N";
+            Validator.ShouldNotHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+        }
+
+        [TestMethod]
+        public void CodiceDestinatarioWhenFormatoTrasmissioneHasValueFSM10()
         {
             // Quando FormatoTrasmissione = FSM10 ProgressivioInvio.Lenght = 7.
-            challenge.FormatoTrasmissione = FatturaElettronica.Defaults.FormatoTrasmissione.Semplificata;
-            AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00311");
+            Challenge.FormatoTrasmissione = Defaults.FormatoTrasmissione.Semplificata;
+            AssertLength(x => x.CodiceDestinatario, 7, expectedErrorCode: "00311", filler: 'X');
         }
+
         [TestMethod]
         public void PECDestinatarioMinMaxLength()
         {
-            challenge.CodiceDestinatario = new string('0', 7);
+            Challenge.CodiceDestinatario = new string('0', 7);
             AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
         }
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
 {
@@ -27,13 +28,13 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
         /// <summary>
         /// Dati generali del documento principale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<DettaglioLinee> DettaglioLinee { get; set; }
 
         /// <summary>
         /// Blocco sempre obbligatorio contenente i dati di riepilogo per ogni aliquota IVA o natura.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<DatiRiepilogo> DatiRiepilogo { get; set; }
     }
 }

@@ -19,13 +19,13 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Gets or sets the Titolo.
         /// </summary>
-        [DataProperty(order: 3)]
+        [Core.DataProperty(order: 3)]
         public string Titolo { get; set; }
 
         /// <summary>
         /// Gets or sets the CodEORI.
         /// </summary>
-        [DataProperty(order: 4)]
+        [Core.DataProperty(order: 4)]
         // ReSharper disable once InconsistentNaming
         public string CodEORI { get; set; }
     }

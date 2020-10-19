@@ -1,15 +1,16 @@
-﻿using System;
+using System;
 using System.Collections.Concurrent;
+using System.Reflection;
+using FatturaElettronica.Core;
 using FluentValidation;
 using FluentValidation.Results;
-using System.Reflection;
 
-namespace FatturaElettronica
+namespace FatturaElettronica.Extensions
 {
     public static class FatturaElettronicaExtensions
     {
         private static readonly ConcurrentDictionary<string, IValidator> ValidatorsCache = new ConcurrentDictionary<string, IValidator>();
-        public static ValidationResult Validate<T>(this T obj) where T : Common.BaseClassSerializable
+        public static ValidationResult Validate<T>(this T obj) where T : BaseClassSerializable
         {
             var t = typeof(T);
             if(t.GetTypeInfo().IsAbstract) t = obj.GetType();
@@ -21,7 +22,8 @@ namespace FatturaElettronica
                 return (IValidator)Activator.CreateInstance(type);
             });
 
-            return validator.Validate(obj);
+            var context = new ValidationContext<T>(obj);
+            return validator.Validate(context);
         }
     }
 }

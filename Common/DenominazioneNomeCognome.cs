@@ -7,7 +7,7 @@ namespace FatturaElettronica.Common
     /// <summary>
     /// Represents a Anagrafica object
     /// </summary>
-    public class DenominazioneNomeCognome : BaseClassSerializable
+    public class DenominazioneNomeCognome : Core.BaseClassSerializable
     {
 
         public DenominazioneNomeCognome() { }
@@ -20,19 +20,19 @@ namespace FatturaElettronica.Common
         /// <summary>
         /// Gets or sets the Denominazione.
         /// </summary>
-        [DataProperty(order: 0)]
+        [Core.DataProperty(order: 0)]
         public string Denominazione { get; set; }
 
         /// <summary>
         /// Gets or sets the Nome.
         /// </summary>
-        [DataProperty(order: 1)]
+        [Core.DataProperty(order: 1)]
         public string Nome { get; set; }
 
         /// <summary>
         /// Gets or sets the Cognome.
         /// </summary>
-        [DataProperty(order: 2)]
+        [Core.DataProperty(order: 2)]
         public string Cognome { get; set; }
 
         /// <summary>

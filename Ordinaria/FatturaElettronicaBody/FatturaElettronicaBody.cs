@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
 {
@@ -22,31 +23,31 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
         /// <summary>
         /// Dati generali del documento principale.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiGenerali.DatiGenerali DatiGenerali { get; set; }
 
         /// <summary>
         /// Blocco sempre obbligatorio contenente natura qualità e quantità dei beni/servizi oggetto dell'operazione.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiBeniServizi.DatiBeniServizi DatiBeniServizi { get; set; }
 
         /// <summary>
         /// Dati relativi ai veicoli di cui all'art. 38 del dl 331 del 1993.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiVeicoli.DatiVeicoli DatiVeicoli { get; set; }
 
         /// <summary>
         /// Dati relativi al pagamento.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<DatiPagamento.DatiPagamento> DatiPagamento { get; set; }
 
         /// <summary>
         /// Dati relativi ad eventuali allegati.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public List<Allegati> Allegati { get; set; }
     }
 }

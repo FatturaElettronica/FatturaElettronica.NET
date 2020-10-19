@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
 {
@@ -21,14 +22,14 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// Numero della fattura relativa al trasporto di beni, da indicare sulle fatture emesse dagli autotrasportatori per
         /// certificare le operazioni accessorie.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public string NumeroFatturaPrincipale { get; set; }
         
 
         /// <summary>
         /// Data della fattura relativa al trasporto di beni.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DateTime? DataFatturaPrincipale { get; set; }
     }
 }

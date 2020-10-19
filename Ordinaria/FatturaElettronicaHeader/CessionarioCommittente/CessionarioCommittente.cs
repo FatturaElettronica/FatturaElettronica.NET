@@ -1,5 +1,6 @@
 ﻿using System.Xml;
 using FatturaElettronica.Common;
+using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente
 {
@@ -28,25 +29,25 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommi
         /// <summary>
         /// Dati anagrafici, professionali e fiscali del cessionario / committente.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public DatiAnagraficiCessionarioCommittente DatiAnagrafici { get; set; }
 
         /// <summary>
         /// Dati della sede del cessionario / committente.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public SedeCessionarioCommittente Sede { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 FormatoTrasmissione = "FPR12" (fattura tra privati), nel caso di cessionario/committente non residente e con stabile organizzazione in Italia.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public StabileOrganizzazione StabileOrganizzazione { get; set; }
 
         /// <summary>
         /// Blocco da valorizzare se e solo se l'elemento informativo 1.1.3 FormatoTrasmissione = "FPR12" (fattura tra privati), nel caso di cessionario/committente che si avvale di rappresentante fiscale in Italia.
         /// </summary>
-        [DataProperty]
+        [Core.DataProperty]
         public RappresentanteFiscaleCessionarioCommittente RappresentanteFiscale { get; set; }
     }
 }
