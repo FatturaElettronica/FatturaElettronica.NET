@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Fix: `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
+
+[284]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/284
 
 v 3.0.3
 -------

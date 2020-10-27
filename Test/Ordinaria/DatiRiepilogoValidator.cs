@@ -74,9 +74,26 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
-        public void RiferimentoNormativoIsOptional()
+        public void RiferimentoNormativoIsRequiredWhenNaturaHasValue()
         {
             AssertOptional(x => x.RiferimentoNormativo);
+
+            Challenge.Natura = "N1";
+            Challenge.RiferimentoNormativo = null;
+            Validator.ShouldHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
+
+            Challenge.RiferimentoNormativo = string.Empty;
+            Validator.ShouldHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
+
+            Challenge.RiferimentoNormativo = "riferimento";
+            Validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
+
+            Challenge.Natura = null;
+            Challenge.RiferimentoNormativo = null;
+            Validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
+
+            Challenge.RiferimentoNormativo = "riferimento";
+            Validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
         }
 
         [TestMethod]
@@ -90,19 +107,19 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertMustBeLatin1Supplement(x => x.RiferimentoNormativo);
         }
-        
+
         [TestMethod]
         public void SpeseAccessorie()
         {
             AssertDecimalType(x => x.SpeseAccessorie, 2, 13);
         }
-        
+
         [TestMethod]
         public void ImponibileImporto()
         {
             AssertDecimalType(x => x.ImponibileImporto, 2, 13);
         }
-        
+
         [TestMethod]
         public void Arrotondamento()
         {
