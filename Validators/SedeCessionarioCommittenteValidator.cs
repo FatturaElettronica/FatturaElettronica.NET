@@ -1,8 +1,8 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
+    using Ordinaria.FatturaElettronicaHeader.CessionarioCommittente;
 
-    public class SedeCessionarioCommittenteValidator
-        : LocalitàBaseValidator<SedeCessionarioCommittente>
-    { }
+    public class SedeCessionarioCommittenteValidator : LocalitàBaseValidator<SedeCessionarioCommittente>
+    {
+    }
 }

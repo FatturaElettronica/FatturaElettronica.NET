@@ -3,7 +3,7 @@ using FluentValidation;
 
 namespace FatturaElettronica.Validators.Semplificata
 {
-     public class DatiFatturaRettificataValidator : AbstractValidator<DatiFatturaRettificata>
+    public class DatiFatturaRettificataValidator : AbstractValidator<DatiFatturaRettificata>
     {
         public DatiFatturaRettificataValidator()
         {

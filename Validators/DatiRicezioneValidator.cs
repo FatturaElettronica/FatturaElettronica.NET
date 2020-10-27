@@ -1,4 +1,6 @@
 ﻿namespace FatturaElettronica.Validators
 {
-    public class DatiRicezioneValidator : DatiDocumentoValidator { }
+    public class DatiRicezioneValidator : DatiDocumentoValidator
+    {
+    }
 }

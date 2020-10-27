@@ -15,7 +15,7 @@ namespace FatturaElettronica.Validators
 #pragma warning disable 618
                 .EmailAddress(EmailValidationMode.Net4xRegex)
 #pragma warning restore 618
-                .When(x=>!string.IsNullOrEmpty(x.Email));
+                .When(x => !string.IsNullOrEmpty(x.Email));
         }
     }
 }

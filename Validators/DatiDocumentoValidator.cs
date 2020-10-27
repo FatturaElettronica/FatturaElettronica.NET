@@ -5,7 +5,7 @@ namespace FatturaElettronica.Validators
 {
     public class DatiDocumentoValidator : AbstractValidator<DatiDocumento>
     {
-        public DatiDocumentoValidator()
+        protected DatiDocumentoValidator()
         {
             RuleFor(x => x.IdDocumento)
                 .NotEmpty()
@@ -17,7 +17,7 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.NumItem));
             RuleFor(x => x.CodiceCommessaConvenzione)
                 .Length(1, 100)
-                .Latin1SupplementValidator() 
+                .Latin1SupplementValidator()
                 .When(x => !string.IsNullOrEmpty(x.CodiceCommessaConvenzione));
             RuleFor(x => x.CodiceCUP)
                 .Length(1, 15)

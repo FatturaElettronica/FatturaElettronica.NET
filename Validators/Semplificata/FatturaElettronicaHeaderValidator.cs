@@ -1,6 +1,5 @@
 ﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader;
 using FatturaElettronica.Tabelle;
-using FatturaElettronica.Validators;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators.Semplificata

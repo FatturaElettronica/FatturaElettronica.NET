@@ -9,19 +9,23 @@ namespace FatturaElettronica.Validators
     {
         private static readonly Lazy<T> DomainObjectLazy = new Lazy<T>(() => new T());
 
-        public IsValidValidator() : base("'{PropertyName}' valori accettati: {AcceptedValues}") { }
+        public IsValidValidator() : base("'{PropertyName}' valori accettati: {AcceptedValues}")
+        {
+        }
 
         protected override bool IsValid(PropertyValidatorContext context)
         {
             context.MessageFormatter.AppendArgument("AcceptedValues", string.Format(string.Join(", ", Domain)));
 
             if (context.PropertyValue is string codice)
-            {
                 return Domain.Contains(codice);
-            }
 
             return false;
         }
-        protected HashSet<string> Domain { get { return DomainObjectLazy.Value.Codici; } }
+
+        private static HashSet<string> Domain
+        {
+            get { return DomainObjectLazy.Value.Codici; }
+        }
     }
 }

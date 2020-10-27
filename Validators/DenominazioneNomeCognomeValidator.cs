@@ -1,10 +1,11 @@
 ﻿using FluentValidation;
 using FatturaElettronica.Common;
+
 namespace FatturaElettronica.Validators
 {
     public abstract class DenominazioneNomeCognomeValidator<T> : AbstractValidator<T> where T : DenominazioneNomeCognome
     {
-        public DenominazioneNomeCognomeValidator()
+        protected DenominazioneNomeCognomeValidator()
         {
             const string expectedErrorCode = "00200";
 

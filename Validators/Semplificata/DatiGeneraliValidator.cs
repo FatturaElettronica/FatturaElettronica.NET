@@ -13,13 +13,10 @@ namespace FatturaElettronica.Validators.Semplificata
                 .SetValidator(new DatiFatturaRettificataValidator())
                 .When(x => x.DatiFatturaRettificata != null && !x.DatiFatturaRettificata.IsEmpty());
             RuleFor(x => x.DatiFatturaRettificata.DataFR)
-                .Must((datigenerali, data) =>
-                {
-                    return datigenerali.DatiGeneraliDocumento.Data >= data;
-                })
-            .WithMessage("Data antecedente a data fattura rettificata")
-            .WithErrorCode("00418")
-            .When(x => !x.DatiFatturaRettificata.IsEmpty());
+                .Must((datigenerali, data) => datigenerali.DatiGeneraliDocumento.Data >= data)
+                .WithMessage("Data antecedente a data fattura rettificata")
+                .WithErrorCode("00418")
+                .When(x => !x.DatiFatturaRettificata.IsEmpty());
         }
     }
 }

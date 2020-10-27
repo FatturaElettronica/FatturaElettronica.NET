@@ -40,20 +40,20 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00444");
         }
 
-        private bool FatturaValidateAgainstError00473(FatturaOrdinaria fatturaOrdinaria)
+        private static bool FatturaValidateAgainstError00473(FatturaOrdinaria fatturaOrdinaria)
         {
             var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
 
             if (cedente.IdFiscaleIVA.IdPaese != "IT")
                 return true;
 
-            var tipiDocumento = new string[] {"TD17", "TD18", "TD19"};
+            var tipiDocumento = new[] {"TD17", "TD18", "TD19"};
 
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
         }
 
-        private bool FatturaValidateAgainstError00472(FatturaOrdinaria fatturaOrdinaria)
+        private static bool FatturaValidateAgainstError00472(FatturaOrdinaria fatturaOrdinaria)
         {
             var bodies =
                 fatturaOrdinaria.FatturaElettronicaBody.Where(x =>
@@ -70,7 +70,7 @@ namespace FatturaElettronica.Validators
                    cedente.CodiceFiscale == cessionario.CodiceFiscale;
         }
 
-        private bool FatturaValidateAgainstError00471(FatturaOrdinaria fatturaOrdinaria)
+        private static bool FatturaValidateAgainstError00471(FatturaOrdinaria fatturaOrdinaria)
         {
             var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
             var cessionario =
@@ -81,13 +81,13 @@ namespace FatturaElettronica.Validators
             if (cedente.CodiceFiscale != cessionario.CodiceFiscale)
                 return true;
 
-            var tipiDocumento = new string[] {"TD16", "TD17", "TD18", "TD19", "TD20"};
+            var tipiDocumento = new[] {"TD16", "TD17", "TD18", "TD19", "TD20"};
 
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
         }
 
-        private bool BodyValidateAgainstError00444(FatturaElettronicaBody body)
+        private static bool BodyValidateAgainstError00444(FatturaElettronicaBody body)
         {
             var cassaPrevidenziale = body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale;
             var dettaglioLinee = body.DatiBeniServizi.DettaglioLinee;
@@ -101,7 +101,7 @@ namespace FatturaElettronica.Validators
             return nature.All(natura => riepilogo.Contains(natura));
         }
 
-        private bool BodyValidateAgainstError00443(FatturaElettronicaBody body)
+        private static bool BodyValidateAgainstError00443(FatturaElettronicaBody body)
         {
             var cassaPrevidenziale = body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale;
             var dettaglioLinee = body.DatiBeniServizi.DettaglioLinee;

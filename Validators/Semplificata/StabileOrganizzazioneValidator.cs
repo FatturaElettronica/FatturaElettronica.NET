@@ -1,6 +1,6 @@
-﻿using FatturaElettronica.Validators;
-
-namespace FatturaElettronica.Validators.Semplificata
+﻿namespace FatturaElettronica.Validators.Semplificata
 {
-    public class StabileOrganizzazioneValidator : LocalitàBaseValidator<Common.StabileOrganizzazione> { }
+    public class StabileOrganizzazioneValidator : LocalitàBaseValidator<Common.StabileOrganizzazione>
+    {
+    }
 }

@@ -19,26 +19,26 @@ namespace FatturaElettronica.Validators.Semplificata
                 .NotEmpty().WithMessage("DatiBeniServizi è obbligatorio");
 
             RuleFor(x => x.DatiBeniServizi)
-                .Must((fatturaElettronicaBody, datiBeniServizi) => ImportoTotaleValidateAgainstError00460(fatturaElettronicaBody,datiBeniServizi))
-                .WithMessage("Importo totale superiore al limite previsto per le fatture semplificate ai sensi del DPR 633/72, art. 21bis e DM del 10 maggio 2019")
+                .Must(ImportoTotaleValidateAgainstError00460)
+                .WithMessage(
+                    "Importo totale superiore al limite previsto per le fatture semplificate ai sensi del DPR 633/72, art. 21bis e DM del 10 maggio 2019")
                 .WithErrorCode("00460");
 
             RuleForEach(x => x.Allegati)
                 .SetValidator(new AllegatiValidator());
         }
 
-        private bool ImportoTotaleValidateAgainstError00460(FatturaElettronicaBody fatturaElettronicaBody, List<DatiBeniServizi> datiBeniServizi)
+        private static bool ImportoTotaleValidateAgainstError00460(FatturaElettronicaBody fatturaElettronicaBody,
+            List<DatiBeniServizi> datiBeniServizi)
         {
             var importoTotale = datiBeniServizi.Sum(x => x.Importo);
-            
-            if(importoTotale > 400)
+
+            if (importoTotale > 400)
             {
                 return !fatturaElettronicaBody.DatiGenerali.DatiFatturaRettificata.IsEmpty();
             }
-            else
-            {
-                return true;
-            }
+
+            return true;
         }
     }
 }

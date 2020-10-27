@@ -5,7 +5,7 @@ namespace FatturaElettronica.Validators
 {
     public abstract class LocalitàBaseValidator<T> : AbstractValidator<T> where T : Common.Località
     {
-        public LocalitàBaseValidator()
+        protected LocalitàBaseValidator()
         {
             RuleFor(x => x.Indirizzo)
                 .NotEmpty()

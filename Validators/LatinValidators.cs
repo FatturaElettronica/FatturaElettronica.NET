@@ -7,30 +7,27 @@ using FluentValidation.Validators;
 
 namespace FatturaElettronica.Validators
 {
-
-    public abstract class LatinBaseValidator<T> : PropertyValidator
+    public abstract class LatinBaseValidator : PropertyValidator
     {
         private readonly Charsets _charset;
 
-        public LatinBaseValidator(Charsets charset)
-            : base($"Testo contenente caratteri non validi ({(charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")}). valori non accettati: {{NonLatinCode}}")
+        protected LatinBaseValidator(Charsets charset)
+            : base(
+                $"Testo contenente caratteri non validi ({(charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")}). valori non accettati: {{NonLatinCode}}")
         {
             _charset = charset;
         }
+
         protected override bool IsValid(PropertyValidatorContext context)
         {
-            if (context.PropertyValue == null || (string)context.PropertyValue == string.Empty) return true;
+            if (context.PropertyValue == null || (string) context.PropertyValue == string.Empty) return true;
 
-            var challenge = string.Empty;
-            switch (_charset)
+            var challenge = _charset switch
             {
-                case Charsets.BasicLatin:
-                    challenge = @"^[\p{IsBasicLatin}]+$";
-                    break;
-                case Charsets.Latin1Supplement:
-                    challenge = @"^[\p{IsBasicLatin}\p{IsLatin-1Supplement}]+$";
-                    break;
-            }
+                Charsets.BasicLatin => @"^[\p{IsBasicLatin}]+$",
+                Charsets.Latin1Supplement => @"^[\p{IsBasicLatin}\p{IsLatin-1Supplement}]+$",
+                _ => string.Empty
+            };
             return Regex.Match(context.PropertyValue.ToString(), challenge).Success;
         }
 
@@ -43,48 +40,54 @@ namespace FatturaElettronica.Validators
             {
                 foreach (var letter in context.PropertyValue.ToString())
                 {
-                    int upperLimit;
-                    switch (_charset)
+                    var upperLimit = _charset switch
                     {
-                        case Charsets.BasicLatin:
-                            upperLimit = 0x7F;
-                            break;
-                        case Charsets.Latin1Supplement:
-                            upperLimit = 0xFF;
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
+                        Charsets.BasicLatin => 0x7F,
+                        Charsets.Latin1Supplement => 0xFF,
+                        _ => throw new ArgumentOutOfRangeException()
+                    };
 
                     if (letter > upperLimit)
-                    {
                         invalidLetters.Add(letter);
-                    }
                 }
             }
-            
+
             context.MessageFormatter.AppendArgument("NonLatinCode", new string(invalidLetters.ToArray()));
         }
     }
 
-    public class BasicLatinValidator<T> : LatinBaseValidator<T>
+    public class BasicLatinValidator : LatinBaseValidator
     {
-        public BasicLatinValidator() : base(Charsets.BasicLatin) { }
+        public BasicLatinValidator() : base(Charsets.BasicLatin)
+        {
+        }
     }
-    public class Latin1SupplementValidator<T> : LatinBaseValidator<T>
+
+    public class Latin1SupplementValidator : LatinBaseValidator
     {
-        public Latin1SupplementValidator() : base(Charsets.Latin1Supplement) { }
+        public Latin1SupplementValidator() : base(Charsets.Latin1Supplement)
+        {
+        }
     }
-    public enum Charsets { BasicLatin, Latin1Supplement };
+
+    public enum Charsets
+    {
+        BasicLatin,
+        Latin1Supplement
+    };
+
     public static class MyValidatorExtensions
     {
-        public static IRuleBuilderOptions<T, TElement> BasicLatinValidator<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder)
+        public static IRuleBuilderOptions<T, TElement> BasicLatinValidator<T, TElement>(
+            this IRuleBuilder<T, TElement> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new BasicLatinValidator<T>());
+            return ruleBuilder.SetValidator(new BasicLatinValidator());
         }
-        public static IRuleBuilderOptions<T, TElement> Latin1SupplementValidator<T, TElement>(this IRuleBuilder<T, TElement> ruleBuilder)
+
+        public static IRuleBuilderOptions<T, TElement> Latin1SupplementValidator<T, TElement>(
+            this IRuleBuilder<T, TElement> ruleBuilder)
         {
-            return ruleBuilder.SetValidator(new Latin1SupplementValidator<T>());
+            return ruleBuilder.SetValidator(new Latin1SupplementValidator());
         }
     }
 }

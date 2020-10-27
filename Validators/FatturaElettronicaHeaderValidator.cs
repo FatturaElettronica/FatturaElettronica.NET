@@ -19,7 +19,8 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new CessionarioCommittenteValidator());
             RuleFor(x => x.TerzoIntermediarioOSoggettoEmittente)
                 .SetValidator(new TerzoIntermediarioOSoggettoEmittenteValidator())
-                .When(x => x.TerzoIntermediarioOSoggettoEmittente != null && !x.TerzoIntermediarioOSoggettoEmittente.IsEmpty());
+                .When(x => x.TerzoIntermediarioOSoggettoEmittente != null &&
+                           !x.TerzoIntermediarioOSoggettoEmittente.IsEmpty());
             RuleFor(x => x.SoggettoEmittente)
                 .SetValidator(new IsValidValidator<SoggettoEmittente>())
                 .When(x => !string.IsNullOrEmpty(x.SoggettoEmittente));

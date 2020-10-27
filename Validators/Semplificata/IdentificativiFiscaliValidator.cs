@@ -14,12 +14,16 @@ namespace FatturaElettronica.Validators.Semplificata
                 .Length(11, 16)
                 .When(x => !string.IsNullOrEmpty(x.CodiceFiscale));
             RuleFor(x => x.CodiceFiscale)
-                .Must((challenge, _) => { return !(string.IsNullOrEmpty(challenge.CodiceFiscale) && challenge.IdFiscaleIVA.IsEmpty()); })
-                .WithMessage("IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato)")
+                .Must((challenge, _) =>
+                    !(string.IsNullOrEmpty(challenge.CodiceFiscale) && challenge.IdFiscaleIVA.IsEmpty()))
+                .WithMessage(
+                    "IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato)")
                 .WithErrorCode("00417");
             RuleFor(x => x.IdFiscaleIVA)
-                .Must((challenge, _) => { return !(string.IsNullOrEmpty(challenge.CodiceFiscale) && challenge.IdFiscaleIVA.IsEmpty()); })
-                .WithMessage("IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato)")
+                .Must((challenge, _) =>
+                    !(string.IsNullOrEmpty(challenge.CodiceFiscale) && challenge.IdFiscaleIVA.IsEmpty()))
+                .WithMessage(
+                    "IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato)")
                 .WithErrorCode("00417");
         }
     }

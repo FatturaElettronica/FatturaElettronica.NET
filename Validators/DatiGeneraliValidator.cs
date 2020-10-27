@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using System.Linq;
+using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 
 namespace FatturaElettronica.Validators
@@ -12,14 +13,10 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiGeneraliDocumento.Data)
                 .Must((datigenerali, data) =>
                 {
-                    foreach (var fc in datigenerali.DatiFattureCollegate)
-                    {
-                        if (data < fc.Data) return false;
-                    }
-                    return true;
+                    return datigenerali.DatiFattureCollegate.All(fc => !(data < fc.Data));
                 })
-            .WithMessage("Data antecedente a una o più date in DatiFattureCollegate")
-            .WithErrorCode("00418");
+                .WithMessage("Data antecedente a una o più date in DatiFattureCollegate")
+                .WithErrorCode("00418");
             RuleForEach(x => x.DatiOrdineAcquisto)
                 .SetValidator(new DatiOrdineAcquistoValidator());
             RuleForEach(x => x.DatiContratto)

@@ -19,7 +19,7 @@ namespace FatturaElettronica.Validators
                 .WithMessage("Natura non presente a fronte di Aliquota IVA pari a 0")
                 .WithErrorCode("00429");
             RuleFor(x => x.Natura)
-                .Must(natura => string.IsNullOrEmpty(natura))
+                .Must(string.IsNullOrEmpty)
                 .When(x => x.AliquotaIVA > 0)
                 .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero")
                 .WithErrorCode("00430");

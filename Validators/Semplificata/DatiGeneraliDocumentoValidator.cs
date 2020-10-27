@@ -22,9 +22,9 @@ namespace FatturaElettronica.Validators.Semplificata
                 .Matches(@"\d")
                 .WithMessage("Numero non contiene caratteri numerici")
                 .WithErrorCode("00425");
-            RuleFor(x=>x.BolloVirtuale)
+            RuleFor(x => x.BolloVirtuale)
                 .Equal("SI")
-                .When(x=>x.BolloVirtuale != null);
+                .When(x => x.BolloVirtuale != null);
         }
     }
 }

@@ -4,8 +4,7 @@ using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 
 namespace FatturaElettronica.Validators
 {
-    public class DatiAnagraficiCedentePrestatoreValidator :
-        AbstractValidator<DatiAnagraficiCedentePrestatore>
+    public class DatiAnagraficiCedentePrestatoreValidator : AbstractValidator<DatiAnagraficiCedentePrestatore>
     {
         public DatiAnagraficiCedentePrestatoreValidator()
         {
@@ -30,7 +29,6 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.RegimeFiscale)
                 .NotEmpty()
                 .SetValidator(new RegimeFiscaleValidator<RegimeFiscale>());
-
         }
     }
 }
