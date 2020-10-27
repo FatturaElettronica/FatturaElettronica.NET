@@ -178,6 +178,10 @@ namespace FatturaElettronica.Test.Ordinaria
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 3m});
             result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00443"));
+            
+            body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 4m});
+            result = Validator.Validate(Challenge);
+            Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00443"));
         }
     }
 }

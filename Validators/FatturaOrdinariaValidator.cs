@@ -112,7 +112,8 @@ namespace FatturaElettronica.Validators
 
             var riepilogo = body.DatiBeniServizi.DatiRiepilogo.Select(x => x.AliquotaIVA);
 
-            return aliquote.All(aliquota => riepilogo.Contains(aliquota));
+            return aliquote.All(aliquota => riepilogo.Contains(aliquota)) &&
+                   riepilogo.All(aliquota => aliquote.Contains(aliquota));
         }
     }
 }
