@@ -389,6 +389,11 @@ namespace FatturaElettronica.Core
             }
         }
 
+        protected virtual void ReadAndHandleXmlStartElement(XmlReader r)
+        {
+            r.ReadStartElement();
+        }
+
         /// <summary>
         /// Deserializes the current BusinessObject from a XML stream.
         /// </summary>
@@ -398,7 +403,8 @@ namespace FatturaElettronica.Core
         {
             var isEmpty = r.IsEmptyElement;
 
-            r.ReadStartElement();
+            ReadAndHandleXmlStartElement(r);
+
             if (isEmpty) return;
 
             var properties = GetAllDataProperties().ToList();

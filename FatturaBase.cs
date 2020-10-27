@@ -115,7 +115,13 @@ namespace FatturaElettronica
             return CreateInstanceFromXmlSigned(new MemoryStream(converted), validateSignature);
         }
 
-        public string SistemaEmittente { get; set; }
+        protected override void ReadAndHandleXmlStartElement(XmlReader r)
+        {
+            SistemaEmittente = r.GetAttribute("SistemaEmittente");
+            base.ReadAndHandleXmlStartElement(r);
+        }
+
+        [Core.DataProperty] public string SistemaEmittente { get; set; }
         public abstract string GetFormatoTrasmissione();
         protected abstract string GetLocalName();
         protected abstract string GetNameSpace();
