@@ -7,6 +7,10 @@ In Development
 - Fix: Aggiornato attributo `SchemaLocation` ([#282][282])
 - Fix: Supporto per `SistemaEmittente` in deserializzazione ([#278][278])
 - Fix: `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
+- Aggiornata dipendenza FluentValidation a 9.2.2
+- Aggiornata dipendenza Newtonsoft.Json a 12.0.3
+- Aggiornata dipendenza BouncyCastle a 1.8.8
+- Abbandonata dipendenza obsoleta da `System.Xml.XmlSerializer`
 
 [282]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/282
 [278]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/278
