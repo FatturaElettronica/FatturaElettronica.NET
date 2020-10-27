@@ -11,6 +11,9 @@ In Development
 - Aggiornata dipendenza Newtonsoft.Json a 12.0.3
 - Aggiornata dipendenza BouncyCastle a 1.8.8
 - Abbandonata dipendenza obsoleta da `System.Xml.XmlSerializer`
+- Aggiornata dipendenza MSTest.TestFramework a 2.1.2
+- Aggiornata dipendenza MSTest.TestAdapter a 2.1.2
+- Aggiornata dipendenza Microsoft.NET.Test.Sdk a 16.7.1
 
 [282]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/282
 [278]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/278
