@@ -5,7 +5,7 @@ In Development
 --------------
 
 - Fix: Migliorata la validazione errore 00443 in `DatiRiepilogo` ([#281][281])
-- Fix: Aggiornato attributo `SchemaLocation` ([#282][282])
+- Fix: Aggiornato attributo `SchemaLocation` ([#282][282], [#286][286])
 - Fix: Supporto per `SistemaEmittente` in deserializzazione ([#278][278])
 - Fix: `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
 - Aggiornata dipendenza FluentValidation a 9.2.2
@@ -17,6 +17,7 @@ In Development
 - Abbandonata dipendenza obsoleta da `System.Xml.XmlSerializer`
 
 [281]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/281
+[286]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/286
 [282]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/282
 [278]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/278
 [284]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/284
