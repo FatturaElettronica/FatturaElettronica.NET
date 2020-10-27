@@ -4,9 +4,11 @@ Changelog
 In Development
 --------------
 
-- Fix: Supporto per `SistemaEmittente` in deserializzazione [[#278][278]]
+- Fix: Aggiornato attributo `SchemaLocation` ([#282][282])
+- Fix: Supporto per `SistemaEmittente` in deserializzazione ([#278][278])
 - Fix: `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
 
+[282]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/282
 [278]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/278
 [284]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/284
 
