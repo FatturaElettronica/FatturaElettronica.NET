@@ -98,7 +98,8 @@ namespace FatturaElettronica.Validators
 
             var riepilogo = body.DatiBeniServizi.DatiRiepilogo.Select(x => x.Natura);
 
-            return nature.All(natura => riepilogo.Contains(natura));
+            return nature.All(natura => riepilogo.Contains(natura)) &&
+                riepilogo.All(natura =>nature.Contains (natura));
         }
 
         private static bool BodyValidateAgainstError00443(FatturaElettronicaBody body)
