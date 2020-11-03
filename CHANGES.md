@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.0.4
+-------
+
+Released on November 3, 2020
+
 - Fix: Migliorata la validazione errore 00444 in `DatiRiepilogo` ([#287][287])
 - Fix: Migliorata la validazione errore 00443 in `DatiRiepilogo` ([#281][281])
 - Fix: Aggiornato attributo `SchemaLocation` ([#282][282], [#286][286])
