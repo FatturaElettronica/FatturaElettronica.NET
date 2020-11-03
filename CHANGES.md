@@ -4,6 +4,7 @@ Changelog
 In Development
 --------------
 
+- Fix: Migliorata la validazione errore 00444 in `DatiRiepilogo` ([#287][287])
 - Fix: Migliorata la validazione errore 00443 in `DatiRiepilogo` ([#281][281])
 - Fix: Aggiornato attributo `SchemaLocation` ([#282][282], [#286][286])
 - Fix: Supporto per `SistemaEmittente` in deserializzazione ([#278][278])
@@ -16,6 +17,7 @@ In Development
 - Aggiornata dipendenza Microsoft.NET.Test.Sdk a 16.7.1
 - Abbandonata dipendenza obsoleta da `System.Xml.XmlSerializer`
 
+[287]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/287
 [281]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/281
 [286]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/286
 [282]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/282

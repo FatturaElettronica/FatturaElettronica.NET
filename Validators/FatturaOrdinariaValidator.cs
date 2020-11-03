@@ -47,7 +47,7 @@ namespace FatturaElettronica.Validators
             if (cedente.IdFiscaleIVA.IdPaese != "IT")
                 return true;
 
-            var tipiDocumento = new[] {"TD17", "TD18", "TD19"};
+            var tipiDocumento = new[] { "TD17", "TD18", "TD19" };
 
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
@@ -81,7 +81,7 @@ namespace FatturaElettronica.Validators
             if (cedente.CodiceFiscale != cessionario.CodiceFiscale)
                 return true;
 
-            var tipiDocumento = new[] {"TD16", "TD17", "TD18", "TD19", "TD20"};
+            var tipiDocumento = new[] { "TD16", "TD17", "TD18", "TD19", "TD20" };
 
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
@@ -92,13 +92,14 @@ namespace FatturaElettronica.Validators
             var cassaPrevidenziale = body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale;
             var dettaglioLinee = body.DatiBeniServizi.DettaglioLinee;
 
-            var nature = dettaglioLinee.Where(x => x.Natura != null).Select(x => x.Natura)
-                .Concat(cassaPrevidenziale.Where(x => x.Natura != null).Select(x => x.Natura))
+            var nature = dettaglioLinee.Select(x => x.Natura)
+                .Concat(cassaPrevidenziale.Select(x => x.Natura))
                 .ToArray();
 
             var riepilogo = body.DatiBeniServizi.DatiRiepilogo.Select(x => x.Natura);
 
-            return nature.All(natura => riepilogo.Contains(natura));
+            return nature.All(natura => riepilogo.Contains(natura)) &&
+                riepilogo.All(natura => nature.Contains(natura));
         }
 
         private static bool BodyValidateAgainstError00443(FatturaElettronicaBody body)
