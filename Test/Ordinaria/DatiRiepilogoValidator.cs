@@ -77,23 +77,6 @@ namespace FatturaElettronica.Test.Ordinaria
         public void RiferimentoNormativoIsRequiredWhenNaturaHasValue()
         {
             AssertOptional(x => x.RiferimentoNormativo);
-
-            Challenge.Natura = "N1";
-            Challenge.RiferimentoNormativo = null;
-            Validator.ShouldHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
-
-            Challenge.RiferimentoNormativo = string.Empty;
-            Validator.ShouldHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
-
-            Challenge.RiferimentoNormativo = "riferimento";
-            Validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
-
-            Challenge.Natura = null;
-            Challenge.RiferimentoNormativo = null;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
-
-            Challenge.RiferimentoNormativo = "riferimento";
-            Validator.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNormativo, Challenge);
         }
 
         [TestMethod]

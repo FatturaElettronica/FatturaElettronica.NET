@@ -39,9 +39,6 @@ namespace FatturaElettronica.Validators
                 .Length(1, 100)
                 .Latin1SupplementValidator()
                 .When(x => !string.IsNullOrEmpty(x.RiferimentoNormativo));
-            RuleFor(x => x.RiferimentoNormativo)
-                .Must(riferimento => !string.IsNullOrEmpty(riferimento))
-                .When(x => !string.IsNullOrEmpty(x.Natura));
             RuleFor(x => x.SpeseAccessorie)
                 .ScalePrecision2DecimalType();
             RuleFor(x => x.ImponibileImporto)

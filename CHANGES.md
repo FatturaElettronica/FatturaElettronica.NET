@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Fix: rimossa convalida `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
 
 v 3.0.4
 -------
