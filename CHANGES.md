@@ -4,7 +4,10 @@ Changelog
 In Development
 --------------
 
+- Fix: `SistemaEmittente` non va serializzato come elemento XML ([#294][294])
 - Fix: rimossa convalida `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
+
+[294]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/294
 
 v 3.0.4
 -------

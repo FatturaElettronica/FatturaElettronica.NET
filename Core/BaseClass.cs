@@ -115,6 +115,13 @@ namespace FatturaElettronica.Core
                 .OrderBy(pi => pi.GetCustomAttribute<DataProperty>(true).Order);
         }
 
+        protected PropertyInfo GetKnownNonDataProperty(string name)
+        {
+            var knownNonDataProperties = new[] {"SistemaEmittente"};
+
+            return knownNonDataProperties.Contains(name) ? GetType().GetRuntimeProperty(name) : null;
+        }
+
 
         public bool Equals(BaseClass other)
         {
