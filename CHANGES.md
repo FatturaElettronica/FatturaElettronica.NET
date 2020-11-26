@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- Impostato target framework della test suite a `net5.0` ([#295][295])
+- Impostato target framework della test suite a `netcoreapp3.1` ([#295][295])
 - Aggiornata dipendenza FluentValidation a 9.3.0
 - Aggiornata dipendenza System.Security.Cryptography.Pkcs a 5.0.0
 
