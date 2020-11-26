@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.0.5
+-------
+
+Released on November 26, 2020
+
 - Fix: `SistemaEmittente` non va serializzato come elemento XML ([#294][294])
 - Fix: rimossa convalida `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
 
