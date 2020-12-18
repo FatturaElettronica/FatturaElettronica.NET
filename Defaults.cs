@@ -14,19 +14,28 @@
         public static string Semplificata { get { return $"FSM{Versione.TrasmissioneSemplificata.Replace(".", "")}"; } }
 
     }
-    public class RootElement
+   public class RootElement
     {
-        public static string Prefix { get { return "p"; } }
-        public static XmlAttributeString[] ExtraAttributes
+        
+        private static string _prefix = "p";
+
+        public static string Prefix
         {
-            get
-            {
-                return new XmlAttributeString[] {
+            get => _prefix;
+            set => _prefix = value;
+        }
+
+        private static XmlAttributeString[] _extraAttributes = new XmlAttributeString[] {
                     new XmlAttributeString { Prefix="xmlns", LocalName="ds", ns=null, value="http://www.w3.org/2000/09/xmldsig#"},
                     new XmlAttributeString { Prefix="xmlns", LocalName="xsi", ns=null, value="http://www.w3.org/2001/XMLSchema-instance"},
                     new XmlAttributeString { Prefix="xsi", LocalName="schemaLocation", ns=null, value="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.1/Schema_del_file_xml_FatturaPA_versione_1.2.1a.xsd"}
                 };
-            }
+
+
+        public static XmlAttributeString[] ExtraAttributes
+        {
+            get => _extraAttributes;
+            set => _extraAttributes = value;
         }
         public class XmlAttributeString
         {
@@ -36,4 +45,5 @@
             public string value;
         }
     }
+
 }
