@@ -8,10 +8,8 @@
             {
                 return new Tabella[] {
                     new Natura { Codice = "N1", Nome = "escluse ex art. 15" },
-                    new Natura { Codice = "N2", Nome = "non soggette" },
                     new Natura { Codice = "N2.1", Nome = "non soggette ad IVA ai sensi degli artt. da 7 a 7-septies del DPR 633/72" },
                     new Natura { Codice = "N2.2", Nome = "non soggette - altri casi" },
-                    new Natura { Codice = "N3", Nome = "non imponibili" },
                     new Natura { Codice = "N3.1", Nome = "non imponibili - esportazioni" },
                     new Natura { Codice = "N3.2", Nome = "non imponibili - cessioni intracomunitarie" },
                     new Natura { Codice = "N3.3", Nome = "non imponibili - cessioni verso San Marino" },
@@ -20,7 +18,6 @@
                     new Natura { Codice = "N3.6", Nome = "non imponibili - altre operazioni che non concorrono alla formazione del plafond" },
                     new Natura { Codice = "N4", Nome = "esenti" },
                     new Natura { Codice = "N5", Nome = "regime del margine / IVA non esposta in fattura" },
-                    new Natura { Codice = "N6", Nome = "inversione contabile (per le operazioni in reverse charge ovvero nei casi di autofatturazione per acquisti extra UE di servizi ovvero per importazioni di beni nei soli casi previsti)" },
                     new Natura { Codice = "N6.1", Nome = "inversione contabile - cessione di rottami e altri materiali di recupero" },
                     new Natura { Codice = "N6.2", Nome = "inversione contabile - cessione di oro e argento puro" },
                     new Natura { Codice = "N6.3", Nome = "inversione contabile - subappalto nel settore edile" },

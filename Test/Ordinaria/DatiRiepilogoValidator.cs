@@ -43,7 +43,7 @@ namespace FatturaElettronica.Test.Ordinaria
         public void NaturaValidateAgainstError00420()
         {
             Challenge.EsigibilitaIVA = "S";
-            Challenge.Natura = "N6";
+            Challenge.Natura = "N6.1";
             Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00420");
 
             Challenge.EsigibilitaIVA = "I";

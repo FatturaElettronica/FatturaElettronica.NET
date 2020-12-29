@@ -4,6 +4,7 @@ Changelog
 In Development
 --------------
 
+- Rimosso supporto per valori N2, N3, N6 per il campo `DatiRiepiloto.Natura` ([#307][307])
 - Migrazione CI da Azure Pipelines a GitHub Actions (`ubuntu-latest`, `windows-latest`, `macos-latest`) ([#298][298])
 - Impostato target framework della test suite a `net5.0` ([#295][295])
 - Aggiornata dipendenza Microsoft.NET.Test.Sdk a 16.8.3
@@ -11,6 +12,7 @@ In Development
 - Aggiornata dipendenza System.Security.Cryptography.Pkcs a 5.0.0
 
 
+[307]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/307
 [298]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/298
 [295]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/295
 
