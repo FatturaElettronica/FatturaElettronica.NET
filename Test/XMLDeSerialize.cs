@@ -261,7 +261,7 @@ namespace FatturaElettronica.Test
                     Assert.AreEqual("http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2", r.NamespaceURI);
                     foreach (var a in RootElement.ExtraAttributes)
                     {
-                        Assert.AreEqual(a.Value, r.GetAttribute($"{a.Prefix}:{a.LocalName}"));
+                        Assert.AreEqual(a.value, r.GetAttribute($"{a.Prefix}:{a.LocalName}"));
                     }
 
                     break;
