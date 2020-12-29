@@ -4,7 +4,8 @@ Changelog
 In Development
 --------------
 
-- `Defaults.RootElement.Prefix` può essere modificato ([#303][303])
+- `Defaults.RootElement.ExtraAttributes` passa da read-only a read-write property ([#303][303])
+- `Defaults.RootElement.Prefix` passa da read-only a read-write property ([#303][303])
 - Rimosso supporto per valori N2, N3, N6 per il campo `DatiRiepiloto.Natura` ([#307][307])
 - Migrazione CI da Azure Pipelines a GitHub Actions (`ubuntu-latest`, `windows-latest`, `macos-latest`) ([#298][298])
 - Impostato target framework della test suite a `net5.0` ([#295][295])
