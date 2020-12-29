@@ -16,14 +16,7 @@
     }
    public class RootElement
     {
-        
-        private static string _prefix = "p";
-
-        public static string Prefix
-        {
-            get => _prefix;
-            set => _prefix = value;
-        }
+        public static string Prefix { get; set; } = "p";
 
         private static XmlAttributeString[] _extraAttributes = new XmlAttributeString[] {
                     new XmlAttributeString { Prefix="xmlns", LocalName="ds", ns=null, value="http://www.w3.org/2000/09/xmldsig#"},
