@@ -11,7 +11,7 @@ In Development
 - Impostato target framework della test suite a `net5.0` ([#295][295])
 - Aggiornata dipendenza Microsoft.NET.Test.Sdk a 16.8.3
 - Aggiornata dipendenza FluentValidation a 9.3.0
-- Aggiornata dipendenza System.Security.Cryptography.Pkcs a 5.0.0
+- Aggiornata dipendenza System.Security.Cryptography.Pkcs a 5.0.1
 
 
 [303]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/303
