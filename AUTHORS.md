@@ -28,6 +28,7 @@ Collaboratori
 - Puma
 - ZephirPFS47
 - gminutillo
+- username77
 
 [NI]: https://nicolaiarocci.com
 [gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET
