@@ -19,9 +19,9 @@
         public static string Prefix { get; set; } = "p";
 
         private static XmlAttributeString[] _extraAttributes = new XmlAttributeString[] {
-                    new XmlAttributeString { Prefix="xmlns", LocalName="ds", ns=null, value="http://www.w3.org/2000/09/xmldsig#"},
-                    new XmlAttributeString { Prefix="xmlns", LocalName="xsi", ns=null, value="http://www.w3.org/2001/XMLSchema-instance"},
-                    new XmlAttributeString { Prefix="xsi", LocalName="schemaLocation", ns=null, value="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.1/Schema_del_file_xml_FatturaPA_versione_1.2.1a.xsd"}
+                    new XmlAttributeString { Prefix="xmlns", LocalName="ds", Ns=null, Value="http://www.w3.org/2000/09/xmldsig#"},
+                    new XmlAttributeString { Prefix="xmlns", LocalName="xsi", Ns=null, Value="http://www.w3.org/2001/XMLSchema-instance"},
+                    new XmlAttributeString { Prefix="xsi", LocalName="schemaLocation", Ns=null, Value="http://ivaservizi.agenziaentrate.gov.it/docs/xsd/fatture/v1.2 https://www.fatturapa.gov.it/export/documenti/fatturapa/v1.2.1/Schema_del_file_xml_FatturaPA_versione_1.2.1a.xsd"}
                 };
 
 
@@ -34,8 +34,8 @@
         {
             public string Prefix;
             public string LocalName;
-            public string ns;
-            public string value;
+            public string Ns;
+            public string Value;
         }
     }
 

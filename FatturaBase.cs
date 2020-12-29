@@ -29,7 +29,7 @@ namespace FatturaElettronica
 
             foreach (var a in RootElement.ExtraAttributes)
             {
-                w.WriteAttributeString(a.Prefix, a.LocalName, a.ns, a.value);
+                w.WriteAttributeString(a.Prefix, a.LocalName, a.Ns, a.Value);
             }
 
             base.WriteXml(w);

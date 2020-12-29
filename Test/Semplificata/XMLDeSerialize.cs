@@ -126,7 +126,7 @@ namespace FatturaElettronica.Test.Semplificata
                                 r.NamespaceURI);
                             foreach (var a in RootElement.ExtraAttributes)
                             {
-                                Assert.AreEqual(a.value,
+                                Assert.AreEqual(a.Value,
                                     r.GetAttribute($"{a.Prefix}:{a.LocalName}"));
                             }
 
