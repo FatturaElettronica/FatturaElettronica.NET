@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.1.0
+-------
+
+Released on December 30, 2020
+
 - Aggiunta convalida per errore 00313 ([#300][300])
 - Rimosso supporto per valori N2, N3, N6 per il campo `DatiRiepiloto.Natura` ([#307][307])
 - `Defaults.RootElement.ExtraAttributes` diventa una read-write property ([#303][303])
