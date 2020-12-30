@@ -11,8 +11,9 @@ v 3.1.0
 
 Released on December 30, 2020
 
-- Aggiunta convalida per errore 00313 ([#300][300])
+- Questa versione si allinea alle regole di convalida in vigore dal 1 Gennaio 2021.
 - Rimosso supporto per valori N2, N3, N6 per il campo `DatiRiepiloto.Natura` ([#307][307])
+- Aggiunta convalida per errore 00313 ([#300][300])
 - `Defaults.RootElement.ExtraAttributes` diventa una read-write property ([#303][303])
 - `Defaults.RootElement.Prefix` diventa una read-write property ([#303][303])
 - Migrazione CI da Azure Pipelines a GitHub Actions (`ubuntu-latest`, `windows-latest`, `macos-latest`) ([#298][298])
