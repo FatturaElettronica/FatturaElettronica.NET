@@ -4,9 +4,10 @@ Changelog
 In Development
 --------------
 
+- Aggiunta convalida per errore 00313 ([#300][300])
+- Rimosso supporto per valori N2, N3, N6 per il campo `DatiRiepiloto.Natura` ([#307][307])
 - `Defaults.RootElement.ExtraAttributes` diventa una read-write property ([#303][303])
 - `Defaults.RootElement.Prefix` diventa una read-write property ([#303][303])
-- Rimosso supporto per valori N2, N3, N6 per il campo `DatiRiepiloto.Natura` ([#307][307])
 - Migrazione CI da Azure Pipelines a GitHub Actions (`ubuntu-latest`, `windows-latest`, `macos-latest`) ([#298][298])
 - Impostato target framework della test suite a `net5.0` ([#295][295])
 - Aggiornata dipendenza Portable.BouncyCastle a 1.8.9
@@ -15,6 +16,7 @@ In Development
 - Aggiornata dipendenza System.Security.Cryptography.Pkcs a 5.0.1
 
 
+[300]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/300
 [303]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/303
 [307]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/307
 [298]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/298

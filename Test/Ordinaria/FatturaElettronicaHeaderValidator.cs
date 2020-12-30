@@ -1,7 +1,9 @@
-﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader;
+﻿using System.Linq;
+using FatturaElettronica.Ordinaria.FatturaElettronicaHeader;
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Org.BouncyCastle.Asn1.Cmp;
 
 namespace FatturaElettronica.Test.Ordinaria
 {
@@ -55,6 +57,24 @@ namespace FatturaElettronica.Test.Ordinaria
         public void SoggettoEmittenteOnlyAcceptsTableValues()
         {
             AssertOnlyAcceptsTableValues<SoggettoEmittente>(x => x.SoggettoEmittente);
+        }
+
+        [TestMethod]
+        public void HeaderValidateAgainstError00313()
+        {
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
+            Challenge.DatiTrasmissione.CodiceDestinatario = "XXXXXXX";
+            var result = Validator.Validate(Challenge);
+            Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00313"));
+            
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "FR";
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00313"));
+            
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
+            Challenge.DatiTrasmissione.CodiceDestinatario = "0123456";
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00313"));
         }
     }
 }
