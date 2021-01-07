@@ -1,4 +1,5 @@
-﻿using FatturaElettronica.Tabelle;
+﻿using System.Text.RegularExpressions;
+using FatturaElettronica.Tabelle;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
@@ -16,7 +17,8 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.NumeroCivico));
             RuleFor(x => x.CAP)
                 .NotEmpty()
-                .Length(5);
+                .Length(5)
+                .Matches(@"^[0-9]+$");
             RuleFor(x => x.Comune)
                 .NotEmpty()
                 .Length(1, 60)
