@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.1.1
+-------
+
+Released on January 25, 2021
+
 - Convalida `TipoResa` allineata a specifiche Incoterms 2020 ([#313][313])
 - Validazione `CAP`: deve contenere solo valori numerici ([#310][310])
 
