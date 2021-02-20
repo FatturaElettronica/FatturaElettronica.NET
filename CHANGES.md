@@ -4,7 +4,10 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Risolto problema di compatibilità con FluentValidation 9.5.1 ([#320][320])
+- Aggiornata dipendenza FluentValidation a 9.5.1
+  
+[320]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/320
 
 v 3.1.1
 -------
