@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones.
+
+v 3.1.2
+-------
+
+Released on February 20, 2021
+
 - Rimosso warning di obsolescenza in preparazione per FluentValidation 10 ([#321][321])
 - Risolto problema di compatibilità con FluentValidation 9.5.1 ([#320][320])
 - Aggiornata dipendenza FluentValidation a 9.5.1
