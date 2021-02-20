@@ -4,9 +4,11 @@ Changelog
 In Development
 --------------
 
+- Rimosso warning di obsolescenza in preparazione per FluentValidation 10 ([#321][321])
 - Risolto problema di compatibilità con FluentValidation 9.5.1 ([#320][320])
 - Aggiornata dipendenza FluentValidation a 9.5.1
-  
+
+[321]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/321
 [320]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/320
 
 v 3.1.1

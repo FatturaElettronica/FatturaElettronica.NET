@@ -9,8 +9,9 @@ namespace FatturaElettronica.Validators
     {
         private static readonly Lazy<T> DomainObjectLazy = new Lazy<T>(() => new T());
 
-        public IsValidValidator() : base("'{PropertyName}' valori accettati: {AcceptedValues}")
+        protected override string GetDefaultMessageTemplate()
         {
+            return "'{PropertyName}' valori accettati: {AcceptedValues}";
         }
 
         protected override bool IsValid(PropertyValidatorContext context)
