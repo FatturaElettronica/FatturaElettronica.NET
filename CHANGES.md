@@ -4,6 +4,11 @@ Changelog
 In Development
 --------------
 
+v 3.1.3
+-------
+
+Released on March 19, 2021
+
 - Aggiunto supporto per il valore `IX` (Irlanda del Nord) al campo `IdPaese` ([#314][314])
   
  [314]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/314
