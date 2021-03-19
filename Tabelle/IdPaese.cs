@@ -114,6 +114,7 @@
                     new IdPaese { Nome = "Iran", Codice = "IR" },
                     new IdPaese { Nome = "Iraq", Codice = "IQ" },
                     new IdPaese { Nome = "Irlanda", Codice = "IE" },
+                    new IdPaese { Nome = "Irlanda del Nord", Codice = "IX" },
                     new IdPaese { Nome = "Isola di Man", Codice = "IM" },
                     new IdPaese { Nome = "Israele", Codice = "IL" },
                     new IdPaese { Nome = "Italia", Codice = "IT" },

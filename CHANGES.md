@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones.
+- Aggiunto supporto per il valore `IX` (Irlanda del Nord) al campo `IdPaese` ([#314][314])
+  
+ [314]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/314
 
 v 3.1.2
 -------
