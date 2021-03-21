@@ -4,6 +4,11 @@ Changelog
 In Development
 --------------
 
+v 3.1.4
+-------
+
+Released on March 21, 2021 - Codename 'Spring'
+
 - Fix: il codice per Irlanda del Nord è `XI`, non `IX` ([#314][314])
 
 v 3.1.3
