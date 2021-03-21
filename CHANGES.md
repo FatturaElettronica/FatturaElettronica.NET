@@ -4,6 +4,8 @@ Changelog
 In Development
 --------------
 
+- Fix: il codice per Irlanda del Nord è `XI`, non `IX` ([#314][314])
+
 v 3.1.3
 -------
 

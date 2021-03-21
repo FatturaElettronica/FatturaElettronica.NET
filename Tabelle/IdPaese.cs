@@ -118,7 +118,7 @@
                     // Currently not officially supported, as not included in ISO_3166-1. See:
                     // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/314
                     // https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2
-                    new IdPaese { Nome = "Irlanda del Nord", Codice = "IX" },   
+                    new IdPaese { Nome = "Irlanda del Nord", Codice = "XI" },   
                     
                     new IdPaese { Nome = "Isola di Man", Codice = "IM" },
                     new IdPaese { Nome = "Israele", Codice = "IL" },
