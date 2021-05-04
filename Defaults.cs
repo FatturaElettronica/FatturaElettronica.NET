@@ -14,7 +14,7 @@
         public static string Semplificata { get { return $"FSM{Versione.TrasmissioneSemplificata.Replace(".", "")}"; } }
 
     }
-   public class RootElement
+    public class RootElement
     {
         public static string Prefix { get { return "p"; } }
         public static XmlAttributeString[] ExtraAttributes
