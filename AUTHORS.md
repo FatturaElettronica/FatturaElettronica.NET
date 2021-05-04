@@ -21,12 +21,14 @@ Collaboratori
 - Gaetano Pizzol
 - Luca Borghini
 - Luca Marcato
+- Marco Checchin
 - Marco Tessitore
 - Massimo Linossi
 - Michael Mairegger
 - Puma
 - ZephirPFS47
 - gminutillo
+- username77
 
 [NI]: https://nicolaiarocci.com
 [gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET

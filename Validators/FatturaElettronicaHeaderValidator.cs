@@ -24,6 +24,10 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.SoggettoEmittente)
                 .SetValidator(new IsValidValidator<SoggettoEmittente>())
                 .When(x => !string.IsNullOrEmpty(x.SoggettoEmittente));
+            RuleFor(x => x.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese)
+                .Must(idPaese => idPaese != "IT")
+                .When(x => x.DatiTrasmissione.CodiceDestinatario == "XXXXXXX")
+                .WithErrorCode("00313");
         }
     }
 }

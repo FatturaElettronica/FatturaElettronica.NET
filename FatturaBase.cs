@@ -4,6 +4,7 @@ using System.Xml;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
+using Newtonsoft.Json;
 using Org.BouncyCastle.Cms;
 using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
@@ -121,7 +122,7 @@ namespace FatturaElettronica
             base.ReadAndHandleXmlStartElement(r);
         }
 
-        [Core.DataProperty] public string SistemaEmittente { get; set; }
+        public string SistemaEmittente { get; set; }
         public abstract string GetFormatoTrasmissione();
         protected abstract string GetLocalName();
         protected abstract string GetNameSpace();

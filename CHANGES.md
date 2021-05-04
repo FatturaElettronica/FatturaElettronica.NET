@@ -4,7 +4,87 @@ Changelog
 In Development
 --------------
 
-- Fix: Aggiornato attributo `SchemaLocation` ([#282][282])
+v 3.1.4
+-------
+
+Released on March 21, 2021 - Codename 'Spring'
+
+- Fix: il codice per Irlanda del Nord è `XI`, non `IX` ([#314][314])
+
+v 3.1.3
+-------
+
+Released on March 19, 2021
+
+- Aggiunto supporto per il valore `IX` (Irlanda del Nord) al campo `IdPaese` ([#314][314])
+  
+ [314]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/314
+
+v 3.1.2
+-------
+
+Released on February 20, 2021
+
+- Rimosso warning di obsolescenza in preparazione per FluentValidation 10 ([#321][321])
+- Risolto problema di compatibilità con FluentValidation 9.5.1 ([#320][320])
+- Aggiornata dipendenza FluentValidation a 9.5.1
+
+[321]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/321
+[320]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/320
+
+v 3.1.1
+-------
+
+Released on January 25, 2021
+
+- Convalida `TipoResa` allineata a specifiche Incoterms 2020 ([#313][313])
+- Validazione `CAP`: deve contenere solo valori numerici ([#310][310])
+
+[313]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/313
+[310]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/310
+
+v 3.1.0
+-------
+
+Released on December 30, 2020
+
+- Questa versione si allinea alle regole di convalida in vigore dal 1 Gennaio 2021.
+- Rimosso supporto per valori N2, N3, N6 per il campo `DatiRiepiloto.Natura` ([#307][307])
+- Aggiunta convalida per errore 00313 ([#300][300])
+- `Defaults.RootElement.ExtraAttributes` diventa una read-write property ([#303][303])
+- `Defaults.RootElement.Prefix` diventa una read-write property ([#303][303])
+- Migrazione CI da Azure Pipelines a GitHub Actions (`ubuntu-latest`, `windows-latest`, `macos-latest`) ([#298][298])
+- Impostato target framework della test suite a `net5.0` ([#295][295])
+- Aggiornata dipendenza Portable.BouncyCastle a 1.8.9
+- Aggiornata dipendenza Microsoft.NET.Test.Sdk a 16.8.3
+- Aggiornata dipendenza FluentValidation a 9.3.0
+- Aggiornata dipendenza System.Security.Cryptography.Pkcs a 5.0.1
+
+
+[300]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/300
+[303]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/303
+[307]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/307
+[298]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/298
+[295]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/295
+
+v 3.0.5
+-------
+
+Released on November 26, 2020
+
+- Fix: `SistemaEmittente` non va serializzato come elemento XML ([#294][294])
+- Fix: rimossa convalida `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
+
+[294]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/294
+
+v 3.0.4
+-------
+
+Released on November 3, 2020
+
+- Fix: Migliorata la validazione errore 00444 in `DatiRiepilogo` ([#287][287])
+- Fix: Migliorata la validazione errore 00443 in `DatiRiepilogo` ([#281][281])
+- Fix: Aggiornato attributo `SchemaLocation` ([#282][282], [#286][286])
 - Fix: Supporto per `SistemaEmittente` in deserializzazione ([#278][278])
 - Fix: `DatiRiepilogo.RiferimentoNormativo` è richiesto quando `Natura` è valorizzato ([#284][284])
 - Aggiornata dipendenza FluentValidation a 9.2.2
@@ -15,6 +95,9 @@ In Development
 - Aggiornata dipendenza Microsoft.NET.Test.Sdk a 16.7.1
 - Abbandonata dipendenza obsoleta da `System.Xml.XmlSerializer`
 
+[287]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/287
+[281]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/281
+[286]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/286
 [282]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/282
 [278]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/278
 [284]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/284

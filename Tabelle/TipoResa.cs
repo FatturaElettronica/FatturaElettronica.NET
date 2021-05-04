@@ -15,7 +15,7 @@
                     new TipoResa{ Codice = "CIF", Nome = "Costo, assicurazione e nolo" },
                     new TipoResa{ Codice = "CPT", Nome = "Trasporto pagato fino a" },
                     new TipoResa{ Codice = "CIP", Nome = "Trasporto e assicurazione pagati fino a" },
-                    new TipoResa{ Codice = "DAT", Nome = "Reso al terminal" },
+                    new TipoResa{ Codice = "DPU", Nome = "Reso al luogo di destinazione scaricato" },
                     new TipoResa{ Codice = "DAP", Nome = "Reso a luogo di destinazione" },
                     new TipoResa{ Codice = "DDP", Nome = "Reso sdoganato" },                   
                 };

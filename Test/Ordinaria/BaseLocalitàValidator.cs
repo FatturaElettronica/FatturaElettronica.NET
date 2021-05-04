@@ -1,5 +1,6 @@
 ﻿using FatturaElettronica.Tabelle;
 using FluentValidation;
+using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FatturaElettronica.Test.Ordinaria
@@ -50,7 +51,16 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void CAPLength()
         {
-            AssertLength(x => x.CAP, 5);
+            AssertLength(x => x.CAP, 5, filler: '9');
+        }
+
+        [TestMethod]
+        public void CAPMustBeNumeric()
+        {
+            Challenge.CAP = "1234A";
+            Validator.ShouldHaveValidationErrorFor(x => x.CAP, Challenge);
+            Challenge.CAP = "12345";
+            Validator.ShouldNotHaveValidationErrorFor(x => x.CAP, Challenge);
         }
 
         [TestMethod]

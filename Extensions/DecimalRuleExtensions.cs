@@ -4,14 +4,22 @@ namespace FatturaElettronica.Extensions
 {
     internal static class DecimalRuleExtensions
     {
-        public static IRuleBuilderOptions<T, TProperty> ScalePrecision8DecimalType<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static void ScalePrecision8DecimalType<T>(this IRuleBuilder<T, decimal> ruleBuilder)
         {
-            return ruleBuilder.ScalePrecision(8, 19);
+            ruleBuilder.ScalePrecision(8, 19);
         }
         
-        public static IRuleBuilderOptions<T, TProperty> ScalePrecision2DecimalType<T, TProperty>(this IRuleBuilder<T, TProperty> ruleBuilder)
+        public static void ScalePrecision2DecimalType<T>(this IRuleBuilder<T, decimal> ruleBuilder)
         {
-            return ruleBuilder.ScalePrecision(2, 13);
+            ruleBuilder.ScalePrecision(2, 13);
+        }
+        public static void ScalePrecision8DecimalType<T>(this IRuleBuilder<T, decimal?> ruleBuilder)
+        {
+            ruleBuilder.ScalePrecision(8, 19);
+        }
+        public static void ScalePrecision2DecimalType<T>(this IRuleBuilder<T, decimal?> ruleBuilder)
+        {
+            ruleBuilder.ScalePrecision(2, 13);
         }
     }
 }

@@ -39,6 +39,8 @@
                     
                     // Valori accettati nel periodo transitorio tra specifiche v1.5 e v1.6 - verranno rimossi.
                     // vedi https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/259
+                    // Update: per il momento si decide di lasciarli,
+                    // vedi https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/317
                     new CausalePagamento{ Codice = "J", Nome = "compensi corrisposti ai raccoglitori occasionali di tartufi non identificati ai fini dell’imposta sul valore aggiunto, in relazione alla cessione di tartufi"},
                     new CausalePagamento{ Codice = "K", Nome = "assegni di servizio civile universale di cui all’art.16 del D.lgs. n. 40 del 6 marzo 2017"},
                     new CausalePagamento{ Codice = "V2", Nome = "redditi derivanti dalle prestazioni non esercitate abitualmente rese dagli incaricati alla vendita diretta a domicilio"},

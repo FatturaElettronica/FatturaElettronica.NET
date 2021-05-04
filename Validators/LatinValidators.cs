@@ -12,10 +12,14 @@ namespace FatturaElettronica.Validators
         private readonly Charsets _charset;
 
         protected LatinBaseValidator(Charsets charset)
-            : base(
-                $"Testo contenente caratteri non validi ({(charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")}). valori non accettati: {{NonLatinCode}}")
         {
             _charset = charset;
+        }
+
+        protected override string GetDefaultMessageTemplate()
+        {
+            return
+                $"Testo contenente caratteri non validi ({(_charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")}). valori non accettati: {{NonLatinCode}}";
         }
 
         protected override bool IsValid(PropertyValidatorContext context)
