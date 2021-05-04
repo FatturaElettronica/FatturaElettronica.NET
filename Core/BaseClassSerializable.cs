@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Xml;
 using System.Xml.Schema;
 using System.Xml.Serialization;
@@ -23,7 +24,7 @@ namespace FatturaElettronica.Core
         /// </summary>
         protected BaseClassSerializable()
         {
-            XmlOptions = new XmlOptions {DateTimeFormat = "yyyy-MM-dd", DecimalFormat = "0.00######"};
+            XmlOptions = new XmlOptions { DateTimeFormat = "yyyy-MM-dd", DecimalFormat = "0.00######" };
         }
 
         protected BaseClassSerializable(XmlReader r)
@@ -78,7 +79,7 @@ namespace FatturaElettronica.Core
 
                                     try
                                     {
-                                        if (add != null) add.Invoke(current.Value, new[] {newObject});
+                                        if (add != null) add.Invoke(current.Value, new[] { newObject });
                                     }
                                     catch (Exception)
                                     {
@@ -123,8 +124,8 @@ namespace FatturaElettronica.Core
 
                         current = _stack.Peek();
 
-                        var name = (string) r.Value;
-                        prop = GetPropertyInfo((BaseClassSerializable) current.Value, name);
+                        var name = (string)r.Value;
+                        prop = GetPropertyInfo((BaseClassSerializable)current.Value, name);
 
                         if (prop == null)
                             throw new JsonParseException($"Unexpected property {name}", r);
@@ -194,7 +195,7 @@ namespace FatturaElettronica.Core
 
                                 try
                                 {
-                                    if (add != null) add.Invoke(current.Value, new[] {value});
+                                    if (add != null) add.Invoke(current.Value, new[] { value });
                                 }
                                 catch (Exception)
                                 {
@@ -231,6 +232,9 @@ namespace FatturaElettronica.Core
             if (target == typeof(decimal) || target == typeof(decimal?))
                 return Convert.ToDecimal(value);
 
+            if (target == typeof(byte[]) && value.GetType().Equals(String.Empty.GetType()))
+                return Convert.FromBase64String((String)value);
+
             return value;
         }
 
@@ -251,7 +255,7 @@ namespace FatturaElettronica.Core
             // XmlElementAttribute comes first
             property = dataProperties
                 .FirstOrDefault(prop => prop.GetCustomAttributes(typeof(XmlElementAttribute), false)
-                    .Any(ca => ((XmlElementAttribute) ca).ElementName.Equals(name,
+                    .Any(ca => ((XmlElementAttribute)ca).ElementName.Equals(name,
                         StringComparison.OrdinalIgnoreCase)));
 
             // Fallback to property name
@@ -330,14 +334,14 @@ namespace FatturaElettronica.Core
                 switch (value)
                 {
                     case string _:
-                    {
-                        if (!string.IsNullOrEmpty(value.ToString()) || XmlOptions.SerializeEmptyStrings)
                         {
-                            w.WriteElementString(propertyName, value.ToString());
-                        }
+                            if (!string.IsNullOrEmpty(value.ToString()) || XmlOptions.SerializeEmptyStrings)
+                            {
+                                w.WriteElementString(propertyName, value.ToString());
+                            }
 
-                        continue;
-                    }
+                            continue;
+                        }
                     case DateTime dateTime when XmlOptions.DateTimeFormat != null &&
                                                 !property.GetCustomAttributes<IgnoreXmlDateFormat>().Any():
                         w.WriteElementString(propertyName, dateTime.ToString(XmlOptions.DateTimeFormat));
@@ -418,7 +422,7 @@ namespace FatturaElettronica.Core
                     .FirstOrDefault(prop =>
                         prop
                             .GetCustomAttributes(typeof(XmlElementAttribute), false)
-                            .Any(ca => ((XmlElementAttribute) ca).ElementName == r.Name));
+                            .Any(ca => ((XmlElementAttribute)ca).ElementName == r.Name));
                 if (property == null)
                     property = properties.FirstOrDefault(n => n.Name.Equals(r.Name));
                 if (property == null)
@@ -432,7 +436,7 @@ namespace FatturaElettronica.Core
 
                 if (type.IsSubclassOfBusinessObject())
                 {
-                    ((BaseClassSerializable) value).ReadXml(r);
+                    ((BaseClassSerializable)value).ReadXml(r);
                     continue;
                 }
 
@@ -480,19 +484,19 @@ namespace FatturaElettronica.Core
                 {
                     // list items are expected to be of BusinessObject type.
                     var bo = Activator.CreateInstance(argumentType);
-                    ((BaseClassSerializable) bo).ReadXml(r);
-                    if (add != null) add.Invoke(propertyValue, new[] {bo});
+                    ((BaseClassSerializable)bo).ReadXml(r);
+                    if (add != null) add.Invoke(propertyValue, new[] { bo });
                     continue;
                 }
 
                 if (argumentType == typeof(string))
                 {
-                    if (add != null) add.Invoke(propertyValue, new object[] {r.ReadElementContentAsString()});
+                    if (add != null) add.Invoke(propertyValue, new object[] { r.ReadElementContentAsString() });
                     continue;
                 }
 
                 if (argumentType != typeof(int)) continue;
-                if (add != null) add.Invoke(propertyValue, new[] {r.ReadElementContentAs(argumentType, null)});
+                if (add != null) add.Invoke(propertyValue, new[] { r.ReadElementContentAs(argumentType, null) });
             }
         }
 
