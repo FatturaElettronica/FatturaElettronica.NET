@@ -4,6 +4,10 @@ Changelog
 In Development
 --------------
 
+- Risolo problema deserializzazione Json per la classe `Allegati` ([#344][344])
+
+[344]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/344
+
 v 3.1.4
 -------
 
