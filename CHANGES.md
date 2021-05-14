@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.1.5
+-------
+
+Released on May 14, 2021
+
 - Risolo problema deserializzazione Json per la classe `Allegati` ([#344][344])
 
 [344]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/344
