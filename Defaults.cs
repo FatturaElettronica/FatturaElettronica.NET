@@ -16,7 +16,8 @@
     }
     public class RootElement
     {
-        public static string Prefix { get { return "p"; } }
+        public static string Prefix { get; set; } = "p";
+
         public static XmlAttributeString[] ExtraAttributes
         {
             get

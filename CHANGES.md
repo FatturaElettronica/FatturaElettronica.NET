@@ -4,7 +4,9 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Fix: ripristinato un setter rimosso nella v3.1.5 ([#346][346])
+  
+[346]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/346
 
 v 3.1.5
 -------
