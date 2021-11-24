@@ -14,11 +14,11 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestator
         /// </summary>
         public CedentePrestatore()
         {
-            DatiAnagrafici = new DatiAnagraficiCedentePrestatore();
-            Sede = new SedeCedentePrestatore();
-            StabileOrganizzazione = new StabileOrganizzazione();
-            IscrizioneREA = new IscrizioneREA();
-            Contatti = new Contatti();
+            DatiAnagrafici = new();
+            Sede = new();
+            StabileOrganizzazione = new();
+            IscrizioneREA = new();
+            Contatti = new();
         }
         public CedentePrestatore(XmlReader r) : base(r) { }
 

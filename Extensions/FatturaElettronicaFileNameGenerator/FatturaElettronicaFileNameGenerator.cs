@@ -93,7 +93,7 @@ namespace FatturaElettronica.Extensions
             var result = new char[32 - i];
             Array.Copy(buffer, i, result, 0, 32 - i);
 
-            return new string(result);
+            return new(result);
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace FatturaElettronica.Extensions
         {
             var charArray = s.ToCharArray();
             Array.Reverse(charArray);
-            return new string(charArray);
+            return new(charArray);
         }
     }
 }

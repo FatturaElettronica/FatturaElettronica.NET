@@ -40,7 +40,7 @@ namespace FatturaElettronica.Test
         private FatturaOrdinaria Deserialize(string fileName)
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            using (var r = XmlReader.Create(fileName, new XmlReaderSettings {IgnoreWhitespace = true}))
+            using (var r = XmlReader.Create(fileName, new() {IgnoreWhitespace = true}))
             {
                 f.ReadXml(r);
             }

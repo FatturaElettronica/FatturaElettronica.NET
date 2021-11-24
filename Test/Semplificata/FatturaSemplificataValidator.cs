@@ -11,8 +11,8 @@ namespace FatturaElettronica.Test.Semplificata
         [TestInitialize]
         public new void Init()
         {
-            Validator = new FatturaElettronica.Validators.Semplificata.FatturaSemplificataValidator();
-            Challenge = new FatturaSemplificata();
+            Validator = new();
+            Challenge = new();
         }
 
         [TestMethod]

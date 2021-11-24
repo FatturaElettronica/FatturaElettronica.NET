@@ -82,7 +82,7 @@ namespace FatturaElettronica.Test
             ValidateInvoice(f, expectedFormat);
 
             // Serialize it back to disk, to another file
-            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings {Indent = true}))
+            using (var w = XmlWriter.Create("challenge.xml", new() {Indent = true}))
             {
                 f.WriteXml(w);
             }
@@ -99,7 +99,7 @@ namespace FatturaElettronica.Test
         private FatturaOrdinaria Deserialize(string fileName)
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            using (var r = XmlReader.Create(fileName, new XmlReaderSettings {IgnoreWhitespace = true}))
+            using (var r = XmlReader.Create(fileName, new() {IgnoreWhitespace = true}))
             {
                 f.ReadXml(r);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Test
             // DatiGeneraliDocumento
             Assert.AreEqual("TD01", body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento);
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
-            Assert.AreEqual(new DateTime(2014, 12, 18), body.DatiGenerali.DatiGeneraliDocumento.Data);
+            Assert.AreEqual(new(2014, 12, 18), body.DatiGenerali.DatiGeneraliDocumento.Data);
             Assert.AreEqual("123", body.DatiGenerali.DatiGeneraliDocumento.Numero);
             Assert.AreEqual(
                 "LA FATTURA FA RIFERIMENTO AD UNA OPERAZIONE AAAA BBBBBBBBBBBBBBBBBB CCC DDDDDDDDDDDDDDD E FFFFFFFFFFFFFFFFFFFF GGGGGGGGGG HHHHHHH II LLLLLLLLLLLLLLLLL MMM NNNNN OO PPPPPPPPPPP QQQQ RRRR SSSSSSSSSSSSSS",
@@ -172,7 +172,7 @@ namespace FatturaElettronica.Test
                 // DatiContratto
                 Assert.AreEqual(1, body.DatiGenerali.DatiContratto[0].RiferimentoNumeroLinea[0]);
                 Assert.AreEqual("123", body.DatiGenerali.DatiContratto[0].IdDocumento);
-                Assert.AreEqual(new DateTime(2016, 9, 1), body.DatiGenerali.DatiContratto[0].Data.Value);
+                Assert.AreEqual(new(2016, 9, 1), body.DatiGenerali.DatiContratto[0].Data.Value);
                 Assert.AreEqual("5", body.DatiGenerali.DatiContratto[0].NumItem);
                 Assert.AreEqual("123abc", body.DatiGenerali.DatiContratto[0].CodiceCUP);
                 Assert.AreEqual("456def", body.DatiGenerali.DatiContratto[0].CodiceCIG);
@@ -235,14 +235,14 @@ namespace FatturaElettronica.Test
             // DatiPagamento
             Assert.AreEqual("TP01", body.DatiPagamento[0].CondizioniPagamento);
             Assert.AreEqual("MP01", body.DatiPagamento[0].DettaglioPagamento[0].ModalitaPagamento);
-            Assert.AreEqual(new DateTime(2015, 01, 30),
+            Assert.AreEqual(new(2015, 01, 30),
                 body.DatiPagamento[0].DettaglioPagamento[0].DataScadenzaPagamento.Value);
             Assert.AreEqual(36.08m, body.DatiPagamento[0].DettaglioPagamento[0].ImportoPagamento);
         }
 
         private void SerializeAndAssertRootElementAttributes(FatturaBase f)
         {
-            using (var w = XmlWriter.Create("test", new XmlWriterSettings {Indent = true}))
+            using (var w = XmlWriter.Create("test", new() {Indent = true}))
             {
                 f.WriteXml(w);
             }

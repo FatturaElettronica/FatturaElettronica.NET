@@ -10,7 +10,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCo
     {
         public RappresentanteFiscaleCessionarioCommittente()
         {
-            IdFiscaleIVA = new IdFiscaleIVA();
+            IdFiscaleIVA = new();
         }
         public RappresentanteFiscaleCessionarioCommittente(XmlReader r) : base(r) { }
 

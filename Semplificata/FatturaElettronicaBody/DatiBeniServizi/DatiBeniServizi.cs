@@ -14,7 +14,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         public DatiBeniServizi()
         {
-            DatiIVA = new DatiIVA();
+            DatiIVA = new();
         }
         public DatiBeniServizi(XmlReader r) : base(r) { }
 

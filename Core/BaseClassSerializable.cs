@@ -24,7 +24,7 @@ namespace FatturaElettronica.Core
         /// </summary>
         protected BaseClassSerializable()
         {
-            XmlOptions = new XmlOptions { DateTimeFormat = "yyyy-MM-dd", DecimalFormat = "0.00######" };
+            XmlOptions = new() { DateTimeFormat = "yyyy-MM-dd", DecimalFormat = "0.00######" };
         }
 
         protected BaseClassSerializable(XmlReader r)
@@ -34,7 +34,7 @@ namespace FatturaElettronica.Core
 
         protected XmlOptions XmlOptions { get; set; }
 
-        private readonly Stack<JsonProperty> _stack = new Stack<JsonProperty>();
+        private readonly Stack<JsonProperty> _stack = new();
 
         /// <summary>
         /// Deserializes the current BusinessObject from a json stream.
@@ -87,7 +87,7 @@ namespace FatturaElettronica.Core
                                     }
 
 
-                                    current = new JsonProperty(newObject);
+                                    current = new(newObject);
                                 }
                                 else
                                 {
@@ -96,12 +96,12 @@ namespace FatturaElettronica.Core
                                             $"Unexpected property type {objectType.FullName}",
                                             r);
 
-                                    current = new JsonProperty(current.Child.GetValue(current.Value, null));
+                                    current = new(current.Child.GetValue(current.Value, null));
                                 }
                             }
                         }
                         else
-                            current = new JsonProperty(this);
+                            current = new(this);
 
                         _stack.Push(current);
 
@@ -151,10 +151,10 @@ namespace FatturaElettronica.Core
                             var clear = objectType.GetMethod("Clear");
                             if (clear != null) clear.Invoke(value, null);
 
-                            current = new JsonProperty(current.Child, value);
+                            current = new(current.Child, value);
                         }
                         else
-                            current = new JsonProperty(this);
+                            current = new(this);
 
                         _stack.Push(current);
 

@@ -32,7 +32,7 @@ namespace FatturaElettronica.Test.Semplificata
             ValidateInvoice(f);
 
             // Serialize it back to disk, to another file
-            using (var w = XmlWriter.Create("challenge.xml", new XmlWriterSettings {Indent = true}))
+            using (var w = XmlWriter.Create("challenge.xml", new() {Indent = true}))
             {
                 f.WriteXml(w);
             }
@@ -49,7 +49,7 @@ namespace FatturaElettronica.Test.Semplificata
         private FatturaSemplificata Deserialize(string fileName)
         {
             var f = FatturaSemplificata.CreateInstance(Instance.Semplificata);
-            using (var r = XmlReader.Create(fileName, new XmlReaderSettings {IgnoreWhitespace = true}))
+            using (var r = XmlReader.Create(fileName, new() {IgnoreWhitespace = true}))
             {
                 f.ReadXml(r);
             }
@@ -92,7 +92,7 @@ namespace FatturaElettronica.Test.Semplificata
             // DatiGeneraliDocumento
             Assert.AreEqual("TD07", body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento);
             Assert.AreEqual("EUR", body.DatiGenerali.DatiGeneraliDocumento.Divisa);
-            Assert.AreEqual(new DateTime(2019, 01, 01), body.DatiGenerali.DatiGeneraliDocumento.Data);
+            Assert.AreEqual(new(2019, 01, 01), body.DatiGenerali.DatiGeneraliDocumento.Data);
             Assert.AreEqual("123", body.DatiGenerali.DatiGeneraliDocumento.Numero);
             // DatiBeniServizi
             Assert.AreEqual(
@@ -106,7 +106,7 @@ namespace FatturaElettronica.Test.Semplificata
 
         private void SerializeAndAssertRootElementAttributes(FatturaBase f)
         {
-            using (var w = XmlWriter.Create("test", new XmlWriterSettings {Indent = true}))
+            using (var w = XmlWriter.Create("test", new() {Indent = true}))
             {
                 f.WriteXml(w);
             }

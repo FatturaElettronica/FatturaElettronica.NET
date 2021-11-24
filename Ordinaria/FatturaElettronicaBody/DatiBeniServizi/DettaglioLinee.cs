@@ -16,9 +16,9 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         public DettaglioLinee()
         {
-            CodiceArticolo = new List<CodiceArticolo>();
-            ScontoMaggiorazione = new List<ScontoMaggiorazione>();
-            AltriDatiGestionali = new List<AltriDatiGestionali>();
+            CodiceArticolo = new();
+            ScontoMaggiorazione = new();
+            AltriDatiGestionali = new();
         }
 
         public DettaglioLinee(XmlReader r) : base(r) { }

@@ -14,8 +14,8 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCo
         /// </summary>
         public CessionarioCommittente()
         {
-            IdentificativiFiscali = new IdentificativiFiscali();
-            AltriDatiIdentificativi = new AltriDatiIdentificativi();
+            IdentificativiFiscali = new();
+            AltriDatiIdentificativi = new();
         }
         public CessionarioCommittente(XmlReader r) : base(r) { }
 

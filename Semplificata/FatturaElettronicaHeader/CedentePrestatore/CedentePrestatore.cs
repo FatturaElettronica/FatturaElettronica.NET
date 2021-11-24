@@ -16,11 +16,11 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePresta
         /// </summary>
         public CedentePrestatore()
         {
-            IdFiscaleIVA = new IdFiscaleIVA();
-            Sede = new SedeCedentePrestatore();
-            StabileOrganizzazione = new StabileOrganizzazione();
-            RappresentanteFiscale = new RappresentanteFiscale();
-            IscrizioneREA = new IscrizioneREA();
+            IdFiscaleIVA = new();
+            Sede = new();
+            StabileOrganizzazione = new();
+            RappresentanteFiscale = new();
+            IscrizioneREA = new();
         }
         public CedentePrestatore(XmlReader r) : base(r) { }
 

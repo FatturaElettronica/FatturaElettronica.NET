@@ -9,7 +9,7 @@ namespace FatturaElettronica.Extensions
 {
     public static class FatturaElettronicaExtensions
     {
-        private static readonly ConcurrentDictionary<string, IValidator> ValidatorsCache = new ConcurrentDictionary<string, IValidator>();
+        private static readonly ConcurrentDictionary<string, IValidator> ValidatorsCache = new();
         public static ValidationResult Validate<T>(this T obj) where T : BaseClassSerializable
         {
             var t = typeof(T);

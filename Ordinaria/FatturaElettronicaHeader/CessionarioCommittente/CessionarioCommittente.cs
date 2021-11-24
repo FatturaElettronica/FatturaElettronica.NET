@@ -15,10 +15,10 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CessionarioCommi
         /// </summary>
         public CessionarioCommittente()
         {
-            DatiAnagrafici = new DatiAnagraficiCessionarioCommittente();
-            Sede = new SedeCessionarioCommittente();
-            StabileOrganizzazione = new StabileOrganizzazione();
-            RappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
+            DatiAnagrafici = new();
+            Sede = new();
+            StabileOrganizzazione = new();
+            RappresentanteFiscale = new();
         }
         public CessionarioCommittente(XmlReader r) : base(r) { }
 

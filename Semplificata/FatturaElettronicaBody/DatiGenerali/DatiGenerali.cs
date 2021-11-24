@@ -15,8 +15,8 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         public DatiGenerali()
         {
-            DatiGeneraliDocumento = new DatiGeneraliDocumento();
-            DatiFatturaRettificata = new DatiFatturaRettificata();
+            DatiGeneraliDocumento = new();
+            DatiFatturaRettificata = new();
         }
         public DatiGenerali(XmlReader r) : base(r) { }
 

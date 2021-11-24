@@ -16,11 +16,11 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         public DatiGeneraliDocumento()
         {
-            DatiRitenuta = new List<DatiRitenuta>();
-            DatiBollo = new DatiBollo();
-            DatiCassaPrevidenziale = new List<DatiCassaPrevidenziale>();
-            ScontoMaggiorazione = new List<ScontoMaggiorazione>();
-            Causale = new List<string>();
+            DatiRitenuta = new();
+            DatiBollo = new();
+            DatiCassaPrevidenziale = new();
+            ScontoMaggiorazione = new();
+            Causale = new();
         }
         public DatiGeneraliDocumento(XmlReader r) : base(r) { }
 

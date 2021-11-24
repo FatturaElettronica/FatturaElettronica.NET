@@ -39,7 +39,7 @@ namespace FatturaElettronica.Core
 
         private void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new(propertyName));
         }
 
         /// <summary>
@@ -184,7 +184,7 @@ namespace FatturaElettronica.Core
             return ObjectExtensions.GetHashCodeFromFields(GetAllDataProperties());
         }
 
-        private static readonly HashSet<Type> NumericTypes = new HashSet<Type>
+        private static readonly HashSet<Type> NumericTypes = new()
         {
             typeof(int), typeof(uint), typeof(double), typeof(decimal),
         };

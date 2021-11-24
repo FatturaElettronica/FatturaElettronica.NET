@@ -125,7 +125,7 @@ namespace FatturaElettronica.Test.Ordinaria
             Challenge.PrezzoUnitario = 19.30m;
             Challenge.Quantita = 1;
             Challenge.ScontoMaggiorazione.Add(
-                new FatturaElettronica.Common.ScontoMaggiorazione { Tipo = "SC", Percentuale = 15m });
+                new() { Tipo = "SC", Percentuale = 15m });
             Challenge.PrezzoTotale = 16.41m;
             result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
@@ -178,7 +178,7 @@ namespace FatturaElettronica.Test.Ordinaria
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/71
             Challenge.ScontoMaggiorazione.Clear();
             Challenge.ScontoMaggiorazione.Add(
-                new FatturaElettronica.Common.ScontoMaggiorazione { Importo = 0, Tipo = "SC" });
+                new() { Importo = 0, Tipo = "SC" });
             Challenge.PrezzoUnitario = 1m;
             Challenge.Quantita = 1;
             Challenge.PrezzoTotale = 1m;

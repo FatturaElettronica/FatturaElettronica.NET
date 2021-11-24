@@ -38,8 +38,8 @@ namespace FatturaElettronica.Test.Ordinaria
         public void TipoDocumentoValidateAgainstError00474()
         {
             Challenge.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD21";
-            Challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 1m});
-            Challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 0m});
+            Challenge.DatiBeniServizi.DettaglioLinee.Add(new() {AliquotaIVA = 1m});
+            Challenge.DatiBeniServizi.DettaglioLinee.Add(new() {AliquotaIVA = 0m});
 
             Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00474"));
 
@@ -54,7 +54,7 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void DatiRitenutaValidateAgainstError00411()
         {
-            Challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {Ritenuta = "SI"});
+            Challenge.DatiBeniServizi.DettaglioLinee.Add(new() {Ritenuta = "SI"});
             var r = Validator.Validate(Challenge);
             Assert.AreEqual("00411",
                 r.Errors.FirstOrDefault(x => x.PropertyName == "DatiGenerali.DatiGeneraliDocumento.DatiRitenuta")
@@ -69,8 +69,8 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void DatiRitenutaValidateAgainstError00422()
         {
-            Challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 10m, PrezzoTotale = 100m});
-            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo
+            Challenge.DatiBeniServizi.DettaglioLinee.Add(new() {AliquotaIVA = 10m, PrezzoTotale = 100m});
+            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new()
             {
                 AliquotaIVA = 10m, ImponibileImporto = 101m
             });
@@ -86,21 +86,21 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void DatiRitenutaValidateAgainstError00419()
         {
-            Challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 1});
-            Challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 2});
-            Challenge.DatiBeniServizi.DettaglioLinee.Add(new DettaglioLinee {AliquotaIVA = 3});
+            Challenge.DatiBeniServizi.DettaglioLinee.Add(new() {AliquotaIVA = 1});
+            Challenge.DatiBeniServizi.DettaglioLinee.Add(new() {AliquotaIVA = 2});
+            Challenge.DatiBeniServizi.DettaglioLinee.Add(new() {AliquotaIVA = 3});
 
             Challenge.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale.Add(
-                new DatiCassaPrevidenziale {AliquotaIVA = 4});
+                new() {AliquotaIVA = 4});
 
-            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 1});
-            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 2});
-            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 3});
+            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new() {AliquotaIVA = 1});
+            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new() {AliquotaIVA = 2});
+            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new() {AliquotaIVA = 3});
             var r = Validator.Validate(Challenge);
             Assert.AreEqual("00419",
                 r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi.DatiRiepilogo")?.ErrorCode);
 
-            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo {AliquotaIVA = 4});
+            Challenge.DatiBeniServizi.DatiRiepilogo.Add(new() {AliquotaIVA = 4});
             r = Validator.Validate(Challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi.DatiRiepilogo"));
         }

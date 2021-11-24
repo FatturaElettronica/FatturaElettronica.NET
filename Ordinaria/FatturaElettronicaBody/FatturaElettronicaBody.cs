@@ -12,11 +12,11 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody
         /// </summary>
         public FatturaElettronicaBody()
         {
-            DatiGenerali = new DatiGenerali.DatiGenerali();
-            DatiBeniServizi = new DatiBeniServizi.DatiBeniServizi();
-            DatiVeicoli = new DatiVeicoli.DatiVeicoli();
-            DatiPagamento = new List<DatiPagamento.DatiPagamento>();
-            Allegati = new List<Allegati>();
+            DatiGenerali = new();
+            DatiBeniServizi = new();
+            DatiVeicoli = new();
+            DatiPagamento = new();
+            Allegati = new();
         }
         public FatturaElettronicaBody(XmlReader r) : base(r) { }
 

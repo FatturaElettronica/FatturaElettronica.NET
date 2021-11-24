@@ -9,7 +9,7 @@ namespace FatturaElettronica.Validators
     public class IsValidValidator<T, TProperty, TTabella> : PropertyValidator<T, TProperty>
         where TTabella : Tabella, new()
     {
-        private static readonly Lazy<TTabella> DomainObjectLazy = new Lazy<TTabella>(() => new TTabella());
+        private static readonly Lazy<TTabella> DomainObjectLazy = new(() => new());
 
         protected override string GetDefaultMessageTemplate(string errorCode)
         {

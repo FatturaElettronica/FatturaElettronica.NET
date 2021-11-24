@@ -16,7 +16,7 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader
         /// </summary>
         public RappresentanteFiscale()
         {
-            IdFiscaleIVA = new IdFiscaleIVA();
+            IdFiscaleIVA = new();
         }
         public RappresentanteFiscale(XmlReader r) : base(r) { }
 

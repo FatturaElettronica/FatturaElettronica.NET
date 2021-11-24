@@ -14,7 +14,7 @@ namespace FatturaElettronica.Test.Core
         [DataProperty]
         public byte[] AByteArray { get; set; }
         [DataProperty]
-        public SubTestMe SubTestMe { get; } = new SubTestMe();
+        public SubTestMe SubTestMe { get; } = new();
         public override void WriteXml(System.Xml.XmlWriter w)
         {
             w.WriteStartElement("test");

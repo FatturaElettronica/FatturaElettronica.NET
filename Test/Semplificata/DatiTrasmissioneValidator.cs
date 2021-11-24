@@ -83,7 +83,7 @@ namespace FatturaElettronica.Test.Semplificata
         [TestMethod]
         public void PECDestinatarioMinMaxLength()
         {
-            Challenge.CodiceDestinatario = new string('0', 7);
+            Challenge.CodiceDestinatario = new('0', 7);
             AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
         }
     }

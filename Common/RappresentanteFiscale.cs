@@ -13,7 +13,7 @@ namespace FatturaElettronica.Common
         /// </summary>
         public RappresentanteFiscale()
         {
-            DatiAnagrafici = new DatiAnagrafici();
+            DatiAnagrafici = new();
         }
         public RappresentanteFiscale(XmlReader r) : base(r) { }
 

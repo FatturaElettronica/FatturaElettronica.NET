@@ -16,8 +16,8 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi
         /// </summary>
         public DatiBeniServizi()
         {
-            DettaglioLinee = new List<DettaglioLinee>();
-            DatiRiepilogo = new List<DatiRiepilogo>();
+            DettaglioLinee = new();
+            DatiRiepilogo = new();
         }
         public DatiBeniServizi(XmlReader r) : base(r) { }
 

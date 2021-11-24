@@ -7,8 +7,8 @@ namespace FatturaElettronica.Ordinaria
     {
         public FatturaOrdinaria()
         {
-            FatturaElettronicaHeader = new FatturaElettronicaHeader.FatturaElettronicaHeader();
-            FatturaElettronicaBody = new List<FatturaElettronicaBody.FatturaElettronicaBody>();
+            FatturaElettronicaHeader = new();
+            FatturaElettronicaBody = new();
         }
 
         public static FatturaOrdinaria CreateInstance(Instance formato)
@@ -22,9 +22,9 @@ namespace FatturaElettronica.Ordinaria
                         FormatoTrasmissione.PubblicaAmministrazione;
                     break;
                 case Instance.Privati:
-                    fattura = new FatturaOrdinaria();
+                    fattura = new();
                     fattura.FatturaElettronicaHeader.DatiTrasmissione.FormatoTrasmissione = FormatoTrasmissione.Privati;
-                    fattura.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new string('0', 7);
+                    fattura.FatturaElettronicaHeader.DatiTrasmissione.CodiceDestinatario = new('0', 7);
                     break;
             }
 

@@ -57,7 +57,7 @@ namespace FatturaElettronica.Validators
             foreach (var r in body.DatiBeniServizi.DatiRiepilogo)
             {
                 if (!totals.ContainsKey(r.AliquotaIVA))
-                    totals.Add(r.AliquotaIVA, new Totals());
+                    totals.Add(r.AliquotaIVA, new());
 
                 totals[r.AliquotaIVA].ImponibileImporto += r.ImponibileImporto;
                 totals[r.AliquotaIVA].Arrotondamento += r.Arrotondamento ?? 0;
@@ -66,7 +66,7 @@ namespace FatturaElettronica.Validators
             foreach (var l in body.DatiBeniServizi.DettaglioLinee)
             {
                 if (!totals.ContainsKey(l.AliquotaIVA))
-                    totals.Add(l.AliquotaIVA, new Totals());
+                    totals.Add(l.AliquotaIVA, new());
 
                 totals[l.AliquotaIVA].PrezzoTotale += l.PrezzoTotale;
             }
@@ -74,7 +74,7 @@ namespace FatturaElettronica.Validators
             foreach (var c in body.DatiGenerali.DatiGeneraliDocumento.DatiCassaPrevidenziale)
             {
                 if (!totals.ContainsKey(c.AliquotaIVA))
-                    totals.Add(c.AliquotaIVA, new Totals());
+                    totals.Add(c.AliquotaIVA, new());
 
                 totals[c.AliquotaIVA].ImportoContrCassa += c.ImportoContributoCassa;
             }

@@ -12,9 +12,9 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaBody
         /// </summary>
         public FatturaElettronicaBody()
         {
-            DatiGenerali = new DatiGenerali.DatiGenerali();
-            DatiBeniServizi = new List<DatiBeniServizi.DatiBeniServizi>();
-            Allegati = new List<Allegati>();
+            DatiGenerali = new();
+            DatiBeniServizi = new();
+            Allegati = new();
         }
         public FatturaElettronicaBody(XmlReader r) : base(r) { }
 

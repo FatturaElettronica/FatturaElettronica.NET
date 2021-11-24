@@ -88,13 +88,13 @@ namespace FatturaElettronica.Extensions
             {
                 fattura.WriteXml(tempFile);
 
-                var content = new ContentInfo(new Oid("1.2.840.113549.1.7.1", "PKCS 7 Data"),
+                var content = new ContentInfo(new("1.2.840.113549.1.7.1", "PKCS 7 Data"),
                     File.ReadAllBytes(tempFile));
                 var signedCms = new SignedCms(SubjectIdentifierType.IssuerAndSerialNumber, content, false);
                 var signer = new CmsSigner(cert)
                 {
                     IncludeOption = X509IncludeOption.EndCertOnly,
-                    DigestAlgorithm = new Oid("2.16.840.1.101.3.4.2.1", "SHA256")
+                    DigestAlgorithm = new("2.16.840.1.101.3.4.2.1", "SHA256")
                 };
                 signer.SignedAttributes.Add(new Pkcs9SigningTime(DateTime.Now));
                 try

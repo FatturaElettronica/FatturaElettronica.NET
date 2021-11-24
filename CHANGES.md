@@ -13,6 +13,7 @@ In Development
 - Aggiornata descrizione per il codice natura N6.2 ([#354][354])
 - Fix: ripristinato un setter rimosso nella v3.1.5 ([#346][346])
 
+[359]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/359
 [358]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/358
 [337]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/337
 [354]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/354

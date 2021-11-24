@@ -15,7 +15,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento
         /// </summary>
         public DatiPagamento()
         {
-            DettaglioPagamento = new List<DettaglioPagamento>();
+            DettaglioPagamento = new();
         }
 
         public DatiPagamento(XmlReader r) : base(r) { }

@@ -21,7 +21,7 @@ namespace FatturaElettronica.Test.Ordinaria
             var r = Validator.Validate(Challenge);
             Assert.IsNotNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioLinee"));
 
-            Challenge.DettaglioLinee.Add(new DettaglioLinee());
+            Challenge.DettaglioLinee.Add(new());
             r = Validator.Validate(Challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "DettaglioLinee"));
         }

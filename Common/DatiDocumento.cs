@@ -11,7 +11,7 @@ namespace FatturaElettronica.Common
     {
         protected DatiDocumento()
         {
-            RiferimentoNumeroLinea = new List<int>();
+            RiferimentoNumeroLinea = new();
         }
         protected DatiDocumento(XmlReader r) : base(r) { }
 

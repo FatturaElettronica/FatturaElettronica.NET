@@ -15,9 +15,9 @@ namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCo
         /// </summary>
         public AltriDatiIdentificativi()
         {
-            Sede = new SedeCessionarioCommittente();
-            StabileOrganizzazione = new StabileOrganizzazione();
-            RappresentanteFiscale = new RappresentanteFiscaleCessionarioCommittente();
+            Sede = new();
+            StabileOrganizzazione = new();
+            RappresentanteFiscale = new();
         }
         public AltriDatiIdentificativi(XmlReader r) : base(r) { }
 

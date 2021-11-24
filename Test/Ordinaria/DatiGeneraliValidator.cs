@@ -21,7 +21,7 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.DatiGeneraliDocumento.Data = DateTime.Now.AddDays(-1);
             Challenge.DatiFattureCollegate.Add(
-                new DatiFattureCollegate {Data = DateTime.Now});
+                new() {Data = DateTime.Now});
 
             var r = Validator.Validate(Challenge);
             Assert.IsFalse(r.IsValid);

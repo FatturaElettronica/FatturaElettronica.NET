@@ -17,8 +17,8 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione
         /// </summary>
         public DatiTrasmissione()
         {
-            ContattiTrasmittente = new ContattiTrasmittente();
-            IdTrasmittente = new IdTrasmittente();
+            ContattiTrasmittente = new();
+            IdTrasmittente = new();
         }
         public DatiTrasmissione(XmlReader r) : base(r) { }
 

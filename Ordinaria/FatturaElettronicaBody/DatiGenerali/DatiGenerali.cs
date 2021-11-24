@@ -15,16 +15,16 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         public DatiGenerali()
         {
-            DatiGeneraliDocumento = new DatiGeneraliDocumento();
-            DatiOrdineAcquisto = new List<DatiOrdineAcquisto>();
-            DatiContratto = new List<DatiContratto>();
-            DatiConvenzione = new List<DatiConvenzione>();
-            DatiRicezione = new List<DatiRicezione>();
-            DatiFattureCollegate = new List<DatiFattureCollegate>();
-            DatiSAL = new List<DatiSAL>();
-            DatiDDT = new List<DatiDDT>();
-            DatiTrasporto = new DatiTrasporto();
-            FatturaPrincipale = new FatturaPrincipale();
+            DatiGeneraliDocumento = new();
+            DatiOrdineAcquisto = new();
+            DatiContratto = new();
+            DatiConvenzione = new();
+            DatiRicezione = new();
+            DatiFattureCollegate = new();
+            DatiSAL = new();
+            DatiDDT = new();
+            DatiTrasporto = new();
+            FatturaPrincipale = new();
         }
         public DatiGenerali(XmlReader r) : base(r) { }
 

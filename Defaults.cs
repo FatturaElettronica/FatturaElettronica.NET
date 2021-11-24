@@ -49,18 +49,18 @@
 
         public static XmlAttributeString[] ExtraAttributes { get; set; } = new XmlAttributeString[]
         {
-            new XmlAttributeString
+            new()
             {
                 Prefix = "xmlns", LocalName = "ds", ns = null, value = "http://www.w3.org/2000/09/xmldsig#"
             },
-            new XmlAttributeString
+            new()
             {
                 Prefix = "xmlns",
                 LocalName = "xsi",
                 ns = null,
                 value = "http://www.w3.org/2001/XMLSchema-instance"
             },
-            new XmlAttributeString
+            new()
             {
                 Prefix = "xsi",
                 LocalName = "schemaLocation",

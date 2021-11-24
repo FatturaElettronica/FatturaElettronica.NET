@@ -21,7 +21,7 @@ namespace FatturaElettronica.Extensions
 
             var tempXml = Path.GetTempFileName();
 
-            using (var w = XmlWriter.Create(tempXml, new XmlWriterSettings {Indent = true}))
+            using (var w = XmlWriter.Create(tempXml, new() {Indent = true}))
             {
                 fattura.WriteXml(w);
             }

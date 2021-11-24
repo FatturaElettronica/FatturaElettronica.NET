@@ -96,7 +96,7 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void DatiRitenutaRequiredWhenDatiCassaPrevidenzialeNotEmpty()
         {
-            Challenge.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale {Ritenuta = "SI"});
+            Challenge.DatiCassaPrevidenziale.Add(new() {Ritenuta = "SI"});
             var r = Validator.Validate(Challenge);
             Assert.AreEqual("00415",
                 r.Errors.FirstOrDefault(x => x.PropertyName == "DatiCassaPrevidenziale")?.ErrorCode);
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Test.Ordinaria
 
             // test che falso errore di convalida sia risolto. Vedi:
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/44
-            Challenge.DatiCassaPrevidenziale.Add(new DatiCassaPrevidenziale
+            Challenge.DatiCassaPrevidenziale.Add(new()
             {
                 TipoCassa = "TC20", AlCassa = 4, ImportoContributoCassa = 46.56m, Natura = "N5"
             });

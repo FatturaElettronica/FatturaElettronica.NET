@@ -37,7 +37,7 @@ namespace FatturaElettronica.Test.Extensions
 
             var challenge = FatturaOrdinaria.CreateInstance(Instance.Privati);
             using (var r = XmlReader.Create(outFile,
-                new XmlReaderSettings {IgnoreWhitespace = true, IgnoreComments = true}))
+                new() {IgnoreWhitespace = true, IgnoreComments = true}))
             {
                 challenge.ReadXml(r);
             }

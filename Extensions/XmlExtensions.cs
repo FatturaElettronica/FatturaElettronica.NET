@@ -8,7 +8,7 @@ namespace FatturaElettronica.Extensions
         public static void ReadXml(this FatturaBase fattura, string filePath)
         {
             using var r = XmlReader.Create(filePath,
-                new XmlReaderSettings
+                new()
                 {
                     IgnoreWhitespace = true, IgnoreComments = true, IgnoreProcessingInstructions = true
                 });
@@ -19,7 +19,7 @@ namespace FatturaElettronica.Extensions
         {
             stream.Position = 0;
             using var r = XmlReader.Create(stream,
-                new XmlReaderSettings
+                new()
                 {
                     IgnoreWhitespace = true, IgnoreComments = true, IgnoreProcessingInstructions = true
                 });
@@ -28,7 +28,7 @@ namespace FatturaElettronica.Extensions
 
         public static void WriteXml(this FatturaBase fattura, string filePath)
         {
-            using var w = XmlWriter.Create(filePath, new XmlWriterSettings {Indent = true});
+            using var w = XmlWriter.Create(filePath, new() {Indent = true});
             fattura.WriteXml(w);
         }
     }

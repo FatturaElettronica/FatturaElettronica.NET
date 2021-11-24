@@ -15,8 +15,8 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali
         /// </summary>
         public DatiTrasporto()
         {
-            DatiAnagraficiVettore = new DatiAnagraficiVettore();
-            IndirizzoResa = new IndirizzoResa();
+            DatiAnagraficiVettore = new();
+            IndirizzoResa = new();
         }
         public DatiTrasporto(XmlReader r) : base(r) { }
 
