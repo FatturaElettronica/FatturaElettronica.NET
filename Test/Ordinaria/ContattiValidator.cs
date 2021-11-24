@@ -46,10 +46,6 @@ namespace FatturaElettronica.Test.Ordinaria
             var result = Validator.TestValidate(Challenge);
             result.ShouldHaveValidationErrorFor(x => x.Email);
             
-            Challenge.Email = "not@really";
-            result = Validator.TestValidate(Challenge);
-            result.ShouldHaveValidationErrorFor(x => x.Email);
-            
             Challenge.Email = "maybe@we.can";
             result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(x => x.Email);
