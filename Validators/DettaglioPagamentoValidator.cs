@@ -15,7 +15,7 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.Beneficiario));
             RuleFor(x => x.ModalitaPagamento)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<ModalitaPagamento>());
+                .SetValidator(new IsValidValidator<DettaglioPagamento, string, ModalitaPagamento>());
             RuleFor(x => x.CodUfficioPostale)
                 .Length(1, 20)
                 .BasicLatinValidator()

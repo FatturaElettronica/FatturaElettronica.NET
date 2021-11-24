@@ -110,15 +110,25 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void PesoNettoMaxValue()
         {
-            Validator.ShouldHaveValidationErrorFor(x => x.PesoNetto, 10000m);
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PesoNetto, 9999.99m);
+            Challenge.PesoNetto = 10000m;
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PesoNetto);
+
+            Challenge.PesoNetto = 9999.99m;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PesoNetto);
         }
 
         [TestMethod]
         public void PesoLordoMaxValue()
         {
-            Validator.ShouldHaveValidationErrorFor(x => x.PesoLordo, 10000m);
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PesoLordo, 9999.99m);
+            Challenge.PesoLordo = 10000m;
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PesoLordo);
+
+            Challenge.PesoLordo = 9999.99m;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PesoLordo);
         }
     }
 }

@@ -83,100 +83,123 @@ namespace FatturaElettronica.Test.Ordinaria
             Challenge.PrezzoUnitario = 13.4426m;
             Challenge.Quantita = 2;
             Challenge.PrezzoTotale = 26.89m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 3.0246m;
             Challenge.Quantita = 5;
             Challenge.PrezzoTotale = 15.12m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 5.7377m;
             Challenge.Quantita = 0.2m;
             Challenge.PrezzoTotale = 1.15m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 0.0492m;
             Challenge.Quantita = 4;
             Challenge.PrezzoTotale = 0.20m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 22;
             Challenge.Quantita = 4;
             Challenge.PrezzoTotale = 88;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 9.2425m;
             Challenge.Quantita = 4;
             Challenge.PrezzoTotale = 36.97m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 12.235m;
             Challenge.Quantita = 1;
             Challenge.PrezzoTotale = 12.24m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 19.30m;
             Challenge.Quantita = 1;
             Challenge.ScontoMaggiorazione.Add(
-                new FatturaElettronica.Common.ScontoMaggiorazione {Tipo = "SC", Percentuale = 15m});
+                new FatturaElettronica.Common.ScontoMaggiorazione { Tipo = "SC", Percentuale = 15m });
             Challenge.PrezzoTotale = 16.41m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             Challenge.PrezzoUnitario = 20.5m;
             Challenge.Quantita = 2;
             Challenge.PrezzoTotale = 42;
-            Validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, Challenge).WithErrorCode("00423");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PrezzoTotale).WithErrorCode("00423");
 
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/181
             Challenge.ScontoMaggiorazione.Clear();
             Challenge.PrezzoUnitario = 0.030987m;
             Challenge.Quantita = 22633;
             Challenge.PrezzoTotale = 701.34m;
-            Validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, Challenge).WithErrorCode("00423");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PrezzoTotale).WithErrorCode("00423");
 
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/45
             Challenge.ScontoMaggiorazione.Clear();
             Challenge.PrezzoUnitario = 0.865951m;
             Challenge.Quantita = 98;
             Challenge.PrezzoTotale = 84.863198m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/66
             Challenge.PrezzoUnitario = 20.5m;
             Challenge.Quantita = 1;
             Challenge.PrezzoTotale = 20.5m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
+
             Challenge.PrezzoTotale = 20.51m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
+
             Challenge.PrezzoTotale = 20.52m;
-            Validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, Challenge).WithErrorCode("00423");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PrezzoTotale).WithErrorCode("00423");
+
             Challenge.PrezzoTotale = 20.49m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
+
             Challenge.PrezzoTotale = 20.48m;
-            Validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, Challenge).WithErrorCode("00423");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PrezzoTotale).WithErrorCode("00423");
 
             // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/71
             Challenge.ScontoMaggiorazione.Clear();
             Challenge.ScontoMaggiorazione.Add(
-                new FatturaElettronica.Common.ScontoMaggiorazione {Importo = 0, Tipo = "SC"});
+                new FatturaElettronica.Common.ScontoMaggiorazione { Importo = 0, Tipo = "SC" });
             Challenge.PrezzoUnitario = 1m;
             Challenge.Quantita = 1;
             Challenge.PrezzoTotale = 1m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             //numero massimo di decimali
             Challenge.ScontoMaggiorazione.Clear();
             Challenge.PrezzoUnitario = 0.12345678m;
             Challenge.Quantita = 1000000000;
             Challenge.PrezzoTotale = Challenge.PrezzoUnitario * Challenge.Quantita.Value;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PrezzoTotale);
 
             //Errore 00423 per prezzo unitario per arrotondamento
             Challenge.ScontoMaggiorazione.Clear();
             Challenge.PrezzoUnitario = 0.123456789m;
             Challenge.Quantita = 10000000000;
             Challenge.PrezzoTotale = Challenge.PrezzoUnitario * Challenge.Quantita.Value;
-            Validator.ShouldHaveValidationErrorFor(x => x.PrezzoTotale, Challenge).WithErrorCode("00423");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PrezzoTotale).WithErrorCode("00423");
         }
 
         [TestMethod]
@@ -202,9 +225,12 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.AliquotaIVA = 22m;
             Challenge.Natura = "N1";
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00401");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00401");
+
             Challenge.AliquotaIVA = 0m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Natura, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Natura);
         }
 
         [TestMethod]
@@ -212,13 +238,18 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.AliquotaIVA = 0;
             Challenge.Natura = string.Empty;
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00400");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00400");
+
             Challenge.AliquotaIVA = 0;
             Challenge.Natura = null;
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00400");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00400");
+
             Challenge.AliquotaIVA = 22m;
             Challenge.Natura = string.Empty;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Natura, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Natura);
         }
 
         [TestMethod]
@@ -262,12 +293,14 @@ namespace FatturaElettronica.Test.Ordinaria
         public void QuantitaCannotBeNegative()
         {
             Challenge.Quantita = -1;
-            Validator.ShouldHaveValidationErrorFor(x => x.Quantita, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Quantita);
 
             Challenge.Quantita = 0;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Quantita, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Quantita);
         }
-        
+
         [TestMethod]
         public void PrezzoUnitario()
         {

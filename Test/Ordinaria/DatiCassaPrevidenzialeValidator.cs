@@ -30,7 +30,8 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.AliquotaIVA = 1;
             Challenge.Natura = "N1";
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00414");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00414");
         }
         [TestMethod]
         public void NaturaOnlyAcceptsTableValuesWhenAliquotaIsZero()
@@ -44,7 +45,8 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.Natura = null;
             Challenge.AliquotaIVA = 1;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Natura, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Natura);
         }
         [TestMethod]
         public void RiferimentoAmministrazioneIsOptional()

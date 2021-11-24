@@ -25,12 +25,16 @@ namespace FatturaElettronica.Test.Semplificata
             Challenge.Nome = "nome";
 
             Challenge.Denominazione = "x";
-            Validator.ShouldHaveValidationErrorFor(x => x.Denominazione, Challenge).WithErrorCode("00200");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Denominazione).WithErrorCode("00200");
 
             Challenge.Denominazione = null;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Denominazione, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Denominazione);
+
             Challenge.Denominazione = string.Empty;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Denominazione, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Denominazione);
         }
 
         [TestMethod]
@@ -49,12 +53,16 @@ namespace FatturaElettronica.Test.Semplificata
             Challenge.Denominazione = "denominazione";
 
             Challenge.Nome = "x";
-            Validator.ShouldHaveValidationErrorFor(x => x.Nome, Challenge).WithErrorCode("00200");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Nome).WithErrorCode("00200");
 
             Challenge.Nome = null;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Nome, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Nome);
+
             Challenge.Nome = string.Empty;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Nome, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Nome);
         }
 
         [TestMethod]
@@ -72,12 +80,16 @@ namespace FatturaElettronica.Test.Semplificata
         {
             Challenge.Denominazione = "denominazione";
             Challenge.Cognome = "x";
-            Validator.ShouldHaveValidationErrorFor(x => x.Cognome, Challenge).WithErrorCode("00200");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Cognome).WithErrorCode("00200");
 
             Challenge.Cognome = null;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Cognome);
+
             Challenge.Cognome = string.Empty;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Cognome, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Cognome);
         }
 
         [TestMethod]

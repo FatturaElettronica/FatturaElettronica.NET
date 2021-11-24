@@ -28,7 +28,7 @@ namespace FatturaElettronica.Validators
                 .BasicLatinValidator()
                 .When(x => !string.IsNullOrEmpty(x.UnitaMisuraPeso));
             RuleFor(x => x.TipoResa)
-                .SetValidator(new IsValidValidator<TipoResa>())
+                .SetValidator(new IsValidValidator<DatiTrasporto, string, TipoResa>())
                 .When(x => !string.IsNullOrEmpty(x.TipoResa));
             RuleFor(x => x.IndirizzoResa)
                 .SetValidator(new IndirizzoResaValidator())

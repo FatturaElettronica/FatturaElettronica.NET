@@ -57,9 +57,12 @@ namespace FatturaElettronica.Test.Ordinaria
         public void NumeroMustHaveAtLeatOneNumericChar()
         {
             Challenge.Numero = "hello";
-            Validator.ShouldHaveValidationErrorFor(x => x.Numero, Challenge).WithErrorCode("00425");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Numero).WithErrorCode("00425");
+            
             Challenge.Numero = "hello1";
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Numero, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Numero);
         }
 
         [TestMethod]

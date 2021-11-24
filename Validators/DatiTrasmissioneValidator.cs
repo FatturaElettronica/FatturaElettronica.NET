@@ -16,7 +16,7 @@ namespace FatturaElettronica.Validators
                 .Length(1, 10);
             RuleFor(dt => dt.FormatoTrasmissione)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<FormatoTrasmissione>())
+                .SetValidator(new IsValidValidator<DatiTrasmissione, string, FormatoTrasmissione>())
                 .WithErrorCode("00428");
             RuleFor(dt => dt.CodiceDestinatario)
                 .NotEmpty();

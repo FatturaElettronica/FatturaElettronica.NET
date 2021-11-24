@@ -12,18 +12,21 @@ namespace FatturaElettronica.Test.Semplificata
         {
             Challenge.Imposta = null;
             Challenge.Aliquota = null;
-            Validator.ShouldHaveValidationErrorFor(x => x.Imposta, Challenge);
-            Validator.ShouldHaveValidationErrorFor(x => x.Aliquota, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Imposta);
+            result.ShouldHaveValidationErrorFor(x => x.Aliquota);
 
             Challenge.Aliquota = null;
             Challenge.Imposta = 0m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, Challenge);
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Aliquota, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Imposta);
+            result.ShouldNotHaveValidationErrorFor(x => x.Aliquota);
 
             Challenge.Aliquota = 0m;
             Challenge.Imposta = null;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, Challenge);
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Aliquota, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Imposta);
+            result.ShouldNotHaveValidationErrorFor(x => x.Aliquota);
         }
     }
 }

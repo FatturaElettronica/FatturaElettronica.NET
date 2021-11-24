@@ -15,7 +15,7 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.CessionarioCommittente)
                 .SetValidator(new CessionarioCommittenteValidator());
             RuleFor(x => x.SoggettoEmittente)
-                .SetValidator(new IsValidValidator<SoggettoEmittente>())
+                .SetValidator(new IsValidValidator<FatturaElettronicaHeader, string, SoggettoEmittente>())
                 .When(x => !string.IsNullOrEmpty(x.SoggettoEmittente));
         }
     }

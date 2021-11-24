@@ -11,10 +11,10 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.TipoDocumento)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<TipoDocumento>());
+                .SetValidator(new IsValidValidator<DatiGeneraliDocumento, string, TipoDocumento>());
             RuleFor(x => x.Divisa)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<Divisa>());
+                .SetValidator(new IsValidValidator<DatiGeneraliDocumento, string, Divisa>());
             RuleFor(x => x.Numero)
                 .NotEmpty()
                 .BasicLatinValidator()

@@ -11,10 +11,10 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.TipoRitenuta)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<TipoRitenuta>());
+                .SetValidator(new IsValidValidator<DatiRitenuta, string, TipoRitenuta>());
             RuleFor(x => x.CausalePagamento)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<CausalePagamento>());
+                .SetValidator(new IsValidValidator<DatiRitenuta, string, CausalePagamento>());
             RuleFor(x => x.ImportoRitenuta)
                 .ScalePrecision2DecimalType();
         }
