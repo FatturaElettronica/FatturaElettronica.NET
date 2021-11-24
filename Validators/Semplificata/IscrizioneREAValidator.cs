@@ -16,11 +16,11 @@ namespace FatturaElettronica.Validators.Semplificata
                 .BasicLatinValidator()
                 .Length(1, 20);
             RuleFor(x => x.SocioUnico)
-                .SetValidator(new IsValidValidator<SocioUnico>())
+                .SetValidator(new IsValidValidator<IscrizioneREA, string, SocioUnico>())
                 .When(x => x.SocioUnico != null && !string.IsNullOrEmpty(x.SocioUnico));
             RuleFor(x => x.StatoLiquidazione)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<StatoLiquidazione>());
+                .SetValidator(new IsValidValidator<IscrizioneREA, string, StatoLiquidazione>());
         }
     }
 }

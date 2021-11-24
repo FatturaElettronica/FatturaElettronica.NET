@@ -1,6 +1,4 @@
-﻿using System;
-using System.Linq;
-using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
+﻿using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -153,11 +151,16 @@ namespace FatturaElettronica.Test.Ordinaria
         public void IBANMustBeValid()
         {
             Challenge.IBAN = "hello";
-            Validator.ShouldHaveValidationErrorFor(x => x.IBAN, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.IBAN);
+            
             Challenge.IBAN = "IBAN IT17 X060 5502 1000 0000 1234 567";
-            Validator.ShouldHaveValidationErrorFor(x => x.IBAN, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.IBAN);
+            
             Challenge.IBAN = "IBANIT17X0605502100000001234567";
-            Validator.ShouldNotHaveValidationErrorFor(x => x.IBAN, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.IBAN);
         }
 
         [TestMethod]

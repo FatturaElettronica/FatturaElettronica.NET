@@ -20,9 +20,12 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.AliquotaIVA = 22m;
             Challenge.Natura = "N1";
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00430");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00430");
+            
             Challenge.AliquotaIVA = 0m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Natura, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Natura);
         }
 
         [TestMethod]
@@ -30,13 +33,18 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.AliquotaIVA = 0;
             Challenge.Natura = string.Empty;
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00429");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00429");
+            
             Challenge.AliquotaIVA = 0;
             Challenge.Natura = null;
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00429");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00429");
+            
             Challenge.AliquotaIVA = 22m;
             Challenge.Natura = string.Empty;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Natura, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Natura);
         }
 
         [TestMethod]
@@ -44,10 +52,12 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.EsigibilitaIVA = "S";
             Challenge.Natura = "N6.1";
-            Validator.ShouldHaveValidationErrorFor(x => x.Natura, Challenge).WithErrorCode("00420");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00420");
 
             Challenge.EsigibilitaIVA = "I";
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Natura, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Natura);
         }
 
         [TestMethod]
@@ -56,9 +66,12 @@ namespace FatturaElettronica.Test.Ordinaria
             Challenge.AliquotaIVA = 10;
             Challenge.ImponibileImporto = 70863.00m;
             Challenge.Imposta = 7086.29m;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Imposta, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Imposta);
+            
             Challenge.Imposta = 10.01m;
-            Validator.ShouldHaveValidationErrorFor(x => x.Imposta, Challenge).WithErrorCode("00421");
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Imposta).WithErrorCode("00421");
         }
 
         [TestMethod]

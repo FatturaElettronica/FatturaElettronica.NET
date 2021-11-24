@@ -93,15 +93,7 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void RegimeFiscaleOnlyAcceptsTableValues()
         {
-            AssertOnlyAcceptsTableValues<RegimeFiscale>(x => x.RegimeFiscale, "RegimeFiscaleValidator`1");
-        }
-
-        [TestMethod]
-        public void RegimeFiscaleRf03Abrogated()
-        {
-            // RF03 è abrogato a partire dalla v1.2.1 del 15 Marzo 2017.
-            Challenge.RegimeFiscale = "RF03";
-            Validator.ShouldHaveValidationErrorFor(x => x.RegimeFiscale, Challenge).WithErrorCode("00459");
+            AssertOnlyAcceptsTableValues<RegimeFiscale>(x => x.RegimeFiscale);
         }
     }
 }

@@ -5,11 +5,13 @@ In Development
 --------------
 
 - Questa versione si allinea alle regole di convalida in vigore dal 1 Gennaio 2022.
+- Supporto per FluentValidation 10.x ([#337][337])
 - Introdotta convalida per nuovo errore 00475 ([#354][354])
 - Aggiornata descrizione per i tipi documento TD25 e TD25 ([#354][354])
 - Aggiornata descrizione per il codice natura N6.2 ([#354][354])
 - Fix: ripristinato un setter rimosso nella v3.1.5 ([#346][346])
 
+[337]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/337
 [354]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/354
 [346]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/346
 

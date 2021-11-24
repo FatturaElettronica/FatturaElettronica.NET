@@ -11,7 +11,7 @@ namespace FatturaElettronica.Validators
         public DettaglioLineeValidator()
         {
             RuleFor(x => x.TipoCessionePrestazione)
-                .SetValidator(new IsValidValidator<TipoCessionePrestazione>())
+                .SetValidator(new IsValidValidator<DettaglioLinee, string, TipoCessionePrestazione>())
                 .When(x => !string.IsNullOrEmpty(x.TipoCessionePrestazione));
             RuleForEach(x => x.CodiceArticolo)
                 .SetValidator(new CodiceArticoloValidator());
@@ -32,7 +32,7 @@ namespace FatturaElettronica.Validators
                 .Equal("SI")
                 .When(x => !string.IsNullOrEmpty(x.Ritenuta));
             RuleFor(x => x.Natura)
-                .SetValidator(new IsValidValidator<Natura>())
+                .SetValidator(new IsValidValidator<DettaglioLinee, string, Natura>())
                 .When(x => !string.IsNullOrEmpty(x.Natura));
             RuleFor(x => x.Natura)
                 .Must(natura => !string.IsNullOrEmpty(natura))

@@ -2,7 +2,6 @@
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using FatturaElettronica.Ordinaria;
 using FatturaElettronica.Validators;
 
 namespace FatturaElettronica.Test.Ordinaria
@@ -65,13 +64,20 @@ namespace FatturaElettronica.Test.Ordinaria
         public void CodiceDestinatarioMustBeValid()
         {
             Challenge.CodiceDestinatario = "hello";
-            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario);
+            
             Challenge.CodiceDestinatario = "Subm70N";
-            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario);
+            
             Challenge.CodiceDestinatario = "Sub-70N";
-            Validator.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.CodiceDestinatario);
+            
             Challenge.CodiceDestinatario = "SUBM70N";
-            Validator.ShouldNotHaveValidationErrorFor(x => x.CodiceDestinatario, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.CodiceDestinatario);
         }
 
         [TestMethod]

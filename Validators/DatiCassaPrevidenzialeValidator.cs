@@ -11,7 +11,7 @@ namespace FatturaElettronica.Validators
         {
             RuleFor(x => x.TipoCassa)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<TipoCassa>());
+                .SetValidator(new IsValidValidator<DatiCassaPrevidenziale, string, TipoCassa>());
             RuleFor(x => x.AlCassa)
                 .NotNull();
             RuleFor(x => x.ImportoContributoCassa)
@@ -25,7 +25,7 @@ namespace FatturaElettronica.Validators
                 .NotEmpty()
                 .When(x => x.AliquotaIVA == 0).WithErrorCode("00413");
             RuleFor(x => x.Natura)
-                .SetValidator(new IsValidValidator<Natura>())
+                .SetValidator(new IsValidValidator<DatiCassaPrevidenziale, string, Natura>())
                 .When(x => x.AliquotaIVA == 0);
             RuleFor(x => x.Natura)
                 .Empty()

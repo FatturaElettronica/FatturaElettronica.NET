@@ -22,7 +22,7 @@ namespace FatturaElettronica.Validators
                 .When(x => x.TerzoIntermediarioOSoggettoEmittente != null &&
                            !x.TerzoIntermediarioOSoggettoEmittente.IsEmpty());
             RuleFor(x => x.SoggettoEmittente)
-                .SetValidator(new IsValidValidator<SoggettoEmittente>())
+                .SetValidator(new IsValidValidator<FatturaElettronicaHeader, string, SoggettoEmittente>())
                 .When(x => !string.IsNullOrEmpty(x.SoggettoEmittente));
             RuleFor(x => x.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese)
                 .Must(idPaese => idPaese != "IT")

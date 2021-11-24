@@ -28,7 +28,7 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.Provincia));
             RuleFor(id => id.Nazione)
                 .NotEmpty()
-                .SetValidator(new IsValidValidator<IdPaese>());
+                .SetValidator(new IsValidValidator<T, string, IdPaese>());
         }
     }
 }

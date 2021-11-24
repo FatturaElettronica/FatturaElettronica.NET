@@ -58,9 +58,12 @@ namespace FatturaElettronica.Test.Ordinaria
         public void CAPMustBeNumeric()
         {
             Challenge.CAP = "1234A";
-            Validator.ShouldHaveValidationErrorFor(x => x.CAP, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.CAP);
+            
             Challenge.CAP = "12345";
-            Validator.ShouldNotHaveValidationErrorFor(x => x.CAP, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.CAP);
         }
 
         [TestMethod]

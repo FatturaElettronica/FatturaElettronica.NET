@@ -58,7 +58,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .When(x => x.IscrizioneREA != null && !x.IscrizioneREA.IsEmpty());
             RuleFor(x => x.RegimeFiscale)
                 .NotEmpty()
-                .SetValidator(new RegimeFiscaleValidator<RegimeFiscale>());
+                .SetValidator(new IsValidValidator<CedentePrestatore, string, RegimeFiscale>());
         }
     }
 }

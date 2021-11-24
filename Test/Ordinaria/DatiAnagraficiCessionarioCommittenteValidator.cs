@@ -48,7 +48,8 @@ namespace FatturaElettronica.Test.Ordinaria
             Assert.IsTrue(string.IsNullOrEmpty(Challenge.CodiceFiscale));
             Assert.IsTrue(Challenge.IdFiscaleIVA.IsEmpty());
 
-            Validator.ShouldHaveValidationErrorFor(x => x.CodiceFiscale, Challenge).WithErrorCode("00417");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.CodiceFiscale).WithErrorCode("00417");
         }
     }
 }

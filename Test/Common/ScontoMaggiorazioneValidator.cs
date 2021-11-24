@@ -30,14 +30,18 @@ namespace FatturaElettronica.Test.Common
 
             Challenge.Importo = null;
             Challenge.Percentuale = null;
-            Validator.ShouldHaveValidationErrorFor(x => x.Tipo, Challenge).WithErrorCode("00437");
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Tipo).WithErrorCode("00437");
 
             Challenge.Importo = null;
             Challenge.Percentuale = 0;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Tipo, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Tipo);
+            
             Challenge.Importo = 0;
             Challenge.Percentuale = null;
-            Validator.ShouldNotHaveValidationErrorFor(x => x.Tipo, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Tipo);
         }
         
         [TestMethod]

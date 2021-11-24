@@ -49,11 +49,13 @@ namespace FatturaElettronica.Test
             var prop = GetProperty(outExpr);
 
             prop.SetValue(Challenge, null);
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
 
             if (!emptyStringAllowed || typeof(T) != typeof(string)) return;
             prop.SetValue(Challenge, string.Empty);
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
         }
 
         protected void AssertRequired<T>(Expression<Func<TClass, T>> outExpr, string expectedErrorCode = null)
@@ -69,17 +71,20 @@ namespace FatturaElettronica.Test
             }
 
             prop.SetValue(Challenge, null);
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge).WithErrorCode(expectedErrorCode);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode(expectedErrorCode);
 
             if (typeof(T) == typeof(string))
             {
                 prop.SetValue(Challenge, string.Empty);
-                Validator.ShouldHaveValidationErrorFor(outExpr, Challenge).WithErrorCode(expectedErrorCode);
+                result = Validator.TestValidate(Challenge);
+                result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode(expectedErrorCode);
             }
 
             if (typeof(T) != typeof(decimal)) return;
             prop.SetValue(Challenge, 0m);
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge).WithErrorCode(expectedErrorCode);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode(expectedErrorCode);
         }
 
         protected void AssertMinMaxLength(Expression<Func<TClass, string>> outExpr, int min, int max, char filler = 'x',
@@ -88,11 +93,16 @@ namespace FatturaElettronica.Test
             var prop = GetProperty(outExpr);
 
             prop.SetValue(Challenge, new string(filler, max + 1));
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge).WithErrorCode(expectedErrorCode);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode(expectedErrorCode);
+
             prop.SetValue(Challenge, new string(filler, min));
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+
             prop.SetValue(Challenge, new string(filler, max));
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
         }
 
         protected void AssertLength(Expression<Func<TClass, string>> outExpr, int length, char filler = 'x',
@@ -101,25 +111,32 @@ namespace FatturaElettronica.Test
             var prop = GetProperty(outExpr);
 
             prop.SetValue(Challenge, new string(filler, length + 1));
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge).WithErrorCode(expectedErrorCode);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode(expectedErrorCode);
+
             prop.SetValue(Challenge, new string(filler, length - 1));
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge).WithErrorCode(expectedErrorCode);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode(expectedErrorCode);
+
             prop.SetValue(Challenge, new string(filler, length));
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
         }
 
         protected void AssertOnlyAcceptsTableValues<T>(Expression<Func<TClass, string>> outExpr,
-            string expectedErrorCode = "IsValidValidator`1") where T : Tabella, new()
+            string expectedErrorCode = "IsValidValidator") where T : Tabella, new()
         {
             var prop = GetProperty(outExpr);
 
             prop.SetValue(Challenge, "hello");
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge).WithErrorCode(expectedErrorCode);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode(expectedErrorCode);
 
             foreach (var codice in new T().Codici)
             {
                 prop.SetValue(Challenge, codice);
-                Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+                result = Validator.TestValidate(Challenge);
+                result.ShouldNotHaveValidationErrorFor(outExpr);
             }
         }
 
@@ -144,9 +161,12 @@ namespace FatturaElettronica.Test
             var prop = GetProperty(outExpr);
 
             prop.SetValue(Challenge, "NO");
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
+            
             prop.SetValue(Challenge, "SI");
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
         }
 
         protected void AssertMustBeBasicLatin(Expression<Func<TClass, string>> outExpr)
@@ -155,9 +175,12 @@ namespace FatturaElettronica.Test
 
             // Important: test string not longer than 10. Must include a number.
             prop.SetValue(Challenge, "test ~tes1");
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+            
             prop.SetValue(Challenge, "test Àtes1");
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
         }
 
         protected void AssertMustBeLatin1Supplement(Expression<Func<TClass, string>> outExpr)
@@ -165,11 +188,16 @@ namespace FatturaElettronica.Test
             var prop = GetProperty(outExpr);
 
             prop.SetValue(Challenge, "test ~tes1");
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+            
             prop.SetValue(Challenge, "test Àtes1");
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+            
             prop.SetValue(Challenge, "test ›tes1");
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
         }
 
         protected void AssertProvinciaOnlyAcceptsValidValues(Expression<Func<TClass, string>> outExpr)
@@ -177,60 +205,72 @@ namespace FatturaElettronica.Test
             var prop = GetProperty(outExpr);
 
             prop.SetValue(Challenge, "mi");
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
 
             prop.SetValue(Challenge, "M");
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
 
             prop.SetValue(Challenge, "MIL");
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
 
             prop.SetValue(Challenge, "MI");
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
         }
 
         private static PropertyInfo GetProperty<T>(Expression<Func<TClass, T>> outExpr)
         {
-            var expr = (MemberExpression) outExpr.Body;
-            return (PropertyInfo) expr.Member;
+            var expr = (MemberExpression)outExpr.Body;
+            return (PropertyInfo)expr.Member;
         }
 
         protected void AssertDecimalType(Expression<Func<TClass, decimal?>> outExpr, int scale, int precision)
         {
-            var maxValue = (decimal) Math.Pow(10, precision - scale) - 1;
+            var maxValue = (decimal)Math.Pow(10, precision - scale) - 1;
             var prop = GetProperty(outExpr);
-            prop.SetValue(Challenge,maxValue + 1);
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
-            
-            prop.SetValue(Challenge,maxValue);
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
-            
+            prop.SetValue(Challenge, maxValue + 1);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
+
+            prop.SetValue(Challenge, maxValue);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+
             var decimalValueValid = (decimal)Math.Pow(10, -scale);
             prop.SetValue(Challenge, decimalValueValid);
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
-            
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+
             var decimalValueInvalid = (decimal)Math.Pow(10, -scale - 1);
             prop.SetValue(Challenge, decimalValueInvalid);
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
         }
-        
+
         protected void AssertDecimalType(Expression<Func<TClass, decimal>> outExpr, int scale, int precision)
         {
-            var maxValue = (decimal) Math.Pow(10, precision - scale) - 1;
+            var maxValue = (decimal)Math.Pow(10, precision - scale) - 1;
             var prop = GetProperty(outExpr);
-            prop.SetValue(Challenge,maxValue + 1);
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
-            
-            prop.SetValue(Challenge,maxValue);
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
-            
+            prop.SetValue(Challenge, maxValue + 1);
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
+
+            prop.SetValue(Challenge, maxValue);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+
             var decimalValueValid = (decimal)Math.Pow(10, -scale);
             prop.SetValue(Challenge, decimalValueValid);
-            Validator.ShouldNotHaveValidationErrorFor(outExpr, Challenge);
-            
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+
             var decimalValueInvalid = (decimal)Math.Pow(10, -scale - 1);
             prop.SetValue(Challenge, decimalValueInvalid);
-            Validator.ShouldHaveValidationErrorFor(outExpr, Challenge);
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr);
         }
     }
 }

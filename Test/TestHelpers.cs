@@ -17,7 +17,7 @@ namespace FatturaElettronica.Test
             var expressionMemberName = expression.GetMember().Name;
             var matchingValidators = descriptor.GetValidatorsForMember(expressionMemberName).ToArray();
             var propertyValidatorTypes = matchingValidators
-                .Select(v => ((ChildValidatorAdaptor<T,TProperty>) v).ValidatorType);
+                .Select(v => ((ChildValidatorAdaptor<T, TProperty>)v.Validator).ValidatorType);
 
             if (propertyValidatorTypes.All(x => x != propertyValidatorType))
             {
