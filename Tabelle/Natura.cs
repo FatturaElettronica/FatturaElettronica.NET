@@ -19,7 +19,7 @@
                     new Natura { Codice = "N4", Nome = "esenti" },
                     new Natura { Codice = "N5", Nome = "regime del margine / IVA non esposta in fattura" },
                     new Natura { Codice = "N6.1", Nome = "inversione contabile - cessione di rottami e altri materiali di recupero" },
-                    new Natura { Codice = "N6.2", Nome = "inversione contabile - cessione di oro e argento puro" },
+                    new Natura { Codice = "N6.2", Nome = "inversione contabile - inversione contabile – cessione di oro e argento ai sensi della legge 7/2000 nonché di oreficeria usata ad OPO" },
                     new Natura { Codice = "N6.3", Nome = "inversione contabile - subappalto nel settore edile" },
                     new Natura { Codice = "N6.4", Nome = "inversione contabile - cessione di fabbricati" },
                     new Natura { Codice = "N6.5", Nome = "inversione contabile - cessione di telefoni cellulari" },
