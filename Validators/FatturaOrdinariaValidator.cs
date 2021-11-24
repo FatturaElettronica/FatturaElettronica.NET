@@ -12,6 +12,11 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.FatturaElettronicaHeader)
                 .SetValidator(new FatturaElettronicaHeaderValidator());
             RuleFor(x => x)
+                .Must((fattura, _) => FatturaValidateAgainstError00475(fattura))
+                .WithMessage(
+                    "Per il valore indicato nell’elemento 2.1.1.1 <TipoDocumento> deve essere presente l’elemento 1.4.1.1 <IdFiscaleIVA> del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22 e TD23 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente)")
+                .WithErrorCode("00475");
+            RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00471(fattura))
                 .WithMessage(
                     "I valori TD16, TD17, TD18, TD19 e TD20 del tipo documento non ammettono l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario")
@@ -38,6 +43,20 @@ namespace FatturaElettronica.Validators
                 .WithMessage(
                     "Tutti i valori di natura dell’operazione presenti nelle linee di dettaglio di una fattura o nei dati di cassa previdenziale devono essere presenti anche nei dati di riepilogo")
                 .WithErrorCode("00444");
+        }
+
+        private static bool FatturaValidateAgainstError00475(FatturaOrdinaria fatturaOrdinaria)
+        {
+            var tipiDocumento = new[] { "TD16", "TD17", "TD18", "TD19", "TD20", "TD22", "TD23" };
+
+            if (!fatturaOrdinaria.FatturaElettronicaBody.Any(x =>
+                tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento)))
+                return true;
+
+            var idFiscaleIva = fatturaOrdinaria.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici
+                .IdFiscaleIVA;
+
+            return idFiscaleIva != null && !idFiscaleIva.IsEmpty();
         }
 
         private static bool FatturaValidateAgainstError00473(FatturaOrdinaria fatturaOrdinaria)
@@ -99,7 +118,7 @@ namespace FatturaElettronica.Validators
             var riepilogo = body.DatiBeniServizi.DatiRiepilogo.Select(x => x.Natura);
 
             return nature.All(natura => riepilogo.Contains(natura)) &&
-                riepilogo.All(natura => nature.Contains(natura));
+                   riepilogo.All(natura => nature.Contains(natura));
         }
 
         private static bool BodyValidateAgainstError00443(FatturaElettronicaBody body)

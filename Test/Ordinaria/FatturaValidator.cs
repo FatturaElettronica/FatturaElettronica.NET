@@ -36,6 +36,31 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
+        public void FatturaValidateAgainstError00475()
+        {
+            var tipiDocumento = new[] { "TD16", "TD17", "TD18", "TD19", "TD20", "TD22", "TD23" };
+            var datiAnagrafici = Challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
+            var idEmpty = new IdFiscaleIVA();
+            var id123 = new IdFiscaleIVA { IdPaese = "IT", IdCodice = "123" };
+
+            foreach (var tipoDocumento in tipiDocumento)
+            {
+                Challenge.FatturaElettronicaBody.Clear();
+                var body = new FatturaElettronicaBody();
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Challenge.FatturaElettronicaBody.Add(body);
+                
+                datiAnagrafici.IdFiscaleIVA = idEmpty;
+                var result = Challenge.Validate();
+                Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00475"));
+
+                datiAnagrafici.IdFiscaleIVA = id123;
+                result = Challenge.Validate();
+                Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00475"));
+            }
+        }
+
+        [TestMethod]
         public void FatturaValidateAgainstError00473()
         {
             var tipiDocumento = new[] { "TD17", "TD18", "TD19" };
@@ -160,7 +185,6 @@ namespace FatturaElettronica.Test.Ordinaria
             body.DatiBeniServizi.DatiRiepilogo.Add(new DatiRiepilogo { Natura = null });
             result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00444"));
-
         }
 
         [TestMethod]
