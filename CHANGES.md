@@ -5,6 +5,7 @@ In Development
 --------------
 
 - Questa versione si allinea alle regole di convalida in vigore dal 1 Gennaio 2022.
+- Fix: `ToJson()` usa nome sbagliato per proprietà `RappresentanteFiscale` ([#359][359])
 - Allentata convalida dei campi Email ([#358][358])
 - Supporto per FluentValidation 10.x ([#337][337])
 - Introdotta convalida per nuovo errore 00475 ([#354][354])
