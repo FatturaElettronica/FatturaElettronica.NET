@@ -22,8 +22,8 @@
                     new TipoDocumento { Codice = "TD21", Nome = "autofattura per splafonamento" },
                     new TipoDocumento { Codice = "TD22", Nome = "estrazione beni da Deposito IVA" },
                     new TipoDocumento { Codice = "TD23", Nome = "estrazione beni da Deposito IVA con versamento dell'IVA" },
-                    new TipoDocumento { Codice = "TD24", Nome = "fattura differita di cui all'art. 21, comma 4, lett. a)" },
-                    new TipoDocumento { Codice = "TD25", Nome = "fattura differita di cui all'art. 21, comma 4, terzo periodo lett. b)" },
+                    new TipoDocumento { Codice = "TD24", Nome = "Fattura differita di cui all’art.21, comma 4, terzo periodo lett. a) DPR 633/72" },
+                    new TipoDocumento { Codice = "TD25", Nome = "Fattura differita di cui all’art.21, comma 4, terzo periodo lett. b) DPR 633/72" },
                     new TipoDocumento { Codice = "TD26", Nome = "cessione di beni ammortizzabili e per passaggi interni (ex art.36 DPR 633/72)" },
                     new TipoDocumento { Codice = "TD27", Nome = "fattura per autoconsumo o per cessioni gratuite senza rivalsa" },
                 };

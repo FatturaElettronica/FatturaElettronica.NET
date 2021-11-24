@@ -4,6 +4,7 @@ Changelog
 In Development
 --------------
 
+- Aggiornata descrizione per i tipi documento TD25 e TD25 ([#354][354])
 - Aggiornata descrizione per il codice natura N6.2 ([#354][354])
 - Fix: ripristinato un setter rimosso nella v3.1.5 ([#346][346])
 
