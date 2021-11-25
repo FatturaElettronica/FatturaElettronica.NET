@@ -4,7 +4,7 @@ Changelog
 In Development
 --------------
 
-- hic sunt leones
+- Rimosso badge dependabot dal README
 
 v 3.2.0
 -------
