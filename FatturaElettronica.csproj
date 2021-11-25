@@ -13,27 +13,29 @@
     <PackageProjectUrl>https://fatturaelettronicaopensource.org</PackageProjectUrl>
     <RepositoryUrl>https://github.com/FatturaElettronica/FatturaElettronica.NET</RepositoryUrl>
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
-<ItemGroup>
-    <None Include="LICENSE.txt" Pack="true" PackagePath="" />
-</ItemGroup>
-
   <ItemGroup>
-    <Compile Remove="Tests\**" />
-    <Compile Remove="Test\**" />
-    <EmbeddedResource Remove="Tests\**" />
-    <EmbeddedResource Remove="Test\**" />
-    <None Remove="Tests\**" />
-    <None Remove="Test\**" />
+    <None Include="LICENSE.txt" Pack="true" PackagePath="\"/>
+    <None Include="README.md" Pack="true" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="10.3.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.0" />
-    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
+    <Compile Remove="Tests\**"/>
+    <Compile Remove="Test\**"/>
+    <EmbeddedResource Remove="Tests\**"/>
+    <EmbeddedResource Remove="Test\**"/>
+    <None Remove="Tests\**"/>
+    <None Remove="Test\**"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="10.3.4"/>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="6.0.0"/>
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0"/>
   </ItemGroup>
 
 </Project>
