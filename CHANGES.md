@@ -1,10 +1,10 @@
-Changelog
-=========
+# Changelog
 
-In Development
---------------
+## In Development
 
 - Rimosso badge dependabot dal README
+
+## Released
 
 v 3.2.0
 -------
