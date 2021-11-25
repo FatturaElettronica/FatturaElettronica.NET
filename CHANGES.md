@@ -4,6 +4,13 @@ Changelog
 In Development
 --------------
 
+- hic sunt leones
+
+v 3.2.0
+-------
+
+Released on November 25, 2021
+
 - Questa versione si allinea alle regole di convalida in vigore dal 1 Gennaio 2022.
 - Allentata convalida dei campi Email ([#358][358])
 - Introdotta convalida per nuovo errore 00475 ([#354][354])
