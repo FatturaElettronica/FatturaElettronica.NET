@@ -5,13 +5,16 @@ In Development
 --------------
 
 - Questa versione si allinea alle regole di convalida in vigore dal 1 Gennaio 2022.
-- Fix: `ToJson()` usa nome sbagliato per proprietà `RappresentanteFiscale` ([#359][359])
 - Allentata convalida dei campi Email ([#358][358])
-- Supporto per FluentValidation 10.x ([#337][337])
 - Introdotta convalida per nuovo errore 00475 ([#354][354])
 - Aggiornata descrizione per i tipi documento TD25 e TD25 ([#354][354])
 - Aggiornata descrizione per il codice natura N6.2 ([#354][354])
+- Fix: `ToJson()` usa nome sbagliato per proprietà `RappresentanteFiscale` ([#359][359])
 - Fix: ripristinato un setter rimosso nella v3.1.5 ([#346][346])
+- Aggiornata dipendenza FluentValidation a 10.3.4 ([#337][337])
+- Aggiornata dipendenza Newtonsoft.Json a 13.0.1
+- Aggiornata dipendenza System.Security.Cryptography.Pkcs to 6.0.0
+- Aggiornata dipendenza Portable.BouncyCastle to 1.9.0
 
 [359]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/359
 [358]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/358
