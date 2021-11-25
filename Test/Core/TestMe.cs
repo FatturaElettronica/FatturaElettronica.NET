@@ -14,6 +14,8 @@ namespace FatturaElettronica.Test.Core
         [DataProperty]
         public byte[] AByteArray { get; set; }
         [DataProperty]
+        public int AInteger { get; set; }
+        [DataProperty]
         public SubTestMe SubTestMe { get; } = new();
         public override void WriteXml(System.Xml.XmlWriter w)
         {
@@ -32,5 +34,7 @@ namespace FatturaElettronica.Test.Core
         public decimal ADecimal { get; set; }
         [DataProperty]
         public byte[] AByteArray { get; set; }
+        [DataProperty]
+        public int AInteger { get; set; }
     }
 }

@@ -2,6 +2,15 @@
 
 ## In Development
 
+### v 4.0
+
+- New: `ToJson()` supporta opzione `JsonOptions.DefaultValueHandling` per serializzazione dei valori di default ([#361][361])
+- Breaking: `JsonOptions` ora è una classe, non più una `enum` ([#361][361])
+
+[361]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/361
+
+### v3.x
+
 - Fix: link rotto alle specifiche techiche ([#362](362))
 - Rimosso badge dependabot dal README
 

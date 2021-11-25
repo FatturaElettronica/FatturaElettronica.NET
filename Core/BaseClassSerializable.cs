@@ -270,22 +270,26 @@ namespace FatturaElettronica.Core
         /// <returns>A JSON string representing the class instance.</returns>
         public virtual string ToJson()
         {
-            return ToJson(JsonOptions.None);
+            return ToJson(new());
         }
 
         /// <summary>
         /// Serializes the class to JSON.
         /// </summary>
-        /// <param name="jsonOptions">JSON formatting options.</param>
+        /// <param name="jsonFormatting">JSON formatting options.</param>
         /// <returns>A JSON string representing the class instance.</returns>
-        public virtual string ToJson(JsonOptions jsonOptions)
+        public virtual string ToJson(JsonOptions options)
         {
-            var json = JsonConvert.SerializeObject(
-                this, jsonOptions == JsonOptions.Indented ? Formatting.Indented : Formatting.None,
+            var json = JsonConvert.SerializeObject(this,
+                options.Formatting == Formatting.Indented
+                    ? Newtonsoft.Json.Formatting.Indented
+                    : Newtonsoft.Json.Formatting.None,
                 new JsonSerializerSettings
                 {
                     ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                    DefaultValueHandling = DefaultValueHandling.Ignore
+                    DefaultValueHandling = options.DefaultValueHandling == DefaultValueHandling.Ignore
+                        ? Newtonsoft.Json.DefaultValueHandling.Ignore
+                        : Newtonsoft.Json.DefaultValueHandling.Include
                 });
             return json;
         }
@@ -333,14 +337,14 @@ namespace FatturaElettronica.Core
                 switch (value)
                 {
                     case string _:
+                    {
+                        if (!string.IsNullOrEmpty(value.ToString()) || XmlOptions.SerializeEmptyStrings)
                         {
-                            if (!string.IsNullOrEmpty(value.ToString()) || XmlOptions.SerializeEmptyStrings)
-                            {
-                                w.WriteElementString(propertyName, value.ToString());
-                            }
-
-                            continue;
+                            w.WriteElementString(propertyName, value.ToString());
                         }
+
+                        continue;
+                    }
                     case DateTime dateTime when XmlOptions.DateTimeFormat != null &&
                                                 !property.GetCustomAttributes<IgnoreXmlDateFormat>().Any():
                         w.WriteElementString(propertyName, dateTime.ToString(XmlOptions.DateTimeFormat));

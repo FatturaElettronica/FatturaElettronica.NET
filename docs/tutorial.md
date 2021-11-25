@@ -128,7 +128,7 @@ una pre-scasione dello stream per determinarne il formato e la tipologia di fatt
 
 ```cs
     // Serializzazione JSON.
-    var json = fattura.ToJson(JsonOptions.Indented);
+    var json = fattura.ToJson(new JsonOptions { Formatting = Formatting.Indented });
     Console.WriteLine(json);
 
     // Deserializzazione da JSON.
@@ -241,7 +241,7 @@ namespace DemoApp
             }
 
             // Serializzazione JSON.
-            var json = fattura.ToJson(JsonOptions.Indented);
+            var json = fattura.ToJson();
             Console.WriteLine(json);
 
             // Deserializzazione da JSON.
