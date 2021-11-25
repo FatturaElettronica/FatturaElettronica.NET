@@ -1,6 +1,5 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 using FluentValidation.TestHelper;
-using FluentValidation.Validators;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FatturaElettronica.Test.Ordinaria

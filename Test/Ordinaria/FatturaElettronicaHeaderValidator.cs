@@ -3,7 +3,6 @@ using FatturaElettronica.Ordinaria.FatturaElettronicaHeader;
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Org.BouncyCastle.Asn1.Cmp;
 
 namespace FatturaElettronica.Test.Ordinaria
 {

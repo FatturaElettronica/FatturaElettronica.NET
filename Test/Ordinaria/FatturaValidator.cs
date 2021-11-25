@@ -3,8 +3,6 @@ using FatturaElettronica.Common;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
-using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiBeniServizi;
-using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 

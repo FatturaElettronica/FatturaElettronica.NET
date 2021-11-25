@@ -1,5 +1,4 @@
-﻿using FatturaElettronica.Common;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Xml;
 using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 

@@ -1,5 +1,4 @@
 ﻿using System;
-using FatturaElettronica.Common;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Extensions.Resources;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

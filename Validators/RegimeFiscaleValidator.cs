@@ -1,8 +1,4 @@
-﻿using FatturaElettronica.Tabelle;
-using FluentValidation.Results;
-using FluentValidation.Validators;
-
-namespace FatturaElettronica.Validators
+﻿namespace FatturaElettronica.Validators
 {
     // public class RegimeFiscaleValidator<T> : IsValidValidator<T> where T : RegimeFiscale, new()
     // {

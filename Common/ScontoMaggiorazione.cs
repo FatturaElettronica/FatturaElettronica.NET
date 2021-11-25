@@ -1,6 +1,4 @@
-﻿using FatturaElettronica.Common;
-
-namespace FatturaElettronica.Common
+﻿namespace FatturaElettronica.Common
 {
     /// <summary>
     /// Eventuale sconto o maggiorazione applicati sul totale documento.

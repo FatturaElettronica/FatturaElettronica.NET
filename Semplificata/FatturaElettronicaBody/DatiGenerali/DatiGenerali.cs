@@ -1,6 +1,4 @@
-﻿using FatturaElettronica.Common;
-using System.Collections.Generic;
-using System.Xml;
+﻿using System.Xml;
 using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali

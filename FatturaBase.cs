@@ -4,7 +4,6 @@ using System.Xml;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
-using Newtonsoft.Json;
 using Org.BouncyCastle.Cms;
 using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 

@@ -1,6 +1,5 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.DatiTrasmissione;
 using FluentValidation;
-using FluentValidation.Validators;
 
 namespace FatturaElettronica.Validators
 {

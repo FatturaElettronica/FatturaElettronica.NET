@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using FatturaElettronica.Semplificata.FatturaElettronicaBody;
 using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;

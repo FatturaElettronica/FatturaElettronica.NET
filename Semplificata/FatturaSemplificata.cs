@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using FatturaElettronica.Common;
 using FatturaElettronica.Defaults;
 
 namespace FatturaElettronica.Semplificata

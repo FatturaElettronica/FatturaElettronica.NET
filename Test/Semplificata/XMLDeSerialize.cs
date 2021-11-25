@@ -1,7 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
 using System.Xml;
-using FatturaElettronica;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Semplificata;
