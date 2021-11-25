@@ -1,6 +1,6 @@
-﻿using System.Xml;
+﻿using System.Text.Json.Serialization;
+using System.Xml;
 using FatturaElettronica.Common;
-using Newtonsoft.Json;
 using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica.Semplificata.FatturaElettronicaHeader.CedentePrestatore
