@@ -50,7 +50,7 @@ Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
 
-[pa]: https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.6.1
+[pa]: https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.7
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt
 [ga]: http://gestionaleamica.com
 [ni]: https://nicolaiarocci.com
