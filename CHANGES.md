@@ -2,7 +2,10 @@
 
 ## In Development
 
+- Fix: link rotto alle specifiche techiche ([#362](362))
 - Rimosso badge dependabot dal README
+
+[362]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/362
 
 ## Released
 
