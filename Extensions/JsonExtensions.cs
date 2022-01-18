@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Text;
+using System.Text.Json;
 
 namespace FatturaElettronica.Extensions
 {
@@ -6,7 +7,7 @@ namespace FatturaElettronica.Extensions
     {
         public static void FromJson(this FatturaBase fattura, string json)
         {
-            fattura.FromJson(new JsonTextReader(new StringReader(json)));
+            fattura.FromJson(new Utf8JsonReader(Encoding.UTF8.GetBytes(json)));
         }
     }
 }
