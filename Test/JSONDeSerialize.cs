@@ -1,10 +1,10 @@
-﻿using System.IO;
+﻿using System.Text;
+using System.Text.Json;
 using System.Xml;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Newtonsoft.Json;
 
 namespace FatturaElettronica.Test
 {
@@ -20,7 +20,7 @@ namespace FatturaElettronica.Test
             var json = f.ToJson();
 
             var challenge = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            challenge.FromJson(new JsonTextReader(new StringReader(json)));
+            challenge.FromJson(new Utf8JsonReader(Encoding.UTF8.GetBytes(json)));
             Assert.IsTrue(challenge.Validate().IsValid);
         }
 
@@ -40,7 +40,7 @@ namespace FatturaElettronica.Test
         private FatturaOrdinaria Deserialize(string fileName)
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            using (var r = XmlReader.Create(fileName, new() {IgnoreWhitespace = true}))
+            using (var r = XmlReader.Create(fileName, new() { IgnoreWhitespace = true }))
             {
                 f.ReadXml(r);
             }
