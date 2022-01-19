@@ -2,8 +2,8 @@
 
 ## In Development
 
-- Migrazione a System.Text.Json ([#360](360))
-- Fix: link rotto alle specifiche techiche ([#362](362))
+- Migrazione a System.Text.Json ([#360][360])
+- Fix: link rotto alle specifiche techiche ([#362][362])
 - Rimosso badge dependabot dal README
 
 [360]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/360
