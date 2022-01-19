@@ -1,6 +1,6 @@
-﻿using System.Xml;
+﻿using System.Text.Json.Serialization;
+using System.Xml;
 using System.Xml.Serialization;
-using Newtonsoft.Json;
 
 namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader
 {
@@ -44,7 +44,7 @@ namespace FatturaElettronica.Ordinaria.FatturaElettronicaHeader
         /// </summary>
         [Core.DataProperty]
         [XmlElement(ElementName = "RappresentanteFiscale")]
-        [JsonProperty(PropertyName = "RappresentanteFiscale")]
+        [JsonPropertyName("RappresentanteFiscale")]
         public RappresentanteFiscale.RappresentanteFiscale Rappresentante { get; set; }
 
         /// <summary>
