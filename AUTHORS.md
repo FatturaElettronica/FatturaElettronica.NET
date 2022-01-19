@@ -22,6 +22,7 @@ Collaboratori
 - Luca Borghini
 - Luca Marcato
 - Marco Checchin
+- Marco Saltarelli
 - Marco Tessitore
 - Massimo Linossi
 - Michael Mairegger
