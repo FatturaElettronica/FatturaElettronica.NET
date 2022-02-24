@@ -435,6 +435,7 @@ namespace FatturaElettronica.Core
         protected virtual void ReadAndHandleXmlStartElement(XmlReader r)
         {
             r.ReadStartElement();
+            if (r.NodeType == XmlNodeType.ProcessingInstruction) r.Skip();
         }
 
         /// <summary>
