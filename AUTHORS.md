@@ -13,6 +13,7 @@ Collaboratori
 -------------
 
 - Claudio Lepri
+- Diego Artusio
 - Diego Martelli
 - Emanuele Curati
 - Emanuele Zavallone
@@ -30,7 +31,7 @@ Collaboratori
 - ZephirPFS47
 - gminutillo
 - username77
-
+- 
 [NI]: https://nicolaiarocci.com
 [gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET
 [li]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt
