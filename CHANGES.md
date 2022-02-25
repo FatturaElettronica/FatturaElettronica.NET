@@ -2,7 +2,14 @@
 
 ## In Development
 
-- Fix: supporto per tag 'Processing Instructions' in de-serializzazione XML ([#367][367])
+- hic sunt leones
+ 
+v 3.3.0
+-------
+
+Released on February 25, 2022
+
+- New: supporto per tag 'Processing Instructions' in de-serializzazione XML ([#367][367])
 - Fix: link rotto alle specifiche techiche ([#362][362])
 - Migrazione a System.Text.Json ([#360][360])
 - Rimosso badge dependabot dal README
