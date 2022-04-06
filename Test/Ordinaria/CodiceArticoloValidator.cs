@@ -40,7 +40,7 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void CodiceValoreMustBeBasicLatin()
         {
-            AssertMustBeBasicLatin(x => x.CodiceValore);
+            AssertMustBeLatin1Supplement(x => x.CodiceValore);
         }
     }
 }
