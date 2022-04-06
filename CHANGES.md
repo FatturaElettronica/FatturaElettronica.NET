@@ -2,6 +2,13 @@
 
 ## In Development
 
+- hic sunt leones
+
+v 3.3.1
+-------
+
+Released on April 6, 2022
+
 - Fix: CodiceArticolo va convalidato come `LatinExtType` ([#368][368])
 
 [368]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/368
