@@ -2,7 +2,9 @@
 
 ## In Development
 
-- hic sunt leones
+- Fix: CodiceArticolo va convalidato come `LatinExtType` ([#368][368])
+
+[368]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/368
  
 v 3.3.0
 -------
