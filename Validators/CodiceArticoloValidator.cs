@@ -13,7 +13,7 @@ namespace FatturaElettronica.Validators
                 .Length(1, 35);
             RuleFor(x => x.CodiceValore)
                 .NotEmpty()
-                .BasicLatinValidator()
+                .Latin1SupplementValidator()
                 .Length(1, 35);
         }
     }
