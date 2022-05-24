@@ -2,6 +2,13 @@
 
 ## In Development
 
+- hic sunt leones
+ 
+v 3.3.2
+-------
+
+Released on May 24, 2022
+
 - Fix: `WriteHtml` crea un file temporaneo che non viene eliminato in seguito ([#371][371])
 
 [371]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/371
