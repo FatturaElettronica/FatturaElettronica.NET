@@ -2,6 +2,11 @@
 
 ## In Development
 
+v 3.3.3
+-------
+
+Released on July 11, 2022
+
 - Fix: CodiceFiscale con caratteri minuscoli non deve passare la convalida ([#373][373])
 
 [373]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/373
