@@ -16,23 +16,32 @@ namespace FatturaElettronica.Test.Ordinaria
             Validator.ShouldHaveDelegatePropertyChildValidator(x => x.IdFiscaleIVA,
                 typeof(Validators.IdFiscaleIVAValidator));
         }
+
         [TestMethod]
         public void CodiceFiscaleIsOptional()
         {
             Challenge.IdFiscaleIVA.IdCodice = "x";
             AssertOptional(x => x.CodiceFiscale);
         }
+
+        [TestMethod]
+        public void CodiceFiscaleMustBeDigitsOrUpperCase()
+        {
+            AssertDigitsOrUppercase(x => x.CodiceFiscale);
+        }
+
         [TestMethod]
         public void CodiceFiscaleMinMaxLength()
         {
-            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
+            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16, 'X', "RegularExpressionValidator");
         }
+
         [TestMethod]
         public void AnagraficaHasChildValidator()
         {
-            Validator.ShouldHaveChildValidator(x => x.Anagrafica,
-                typeof(FatturaElettronica.Validators.AnagraficaValidator));
+            Validator.ShouldHaveChildValidator(x => x.Anagrafica, typeof(Validators.AnagraficaValidator));
         }
+
         [TestMethod]
         public void IdFiscaleIVAIsOptional()
         {
@@ -42,6 +51,7 @@ namespace FatturaElettronica.Test.Ordinaria
             var r = Validator.Validate(Challenge);
             Assert.IsNull(r.Errors.FirstOrDefault(x => x.PropertyName == "IdFiscaleIVA"));
         }
+
         [TestMethod]
         public void CodiceFiscaleOrIdFiscaleIVAMustHaveValue()
         {

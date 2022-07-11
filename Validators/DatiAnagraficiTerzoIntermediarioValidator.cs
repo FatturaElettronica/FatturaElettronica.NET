@@ -11,7 +11,7 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new IdFiscaleIVAValidator())
                 .When(x => x.IdFiscaleIVA != null && !x.IdFiscaleIVA.IsEmpty());
             RuleFor(x => x.CodiceFiscale)
-                .Length(11, 16)
+                .Matches("^[A-Z0-9]{11,16}$")
                 .When(x => !string.IsNullOrEmpty(x.CodiceFiscale));
             RuleFor(x => x.Anagrafica)
                 .SetValidator(new AnagraficaValidator());

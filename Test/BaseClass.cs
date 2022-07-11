@@ -105,6 +105,19 @@ namespace FatturaElettronica.Test
             result.ShouldNotHaveValidationErrorFor(outExpr);
         }
 
+        protected void AssertDigitsOrUppercase(Expression<Func<TClass, string>> outExpr, int length = 16)
+        {
+            var prop = GetProperty(outExpr);
+
+            prop.SetValue(Challenge, new string('x', 16));
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(outExpr).WithErrorCode("RegularExpressionValidator");
+
+            prop.SetValue(Challenge, new string('X', 16));
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(outExpr);
+        }
+
         protected void AssertLength(Expression<Func<TClass, string>> outExpr, int length, char filler = 'x',
             string expectedErrorCode = "ExactLengthValidator")
         {
@@ -163,7 +176,7 @@ namespace FatturaElettronica.Test
             prop.SetValue(Challenge, "NO");
             var result = Validator.TestValidate(Challenge);
             result.ShouldHaveValidationErrorFor(outExpr);
-            
+
             prop.SetValue(Challenge, "SI");
             result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(outExpr);
@@ -177,7 +190,7 @@ namespace FatturaElettronica.Test
             prop.SetValue(Challenge, "test ~tes1");
             var result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(outExpr);
-            
+
             prop.SetValue(Challenge, "test Àtes1");
             result = Validator.TestValidate(Challenge);
             result.ShouldHaveValidationErrorFor(outExpr);
@@ -190,11 +203,11 @@ namespace FatturaElettronica.Test
             prop.SetValue(Challenge, "test ~tes1");
             var result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(outExpr);
-            
+
             prop.SetValue(Challenge, "test Àtes1");
             result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(outExpr);
-            
+
             prop.SetValue(Challenge, "test ›tes1");
             result = Validator.TestValidate(Challenge);
             result.ShouldHaveValidationErrorFor(outExpr);

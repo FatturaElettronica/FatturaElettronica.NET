@@ -24,9 +24,21 @@ namespace FatturaElettronica.Test.Semplificata
         }
 
         [TestMethod]
+        public void CodiceFiscaleMustBeDigitsOrUpperCase()
+        {
+            AssertDigitsOrUppercase(x => x.CodiceFiscale);
+        }
+
+        [TestMethod]
         public void CodiceFiscaleMinMaxLength()
         {
-            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
+            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16, 'X', "RegularExpressionValidator");
+        }
+
+        [TestMethod]
+        public void CodiceFiscaleMustBeInUpperCase()
+        {
+            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16, 'X', "RegularExpressionValidator");
         }
 
         [TestMethod]

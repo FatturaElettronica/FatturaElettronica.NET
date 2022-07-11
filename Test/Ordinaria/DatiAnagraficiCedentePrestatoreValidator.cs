@@ -1,4 +1,5 @@
-﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
+﻿using FatturaElettronica.Extensions;
+using FatturaElettronica.Ordinaria.FatturaElettronicaHeader.CedentePrestatore;
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -24,9 +25,16 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
-        public void CodiceFiscaleMinMaxLength()
+        public void CodiceFiscaleMustBeDigitsOrUpperCase()
         {
-            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16);
+            AssertDigitsOrUppercase(x => x.CodiceFiscale);
+        }
+
+        [TestMethod]
+        public void CodiceFiscaleMinMaxLength()
+        
+        {
+            AssertMinMaxLength(x => x.CodiceFiscale, 11, 16, 'X', "RegularExpressionValidator");
         }
 
         [TestMethod]

@@ -2,8 +2,10 @@
 
 ## In Development
 
-- hic sunt leones
- 
+- Fix: CodiceFiscale con caratteri minuscoli non deve passare la convalida ([#373][373])
+
+[373]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/373
+
 v 3.3.2
 -------
 
