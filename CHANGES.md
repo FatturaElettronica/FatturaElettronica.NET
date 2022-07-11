@@ -8,6 +8,9 @@ v 3.3.3
 Released on July 11, 2022
 
 - Fix: CodiceFiscale con caratteri minuscoli non deve passare la convalida ([#373][373])
+- CI ora gira su dotnet 6.
+- Bump System.Security.Cryptography.Pkcs a v6.0.1
+- Bump System.Text.Json a v6.0.5
 
 [373]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/373
 
