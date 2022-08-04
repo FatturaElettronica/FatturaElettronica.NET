@@ -2,6 +2,11 @@
 
 ## In Development
 
+v 3.3.4
+-------
+
+Released on August 4, 2022
+
 - 'EL' (Grecia) aggiunto ai valori convalidati per IdPaese, in alternativa a 'GR' ([#374][374]).
 - 'OO' (Campione d'Italia e Livigno) aggiunto ai valori convalidati per IdPaese ([#370][370]).
 
