@@ -92,7 +92,7 @@
                     new IdPaese { Nome = "Germania", Codice = "DE" },
                     new IdPaese { Nome = "Ghana", Codice = "GH" },
                     new IdPaese { Nome = "Gibilterra", Codice = "GI" },
-                    new IdPaese { Nome = "Grecia", Codice = "GR" },
+                    new IdPaese { Nome = "Grecia GR", Codice = "GR" },
                     new IdPaese { Nome = "Groenlandia", Codice = "GL" },
                     new IdPaese { Nome = "Grenada", Codice = "GD" },
                     new IdPaese { Nome = "Guadalupa", Codice = "GP" },
@@ -114,12 +114,6 @@
                     new IdPaese { Nome = "Iran", Codice = "IR" },
                     new IdPaese { Nome = "Iraq", Codice = "IQ" },
                     new IdPaese { Nome = "Irlanda", Codice = "IE" },
-                    
-                    // Currently not officially supported, as not included in ISO_3166-1. See:
-                    // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/314
-                    // https://it.wikipedia.org/wiki/ISO_3166-1_alpha-2
-                    new IdPaese { Nome = "Irlanda del Nord", Codice = "XI" },   
-                    
                     new IdPaese { Nome = "Isola di Man", Codice = "IM" },
                     new IdPaese { Nome = "Israele", Codice = "IL" },
                     new IdPaese { Nome = "Italia", Codice = "IT" },
@@ -263,6 +257,13 @@
                     new IdPaese { Nome = "Zambia", Codice = "ZM" },
                     new IdPaese { Nome = "Zimbabwe", Codice = "ZW" },
                     new IdPaese { Nome = "Kosovo", Codice = "XK" },
+                    // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/314
+                    new IdPaese { Nome = "Irlanda del Nord", Codice = "XI" },   
+                    // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/370
+                    new IdPaese { Nome = "Campione d'Italia e Livigno", Codice = "OO" },   
+                    // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/374
+                    new IdPaese { Nome = "Grecia EL", Codice = "EL" }  
+                    
                 };
             }
         }
