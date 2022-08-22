@@ -47,7 +47,7 @@ namespace FatturaElettronica.Test.Ordinaria
                 var body = new FatturaElettronicaBody();
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
                 Challenge.FatturaElettronicaBody.Add(body);
-                
+
                 datiAnagrafici.IdFiscaleIVA = idEmpty;
                 var result = Challenge.Validate();
                 Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00475"));
@@ -118,7 +118,10 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void FatturaValidateAgainstError00471()
         {
-            var tipiDocumento = new[] { "TD16", "TD17", "TD18", "TD19", "TD20" };
+            var tipiDocumento = new[]
+            {
+                "TD01", "TD02", "TD03", "TD06", "TD16", "TD17", "TD18", "TD19", "TD20", "TD24", "TD25", "TD28"
+            };
             var cedente = Challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
             var cessionario = Challenge.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
             var id123 = new IdFiscaleIVA { IdPaese = "IT", IdCodice = "123" };

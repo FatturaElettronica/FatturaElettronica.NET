@@ -2,6 +2,7 @@
 
 ## In Development
 
+- Fix: Modificato il criterio di controllo per l’errore 00471 per i tipi documento TD01, TD02,TD03,TD06,TD24,TD25 e TD28 (fattura ordinaria) e TD07 (fattura semplificata) ([#376][376]).
 - Fix: aggiornata descrizione dei codici di errore 00401, 00430, 00473, 00475 ([#376][376]).
 - Fix: aggiornata descrizione della Natura N7 ([#376][376]).
 - New: TD28, acquisti da San Marino con IVA (fattura cartacea) ([#376][376]).
