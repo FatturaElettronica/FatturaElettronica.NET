@@ -2,6 +2,7 @@
 
 ## In Development
 
+- Fix: aggiornata descrizione dei codici di errore 00401, 00430, 00473, 00475 ([#376][376]).
 - Fix: aggiornata descrizione della Natura N7 ([#376][376]).
 - New: TD28, acquisti da San Marino con IVA (fattura cartacea) ([#376][376]).
  

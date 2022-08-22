@@ -42,7 +42,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.Natura)
                 .Must(string.IsNullOrEmpty)
                 .When(x => x.AliquotaIVA > 0)
-                .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero")
+                .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16)")
                 .WithErrorCode("00401");
             RuleFor(x => x.RiferimentoAmministrazione)
                 .Length(1, 20)

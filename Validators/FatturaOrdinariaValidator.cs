@@ -14,7 +14,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00475(fattura))
                 .WithMessage(
-                    "Per il valore indicato nell’elemento 2.1.1.1 <TipoDocumento> deve essere presente l’elemento 1.4.1.1 <IdFiscaleIVA> del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22 e TD23 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente)")
+                    "Per il valore indicato nell’elemento TipoDocumento deve essere presente l’elemento IdFiscaleIVA del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22, TD23 e TD28 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente)")
                 .WithErrorCode("00475");
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00471(fattura))
@@ -29,7 +29,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00473(fattura))
                 .WithMessage(
-                    "I valori TD17, TD18 e TD19 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano")
+                    "Per il valore indicato nell’elemento TipoDocumento il valore presente nell’elemento IdPaese non è ammesso (i valori TD17, TD18, TD19 e TD28 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano. Nei casi di TD17 e TD19 è ammessa l’indicazione del valore ‘OO’ nell’elemento IdPaese per operazioni effettuate da soggetti residenti in Livigno e Campione d’Italia. Inoltre, nel caso del TD28, l’elemento IdPaese deve essere valorizzato con il valore SM)")
                 .WithErrorCode("00473");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .SetValidator(new FatturaElettronicaBodyValidator());

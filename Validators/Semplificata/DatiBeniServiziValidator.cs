@@ -25,7 +25,7 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.Natura)
                 .Must(string.IsNullOrEmpty)
                 .When(x => x.DatiIVA.Aliquota > 0m || x.DatiIVA.Imposta > 0m)
-                .WithMessage("Natura presente a fronte di Aliquota IVA o Imposta diversa da zero")
+                .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero")
                 .WithErrorCode("00401");
             RuleFor(x => x.Natura)
                 .SetValidator(new IsValidValidator<DatiBeniServizi, string, NaturaSemplificata>())
