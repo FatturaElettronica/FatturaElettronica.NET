@@ -2,7 +2,10 @@
 
 ## In Development
 
-- New: TD28, acquisti da San Marino con IVA (fattura cartacea).
+- Fix: aggiornata descrizione della Natura N7 ([#376][376]).
+- New: TD28, acquisti da San Marino con IVA (fattura cartacea) ([#376][376]).
+ 
+[376]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/376
 
 v 3.3.4
 -------
