@@ -26,6 +26,7 @@
                     new TipoDocumento { Codice = "TD25", Nome = "Fattura differita di cui all’art.21, comma 4, terzo periodo lett. b) DPR 633/72" },
                     new TipoDocumento { Codice = "TD26", Nome = "cessione di beni ammortizzabili e per passaggi interni (ex art.36 DPR 633/72)" },
                     new TipoDocumento { Codice = "TD27", Nome = "fattura per autoconsumo o per cessioni gratuite senza rivalsa" },
+                    new TipoDocumento { Codice = "TD28", Nome = "acquisti da San Marino con IVA (fattura cartacea)" },
                 };
 
             }

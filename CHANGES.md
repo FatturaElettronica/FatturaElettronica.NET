@@ -2,6 +2,8 @@
 
 ## In Development
 
+- New: TD28, acquisti da San Marino con IVA (fattura cartacea).
+
 v 3.3.4
 -------
 
