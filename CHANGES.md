@@ -2,6 +2,14 @@
 
 ## In Development
 
+v 3.4 beta
+----------
+
+Released on August 22, 2022
+
+Questa beta release recepisce le specifiche tecniche v1.7.1 che entreranno in vigore il 1 Ottobre 2022.
+Per maggiori informazioni vedi il ticket ([#376][376]).
+
 - New: introdotto nuovo controllo sulla fatture con codice errore 00476 ([#376][376]).
 - New: TD28, acquisti da San Marino con IVA (fattura cartacea) ([#376][376]).
 - Fix: modificato il criterio di controllo per l'errore 00472 ([#376][376]).
@@ -10,6 +18,8 @@
 - Fix: aggiornata descrizione della Natura N7 ([#376][376]).
  
 [376]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/376
+
+## Stable
 
 v 3.3.4
 -------

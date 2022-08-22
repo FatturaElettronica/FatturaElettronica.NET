@@ -3,7 +3,8 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <Version>3.3.4</Version>
+    <VersionPrefix>3.4</VersionPrefix>
+    <VersionSuffix>beta</VersionSuffix>
     <PackageId>FatturaElettronica</PackageId>
     <Authors>Nicola Iarocci</Authors>
     <Company>CIR 2000</Company>
