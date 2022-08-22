@@ -76,7 +76,7 @@ namespace FatturaElettronica.Validators
         {
             var bodies =
                 fatturaOrdinaria.FatturaElettronicaBody.Where(x =>
-                    x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD21");
+                    x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento is "TD21" or "TD27");
 
             if (!bodies.Any())
                 return true;

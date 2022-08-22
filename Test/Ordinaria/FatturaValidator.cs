@@ -93,26 +93,33 @@ namespace FatturaElettronica.Test.Ordinaria
             var id123 = new IdFiscaleIVA { IdPaese = "IT", IdCodice = "123" };
             var id456 = new IdFiscaleIVA { IdPaese = "IT", IdCodice = "456" };
 
-            var body = new FatturaElettronicaBody();
-            body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD21";
-            Challenge.FatturaElettronicaBody.Add(body);
+            var tipiDocumento = new[] { "TD21", "TD27" };
+            foreach (var tipoDocumento in tipiDocumento)
+            {
+                var body = new FatturaElettronicaBody();
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Challenge.FatturaElettronicaBody.Add(body);
 
-            cedente.IdFiscaleIVA = id123;
-            cessionario.IdFiscaleIVA = id456;
-            Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                cedente.CodiceFiscale = null;
+                cessionario.CodiceFiscale = null;
+                
+                cedente.IdFiscaleIVA = id123;
+                cessionario.IdFiscaleIVA = id456;
+                Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
-            cessionario.IdFiscaleIVA = id123;
-            Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                cessionario.IdFiscaleIVA = id123;
+                Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
-            cedente.CodiceFiscale = "123";
-            cedente.CodiceFiscale = "456";
-            Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                cedente.CodiceFiscale = "123";
+                cedente.CodiceFiscale = "456";
+                Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
-            cedente.CodiceFiscale = "123";
-            Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                cedente.CodiceFiscale = "123";
+                Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
-            body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
-            Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
+                Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+            }
         }
 
         [TestMethod]
