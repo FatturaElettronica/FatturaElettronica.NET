@@ -65,15 +65,34 @@ namespace FatturaElettronica.Test.Ordinaria
             Challenge.DatiTrasmissione.CodiceDestinatario = "XXXXXXX";
             var result = Validator.Validate(Challenge);
             Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00313"));
-            
+
             Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "FR";
             result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00313"));
-            
+
             Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
             Challenge.DatiTrasmissione.CodiceDestinatario = "0123456";
             result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00313"));
+        }
+
+        [TestMethod]
+        public void HeaderValidateAgainstError00476()
+        {
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "FR";
+            Challenge.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = "FR";
+            var result = Validator.Validate(Challenge);
+            Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
+
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
+            Challenge.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = "FR";
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
+
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "FT";
+            Challenge.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
         }
     }
 }

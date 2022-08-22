@@ -28,6 +28,19 @@ namespace FatturaElettronica.Validators
                 .Must(idPaese => idPaese != "IT")
                 .When(x => x.DatiTrasmissione.CodiceDestinatario == "XXXXXXX")
                 .WithErrorCode("00313");
+            RuleFor(x => x)
+                .Must((header, _) => HeaderValidateAgainstError00476(header))
+                .WithMessage(
+                    "Gli elementi IdPaese e IdPaese non possono essere entrambi valorizzati con codice diverso da IT")
+                .WithErrorCode("00476");
+        }
+
+        private static bool HeaderValidateAgainstError00476(FatturaElettronicaHeader header)
+        {
+            var idCedente = header.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA;
+            var idCommittente = header.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA;
+
+            return (idCedente.IdPaese == "IT" || (idCommittente is not null && idCommittente.IdPaese == "IT"));
         }
     }
 }

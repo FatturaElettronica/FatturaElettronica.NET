@@ -1,4 +1,5 @@
-﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader;
+﻿using System.Linq;
+using FatturaElettronica.Semplificata.FatturaElettronicaHeader;
 using FatturaElettronica.Tabelle;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -43,6 +44,25 @@ namespace FatturaElettronica.Test.Semplificata
         public void SoggettoEmittenteOnlyAcceptsTableValues()
         {
             AssertOnlyAcceptsTableValues<SoggettoEmittente>(x => x.SoggettoEmittente);
+        }
+
+        [TestMethod]
+        public void HeaderValidateAgainstError00476()
+        {
+            Challenge.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA.IdPaese = "FR";
+            Challenge.CedentePrestatore.IdFiscaleIVA.IdPaese = "FR";
+            var result = Validator.Validate(Challenge);
+            Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
+
+            Challenge.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA.IdPaese = "IT";
+            Challenge.CedentePrestatore.IdFiscaleIVA.IdPaese = "FR";
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
+
+            Challenge.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA.IdPaese = "FT";
+            Challenge.CedentePrestatore.IdFiscaleIVA.IdPaese = "IT";
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
         }
     }
 }
