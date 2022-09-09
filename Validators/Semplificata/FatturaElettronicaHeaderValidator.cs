@@ -17,6 +17,19 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.SoggettoEmittente)
                 .SetValidator(new IsValidValidator<FatturaElettronicaHeader, string, SoggettoEmittente>())
                 .When(x => !string.IsNullOrEmpty(x.SoggettoEmittente));
+            RuleFor(x => x)
+                .Must((header, _) => HeaderValidateAgainstError00476(header))
+                .WithMessage(
+                    "Gli elementi IdPaese e IdPaese non possono essere entrambi valorizzati con codice diverso da IT")
+                .WithErrorCode("00476");
+        }
+
+        private static bool HeaderValidateAgainstError00476(FatturaElettronicaHeader header)
+        {
+            var idCedente = header.CedentePrestatore.IdFiscaleIVA;
+            var idCommittente = header.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA;
+
+            return (idCedente.IdPaese == "IT" || (idCommittente is not null && idCommittente.IdPaese == "IT"));
         }
     }
 }

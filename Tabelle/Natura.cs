@@ -27,7 +27,7 @@
                     new Natura { Codice = "N6.7", Nome = "inversione contabile - prestazioni comparto edile e settori connessi" },
                     new Natura { Codice = "N6.8", Nome = "inversione contabile - operazioni settore energetico" },
                     new Natura { Codice = "N6.9", Nome = "inversione contabile - altri casi" },
-                    new Natura { Codice = "N7", Nome = "IVA assolta in altro stato UE (vendite a distanza ex art. 40 c. 3 e 4 e art. 41 c. 1 lett. b,  DL 331/93; prestazione di servizi di telecomunicazioni, tele-radiodiffusione ed elettronici ex art. 7-sexies lett. f, g, art. 74-sexies DPR 633/72)" }
+                    new Natura { Codice = "N7", Nome = "IVA assolta in altro stato UE (prestazione di servizi di telecomunicazioni, tele-radiodiffusione ed elettronici ex art. 7-octies, comma 1 lett. a, b, art. 74-sexies DPR 633/72)" }
                 };
             } 
         }

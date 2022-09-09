@@ -14,7 +14,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00475(fattura))
                 .WithMessage(
-                    "Per il valore indicato nell’elemento 2.1.1.1 <TipoDocumento> deve essere presente l’elemento 1.4.1.1 <IdFiscaleIVA> del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22 e TD23 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente)")
+                    "Per il valore indicato nell’elemento TipoDocumento deve essere presente l’elemento IdFiscaleIVA del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22, TD23 e TD28 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente)")
                 .WithErrorCode("00475");
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00471(fattura))
@@ -29,7 +29,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00473(fattura))
                 .WithMessage(
-                    "I valori TD17, TD18 e TD19 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano")
+                    "Per il valore indicato nell’elemento TipoDocumento il valore presente nell’elemento IdPaese non è ammesso (i valori TD17, TD18, TD19 e TD28 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano. Nei casi di TD17 e TD19 è ammessa l’indicazione del valore ‘OO’ nell’elemento IdPaese per operazioni effettuate da soggetti residenti in Livigno e Campione d’Italia. Inoltre, nel caso del TD28, l’elemento IdPaese deve essere valorizzato con il valore SM)")
                 .WithErrorCode("00473");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .SetValidator(new FatturaElettronicaBodyValidator());
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Validators
             var tipiDocumento = new[] { "TD16", "TD17", "TD18", "TD19", "TD20", "TD22", "TD23" };
 
             if (!fatturaOrdinaria.FatturaElettronicaBody.Any(x =>
-                tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento)))
+                    tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento)))
                 return true;
 
             var idFiscaleIva = fatturaOrdinaria.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici
@@ -76,7 +76,7 @@ namespace FatturaElettronica.Validators
         {
             var bodies =
                 fatturaOrdinaria.FatturaElettronicaBody.Where(x =>
-                    x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD21");
+                    x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento is "TD21" or "TD27");
 
             if (!bodies.Any())
                 return true;
@@ -100,7 +100,10 @@ namespace FatturaElettronica.Validators
             if (cedente.CodiceFiscale != cessionario.CodiceFiscale)
                 return true;
 
-            var tipiDocumento = new[] { "TD16", "TD17", "TD18", "TD19", "TD20" };
+            var tipiDocumento = new[]
+            {
+                "TD01", "TD02", "TD03", "TD06", "TD16", "TD17", "TD18", "TD19", "TD20", "TD24", "TD25", "TD28"
+            };
 
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
