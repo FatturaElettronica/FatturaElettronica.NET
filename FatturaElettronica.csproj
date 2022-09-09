@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <VersionPrefix>3.4</VersionPrefix>
-    <VersionSuffix>beta</VersionSuffix>
+    <VersionSuffix></VersionSuffix>
     <PackageId>FatturaElettronica</PackageId>
     <Authors>Nicola Iarocci</Authors>
     <Company>CIR 2000</Company>

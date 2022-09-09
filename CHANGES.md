@@ -2,10 +2,14 @@
 
 ## In Development
 
-v 3.4 beta
-----------
+- *hic sunt dracones*
 
-Released on August 22, 2022
+## Stable
+
+v 3.4
+-----
+
+Released on September 9, 2022
 
 Questa beta release recepisce le specifiche tecniche v1.7.1 che entreranno in vigore il 1 Ottobre 2022.
 Per maggiori informazioni vedi il ticket ([#376][376]).
@@ -16,10 +20,9 @@ Per maggiori informazioni vedi il ticket ([#376][376]).
 - Fix: modificato il criterio di controllo per l’errore 00471 per i tipi documento TD01, TD02,TD03,TD06,TD24,TD25 e TD28 (fattura ordinaria) e TD07 (fattura semplificata) ([#376][376]).
 - Fix: aggiornata descrizione dei codici di errore 00401, 00430, 00473, 00475 ([#376][376]).
 - Fix: aggiornata descrizione della Natura N7 ([#376][376]).
- 
+
 [376]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/376
 
-## Stable
 
 v 3.3.4
 -------
