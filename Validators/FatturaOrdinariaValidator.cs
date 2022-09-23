@@ -66,7 +66,7 @@ namespace FatturaElettronica.Validators
             if (cedente.IdFiscaleIVA.IdPaese != "IT")
                 return true;
 
-            var tipiDocumento = new[] { "TD17", "TD18", "TD19" };
+            var tipiDocumento = new[] { "TD17", "TD18", "TD19", "TD28" };
 
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
