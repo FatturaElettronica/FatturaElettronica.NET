@@ -2,12 +2,19 @@
 
 ## In Development
 
+- *hic sunt dracones*
+
+## Stable
+
+v 3.4.1
+-------
+
+Released on September 26, 2022
+
 - Fix: correzione segnalazioni Controlli 00471 e 00473 ([#378][378] e [#379][379])
 
 [378]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/378
 [379]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/379
-
-## Stable
 
 v 3.4
 -----
