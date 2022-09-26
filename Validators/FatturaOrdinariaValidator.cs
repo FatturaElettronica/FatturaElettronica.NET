@@ -19,7 +19,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00471(fattura))
                 .WithMessage(
-                    "I valori TD16, TD17, TD18, TD19 e TD20 del tipo documento non ammettono l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario")
+                    "I valori TD01, TD02, TD03, TD06, TD16, TD17, TD18, TD19, TD20, TD24, TD25 e TD28 del tipo documento non ammettono l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario")
                 .WithErrorCode("00471");
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00472(fattura))
@@ -66,7 +66,7 @@ namespace FatturaElettronica.Validators
             if (cedente.IdFiscaleIVA.IdPaese != "IT")
                 return true;
 
-            var tipiDocumento = new[] { "TD17", "TD18", "TD19" };
+            var tipiDocumento = new[] { "TD17", "TD18", "TD19", "TD28" };
 
             return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));

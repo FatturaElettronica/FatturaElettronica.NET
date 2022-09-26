@@ -61,7 +61,7 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void FatturaValidateAgainstError00473()
         {
-            var tipiDocumento = new[] { "TD17", "TD18", "TD19" };
+            var tipiDocumento = new[] { "TD17", "TD18", "TD19", "TD28" };
             var cedente = Challenge.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
 
             cedente.IdFiscaleIVA = new() { IdPaese = "IT" };
