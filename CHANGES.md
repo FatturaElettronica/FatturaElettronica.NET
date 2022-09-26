@@ -2,7 +2,10 @@
 
 ## In Development
 
-- *hic sunt dracones*
+- Fix: correzione segnalazioni Controlli 00471 e 00473 ([#378][378] e [#379][379])
+
+[378]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/378
+[379]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/379
 
 ## Stable
 
