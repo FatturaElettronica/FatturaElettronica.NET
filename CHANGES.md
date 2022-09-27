@@ -2,11 +2,18 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+v3.4.2
+------
+
+Released on September 27, 2022
+
 - Fix: Aggiornato messaggio di errore per il controllo 00472 ([#381][381])
 
 [381]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/381
-
-## Stable
 
 v 3.4.1
 -------
