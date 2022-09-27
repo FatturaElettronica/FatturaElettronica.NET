@@ -28,10 +28,11 @@ Collaboratori
 - Massimo Linossi
 - Michael Mairegger
 - Puma
+- Seba
 - ZephirPFS47
 - gminutillo
 - username77
-- 
+ 
 [NI]: https://nicolaiarocci.com
 [gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET
 [li]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt

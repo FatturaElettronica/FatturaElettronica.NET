@@ -24,7 +24,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00472(fattura))
                 .WithMessage(
-                    "Il tipo documento ‘autofattura per splafonamento’ non ammette l’indicazione in fattura di un cedente diverso dal cessionario")
+                    "I valori TD21 e TD27 del tipo documento non ammettono l’indicazione in fattura di un cedente diverso dal cessionario")
                 .WithErrorCode("00472");
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00473(fattura))

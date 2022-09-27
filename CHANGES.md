@@ -2,7 +2,9 @@
 
 ## In Development
 
-- *hic sunt dracones*
+- Fix: Aggiornato messaggio di errore per il controllo 00472 ([#381][381])
+
+[381]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/381
 
 ## Stable
 
