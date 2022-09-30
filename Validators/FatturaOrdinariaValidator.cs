@@ -150,7 +150,7 @@ namespace FatturaElettronica.Validators
 
         private bool BodyValidateAgainstError00401(FatturaElettronicaBody body)
         {
-            if (body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento.Equals("TD16"))
+            if (body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD16")
             {
                 return true;
             }
@@ -160,7 +160,7 @@ namespace FatturaElettronica.Validators
 
         private bool BodyValidateAgainstError00430(FatturaElettronicaBody body)
         {
-            if (body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento.Equals("TD16"))
+            if (body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD16")
             {
                 return true;
             }
