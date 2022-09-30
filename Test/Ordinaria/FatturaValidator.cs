@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using FatturaElettronica.Common;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
@@ -219,6 +220,84 @@ namespace FatturaElettronica.Test.Ordinaria
             body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 4m });
             result = Validator.Validate(Challenge);
             Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00443"));
+        }
+
+        [TestMethod]
+        public void BodyValidateAgainstError00401()
+        {
+            var tipiDocumento = new[]
+            {
+                "TD01", "TD02", "TD03", "TD06", "TD17", "TD18", "TD19", "TD20", "TD24", "TD25", "TD28"
+            };
+
+            foreach (var tipoDocumento in tipiDocumento)
+            {
+                var body = new FatturaElettronicaBody();
+                body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
+                body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
+
+                var result = Challenge.Validate();
+                Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00401"));
+
+                body = new FatturaElettronicaBody();
+                body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 1m, Natura = null });
+                body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
+
+                result = Challenge.Validate();
+                Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00401"));
+            }
+
+            var bodyTD16 = new FatturaElettronicaBody();
+            bodyTD16.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
+            bodyTD16.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
+            bodyTD16.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD16";
+            Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { bodyTD16 };
+
+            var resultTD16 = Challenge.Validate();
+            Assert.IsNull(resultTD16.Errors.FirstOrDefault(x => x.ErrorCode == "00401"));
+        }
+
+        [TestMethod]
+        public void BodyValidateAgainstError00430()
+        {
+            var tipiDocumento = new[]
+            {
+                "TD01", "TD02", "TD03", "TD06", "TD17", "TD18", "TD19", "TD20", "TD24", "TD25", "TD28"
+            };
+
+            foreach (var tipoDocumento in tipiDocumento)
+            {
+                var body = new FatturaElettronicaBody();
+                body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
+                body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
+
+                var result = Challenge.Validate();
+                Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00430"));
+
+                body = new FatturaElettronicaBody();
+                body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 1m, Natura = null });
+                body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
+                body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
+                Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
+
+                result = Challenge.Validate();
+                Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00430"));
+            }
+
+            var bodyTD16 = new FatturaElettronicaBody();
+            bodyTD16.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
+            bodyTD16.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
+            bodyTD16.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD16";
+            Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { bodyTD16 };
+
+            var resultTD16 = Challenge.Validate();
+            Assert.IsNull(resultTD16.Errors.FirstOrDefault(x => x.ErrorCode == "00430"));
         }
     }
 }
