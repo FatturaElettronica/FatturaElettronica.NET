@@ -2,11 +2,18 @@
 
 ## In Development
 
+- *hic sunt dracones*
+ 
+## Stable
+
+v3.4.3
+------
+
+Released on October 1, 2022
+
 - Fix: aggiornati i controlli 00401 e 00403 affinchè escludano i documenti TD16 ([#382][382])
 
 [382]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/382
-
-## Stable
 
 v3.4.2
 ------
