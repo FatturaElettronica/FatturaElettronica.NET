@@ -16,19 +16,6 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
-        public void NaturaValidateAgainstError00430()
-        {
-            Challenge.AliquotaIVA = 22m;
-            Challenge.Natura = "N1";
-            var result = Validator.TestValidate(Challenge);
-            result.ShouldHaveValidationErrorFor(x => x.Natura).WithErrorCode("00430");
-            
-            Challenge.AliquotaIVA = 0m;
-            result = Validator.TestValidate(Challenge);
-            result.ShouldNotHaveValidationErrorFor(x => x.Natura);
-        }
-
-        [TestMethod]
         public void NaturaValidateAgainstError00400()
         {
             Challenge.AliquotaIVA = 0;
