@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <VersionPrefix>3.4.3</VersionPrefix>
+    <VersionPrefix>3.4.4</VersionPrefix>
     <VersionSuffix></VersionSuffix>
     <PackageId>FatturaElettronica</PackageId>
     <Authors>Nicola Iarocci</Authors>

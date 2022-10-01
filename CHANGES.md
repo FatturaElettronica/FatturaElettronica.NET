@@ -2,11 +2,18 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+v3.4.4
+------
+
+Released on October 1, 2022
+
 - Fix: errore nella validazione dei controlli 00401 e 00430 introdotto in v3.4.3 ([#384][384])
 
 [384]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/384
-
-## Stable
 
 v3.4.3
 ------
