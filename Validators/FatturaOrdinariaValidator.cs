@@ -45,13 +45,15 @@ namespace FatturaElettronica.Validators
                     "Tutti i valori di natura dell’operazione presenti nelle linee di dettaglio di una fattura o nei dati di cassa previdenziale devono essere presenti anche nei dati di riepilogo")
                 .WithErrorCode("00444");
             RuleForEach(x => x.FatturaElettronicaBody)
-               .Must((_, body) => BodyValidateAgainstError00401(body))
-               .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16)")
-               .WithErrorCode("00401");
+                .Must((_, body) => BodyValidateAgainstError00401(body))
+                .WithMessage(
+                    "Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16)")
+                .WithErrorCode("00401");
             RuleForEach(x => x.FatturaElettronicaBody)
-               .Must((_, body) => BodyValidateAgainstError00430(body))
-               .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16)")
-               .WithErrorCode("00430");
+                .Must((_, body) => BodyValidateAgainstError00430(body))
+                .WithMessage(
+                    "Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16)")
+                .WithErrorCode("00430");
         }
 
         private static bool FatturaValidateAgainstError00475(FatturaOrdinaria fatturaOrdinaria)
@@ -155,7 +157,9 @@ namespace FatturaElettronica.Validators
                 return true;
             }
 
-            return body.DatiBeniServizi.DettaglioLinee.Any(x => string.IsNullOrEmpty(x.Natura) && x.AliquotaIVA > 0);
+            return body.DatiBeniServizi.DettaglioLinee.All(x =>
+                x.AliquotaIVA > 0 && string.IsNullOrEmpty(x.Natura) ||
+                x.AliquotaIVA == 0 && !string.IsNullOrEmpty(x.Natura));
         }
 
         private bool BodyValidateAgainstError00430(FatturaElettronicaBody body)
@@ -165,7 +169,9 @@ namespace FatturaElettronica.Validators
                 return true;
             }
 
-            return body.DatiBeniServizi.DatiRiepilogo.Any(x => string.IsNullOrEmpty(x.Natura) && x.AliquotaIVA > 0);
+            return body.DatiBeniServizi.DatiRiepilogo.All(x => 
+                x.AliquotaIVA > 0 && string.IsNullOrEmpty(x.Natura) ||
+                x.AliquotaIVA == 0 && !string.IsNullOrEmpty(x.Natura));
         }
     }
 }

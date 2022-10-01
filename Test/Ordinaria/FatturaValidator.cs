@@ -234,7 +234,6 @@ namespace FatturaElettronica.Test.Ordinaria
             {
                 var body = new FatturaElettronicaBody();
                 body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
-                body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
                 Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
 
@@ -242,7 +241,6 @@ namespace FatturaElettronica.Test.Ordinaria
                 Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00401"));
 
                 body = new FatturaElettronicaBody();
-                body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 1m, Natura = null });
                 body.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
                 Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
@@ -252,11 +250,10 @@ namespace FatturaElettronica.Test.Ordinaria
             }
 
             var bodyTD16 = new FatturaElettronicaBody();
-            bodyTD16.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
-            bodyTD16.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
             bodyTD16.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD16";
+            bodyTD16.DatiBeniServizi.DettaglioLinee.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
             Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { bodyTD16 };
-
+            
             var resultTD16 = Challenge.Validate();
             Assert.IsNull(resultTD16.Errors.FirstOrDefault(x => x.ErrorCode == "00401"));
         }
@@ -273,7 +270,6 @@ namespace FatturaElettronica.Test.Ordinaria
             {
                 var body = new FatturaElettronicaBody();
                 body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
-                body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
                 Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
 
@@ -281,7 +277,6 @@ namespace FatturaElettronica.Test.Ordinaria
                 Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00430"));
 
                 body = new FatturaElettronicaBody();
-                body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 1m, Natura = null });
                 body.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
                 Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { body };
@@ -292,7 +287,6 @@ namespace FatturaElettronica.Test.Ordinaria
 
             var bodyTD16 = new FatturaElettronicaBody();
             bodyTD16.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 1m, Natura = "N6.1" });
-            bodyTD16.DatiBeniServizi.DatiRiepilogo.Add(new() { AliquotaIVA = 0m, Natura = "N6.1" });
             bodyTD16.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD16";
             Challenge.FatturaElettronicaBody = new List<FatturaElettronicaBody>() { bodyTD16 };
 
