@@ -63,6 +63,11 @@ namespace FatturaElettronica.Test.Semplificata
             Challenge.CedentePrestatore.IdFiscaleIVA.IdPaese = "IT";
             result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
+            
+            Challenge.CedentePrestatore.IdFiscaleIVA.IdPaese = "IT";
+            Challenge.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA.IdPaese = null;
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
         }
     }
 }

@@ -93,6 +93,16 @@ namespace FatturaElettronica.Test.Ordinaria
             Challenge.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
             result = Validator.Validate(Challenge);
             Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
+            
+            Challenge.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = "";
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
+            
+            Challenge.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA.IdPaese = "IT";
+            Challenge.CessionarioCommittente.DatiAnagrafici.IdFiscaleIVA.IdPaese = null;
+            result = Validator.Validate(Challenge);
+            Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00476"));
         }
     }
 }

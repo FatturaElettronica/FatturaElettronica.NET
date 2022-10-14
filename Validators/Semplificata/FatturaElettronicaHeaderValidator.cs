@@ -26,10 +26,14 @@ namespace FatturaElettronica.Validators.Semplificata
 
         private static bool HeaderValidateAgainstError00476(FatturaElettronicaHeader header)
         {
-            var idCedente = header.CedentePrestatore.IdFiscaleIVA;
-            var idCommittente = header.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA;
+            var idCedente = header.CedentePrestatore.IdFiscaleIVA.IdPaese;
+            var idCommittente =
+                header.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA is null ||
+                header.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA.IsEmpty()
+                    ? ""
+                    : header.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA.IdPaese;
 
-            return (idCedente.IdPaese == "IT" || (idCommittente is not null && idCommittente.IdPaese == "IT"));
+            return idCedente == "IT" || idCommittente is "IT" or "";
         }
     }
 }
