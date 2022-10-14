@@ -2,7 +2,9 @@
 
 ## In Development
 
-- *hic sunt leones*
+- Fix: controllo 00473; TD28 può essere usato solo se IdPaese del cedente è uguale a "SM" ([#385][385])
+ 
+[385]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/385
  
 ## Stable
 

@@ -74,13 +74,20 @@ namespace FatturaElettronica.Validators
         {
             var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
 
+            if (fatturaOrdinaria.FatturaElettronicaBody.Any(x =>
+                    x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD28") &&
+                cedente.IdFiscaleIVA.IdPaese != "SM")
+                return false;
+
             if (cedente.IdFiscaleIVA.IdPaese != "IT")
                 return true;
 
             var tipiDocumento = new[] { "TD17", "TD18", "TD19", "TD28" };
 
-            return fatturaOrdinaria.FatturaElettronicaBody.All(x =>
+            var success = fatturaOrdinaria.FatturaElettronicaBody.All(x =>
                 !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
+
+            return success;
         }
 
         private static bool FatturaValidateAgainstError00472(FatturaOrdinaria fatturaOrdinaria)
@@ -169,7 +176,7 @@ namespace FatturaElettronica.Validators
                 return true;
             }
 
-            return body.DatiBeniServizi.DatiRiepilogo.All(x => 
+            return body.DatiBeniServizi.DatiRiepilogo.All(x =>
                 x.AliquotaIVA > 0 && string.IsNullOrEmpty(x.Natura) ||
                 x.AliquotaIVA == 0 && !string.IsNullOrEmpty(x.Natura));
         }
