@@ -21,19 +21,13 @@ namespace FatturaElettronica.Validators.Semplificata
 
         private static bool FatturaValidateAgainstError00471(FatturaSemplificata fatturaSemplificata)
         {
-            var cedente = fatturaSemplificata.FatturaElettronicaHeader.CedentePrestatore;
+            var cedente = fatturaSemplificata.FatturaElettronicaHeader.CedentePrestatore.IdFiscaleIVA.ToString();
             var cessionario =
-                fatturaSemplificata.FatturaElettronicaHeader.CessionarioCommittente;
+                fatturaSemplificata.FatturaElettronicaHeader.CessionarioCommittente.IdentificativiFiscali.IdFiscaleIVA
+                    .ToString();
 
-            if (cedente.IdFiscaleIVA?.ToString() != cessionario.IdentificativiFiscali.IdFiscaleIVA?.ToString())
-                return true;
-            if (cedente.CodiceFiscale != cessionario.IdentificativiFiscali.CodiceFiscale)
-                return true;
-
-            var tipiDocumento = new[] { "TD07" };
-
-            return fatturaSemplificata.FatturaElettronicaBody.All(x =>
-                !tipiDocumento.Contains(x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento));
+            return cedente != cessionario || fatturaSemplificata.FatturaElettronicaBody.All(x =>
+                x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento != "TD07");
         }
     }
 }

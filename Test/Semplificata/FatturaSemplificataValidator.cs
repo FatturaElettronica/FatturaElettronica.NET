@@ -50,9 +50,6 @@ namespace FatturaElettronica.Test.Semplificata
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
                 Challenge.FatturaElettronicaBody.Add(body);
 
-                cedente.CodiceFiscale = null;
-                cessionario.IdentificativiFiscali.CodiceFiscale = null;
-
                 cedente.IdFiscaleIVA = id123;
                 cessionario.IdentificativiFiscali.IdFiscaleIVA = id123;
                 var result = Challenge.Validate();
@@ -64,14 +61,8 @@ namespace FatturaElettronica.Test.Semplificata
 
                 cedente.IdFiscaleIVA = new();
                 cessionario.IdentificativiFiscali.IdFiscaleIVA = new();
-                cedente.CodiceFiscale = "123";
-                cessionario.IdentificativiFiscali.CodiceFiscale = "123";
                 result = Challenge.Validate();
                 Assert.IsNotNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
-
-                cessionario.IdentificativiFiscali.CodiceFiscale = "456";
-                result = Challenge.Validate();
-                Assert.IsNull(result.Errors.FirstOrDefault(x => x.ErrorCode == "00471"));
             }
         }
     }
