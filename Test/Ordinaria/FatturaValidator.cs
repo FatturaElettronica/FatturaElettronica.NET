@@ -105,6 +105,10 @@ namespace FatturaElettronica.Test.Ordinaria
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = tipoDocumento;
                 Challenge.FatturaElettronicaBody.Add(body);
 
+                cedente.CodiceFiscale="123";
+                cessionario.CodiceFiscale = "123";
+                Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                
                 cedente.CodiceFiscale = null;
                 cessionario.CodiceFiscale = null;
                 
@@ -124,6 +128,7 @@ namespace FatturaElettronica.Test.Ordinaria
 
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
                 Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                
             }
         }
 

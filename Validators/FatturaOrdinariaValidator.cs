@@ -103,6 +103,10 @@ namespace FatturaElettronica.Validators
             var cessionario =
                 fatturaOrdinaria.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici;
 
+            if (cessionario.IdFiscaleIVA.IsEmpty() && cessionario.CodiceFiscale == cedente.CodiceFiscale)
+                // Vedi https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/388
+                return true;
+            
             return cedente.IdFiscaleIVA?.ToString() == cessionario.IdFiscaleIVA?.ToString() &&
                    cedente.CodiceFiscale == cessionario.CodiceFiscale;
         }

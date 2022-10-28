@@ -2,8 +2,10 @@
 
 ## In Development
 
-- *hic sunt leones*
- 
+- Fix: controllo 00472; supporto per ditta individuale che si fattura un prodotto ([#388][388])
+
+[388]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/388
+
 ## Stable
 
 v 3.4.5
