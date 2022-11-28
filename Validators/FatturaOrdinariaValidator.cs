@@ -113,10 +113,10 @@ namespace FatturaElettronica.Validators
 
         private static bool FatturaValidateAgainstError00471(FatturaOrdinaria fatturaOrdinaria)
         {
-            var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici.IdFiscaleIVA
-                .ToString();
+            var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici
+                .IdFiscaleIVA?.ToString();
             var cessionario = fatturaOrdinaria.FatturaElettronicaHeader.CessionarioCommittente.DatiAnagrafici
-                .IdFiscaleIVA.ToString();
+                .IdFiscaleIVA?.ToString();
 
             var tipiDocumento = new[]
             {
