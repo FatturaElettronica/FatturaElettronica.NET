@@ -4,6 +4,7 @@
 
 - Fix: controlli 00423 e 00421: tolleranza di 1 centesimo deve essere 'larga' ([#394][394])
 - Test ora girano su .NET 7
+- CI: aggiornate GitHub actions per non usare più Node 12 ora obsoleto
  
 [394]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/394
  
