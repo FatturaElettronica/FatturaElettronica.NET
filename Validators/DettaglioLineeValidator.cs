@@ -61,8 +61,8 @@ namespace FatturaElettronica.Validators
                 if (sconto.Importo == null && sconto.Percentuale == null) continue;
 
                 var importo =
-                    (decimal) (sconto.Importo != null
-                        ? Math.Abs((decimal) sconto.Importo)
+                    (decimal)(sconto.Importo != null
+                        ? Math.Abs((decimal)sconto.Importo)
                         : sconto.Percentuale != null
                             ? prezzo * sconto.Percentuale / 100
                             : prezzo);
@@ -74,7 +74,7 @@ namespace FatturaElettronica.Validators
             }
 
             return Math.Abs(Math.Round(challenge.PrezzoTotale, 2, MidpointRounding.AwayFromZero)
-                            - prezzo * (challenge.Quantita ?? 1)) <= 0.01m;
+            - prezzo * (challenge.Quantita ?? 1)) <= 0.019m;
         }
     }
 }

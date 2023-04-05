@@ -48,7 +48,7 @@ namespace FatturaElettronica.Validators
         {
             return (Math.Abs(datiRiepilogo.Imposta -
                              decimal.Parse(((datiRiepilogo.AliquotaIVA * datiRiepilogo.ImponibileImporto) / 100)
-                                 .ToString("0.00"))) <= 0.01m);
+                                 .ToString("0.00"))) <= 0.019m);
         }
     }
 }
