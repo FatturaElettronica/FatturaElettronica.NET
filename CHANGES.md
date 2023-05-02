@@ -2,7 +2,9 @@
 
 ## In Development
 
-- *hic sunt leones*
+- Fix: Se IdFiscaleIva di Cessionario e Cedente corrispondono, la fattura deve convalidare anche se in Cessionario è assente il codice fiscale. ([#396][396])
+ 
+[396]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/396
 
 ## Stable
 

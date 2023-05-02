@@ -108,7 +108,7 @@ namespace FatturaElettronica.Test.Ordinaria
                 cedente.CodiceFiscale="123";
                 cessionario.CodiceFiscale = "123";
                 Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
-                
+
                 cedente.CodiceFiscale = null;
                 cessionario.CodiceFiscale = null;
                 
@@ -120,14 +120,23 @@ namespace FatturaElettronica.Test.Ordinaria
                 Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
                 cedente.CodiceFiscale = "123";
-                cedente.CodiceFiscale = "456";
+                cessionario.CodiceFiscale = "456";
                 Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
                 cedente.CodiceFiscale = "123";
                 Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
 
+                // https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/396
+                cedente.IdFiscaleIVA = id123;
+                cessionario.IdFiscaleIVA = id123;
+                cessionario.CodiceFiscale = null;
+                Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                cessionario.CodiceFiscale = "";
+                Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                
                 body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD01";
                 Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00472"));
+                
                 
             }
         }
