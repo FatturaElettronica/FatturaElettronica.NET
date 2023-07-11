@@ -2,7 +2,7 @@
 
 ## In Development
 
-- Fix: typos nella documentazione [#399]
+- Fix: typos nella documentazione ([#399][399])
 
 [399]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/399
 
