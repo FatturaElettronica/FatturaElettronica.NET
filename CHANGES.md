@@ -2,9 +2,10 @@
 
 ## In Development
 
-- *hic sunt leons*
+- Fix: typos nella documentazione [#399]
 
- 
+[399]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/399
+
 ## Stable
 
 v 3.4.9
