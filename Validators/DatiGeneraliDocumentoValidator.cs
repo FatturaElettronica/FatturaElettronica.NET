@@ -2,6 +2,7 @@
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
 using FatturaElettronica.Tabelle;
 using System.Linq;
+using FatturaElettronica.Extensions;
 
 namespace FatturaElettronica.Validators
 {
@@ -46,9 +47,9 @@ namespace FatturaElettronica.Validators
                 .Equal("SI")
                 .When(x => !string.IsNullOrEmpty(x.Art73));
             RuleFor(x => x.ImportoTotaleDocumento)
-                .ScalePrecision(2, 13);
+                .PrecisionScale(13, 2, false);
             RuleFor(x => x.Arrotondamento)
-                .ScalePrecision(2, 13);
+                .PrecisionScale(13, 2, false);
         }
     }
 }
