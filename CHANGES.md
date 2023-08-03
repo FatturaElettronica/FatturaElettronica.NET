@@ -2,13 +2,20 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+v 3.4.10
+-------
+
+Released on August 3, 2023
+
 - Fix: Scarto Fattura se presenta uno sconto a 3+ cifre decimali ([#401][401])
 - Fix: typos nella documentazione ([#399][399])
 
 [401]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/401
 [399]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/399
-
-## Stable
 
 v 3.4.9
 -------
