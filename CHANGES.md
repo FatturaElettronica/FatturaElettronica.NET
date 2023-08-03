@@ -2,8 +2,10 @@
 
 ## In Development
 
+- Fix: Scarto Fattura se presenta uno sconto a 3+ cifre decimali ([#401][401])
 - Fix: typos nella documentazione ([#399][399])
 
+[401]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/401
 [399]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/399
 
 ## Stable

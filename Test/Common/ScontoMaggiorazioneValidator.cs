@@ -49,5 +49,10 @@ namespace FatturaElettronica.Test.Common
         {
             AssertDecimalType(x => x.Importo, 8, 19);
         }
+        [TestMethod]
+        public void Percentuale()
+        {
+            AssertDecimalType(x => x.Percentuale, 2, 6);
+        }
     }
 }

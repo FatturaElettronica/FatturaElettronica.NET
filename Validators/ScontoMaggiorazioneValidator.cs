@@ -17,6 +17,8 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00437");
             RuleFor(x => x.Importo)
                 .ScalePrecision8DecimalType();
+            RuleFor(x => x.Percentuale)
+                .ScalePrecisionPercentualeDecimalType();
         }
     }
 }
