@@ -31,8 +31,9 @@ Collaboratori
 - Seba
 - ZephirPFS47
 - gminutillo
+- ilserd
 - username77
- 
+
 [NI]: https://nicolaiarocci.com
 [gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET
 [li]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt

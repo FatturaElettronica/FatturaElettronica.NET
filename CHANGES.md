@@ -6,6 +6,27 @@
  
 ## Stable
 
+v 3.4.10
+-------
+
+Released on August 3, 2023
+
+- Fix: Scarto Fattura se presenta uno sconto a 3+ cifre decimali ([#401][401])
+- Fix: typos nella documentazione ([#399][399])
+
+[401]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/401
+[399]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/399
+
+v 3.4.9
+-------
+
+Released on June 19, 2023
+
+- Fix: [Microsoft Security Advisory CVE-2023-29331: .NET Denial of Service vulnerability](https://github.com/advisories/GHSA-555c-2p6r-68mm)
+- Fix: [Improper Handling of Exceptional Conditions in Newtonsoft.Json](https://github.com/advisories/GHSA-5crp-9r3c-p9vr)
+- Fix: [.NET Core Information Disclosure](https://github.com/advisories/GHSA-7jgj-8wvc-jh57)
+- Fix: [Regular Expression Denial of Service in System.Text.RegularExpressions](https://github.com/advisories/GHSA-cmhx-cq75-c4mj)
+
 v 3.4.8
 -------
 
