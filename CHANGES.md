@@ -56,8 +56,6 @@ Released on April 5, 2023
  
 [394]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/394
  
-## Stable
-
 v 3.4.6
 -------
 
