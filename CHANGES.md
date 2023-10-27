@@ -2,8 +2,10 @@
 
 ## In Development
 
-- *hic sunt leones*
- 
+- Fix: DettaglioLinee.NumeroLinea deve consentire solo valori da 1 a 9999 ([#403][403])
+
+[403]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/403
+
 ## Stable
 
 v 3.4.10

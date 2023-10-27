@@ -10,6 +10,10 @@ namespace FatturaElettronica.Validators
     {
         public DettaglioLineeValidator()
         {
+            RuleFor(x => x.NumeroLinea)
+                .GreaterThanOrEqualTo(1)
+                .LessThanOrEqualTo(9999)
+                .WithMessage("Valori consentiti 1-9999");
             RuleFor(x => x.TipoCessionePrestazione)
                 .SetValidator(new IsValidValidator<DettaglioLinee, string, TipoCessionePrestazione>())
                 .When(x => !string.IsNullOrEmpty(x.TipoCessionePrestazione));

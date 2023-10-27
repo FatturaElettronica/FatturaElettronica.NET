@@ -10,6 +10,26 @@ namespace FatturaElettronica.Test.Ordinaria
         DettaglioLineeValidator : BaseClass<DettaglioLinee, FatturaElettronica.Validators.DettaglioLineeValidator>
     {
         [TestMethod]
+        public void NumeroLineaValidatorMinMax()
+        {
+            Challenge.NumeroLinea = 0;
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.NumeroLinea);
+
+            Challenge.NumeroLinea = 10000;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.NumeroLinea);
+            
+            Challenge.NumeroLinea = 1;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.NumeroLinea);
+            
+            Challenge.NumeroLinea = 9999;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.NumeroLinea);
+            
+        }
+        [TestMethod]
         public void TipoCessionePrestazioneIsOptional()
         {
             AssertOptional(x => x.TipoCessionePrestazione);
