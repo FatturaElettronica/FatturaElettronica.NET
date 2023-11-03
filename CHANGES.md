@@ -2,9 +2,9 @@
 
 ## In Development
 
-- *his sunt leones*
+- Fix: CI workflow file rilasciato col package nuget ([#404][404])
 
-[403]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/403
+[404]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/404
 
 ## Stable
 
@@ -14,7 +14,9 @@ v 3.4.11
 Released on October 27, 2023
 
 - Fix: DettaglioLinee.NumeroLinea deve consentire solo valori da 1 a 9999 ([#403][403])
- 
+
+[403]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/403
+
 v 3.4.10
 --------
 

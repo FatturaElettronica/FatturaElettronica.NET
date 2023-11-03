@@ -18,28 +18,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="LICENSE.txt" Pack="true" PackagePath="\" />
-    <None Include="README.md" Pack="true" PackagePath="\" />
+    <None Include="LICENSE.txt" Pack="true" PackagePath="\"/>
+    <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include=".github\workflows\test.yml" Pack="false" PackagePath="\"/>
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="Tests\**" />
-    <Compile Remove="Test\**" />
-    <EmbeddedResource Remove="Tests\**" />
-    <EmbeddedResource Remove="Test\**" />
-    <None Remove="Tests\**" />
-    <None Remove="Test\**" />
+    <Compile Remove="Tests\**"/>
+    <Compile Remove="Test\**"/>
+    <EmbeddedResource Remove="Tests\**"/>
+    <EmbeddedResource Remove="Test\**"/>
+    <None Remove="Tests\**"/>
+    <None Remove="Test\**"/>
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.5.2" />
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.2" />
-    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0" />
-    <PackageReference Include="System.Text.Json" Version="7.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include=".github\workflows\test.yml" />
+    <PackageReference Include="FluentValidation" Version="11.5.2"/>
+    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="7.0.2"/>
+    <PackageReference Include="Portable.BouncyCastle" Version="1.9.0"/>
+    <PackageReference Include="System.Text.Json" Version="7.0.3"/>
   </ItemGroup>
 
 </Project>
