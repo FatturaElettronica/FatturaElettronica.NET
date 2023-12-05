@@ -2,13 +2,20 @@
 
 ## In Development
 
+- *hic sunt leones*
+
+## Stable
+
+v 3.4.12
+--------
+
+Released on December 5, 2023
+
 - Fix: Controllo validità campi Email e PEC ([#405][405])
 - Fix: CI workflow file rilasciato col package nuget ([#404][404])
 
 [405]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/405
 [404]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/404
-
-## Stable
 
 v 3.4.11
 --------
