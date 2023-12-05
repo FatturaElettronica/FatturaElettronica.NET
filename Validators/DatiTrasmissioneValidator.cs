@@ -36,6 +36,7 @@ namespace FatturaElettronica.Validators
                 .When(x => x.ContattiTrasmittente != null && !x.ContattiTrasmittente.IsEmpty());
             RuleFor(dt => dt.PECDestinatario)
                 .Length(7, 256)
+                .Matches(Constants.EmailRegex)
                 .When(x => !string.IsNullOrEmpty(x.PECDestinatario));
         }
     }

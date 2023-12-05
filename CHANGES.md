@@ -2,8 +2,10 @@
 
 ## In Development
 
+- Fix: Controllo validità campi Email e PEC ([#405][405])
 - Fix: CI workflow file rilasciato col package nuget ([#404][404])
 
+[405]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/405
 [404]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/404
 
 ## Stable

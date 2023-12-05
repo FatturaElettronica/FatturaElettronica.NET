@@ -97,10 +97,21 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
-        public void PECDestinatarioMinMaxLength()
+        public void PECDestinatarioIsOptional()
         {
-            Challenge.CodiceDestinatario = new('0', 7);
-            AssertMinMaxLength(x => x.PECDestinatario, 7, 256);
+            AssertOptional(x => x.PECDestinatario);
+        }
+
+        [TestMethod]
+        public void PECDestinatarioMustBeValid()
+        {
+            Challenge.PECDestinatario = "not really";
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PECDestinatario);
+            
+            Challenge.PECDestinatario = "maybe@we.can";
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario);
         }
     }
 }

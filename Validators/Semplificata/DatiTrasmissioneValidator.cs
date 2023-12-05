@@ -28,7 +28,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .When(dt => dt.FormatoTrasmissione == Defaults.FormatoTrasmissione.Semplificata)
                 .WithErrorCode("00311");
             RuleFor(dt => dt.PECDestinatario)
-                .Length(7, 256)
+                .Matches(Constants.EmailRegex)
                 .When(x => !string.IsNullOrEmpty(x.PECDestinatario));
         }
     }
