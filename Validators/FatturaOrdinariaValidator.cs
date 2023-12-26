@@ -30,7 +30,7 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00473(fattura))
                 .WithMessage(
-                    "Per il valore indicato nell’elemento TipoDocumento il valore presente nell’elemento IdPaese non è ammesso (i valori TD17, TD18, TD19 e TD28 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano. Nei casi di TD17 e TD19 è ammessa l’indicazione del valore ‘OO’ nell’elemento IdPaese per operazioni effettuate da soggetti residenti in Livigno e Campione d’Italia. Inoltre, nel caso del TD28, l’elemento IdPaese deve essere valorizzato con il valore SM)")
+                    "Per il valore indicato nell’elemento TipoDocumento il valore presente nell’elemento IdPaese non è ammesso (i valori TD17, TD18, TD19 e TD28 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano. Nei casi di TD17 e TD19 è ammessa l’indicazione del valore ‘OO’ nell’elemento IdPaese per operazioni effettuate da soggetti residenti in Livigno e Campione d’Italia.)")
                 .WithErrorCode("00473");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .SetValidator(new FatturaElettronicaBodyValidator());
@@ -73,11 +73,6 @@ namespace FatturaElettronica.Validators
         private static bool FatturaValidateAgainstError00473(FatturaOrdinaria fatturaOrdinaria)
         {
             var cedente = fatturaOrdinaria.FatturaElettronicaHeader.CedentePrestatore.DatiAnagrafici;
-
-            if (fatturaOrdinaria.FatturaElettronicaBody.Any(x =>
-                    x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD28") &&
-                cedente.IdFiscaleIVA.IdPaese != "SM")
-                return false;
 
             if (cedente.IdFiscaleIVA.IdPaese != "IT")
                 return true;

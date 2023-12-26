@@ -85,9 +85,6 @@ namespace FatturaElettronica.Test.Ordinaria
                 Assert.IsNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
             }
             
-            body.DatiGenerali.DatiGeneraliDocumento.TipoDocumento = "TD28";
-            cedente.IdFiscaleIVA = new() { IdPaese = "XX" };
-            Assert.IsNotNull(Challenge.Validate().Errors.FirstOrDefault(x => x.ErrorCode == "00473"));
         }
 
         [TestMethod]
