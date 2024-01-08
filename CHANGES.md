@@ -2,8 +2,10 @@
 
 ## In Development
 
-- *hic sunt leones*
-
+- Fix: Controllo 00473: recepite novità introdotte dalle [specifiche v1.8](https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.8) ([#407][407])
+ 
+[407]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/407 
+ 
 ## Stable
 
 v 3.4.12
