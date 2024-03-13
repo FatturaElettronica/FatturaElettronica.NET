@@ -2,8 +2,10 @@
 
 ## In Development
 
+- Fix: CVE-2023-29331. ([#411][411])
 - Fix: `GiorniTerminiPagamento`, `NumeroColli`, `RiferimentoNumeroLinea`, `RiferimentoFase` devono accettare solo valori inclusi nei rispettivi range numerici. ([#410][410])
  
+[411]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/411
 [410]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/410
 
 ## Stable
