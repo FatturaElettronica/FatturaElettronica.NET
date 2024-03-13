@@ -35,6 +35,8 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.FatturaPrincipale)
                 .SetValidator(new FatturaPrincipaleValidator())
                 .When(x => x.FatturaPrincipale != null && !x.FatturaPrincipale.IsEmpty());
+            RuleForEach(x => x.DatiSAL)
+                .SetValidator(new DatiSALValidator());
         }
     }
 }

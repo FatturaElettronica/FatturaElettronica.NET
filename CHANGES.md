@@ -2,8 +2,10 @@
 
 ## In Development
 
-- hic sunt leones
+- Fix: `GiorniTerminiPagamento`, `NumeroColli`, `RiferimentoNumeroLinea`, `RiferimentoFase` devono accettare solo valori inclusi nei rispettivi range numerici. ([#410][410])
  
+[410]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/410
+
 ## Stable
 
 ### v 3.4.13

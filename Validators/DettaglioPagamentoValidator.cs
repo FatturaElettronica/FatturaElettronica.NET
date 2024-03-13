@@ -61,6 +61,9 @@ namespace FatturaElettronica.Validators
                 .ScalePrecision2DecimalType();
             RuleFor(x => x.ImportoPagamento)
                 .ScalePrecision2DecimalType();
+            RuleFor(x => x.GiorniTerminiPagamento)
+                .InclusiveBetween(0, 999)
+                .WithMessage("Valori consentiti 0-999");
         }
     }
 }

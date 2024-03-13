@@ -27,6 +27,9 @@ namespace FatturaElettronica.Validators
                 .Length(1, 15)
                 .BasicLatinValidator()
                 .When(x => !string.IsNullOrEmpty(x.CodiceCIG));
+            RuleForEach(x => x.RiferimentoNumeroLinea)
+                .InclusiveBetween(1, 9999)
+                .WithMessage("Valori consentiti 1-9999");
         }
     }
 }

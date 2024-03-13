@@ -234,5 +234,25 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertDecimalType(x => x.ImportoPagamento, 2, 13);
         }
+        [TestMethod]
+        public void GiorniTerminiPagamentoMinMax()
+        {
+            Challenge.GiorniTerminiPagamento = -1;
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.GiorniTerminiPagamento);
+
+            Challenge.GiorniTerminiPagamento = 1000;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.GiorniTerminiPagamento);
+            
+            Challenge.GiorniTerminiPagamento = 1;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.GiorniTerminiPagamento);
+            
+            Challenge.GiorniTerminiPagamento = 999;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.GiorniTerminiPagamento);
+            
+        }
     }
 }

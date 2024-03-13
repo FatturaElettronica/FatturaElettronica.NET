@@ -37,6 +37,9 @@ namespace FatturaElettronica.Validators
                 .LessThanOrEqualTo(9999.99m);
             RuleFor(x => x.PesoNetto)
                 .LessThanOrEqualTo(9999.99m);
+            RuleFor(x=>x.NumeroColli)
+                .InclusiveBetween(1,9999)
+                .WithMessage("Valori consentiti 1-9999");
         }
     }
 }

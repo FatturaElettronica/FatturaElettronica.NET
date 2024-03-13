@@ -11,6 +11,9 @@ namespace FatturaElettronica.Validators
                 .NotEmpty()
                 .BasicLatinValidator()
                 .Length(1, 20);
+            RuleForEach(x => x.RiferimentoNumeroLinea)
+                .InclusiveBetween(1, 9999)
+                .WithMessage("Valori consentiti 1-9999");
         }
     }
 }

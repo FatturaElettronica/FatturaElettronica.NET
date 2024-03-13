@@ -21,7 +21,7 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Challenge.DatiGeneraliDocumento.Data = DateTime.Now.AddDays(-1);
             Challenge.DatiFattureCollegate.Add(
-                new() {Data = DateTime.Now});
+                new() { Data = DateTime.Now });
 
             var r = Validator.Validate(Challenge);
             Assert.IsFalse(r.IsValid);
@@ -87,6 +87,12 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             Validator.ShouldHaveDelegatePropertyChildValidator(x => x.FatturaPrincipale,
                 typeof(FatturaElettronica.Validators.FatturaPrincipaleValidator));
+        }
+
+        [TestMethod]
+        public void DatiSALHasChildValidator()
+        {
+            Validator.ShouldHaveChildValidator(x => x.DatiSAL, typeof(Validators.DatiSALValidator));
         }
     }
 }

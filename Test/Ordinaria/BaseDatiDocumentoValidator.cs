@@ -1,4 +1,6 @@
-﻿using FluentValidation;
+﻿using System.Collections.Generic;
+using FluentValidation;
+using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FatturaElettronica.Test.Ordinaria
@@ -97,6 +99,26 @@ namespace FatturaElettronica.Test.Ordinaria
         public void CodiceCIGMustBeBasicLatin()
         {
             AssertMustBeBasicLatin(x => x.CodiceCIG);
+        }
+
+        [TestMethod]
+        public void RiferimentoNumeroLineaValidatorMinMax()
+        {
+            Challenge.RiferimentoNumeroLinea = new() { -1 };
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.RiferimentoNumeroLinea);
+
+            Challenge.RiferimentoNumeroLinea = new() { 10000 };
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.RiferimentoNumeroLinea);
+
+            Challenge.RiferimentoNumeroLinea = new() { 1 };
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNumeroLinea);
+
+            Challenge.RiferimentoNumeroLinea = new() { 9999 };
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.RiferimentoNumeroLinea);
         }
     }
 }

@@ -130,5 +130,25 @@ namespace FatturaElettronica.Test.Ordinaria
             result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(x => x.PesoLordo);
         }
+
+        [TestMethod]
+        public void NumeroColliMinMax()
+        {
+            Challenge.NumeroColli = -1;
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.NumeroColli);
+
+            Challenge.NumeroColli = 10000;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.NumeroColli);
+
+            Challenge.NumeroColli = 1;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.NumeroColli);
+
+            Challenge.NumeroColli = 9999;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.NumeroColli);
+        }
     }
 }
