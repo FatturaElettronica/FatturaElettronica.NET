@@ -2,15 +2,24 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+### v 3.4.14
+
+Released on March 14, 2024
+
 - Fix: CVE-2023-29331. ([#411][411])
 - Fix: `GiorniTerminiPagamento`, `NumeroColli`, `RiferimentoNumeroLinea`, `RiferimentoFase` devono accettare solo valori inclusi nei rispettivi range numerici. ([#410][410])
- 
+
 [411]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/411
 [410]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/410
 
-## Stable
-
 ### v 3.4.13
+
+Released on January 8, 2024
+
 - Fix: Controllo 00473: recepite novità introdotte dalle [specifiche v1.8](https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.8) ([#407][407])
 
 [407]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/407
