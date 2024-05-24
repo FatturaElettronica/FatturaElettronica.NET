@@ -2,11 +2,17 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+### v 3.4.15
+
+Released on May 24, 2024
+
 - Fix: Nazione, valore di default non viene de-serializzato da XML ([#413][413])
 
 [413]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/413
- 
-## Stable
 
 ### v 3.4.14
 
