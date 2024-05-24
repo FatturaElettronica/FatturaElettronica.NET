@@ -1,4 +1,5 @@
-﻿using System.Xml;
+﻿using System.ComponentModel;
+using System.Xml;
 
 namespace FatturaElettronica.Common
 {
@@ -52,6 +53,7 @@ namespace FatturaElettronica.Common
         /// Codice della nazione espresso secondo lo standard ISO 3166-1 alpha-2 code.
         /// </summary>
         [Core.DataProperty]
+        [DefaultValue("IT")]
         public string Nazione { get; set; }
     }
 }
