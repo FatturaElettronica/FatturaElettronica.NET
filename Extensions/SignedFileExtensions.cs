@@ -3,8 +3,6 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
-using Org.BouncyCastle.Cms;
-using Org.BouncyCastle.X509.Store;
 
 namespace FatturaElettronica.Extensions
 {
@@ -18,7 +16,7 @@ namespace FatturaElettronica.Extensions
                 using var inputStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
                 ReadXmlSigned(fattura, inputStream, validateSignature);
             }
-            catch (CmsException)
+            catch (CryptographicException)
             {
                 ReadXmlSignedBase64(fattura, filePath, validateSignature);
             }
@@ -39,36 +37,44 @@ namespace FatturaElettronica.Extensions
 
         public static MemoryStream ParseSignature(Stream stream, bool validateSignature)
         {
-            var signedFile = new CmsSignedData(stream);
+            static byte[] ReadAllBytes(Stream stream)
+            {
+                if (stream is MemoryStream mem)
+                    return mem.ToArray();
+
+                using MemoryStream ms = new MemoryStream();
+                byte[] buffer = new byte[8192];
+                int bytesRead;
+
+                while ((bytesRead = stream.Read(buffer, 0, buffer.Length)) > 0)
+                    ms.Write(buffer, 0, bytesRead);
+
+                return ms.ToArray();
+            }
+
+            var fileContent = ReadAllBytes(stream);
+            ContentInfo content = new ContentInfo(fileContent);
+            var signedFile = new SignedCms(SubjectIdentifierType.IssuerAndSerialNumber, content, false);
+            signedFile.Decode(fileContent);
+
             if (validateSignature)
             {
-                var certStore = signedFile.GetCertificates("Collection");
-                var certs = certStore.GetMatches(new X509CertStoreSelector());
-                var signerStore = signedFile.GetSignerInfos();
-                var signers = signerStore.GetSigners();
-
-                foreach (var tempCertification in certs)
+                try
                 {
-                    var certification = tempCertification as Org.BouncyCastle.X509.X509Certificate;
-
-                    foreach (var tempSigner in signers)
-                    {
-                        var signer = tempSigner as SignerInformation;
-                        if (!signer.Verify(certification.GetPublicKey()))
-                        {
-                            throw new SignatureException(Resources.ErrorMessages.SignatureException);
-                        }
-                    }
+                    signedFile.CheckSignature(true);
+                }
+                catch (CryptographicException ce)
+                {
+                    throw new SignatureException(Resources.ErrorMessages.SignatureException, ce);
                 }
             }
 
-            var memoryStream = new MemoryStream();
-            signedFile.SignedContent.Write(memoryStream);
+            MemoryStream memoryStream = new MemoryStream();
+            memoryStream.Write(signedFile.ContentInfo.Content, 0, signedFile.ContentInfo.Content.Length);
             return memoryStream;
         }
 
-        public static void WriteXmlSigned(this FatturaBase fattura, string pfxFile, string pfxPassword,
-            string p7mFilePath)
+        public static void WriteXmlSigned(this FatturaBase fattura, string pfxFile, string pfxPassword, string p7mFilePath)
         {
             if (!File.Exists(pfxFile))
                 throw new SignatureException(Resources.ErrorMessages.PfxIsMissing);

@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
 using System.Xml;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
-using Org.BouncyCastle.Cms;
 using BaseClassSerializable = FatturaElettronica.Core.BaseClassSerializable;
 
 namespace FatturaElettronica
@@ -96,7 +96,7 @@ namespace FatturaElettronica
                 newStream.Position = 0;
                 return CreateInstanceFromXml(newStream);
             }
-            catch (CmsException)
+            catch (CryptographicException)
             {
                 stream.Position = 0;
                 return CreateInstanceFromXmlSignedBase64(stream, validateSignature);
