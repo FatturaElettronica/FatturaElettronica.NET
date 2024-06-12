@@ -27,6 +27,7 @@ Collaboratori
 - Marco Tessitore
 - Massimo Linossi
 - Michael Mairegger
+- Paolo Tatoli
 - Puma
 - Seba
 - ZephirPFS47
