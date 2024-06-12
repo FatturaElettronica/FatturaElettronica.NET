@@ -3,6 +3,9 @@
 ## In Development
 
 - Abbandonata dipendenza da Portable.BouncyCastle ([#414][414])
+- Bump Microsoft.NET.Test.Sdk a v17.6.2
+- Bump MSTest.TestAdapter a v3.4.3
+- Bump MSTest.TestFramework a v3.4.3
 - Bump FluentValidation a v11.9.2
  
 [414]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/414
