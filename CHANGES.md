@@ -2,7 +2,8 @@
 
 ## In Development
 
-- Drop Portable.BouncyCastle dependency ([#414][414])
+- Abbandonata dipendenza da Portable.BouncyCastle ([#414][414])
+- Bump FluentValidation a v11.9.2
  
 [414]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/414
 
