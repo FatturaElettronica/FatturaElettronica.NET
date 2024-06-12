@@ -2,8 +2,10 @@
 
 ## In Development
 
-- *hic sunt leones*
+- Drop Portable.BouncyCastle dependency ([#414][414])
  
+[414]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/414
+
 ## Stable
 
 ### v 3.4.15
