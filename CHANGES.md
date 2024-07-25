@@ -2,14 +2,20 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+### v 3.4.16
+
+Released on July 25, 2024
+
 - Abbandonata dipendenza da Portable.BouncyCastle ([#414][414])
 - Bump Microsoft.NET.Test.Sdk a v17.6.2
 - Bump MSTest.TestAdapter a v3.4.3
 - Bump MSTest.TestFramework a v3.4.3
- 
-[414]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/414
 
-## Stable
+[414]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/414
 
 ### v 3.4.15
 
