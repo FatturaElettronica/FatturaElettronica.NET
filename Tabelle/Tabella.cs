@@ -12,7 +12,7 @@ namespace FatturaElettronica.Tabelle
         private static readonly ConcurrentDictionary<string, HashSet<string>> CodiciCache = new();
 
         public string Nome { get; set; }
-        public string Codice { get; set; }
+        public string Codice { get; protected internal set; }
         public string Descrizione { get { return Codice + " " + Nome; } }
         public HashSet<string> Codici
         {
