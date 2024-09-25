@@ -1,6 +1,5 @@
-﻿using System.Globalization;
-using System.Linq;
-using System.Threading;
+﻿using System.Linq;
+using FatturaElettronica.Tabelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FatturaElettronica.Test.Tabelle;
@@ -9,27 +8,40 @@ namespace FatturaElettronica.Test.Tabelle;
 public class EsigibilitaIVATests
 {
     [TestMethod]
-    public void Test()
+    public void CondizioniPagamento() => Test1<CondizioniPagamento, CondizioniPagamentoV2>();
+
+    [TestMethod]
+    public void EsigibilitaIVA() => Test1<EsigibilitaIVAV2, EsigibilitaIVAV2>();
+    
+    [TestMethod]
+    public void SocioUnico() => Test1<SocioUnico, SocioUnicoV2>();
+    
+    [TestMethod]
+    public void SoggettoEmittente() => Test1<SoggettoEmittente, SoggettoEmittenteV2>();
+    
+    [TestMethod]
+    public void StatoLiquidazione() => Test1<StatoLiquidazione, StatoLiquidazioneV2>();
+    
+    [TestMethod]
+    public void TipoCessionePrestazione() => Test1<TipoCessionePrestazione, TipoCessionePrestazioneV2>();
+    
+    [TestMethod]
+    public void ScontoMaggiorazione() => Test1<ScontoMaggiorazione, ScontoMaggiorazioneV2>();
+    
+    [TestMethod]
+    public void TipoDocumentoSemplificata() => Test1<TipoDocumentoSemplificata, TipoDocumentoSemplificataV2>();
+    
+    [TestMethod]
+    public void TipoRitenuta() => Test1<TipoRitenuta, TipoRitenutaV2>();
+
+    private void Test1<T1, T2>()
+        where T1 : Tabella, new()
+        where T2 : Tabella, new()
     {
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo("it");
-        var esigibilitaIVA = new FatturaElettronica.Tabelle.EsigibilitaIVA();
-        var list = esigibilitaIVA.List.OrderBy(e => e.Codice).ToList();
+        var tabellaV1 = new T1();
+        var tabellaV2 = new T2();
 
-        Assert.AreEqual(3, list.Count);
-        Assert.AreEqual(list[0].Codice, "D");
-        Assert.AreEqual(list[1].Codice, "I");
-        Assert.AreEqual(list[2].Codice, "S");
-
-        Assert.AreEqual(list[0].Nome, "IVA ad esigibilità differita");
-        Assert.AreEqual(list[1].Nome, "IVA ad esigibilità immediata");
-        Assert.AreEqual(list[2].Nome, "scissione dei pagamenti");
-
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo("de");
-        esigibilitaIVA = new FatturaElettronica.Tabelle.EsigibilitaIVA();
-        list = esigibilitaIVA.List.OrderBy(e => e.Codice).ToList();
-
-        Assert.AreEqual(list[0].Nome, "MwSt. mit aufgeschobener Steuerschuld");
-        Assert.AreEqual(list[1].Nome, "MwSt. sofort zahlbar");
-        Assert.AreEqual(list[2].Nome, "Zahlungsaufteilung");
+        CollectionAssert.AreEquivalent(tabellaV1.Codici.ToArray(), tabellaV2.Codici.ToArray());
+        CollectionAssert.AreEquivalent(tabellaV1.List.Select(e => e.Nome).ToArray(), tabellaV2.List.Select(e => e.Nome).ToArray());
     }
 }

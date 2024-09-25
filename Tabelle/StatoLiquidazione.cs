@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class StatoLiquidazione : Tabella
     {
@@ -12,5 +14,10 @@
                 };
             }
         }
+    }
+    
+    public class StatoLiquidazioneV2 : TabellaV2<StatoLiquidazioneV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.StatoLiquidazione.ResourceManager;
     }
 }

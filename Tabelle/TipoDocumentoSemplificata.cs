@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class TipoDocumentoSemplificata : Tabella
     {
@@ -15,5 +17,10 @@
 
             }
         }
+    }
+    
+    public class TipoDocumentoSemplificataV2 : TabellaV2<TipoDocumentoSemplificataV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.TipoDocumentoSemplificata.ResourceManager;
     }
 }

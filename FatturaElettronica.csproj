@@ -40,6 +40,78 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EsigibilitaIVA.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Update="Resources\CondizioniPagamento.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>CondizioniPagamento.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\CondizioniPagamento.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CondizioniPagamento.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Resources\SocioUnico.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SocioUnico.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\SocioUnico.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SocioUnico.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Resources\SoggettoEmittente.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SoggettoEmittente.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\SoggettoEmittente.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SoggettoEmittente.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Resources\StatoLiquidazione.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StatoLiquidazione.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\StatoLiquidazione.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>StatoLiquidazione.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Resources\TipoCessionePrestazione.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoCessionePrestazione.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\TipoCessionePrestazione.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TipoCessionePrestazione.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Resources\ScontoMaggiorazione.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ScontoMaggiorazione.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\ScontoMaggiorazione.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ScontoMaggiorazione.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Resources\TipoDocumentoSemplificata.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoDocumentoSemplificata.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\TipoDocumentoSemplificata.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TipoDocumentoSemplificata.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Update="Resources\TipoRitenuta.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TipoRitenuta.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\TipoRitenuta.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>TipoRitenuta.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

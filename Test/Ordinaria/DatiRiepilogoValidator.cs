@@ -70,7 +70,7 @@ namespace FatturaElettronica.Test.Ordinaria
         [TestMethod]
         public void EsigibilitaIVAOnlyAcceptsTableValues()
         {
-            AssertOnlyAcceptsTableValues<EsigibilitaIVA>(x => x.EsigibilitaIVA);
+            AssertOnlyAcceptsTableValues<FatturaElettronica.Tabelle.EsigibilitaIVA>(x => x.EsigibilitaIVA);
         }
 
         [TestMethod]

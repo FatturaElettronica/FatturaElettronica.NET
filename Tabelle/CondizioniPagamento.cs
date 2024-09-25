@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class CondizioniPagamento : Tabella
     {
@@ -13,5 +15,10 @@
                 };
             }
         }
+    }
+    
+    public class CondizioniPagamentoV2 : TabellaV2<CondizioniPagamentoV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.CondizioniPagamento.ResourceManager;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class TipoCessionePrestazione : Tabella
     {
@@ -14,5 +16,10 @@
                 };
             } 
         }
+    }
+    
+    public class TipoCessionePrestazioneV2 : TabellaV2<TipoCessionePrestazioneV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.TipoCessionePrestazione.ResourceManager;
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class ScontoMaggiorazione : Tabella
     {
@@ -13,5 +15,10 @@
                 };
             }
         }
+    }
+    
+    public class ScontoMaggiorazioneV2 : TabellaV2<ScontoMaggiorazioneV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.ScontoMaggiorazione.ResourceManager;
     }
 }

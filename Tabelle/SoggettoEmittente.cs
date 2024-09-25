@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class SoggettoEmittente : Tabella
     {
@@ -13,5 +15,10 @@
                 };
             }
         }
+    }
+    
+    public class SoggettoEmittenteV2 : TabellaV2<SoggettoEmittenteV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.SoggettoEmittente.ResourceManager;
     }
 }

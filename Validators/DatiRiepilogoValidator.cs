@@ -28,7 +28,7 @@ namespace FatturaElettronica.Validators
                 .Must((challenge, _) => ImpostaValidateAgainstError00421(challenge))
                 .WithErrorCode("00421");
             RuleFor(x => x.EsigibilitaIVA)
-                .SetValidator(new IsValidValidator<DatiRiepilogo, string, EsigibilitaIVA>())
+                .SetValidator(new IsValidValidator<DatiRiepilogo, string, Tabelle.EsigibilitaIVA>())
                 .When(x => !string.IsNullOrEmpty(x.EsigibilitaIVA));
             RuleFor(x => x.RiferimentoNormativo)
                 .Length(1, 100)
