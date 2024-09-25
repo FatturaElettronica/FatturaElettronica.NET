@@ -13,43 +13,58 @@ namespace FatturaElettronica.Tabelle
 
         public string Nome { get; set; }
         public string Codice { get; protected internal set; }
-        public string Descrizione { get { return Codice + " " + Nome; } }
+
+        public string Descrizione
+        {
+            get { return Codice + " " + Nome; }
+        }
+
         public HashSet<string> Codici
         {
             get { return CodiciCache.GetOrAdd(GetType().Name, n => new(List.Select(l => l.Codice).Distinct())); }
         }
+
         public abstract Tabella[] List { get; }
     }
 
     public abstract class TabellaV2<T> : Tabella where T : Tabella, new()
     {
+        private Lazy<T[]> _lazyList;
+
+        protected TabellaV2()
+        {
+            _lazyList = new Lazy<T[]>(LoadResources);
+        }
+
         protected abstract ResourceManager ResourceManager { get; }
 
-        public override Tabella[] List
+        private T[] LoadResources()
         {
-            get
+            var resourceSet = ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
+            var enumerator = resourceSet.GetEnumerator();
+            using var enumerator1 = enumerator as IDisposable;
+
+            var count = 0;
+            while (enumerator.MoveNext())
             {
-                var resourceSet = ResourceManager.GetResourceSet(CultureInfo.CurrentUICulture, true, true);
-                var enumerator = resourceSet.GetEnumerator();
-                using var enumerator1 = enumerator as IDisposable;
-
-                var count = 0;
-                while (enumerator.MoveNext())
-                {
-                    count++;
-                }
-
-                var resourcesArray = new T[count];
-                enumerator.Reset();
-                var index = 0;
-                while (enumerator.MoveNext())
-                {
-                    resourcesArray[index] = new T { Codice = enumerator.Key.ToString(), Nome = enumerator.Value.ToString() };
-                    index++;
-                }
-
-                return resourcesArray;
+                count++;
             }
+
+            var resourcesArray = new T[count];
+            enumerator.Reset();
+            var index = 0;
+            while (enumerator.MoveNext())
+            {
+                resourcesArray[index] = new T
+                {
+                    Codice = enumerator.Key.ToString(), Nome = enumerator.Value.ToString()
+                };
+                index++;
+            }
+
+            return resourcesArray;
         }
+
+        public override Tabella[] List => _lazyList.Value;
     }
 }
