@@ -42,6 +42,6 @@ public class EsigibilitaIVATests
         var tabellaV2 = new T2();
 
         CollectionAssert.AreEquivalent(tabellaV1.Codici.ToArray(), tabellaV2.Codici.ToArray());
-        CollectionAssert.AreEquivalent(tabellaV1.List.Select(e => e.Nome).ToArray(), tabellaV2.List.Select(e => e.Nome).ToArray());
+        CollectionAssert.AreEquivalent(tabellaV1.List.Select(e => e.Nome + e.Descrizione).ToArray(), tabellaV2.List.Select(e => e.Nome + e.Descrizione).ToArray());
     }
 }
