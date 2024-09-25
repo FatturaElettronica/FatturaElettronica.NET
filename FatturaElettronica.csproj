@@ -30,6 +30,15 @@
     <EmbeddedResource Remove="Test\**"/>
     <None Remove="Tests\**"/>
     <None Remove="Test\**"/>
+    <EmbeddedResource Update="Resources\EsigibilitaIVA.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>EsigibilitaIVA.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\EsigibilitaIVA.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EsigibilitaIVA.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
