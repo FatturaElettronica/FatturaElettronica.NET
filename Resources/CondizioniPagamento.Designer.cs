@@ -60,7 +60,7 @@ namespace FatturaElettronica.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to .
+        ///   Looks up a localized string similar to pagamento a rate.
         /// </summary>
         internal static string TP01 {
             get {
