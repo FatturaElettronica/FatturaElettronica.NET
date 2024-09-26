@@ -64,6 +64,9 @@ public class TabelleV2Tests
     [TestMethod]
     public void Divisa() => CoreTest<Divisa, DivisaV2>();
     
+    [TestMethod]
+    public void Provincia() => CoreTest<Provincia, ProvinciaV2>();
+    
 
     private void CoreTest<T1, T2>()
         where T1 : Tabella, new()

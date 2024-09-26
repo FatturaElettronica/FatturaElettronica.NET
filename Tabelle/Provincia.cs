@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     /// <summary>
     /// Attualmente non usata in convalida, vedo:
@@ -126,5 +128,10 @@
                 };
             }
         }
+    }
+    
+    public class ProvinciaV2 : TabellaV2<ProvinciaV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.Provincia.ResourceManager;
     }
 }

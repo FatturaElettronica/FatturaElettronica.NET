@@ -202,6 +202,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Divisa.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Update="Resources\Provincia.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Provincia.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\Provincia.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Provincia.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
