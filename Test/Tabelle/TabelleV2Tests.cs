@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Globalization;
+using System.Linq;
+using System.Threading;
 using FatturaElettronica.Tabelle;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -11,7 +13,7 @@ public class TabelleV2Tests
     public void CondizioniPagamento() => CoreTest<CondizioniPagamento, CondizioniPagamentoV2>();
 
     [TestMethod]
-    public void EsigibilitaIVA() => CoreTest<EsigibilitaIVAV2, EsigibilitaIVAV2>();
+    public void EsigibilitaIVA() => CoreTest<EsigibilitaIVA, EsigibilitaIVAV2>();
     
     [TestMethod]
     public void SocioUnico() => CoreTest<SocioUnico, SocioUnicoV2>();
@@ -75,9 +77,10 @@ public class TabelleV2Tests
         var tabellaV1 = new T1();
         var tabellaV2 = new T2();
 
-        var s = tabellaV1.Codici.ToList().Except(tabellaV2.Codici.ToList());
-        var ss = tabellaV1.List.Select(e => e.Codice).GroupBy(e => e, (s1, enumerable) => new {e = s1, e1 = enumerable.Count()}).OrderByDescending(e => e.e1).ToList();
+        Thread.CurrentThread.CurrentCulture = new CultureInfo("it");
+        Thread.CurrentThread.CurrentUICulture = new CultureInfo("it");
 
-        CollectionAssert.AreEquivalent(tabellaV1.List.Select(e => e.Descrizione).ToArray(), tabellaV2.List.Select(e => e.Descrizione).ToArray());
+        CollectionAssert.AreEquivalent(tabellaV1.Codici.ToList(), tabellaV2.Codici.ToList());
+        CollectionAssert.AreEquivalent(tabellaV1.List.Select(e => e.Descrizione).ToList(), tabellaV2.List.Select(e => e.Descrizione).ToList());
     }
 }

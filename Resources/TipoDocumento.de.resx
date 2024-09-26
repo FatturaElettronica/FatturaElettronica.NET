@@ -1,0 +1,71 @@
+﻿<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TD01" xml:space="preserve">
+    <value>Rechnung</value>
+  </data>
+  <data name="TD02" xml:space="preserve">
+    <value>Anzahlung/Vorauszahlung auf Rechnung</value>
+  </data>
+  <data name="TD03" xml:space="preserve">
+    <value>Anzahlung/Vorauszahlung auf Honorar</value>
+  </data>
+  <data name="TD04" xml:space="preserve">
+    <value>Gutschrift</value>
+  </data>
+  <data name="TD05" xml:space="preserve">
+    <value>Lastschrift</value>
+  </data>
+  <data name="TD06" xml:space="preserve">
+    <value>Honorar</value>
+  </data>
+  <data name="TD16" xml:space="preserve">
+    <value>Rechnungsintegration Reverse Charge intern</value>
+  </data>
+  <data name="TD17" xml:space="preserve">
+    <value>Integration/Selbstfakturierung für Dienstleistungen aus dem Ausland</value>
+  </data>
+  <data name="TD18" xml:space="preserve">
+    <value>Integration für innergemeinschaftlichen Erwerb von Waren</value>
+  </data>
+  <data name="TD19" xml:space="preserve">
+    <value>Integration/Selbstfakturierung für den Erwerb von Waren gemäß Art. 17 Abs. 2 DPR 633/72</value>
+  </data>
+  <data name="TD20" xml:space="preserve">
+    <value>Selbstfakturierung zur Regularisierung und Integration von Rechnungen (gemäß Art. 6 Abs. 8 d.lgs. 471/97 oder Art. 46 Abs. 5 D.L. 331/93)</value>
+  </data>
+  <data name="TD21" xml:space="preserve">
+    <value>Selbstfakturierung für Überschreitung des Höchstbetrags</value>
+  </data>
+  <data name="TD22" xml:space="preserve">
+    <value>Entnahme von Waren aus dem Mehrwertsteuerlager</value>
+  </data>
+  <data name="TD23" xml:space="preserve">
+    <value>Entnahme von Waren aus dem Mehrwertsteuerlager mit Mehrwertsteuerzahlung</value>
+  </data>
+  <data name="TD24" xml:space="preserve">
+    <value>Verzögerte Rechnung gemäß Art. 21, Absatz 4, dritter Satz Buchstabe a) DPR 633/72</value>
+  </data>
+  <data name="TD25" xml:space="preserve">
+    <value>Verzögerte Rechnung gemäß Art. 21, Absatz 4, dritter Satz Buchstabe b) DPR 633/72</value>
+  </data>
+  <data name="TD26" xml:space="preserve">
+    <value>Verkauf von abnutzbaren Gütern und für interne Übertragungen (gemäß Art. 36 DPR 633/72)</value>
+  </data>
+  <data name="TD27" xml:space="preserve">
+    <value>Rechnung für Eigenverbrauch oder kostenlose Übertragungen ohne Rückgriff</value>
+  </data>
+  <data name="TD28" xml:space="preserve">
+    <value>Einkäufe aus San Marino mit Mehrwertsteuer (Papierrechnung)</value>
+  </data>
+</root>

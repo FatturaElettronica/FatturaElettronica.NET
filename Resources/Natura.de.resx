@@ -1,0 +1,77 @@
+﻿<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="N1" xml:space="preserve">
+    <value>ausgeschlossen gemäß Art. 15</value>
+  </data>
+  <data name="N2.1" xml:space="preserve">
+    <value>nicht der Mehrwertsteuer unterworfen gemäß den Artikeln 7 bis 7-septies des D.P.R. Nr. 633/72</value>
+  </data>
+  <data name="N2.2" xml:space="preserve">
+    <value>nicht unterworfen - andere Fälle</value>
+  </data>
+  <data name="N3.1" xml:space="preserve">
+    <value>nicht steuerpflichtig - Exporte</value>
+  </data>
+  <data name="N3.2" xml:space="preserve">
+    <value>nicht steuerpflichtig - innergemeinschaftliche Lieferungen</value>
+  </data>
+  <data name="N3.3" xml:space="preserve">
+    <value>nicht steuerpflichtig - Verkauf nach San Marino</value>
+  </data>
+  <data name="N3.4" xml:space="preserve">
+    <value>nicht steuerpflichtig - den Ausfuhrlieferungen gleichgestellte Vorgänge</value>
+  </data>
+  <data name="N3.5" xml:space="preserve">
+    <value>nicht steuerpflichtig - aufgrund von Absichtserklärungen</value>
+  </data>
+  <data name="N3.6" xml:space="preserve">
+    <value>nicht steuerpflichtig - andere Vorgänge, die nicht zur Bildung des Plafonds beitragen</value>
+  </data>
+  <data name="N4" xml:space="preserve">
+    <value>steuerfrei</value>
+  </data>
+  <data name="N5" xml:space="preserve">
+    <value>Margenregelung / Mehrwertsteuer nicht in der Rechnung ausgewiesen</value>
+  </data>
+  <data name="N6.1" xml:space="preserve">
+    <value>Reverse-Charge - Lieferung von Schrott und anderen wiederverwertbaren Materialien</value>
+  </data>
+  <data name="N6.2" xml:space="preserve">
+    <value>Reverse-Charge - Lieferung von Gold und Silber gemäß Gesetz 7/2000 sowie von gebrauchten Schmuckwaren an OPO</value>
+  </data>
+  <data name="N6.3" xml:space="preserve">
+    <value>Reverse-Charge - Subunternehmer im Baugewerbe</value>
+  </data>
+  <data name="N6.4" xml:space="preserve">
+    <value>Reverse-Charge - Verkauf von Gebäuden</value>
+  </data>
+  <data name="N6.5" xml:space="preserve">
+    <value>Reverse-Charge - Verkauf von Mobiltelefonen</value>
+  </data>
+  <data name="N6.6" xml:space="preserve">
+    <value>Reverse-Charge - Verkauf von Elektronikprodukten</value>
+  </data>
+  <data name="N6.7" xml:space="preserve">
+    <value>Reverse-Charge - Dienstleistungen im Baugewerbe und verwandten Sektoren</value>
+  </data>
+  <data name="N6.8" xml:space="preserve">
+    <value>Reverse-Charge - Operationen im Energiesektor</value>
+  </data>
+  <data name="N6.9" xml:space="preserve">
+    <value>Reverse-Charge - andere Fälle</value>
+  </data>
+  <data name="N7" xml:space="preserve">
+    <value>Mehrwertsteuer in einem anderen EU-Land entrichtet (Erbringung von Telekommunikations-, Rundfunk- und elektronischen Dienstleistungen gemäß Art. 7-octies, Absatz 1 Buchstabe a, b, Art. 74-sexies DPR 633/72)</value>
+  </data>
+</root>

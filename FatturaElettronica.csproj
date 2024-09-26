@@ -211,6 +211,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Provincia.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Update="Resources\FormatoTrasmissione.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FormatoTrasmissione.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\FormatoTrasmissione.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FormatoTrasmissione.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

@@ -8,9 +8,9 @@
             {
                 return new Tabella[]
                 {
-                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.PubblicaAmministrazione, Nome = "FatturaOrdinaria verso la PA" },
-                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.Privati, Nome = "FatturaOrdinaria verso privati" },
-                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.Semplificata, Nome = "FatturaOrdinaria verso privati in forma semplificata" }
+                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.PubblicaAmministrazione, Nome = Resources.FormatoTrasmissione.PubblicaAmministrazione },
+                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.Privati, Nome = Resources.FormatoTrasmissione.Privati },
+                    new FormatoTrasmissione{ Codice = Defaults.FormatoTrasmissione.Semplificata, Nome = Resources.FormatoTrasmissione.Semplificata }
                 };
             }
         }

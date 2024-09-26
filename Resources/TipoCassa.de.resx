@@ -1,0 +1,80 @@
+﻿<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="TC01" xml:space="preserve">
+    <value>Nationale Rentenkasse und Unterstützung für Anwälte und Rechtsanwälte</value>
+  </data>
+  <data name="TC02" xml:space="preserve">
+    <value>Rentenversicherung der Wirtschaftsprüfer</value>
+  </data>
+  <data name="TC03" xml:space="preserve">
+    <value>Renten- und Unterstützungskasse der Geometer</value>
+  </data>
+  <data name="TC04" xml:space="preserve">
+    <value>Nationale Rentenkasse und Unterstützung für freiberufliche Ingenieure und Architekten</value>
+  </data>
+  <data name="TC05" xml:space="preserve">
+    <value>Nationale Notarkasse</value>
+  </data>
+  <data name="TC06" xml:space="preserve">
+    <value>Nationale Rentenkasse und Unterstützung für Buchhalter und Handelsprüfer</value>
+  </data>
+  <data name="TC07" xml:space="preserve">
+    <value>Nationale Unterstützungseinrichtung für Handelsvertreter (ENASARCO)</value>
+  </data>
+  <data name="TC08" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für Arbeitsberater (ENPACL)</value>
+  </data>
+  <data name="TC09" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für Ärzte (ENPAM)</value>
+  </data>
+  <data name="TC10" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für Apotheker (ENPAF)</value>
+  </data>
+  <data name="TC11" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für Tierärzte (ENPAV)</value>
+  </data>
+  <data name="TC12" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für landwirtschaftliche Angestellte (ENPAIA)</value>
+  </data>
+  <data name="TC13" xml:space="preserve">
+    <value>Rentenfonds für Angestellte von Speditionsunternehmen und Schifffahrtsagenturen</value>
+  </data>
+  <data name="TC14" xml:space="preserve">
+    <value>Nationale Rentenversicherung für italienische Journalisten (INPGI)</value>
+  </data>
+  <data name="TC15" xml:space="preserve">
+    <value>Nationale Unterstützungseinrichtung für Waisen italienischer Gesundheitsberufe (ONAOSI)</value>
+  </data>
+  <data name="TC16" xml:space="preserve">
+    <value>Autonome Unterstützungskasse für italienische Journalisten (CASAGIT)</value>
+  </data>
+  <data name="TC17" xml:space="preserve">
+    <value>Renten- und Unterstützungseinrichtung für Industrieprüfer und graduierte Industrieprüfer (EPPI)</value>
+  </data>
+  <data name="TC18" xml:space="preserve">
+    <value>Renten- und Unterstützungseinrichtung für mehrere Kategorien (EPAP)</value>
+  </data>
+  <data name="TC19" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für Biologen (ENPAB)</value>
+  </data>
+  <data name="TC20" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für Pflegeberufe (ENPAPI)</value>
+  </data>
+  <data name="TC21" xml:space="preserve">
+    <value>Nationale Renten- und Unterstützungseinrichtung für Psychologen (ENPAP)</value>
+  </data>
+  <data name="TC22" xml:space="preserve">
+    <value>INPS</value>
+  </data>
+</root>

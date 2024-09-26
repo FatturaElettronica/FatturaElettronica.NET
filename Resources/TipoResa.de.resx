@@ -1,0 +1,47 @@
+﻿<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EXW" xml:space="preserve">
+    <value>Ab Werk</value>
+  </data>
+  <data name="FCA" xml:space="preserve">
+    <value>Frei Frachtführer</value>
+  </data>
+  <data name="FAS" xml:space="preserve">
+    <value>Frei Längsseite Schiff</value>
+  </data>
+  <data name="FOB" xml:space="preserve">
+    <value>Frei an Bord</value>
+  </data>
+  <data name="CFR" xml:space="preserve">
+    <value>Kosten und Fracht</value>
+  </data>
+  <data name="CIF" xml:space="preserve">
+    <value>Kosten, Versicherung und Fracht</value>
+  </data>
+  <data name="CPT" xml:space="preserve">
+    <value>Fracht bezahlt bis zu</value>
+  </data>
+  <data name="CIP" xml:space="preserve">
+    <value>Versand und Versicherung bis max. bezahlt</value>
+  </data>
+  <data name="DPU" xml:space="preserve">
+    <value>Zum Entladeziel zurückgekehrt</value>
+  </data>
+  <data name="DAP" xml:space="preserve">
+    <value>Rückkehr zum Bestimmungsort</value>
+  </data>
+  <data name="DDP" xml:space="preserve">
+    <value>Rücksendung verzollt</value>
+  </data>
+</root>

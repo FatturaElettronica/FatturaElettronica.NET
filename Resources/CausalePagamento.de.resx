@@ -1,0 +1,113 @@
+﻿<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A" xml:space="preserve">
+    <value>Leistungen aus selbständiger Arbeit im Rahmen der Ausübung von Kunst oder Beruf</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>wirtschaftliche Nutzung durch den Autor oder Erfinder von Werken der Literatur, von Patenten und von Prozessen, Formeln oder Informationen im Zusammenhang mit Erfahrungen in den Bereichen Industrie, Handel oder Wissenschaft</value>
+  </data>
+  <data name="C" xml:space="preserve">
+    <value>Gewinne aus Beteiligungsverträgen und aus Beteiligungsverträgen, wenn der Beitrag ausschließlich aus Arbeitsleistungen besteht</value>
+  </data>
+  <data name="D" xml:space="preserve">
+    <value>Gewinne, die den Gründungsmitgliedern und den Gründungsmitgliedern von Kapitalgesellschaften zustehen</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>Erhebung von Wechselprotesten durch Gemeindesekretäre</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>Entschädigungen, die an ehrenamtliche Friedensrichter und ehrenamtliche Staatsanwälte gezahlt werden</value>
+  </data>
+  <data name="G" xml:space="preserve">
+    <value>Entschädigungen, die für die Beendigung der beruflichen sportlichen Tätigkeit gezahlt werden</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value>Entschädigungen, die für die Beendigung von Agenturverhältnissen von natürlichen Personen und Personengesellschaften gezahlt werden, mit Ausnahme der Beträge, die bis zum 31. Dezember 2003 fällig wurden und bereits als Betriebseinnahmen besteuert wurden</value>
+  </data>
+  <data name="I" xml:space="preserve">
+    <value>Entschädigungen, die für die Beendigung notarieller Funktionen gezahlt werden</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>Einkünfte aus der wirtschaftlichen Nutzung von Werken der Literatur, von Patenten und von Prozessen, Formeln und Informationen im Zusammenhang mit Erfahrungen in den Bereichen Industrie, Handel oder Wissenschaft, die von den Rechtsnachfolgern des Autors und Erfinders unentgeltlich erworben wurden (z.B. Erben und Vermächtnisnehmer)</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>Leistungen aus selbständiger Arbeit, die nicht regelmäßig ausgeübt werden</value>
+  </data>
+  <data name="N" xml:space="preserve">
+    <value>Reisekostenvergütungen, pauschale Spesenvergütungen, Prämien und Vergütungen, die gezahlt werden: – bei der direkten Ausübung von Amateursportaktivitäten; – im Zusammenhang mit kontinuierlichen und koordinierten Verwaltungs- und Managementtätigkeiten nicht professioneller Natur, die zugunsten von Sportvereinen und -verbänden sowie von Chören, Bands und Theatergruppen durch den Direktor und die technischen Mitarbeiter erbracht werden</value>
+  </data>
+  <data name="O" xml:space="preserve">
+    <value>Leistungen aus selbständiger Arbeit, die nicht regelmäßig ausgeübt werden und für die keine Verpflichtung zur Eintragung in die separate Verwaltung besteht (INPS-Rundschreiben Nr. 104/2001)</value>
+  </data>
+  <data name="P" xml:space="preserve">
+    <value>Vergütungen, die an nicht ansässige Personen ohne ständige Betriebsstätte für die Nutzung oder die Gewährung der Nutzung von industriellen, kommerziellen oder wissenschaftlichen Ausrüstungen gezahlt werden, die sich im Staatsgebiet befinden, oder an Schweizer Gesellschaften oder ständige Betriebsstätten von Schweizer Gesellschaften, die die Anforderungen des Art. 15, Absatz 2 des Abkommens zwischen der Europäischen Gemeinschaft und der Schweizerischen Eidgenossenschaft vom 26. Oktober 2004 (veröffentlicht im Amtsblatt der EU vom 29. Dezember 2004 Nr. L385/30) erfüllen</value>
+  </data>
+  <data name="Q" xml:space="preserve">
+    <value>Provisionen, die an einen Alleinvertreter oder Handelsvertreter gezahlt werden</value>
+  </data>
+  <data name="R" xml:space="preserve">
+    <value>Provisionen, die an einen Mehrfachvertreter oder Handelsvertreter gezahlt werden</value>
+  </data>
+  <data name="S" xml:space="preserve">
+    <value>Provisionen, die an einen Kommissionär gezahlt werden</value>
+  </data>
+  <data name="T" xml:space="preserve">
+    <value>Provisionen, die an einen Makler gezahlt werden</value>
+  </data>
+  <data name="U" xml:space="preserve">
+    <value>Provisionen, die an einen Geschäftsanbahner gezahlt werden</value>
+  </data>
+  <data name="V" xml:space="preserve">
+    <value>Provisionen, die an einen Beauftragten für den Direktvertrieb an der Haustür gezahlt werden; Provisionen, die an einen Beauftragten für den Haustürverkauf und den ambulanten Verkauf von Tageszeitungen und Zeitschriften gezahlt werden (Gesetz vom 25. Februar 1987, Nr. 67)</value>
+  </data>
+  <data name="W" xml:space="preserve">
+    <value>Vergütungen, die im Jahr 2017 für Leistungen im Zusammenhang mit Werkverträgen gezahlt wurden, auf die die Bestimmungen des Art. 25-ter des D.P.R. Nr. 600 vom 29. September 1973 anwendbar waren</value>
+  </data>
+  <data name="X" xml:space="preserve">
+    <value>Lizenzgebühren, die im Jahr 2004 von ansässigen Gesellschaften oder Einrichtungen oder von ständigen Betriebsstätten ausländischer Gesellschaften gemäß Art. 26-quater, Absatz 1, Buchstaben a) und b) des D.P.R. Nr. 600 vom 29. September 1973 an Gesellschaften oder ständige Betriebsstätten von Gesellschaften gezahlt wurden, die sich in einem anderen Mitgliedstaat der Europäischen Union befinden und die Anforderungen des genannten Art. 26-quater des D.P.R. Nr. 600 vom 29. September 1973 erfüllen, für die im Jahr 2006 die Rückerstattung der Quellensteuer gemäß Art. 4 des Gesetzesdekrets Nr. 143 vom 30. Mai 2005 erfolgte</value>
+  </data>
+  <data name="Y" xml:space="preserve">
+    <value>Lizenzgebühren, die vom 1. Januar 2005 bis zum 26. Juli 2005 von ansässigen Gesellschaften oder Einrichtungen oder von ständigen Betriebsstätten ausländischer Gesellschaften gemäß Art. 26-quater, Absatz 1, Buchstaben a) und b) des D.P.R. Nr. 600 vom 29. September 1973 an Gesellschaften oder ständige Betriebsstätten von Gesellschaften gezahlt wurden, die sich in einem anderen Mitgliedstaat der Europäischen Union befinden und die Anforderungen des genannten Art. 26-quater des D.P.R. Nr. 600 vom 29. September 1973 erfüllen, für die im Jahr 2006 die Rückerstattung der Quellensteuer gemäß Art. 4 des Gesetzesdekrets Nr. 143 vom 30. Mai 2005 erfolgte</value>
+  </data>
+  <data name="L1" xml:space="preserve">
+    <value>Einkünfte aus der wirtschaftlichen Nutzung von Werken der Literatur, von Patenten und von Prozessen, Formeln und Informationen im Zusammenhang mit Erfahrungen in den Bereichen Industrie, Handel oder Wissenschaft, die von Personen erzielt werden, die die Rechte an deren Nutzung entgeltlich erworben haben</value>
+  </data>
+  <data name="M1" xml:space="preserve">
+    <value>Einkünfte aus der Übernahme von Verpflichtungen zu tun, zu unterlassen oder zu gestatten</value>
+  </data>
+  <data name="M2" xml:space="preserve">
+    <value>Leistungen aus selbständiger Arbeit, die nicht regelmäßig ausgeübt werden und für die eine Verpflichtung zur Eintragung in die separate Verwaltung ENPAPI besteht</value>
+  </data>
+  <data name="O1" xml:space="preserve">
+    <value>Einkünfte aus der Übernahme von Verpflichtungen zu tun, zu unterlassen oder zu gestatten, für die keine Verpflichtung zur Eintragung in die separate Verwaltung besteht (INPS-Rundschreiben Nr. 104/2001)</value>
+  </data>
+  <data name="V1" xml:space="preserve">
+    <value>Einkünfte aus nicht regelmäßig ausgeübten gewerblichen Tätigkeiten (z.B. Provisionen, die für gelegentliche Leistungen an einen Handelsvertreter, Makler oder Geschäftsanbahner gezahlt werden)</value>
+  </data>
+  <data name="ZO" xml:space="preserve">
+    <value>anderer Titel als die vorhergehenden</value>
+  </data>
+  <data name="J" xml:space="preserve">
+    <value>Vergütungen, die an gelegentliche Trüffelsammler gezahlt werden, die nicht für die Mehrwertsteuer registriert sind, im Zusammenhang mit dem Verkauf von Trüffeln</value>
+  </data>
+  <data name="K" xml:space="preserve">
+    <value>Zivildienstvergütungen gemäß Art. 16 des Gesetzesdekrets Nr. 40 vom 6. März 2017</value>
+  </data>
+  <data name="V2" xml:space="preserve">
+    <value>Einkünfte aus nicht regelmäßig ausgeübten Leistungen, die von Beauftragten für den Direktvertrieb an der Haustür erbracht werden</value>
+  </data>
+  <data name="Z" xml:space="preserve">
+    <value>anderer Titel als die vorhergehenden</value>
+  </data>
+</root>
