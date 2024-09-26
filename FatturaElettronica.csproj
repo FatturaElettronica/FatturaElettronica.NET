@@ -193,6 +193,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>IdPaese.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Update="Resources\Divisa.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Divisa.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Compile Update="Resources\Divisa.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Divisa.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

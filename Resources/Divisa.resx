@@ -1,0 +1,561 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AED" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AFN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ALL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AMD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ANG" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AOA" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ARS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AUD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AWG" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="AZN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BAM" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BBD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BDT" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BGN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BHD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BIF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BMD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BND" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BOB" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BOV" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BRL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BSD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BTN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BWP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BYR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="BZD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CAD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CDF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CHE" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CHF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CHW" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CLF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CLP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CNY" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="COP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="COU" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CRC" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CUC" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CUP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CVE" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="CZK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DJF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DKK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DOP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="DZD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="EGP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ERN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ETB" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="EUR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="FJD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="FKP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GBP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GEL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GHS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GIP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GMD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GNF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GTQ" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="GYD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="HKD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="HNL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="HRK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="HTG" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="HUF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IDR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ILS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="INR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IQD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="IRR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="ISK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="JMD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="JOD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="JPY" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KES" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KGS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KHR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KMF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KPW" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KRW" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KWD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KYD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="KZT" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LAK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LBP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LKR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LRD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LSL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LTL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="LYD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MAD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MDL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MGA" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MKD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MMK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MNT" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MOP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MRO" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MUR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MVR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MWK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MXN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MXV" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MYR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="MZN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NAD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NGN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NIO" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NOK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NPR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="NZD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="OMR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PAB" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PEN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PGK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PHP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PKR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PLN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="PYG" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="QAR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="RON" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="RSD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="RUB" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="RWF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SAR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SBD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SCR" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SDG" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SEK" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SGD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SHP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SLL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SOS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SRD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SSP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="STD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SVC" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SYP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="SZL" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="THB" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TJS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TMT" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TND" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TOP" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TRY" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TTD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TWD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="TZS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="UAH" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="UGX" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="USD" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="USN" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="USS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="UYI" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="UYU" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="UZS" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="VEF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="VND" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="VUV" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="WST" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="XAF" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="XAG" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="XAU" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="XBA" xml:space="preserve">
+    <value></value>
+  </data>
+  <data name="XBB" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XBC" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XBD" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XCD" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XDR" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XOF" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XPD" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XPF" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XPT" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XSU" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XTS" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XUA" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="XXX" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="YER" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="ZAR" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="ZMW" xml:space="preserve">
+  <value></value>
+</data>
+  <data name="ZWL" xml:space="preserve">
+  <value></value>
+</data>
+</root>

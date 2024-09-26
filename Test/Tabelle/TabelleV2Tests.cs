@@ -61,6 +61,9 @@ public class TabelleV2Tests
     [TestMethod]
     public void IdPaese() => CoreTest<IdPaese, IdPaeseV2>();
     
+    [TestMethod]
+    public void Divisa() => CoreTest<Divisa, DivisaV2>();
+    
 
     private void CoreTest<T1, T2>()
         where T1 : Tabella, new()
@@ -70,6 +73,7 @@ public class TabelleV2Tests
         var tabellaV2 = new T2();
 
         var s = tabellaV1.Codici.ToList().Except(tabellaV2.Codici.ToList());
+        var ss = tabellaV1.List.Select(e => e.Codice).GroupBy(e => e, (s1, enumerable) => new {e = s1, e1 = enumerable.Count()}).OrderByDescending(e => e.e1).ToList();
 
         CollectionAssert.AreEquivalent(tabellaV1.List.Select(e => e.Descrizione).ToArray(), tabellaV2.List.Select(e => e.Descrizione).ToArray());
     }
