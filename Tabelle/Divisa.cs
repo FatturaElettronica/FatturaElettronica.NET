@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class Divisa : Tabella
     {
@@ -177,7 +179,6 @@
                     new Divisa{ Codice = "XOF", Nome = string.Empty},
                     new Divisa{ Codice = "XPD", Nome = string.Empty},
                     new Divisa{ Codice = "XPF", Nome = string.Empty},
-                    new Divisa{ Codice = "XPF", Nome = string.Empty},
                     new Divisa{ Codice = "XPT", Nome = string.Empty},
                     new Divisa{ Codice = "XSU", Nome = string.Empty},
                     new Divisa{ Codice = "XTS", Nome = string.Empty},
@@ -191,5 +192,10 @@
 
             }
         }
+    }
+    
+    public class DivisaV2 : TabellaV2<DivisaV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.Divisa.ResourceManager;
     }
 }
