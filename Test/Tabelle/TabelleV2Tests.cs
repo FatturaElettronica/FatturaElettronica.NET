@@ -77,8 +77,8 @@ public class TabelleV2Tests
         var tabellaV1 = new T1();
         var tabellaV2 = new T2();
 
-        Thread.CurrentThread.CurrentCulture = new CultureInfo("it");
-        Thread.CurrentThread.CurrentUICulture = new CultureInfo("it");
+        // Thread.CurrentThread.CurrentCulture = new CultureInfo("it");
+        // Thread.CurrentThread.CurrentUICulture = new CultureInfo("it");
 
         CollectionAssert.AreEquivalent(tabellaV1.Codici.ToList(), tabellaV2.Codici.ToList());
         CollectionAssert.AreEquivalent(tabellaV1.List.Select(e => e.Descrizione).ToList(), tabellaV2.List.Select(e => e.Descrizione).ToList());
