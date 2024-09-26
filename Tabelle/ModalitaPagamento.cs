@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class ModalitaPagamento : Tabella
     {
@@ -33,5 +35,10 @@
                 };
             }
         }
+    }
+    
+    public class ModalitaPagamentoV2 : TabellaV2<ModalitaPagamentoV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.ModalitaPagamento.ResourceManager;
     }
 }

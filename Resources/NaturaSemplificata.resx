@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>  
+  <data name="N1" xml:space="preserve">
+    <value>escluse ex art. 15</value>
+  </data>
+  <data name="N2" xml:space="preserve">
+    <value>non soggette</value>
+  </data>
+  <data name="N2.1" xml:space="preserve">
+    <value>non soggette ad IVA ai sensi degli artt. da 7 a 7-septies del D.P.R. n. 633/72</value>
+  </data>
+  <data name="N2.2" xml:space="preserve">
+    <value>non soggette - altri casi</value>
+  </data>
+  <data name="N3" xml:space="preserve">
+    <value>non imponibili</value>
+  </data>
+  <data name="N3.1" xml:space="preserve">
+    <value>non imponibili - esportazioni</value>
+  </data>
+  <data name="N3.2" xml:space="preserve">
+    <value>non imponibili - cessioni intracomunitarie</value>
+  </data>
+  <data name="N3.3" xml:space="preserve">
+    <value>non imponibili - cessioni verso San Marino</value>
+  </data>
+  <data name="N3.4" xml:space="preserve">
+    <value>non imponibili - operazioni assimilate alle cessioni all'esportazione</value>
+  </data>
+  <data name="N3.5" xml:space="preserve">
+    <value>non imponibili - a seguito di dichiarazioni d'intento</value>
+  </data>
+  <data name="N3.6" xml:space="preserve">
+    <value>non imponibili - altre operazioni che non concorrono alla formazione del plafond</value>
+  </data>
+  <data name="N4" xml:space="preserve">
+    <value>esenti</value>
+  </data>
+  <data name="N5" xml:space="preserve">
+    <value>regime del margine / IVA non esposta in fattura</value>
+  </data>
+</root>

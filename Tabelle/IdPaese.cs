@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class IdPaese : Tabella
     {
@@ -267,5 +269,10 @@
                 };
             }
         }
+    }
+    
+    public class IdPaeseV2 : TabellaV2<IdPaeseV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.IdPaese.ResourceManager;
     }
 }

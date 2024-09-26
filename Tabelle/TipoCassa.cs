@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class TipoCassa : Tabella
     {
@@ -32,5 +34,10 @@
                 };
             } 
         }
+    }
+    
+    public class TipoCassaV2 : TabellaV2<TipoCassaV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.TipoCassa.ResourceManager;
     }
 }

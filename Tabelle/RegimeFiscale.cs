@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class RegimeFiscale : Tabella
     {
@@ -29,5 +31,10 @@
                 };
             }
         }
+    }
+    
+    public class RegimeFiscaleV2 : TabellaV2<RegimeFiscaleV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.RegimeFiscale.ResourceManager;
     }
 }

@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="EXW" xml:space="preserve">
+    <value>Franco Fabbrica</value>
+  </data>
+  <data name="FCA" xml:space="preserve">
+    <value>Franco Vettore</value>
+  </data>
+  <data name="FAS" xml:space="preserve">
+    <value>Franco lungo bordo</value>
+  </data>
+  <data name="FOB" xml:space="preserve">
+    <value>Franco a bordo</value>
+  </data>
+  <data name="CFR" xml:space="preserve">
+    <value>Costo e Nolo</value>
+  </data>
+  <data name="CIF" xml:space="preserve">
+    <value>Costo, assicurazione e nolo</value>
+  </data>
+  <data name="CPT" xml:space="preserve">
+    <value>Trasporto pagato fino a</value>
+  </data>
+  <data name="CIP" xml:space="preserve">
+    <value>Trasporto e assicurazione pagati fino a</value>
+  </data>
+  <data name="DPU" xml:space="preserve">
+    <value>Reso al luogo di destinazione scaricato</value>
+  </data>
+  <data name="DAP" xml:space="preserve">
+    <value>Reso a luogo di destinazione</value>
+  </data>
+  <data name="DDP" xml:space="preserve">
+    <value>Reso sdoganato</value>
+  </data>
+</root>

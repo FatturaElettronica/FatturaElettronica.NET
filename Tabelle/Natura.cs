@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class Natura : Tabella
     {
@@ -31,5 +33,10 @@
                 };
             } 
         }
+    }
+    
+    public class NaturaV2 : TabellaV2<NaturaV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.Natura.ResourceManager;
     }
 }

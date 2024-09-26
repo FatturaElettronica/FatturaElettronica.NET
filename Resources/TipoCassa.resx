@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>  <data name="TC01" xml:space="preserve">
+    <value>Cassa nazionale previdenza e assistenza avvocati e procuratori legali</value>
+  </data>
+  <data name="TC02" xml:space="preserve">
+    <value>Cassa previdenza dottori commercialisti</value>
+  </data>
+  <data name="TC03" xml:space="preserve">
+    <value>Cassa previdenza e assistenza geometri</value>
+  </data>
+  <data name="TC04" xml:space="preserve">
+    <value>Cassa nazionale previdenza e assistenza ingegneri e architetti liberi professionisti</value>
+  </data>
+  <data name="TC05" xml:space="preserve">
+    <value>Cassa nazionale del notariato</value>
+  </data>
+  <data name="TC06" xml:space="preserve">
+    <value>Cassa nazionale previdenza e assistenza ragionieri e periti commerciali</value>
+  </data>
+  <data name="TC07" xml:space="preserve">
+    <value>Ente nazionale assistenza agenti e rappresentanti di commercio (ENASARCO)</value>
+  </data>
+  <data name="TC08" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza consulenti del lavoro (ENPACL)</value>
+  </data>
+  <data name="TC09" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza medici (ENPAM)</value>
+  </data>
+  <data name="TC10" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza farmacisti (ENPAF)</value>
+  </data>
+  <data name="TC11" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza veterinari (ENPAV)</value>
+  </data>
+  <data name="TC12" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza impiegati dell'agricoltura (ENPAIA)</value>
+  </data>
+  <data name="TC13" xml:space="preserve">
+    <value>Fondo previdenza impiegati imprese di spedizione e agenzie marittime</value>
+  </data>
+  <data name="TC14" xml:space="preserve">
+    <value>Istituto nazionale previdenza giornalisti italiani (INPGI)</value>
+  </data>
+  <data name="TC15" xml:space="preserve">
+    <value>Opera nazionale assistenza orfani sanitari italiani (ONAOSI)</value>
+  </data>
+  <data name="TC16" xml:space="preserve">
+    <value>Cassa autonoma assistenza integrativa giornalisti italiani (CASAGIT)</value>
+  </data>
+  <data name="TC17" xml:space="preserve">
+    <value>Ente previdenza periti industriali e periti industriali laureati (EPPI)</value>
+  </data>
+  <data name="TC18" xml:space="preserve">
+    <value>Ente previdenza e assistenza pluricategoriale (EPAP)</value>
+  </data>
+  <data name="TC19" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza biologi (ENPAB)</value>
+  </data>
+  <data name="TC20" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza professione infermieristica (ENPAPI)</value>
+  </data>
+  <data name="TC21" xml:space="preserve">
+    <value>Ente nazionale previdenza e assistenza psicologi (ENPAP)</value>
+  </data>
+  <data name="TC22" xml:space="preserve">
+    <value>INPS</value>
+  </data>
+</root>

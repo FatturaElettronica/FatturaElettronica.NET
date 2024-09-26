@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class CausalePagamento : Tabella
     {
@@ -48,5 +50,10 @@
                 };
             }
         }
+    }
+    
+    public class CausalePagamentoV2 : TabellaV2<CausalePagamentoV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.CausalePagamento.ResourceManager;
     }
 }

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A" xml:space="preserve">
+    <value>prestazioni di lavoro autonomo rientranti nell’esercizio di arte o professione abituale</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>utilizzazione economica, da parte dell’autore o dell’inventore, di opere dell’ingegno, di brevetti industriali e di processi, formule o informazioni relativi ad esperienze acquisite in campo industriale, commerciale o scientifico</value>
+  </data>
+  <data name="C" xml:space="preserve">
+    <value>utili derivanti da contratti di associazione in partecipazione e da contratti di cointeressenza, quando l’apporto è costituito esclusivamente dalla prestazione di lavoro</value>
+  </data>
+  <data name="D" xml:space="preserve">
+    <value>utili spettanti ai soci promotori ed ai soci fondatori delle società di capitali</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>levata di protesti cambiari da parte dei segretari comunali</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>indennità corrisposte ai giudici onorari di pace e ai vice procuratori onorari</value>
+  </data>
+  <data name="G" xml:space="preserve">
+    <value>indennità corrisposte per la cessazione di attività sportiva professionale</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value>indennità corrisposte per la cessazione dei rapporti di agenzia delle persone fisiche e delle società di persone con esclusione delle somme maturate entro il 31 dicembre 2003, già imputate per competenza e tassate come reddito d’impresa</value>
+  </data>
+  <data name="I" xml:space="preserve">
+    <value>indennità corrisposte per la cessazione da funzioni notarili</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>redditi derivanti dall’utilizzazione economica di opere dell’ingegno, di brevetti industriali e di processi, formule e informazioni relativi a esperienze acquisite in campo industriale, commerciale o scientifico, che sono percepiti dagli aventi causa a titolo gratuito (ad es. eredi e legatari dell’autore e inventore)</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>prestazioni di lavoro autonomo non esercitate abitualmente</value>
+  </data>
+  <data name="N" xml:space="preserve">
+    <value>indennità di trasferta, rimborso forfetario di spese, premi e compensi erogati: – nell’esercizio diretto di attività sportive dilettantistiche; – in relazione a rapporti di collaborazione coordinata e continuativa di carattere amministrativo-gestionale di natura non professionale resi a favore di società e associazioni sportive dilettantistiche e di cori, bande e filodrammatiche da parte del direttore e dei collaboratori tecnici</value>
+  </data>
+  <data name="O" xml:space="preserve">
+    <value>prestazioni di lavoro autonomo non esercitate abitualmente, per le quali non sussiste l’obbligo di iscrizione alla gestione separata (Circ. INPS n. 104/2001)</value>
+  </data>
+  <data name="P" xml:space="preserve">
+    <value>compensi corrisposti a soggetti non residenti privi di stabile organizzazione per l’uso o la concessione in uso di attrezzature industriali, commerciali o scientifiche che si trovano nel territorio dello Stato ovvero a società svizzere o stabili organizzazioni di società svizzere che possiedono i requisiti di cui all’art. 15, comma 2 dell’Accordo tra la Comunità europea e la Confederazione svizzera del 26 ottobre 2004 (pubblicato in G.U.C.E. del 29 dicembre 2004 n. L385/30)</value>
+  </data>
+  <data name="Q" xml:space="preserve">
+    <value>provvigioni corrisposte ad agente o rappresentante di commercio monomandatario</value>
+  </data>
+  <data name="R" xml:space="preserve">
+    <value>provvigioni corrisposte ad agente o rappresentante di commercio plurimandatario</value>
+  </data>
+  <data name="S" xml:space="preserve">
+    <value>provvigioni corrisposte a commissionario</value>
+  </data>
+  <data name="T" xml:space="preserve">
+    <value>provvigioni corrisposte a mediatore</value>
+  </data>
+  <data name="U" xml:space="preserve">
+    <value>provvigioni corrisposte a procacciatore di affari</value>
+  </data>
+  <data name="V" xml:space="preserve">
+    <value>provvigioni corrisposte a incaricato per le vendite a domicilio; provvigioni corrisposte a incaricato per la vendita porta a porta e per la vendita ambulante di giornali quotidiani e periodici (L. 25 febbraio 1987, n. 67)</value>
+  </data>
+  <data name="W" xml:space="preserve">
+    <value>corrispettivi erogati nel 2017 per prestazioni relative a contratti d’appalto cui si sono resi applicabili le disposizioni contenute nell’art. 25-ter del D.P.R. n. 600 del 29 settembre 1973</value>
+  </data>
+  <data name="X" xml:space="preserve">
+    <value>canoni corrisposti nel 2004 da società o enti residenti ovvero da stabili organizzazioni di società estere di cui all’art. 26-quater, comma 1, lett. a) e b) del D.P.R. 600 del 29 settembre 1973, a società o stabili organizzazioni di società, situate in altro stato membro dell’Unione Europea in presenza dei requisiti di cui al citato art. 26-quater, del D.P.R. 600 del 29 settembre 1973, per i quali è stato effettuato, nell’anno 2006, il rimborso della ritenuta ai sensi dell’art. 4 del D.Lgs. 30 maggio 2005 n. 143</value>
+  </data>
+  <data name="Y" xml:space="preserve">
+    <value>canoni corrisposti dal 1° gennaio 2005 al 26 luglio 2005 da società o enti residenti ovvero da stabili organizzazioni di società estere di cui all’art. 26-quater, comma 1, lett. a) e b) del D.P.R. n. 600 del 29 settembre 1973, a società o stabili organizzazioni di società, situate in altro stato membro dell’Unione Europea in presenza dei requisiti di cui al citato art. 26-quater, del D.P.R. n. 600 del 29 settembre 1973, per i quali è stato effettuato, nell’anno 2006, il rimborso della ritenuta ai sensi dell’art. 4 del D.Lgs. 30 maggio 2005 n. 143</value>
+  </data>
+  <data name="L1" xml:space="preserve">
+    <value>redditi derivanti dall’utilizzazione economica di opere dell’ingegno, di brevetti industriali e di processi, formule e informazioni relativi a esperienze acquisite in campo industriale, commerciale o scientifico, che sono percepiti da soggetti che abbiano acquistato a titolo oneroso i diritti alla loro utilizzazione</value>
+  </data>
+  <data name="M1" xml:space="preserve">
+    <value>redditi derivanti dall’assunzione di obblighi di fare, di non fare o permettere</value>
+  </data>
+  <data name="M2" xml:space="preserve">
+    <value>prestazioni di lavoro autonomo non esercitate abitualmente per le quali sussiste l’obbligo di iscrizione alla Gestione Separata ENPAPI</value>
+  </data>
+  <data name="O1" xml:space="preserve">
+    <value>redditi derivanti dall’assunzione di obblighi di fare, di non fare o permettere, per le quali non sussiste l’obbligo di iscrizione alla gestione separata (Circ. INPS n. 104/2001)</value>
+  </data>
+  <data name="V1" xml:space="preserve">
+    <value>redditi derivanti da attività commerciali non esercitate abitualmente (ad esempio, provvigioni corrisposte per prestazioni occasionali ad agente o rappresentante di commercio, mediatore, procacciatore d’affari)</value>
+  </data>
+  <data name="ZO" xml:space="preserve">
+    <value>titolo diverso dai precedenti</value>
+  </data>
+  <data name="J" xml:space="preserve">
+    <value>compensi corrisposti ai raccoglitori occasionali di tartufi non identificati ai fini dell’imposta sul valore aggiunto, in relazione alla cessione di tartufi</value>
+    <comment>Valori accettati nel periodo transitorio tra specifiche v1.5 e v1.6 - verranno rimossi</comment>
+  </data>
+  <data name="K" xml:space="preserve">
+    <value>assegni di servizio civile universale di cui all’art.16 del D.lgs. n. 40 del 6 marzo 2017</value>
+    <comment>Valori accettati nel periodo transitorio tra specifiche v1.5 e v1.6 - verranno rimossi</comment>
+  </data>
+  <data name="V2" xml:space="preserve">
+    <value>redditi derivanti dalle prestazioni non esercitate abitualmente rese dagli incaricati alla vendita diretta a domicilio</value>
+    <comment>Valori accettati nel periodo transitorio tra specifiche v1.5 e v1.6 - verranno rimossi</comment>
+  </data>
+  <data name="Z" xml:space="preserve">
+    <value>titolo diverso dai precedenti</value>
+    <comment>Valori accettati nel periodo transitorio tra specifiche v1.5 e v1.6 - verranno rimossi</comment>
+  </data>
+</root>

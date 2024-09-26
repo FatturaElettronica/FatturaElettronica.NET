@@ -1,4 +1,6 @@
-﻿namespace FatturaElettronica.Tabelle
+﻿using System.Resources;
+
+namespace FatturaElettronica.Tabelle
 {
     public class TipoResa : Tabella
     {
@@ -21,5 +23,10 @@
                 };
             } 
         }
+    }
+    
+    public class TipoResaV2 : TabellaV2<TipoResaV2>
+    {
+        protected override ResourceManager ResourceManager => Resources.TipoResa.ResourceManager;
     }
 }
