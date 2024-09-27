@@ -27,13 +27,13 @@ namespace FatturaElettronica.Tabelle
         public abstract Tabella[] List { get; }
     }
 
-    public abstract class TabellaV2<T> : Tabella where T : Tabella, new()
+    public abstract class Tabella<T> : Tabella where T : Tabella, new()
     {
-        private Lazy<T[]> _lazyList;
+        private readonly Lazy<Tabella[]> _lazyList;
 
-        protected TabellaV2()
+        protected Tabella()
         {
-            _lazyList = new Lazy<T[]>(LoadResources);
+            _lazyList = new Lazy<Tabella[]>(LoadResources);
         }
 
         protected abstract ResourceManager ResourceManager { get; }
@@ -55,6 +55,11 @@ namespace FatturaElettronica.Tabelle
             var index = 0;
             while (enumerator.MoveNext())
             {
+                if (enumerator.Key is null)
+                {
+                    continue;
+                }
+
                 resourcesArray[index] = new T
                 {
                     Codice = enumerator.Key.ToString(), Nome = enumerator.Value.ToString()
