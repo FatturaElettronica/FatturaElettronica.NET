@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Provincia {
+    public class Provincia {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.Provincia", typeof(Provincia).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Agrigento.
         /// </summary>
-        internal static string AG {
+        public static string AG {
             get {
                 return ResourceManager.GetString("AG", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Alessandria.
         /// </summary>
-        internal static string AL {
+        public static string AL {
             get {
                 return ResourceManager.GetString("AL", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Ancona.
         /// </summary>
-        internal static string AN {
+        public static string AN {
             get {
                 return ResourceManager.GetString("AN", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Aosta.
         /// </summary>
-        internal static string AO {
+        public static string AO {
             get {
                 return ResourceManager.GetString("AO", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Ascoli-Piceno.
         /// </summary>
-        internal static string AP {
+        public static string AP {
             get {
                 return ResourceManager.GetString("AP", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to L&apos;Aquila.
         /// </summary>
-        internal static string AQ {
+        public static string AQ {
             get {
                 return ResourceManager.GetString("AQ", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Arezzo.
         /// </summary>
-        internal static string AR {
+        public static string AR {
             get {
                 return ResourceManager.GetString("AR", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Asti.
         /// </summary>
-        internal static string AT {
+        public static string AT {
             get {
                 return ResourceManager.GetString("AT", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Avellino.
         /// </summary>
-        internal static string AV {
+        public static string AV {
             get {
                 return ResourceManager.GetString("AV", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Bari.
         /// </summary>
-        internal static string BA {
+        public static string BA {
             get {
                 return ResourceManager.GetString("BA", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Bergamo.
         /// </summary>
-        internal static string BG {
+        public static string BG {
             get {
                 return ResourceManager.GetString("BG", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Biella.
         /// </summary>
-        internal static string BI {
+        public static string BI {
             get {
                 return ResourceManager.GetString("BI", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Belluno.
         /// </summary>
-        internal static string BL {
+        public static string BL {
             get {
                 return ResourceManager.GetString("BL", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Benevento.
         /// </summary>
-        internal static string BN {
+        public static string BN {
             get {
                 return ResourceManager.GetString("BN", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Bologna.
         /// </summary>
-        internal static string BO {
+        public static string BO {
             get {
                 return ResourceManager.GetString("BO", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Brindisi.
         /// </summary>
-        internal static string BR {
+        public static string BR {
             get {
                 return ResourceManager.GetString("BR", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Brescia.
         /// </summary>
-        internal static string BS {
+        public static string BS {
             get {
                 return ResourceManager.GetString("BS", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Barletta-Andria-Trani.
         /// </summary>
-        internal static string BT {
+        public static string BT {
             get {
                 return ResourceManager.GetString("BT", resourceCulture);
             }
@@ -224,7 +224,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Bolzano.
         /// </summary>
-        internal static string BZ {
+        public static string BZ {
             get {
                 return ResourceManager.GetString("BZ", resourceCulture);
             }
@@ -233,7 +233,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Cagliari.
         /// </summary>
-        internal static string CA {
+        public static string CA {
             get {
                 return ResourceManager.GetString("CA", resourceCulture);
             }
@@ -242,7 +242,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Campobasso.
         /// </summary>
-        internal static string CB {
+        public static string CB {
             get {
                 return ResourceManager.GetString("CB", resourceCulture);
             }
@@ -251,7 +251,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Caserta.
         /// </summary>
-        internal static string CE {
+        public static string CE {
             get {
                 return ResourceManager.GetString("CE", resourceCulture);
             }
@@ -260,7 +260,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Chieti.
         /// </summary>
-        internal static string CH {
+        public static string CH {
             get {
                 return ResourceManager.GetString("CH", resourceCulture);
             }
@@ -269,7 +269,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Carbonia Iglesias.
         /// </summary>
-        internal static string CI {
+        public static string CI {
             get {
                 return ResourceManager.GetString("CI", resourceCulture);
             }
@@ -278,7 +278,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Caltanissetta.
         /// </summary>
-        internal static string CL {
+        public static string CL {
             get {
                 return ResourceManager.GetString("CL", resourceCulture);
             }
@@ -287,7 +287,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Cuneo.
         /// </summary>
-        internal static string CN {
+        public static string CN {
             get {
                 return ResourceManager.GetString("CN", resourceCulture);
             }
@@ -296,7 +296,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Como.
         /// </summary>
-        internal static string CO {
+        public static string CO {
             get {
                 return ResourceManager.GetString("CO", resourceCulture);
             }
@@ -305,7 +305,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Cremona.
         /// </summary>
-        internal static string CR {
+        public static string CR {
             get {
                 return ResourceManager.GetString("CR", resourceCulture);
             }
@@ -314,7 +314,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Cosenza.
         /// </summary>
-        internal static string CS {
+        public static string CS {
             get {
                 return ResourceManager.GetString("CS", resourceCulture);
             }
@@ -323,7 +323,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Catania.
         /// </summary>
-        internal static string CT {
+        public static string CT {
             get {
                 return ResourceManager.GetString("CT", resourceCulture);
             }
@@ -332,7 +332,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Catanzaro.
         /// </summary>
-        internal static string CZ {
+        public static string CZ {
             get {
                 return ResourceManager.GetString("CZ", resourceCulture);
             }
@@ -341,7 +341,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Enna.
         /// </summary>
-        internal static string EN {
+        public static string EN {
             get {
                 return ResourceManager.GetString("EN", resourceCulture);
             }
@@ -350,7 +350,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Forli-Cesena.
         /// </summary>
-        internal static string FC {
+        public static string FC {
             get {
                 return ResourceManager.GetString("FC", resourceCulture);
             }
@@ -359,7 +359,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Ferrara.
         /// </summary>
-        internal static string FE {
+        public static string FE {
             get {
                 return ResourceManager.GetString("FE", resourceCulture);
             }
@@ -368,7 +368,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Foggia.
         /// </summary>
-        internal static string FG {
+        public static string FG {
             get {
                 return ResourceManager.GetString("FG", resourceCulture);
             }
@@ -377,7 +377,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Firenze.
         /// </summary>
-        internal static string FI {
+        public static string FI {
             get {
                 return ResourceManager.GetString("FI", resourceCulture);
             }
@@ -386,7 +386,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Fermo.
         /// </summary>
-        internal static string FM {
+        public static string FM {
             get {
                 return ResourceManager.GetString("FM", resourceCulture);
             }
@@ -395,7 +395,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Frosinone.
         /// </summary>
-        internal static string FR {
+        public static string FR {
             get {
                 return ResourceManager.GetString("FR", resourceCulture);
             }
@@ -404,7 +404,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Genova.
         /// </summary>
-        internal static string GE {
+        public static string GE {
             get {
                 return ResourceManager.GetString("GE", resourceCulture);
             }
@@ -413,7 +413,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Gorizia.
         /// </summary>
-        internal static string GO {
+        public static string GO {
             get {
                 return ResourceManager.GetString("GO", resourceCulture);
             }
@@ -422,7 +422,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Grosseto.
         /// </summary>
-        internal static string GR {
+        public static string GR {
             get {
                 return ResourceManager.GetString("GR", resourceCulture);
             }
@@ -431,7 +431,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Imperia.
         /// </summary>
-        internal static string IM {
+        public static string IM {
             get {
                 return ResourceManager.GetString("IM", resourceCulture);
             }
@@ -440,7 +440,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Isernia.
         /// </summary>
-        internal static string IS {
+        public static string IS {
             get {
                 return ResourceManager.GetString("IS", resourceCulture);
             }
@@ -449,7 +449,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Crotone.
         /// </summary>
-        internal static string KR {
+        public static string KR {
             get {
                 return ResourceManager.GetString("KR", resourceCulture);
             }
@@ -458,7 +458,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Lecco.
         /// </summary>
-        internal static string LC {
+        public static string LC {
             get {
                 return ResourceManager.GetString("LC", resourceCulture);
             }
@@ -467,7 +467,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Lecce.
         /// </summary>
-        internal static string LE {
+        public static string LE {
             get {
                 return ResourceManager.GetString("LE", resourceCulture);
             }
@@ -476,7 +476,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Livorno.
         /// </summary>
-        internal static string LI {
+        public static string LI {
             get {
                 return ResourceManager.GetString("LI", resourceCulture);
             }
@@ -485,7 +485,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Lodi.
         /// </summary>
-        internal static string LO {
+        public static string LO {
             get {
                 return ResourceManager.GetString("LO", resourceCulture);
             }
@@ -494,7 +494,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Latina.
         /// </summary>
-        internal static string LT {
+        public static string LT {
             get {
                 return ResourceManager.GetString("LT", resourceCulture);
             }
@@ -503,7 +503,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Lucca.
         /// </summary>
-        internal static string LU {
+        public static string LU {
             get {
                 return ResourceManager.GetString("LU", resourceCulture);
             }
@@ -512,7 +512,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Monza-Brianza.
         /// </summary>
-        internal static string MB {
+        public static string MB {
             get {
                 return ResourceManager.GetString("MB", resourceCulture);
             }
@@ -521,7 +521,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Macerata.
         /// </summary>
-        internal static string MC {
+        public static string MC {
             get {
                 return ResourceManager.GetString("MC", resourceCulture);
             }
@@ -530,7 +530,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Messina.
         /// </summary>
-        internal static string ME {
+        public static string ME {
             get {
                 return ResourceManager.GetString("ME", resourceCulture);
             }
@@ -539,7 +539,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Milano.
         /// </summary>
-        internal static string MI {
+        public static string MI {
             get {
                 return ResourceManager.GetString("MI", resourceCulture);
             }
@@ -548,7 +548,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Mantova.
         /// </summary>
-        internal static string MN {
+        public static string MN {
             get {
                 return ResourceManager.GetString("MN", resourceCulture);
             }
@@ -557,7 +557,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Modena.
         /// </summary>
-        internal static string MO {
+        public static string MO {
             get {
                 return ResourceManager.GetString("MO", resourceCulture);
             }
@@ -566,7 +566,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Massa-Carrara.
         /// </summary>
-        internal static string MS {
+        public static string MS {
             get {
                 return ResourceManager.GetString("MS", resourceCulture);
             }
@@ -575,7 +575,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Matera.
         /// </summary>
-        internal static string MT {
+        public static string MT {
             get {
                 return ResourceManager.GetString("MT", resourceCulture);
             }
@@ -584,7 +584,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Napoli.
         /// </summary>
-        internal static string NA {
+        public static string NA {
             get {
                 return ResourceManager.GetString("NA", resourceCulture);
             }
@@ -593,7 +593,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Novara.
         /// </summary>
-        internal static string NO {
+        public static string NO {
             get {
                 return ResourceManager.GetString("NO", resourceCulture);
             }
@@ -602,7 +602,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Nuoro.
         /// </summary>
-        internal static string NU {
+        public static string NU {
             get {
                 return ResourceManager.GetString("NU", resourceCulture);
             }
@@ -611,7 +611,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Ogliastra.
         /// </summary>
-        internal static string OG {
+        public static string OG {
             get {
                 return ResourceManager.GetString("OG", resourceCulture);
             }
@@ -620,7 +620,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Oristano.
         /// </summary>
-        internal static string OR {
+        public static string OR {
             get {
                 return ResourceManager.GetString("OR", resourceCulture);
             }
@@ -629,7 +629,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Olbia Tempio.
         /// </summary>
-        internal static string OT {
+        public static string OT {
             get {
                 return ResourceManager.GetString("OT", resourceCulture);
             }
@@ -638,7 +638,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Palermo.
         /// </summary>
-        internal static string PA {
+        public static string PA {
             get {
                 return ResourceManager.GetString("PA", resourceCulture);
             }
@@ -647,7 +647,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Piacenza.
         /// </summary>
-        internal static string PC {
+        public static string PC {
             get {
                 return ResourceManager.GetString("PC", resourceCulture);
             }
@@ -656,7 +656,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Padova.
         /// </summary>
-        internal static string PD {
+        public static string PD {
             get {
                 return ResourceManager.GetString("PD", resourceCulture);
             }
@@ -665,7 +665,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Pescara.
         /// </summary>
-        internal static string PE {
+        public static string PE {
             get {
                 return ResourceManager.GetString("PE", resourceCulture);
             }
@@ -674,7 +674,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Perugia.
         /// </summary>
-        internal static string PG {
+        public static string PG {
             get {
                 return ResourceManager.GetString("PG", resourceCulture);
             }
@@ -683,7 +683,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Pisa.
         /// </summary>
-        internal static string PI {
+        public static string PI {
             get {
                 return ResourceManager.GetString("PI", resourceCulture);
             }
@@ -692,7 +692,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Pordenone.
         /// </summary>
-        internal static string PN {
+        public static string PN {
             get {
                 return ResourceManager.GetString("PN", resourceCulture);
             }
@@ -701,7 +701,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Prato.
         /// </summary>
-        internal static string PO {
+        public static string PO {
             get {
                 return ResourceManager.GetString("PO", resourceCulture);
             }
@@ -710,7 +710,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Parma.
         /// </summary>
-        internal static string PR {
+        public static string PR {
             get {
                 return ResourceManager.GetString("PR", resourceCulture);
             }
@@ -719,7 +719,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Pistoia.
         /// </summary>
-        internal static string PT {
+        public static string PT {
             get {
                 return ResourceManager.GetString("PT", resourceCulture);
             }
@@ -728,7 +728,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Pesaro-Urbino.
         /// </summary>
-        internal static string PU {
+        public static string PU {
             get {
                 return ResourceManager.GetString("PU", resourceCulture);
             }
@@ -737,7 +737,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Pavia.
         /// </summary>
-        internal static string PV {
+        public static string PV {
             get {
                 return ResourceManager.GetString("PV", resourceCulture);
             }
@@ -746,7 +746,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Potenza.
         /// </summary>
-        internal static string PZ {
+        public static string PZ {
             get {
                 return ResourceManager.GetString("PZ", resourceCulture);
             }
@@ -755,7 +755,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Ravenna.
         /// </summary>
-        internal static string RA {
+        public static string RA {
             get {
                 return ResourceManager.GetString("RA", resourceCulture);
             }
@@ -764,7 +764,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Reggio-Calabria.
         /// </summary>
-        internal static string RC {
+        public static string RC {
             get {
                 return ResourceManager.GetString("RC", resourceCulture);
             }
@@ -773,7 +773,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Reggio-Emilia.
         /// </summary>
-        internal static string RE {
+        public static string RE {
             get {
                 return ResourceManager.GetString("RE", resourceCulture);
             }
@@ -782,7 +782,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Ragusa.
         /// </summary>
-        internal static string RG {
+        public static string RG {
             get {
                 return ResourceManager.GetString("RG", resourceCulture);
             }
@@ -791,7 +791,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Rieti.
         /// </summary>
-        internal static string RI {
+        public static string RI {
             get {
                 return ResourceManager.GetString("RI", resourceCulture);
             }
@@ -800,7 +800,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Roma.
         /// </summary>
-        internal static string RM {
+        public static string RM {
             get {
                 return ResourceManager.GetString("RM", resourceCulture);
             }
@@ -809,7 +809,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Rimini.
         /// </summary>
-        internal static string RN {
+        public static string RN {
             get {
                 return ResourceManager.GetString("RN", resourceCulture);
             }
@@ -818,7 +818,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Rovigo.
         /// </summary>
-        internal static string RO {
+        public static string RO {
             get {
                 return ResourceManager.GetString("RO", resourceCulture);
             }
@@ -827,7 +827,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Salerno.
         /// </summary>
-        internal static string SA {
+        public static string SA {
             get {
                 return ResourceManager.GetString("SA", resourceCulture);
             }
@@ -836,7 +836,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Siena.
         /// </summary>
-        internal static string SI {
+        public static string SI {
             get {
                 return ResourceManager.GetString("SI", resourceCulture);
             }
@@ -845,7 +845,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Sondrio.
         /// </summary>
-        internal static string SO {
+        public static string SO {
             get {
                 return ResourceManager.GetString("SO", resourceCulture);
             }
@@ -854,7 +854,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to La-Spezia.
         /// </summary>
-        internal static string SP {
+        public static string SP {
             get {
                 return ResourceManager.GetString("SP", resourceCulture);
             }
@@ -863,7 +863,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Siracusa.
         /// </summary>
-        internal static string SR {
+        public static string SR {
             get {
                 return ResourceManager.GetString("SR", resourceCulture);
             }
@@ -872,7 +872,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Sassari.
         /// </summary>
-        internal static string SS {
+        public static string SS {
             get {
                 return ResourceManager.GetString("SS", resourceCulture);
             }
@@ -881,7 +881,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Sud Sardegna.
         /// </summary>
-        internal static string SU {
+        public static string SU {
             get {
                 return ResourceManager.GetString("SU", resourceCulture);
             }
@@ -890,7 +890,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Savona.
         /// </summary>
-        internal static string SV {
+        public static string SV {
             get {
                 return ResourceManager.GetString("SV", resourceCulture);
             }
@@ -899,7 +899,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Taranto.
         /// </summary>
-        internal static string TA {
+        public static string TA {
             get {
                 return ResourceManager.GetString("TA", resourceCulture);
             }
@@ -908,7 +908,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Teramo.
         /// </summary>
-        internal static string TE {
+        public static string TE {
             get {
                 return ResourceManager.GetString("TE", resourceCulture);
             }
@@ -917,7 +917,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Trento.
         /// </summary>
-        internal static string TN {
+        public static string TN {
             get {
                 return ResourceManager.GetString("TN", resourceCulture);
             }
@@ -926,7 +926,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Torino.
         /// </summary>
-        internal static string TO {
+        public static string TO {
             get {
                 return ResourceManager.GetString("TO", resourceCulture);
             }
@@ -935,7 +935,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Trapani.
         /// </summary>
-        internal static string TP {
+        public static string TP {
             get {
                 return ResourceManager.GetString("TP", resourceCulture);
             }
@@ -944,7 +944,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Terni.
         /// </summary>
-        internal static string TR {
+        public static string TR {
             get {
                 return ResourceManager.GetString("TR", resourceCulture);
             }
@@ -953,7 +953,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Trieste.
         /// </summary>
-        internal static string TS {
+        public static string TS {
             get {
                 return ResourceManager.GetString("TS", resourceCulture);
             }
@@ -962,7 +962,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Treviso.
         /// </summary>
-        internal static string TV {
+        public static string TV {
             get {
                 return ResourceManager.GetString("TV", resourceCulture);
             }
@@ -971,7 +971,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Udine.
         /// </summary>
-        internal static string UD {
+        public static string UD {
             get {
                 return ResourceManager.GetString("UD", resourceCulture);
             }
@@ -980,7 +980,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Varese.
         /// </summary>
-        internal static string VA {
+        public static string VA {
             get {
                 return ResourceManager.GetString("VA", resourceCulture);
             }
@@ -989,7 +989,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Verbania.
         /// </summary>
-        internal static string VB {
+        public static string VB {
             get {
                 return ResourceManager.GetString("VB", resourceCulture);
             }
@@ -998,7 +998,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Vercelli.
         /// </summary>
-        internal static string VC {
+        public static string VC {
             get {
                 return ResourceManager.GetString("VC", resourceCulture);
             }
@@ -1007,7 +1007,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Venezia.
         /// </summary>
-        internal static string VE {
+        public static string VE {
             get {
                 return ResourceManager.GetString("VE", resourceCulture);
             }
@@ -1016,7 +1016,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Vicenza.
         /// </summary>
-        internal static string VI {
+        public static string VI {
             get {
                 return ResourceManager.GetString("VI", resourceCulture);
             }
@@ -1025,7 +1025,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Verona.
         /// </summary>
-        internal static string VR {
+        public static string VR {
             get {
                 return ResourceManager.GetString("VR", resourceCulture);
             }
@@ -1034,7 +1034,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Medio Campidano.
         /// </summary>
-        internal static string VS {
+        public static string VS {
             get {
                 return ResourceManager.GetString("VS", resourceCulture);
             }
@@ -1043,7 +1043,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Viterbo.
         /// </summary>
-        internal static string VT {
+        public static string VT {
             get {
                 return ResourceManager.GetString("VT", resourceCulture);
             }
@@ -1052,7 +1052,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Vibo-Valentia.
         /// </summary>
-        internal static string VV {
+        public static string VV {
             get {
                 return ResourceManager.GetString("VV", resourceCulture);
             }

@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class RegimeFiscale {
+    public class RegimeFiscale {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.RegimeFiscale", typeof(RegimeFiscale).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Ordinario.
         /// </summary>
-        internal static string RF01 {
+        public static string RF01 {
             get {
                 return ResourceManager.GetString("RF01", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Contribuenti minimi (art.1, c.96-117, L. 244/07 ).
         /// </summary>
-        internal static string RF02 {
+        public static string RF02 {
             get {
                 return ResourceManager.GetString("RF02", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Agricoltura e attività connesse e pesca (artt.34 e 34-bis, DPR 633/72 ).
         /// </summary>
-        internal static string RF04 {
+        public static string RF04 {
             get {
                 return ResourceManager.GetString("RF04", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Vendita sali e tabacchi (art.74, c.1, DPR 633/72 ).
         /// </summary>
-        internal static string RF05 {
+        public static string RF05 {
             get {
                 return ResourceManager.GetString("RF05", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Commercio fiammiferi (art.74, c.1, DPR 633/72 ).
         /// </summary>
-        internal static string RF06 {
+        public static string RF06 {
             get {
                 return ResourceManager.GetString("RF06", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Editoria (art.74, c.1, DPR 633/72 ).
         /// </summary>
-        internal static string RF07 {
+        public static string RF07 {
             get {
                 return ResourceManager.GetString("RF07", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Gestione servizi telefonia pubblica (art.74, c.1, DPR 633/72 ).
         /// </summary>
-        internal static string RF08 {
+        public static string RF08 {
             get {
                 return ResourceManager.GetString("RF08", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Rivendita documenti di trasporto pubblico e di sosta (art.74, c.1, DPR 633/72 ).
         /// </summary>
-        internal static string RF09 {
+        public static string RF09 {
             get {
                 return ResourceManager.GetString("RF09", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Intrattenimenti, giochi e altre attività di cui all atariffa allegata al DPR 640/72 (art.74, c.6, DPR 633/72 ).
         /// </summary>
-        internal static string RF10 {
+        public static string RF10 {
             get {
                 return ResourceManager.GetString("RF10", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Agenzie viaggi e turismo (art.74-ter, DPR 633/72 ).
         /// </summary>
-        internal static string RF11 {
+        public static string RF11 {
             get {
                 return ResourceManager.GetString("RF11", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Agriturismo (art.5, c.2 L. 413/91 ).
         /// </summary>
-        internal static string RF12 {
+        public static string RF12 {
             get {
                 return ResourceManager.GetString("RF12", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Vendite a domicilio (art.25-bis, c.6, DPR 600/73 ).
         /// </summary>
-        internal static string RF13 {
+        public static string RF13 {
             get {
                 return ResourceManager.GetString("RF13", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Rivendita beni usati, oggetti d&apos;arte, d&apos;antiquariato o da collezione (art.36, DL 41/95 ).
         /// </summary>
-        internal static string RF14 {
+        public static string RF14 {
             get {
                 return ResourceManager.GetString("RF14", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Agenzie di vendite all&apos;asta di oggetti d&apos;arte, antiquariato o da collezione (art.40-bis, DL 41/95 ).
         /// </summary>
-        internal static string RF15 {
+        public static string RF15 {
             get {
                 return ResourceManager.GetString("RF15", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to IVA per cassa P.A. (art.6, c.5, DPR 633/72 ).
         /// </summary>
-        internal static string RF16 {
+        public static string RF16 {
             get {
                 return ResourceManager.GetString("RF16", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to IVA per cassa (art. 32-bis, DL 83/2012).
         /// </summary>
-        internal static string RF17 {
+        public static string RF17 {
             get {
                 return ResourceManager.GetString("RF17", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Altro.
         /// </summary>
-        internal static string RF18 {
+        public static string RF18 {
             get {
                 return ResourceManager.GetString("RF18", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Regime forfettario (art.1, c.54-89, L. 190/2014 ).
         /// </summary>
-        internal static string RF19 {
+        public static string RF19 {
             get {
                 return ResourceManager.GetString("RF19", resourceCulture);
             }

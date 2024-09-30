@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ValidatorMessages {
+    public class ValidatorMessages {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.ValidatorMessages", typeof(ValidatorMessages).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to DatiBeniServizi è obbligatorio.
         /// </summary>
-        internal static string DatiBeniServiziEObbligatorio {
+        public static string DatiBeniServiziEObbligatorio {
             get {
                 return ResourceManager.GetString("DatiBeniServiziEObbligatorio", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Natura non presente a fronte di Aliquota IVA pari a 0.
         /// </summary>
-        internal static string E00400 {
+        public static string E00400 {
             get {
                 return ResourceManager.GetString("E00400", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to L’indicazione di un’aliquota IVA pari a zero obbliga all’indicazione della natura dell’operazione che giustifichi la non imponibilità della stessa.
         /// </summary>
-        internal static string E00400_S {
+        public static string E00400_S {
             get {
                 return ResourceManager.GetString("E00400_S", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16).
         /// </summary>
-        internal static string E00401 {
+        public static string E00401 {
             get {
                 return ResourceManager.GetString("E00401", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Natura presente a fronte di Aliquota IVA diversa da zero.
         /// </summary>
-        internal static string E00401_S {
+        public static string E00401_S {
             get {
                 return ResourceManager.GetString("E00401_S", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to DatiRitenuta non presente a fronte di almeno un blocco DettaglioLinee con Ritenuta uguale a SI.
         /// </summary>
-        internal static string E00411 {
+        public static string E00411 {
             get {
                 return ResourceManager.GetString("E00411", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to DatiRitenuta non presente a fronte di DatiCassaPrevidenziale.Ritenuta valorizzato.
         /// </summary>
-        internal static string E00415 {
+        public static string E00415 {
             get {
                 return ResourceManager.GetString("E00415", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato).
         /// </summary>
-        internal static string E00417 {
+        public static string E00417 {
             get {
                 return ResourceManager.GetString("E00417", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato).
         /// </summary>
-        internal static string E00417_S {
+        public static string E00417_S {
             get {
                 return ResourceManager.GetString("E00417_S", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Data antecedente a una o più date in DatiFattureCollegate.
         /// </summary>
-        internal static string E00418 {
+        public static string E00418 {
             get {
                 return ResourceManager.GetString("E00418", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Data antecedente a data fattura rettificata.
         /// </summary>
-        internal static string E00418_S {
+        public static string E00418_S {
             get {
                 return ResourceManager.GetString("E00418_S", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to DatiRiepilogo non presente in corrispondenza di almeno un valore DettaglioLinee.AliquiotaIVA o DatiCassaPrevidenziale.AliquotaIVA.
         /// </summary>
-        internal static string E00419 {
+        public static string E00419 {
             get {
                 return ResourceManager.GetString("E00419", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Natura con valore di tipo &apos;N6&apos; (inversione contabile) a fronte EsigiblitaIVA uguale a &apos;S&apos; (scissione pagamenti).
         /// </summary>
-        internal static string E00420 {
+        public static string E00420 {
             get {
                 return ResourceManager.GetString("E00420", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to ImponibileImporto non calcolato secondo le specifiche tecniche.
         /// </summary>
-        internal static string E00422 {
+        public static string E00422 {
             get {
                 return ResourceManager.GetString("E00422", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to PrezzoTotale non calcolato secondo le specifiche tecniche.
         /// </summary>
-        internal static string E00423 {
+        public static string E00423 {
             get {
                 return ResourceManager.GetString("E00423", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Numero non contiene caratteri numerici.
         /// </summary>
-        internal static string E00425 {
+        public static string E00425 {
             get {
                 return ResourceManager.GetString("E00425", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Natura non presente a fronte di Aliquota IVA pari a 0.
         /// </summary>
-        internal static string E00429 {
+        public static string E00429 {
             get {
                 return ResourceManager.GetString("E00429", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16).
         /// </summary>
-        internal static string E00430 {
+        public static string E00430 {
             get {
                 return ResourceManager.GetString("E00430", resourceCulture);
             }
@@ -224,7 +224,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Percentuale e Importo non presenti a fronte di Tipo valorizzato.
         /// </summary>
-        internal static string E00437 {
+        public static string E00437 {
             get {
                 return ResourceManager.GetString("E00437", resourceCulture);
             }
@@ -233,7 +233,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Tutti i valori delle aliquote IVA presenti nelle linee di dettaglio di una fattura o nei dati di cassa previdenziale devono essere presenti anche nei dati di riepilogo.
         /// </summary>
-        internal static string E00443 {
+        public static string E00443 {
             get {
                 return ResourceManager.GetString("E00443", resourceCulture);
             }
@@ -242,7 +242,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Tutti i valori di natura dell’operazione presenti nelle linee di dettaglio di una fattura o nei dati di cassa previdenziale devono essere presenti anche nei dati di riepilogo.
         /// </summary>
-        internal static string E00444 {
+        public static string E00444 {
             get {
                 return ResourceManager.GetString("E00444", resourceCulture);
             }
@@ -251,7 +251,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Importo totale superiore al limite previsto per le fatture semplificate ai sensi del DPR 633/72, art. 21bis e DM del 10 maggio 2019.
         /// </summary>
-        internal static string E00460 {
+        public static string E00460 {
             get {
                 return ResourceManager.GetString("E00460", resourceCulture);
             }
@@ -260,7 +260,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to I valori TD01, TD02, TD03, TD06, TD16, TD17, TD18, TD19, TD20, TD24, TD25 e TD28 del tipo documento non ammettono l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario.
         /// </summary>
-        internal static string E00471 {
+        public static string E00471 {
             get {
                 return ResourceManager.GetString("E00471", resourceCulture);
             }
@@ -269,7 +269,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Il valore TD07 del tipo documento non ammette l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario.
         /// </summary>
-        internal static string E00471_S {
+        public static string E00471_S {
             get {
                 return ResourceManager.GetString("E00471_S", resourceCulture);
             }
@@ -278,7 +278,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to I valori TD21 e TD27 del tipo documento non ammettono l’indicazione in fattura di un cedente diverso dal cessionario.
         /// </summary>
-        internal static string E00472 {
+        public static string E00472 {
             get {
                 return ResourceManager.GetString("E00472", resourceCulture);
             }
@@ -287,7 +287,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Per il valore indicato nell’elemento TipoDocumento il valore presente nell’elemento IdPaese non è ammesso (i valori TD17, TD18, TD19 e TD28 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano. Nei casi di TD17 e TD19 è ammessa l’indicazione del valore ‘OO’ nell’elemento IdPaese per operazioni effettuate da soggetti residenti in Livigno e Campione d’Italia.).
         /// </summary>
-        internal static string E00473 {
+        public static string E00473 {
             get {
                 return ResourceManager.GetString("E00473", resourceCulture);
             }
@@ -296,7 +296,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Nel tipo documento ‘autofattura per splafonamento’ tutte le linee di dettaglio devo avere un’aliquota IVA diversa da zero.
         /// </summary>
-        internal static string E00474 {
+        public static string E00474 {
             get {
                 return ResourceManager.GetString("E00474", resourceCulture);
             }
@@ -305,7 +305,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Per il valore indicato nell’elemento TipoDocumento deve essere presente l’elemento IdFiscaleIVA del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22, TD23 e TD28 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente).
         /// </summary>
-        internal static string E00475 {
+        public static string E00475 {
             get {
                 return ResourceManager.GetString("E00475", resourceCulture);
             }
@@ -314,7 +314,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Gli elementi IdPaese e IdPaese non possono essere entrambi valorizzati con codice diverso da IT.
         /// </summary>
-        internal static string E00476 {
+        public static string E00476 {
             get {
                 return ResourceManager.GetString("E00476", resourceCulture);
             }
@@ -323,7 +323,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to IdentificativiFiscali è obbligatorio.
         /// </summary>
-        internal static string IdentificativiFiscaliEObbligatorio {
+        public static string IdentificativiFiscaliEObbligatorio {
             get {
                 return ResourceManager.GetString("IdentificativiFiscaliEObbligatorio", resourceCulture);
             }
@@ -332,7 +332,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to &apos;{PropertyName}&apos; valori accettati: {AcceptedValues}.
         /// </summary>
-        internal static string PropertyName_valoriAccettati_AcceptedValues {
+        public static string PropertyName_valoriAccettati_AcceptedValues {
             get {
                 return ResourceManager.GetString("PropertyName_valoriAccettati_AcceptedValues", resourceCulture);
             }
@@ -341,7 +341,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Testo contenente caratteri non validi ({0}). valori non accettati: {{NonLatinCode}}.
         /// </summary>
-        internal static string TestoContententeCaratteriNonValidi {
+        public static string TestoContententeCaratteriNonValidi {
             get {
                 return ResourceManager.GetString("TestoContententeCaratteriNonValidi", resourceCulture);
             }
@@ -350,7 +350,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Valori consentiti {0}-{1}.
         /// </summary>
-        internal static string ValidNumberRange_X_Y {
+        public static string ValidNumberRange_X_Y {
             get {
                 return ResourceManager.GetString("ValidNumberRange_X_Y", resourceCulture);
             }

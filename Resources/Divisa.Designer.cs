@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Divisa {
+    public class Divisa {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.Divisa", typeof(Divisa).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string AED {
+        public static string AED {
             get {
                 return ResourceManager.GetString("AED", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string AFN {
+        public static string AFN {
             get {
                 return ResourceManager.GetString("AFN", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ALL {
+        public static string ALL {
             get {
                 return ResourceManager.GetString("ALL", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string AMD {
+        public static string AMD {
             get {
                 return ResourceManager.GetString("AMD", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ANG {
+        public static string ANG {
             get {
                 return ResourceManager.GetString("ANG", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string AOA {
+        public static string AOA {
             get {
                 return ResourceManager.GetString("AOA", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ARS {
+        public static string ARS {
             get {
                 return ResourceManager.GetString("ARS", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string AUD {
+        public static string AUD {
             get {
                 return ResourceManager.GetString("AUD", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string AWG {
+        public static string AWG {
             get {
                 return ResourceManager.GetString("AWG", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string AZN {
+        public static string AZN {
             get {
                 return ResourceManager.GetString("AZN", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BAM {
+        public static string BAM {
             get {
                 return ResourceManager.GetString("BAM", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BBD {
+        public static string BBD {
             get {
                 return ResourceManager.GetString("BBD", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BDT {
+        public static string BDT {
             get {
                 return ResourceManager.GetString("BDT", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BGN {
+        public static string BGN {
             get {
                 return ResourceManager.GetString("BGN", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BHD {
+        public static string BHD {
             get {
                 return ResourceManager.GetString("BHD", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BIF {
+        public static string BIF {
             get {
                 return ResourceManager.GetString("BIF", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BMD {
+        public static string BMD {
             get {
                 return ResourceManager.GetString("BMD", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BND {
+        public static string BND {
             get {
                 return ResourceManager.GetString("BND", resourceCulture);
             }
@@ -224,7 +224,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BOB {
+        public static string BOB {
             get {
                 return ResourceManager.GetString("BOB", resourceCulture);
             }
@@ -233,7 +233,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BOV {
+        public static string BOV {
             get {
                 return ResourceManager.GetString("BOV", resourceCulture);
             }
@@ -242,7 +242,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BRL {
+        public static string BRL {
             get {
                 return ResourceManager.GetString("BRL", resourceCulture);
             }
@@ -251,7 +251,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BSD {
+        public static string BSD {
             get {
                 return ResourceManager.GetString("BSD", resourceCulture);
             }
@@ -260,7 +260,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BTN {
+        public static string BTN {
             get {
                 return ResourceManager.GetString("BTN", resourceCulture);
             }
@@ -269,7 +269,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BWP {
+        public static string BWP {
             get {
                 return ResourceManager.GetString("BWP", resourceCulture);
             }
@@ -278,7 +278,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BYR {
+        public static string BYR {
             get {
                 return ResourceManager.GetString("BYR", resourceCulture);
             }
@@ -287,7 +287,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string BZD {
+        public static string BZD {
             get {
                 return ResourceManager.GetString("BZD", resourceCulture);
             }
@@ -296,7 +296,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CAD {
+        public static string CAD {
             get {
                 return ResourceManager.GetString("CAD", resourceCulture);
             }
@@ -305,7 +305,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CDF {
+        public static string CDF {
             get {
                 return ResourceManager.GetString("CDF", resourceCulture);
             }
@@ -314,7 +314,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CHE {
+        public static string CHE {
             get {
                 return ResourceManager.GetString("CHE", resourceCulture);
             }
@@ -323,7 +323,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CHF {
+        public static string CHF {
             get {
                 return ResourceManager.GetString("CHF", resourceCulture);
             }
@@ -332,7 +332,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CHW {
+        public static string CHW {
             get {
                 return ResourceManager.GetString("CHW", resourceCulture);
             }
@@ -341,7 +341,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CLF {
+        public static string CLF {
             get {
                 return ResourceManager.GetString("CLF", resourceCulture);
             }
@@ -350,7 +350,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CLP {
+        public static string CLP {
             get {
                 return ResourceManager.GetString("CLP", resourceCulture);
             }
@@ -359,7 +359,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CNY {
+        public static string CNY {
             get {
                 return ResourceManager.GetString("CNY", resourceCulture);
             }
@@ -368,7 +368,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string COP {
+        public static string COP {
             get {
                 return ResourceManager.GetString("COP", resourceCulture);
             }
@@ -377,7 +377,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string COU {
+        public static string COU {
             get {
                 return ResourceManager.GetString("COU", resourceCulture);
             }
@@ -386,7 +386,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CRC {
+        public static string CRC {
             get {
                 return ResourceManager.GetString("CRC", resourceCulture);
             }
@@ -395,7 +395,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CUC {
+        public static string CUC {
             get {
                 return ResourceManager.GetString("CUC", resourceCulture);
             }
@@ -404,7 +404,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CUP {
+        public static string CUP {
             get {
                 return ResourceManager.GetString("CUP", resourceCulture);
             }
@@ -413,7 +413,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CVE {
+        public static string CVE {
             get {
                 return ResourceManager.GetString("CVE", resourceCulture);
             }
@@ -422,7 +422,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string CZK {
+        public static string CZK {
             get {
                 return ResourceManager.GetString("CZK", resourceCulture);
             }
@@ -431,7 +431,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string DJF {
+        public static string DJF {
             get {
                 return ResourceManager.GetString("DJF", resourceCulture);
             }
@@ -440,7 +440,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string DKK {
+        public static string DKK {
             get {
                 return ResourceManager.GetString("DKK", resourceCulture);
             }
@@ -449,7 +449,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string DOP {
+        public static string DOP {
             get {
                 return ResourceManager.GetString("DOP", resourceCulture);
             }
@@ -458,7 +458,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string DZD {
+        public static string DZD {
             get {
                 return ResourceManager.GetString("DZD", resourceCulture);
             }
@@ -467,7 +467,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string EGP {
+        public static string EGP {
             get {
                 return ResourceManager.GetString("EGP", resourceCulture);
             }
@@ -476,7 +476,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ERN {
+        public static string ERN {
             get {
                 return ResourceManager.GetString("ERN", resourceCulture);
             }
@@ -485,7 +485,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ETB {
+        public static string ETB {
             get {
                 return ResourceManager.GetString("ETB", resourceCulture);
             }
@@ -494,7 +494,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string EUR {
+        public static string EUR {
             get {
                 return ResourceManager.GetString("EUR", resourceCulture);
             }
@@ -503,7 +503,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string FJD {
+        public static string FJD {
             get {
                 return ResourceManager.GetString("FJD", resourceCulture);
             }
@@ -512,7 +512,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string FKP {
+        public static string FKP {
             get {
                 return ResourceManager.GetString("FKP", resourceCulture);
             }
@@ -521,7 +521,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GBP {
+        public static string GBP {
             get {
                 return ResourceManager.GetString("GBP", resourceCulture);
             }
@@ -530,7 +530,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GEL {
+        public static string GEL {
             get {
                 return ResourceManager.GetString("GEL", resourceCulture);
             }
@@ -539,7 +539,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GHS {
+        public static string GHS {
             get {
                 return ResourceManager.GetString("GHS", resourceCulture);
             }
@@ -548,7 +548,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GIP {
+        public static string GIP {
             get {
                 return ResourceManager.GetString("GIP", resourceCulture);
             }
@@ -557,7 +557,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GMD {
+        public static string GMD {
             get {
                 return ResourceManager.GetString("GMD", resourceCulture);
             }
@@ -566,7 +566,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GNF {
+        public static string GNF {
             get {
                 return ResourceManager.GetString("GNF", resourceCulture);
             }
@@ -575,7 +575,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GTQ {
+        public static string GTQ {
             get {
                 return ResourceManager.GetString("GTQ", resourceCulture);
             }
@@ -584,7 +584,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string GYD {
+        public static string GYD {
             get {
                 return ResourceManager.GetString("GYD", resourceCulture);
             }
@@ -593,7 +593,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string HKD {
+        public static string HKD {
             get {
                 return ResourceManager.GetString("HKD", resourceCulture);
             }
@@ -602,7 +602,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string HNL {
+        public static string HNL {
             get {
                 return ResourceManager.GetString("HNL", resourceCulture);
             }
@@ -611,7 +611,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string HRK {
+        public static string HRK {
             get {
                 return ResourceManager.GetString("HRK", resourceCulture);
             }
@@ -620,7 +620,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string HTG {
+        public static string HTG {
             get {
                 return ResourceManager.GetString("HTG", resourceCulture);
             }
@@ -629,7 +629,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string HUF {
+        public static string HUF {
             get {
                 return ResourceManager.GetString("HUF", resourceCulture);
             }
@@ -638,7 +638,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string IDR {
+        public static string IDR {
             get {
                 return ResourceManager.GetString("IDR", resourceCulture);
             }
@@ -647,7 +647,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ILS {
+        public static string ILS {
             get {
                 return ResourceManager.GetString("ILS", resourceCulture);
             }
@@ -656,7 +656,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string INR {
+        public static string INR {
             get {
                 return ResourceManager.GetString("INR", resourceCulture);
             }
@@ -665,7 +665,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string IQD {
+        public static string IQD {
             get {
                 return ResourceManager.GetString("IQD", resourceCulture);
             }
@@ -674,7 +674,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string IRR {
+        public static string IRR {
             get {
                 return ResourceManager.GetString("IRR", resourceCulture);
             }
@@ -683,7 +683,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ISK {
+        public static string ISK {
             get {
                 return ResourceManager.GetString("ISK", resourceCulture);
             }
@@ -692,7 +692,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string JMD {
+        public static string JMD {
             get {
                 return ResourceManager.GetString("JMD", resourceCulture);
             }
@@ -701,7 +701,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string JOD {
+        public static string JOD {
             get {
                 return ResourceManager.GetString("JOD", resourceCulture);
             }
@@ -710,7 +710,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string JPY {
+        public static string JPY {
             get {
                 return ResourceManager.GetString("JPY", resourceCulture);
             }
@@ -719,7 +719,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KES {
+        public static string KES {
             get {
                 return ResourceManager.GetString("KES", resourceCulture);
             }
@@ -728,7 +728,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KGS {
+        public static string KGS {
             get {
                 return ResourceManager.GetString("KGS", resourceCulture);
             }
@@ -737,7 +737,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KHR {
+        public static string KHR {
             get {
                 return ResourceManager.GetString("KHR", resourceCulture);
             }
@@ -746,7 +746,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KMF {
+        public static string KMF {
             get {
                 return ResourceManager.GetString("KMF", resourceCulture);
             }
@@ -755,7 +755,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KPW {
+        public static string KPW {
             get {
                 return ResourceManager.GetString("KPW", resourceCulture);
             }
@@ -764,7 +764,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KRW {
+        public static string KRW {
             get {
                 return ResourceManager.GetString("KRW", resourceCulture);
             }
@@ -773,7 +773,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KWD {
+        public static string KWD {
             get {
                 return ResourceManager.GetString("KWD", resourceCulture);
             }
@@ -782,7 +782,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KYD {
+        public static string KYD {
             get {
                 return ResourceManager.GetString("KYD", resourceCulture);
             }
@@ -791,7 +791,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string KZT {
+        public static string KZT {
             get {
                 return ResourceManager.GetString("KZT", resourceCulture);
             }
@@ -800,7 +800,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string LAK {
+        public static string LAK {
             get {
                 return ResourceManager.GetString("LAK", resourceCulture);
             }
@@ -809,7 +809,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string LBP {
+        public static string LBP {
             get {
                 return ResourceManager.GetString("LBP", resourceCulture);
             }
@@ -818,7 +818,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string LKR {
+        public static string LKR {
             get {
                 return ResourceManager.GetString("LKR", resourceCulture);
             }
@@ -827,7 +827,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string LRD {
+        public static string LRD {
             get {
                 return ResourceManager.GetString("LRD", resourceCulture);
             }
@@ -836,7 +836,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string LSL {
+        public static string LSL {
             get {
                 return ResourceManager.GetString("LSL", resourceCulture);
             }
@@ -845,7 +845,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string LTL {
+        public static string LTL {
             get {
                 return ResourceManager.GetString("LTL", resourceCulture);
             }
@@ -854,7 +854,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string LYD {
+        public static string LYD {
             get {
                 return ResourceManager.GetString("LYD", resourceCulture);
             }
@@ -863,7 +863,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MAD {
+        public static string MAD {
             get {
                 return ResourceManager.GetString("MAD", resourceCulture);
             }
@@ -872,7 +872,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MDL {
+        public static string MDL {
             get {
                 return ResourceManager.GetString("MDL", resourceCulture);
             }
@@ -881,7 +881,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MGA {
+        public static string MGA {
             get {
                 return ResourceManager.GetString("MGA", resourceCulture);
             }
@@ -890,7 +890,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MKD {
+        public static string MKD {
             get {
                 return ResourceManager.GetString("MKD", resourceCulture);
             }
@@ -899,7 +899,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MMK {
+        public static string MMK {
             get {
                 return ResourceManager.GetString("MMK", resourceCulture);
             }
@@ -908,7 +908,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MNT {
+        public static string MNT {
             get {
                 return ResourceManager.GetString("MNT", resourceCulture);
             }
@@ -917,7 +917,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MOP {
+        public static string MOP {
             get {
                 return ResourceManager.GetString("MOP", resourceCulture);
             }
@@ -926,7 +926,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MRO {
+        public static string MRO {
             get {
                 return ResourceManager.GetString("MRO", resourceCulture);
             }
@@ -935,7 +935,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MUR {
+        public static string MUR {
             get {
                 return ResourceManager.GetString("MUR", resourceCulture);
             }
@@ -944,7 +944,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MVR {
+        public static string MVR {
             get {
                 return ResourceManager.GetString("MVR", resourceCulture);
             }
@@ -953,7 +953,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MWK {
+        public static string MWK {
             get {
                 return ResourceManager.GetString("MWK", resourceCulture);
             }
@@ -962,7 +962,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MXN {
+        public static string MXN {
             get {
                 return ResourceManager.GetString("MXN", resourceCulture);
             }
@@ -971,7 +971,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MXV {
+        public static string MXV {
             get {
                 return ResourceManager.GetString("MXV", resourceCulture);
             }
@@ -980,7 +980,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MYR {
+        public static string MYR {
             get {
                 return ResourceManager.GetString("MYR", resourceCulture);
             }
@@ -989,7 +989,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string MZN {
+        public static string MZN {
             get {
                 return ResourceManager.GetString("MZN", resourceCulture);
             }
@@ -998,7 +998,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string NAD {
+        public static string NAD {
             get {
                 return ResourceManager.GetString("NAD", resourceCulture);
             }
@@ -1007,7 +1007,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string NGN {
+        public static string NGN {
             get {
                 return ResourceManager.GetString("NGN", resourceCulture);
             }
@@ -1016,7 +1016,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string NIO {
+        public static string NIO {
             get {
                 return ResourceManager.GetString("NIO", resourceCulture);
             }
@@ -1025,7 +1025,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string NOK {
+        public static string NOK {
             get {
                 return ResourceManager.GetString("NOK", resourceCulture);
             }
@@ -1034,7 +1034,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string NPR {
+        public static string NPR {
             get {
                 return ResourceManager.GetString("NPR", resourceCulture);
             }
@@ -1043,7 +1043,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string NZD {
+        public static string NZD {
             get {
                 return ResourceManager.GetString("NZD", resourceCulture);
             }
@@ -1052,7 +1052,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string OMR {
+        public static string OMR {
             get {
                 return ResourceManager.GetString("OMR", resourceCulture);
             }
@@ -1061,7 +1061,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string PAB {
+        public static string PAB {
             get {
                 return ResourceManager.GetString("PAB", resourceCulture);
             }
@@ -1070,7 +1070,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string PEN {
+        public static string PEN {
             get {
                 return ResourceManager.GetString("PEN", resourceCulture);
             }
@@ -1079,7 +1079,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string PGK {
+        public static string PGK {
             get {
                 return ResourceManager.GetString("PGK", resourceCulture);
             }
@@ -1088,7 +1088,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string PHP {
+        public static string PHP {
             get {
                 return ResourceManager.GetString("PHP", resourceCulture);
             }
@@ -1097,7 +1097,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string PKR {
+        public static string PKR {
             get {
                 return ResourceManager.GetString("PKR", resourceCulture);
             }
@@ -1106,7 +1106,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string PLN {
+        public static string PLN {
             get {
                 return ResourceManager.GetString("PLN", resourceCulture);
             }
@@ -1115,7 +1115,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string PYG {
+        public static string PYG {
             get {
                 return ResourceManager.GetString("PYG", resourceCulture);
             }
@@ -1124,7 +1124,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string QAR {
+        public static string QAR {
             get {
                 return ResourceManager.GetString("QAR", resourceCulture);
             }
@@ -1133,7 +1133,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string RON {
+        public static string RON {
             get {
                 return ResourceManager.GetString("RON", resourceCulture);
             }
@@ -1142,7 +1142,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string RSD {
+        public static string RSD {
             get {
                 return ResourceManager.GetString("RSD", resourceCulture);
             }
@@ -1151,7 +1151,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string RUB {
+        public static string RUB {
             get {
                 return ResourceManager.GetString("RUB", resourceCulture);
             }
@@ -1160,7 +1160,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string RWF {
+        public static string RWF {
             get {
                 return ResourceManager.GetString("RWF", resourceCulture);
             }
@@ -1169,7 +1169,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SAR {
+        public static string SAR {
             get {
                 return ResourceManager.GetString("SAR", resourceCulture);
             }
@@ -1178,7 +1178,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SBD {
+        public static string SBD {
             get {
                 return ResourceManager.GetString("SBD", resourceCulture);
             }
@@ -1187,7 +1187,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SCR {
+        public static string SCR {
             get {
                 return ResourceManager.GetString("SCR", resourceCulture);
             }
@@ -1196,7 +1196,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SDG {
+        public static string SDG {
             get {
                 return ResourceManager.GetString("SDG", resourceCulture);
             }
@@ -1205,7 +1205,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SEK {
+        public static string SEK {
             get {
                 return ResourceManager.GetString("SEK", resourceCulture);
             }
@@ -1214,7 +1214,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SGD {
+        public static string SGD {
             get {
                 return ResourceManager.GetString("SGD", resourceCulture);
             }
@@ -1223,7 +1223,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SHP {
+        public static string SHP {
             get {
                 return ResourceManager.GetString("SHP", resourceCulture);
             }
@@ -1232,7 +1232,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SLL {
+        public static string SLL {
             get {
                 return ResourceManager.GetString("SLL", resourceCulture);
             }
@@ -1241,7 +1241,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SOS {
+        public static string SOS {
             get {
                 return ResourceManager.GetString("SOS", resourceCulture);
             }
@@ -1250,7 +1250,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SRD {
+        public static string SRD {
             get {
                 return ResourceManager.GetString("SRD", resourceCulture);
             }
@@ -1259,7 +1259,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SSP {
+        public static string SSP {
             get {
                 return ResourceManager.GetString("SSP", resourceCulture);
             }
@@ -1268,7 +1268,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string STD {
+        public static string STD {
             get {
                 return ResourceManager.GetString("STD", resourceCulture);
             }
@@ -1277,7 +1277,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SVC {
+        public static string SVC {
             get {
                 return ResourceManager.GetString("SVC", resourceCulture);
             }
@@ -1286,7 +1286,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SYP {
+        public static string SYP {
             get {
                 return ResourceManager.GetString("SYP", resourceCulture);
             }
@@ -1295,7 +1295,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string SZL {
+        public static string SZL {
             get {
                 return ResourceManager.GetString("SZL", resourceCulture);
             }
@@ -1304,7 +1304,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string THB {
+        public static string THB {
             get {
                 return ResourceManager.GetString("THB", resourceCulture);
             }
@@ -1313,7 +1313,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TJS {
+        public static string TJS {
             get {
                 return ResourceManager.GetString("TJS", resourceCulture);
             }
@@ -1322,7 +1322,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TMT {
+        public static string TMT {
             get {
                 return ResourceManager.GetString("TMT", resourceCulture);
             }
@@ -1331,7 +1331,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TND {
+        public static string TND {
             get {
                 return ResourceManager.GetString("TND", resourceCulture);
             }
@@ -1340,7 +1340,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TOP {
+        public static string TOP {
             get {
                 return ResourceManager.GetString("TOP", resourceCulture);
             }
@@ -1349,7 +1349,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TRY {
+        public static string TRY {
             get {
                 return ResourceManager.GetString("TRY", resourceCulture);
             }
@@ -1358,7 +1358,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TTD {
+        public static string TTD {
             get {
                 return ResourceManager.GetString("TTD", resourceCulture);
             }
@@ -1367,7 +1367,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TWD {
+        public static string TWD {
             get {
                 return ResourceManager.GetString("TWD", resourceCulture);
             }
@@ -1376,7 +1376,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string TZS {
+        public static string TZS {
             get {
                 return ResourceManager.GetString("TZS", resourceCulture);
             }
@@ -1385,7 +1385,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string UAH {
+        public static string UAH {
             get {
                 return ResourceManager.GetString("UAH", resourceCulture);
             }
@@ -1394,7 +1394,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string UGX {
+        public static string UGX {
             get {
                 return ResourceManager.GetString("UGX", resourceCulture);
             }
@@ -1403,7 +1403,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string USD {
+        public static string USD {
             get {
                 return ResourceManager.GetString("USD", resourceCulture);
             }
@@ -1412,7 +1412,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string USN {
+        public static string USN {
             get {
                 return ResourceManager.GetString("USN", resourceCulture);
             }
@@ -1421,7 +1421,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string USS {
+        public static string USS {
             get {
                 return ResourceManager.GetString("USS", resourceCulture);
             }
@@ -1430,7 +1430,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string UYI {
+        public static string UYI {
             get {
                 return ResourceManager.GetString("UYI", resourceCulture);
             }
@@ -1439,7 +1439,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string UYU {
+        public static string UYU {
             get {
                 return ResourceManager.GetString("UYU", resourceCulture);
             }
@@ -1448,7 +1448,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string UZS {
+        public static string UZS {
             get {
                 return ResourceManager.GetString("UZS", resourceCulture);
             }
@@ -1457,7 +1457,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string VEF {
+        public static string VEF {
             get {
                 return ResourceManager.GetString("VEF", resourceCulture);
             }
@@ -1466,7 +1466,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string VND {
+        public static string VND {
             get {
                 return ResourceManager.GetString("VND", resourceCulture);
             }
@@ -1475,7 +1475,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string VUV {
+        public static string VUV {
             get {
                 return ResourceManager.GetString("VUV", resourceCulture);
             }
@@ -1484,7 +1484,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string WST {
+        public static string WST {
             get {
                 return ResourceManager.GetString("WST", resourceCulture);
             }
@@ -1493,7 +1493,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XAF {
+        public static string XAF {
             get {
                 return ResourceManager.GetString("XAF", resourceCulture);
             }
@@ -1502,7 +1502,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XAG {
+        public static string XAG {
             get {
                 return ResourceManager.GetString("XAG", resourceCulture);
             }
@@ -1511,7 +1511,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XAU {
+        public static string XAU {
             get {
                 return ResourceManager.GetString("XAU", resourceCulture);
             }
@@ -1520,7 +1520,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XBA {
+        public static string XBA {
             get {
                 return ResourceManager.GetString("XBA", resourceCulture);
             }
@@ -1529,7 +1529,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XBB {
+        public static string XBB {
             get {
                 return ResourceManager.GetString("XBB", resourceCulture);
             }
@@ -1538,7 +1538,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XBC {
+        public static string XBC {
             get {
                 return ResourceManager.GetString("XBC", resourceCulture);
             }
@@ -1547,7 +1547,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XBD {
+        public static string XBD {
             get {
                 return ResourceManager.GetString("XBD", resourceCulture);
             }
@@ -1556,7 +1556,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XCD {
+        public static string XCD {
             get {
                 return ResourceManager.GetString("XCD", resourceCulture);
             }
@@ -1565,7 +1565,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XDR {
+        public static string XDR {
             get {
                 return ResourceManager.GetString("XDR", resourceCulture);
             }
@@ -1574,7 +1574,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XOF {
+        public static string XOF {
             get {
                 return ResourceManager.GetString("XOF", resourceCulture);
             }
@@ -1583,7 +1583,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XPD {
+        public static string XPD {
             get {
                 return ResourceManager.GetString("XPD", resourceCulture);
             }
@@ -1592,7 +1592,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XPF {
+        public static string XPF {
             get {
                 return ResourceManager.GetString("XPF", resourceCulture);
             }
@@ -1601,7 +1601,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XPT {
+        public static string XPT {
             get {
                 return ResourceManager.GetString("XPT", resourceCulture);
             }
@@ -1610,7 +1610,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XSU {
+        public static string XSU {
             get {
                 return ResourceManager.GetString("XSU", resourceCulture);
             }
@@ -1619,7 +1619,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XTS {
+        public static string XTS {
             get {
                 return ResourceManager.GetString("XTS", resourceCulture);
             }
@@ -1628,7 +1628,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XUA {
+        public static string XUA {
             get {
                 return ResourceManager.GetString("XUA", resourceCulture);
             }
@@ -1637,7 +1637,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string XXX {
+        public static string XXX {
             get {
                 return ResourceManager.GetString("XXX", resourceCulture);
             }
@@ -1646,7 +1646,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string YER {
+        public static string YER {
             get {
                 return ResourceManager.GetString("YER", resourceCulture);
             }
@@ -1655,7 +1655,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ZAR {
+        public static string ZAR {
             get {
                 return ResourceManager.GetString("ZAR", resourceCulture);
             }
@@ -1664,7 +1664,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ZMW {
+        public static string ZMW {
             get {
                 return ResourceManager.GetString("ZMW", resourceCulture);
             }
@@ -1673,7 +1673,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
-        internal static string ZWL {
+        public static string ZWL {
             get {
                 return ResourceManager.GetString("ZWL", resourceCulture);
             }
