@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using FatturaElettronica.Resources;
 using FluentValidation;
 using FluentValidation.Validators;
 
@@ -18,8 +19,8 @@ namespace FatturaElettronica.Validators
 
         protected override string GetDefaultMessageTemplate(string errorCode)
         {
-            return
-                $"Testo contenente caratteri non validi ({(_charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement")}). valori non accettati: {{NonLatinCode}}";
+            var unicodeLatinSupplement = _charset == Charsets.BasicLatin ? "Unicode Basic Latin" : "Unicode Latin-1 Supplement";
+            return string.Format(ValidatorMessages.TestoContententeCaratteriNonValidi, unicodeLatinSupplement);
         }
 
         public override bool IsValid(ValidationContext<T> context, TProperty value)
@@ -32,7 +33,7 @@ namespace FatturaElettronica.Validators
                 Charsets.Latin1Supplement => @"^[\p{IsBasicLatin}\p{IsLatin-1Supplement}]+$",
                 _ => string.Empty
             };
-            
+
             var invalidLetters = new HashSet<char>();
             foreach (var letter in value.ToString())
             {
@@ -48,7 +49,7 @@ namespace FatturaElettronica.Validators
             }
 
             context.MessageFormatter.AppendArgument("NonLatinCode", new string(invalidLetters.ToArray()));
-            
+
             return Regex.Match(value.ToString(), challenge).Success;
         }
 

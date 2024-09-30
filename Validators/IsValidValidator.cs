@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using FatturaElettronica.Resources;
 using FatturaElettronica.Tabelle;
 using FluentValidation;
 using FluentValidation.Validators;
@@ -13,7 +14,7 @@ namespace FatturaElettronica.Validators
 
         protected override string GetDefaultMessageTemplate(string errorCode)
         {
-            return "'{PropertyName}' valori accettati: {AcceptedValues}";
+            return ValidatorMessages.PropertyName_valoriAccettati_AcceptedValues;
         }
 
         public override bool IsValid(ValidationContext<T> context, TProperty value)

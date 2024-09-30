@@ -111,4 +111,10 @@
   <data name="E00419" xml:space="preserve">
     <value>DatiRiepilogo ist in der Korrespondenz mit einem Wert von DettaglioLinee.AliquiotaIVA oder DatiCassaPrevidenziale.AliquotaIVA nicht vorhanden</value>
   </data>
+  <data name="PropertyName_valoriAccettati_AcceptedValues" xml:space="preserve">
+    <value>'{PropertyName}' zulässige Werte: {AcceptedValues}</value>
+  </data>
+  <data name="TestoContententeCaratteriNonValidi" xml:space="preserve">
+    <value>Text enthält ungültige Zeichen ({0}). nicht akzeptierte Werte: {{NonLatinCode}}</value>
+  </data>
 </root>
