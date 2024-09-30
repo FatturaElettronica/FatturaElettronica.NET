@@ -10,6 +10,7 @@
 - Fatture elettroniche ordinarie.
 - Fatture elettroniche semplificate.
 - De/serializzazione JSON.
+- Supporto multi-lingua.
 - Compatibile con [NET Standard v2.0][netstandard].
 
 ## Installazione

@@ -2,8 +2,10 @@
 
 ## In Development
 
-- *hic sunt leones*
- 
+- new: supporto multi-lingua ([#417][417])
+
+[417]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/417
+
 ## Stable
 
 ### v 3.4.16

@@ -1,5 +1,9 @@
 # Domande frequenti
 
+## Quali lingue sono supportate?
+
+Al momento [Italiano e Tedesco](https://github.com/FatturaElettronica/FatturaElettronica.NET/tree/master/Resources). Vuoi aggiungere la tua lingua? [Apri una pull request](https://github.com/FatturaElettronica/FatturaElettronica.NET/pulls).
+
 ## Non si installa su NET Framework 3.5
 
 Questo progetto è NetStandard 2.0. Supporta NET Framework v4.6.1 o superiori.
