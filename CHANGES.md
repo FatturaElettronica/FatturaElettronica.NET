@@ -2,7 +2,9 @@
 
 ## In Development
 
-- *his sunt leones*
+- fix: multi-lingua, migliorata accessibilità dei Resource file generati ([#420][420])
+ 
+[420]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/420
  
 ## Stable
 
@@ -10,9 +12,8 @@
 
 Released on September 30, 2024
 
-- new: supporto multi-lingua ([#417][417] e [#420][420])
+- new: supporto multi-lingua ([#417][417]).
 
-[420]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/420
 [417]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/417
 
 ### v 3.4.16
