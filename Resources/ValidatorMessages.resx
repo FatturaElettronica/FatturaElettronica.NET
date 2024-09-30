@@ -111,4 +111,10 @@
   <data name="E00417_S" xml:space="preserve">
     <value>IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato)</value>
   </data>
+  <data name="PropertyName_valoriAccettati_AcceptedValues" xml:space="preserve">
+    <value>'{PropertyName}' valori accettati: {AcceptedValues}</value>
+  </data>
+  <data name="TestoContententeCaratteriNonValidi" xml:space="preserve">
+    <value>Testo contenente caratteri non validi ({0}). valori non accettati: {{NonLatinCode}}</value>
+  </data>
 </root>

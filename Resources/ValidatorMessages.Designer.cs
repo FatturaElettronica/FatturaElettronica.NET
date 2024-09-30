@@ -330,6 +330,24 @@ namespace FatturaElettronica.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &apos;{PropertyName}&apos; valori accettati: {AcceptedValues}.
+        /// </summary>
+        internal static string PropertyName_valoriAccettati_AcceptedValues {
+            get {
+                return ResourceManager.GetString("PropertyName_valoriAccettati_AcceptedValues", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Testo contenente caratteri non validi ({0}). valori non accettati: {{NonLatinCode}}.
+        /// </summary>
+        internal static string TestoContententeCaratteriNonValidi {
+            get {
+                return ResourceManager.GetString("TestoContententeCaratteriNonValidi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Valori consentiti {0}-{1}.
         /// </summary>
         internal static string ValidNumberRange_X_Y {
