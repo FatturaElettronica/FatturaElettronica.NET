@@ -1,6 +1,8 @@
-﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali;
-using FatturaElettronica.Tabelle;
+﻿using FatturaElettronica.Resources;
+using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali;
 using FluentValidation;
+using Divisa = FatturaElettronica.Tabelle.Divisa;
+using TipoDocumentoSemplificata = FatturaElettronica.Tabelle.TipoDocumentoSemplificata;
 
 namespace FatturaElettronica.Validators.Semplificata
 {
@@ -20,7 +22,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .Length(1, 20);
             RuleFor(x => x.Numero)
                 .Matches(@"\d")
-                .WithMessage("Numero non contiene caratteri numerici")
+                .WithMessage(ValidatorMessages.E00425)
                 .WithErrorCode("00425");
             RuleFor(x => x.BolloVirtuale)
                 .Equal("SI")

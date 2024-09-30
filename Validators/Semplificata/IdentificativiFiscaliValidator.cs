@@ -1,4 +1,5 @@
-﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
+﻿using FatturaElettronica.Resources;
+using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators.Semplificata
@@ -16,14 +17,12 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.CodiceFiscale)
                 .Must((challenge, _) =>
                     !(string.IsNullOrEmpty(challenge.CodiceFiscale) && challenge.IdFiscaleIVA.IsEmpty()))
-                .WithMessage(
-                    "IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato)")
+                .WithMessage(ValidatorMessages.E00417_S)
                 .WithErrorCode("00417");
             RuleFor(x => x.IdFiscaleIVA)
                 .Must((challenge, _) =>
                     !(string.IsNullOrEmpty(challenge.CodiceFiscale) && challenge.IdFiscaleIVA.IsEmpty()))
-                .WithMessage(
-                    "IdFiscaleIVA e CodiceFiscale non valorizzati (almeno uno dei due deve essere valorizzato)")
+                .WithMessage(ValidatorMessages.E00417_S)
                 .WithErrorCode("00417");
         }
     }

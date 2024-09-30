@@ -1,6 +1,7 @@
-﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
-using FatturaElettronica.Tabelle;
+﻿using FatturaElettronica.Resources;
+using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
 using FluentValidation;
+using NaturaSemplificata = FatturaElettronica.Tabelle.NaturaSemplificata;
 
 namespace FatturaElettronica.Validators.Semplificata
 {
@@ -19,13 +20,12 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.Natura)
                 .Must(natura => !string.IsNullOrEmpty(natura))
                 .When(x => x.DatiIVA.Aliquota == 0m && x.DatiIVA.Imposta == 0m)
-                .WithMessage(
-                    "L’indicazione di un’aliquota IVA pari a zero obbliga all’indicazione della natura dell’operazione che giustifichi la non imponibilità della stessa")
+                .WithMessage(ValidatorMessages.E00400_S)
                 .WithErrorCode("00400");
             RuleFor(x => x.Natura)
                 .Must(string.IsNullOrEmpty)
                 .When(x => x.DatiIVA.Aliquota > 0m || x.DatiIVA.Imposta > 0m)
-                .WithMessage("Natura presente a fronte di Aliquota IVA diversa da zero")
+                .WithMessage(ValidatorMessages.E00401_S)
                 .WithErrorCode("00401");
             RuleFor(x => x.Natura)
                 .SetValidator(new IsValidValidator<DatiBeniServizi, string, NaturaSemplificata>())

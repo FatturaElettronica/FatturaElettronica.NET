@@ -1,7 +1,8 @@
 ﻿using FatturaElettronica.Extensions;
 using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiPagamento;
-using FatturaElettronica.Tabelle;
+using FatturaElettronica.Resources;
+using ModalitaPagamento = FatturaElettronica.Tabelle.ModalitaPagamento;
 
 namespace FatturaElettronica.Validators
 {
@@ -63,7 +64,7 @@ namespace FatturaElettronica.Validators
                 .ScalePrecision2DecimalType();
             RuleFor(x => x.GiorniTerminiPagamento)
                 .InclusiveBetween(0, 999)
-                .WithMessage("Valori consentiti 0-999");
+                .WithMessage(string.Format(ValidatorMessages.ValidNumberRange_X_Y, 1, 999));
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using FatturaElettronica.Resources;
 using FatturaElettronica.Semplificata.FatturaElettronicaBody;
 using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiBeniServizi;
 using FluentValidation;
@@ -15,12 +16,11 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleForEach(x => x.DatiBeniServizi)
                 .SetValidator(new DatiBeniServiziValidator());
             RuleFor(x => x.DatiBeniServizi)
-                .NotEmpty().WithMessage("DatiBeniServizi è obbligatorio");
+                .NotEmpty().WithMessage(ValidatorMessages.DatiBeniServiziEObbligatorio);
 
             RuleFor(x => x.DatiBeniServizi)
                 .Must(ImportoTotaleValidateAgainstError00460)
-                .WithMessage(
-                    "Importo totale superiore al limite previsto per le fatture semplificate ai sensi del DPR 633/72, art. 21bis e DM del 10 maggio 2019")
+                .WithMessage(ValidatorMessages.E00460)
                 .WithErrorCode("00460");
 
             RuleForEach(x => x.Allegati)

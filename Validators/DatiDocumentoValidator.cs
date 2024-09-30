@@ -1,4 +1,5 @@
 ﻿using FatturaElettronica.Common;
+using FatturaElettronica.Resources;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
@@ -29,7 +30,7 @@ namespace FatturaElettronica.Validators
                 .When(x => !string.IsNullOrEmpty(x.CodiceCIG));
             RuleForEach(x => x.RiferimentoNumeroLinea)
                 .InclusiveBetween(1, 9999)
-                .WithMessage("Valori consentiti 1-9999");
+                .WithMessage(string.Format(ValidatorMessages.ValidNumberRange_X_Y, 1, 9999));
         }
     }
 }

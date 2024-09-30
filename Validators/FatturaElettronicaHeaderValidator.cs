@@ -1,6 +1,7 @@
 ﻿using FatturaElettronica.Ordinaria.FatturaElettronicaHeader;
-using FatturaElettronica.Tabelle;
+using FatturaElettronica.Resources;
 using FluentValidation;
+using SoggettoEmittente = FatturaElettronica.Tabelle.SoggettoEmittente;
 
 namespace FatturaElettronica.Validators
 {
@@ -30,8 +31,7 @@ namespace FatturaElettronica.Validators
                 .WithErrorCode("00313");
             RuleFor(x => x)
                 .Must((header, _) => HeaderValidateAgainstError00476(header))
-                .WithMessage(
-                    "Gli elementi IdPaese e IdPaese non possono essere entrambi valorizzati con codice diverso da IT")
+                .WithMessage(ValidatorMessages.E00476)
                 .WithErrorCode("00476");
         }
 

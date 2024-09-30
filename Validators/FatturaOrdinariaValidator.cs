@@ -2,6 +2,7 @@
 using System.Linq;
 using FatturaElettronica.Ordinaria;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
+using FatturaElettronica.Resources;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
@@ -14,45 +15,37 @@ namespace FatturaElettronica.Validators
                 .SetValidator(new FatturaElettronicaHeaderValidator());
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00475(fattura))
-                .WithMessage(
-                    "Per il valore indicato nell’elemento TipoDocumento deve essere presente l’elemento IdFiscaleIVA del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22, TD23 e TD28 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente)")
+                .WithMessage(ValidatorMessages.E00475)
                 .WithErrorCode("00475");
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00471(fattura))
-                .WithMessage(
-                    "I valori TD01, TD02, TD03, TD06, TD16, TD17, TD18, TD19, TD20, TD24, TD25 e TD28 del tipo documento non ammettono l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario")
+                .WithMessage(ValidatorMessages.E00471)
                 .WithErrorCode("00471");
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00472(fattura))
-                .WithMessage(
-                    "I valori TD21 e TD27 del tipo documento non ammettono l’indicazione in fattura di un cedente diverso dal cessionario")
+                .WithMessage(ValidatorMessages.E00472)
                 .WithErrorCode("00472");
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00473(fattura))
-                .WithMessage(
-                    "Per il valore indicato nell’elemento TipoDocumento il valore presente nell’elemento IdPaese non è ammesso (i valori TD17, TD18, TD19 e TD28 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano. Nei casi di TD17 e TD19 è ammessa l’indicazione del valore ‘OO’ nell’elemento IdPaese per operazioni effettuate da soggetti residenti in Livigno e Campione d’Italia.)")
+                .WithMessage(ValidatorMessages.E00473)
                 .WithErrorCode("00473");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .SetValidator(new FatturaElettronicaBodyValidator());
             RuleForEach(x => x.FatturaElettronicaBody)
                 .Must((_, body) => BodyValidateAgainstError00443(body))
-                .WithMessage(
-                    "Tutti i valori delle aliquote IVA presenti nelle linee di dettaglio di una fattura o nei dati di cassa previdenziale devono essere presenti anche nei dati di riepilogo")
+                .WithMessage(ValidatorMessages.E00443)
                 .WithErrorCode("00443");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .Must((_, body) => BodyValidateAgainstError00444(body))
-                .WithMessage(
-                    "Tutti i valori di natura dell’operazione presenti nelle linee di dettaglio di una fattura o nei dati di cassa previdenziale devono essere presenti anche nei dati di riepilogo")
+                .WithMessage(ValidatorMessages.E00444)
                 .WithErrorCode("00444");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .Must((_, body) => BodyValidateAgainstError00401(body))
-                .WithMessage(
-                    "Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16)")
+                .WithMessage(ValidatorMessages.E00401)
                 .WithErrorCode("00401");
             RuleForEach(x => x.FatturaElettronicaBody)
                 .Must((_, body) => BodyValidateAgainstError00430(body))
-                .WithMessage(
-                    "Natura presente a fronte di Aliquota IVA diversa da zero (l’indicazione di un’aliquota IVA diversa da zero qualifica l’operazione come imponibile e quindi non è ammessa la presenza dell’elemento Natura, ad eccezione del caso in cui l’elemento TipoDocumento assume valore TD16)")
+                .WithMessage(ValidatorMessages.E00430)
                 .WithErrorCode("00430");
         }
 

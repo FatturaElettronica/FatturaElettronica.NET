@@ -1,6 +1,7 @@
 ﻿using System.Linq;
 using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
+using FatturaElettronica.Resources;
 
 namespace FatturaElettronica.Validators
 {
@@ -15,7 +16,7 @@ namespace FatturaElettronica.Validators
                 {
                     return datigenerali.DatiFattureCollegate.All(fc => !(data < fc.Data));
                 })
-                .WithMessage("Data antecedente a una o più date in DatiFattureCollegate")
+                .WithMessage(ValidatorMessages.E00418)
                 .WithErrorCode("00418");
             RuleForEach(x => x.DatiOrdineAcquisto)
                 .SetValidator(new DatiOrdineAcquistoValidator());

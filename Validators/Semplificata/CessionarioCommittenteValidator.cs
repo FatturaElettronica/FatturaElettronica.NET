@@ -1,4 +1,5 @@
-﻿using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
+﻿using FatturaElettronica.Resources;
+using FatturaElettronica.Semplificata.FatturaElettronicaHeader.CessionarioCommittente;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators.Semplificata
@@ -10,7 +11,7 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleFor(x => x.IdentificativiFiscali)
                 .SetValidator(new IdentificativiFiscaliValidator());
             RuleFor(x => x.IdentificativiFiscali)
-                .Must(x => !x.IsEmpty()).WithMessage("IdentificativiFiscali è obbligatorio");
+                .Must(x => !x.IsEmpty()).WithMessage(ValidatorMessages.IdentificativiFiscaliEObbligatorio);
             RuleFor(x => x.AltriDatiIdentificativi)
                 .SetValidator(new AltriDatiIdentificativiValidator())
                 .When(x => x.AltriDatiIdentificativi != null && !x.AltriDatiIdentificativi.IsEmpty());

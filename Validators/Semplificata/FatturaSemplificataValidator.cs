@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FatturaElettronica.Resources;
 using FatturaElettronica.Semplificata;
 using FluentValidation;
 
@@ -14,8 +15,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .SetValidator(new FatturaElettronicaBodyValidator());
             RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00471(fattura))
-                .WithMessage(
-                    "Il valore TD07 del tipo documento non ammette l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario")
+                .WithMessage(ValidatorMessages.E00471_S)
                 .WithErrorCode("00471");
         }
 

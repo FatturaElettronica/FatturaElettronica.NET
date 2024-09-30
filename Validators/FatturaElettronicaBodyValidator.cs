@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody;
+using FatturaElettronica.Resources;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators
@@ -15,26 +16,24 @@ namespace FatturaElettronica.Validators
             RuleFor(x => x.DatiBeniServizi)
                 .SetValidator(new DatiBeniServiziValidator());
             RuleFor(x => x.DatiBeniServizi)
-                .Must(x => !x.IsEmpty()).WithMessage("DatiBeniServizi è obbligatorio");
+                .Must(x => !x.IsEmpty()).WithMessage(ValidatorMessages.DatiBeniServiziEObbligatorio);
             RuleFor(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta)
                 .Must((body, _) => DatiRitenutaAgainstDettaglioLinee(body))
                 .When(x => x.DatiGenerali.DatiGeneraliDocumento.DatiRitenuta.Count == 0)
-                .WithMessage(
-                    "DatiRitenuta non presente a fronte di almeno un blocco DettaglioLinee con Ritenuta uguale a SI")
+                .WithMessage(ValidatorMessages.E00411)
                 .WithErrorCode("00411");
             RuleFor(x => x.DatiBeniServizi.DatiRiepilogo)
                 .Must((body, _) => DatiRiepilogoValidateAgainstError00422(body))
-                .WithMessage("ImponibileImporto non calcolato secondo le specifiche tecniche")
+                .WithMessage(ValidatorMessages.E00422)
                 .WithErrorCode("00422");
             RuleFor(x => x.DatiBeniServizi.DatiRiepilogo)
                 .Must((body, _) => DatiRiepilogoValidateAgainstError00419(body))
-                .WithMessage(
-                    "DatiRiepilogo non presente in corrispondenza di almeno un valore DettaglioLinee.AliquiotaIVA o DatiCassaPrevidenziale.AliquotaIVA")
+                .WithMessage(ValidatorMessages.E00419)
                 .WithErrorCode("00419");
             RuleFor(x => x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento)
                 .Must((body, _) => body.DatiBeniServizi.DettaglioLinee.All(linea => linea.AliquotaIVA != 0))
                 .When(x => x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento == "TD21")
-                .WithMessage("Nel tipo documento ‘autofattura per splafonamento’ tutte le linee di dettaglio devo avere un’aliquota IVA diversa da zero")
+                .WithMessage(ValidatorMessages.E00474)
                 .WithErrorCode("00474");
             RuleFor(x => x.DatiVeicoli)
                 .SetValidator(new DatiVeicoliValidator())

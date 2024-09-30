@@ -1,8 +1,10 @@
 ﻿using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
-using FatturaElettronica.Tabelle;
 using System.Linq;
 using FatturaElettronica.Extensions;
+using FatturaElettronica.Resources;
+using Divisa = FatturaElettronica.Tabelle.Divisa;
+using TipoDocumento = FatturaElettronica.Tabelle.TipoDocumento;
 
 namespace FatturaElettronica.Validators
 {
@@ -22,7 +24,7 @@ namespace FatturaElettronica.Validators
                 .Length(1, 20);
             RuleFor(x => x.Numero)
                 .Matches(@"\d")
-                .WithMessage("Numero non contiene caratteri numerici")
+                .WithMessage(ValidatorMessages.E00425)
                 .WithErrorCode("00425");
             RuleForEach(x => x.DatiRitenuta)
                 .SetValidator(new DatiRitenutaValidator());
@@ -37,7 +39,7 @@ namespace FatturaElettronica.Validators
                     return (datiCassa.Count(a => a.Ritenuta == "SI") <= 0) ||
                            datiGeneraliDocumento.DatiRitenuta.Count > 0;
                 })
-                .WithMessage("DatiRitenuta non presente a fronte di DatiCassaPrevidenziale.Ritenuta valorizzato")
+                .WithMessage(ValidatorMessages.E00415)
                 .WithErrorCode("00415");
             RuleForEach(x => x.ScontoMaggiorazione)
                 .SetValidator(new ScontoMaggiorazioneValidator());

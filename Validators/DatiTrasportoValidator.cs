@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
 using FatturaElettronica.Ordinaria.FatturaElettronicaBody.DatiGenerali;
-using FatturaElettronica.Tabelle;
+using FatturaElettronica.Resources;
+using TipoResa = FatturaElettronica.Tabelle.TipoResa;
 
 namespace FatturaElettronica.Validators
 {
@@ -39,7 +40,7 @@ namespace FatturaElettronica.Validators
                 .LessThanOrEqualTo(9999.99m);
             RuleFor(x=>x.NumeroColli)
                 .InclusiveBetween(1,9999)
-                .WithMessage("Valori consentiti 1-9999");
+                .WithMessage(string.Format(ValidatorMessages.ValidNumberRange_X_Y, 1, 9999));
         }
     }
 }

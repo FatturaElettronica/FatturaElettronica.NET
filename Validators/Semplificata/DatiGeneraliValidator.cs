@@ -1,4 +1,5 @@
-﻿using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali;
+﻿using FatturaElettronica.Resources;
+using FatturaElettronica.Semplificata.FatturaElettronicaBody.DatiGenerali;
 using FluentValidation;
 
 namespace FatturaElettronica.Validators.Semplificata
@@ -14,7 +15,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .When(x => x.DatiFatturaRettificata != null && !x.DatiFatturaRettificata.IsEmpty());
             RuleFor(x => x.DatiFatturaRettificata.DataFR)
                 .Must((datigenerali, data) => datigenerali.DatiGeneraliDocumento.Data >= data)
-                .WithMessage("Data antecedente a data fattura rettificata")
+                .WithMessage(ValidatorMessages.E00418_S)
                 .WithErrorCode("00418")
                 .When(x => !x.DatiFatturaRettificata.IsEmpty());
         }
