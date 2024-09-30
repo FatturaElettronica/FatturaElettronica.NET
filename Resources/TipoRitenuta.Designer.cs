@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class TipoRitenuta {
+    public class TipoRitenuta {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.TipoRitenuta", typeof(TipoRitenuta).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to ritenuta persone fisiche.
         /// </summary>
-        internal static string RT01 {
+        public static string RT01 {
             get {
                 return ResourceManager.GetString("RT01", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to ritenuta persone giuridiche.
         /// </summary>
-        internal static string RT02 {
+        public static string RT02 {
             get {
                 return ResourceManager.GetString("RT02", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to contributo INPS.
         /// </summary>
-        internal static string RT03 {
+        public static string RT03 {
             get {
                 return ResourceManager.GetString("RT03", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to contributo ENASARCO.
         /// </summary>
-        internal static string RT04 {
+        public static string RT04 {
             get {
                 return ResourceManager.GetString("RT04", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to contributo ENPAM.
         /// </summary>
-        internal static string RT05 {
+        public static string RT05 {
             get {
                 return ResourceManager.GetString("RT05", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to altro contributo previdenziale.
         /// </summary>
-        internal static string RT06 {
+        public static string RT06 {
             get {
                 return ResourceManager.GetString("RT06", resourceCulture);
             }

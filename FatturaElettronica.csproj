@@ -30,9 +30,9 @@
     <EmbeddedResource Remove="Test\**"/>
     <None Remove="Tests\**"/>
     <None Remove="Test\**"/>
-    
+
     <EmbeddedResource Update="Resources\**\*.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>%(Filename).Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class TipoDocumento {
+    public class TipoDocumento {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.TipoDocumento", typeof(TipoDocumento).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to fattura.
         /// </summary>
-        internal static string TD01 {
+        public static string TD01 {
             get {
                 return ResourceManager.GetString("TD01", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to acconto/anticipo su fattura.
         /// </summary>
-        internal static string TD02 {
+        public static string TD02 {
             get {
                 return ResourceManager.GetString("TD02", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to acconto/anticipo su parcella.
         /// </summary>
-        internal static string TD03 {
+        public static string TD03 {
             get {
                 return ResourceManager.GetString("TD03", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to nota di credito.
         /// </summary>
-        internal static string TD04 {
+        public static string TD04 {
             get {
                 return ResourceManager.GetString("TD04", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to nota di debito.
         /// </summary>
-        internal static string TD05 {
+        public static string TD05 {
             get {
                 return ResourceManager.GetString("TD05", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to parcella.
         /// </summary>
-        internal static string TD06 {
+        public static string TD06 {
             get {
                 return ResourceManager.GetString("TD06", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to integrazione fattura reverse charge interno.
         /// </summary>
-        internal static string TD16 {
+        public static string TD16 {
             get {
                 return ResourceManager.GetString("TD16", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to integrazione/autofattura per acquisto servizi dall&apos;estero.
         /// </summary>
-        internal static string TD17 {
+        public static string TD17 {
             get {
                 return ResourceManager.GetString("TD17", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to integrazione per acquisto di beni intracomunitari.
         /// </summary>
-        internal static string TD18 {
+        public static string TD18 {
             get {
                 return ResourceManager.GetString("TD18", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to integrazione/autofattura per acquisto di beni ex art. 17 c.2 DPR 633/72.
         /// </summary>
-        internal static string TD19 {
+        public static string TD19 {
             get {
                 return ResourceManager.GetString("TD19", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to autofattura per regolarizzazione e integrazione delle fatture (ex art.6 c.8 d.lgs. 471/97  o  art.46 c.5 D.L. 331/93).
         /// </summary>
-        internal static string TD20 {
+        public static string TD20 {
             get {
                 return ResourceManager.GetString("TD20", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to autofattura per splafonamento.
         /// </summary>
-        internal static string TD21 {
+        public static string TD21 {
             get {
                 return ResourceManager.GetString("TD21", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to estrazione beni da Deposito IVA.
         /// </summary>
-        internal static string TD22 {
+        public static string TD22 {
             get {
                 return ResourceManager.GetString("TD22", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to estrazione beni da Deposito IVA con versamento dell&apos;IVA.
         /// </summary>
-        internal static string TD23 {
+        public static string TD23 {
             get {
                 return ResourceManager.GetString("TD23", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Fattura differita di cui all’art.21, comma 4, terzo periodo lett. a) DPR 633/72.
         /// </summary>
-        internal static string TD24 {
+        public static string TD24 {
             get {
                 return ResourceManager.GetString("TD24", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Fattura differita di cui all’art.21, comma 4, terzo periodo lett. b) DPR 633/72.
         /// </summary>
-        internal static string TD25 {
+        public static string TD25 {
             get {
                 return ResourceManager.GetString("TD25", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to cessione di beni ammortizzabili e per passaggi interni (ex art.36 DPR 633/72).
         /// </summary>
-        internal static string TD26 {
+        public static string TD26 {
             get {
                 return ResourceManager.GetString("TD26", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to fattura per autoconsumo o per cessioni gratuite senza rivalsa.
         /// </summary>
-        internal static string TD27 {
+        public static string TD27 {
             get {
                 return ResourceManager.GetString("TD27", resourceCulture);
             }
@@ -224,7 +224,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to acquisti da San Marino con IVA (fattura cartacea).
         /// </summary>
-        internal static string TD28 {
+        public static string TD28 {
             get {
                 return ResourceManager.GetString("TD28", resourceCulture);
             }

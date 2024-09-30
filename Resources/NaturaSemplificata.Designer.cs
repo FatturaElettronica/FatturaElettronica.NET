@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class NaturaSemplificata {
+    public class NaturaSemplificata {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.NaturaSemplificata", typeof(NaturaSemplificata).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to escluse ex art. 15.
         /// </summary>
-        internal static string N1 {
+        public static string N1 {
             get {
                 return ResourceManager.GetString("N1", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non soggette.
         /// </summary>
-        internal static string N2 {
+        public static string N2 {
             get {
                 return ResourceManager.GetString("N2", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non soggette ad IVA ai sensi degli artt. da 7 a 7-septies del D.P.R. n. 633/72.
         /// </summary>
-        internal static string N2_1 {
+        public static string N2_1 {
             get {
                 return ResourceManager.GetString("N2.1", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non soggette - altri casi.
         /// </summary>
-        internal static string N2_2 {
+        public static string N2_2 {
             get {
                 return ResourceManager.GetString("N2.2", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non imponibili.
         /// </summary>
-        internal static string N3 {
+        public static string N3 {
             get {
                 return ResourceManager.GetString("N3", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non imponibili - esportazioni.
         /// </summary>
-        internal static string N3_1 {
+        public static string N3_1 {
             get {
                 return ResourceManager.GetString("N3.1", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non imponibili - cessioni intracomunitarie.
         /// </summary>
-        internal static string N3_2 {
+        public static string N3_2 {
             get {
                 return ResourceManager.GetString("N3.2", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non imponibili - cessioni verso San Marino.
         /// </summary>
-        internal static string N3_3 {
+        public static string N3_3 {
             get {
                 return ResourceManager.GetString("N3.3", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non imponibili - operazioni assimilate alle cessioni all&apos;esportazione.
         /// </summary>
-        internal static string N3_4 {
+        public static string N3_4 {
             get {
                 return ResourceManager.GetString("N3.4", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non imponibili - a seguito di dichiarazioni d&apos;intento.
         /// </summary>
-        internal static string N3_5 {
+        public static string N3_5 {
             get {
                 return ResourceManager.GetString("N3.5", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to non imponibili - altre operazioni che non concorrono alla formazione del plafond.
         /// </summary>
-        internal static string N3_6 {
+        public static string N3_6 {
             get {
                 return ResourceManager.GetString("N3.6", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to esenti.
         /// </summary>
-        internal static string N4 {
+        public static string N4 {
             get {
                 return ResourceManager.GetString("N4", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to regime del margine / IVA non esposta in fattura.
         /// </summary>
-        internal static string N5 {
+        public static string N5 {
             get {
                 return ResourceManager.GetString("N5", resourceCulture);
             }

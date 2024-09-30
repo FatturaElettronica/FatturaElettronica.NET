@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class ModalitaPagamento {
+    public class ModalitaPagamento {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.ModalitaPagamento", typeof(ModalitaPagamento).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to contanti.
         /// </summary>
-        internal static string MP01 {
+        public static string MP01 {
             get {
                 return ResourceManager.GetString("MP01", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to assegno.
         /// </summary>
-        internal static string MP02 {
+        public static string MP02 {
             get {
                 return ResourceManager.GetString("MP02", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to assegno circolare.
         /// </summary>
-        internal static string MP03 {
+        public static string MP03 {
             get {
                 return ResourceManager.GetString("MP03", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to contanti presso Tesoreria.
         /// </summary>
-        internal static string MP04 {
+        public static string MP04 {
             get {
                 return ResourceManager.GetString("MP04", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to bonifico.
         /// </summary>
-        internal static string MP05 {
+        public static string MP05 {
             get {
                 return ResourceManager.GetString("MP05", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to vaglia cambiario.
         /// </summary>
-        internal static string MP06 {
+        public static string MP06 {
             get {
                 return ResourceManager.GetString("MP06", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to bollettino bancario.
         /// </summary>
-        internal static string MP07 {
+        public static string MP07 {
             get {
                 return ResourceManager.GetString("MP07", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to carta di pagamento.
         /// </summary>
-        internal static string MP08 {
+        public static string MP08 {
             get {
                 return ResourceManager.GetString("MP08", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to RID.
         /// </summary>
-        internal static string MP09 {
+        public static string MP09 {
             get {
                 return ResourceManager.GetString("MP09", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to RID utenze.
         /// </summary>
-        internal static string MP10 {
+        public static string MP10 {
             get {
                 return ResourceManager.GetString("MP10", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to RID veloce.
         /// </summary>
-        internal static string MP11 {
+        public static string MP11 {
             get {
                 return ResourceManager.GetString("MP11", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to RIBA.
         /// </summary>
-        internal static string MP12 {
+        public static string MP12 {
             get {
                 return ResourceManager.GetString("MP12", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to MAV.
         /// </summary>
-        internal static string MP13 {
+        public static string MP13 {
             get {
                 return ResourceManager.GetString("MP13", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to quietanza erario.
         /// </summary>
-        internal static string MP14 {
+        public static string MP14 {
             get {
                 return ResourceManager.GetString("MP14", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to giroconto su conti di contabilità speciale.
         /// </summary>
-        internal static string MP15 {
+        public static string MP15 {
             get {
                 return ResourceManager.GetString("MP15", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to domiciliazione bancaria.
         /// </summary>
-        internal static string MP16 {
+        public static string MP16 {
             get {
                 return ResourceManager.GetString("MP16", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to domiciliazione postale.
         /// </summary>
-        internal static string MP17 {
+        public static string MP17 {
             get {
                 return ResourceManager.GetString("MP17", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to bollettino di c/c postale.
         /// </summary>
-        internal static string MP18 {
+        public static string MP18 {
             get {
                 return ResourceManager.GetString("MP18", resourceCulture);
             }
@@ -224,7 +224,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to SEPA Direct Debit.
         /// </summary>
-        internal static string MP19 {
+        public static string MP19 {
             get {
                 return ResourceManager.GetString("MP19", resourceCulture);
             }
@@ -233,7 +233,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to SEPA Direct Debit CORE.
         /// </summary>
-        internal static string MP20 {
+        public static string MP20 {
             get {
                 return ResourceManager.GetString("MP20", resourceCulture);
             }
@@ -242,7 +242,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to SEPA Direct Debit B2B.
         /// </summary>
-        internal static string MP21 {
+        public static string MP21 {
             get {
                 return ResourceManager.GetString("MP21", resourceCulture);
             }
@@ -251,7 +251,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Trattenuta su somme già riscosse.
         /// </summary>
-        internal static string MP22 {
+        public static string MP22 {
             get {
                 return ResourceManager.GetString("MP22", resourceCulture);
             }
@@ -260,7 +260,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to PagoPA.
         /// </summary>
-        internal static string MP23 {
+        public static string MP23 {
             get {
                 return ResourceManager.GetString("MP23", resourceCulture);
             }

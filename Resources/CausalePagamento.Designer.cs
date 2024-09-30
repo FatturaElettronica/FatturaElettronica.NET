@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class CausalePagamento {
+    public class CausalePagamento {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.CausalePagamento", typeof(CausalePagamento).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to prestazioni di lavoro autonomo rientranti nell’esercizio di arte o professione abituale.
         /// </summary>
-        internal static string A {
+        public static string A {
             get {
                 return ResourceManager.GetString("A", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to utilizzazione economica, da parte dell’autore o dell’inventore, di opere dell’ingegno, di brevetti industriali e di processi, formule o informazioni relativi ad esperienze acquisite in campo industriale, commerciale o scientifico.
         /// </summary>
-        internal static string B {
+        public static string B {
             get {
                 return ResourceManager.GetString("B", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to utili derivanti da contratti di associazione in partecipazione e da contratti di cointeressenza, quando l’apporto è costituito esclusivamente dalla prestazione di lavoro.
         /// </summary>
-        internal static string C {
+        public static string C {
             get {
                 return ResourceManager.GetString("C", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to utili spettanti ai soci promotori ed ai soci fondatori delle società di capitali.
         /// </summary>
-        internal static string D {
+        public static string D {
             get {
                 return ResourceManager.GetString("D", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to levata di protesti cambiari da parte dei segretari comunali.
         /// </summary>
-        internal static string E {
+        public static string E {
             get {
                 return ResourceManager.GetString("E", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to indennità corrisposte ai giudici onorari di pace e ai vice procuratori onorari.
         /// </summary>
-        internal static string F {
+        public static string F {
             get {
                 return ResourceManager.GetString("F", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to indennità corrisposte per la cessazione di attività sportiva professionale.
         /// </summary>
-        internal static string G {
+        public static string G {
             get {
                 return ResourceManager.GetString("G", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to indennità corrisposte per la cessazione dei rapporti di agenzia delle persone fisiche e delle società di persone con esclusione delle somme maturate entro il 31 dicembre 2003, già imputate per competenza e tassate come reddito d’impresa.
         /// </summary>
-        internal static string H {
+        public static string H {
             get {
                 return ResourceManager.GetString("H", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to indennità corrisposte per la cessazione da funzioni notarili.
         /// </summary>
-        internal static string I {
+        public static string I {
             get {
                 return ResourceManager.GetString("I", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to compensi corrisposti ai raccoglitori occasionali di tartufi non identificati ai fini dell’imposta sul valore aggiunto, in relazione alla cessione di tartufi.
         /// </summary>
-        internal static string J {
+        public static string J {
             get {
                 return ResourceManager.GetString("J", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to assegni di servizio civile universale di cui all’art.16 del D.lgs. n. 40 del 6 marzo 2017.
         /// </summary>
-        internal static string K {
+        public static string K {
             get {
                 return ResourceManager.GetString("K", resourceCulture);
             }
@@ -161,7 +161,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to redditi derivanti dall’utilizzazione economica di opere dell’ingegno, di brevetti industriali e di processi, formule e informazioni relativi a esperienze acquisite in campo industriale, commerciale o scientifico, che sono percepiti dagli aventi causa a titolo gratuito (ad es. eredi e legatari dell’autore e inventore).
         /// </summary>
-        internal static string L {
+        public static string L {
             get {
                 return ResourceManager.GetString("L", resourceCulture);
             }
@@ -170,7 +170,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to redditi derivanti dall’utilizzazione economica di opere dell’ingegno, di brevetti industriali e di processi, formule e informazioni relativi a esperienze acquisite in campo industriale, commerciale o scientifico, che sono percepiti da soggetti che abbiano acquistato a titolo oneroso i diritti alla loro utilizzazione.
         /// </summary>
-        internal static string L1 {
+        public static string L1 {
             get {
                 return ResourceManager.GetString("L1", resourceCulture);
             }
@@ -179,7 +179,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to prestazioni di lavoro autonomo non esercitate abitualmente.
         /// </summary>
-        internal static string M {
+        public static string M {
             get {
                 return ResourceManager.GetString("M", resourceCulture);
             }
@@ -188,7 +188,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to redditi derivanti dall’assunzione di obblighi di fare, di non fare o permettere.
         /// </summary>
-        internal static string M1 {
+        public static string M1 {
             get {
                 return ResourceManager.GetString("M1", resourceCulture);
             }
@@ -197,7 +197,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to prestazioni di lavoro autonomo non esercitate abitualmente per le quali sussiste l’obbligo di iscrizione alla Gestione Separata ENPAPI.
         /// </summary>
-        internal static string M2 {
+        public static string M2 {
             get {
                 return ResourceManager.GetString("M2", resourceCulture);
             }
@@ -206,7 +206,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to indennità di trasferta, rimborso forfetario di spese, premi e compensi erogati: – nell’esercizio diretto di attività sportive dilettantistiche; – in relazione a rapporti di collaborazione coordinata e continuativa di carattere amministrativo-gestionale di natura non professionale resi a favore di società e associazioni sportive dilettantistiche e di cori, bande e filodrammatiche da parte del direttore e dei collaboratori tecnici.
         /// </summary>
-        internal static string N {
+        public static string N {
             get {
                 return ResourceManager.GetString("N", resourceCulture);
             }
@@ -215,7 +215,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to prestazioni di lavoro autonomo non esercitate abitualmente, per le quali non sussiste l’obbligo di iscrizione alla gestione separata (Circ. INPS n. 104/2001).
         /// </summary>
-        internal static string O {
+        public static string O {
             get {
                 return ResourceManager.GetString("O", resourceCulture);
             }
@@ -224,7 +224,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to redditi derivanti dall’assunzione di obblighi di fare, di non fare o permettere, per le quali non sussiste l’obbligo di iscrizione alla gestione separata (Circ. INPS n. 104/2001).
         /// </summary>
-        internal static string O1 {
+        public static string O1 {
             get {
                 return ResourceManager.GetString("O1", resourceCulture);
             }
@@ -233,7 +233,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to compensi corrisposti a soggetti non residenti privi di stabile organizzazione per l’uso o la concessione in uso di attrezzature industriali, commerciali o scientifiche che si trovano nel territorio dello Stato ovvero a società svizzere o stabili organizzazioni di società svizzere che possiedono i requisiti di cui all’art. 15, comma 2 dell’Accordo tra la Comunità europea e la Confederazione svizzera del 26 ottobre 2004 (pubblicato in G.U.C.E. del 29 dicembre 2004 n. L385/30).
         /// </summary>
-        internal static string P {
+        public static string P {
             get {
                 return ResourceManager.GetString("P", resourceCulture);
             }
@@ -242,7 +242,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to provvigioni corrisposte ad agente o rappresentante di commercio monomandatario.
         /// </summary>
-        internal static string Q {
+        public static string Q {
             get {
                 return ResourceManager.GetString("Q", resourceCulture);
             }
@@ -251,7 +251,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to provvigioni corrisposte ad agente o rappresentante di commercio plurimandatario.
         /// </summary>
-        internal static string R {
+        public static string R {
             get {
                 return ResourceManager.GetString("R", resourceCulture);
             }
@@ -260,7 +260,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to provvigioni corrisposte a commissionario.
         /// </summary>
-        internal static string S {
+        public static string S {
             get {
                 return ResourceManager.GetString("S", resourceCulture);
             }
@@ -269,7 +269,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to provvigioni corrisposte a mediatore.
         /// </summary>
-        internal static string T {
+        public static string T {
             get {
                 return ResourceManager.GetString("T", resourceCulture);
             }
@@ -278,7 +278,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to provvigioni corrisposte a procacciatore di affari.
         /// </summary>
-        internal static string U {
+        public static string U {
             get {
                 return ResourceManager.GetString("U", resourceCulture);
             }
@@ -287,7 +287,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to provvigioni corrisposte a incaricato per le vendite a domicilio; provvigioni corrisposte a incaricato per la vendita porta a porta e per la vendita ambulante di giornali quotidiani e periodici (L. 25 febbraio 1987, n. 67).
         /// </summary>
-        internal static string V {
+        public static string V {
             get {
                 return ResourceManager.GetString("V", resourceCulture);
             }
@@ -296,7 +296,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to redditi derivanti da attività commerciali non esercitate abitualmente (ad esempio, provvigioni corrisposte per prestazioni occasionali ad agente o rappresentante di commercio, mediatore, procacciatore d’affari).
         /// </summary>
-        internal static string V1 {
+        public static string V1 {
             get {
                 return ResourceManager.GetString("V1", resourceCulture);
             }
@@ -305,7 +305,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to redditi derivanti dalle prestazioni non esercitate abitualmente rese dagli incaricati alla vendita diretta a domicilio.
         /// </summary>
-        internal static string V2 {
+        public static string V2 {
             get {
                 return ResourceManager.GetString("V2", resourceCulture);
             }
@@ -314,7 +314,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to corrispettivi erogati nel 2017 per prestazioni relative a contratti d’appalto cui si sono resi applicabili le disposizioni contenute nell’art. 25-ter del D.P.R. n. 600 del 29 settembre 1973.
         /// </summary>
-        internal static string W {
+        public static string W {
             get {
                 return ResourceManager.GetString("W", resourceCulture);
             }
@@ -323,7 +323,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to canoni corrisposti nel 2004 da società o enti residenti ovvero da stabili organizzazioni di società estere di cui all’art. 26-quater, comma 1, lett. a) e b) del D.P.R. 600 del 29 settembre 1973, a società o stabili organizzazioni di società, situate in altro stato membro dell’Unione Europea in presenza dei requisiti di cui al citato art. 26-quater, del D.P.R. 600 del 29 settembre 1973, per i quali è stato effettuato, nell’anno 2006, il rimborso della ritenuta ai sensi dell’art. 4 del D.Lgs. 30 maggio 2005 n [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string X {
+        public static string X {
             get {
                 return ResourceManager.GetString("X", resourceCulture);
             }
@@ -332,7 +332,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to canoni corrisposti dal 1° gennaio 2005 al 26 luglio 2005 da società o enti residenti ovvero da stabili organizzazioni di società estere di cui all’art. 26-quater, comma 1, lett. a) e b) del D.P.R. n. 600 del 29 settembre 1973, a società o stabili organizzazioni di società, situate in altro stato membro dell’Unione Europea in presenza dei requisiti di cui al citato art. 26-quater, del D.P.R. n. 600 del 29 settembre 1973, per i quali è stato effettuato, nell’anno 2006, il rimborso della ritenuta ai sensi dell [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string Y {
+        public static string Y {
             get {
                 return ResourceManager.GetString("Y", resourceCulture);
             }
@@ -341,7 +341,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to titolo diverso dai precedenti.
         /// </summary>
-        internal static string Z {
+        public static string Z {
             get {
                 return ResourceManager.GetString("Z", resourceCulture);
             }
@@ -350,7 +350,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to titolo diverso dai precedenti.
         /// </summary>
-        internal static string ZO {
+        public static string ZO {
             get {
                 return ResourceManager.GetString("ZO", resourceCulture);
             }

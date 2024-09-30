@@ -21,7 +21,7 @@ namespace FatturaElettronica.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class TipoResa {
+    public class TipoResa {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -35,7 +35,7 @@ namespace FatturaElettronica.Resources {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FatturaElettronica.Resources.TipoResa", typeof(TipoResa).Assembly);
@@ -50,7 +50,7 @@ namespace FatturaElettronica.Resources {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -62,7 +62,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Costo e Nolo.
         /// </summary>
-        internal static string CFR {
+        public static string CFR {
             get {
                 return ResourceManager.GetString("CFR", resourceCulture);
             }
@@ -71,7 +71,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Costo, assicurazione e nolo.
         /// </summary>
-        internal static string CIF {
+        public static string CIF {
             get {
                 return ResourceManager.GetString("CIF", resourceCulture);
             }
@@ -80,7 +80,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Trasporto e assicurazione pagati fino a.
         /// </summary>
-        internal static string CIP {
+        public static string CIP {
             get {
                 return ResourceManager.GetString("CIP", resourceCulture);
             }
@@ -89,7 +89,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Trasporto pagato fino a.
         /// </summary>
-        internal static string CPT {
+        public static string CPT {
             get {
                 return ResourceManager.GetString("CPT", resourceCulture);
             }
@@ -98,7 +98,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Reso a luogo di destinazione.
         /// </summary>
-        internal static string DAP {
+        public static string DAP {
             get {
                 return ResourceManager.GetString("DAP", resourceCulture);
             }
@@ -107,7 +107,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Reso sdoganato.
         /// </summary>
-        internal static string DDP {
+        public static string DDP {
             get {
                 return ResourceManager.GetString("DDP", resourceCulture);
             }
@@ -116,7 +116,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Reso al luogo di destinazione scaricato.
         /// </summary>
-        internal static string DPU {
+        public static string DPU {
             get {
                 return ResourceManager.GetString("DPU", resourceCulture);
             }
@@ -125,7 +125,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Franco Fabbrica.
         /// </summary>
-        internal static string EXW {
+        public static string EXW {
             get {
                 return ResourceManager.GetString("EXW", resourceCulture);
             }
@@ -134,7 +134,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Franco lungo bordo.
         /// </summary>
-        internal static string FAS {
+        public static string FAS {
             get {
                 return ResourceManager.GetString("FAS", resourceCulture);
             }
@@ -143,7 +143,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Franco Vettore.
         /// </summary>
-        internal static string FCA {
+        public static string FCA {
             get {
                 return ResourceManager.GetString("FCA", resourceCulture);
             }
@@ -152,7 +152,7 @@ namespace FatturaElettronica.Resources {
         /// <summary>
         ///   Looks up a localized string similar to Franco a bordo.
         /// </summary>
-        internal static string FOB {
+        public static string FOB {
             get {
                 return ResourceManager.GetString("FOB", resourceCulture);
             }
