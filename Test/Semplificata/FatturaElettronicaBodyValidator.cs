@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using FatturaElettronica.Resources;
 using FatturaElettronica.Semplificata.FatturaElettronicaBody;
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -27,7 +28,7 @@ namespace FatturaElettronica.Test.Semplificata
         public void DatiBeniServiziCannotBeEmpty()
         {
             var r = Validator.Validate(Challenge);
-            Assert.AreEqual("DatiBeniServizi è obbligatorio",
+            Assert.AreEqual(ValidatorMessages.DatiBeniServiziEObbligatorio,
                 r.Errors.FirstOrDefault(x => x.PropertyName == "DatiBeniServizi")?.ErrorMessage);
         }
 

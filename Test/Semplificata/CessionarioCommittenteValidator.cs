@@ -2,6 +2,7 @@
 using FluentValidation.TestHelper;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;
+using FatturaElettronica.Resources;
 
 namespace FatturaElettronica.Test.Semplificata
 {
@@ -20,7 +21,7 @@ namespace FatturaElettronica.Test.Semplificata
         public void IdentificativiFiscaliCannotBeEmpty()
         {
             var r = Validator.Validate(Challenge);
-            Assert.AreEqual("IdentificativiFiscali è obbligatorio",
+            Assert.AreEqual(ValidatorMessages.IdentificativiFiscaliEObbligatorio,
                 r.Errors.FirstOrDefault(x => x.PropertyName == "IdentificativiFiscali")?.ErrorMessage);
         }
 
