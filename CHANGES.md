@@ -2,6 +2,12 @@
 
 ## In Development
 
+- hic sunt leones
+
+## Stable
+
+### v 3.5.2
+
 - fix: IVA oltre 100% non deve passare la convalida ([#424][424])
 - fix: CVE 2024 30105 ([#423][423])
 - fix: rimuovere reference a BouncyCastle nella documentazione ([#422][422])
@@ -9,8 +15,6 @@
 [424]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/424
 [423]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/423
 [422]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/422
-
-## Stable
 
 ### v 3.5.1
 
