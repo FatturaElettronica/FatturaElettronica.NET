@@ -3,8 +3,10 @@
 ## In Development
 
 - fix: CVE 2024 30105 ([#423][423])
+- fix: rimuovere reference a BouncyCastle nella documentazione ([#422][422])
 
 [423]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/423
+[422]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/422
 
 ## Stable
 
