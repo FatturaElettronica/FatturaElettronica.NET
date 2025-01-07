@@ -12,6 +12,7 @@ namespace FatturaElettronica.Validators.Semplificata
                 .When(x => x.Aliquota == null);
             RuleFor(x => x.Aliquota)
                 .NotNull()
+                .LessThanOrEqualTo(100)
                 .When(x => x.Imposta == null);
         }
     }

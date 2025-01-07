@@ -312,5 +312,17 @@ namespace FatturaElettronica.Test.Ordinaria
         {
             AssertDecimalType(x => x.PrezzoUnitario, 8, 19);
         }
+
+        [TestMethod]
+        public void AliquotaIvaShouldBeLessOrEqualTo100()
+        {
+            Challenge.AliquotaIVA = 101;
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.AliquotaIVA);
+
+            Challenge.AliquotaIVA = 100;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.AliquotaIVA);
+        }
     }
 }

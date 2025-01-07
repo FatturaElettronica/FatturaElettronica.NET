@@ -28,5 +28,19 @@ namespace FatturaElettronica.Test.Semplificata
             result.ShouldNotHaveValidationErrorFor(x => x.Imposta);
             result.ShouldNotHaveValidationErrorFor(x => x.Aliquota);
         }
+
+        [TestMethod]
+        public void AliquotaShouldBeLessOrEqualTo100()
+        {
+            Challenge.Imposta = null;
+            Challenge.Aliquota = 101;
+            var result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.Aliquota);
+
+            Challenge.Imposta = null;
+            Challenge.Aliquota = 100;
+            result = Validator.TestValidate(Challenge);
+            result.ShouldNotHaveValidationErrorFor(x => x.Aliquota);
+        }
     }
 }

@@ -56,6 +56,8 @@ namespace FatturaElettronica.Validators
                 .ScalePrecision8DecimalType();
             RuleFor(x => x.PrezzoTotale)
                 .ScalePrecision8DecimalType();
+            RuleFor(x => x.AliquotaIVA)
+                .LessThanOrEqualTo(100);
         }
 
         private static bool PrezzoTotaleValidateAgainstError00423(DettaglioLinee challenge)
