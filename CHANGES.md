@@ -2,7 +2,7 @@
 
 ## In Development
 
-- hic sunt leones
+- fix: CI test workflow deve girare su .NET 8
 
 ## Stable
 
