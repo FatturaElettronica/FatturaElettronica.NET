@@ -2,7 +2,9 @@
 
 ## In Development
 
-- hic sunt leones
+- fix: CVE 2024 30105 ([#423][423])
+
+[423]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/423
 
 ## Stable
 
