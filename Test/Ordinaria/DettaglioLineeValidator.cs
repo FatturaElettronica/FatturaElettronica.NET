@@ -73,6 +73,12 @@ namespace FatturaElettronica.Test.Ordinaria
         }
 
         [TestMethod]
+        public void UnitaMisuraIsOptional()
+        {
+            AssertOptional(x => x.UnitaMisura);
+        }
+
+        [TestMethod]
         public void UnitaMisuraMinMaxLength()
         {
             AssertMinMaxLength(x => x.UnitaMisura, 1, 10);

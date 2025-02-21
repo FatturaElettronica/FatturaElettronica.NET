@@ -2,7 +2,10 @@
 
 ## In Development
 
+- fix: UnitaMisura è opzionale ([#427][427])
 - fix: CI test workflow deve girare su .NET 8
+
+[427]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/427
 
 ## Stable
 
