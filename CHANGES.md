@@ -2,10 +2,12 @@
 
 ## In Development
 
+- new: supporto per le specifiche tecniche v1.9, in vigore dal 1 Aprile 2025 ([#426][426])
 - fix: UnitaMisura è opzionale ([#427][427])
 - fix: CI test workflow deve girare su .NET 8
 
 [427]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/427
+[426]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/426
 
 ## Stable
 

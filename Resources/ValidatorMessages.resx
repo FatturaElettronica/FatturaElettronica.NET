@@ -58,16 +58,16 @@
     <value>Gli elementi IdPaese e IdPaese non possono essere entrambi valorizzati con codice diverso da IT</value>
   </data>
   <data name="E00475" xml:space="preserve">
-    <value>Per il valore indicato nell’elemento TipoDocumento deve essere presente l’elemento IdFiscaleIVA del cessionario/committente (i tipi documento TD16, TD17, TD18, TD19, TD20, TD22, TD23 e TD28 prevedono obbligatoriamente la presenza della partita IVA del cessionario/committente)</value>
+    <value>Per il valore indicato nell'elemento 2.1.1.1 TipoDocumento deve essere presente l'elemento 1.4.1.1 IdFiscaleIVA del cessionario/committente</value>
   </data>
   <data name="E00471" xml:space="preserve">
-    <value>I valori TD01, TD02, TD03, TD06, TD16, TD17, TD18, TD19, TD20, TD24, TD25 e TD28 del tipo documento non ammettono l’indicazione in fattura dello stesso soggetto sia come cedente che come cessionario</value>
+    <value>Per il valore indicato nell'elemento 2.1.1.1 TipoDocumento il cedente/prestatore non può essere uguale al cessionario/committente</value>
   </data>
   <data name="E00472" xml:space="preserve">
     <value>I valori TD21 e TD27 del tipo documento non ammettono l’indicazione in fattura di un cedente diverso dal cessionario</value>
   </data>
   <data name="E00473" xml:space="preserve">
-    <value>Per il valore indicato nell’elemento TipoDocumento il valore presente nell’elemento IdPaese non è ammesso (i valori TD17, TD18, TD19 e TD28 del tipo documento non ammettono l’indicazione in fattura di un cedente italiano. Nei casi di TD17 e TD19 è ammessa l’indicazione del valore ‘OO’ nell’elemento IdPaese per operazioni effettuate da soggetti residenti in Livigno e Campione d’Italia.)</value>
+    <value>Per il valore indicato nell'elemento 2.1.1.1 TipoDocumento il valore presente nell'elemento 1.2.1.1.1 IdPaese non è ammesso</value>
   </data>
   <data name="E00443" xml:space="preserve">
     <value>Tutti i valori delle aliquote IVA presenti nelle linee di dettaglio di una fattura o nei dati di cassa previdenziale devono essere presenti anche nei dati di riepilogo</value>

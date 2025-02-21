@@ -50,7 +50,7 @@
     <value>integrazione/autofattura per acquisto di beni ex art. 17 c.2 DPR 633/72</value>
   </data>
   <data name="TD20" xml:space="preserve">
-    <value>autofattura per regolarizzazione e integrazione delle fatture (ex art.6 c.8 d.lgs. 471/97  o  art.46 c.5 D.L. 331/93)</value>
+    <value>autofattura per regolarizzazione e integrazione delle fatture (ex art. 6 c.9-bis d.lgs. 471/97 o art. 46 c.5 d.l. 331/93)</value>
   </data>
   <data name="TD21" xml:space="preserve">
     <value>autofattura per splafonamento</value>
@@ -75,5 +75,8 @@
   </data>
   <data name="TD28" xml:space="preserve">
     <value>acquisti da San Marino con IVA (fattura cartacea)</value>
+  </data>
+  <data name="TD29" xml:space="preserve">
+    <value>comunicazione per omessa o irregolare fatturazione (art. 6, comma 8, D.Lgs. 471/97)</value>
   </data>
 </root>

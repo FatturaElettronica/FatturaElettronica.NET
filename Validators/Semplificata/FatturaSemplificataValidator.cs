@@ -14,6 +14,10 @@ namespace FatturaElettronica.Validators.Semplificata
             RuleForEach(dt => dt.FatturaElettronicaBody)
                 .SetValidator(new FatturaElettronicaBodyValidator());
             RuleFor(x => x)
+                .Must((fattura, _) => ImportoTotaleValidateAgainstError00460(fattura))
+                .WithMessage(ValidatorMessages.E00460)
+                .WithErrorCode("00460");
+            RuleFor(x => x)
                 .Must((fattura, _) => FatturaValidateAgainstError00471(fattura))
                 .WithMessage(ValidatorMessages.E00471_S)
                 .WithErrorCode("00471");
@@ -28,6 +32,22 @@ namespace FatturaElettronica.Validators.Semplificata
 
             return cedente != cessionario || fatturaSemplificata.FatturaElettronicaBody.All(x =>
                 x.DatiGenerali.DatiGeneraliDocumento.TipoDocumento != "TD07");
+        }
+
+        private static bool ImportoTotaleValidateAgainstError00460(FatturaSemplificata fatturaSemplificata)
+        {
+            var regimeFiscale = fatturaSemplificata.FatturaElettronicaHeader.CedentePrestatore.RegimeFiscale;
+            if (regimeFiscale == RegimeFiscale.RF19 || regimeFiscale == RegimeFiscale.RF20)
+                return true;
+
+            return fatturaSemplificata.FatturaElettronicaBody.All(body =>
+            {
+                var importoTotale = body.DatiBeniServizi.Sum(x => x.Importo);
+
+                if (importoTotale > 400)
+                    return !body.DatiGenerali.DatiFatturaRettificata.IsEmpty();
+                return true;
+            });
         }
     }
 }

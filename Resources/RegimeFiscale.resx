@@ -72,4 +72,7 @@
   <data name="RF19" xml:space="preserve">
     <value>Regime forfettario (art.1, c.54-89, L. 190/2014 )</value>
   </data>
+  <data name="RF20" xml:space="preserve">
+    <value>Regime transfrontaliero di Franchigia IVA (Direttiva UE 2020/285)</value>
+  </data>
 </root>
