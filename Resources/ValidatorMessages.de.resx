@@ -54,17 +54,17 @@
     <data name="E00476" xml:space="preserve">
     <value>Die Elemente IdPaese und IdPaese können nicht beide mit einem anderen Code als IT ausgefüllt sein</value>
   </data>
-    <data name="E00475" xml:space="preserve">
-    <value>Für den angegebenen Wert im Element TipoDocumento muss das Element IdFiscaleIVA des Empfängers/Kommittenten vorhanden sein (die Dokumententypen TD16, TD17, TD18, TD19, TD20, TD22, TD23 und TD28 erfordern zwingend die Angabe der Mehrwertsteuernummer des Empfängers/Kommittenten)</value>
+  <data name="E00475" xml:space="preserve">
+    <value>Für den im Element 2.1.1.1 TipoDocumento angegebenen Wert muss das Element 1.4.1.1 IdFiscaleIVA des Übernehmers/Kunden vorhanden sein</value>
   </data>
-    <data name="E00471" xml:space="preserve">
-    <value>Die Werte TD01, TD02, TD03, TD06, TD16, TD17, TD18, TD19, TD20, TD24, TD25 und TD28 des Dokumententyps erlauben nicht die Angabe derselben Person sowohl als Lieferant als auch als Empfänger</value>
+  <data name="E00471" xml:space="preserve">
+    <value>Für den im Element 2.1.1.1 TipoDocumento angegebenen Wert kann der Übertragende/Anbieter nicht mit dem Übernehmenden/Auftraggeber identisch sein</value>
   </data>
     <data name="E00472" xml:space="preserve">
     <value>Die Werte TD21 und TD27 des Dokumententyps erlauben nicht die Angabe eines anderen Lieferanten als des Empfängers</value>
   </data>
-    <data name="E00473" xml:space="preserve">
-    <value>Für den angegebenen Wert im Element TipoDocumento ist der Wert im Element IdPaese nicht zulässig (die Werte TD17, TD18, TD19 und TD28 des Dokumententyps erlauben nicht die Angabe eines italienischen Lieferanten. In den Fällen von TD17 und TD19 ist die Angabe des Wertes 'OO' im Element IdPaese für Transaktionen von in Livigno und Campione d'Italia ansässigen Personen zulässig.)</value>
+  <data name="E00473" xml:space="preserve">
+    <value>Für den angegebenen Wert im Element TipoDocumento ist der Wert im Element IdPaese nicht zulässig</value>
   </data>
     <data name="E00443" xml:space="preserve">
     <value>Alle Mehrwertsteuersätze in den Detailzeilen einer Rechnung oder in den Daten der Sozialversicherungskasse müssen auch in den Zusammenfassungsdaten vorhanden sein</value>
