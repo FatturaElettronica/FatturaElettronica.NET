@@ -2,6 +2,12 @@
 
 ## In Development
 
+## Stable
+
+### v 3.6.0
+
+Released on February 24, 2025
+
 - new: supporto per le specifiche tecniche v1.9, in vigore dal 1 Aprile 2025 ([#426][426])
 - new: icona per il nuget package, finalmente.
 - new: package creato e pubblicato via CI.
@@ -11,9 +17,9 @@
 [427]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/427
 [426]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/426
 
-## Stable
-
 ### v 3.5.2
+
+Released on January 7, 2025
 
 - fix: IVA oltre 100% non deve passare la convalida ([#424][424])
 - fix: CVE 2024 30105 ([#423][423])
