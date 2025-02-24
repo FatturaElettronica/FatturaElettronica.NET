@@ -15,6 +15,7 @@
     <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <LangVersion>latest</LangVersion>
+    <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -41,6 +42,10 @@
     <PackageReference Include="FluentValidation" Version="11.5.2"/>
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Artwork/fattura_elettronica.png" Pack="true" PackagePath="/icon.png" />
   </ItemGroup>
 
 </Project>
