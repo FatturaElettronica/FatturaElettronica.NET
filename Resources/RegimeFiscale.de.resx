@@ -65,4 +65,7 @@
   <data name="RF19" xml:space="preserve">
     <value>Pauschalbesteuerung (Art.1, Abs.54-89, L. 190/2014)</value>
   </data>
+  <data name="RF20" xml:space="preserve">
+    <value>Grenzüberschreitende Mehrwertsteuerbefreiung (EU-Richtlinie 2020/285)</value>
+  </data>
 </root>

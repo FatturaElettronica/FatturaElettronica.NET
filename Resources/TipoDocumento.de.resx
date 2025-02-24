@@ -42,7 +42,7 @@
     <value>Integration/Selbstfakturierung für den Erwerb von Waren gemäß Art. 17 Abs. 2 DPR 633/72</value>
   </data>
   <data name="TD20" xml:space="preserve">
-    <value>Selbstfakturierung zur Regularisierung und Integration von Rechnungen (gemäß Art. 6 Abs. 8 d.lgs. 471/97 oder Art. 46 Abs. 5 D.L. 331/93)</value>
+    <value>Selbstfakturierung zur Regularisierung und Integration von Rechnungen (gemäß Art. 6 Abs. 9-bis d.lgs 471/97 oder Art. 46 Abs. 5 d.l. 331/93)</value>
   </data>
   <data name="TD21" xml:space="preserve">
     <value>Selbstfakturierung für Überschreitung des Höchstbetrags</value>
@@ -67,5 +67,8 @@
   </data>
   <data name="TD28" xml:space="preserve">
     <value>Einkäufe aus San Marino mit Mehrwertsteuer (Papierrechnung)</value>
+  </data>
+  <data name="TD29" xml:space="preserve">
+    <value>Mitteilung wegen unterlassener oder unregelmäßiger Rechnungsstellung (Art. 6, Absatz 8, d.lgs 471/97)</value>
   </data>
 </root>
