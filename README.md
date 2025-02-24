@@ -51,6 +51,10 @@ Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
 
+### Powered by
+
+[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSourceSupport)
+
 [pa]: https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.8
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt
 [ga]: http://gestionaleamica.com
