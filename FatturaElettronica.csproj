@@ -48,4 +48,8 @@
     <None Include="Artwork/fattura_elettronica.png" Pack="true" PackagePath="/icon.png" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Include=".github\workflows\publish.yml" />
+  </ItemGroup>
+
 </Project>

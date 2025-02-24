@@ -4,6 +4,7 @@
 
 - new: supporto per le specifiche tecniche v1.9, in vigore dal 1 Aprile 2025 ([#426][426])
 - new: icona per il nuget package, finalmente.
+- new: package creato e pubblicato via CI.
 - fix: UnitaMisura è opzionale ([#427][427])
 - fix: CI test workflow deve girare su .NET 8
 
