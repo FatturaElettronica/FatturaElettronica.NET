@@ -51,7 +51,7 @@ Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
 
-### Powered by
+## Powered by
 
 [![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSourceSupport)
 
