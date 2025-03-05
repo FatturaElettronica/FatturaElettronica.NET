@@ -1,0 +1,75 @@
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+
+  <data name="TD01" xml:space="preserve">
+    <value>invoice</value>
+  </data>
+  <data name="TD02" xml:space="preserve">
+    <value>advance payment on invoice</value>
+  </data>
+  <data name="TD03" xml:space="preserve">
+    <value>advance payment on fee note</value>
+  </data>
+  <data name="TD04" xml:space="preserve">
+    <value>credit note</value>
+  </data>
+  <data name="TD05" xml:space="preserve">
+    <value>debit note</value>
+  </data>
+  <data name="TD06" xml:space="preserve">
+    <value>fee note</value>
+  </data>
+  <data name="TD16" xml:space="preserve">
+    <value>integration of internal reverse charge invoice</value>
+  </data>
+  <data name="TD17" xml:space="preserve">
+    <value>integration/self-invoice for purchase of services from abroad</value>
+  </data>
+  <data name="TD18" xml:space="preserve">
+    <value>integration for purchase of intra-community goods</value>
+  </data>
+  <data name="TD19" xml:space="preserve">
+    <value>integration/self-invoice for purchase of goods pursuant to art. 17 c.2 DPR 633/72</value>
+  </data>
+  <data name="TD20" xml:space="preserve">
+    <value>self-invoice for regularization and integration of invoices (pursuant to art. 6 c.9-bis d.lgs. 471/97 or art. 46 c.5 d.l. 331/93)</value>
+  </data>
+  <data name="TD21" xml:space="preserve">
+    <value>self-invoice for exceeding ceiling</value>
+  </data>
+  <data name="TD22" xml:space="preserve">
+    <value>extraction of goods from VAT Warehouse</value>
+  </data>
+  <data name="TD23" xml:space="preserve">
+    <value>extraction of goods from VAT Warehouse with VAT payment</value>
+  </data>
+  <data name="TD24" xml:space="preserve">
+    <value>Deferred invoice pursuant to art.21, paragraph 4, third period letter a) DPR 633/72</value>
+  </data>
+  <data name="TD25" xml:space="preserve">
+    <value>Deferred invoice pursuant to art.21, paragraph 4, third period letter b) DPR 633/72</value>
+  </data>
+  <data name="TD26" xml:space="preserve">
+    <value>transfer of depreciable assets and internal transfers (pursuant to art.36 DPR 633/72)</value>
+  </data>
+  <data name="TD27" xml:space="preserve">
+    <value>invoice for self-consumption or free transfers without recourse</value>
+  </data>
+  <data name="TD28" xml:space="preserve">
+    <value>purchases from San Marino with VAT (paper invoice)</value>
+  </data>
+  <data name="TD29" xml:space="preserve">
+    <value>communication for omitted or irregular invoicing (art. 6, paragraph 8, d.lgs. 471/97)</value>
+  </data>
+</root>
