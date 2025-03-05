@@ -2,8 +2,10 @@
 
 ## In Development
 
-- new: supporto per lingua Inglese.
- 
+- new: supporto per lingua Inglese ([#430][430]).
+
+[430]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/430
+
 ## Stable
 
 ### v 3.6.0
