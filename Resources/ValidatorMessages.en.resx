@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="E00417" xml:space="preserve">
+    <value>No VAT ID or Fiscal Code provided (at least one must be populated)</value>
+  </data>
+  <data name="E00425" xml:space="preserve">
+    <value>Number does not contain numeric characters</value>
+  </data>
+  <data name="E00415" xml:space="preserve">
+    <value>DatiRitenuta not present despite DatiCassaPrevidenziale.Ritenuta being populated</value>
+  </data>
+  <data name="E00418" xml:space="preserve">
+    <value>Date is earlier than one or more dates in DatiFattureCollegate</value>
+  </data>
+  <data name="E00429" xml:space="preserve">
+    <value>Nature not present when VAT Rate is zero</value>
+  </data>
+  <data name="E00419" xml:space="preserve">
+    <value>DatiRiepilogo not present corresponding to at least one DettaglioLinee.AliquotaIVA or DatiCassaPrevidenziale.AliquotaIVA value</value>
+  </data>
+  <data name="E00420" xml:space="preserve">
+    <value>Nature with value 'N6' (accounting reversal) against EsigiblitaIVA equal to 'S' (split payment)</value>
+  </data>
+  <data name="E00423" xml:space="preserve">
+    <value>PrezzoTotale not calculated according to technical specifications</value>
+  </data>
+  <data name="E00400" xml:space="preserve">
+    <value>Nature not present when VAT Rate is zero</value>
+  </data>
+  <data name="E00411" xml:space="preserve">
+    <value>DatiRitenuta not present despite at least one DettaglioLinee block with Ritenuta equal to YES</value>
+  </data>
+  <data name="E00422" xml:space="preserve">
+    <value>ImponibileImporto not calculated according to technical specifications</value>
+  </data>
+  <data name="E00474" xml:space="preserve">
+    <value>In document type 'self-invoice for overstepping' all detail lines must have a VAT rate different from zero</value>
+  </data>
+  <data name="E00476" xml:space="preserve">
+    <value>Elements IdPaese and IdPaese cannot both be populated with a code different from IT</value>
+  </data>
+  <data name="E00475" xml:space="preserve">
+    <value>For the value indicated in element 2.1.1.1 DocumentType, the element 1.4.1.1 VAT ID of the buyer/customer must be present</value>
+  </data>
+  <data name="E00471" xml:space="preserve">
+    <value>For the value indicated in element 2.1.1.1 DocumentType, the supplier/provider cannot be the same as the buyer/customer</value>
+  </data>
+  <data name="E00472" xml:space="preserve">
+    <value>Document types TD21 and TD27 do not allow indication of a supplier different from the buyer</value>
+  </data>
+  <data name="E00473" xml:space="preserve">
+    <value>For the value indicated in element 2.1.1.1 DocumentType, the value in element 1.2.1.1.1 IdPaese is not allowed</value>
+  </data>
+  <data name="E00443" xml:space="preserve">
+    <value>All VAT rate values in invoice detail lines or social security fund data must also be present in summary data</value>
+  </data>
+  <data name="E00444" xml:space="preserve">
+    <value>All operation nature values in invoice detail lines or social security fund data must also be present in summary data</value>
+  </data>
+  <data name="E00401" xml:space="preserve">
+    <value>Nature present when VAT Rate is non-zero (a non-zero VAT rate indicates a taxable transaction, so the Nature element is not allowed, except when DocumentType has value TD16)</value>
+  </data>
+  <data name="E00430" xml:space="preserve">
+    <value>Nature present when VAT Rate is non-zero (a non-zero VAT rate indicates a taxable transaction, so the Nature element is not allowed, except when DocumentType has value TD16)</value>
+  </data>
+  <data name="E00437" xml:space="preserve">
+    <value>Percentage and Amount not present despite Type being populated</value>
+  </data>
+  <data name="ValidNumberRange_X_Y" xml:space="preserve">
+    <value>Allowed values {0}-{1}</value>
+  </data>
+  <data name="DatiBeniServiziEObbligatorio" xml:space="preserve">
+    <value>DatiBeniServizi is required</value>
+  </data>
+  <data name="IdentificativiFiscaliEObbligatorio" xml:space="preserve">
+    <value>IdentificativiFiscali is required</value>
+  </data>
+  <data name="E00418_S" xml:space="preserve">
+    <value>Date is earlier than the corrected invoice date</value>
+  </data>
+  <data name="E00401_S" xml:space="preserve">
+    <value>Nature present when VAT Rate is non-zero</value>
+  </data>
+  <data name="E00400_S" xml:space="preserve">
+    <value>A zero VAT rate requires indication of the operation nature that justifies its non-taxability</value>
+  </data>
+  <data name="E00460" xml:space="preserve">
+    <value>Total amount exceeds the limit for simplified invoices under Presidential Decree 633/72, art. 21bis and Ministerial Decree of May 10, 2019</value>
+  </data>
+  <data name="E00471_S" xml:space="preserve">
+    <value>Document type TD07 does not allow indication of the same subject as both supplier and buyer in the invoice</value>
+  </data>
+  <data name="E00417_S" xml:space="preserve">
+    <value>VAT ID and Fiscal Code not populated (at least one must be populated)</value>
+  </data>
+  <data name="PropertyName_valoriAccettati_AcceptedValues" xml:space="preserve">
+    <value>'{PropertyName}' accepted values: {AcceptedValues}</value>
+  </data>
+  <data name="TestoContententeCaratteriNonValidi" xml:space="preserve">
+    <value>Text containing invalid characters ({0}). Unaccepted values: {{NonLatinCode}}</value>
+  </data>
+</root>

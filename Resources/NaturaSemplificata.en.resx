@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="N1" xml:space="preserve">
+    <value>excluded under art. 15</value>
+  </data>
+  <data name="N2" xml:space="preserve">
+    <value>not subject</value>
+  </data>
+  <data name="N2.1" xml:space="preserve">
+    <value>not subject to VAT pursuant to articles 7 to 7-septies of Presidential Decree no. 633/72</value>
+  </data>
+  <data name="N2.2" xml:space="preserve">
+    <value>not subject - other cases</value>
+  </data>
+  <data name="N3" xml:space="preserve">
+    <value>non-taxable</value>
+  </data>
+  <data name="N3.1" xml:space="preserve">
+    <value>non-taxable - exports</value>
+  </data>
+  <data name="N3.2" xml:space="preserve">
+    <value>non-taxable - intra-Community supplies</value>
+  </data>
+  <data name="N3.3" xml:space="preserve">
+    <value>non-taxable - supplies to San Marino</value>
+  </data>
+  <data name="N3.4" xml:space="preserve">
+    <value>non-taxable - operations similar to export sales</value>
+  </data>
+  <data name="N3.5" xml:space="preserve">
+    <value>non-taxable - following intent declarations</value>
+  </data>
+  <data name="N3.6" xml:space="preserve">
+    <value>non-taxable - other operations not contributing to the plafond</value>
+  </data>
+  <data name="N4" xml:space="preserve">
+    <value>exempt</value>
+  </data>
+  <data name="N5" xml:space="preserve">
+    <value>margin scheme / VAT not shown on invoice</value>
+  </data>
+</root>

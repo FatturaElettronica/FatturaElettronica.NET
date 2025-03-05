@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="AG" xml:space="preserve">
+    <value>Agrigento</value>
+  </data>
+  <data name="AL" xml:space="preserve">
+    <value>Alessandria</value>
+  </data>
+  <data name="AN" xml:space="preserve">
+    <value>Ancona</value>
+  </data>
+  <data name="AO" xml:space="preserve">
+    <value>Aosta</value>
+  </data>
+  <data name="AQ" xml:space="preserve">
+    <value>L'Aquila</value>
+  </data>
+  <data name="AR" xml:space="preserve">
+    <value>Arezzo</value>
+  </data>
+  <data name="AP" xml:space="preserve">
+    <value>Ascoli-Piceno</value>
+  </data>
+  <data name="AT" xml:space="preserve">
+    <value>Asti</value>
+  </data>
+  <data name="AV" xml:space="preserve">
+    <value>Avellino</value>
+  </data>
+  <data name="BA" xml:space="preserve">
+    <value>Bari</value>
+  </data>
+  <data name="BT" xml:space="preserve">
+    <value>Barletta-Andria-Trani</value>
+  </data>
+  <data name="BL" xml:space="preserve">
+    <value>Belluno</value>
+  </data>
+  <data name="BN" xml:space="preserve">
+    <value>Benevento</value>
+  </data>
+  <data name="BG" xml:space="preserve">
+    <value>Bergamo</value>
+  </data>
+  <data name="BI" xml:space="preserve">
+    <value>Biella</value>
+  </data>
+  <data name="BO" xml:space="preserve">
+    <value>Bologna</value>
+  </data>
+  <data name="BZ" xml:space="preserve">
+    <value>Bolzano</value>
+  </data>
+  <data name="BS" xml:space="preserve">
+    <value>Brescia</value>
+  </data>
+  <data name="BR" xml:space="preserve">
+    <value>Brindisi</value>
+  </data>
+  <data name="CA" xml:space="preserve">
+    <value>Cagliari</value>
+  </data>
+  <data name="CL" xml:space="preserve">
+    <value>Caltanissetta</value>
+  </data>
+  <data name="CB" xml:space="preserve">
+    <value>Campobasso</value>
+  </data>
+  <data name="CI" xml:space="preserve">
+    <value>Carbonia Iglesias</value>
+  </data>
+  <data name="CE" xml:space="preserve">
+    <value>Caserta</value>
+  </data>
+  <data name="CT" xml:space="preserve">
+    <value>Catania</value>
+  </data>
+  <data name="CZ" xml:space="preserve">
+    <value>Catanzaro</value>
+  </data>
+  <data name="CH" xml:space="preserve">
+    <value>Chieti</value>
+  </data>
+  <data name="CO" xml:space="preserve">
+    <value>Como</value>
+  </data>
+  <data name="CS" xml:space="preserve">
+    <value>Cosenza</value>
+  </data>
+  <data name="CR" xml:space="preserve">
+    <value>Cremona</value>
+  </data>
+  <data name="KR" xml:space="preserve">
+    <value>Crotone</value>
+  </data>
+  <data name="CN" xml:space="preserve">
+    <value>Cuneo</value>
+  </data>
+  <data name="EN" xml:space="preserve">
+    <value>Enna</value>
+  </data>
+  <data name="FM" xml:space="preserve">
+    <value>Fermo</value>
+  </data>
+  <data name="FE" xml:space="preserve">
+    <value>Ferrara</value>
+  </data>
+  <data name="FI" xml:space="preserve">
+    <value>Florence</value>
+  </data>
+  <data name="FG" xml:space="preserve">
+    <value>Foggia</value>
+  </data>
+  <data name="FC" xml:space="preserve">
+    <value>Forlì-Cesena</value>
+  </data>
+  <data name="FR" xml:space="preserve">
+    <value>Frosinone</value>
+  </data>
+  <data name="GE" xml:space="preserve">
+    <value>Genoa</value>
+  </data>
+  <data name="GO" xml:space="preserve">
+    <value>Gorizia</value>
+  </data>
+  <data name="GR" xml:space="preserve">
+    <value>Grosseto</value>
+  </data>
+  <data name="IM" xml:space="preserve">
+    <value>Imperia</value>
+  </data>
+  <data name="IS" xml:space="preserve">
+    <value>Isernia</value>
+  </data>
+  <data name="SP" xml:space="preserve">
+    <value>La Spezia</value>
+  </data>
+  <data name="LT" xml:space="preserve">
+    <value>Latina</value>
+  </data>
+  <data name="LE" xml:space="preserve">
+    <value>Lecce</value>
+  </data>
+  <data name="LC" xml:space="preserve">
+    <value>Lecco</value>
+  </data>
+  <data name="LI" xml:space="preserve">
+    <value>Livorno</value>
+  </data>
+  <data name="LO" xml:space="preserve">
+    <value>Lodi</value>
+  </data>
+  <data name="LU" xml:space="preserve">
+    <value>Lucca</value>
+  </data>
+  <data name="MC" xml:space="preserve">
+    <value>Macerata</value>
+  </data>
+  <data name="MN" xml:space="preserve">
+    <value>Mantua</value>
+  </data>
+  <data name="MS" xml:space="preserve">
+    <value>Massa-Carrara</value>
+  </data>
+  <data name="MT" xml:space="preserve">
+    <value>Matera</value>
+  </data>
+  <data name="VS" xml:space="preserve">
+    <value>Medio Campidano</value>
+  </data>
+  <data name="ME" xml:space="preserve">
+    <value>Messina</value>
+  </data>
+  <data name="MI" xml:space="preserve">
+    <value>Milan</value>
+  </data>
+  <data name="MO" xml:space="preserve">
+    <value>Modena</value>
+  </data>
+  <data name="MB" xml:space="preserve">
+    <value>Monza and Brianza</value>
+  </data>
+  <data name="NA" xml:space="preserve">
+    <value>Naples</value>
+  </data>
+  <data name="NO" xml:space="preserve">
+    <value>Novara</value>
+  </data>
+  <data name="NU" xml:space="preserve">
+    <value>Nuoro</value>
+  </data>
+  <data name="OG" xml:space="preserve">
+    <value>Ogliastra</value>
+  </data>
+  <data name="OT" xml:space="preserve">
+    <value>Olbia-Tempio</value>
+  </data>
+  <data name="OR" xml:space="preserve">
+    <value>Oristano</value>
+  </data>
+  <data name="PD" xml:space="preserve">
+    <value>Padua</value>
+  </data>
+  <data name="PA" xml:space="preserve">
+    <value>Palermo</value>
+  </data>
+  <data name="PR" xml:space="preserve">
+    <value>Parma</value>
+  </data>
+  <data name="PV" xml:space="preserve">
+    <value>Pavia</value>
+  </data>
+  <data name="PG" xml:space="preserve">
+    <value>Perugia</value>
+  </data>
+  <data name="PU" xml:space="preserve">
+    <value>Pesaro and Urbino</value>
+  </data>
+  <data name="PE" xml:space="preserve">
+    <value>Pescara</value>
+  </data>
+  <data name="PC" xml:space="preserve">
+    <value>Piacenza</value>
+  </data>
+  <data name="PI" xml:space="preserve">
+    <value>Pisa</value>
+  </data>
+  <data name="PT" xml:space="preserve">
+    <value>Pistoia</value>
+  </data>
+  <data name="PN" xml:space="preserve">
+    <value>Pordenone</value>
+  </data>
+  <data name="PZ" xml:space="preserve">
+    <value>Potenza</value>
+  </data>
+  <data name="PO" xml:space="preserve">
+    <value>Prato</value>
+  </data>
+  <data name="RG" xml:space="preserve">
+    <value>Ragusa</value>
+  </data>
+  <data name="RA" xml:space="preserve">
+    <value>Ravenna</value>
+  </data>
+  <data name="RC" xml:space="preserve">
+    <value>Reggio Calabria</value>
+  </data>
+  <data name="RE" xml:space="preserve">
+    <value>Reggio Emilia</value>
+  </data>
+  <data name="RI" xml:space="preserve">
+    <value>Rieti</value>
+  </data>
+  <data name="RN" xml:space="preserve">
+    <value>Rimini</value>
+  </data>
+  <data name="RM" xml:space="preserve">
+    <value>Rome</value>
+  </data>
+  <data name="RO" xml:space="preserve">
+    <value>Rovigo</value>
+  </data>
+  <data name="SA" xml:space="preserve">
+    <value>Salerno</value>
+  </data>
+  <data name="SS" xml:space="preserve">
+    <value>Sassari</value>
+  </data>
+  <data name="SV" xml:space="preserve">
+    <value>Savona</value>
+  </data>
+  <data name="SI" xml:space="preserve">
+    <value>Siena</value>
+  </data>
+  <data name="SR" xml:space="preserve">
+    <value>Syracuse</value>
+  </data>
+  <data name="SO" xml:space="preserve">
+    <value>Sondrio</value>
+  </data>
+  <data name="SU" xml:space="preserve">
+    <value>South Sardinia</value>
+  </data>
+  <data name="TA" xml:space="preserve">
+    <value>Taranto</value>
+  </data>
+  <data name="TE" xml:space="preserve">
+    <value>Teramo</value>
+  </data>
+  <data name="TR" xml:space="preserve">
+    <value>Terni</value>
+  </data>
+  <data name="TO" xml:space="preserve">
+    <value>Turin</value>
+  </data>
+  <data name="TP" xml:space="preserve">
+    <value>Trapani</value>
+  </data>
+  <data name="TN" xml:space="preserve">
+    <value>Trento</value>
+  </data>
+  <data name="TV" xml:space="preserve">
+    <value>Treviso</value>
+  </data>
+  <data name="TS" xml:space="preserve">
+    <value>Trieste</value>
+  </data>
+  <data name="UD" xml:space="preserve">
+    <value>Udine</value>
+  </data>
+  <data name="VA" xml:space="preserve">
+    <value>Varese</value>
+  </data>
+  <data name="VE" xml:space="preserve">
+    <value>Venice</value>
+  </data>
+  <data name="VB" xml:space="preserve">
+    <value>Verbania</value>
+  </data>
+  <data name="VC" xml:space="preserve">
+    <value>Vercelli</value>
+  </data>
+  <data name="VR" xml:space="preserve">
+    <value>Verona</value>
+  </data>
+  <data name="VV" xml:space="preserve">
+    <value>Vibo Valentia</value>
+  </data>
+  <data name="VI" xml:space="preserve">
+    <value>Vicenza</value>
+  </data>
+  <data name="VT" xml:space="preserve">
+    <value>Viterbo</value>
+  </data>
+</root>
