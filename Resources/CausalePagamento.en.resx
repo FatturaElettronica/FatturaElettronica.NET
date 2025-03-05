@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="A" xml:space="preserve">
+    <value>Self-employed work services within the exercise of art or habitual profession</value>
+  </data>
+  <data name="B" xml:space="preserve">
+    <value>Economic use, by the author or inventor, of intellectual works, industrial patents and processes, formulas or information related to experiences acquired in industrial, commercial or scientific fields</value>
+  </data>
+  <data name="C" xml:space="preserve">
+    <value>Profits derived from partnership and joint venture contracts, when the contribution consists exclusively of work performance</value>
+  </data>
+  <data name="D" xml:space="preserve">
+    <value>Profits due to founding and promoting members of capital companies</value>
+  </data>
+  <data name="E" xml:space="preserve">
+    <value>Issuing of bill protests by municipal secretaries</value>
+  </data>
+  <data name="F" xml:space="preserve">
+    <value>Compensations paid to honorary justices of the peace and honorary deputy prosecutors</value>
+  </data>
+  <data name="G" xml:space="preserve">
+    <value>Compensations paid for the termination of professional sports activity</value>
+  </data>
+  <data name="H" xml:space="preserve">
+    <value>Compensations paid for the termination of agency relationships for individuals and partnerships, excluding amounts accrued by December 31, 2003, already allocated by competence and taxed as business income</value>
+  </data>
+  <data name="I" xml:space="preserve">
+    <value>Compensations paid for the termination of notarial functions</value>
+  </data>
+  <data name="L" xml:space="preserve">
+    <value>Income derived from economic use of intellectual works, industrial patents and processes, formulas and information related to experiences acquired in industrial, commercial or scientific fields, perceived by those who obtained them free of charge (e.g., heirs and legatees of the author and inventor)</value>
+  </data>
+  <data name="M" xml:space="preserve">
+    <value>Self-employed work services not habitually performed</value>
+  </data>
+  <data name="N" xml:space="preserve">
+    <value>Transfer allowances, flat expense reimbursement, premiums and compensations paid: – in the direct exercise of amateur sports activities; – in relation to coordinated and continuous administrative-management collaborations of non-professional nature provided to amateur sports societies and associations, choirs, bands and drama groups by the director and technical collaborators</value>
+  </data>
+  <data name="O" xml:space="preserve">
+    <value>Self-employed work services not habitually performed, for which there is no obligation to register with the separate management (INPS Circular No. 104/2001)</value>
+  </data>
+  <data name="P" xml:space="preserve">
+    <value>Compensations paid to non-resident subjects without a permanent establishment for the use or concession of use of industrial, commercial or scientific equipment located in the national territory, or to Swiss companies or permanent establishments of Swiss companies that possess the requirements of art. 15, paragraph 2 of the Agreement between the European Community and the Swiss Confederation of 26 October 2004 (published in the Official Journal of the European Communities on 29 December 2004 No. L385/30)</value>
+  </data>
+  <data name="Q" xml:space="preserve">
+    <value>Commissions paid to a single-mandate commercial agent or representative</value>
+  </data>
+  <data name="R" xml:space="preserve">
+    <value>Commissions paid to a multi-mandate commercial agent or representative</value>
+  </data>
+  <data name="S" xml:space="preserve">
+    <value>Commissions paid to a commission agent</value>
+  </data>
+  <data name="T" xml:space="preserve">
+    <value>Commissions paid to a broker</value>
+  </data>
+  <data name="U" xml:space="preserve">
+    <value>Commissions paid to a business introducer</value>
+  </data>
+  <data name="V" xml:space="preserve">
+    <value>Commissions paid to a door-to-door sales representative; Commissions paid to a representative for door-to-door and mobile sales of daily newspapers and periodicals (Law of 25 February 1987, n. 67)</value>
+  </data>
+  <data name="W" xml:space="preserve">
+    <value>Fees paid in 2017 for services related to contracts to which the provisions contained in art. 25-ter of Presidential Decree No. 600 of 29 September 1973 were applied</value>
+  </data>
+  <data name="X" xml:space="preserve">
+    <value>Royalties paid in 2004 by resident companies or entities or permanent establishments of foreign companies pursuant to art. 26-quater, paragraph 1, letters a) and b) of Presidential Decree 600 of 29 September 1973, to companies or permanent establishments of companies located in another European Union member state in the presence of the requirements referred to in the aforementioned art. 26-quater of Presidential Decree 600, for which the withholding tax refund was made in 2006 pursuant to art. 4 of Legislative Decree 30 May 2005 n. 143</value>
+  </data>
+  <data name="Y" xml:space="preserve">
+    <value>Royalties paid from January 1, 2005 to July 26, 2005 by resident companies or entities or permanent establishments of foreign companies pursuant to art. 26-quater, paragraph 1, letters a) and b) of Presidential Decree No. 600 of 29 September 1973, to companies or permanent establishments of companies located in another European Union member state in the presence of the requirements referred to in the aforementioned art. 26-quater of Presidential Decree No. 600, for which the withholding tax refund was made in 2006 pursuant to art. 4 of Legislative Decree 30 May 2005 n. 143</value>
+  </data>
+  <data name="L1" xml:space="preserve">
+    <value>Income derived from economic use of intellectual works, industrial patents and processes, formulas and information related to experiences acquired in industrial, commercial or scientific fields, perceived by subjects who have acquired the rights to their use for a fee</value>
+  </data>
+  <data name="M1" xml:space="preserve">
+    <value>Income derived from undertaking obligations to do, not to do, or to allow</value>
+  </data>
+  <data name="M2" xml:space="preserve">
+    <value>Self-employed work services not habitually performed for which there is an obligation to register with the ENPAPI Separate Management</value>
+  </data>
+  <data name="O1" xml:space="preserve">
+    <value>Income derived from undertaking obligations to do, not to do, or to allow, for which there is no obligation to register with the separate management (INPS Circular No. 104/2001)</value>
+  </data>
+  <data name="V1" xml:space="preserve">
+    <value>Income derived from non-habitually performed commercial activities (for example, commissions paid for occasional services to a commercial agent, broker, business introducer)</value>
+  </data>
+  <data name="ZO" xml:space="preserve">
+    <value>Title different from the previous ones</value>
+  </data>
+  <data name="J" xml:space="preserve">
+    <value>Compensations paid to occasional truffle collectors not identified for VAT purposes, in relation to truffle sales</value>
+  </data>
+  <data name="K" xml:space="preserve">
+    <value>Universal civil service allowances referred to in art. 16 of Legislative Decree No. 40 of 6 March 2017</value>
+  </data>
+  <data name="V2" xml:space="preserve">
+    <value>Income derived from non-habitually performed services provided by door-to-door direct sales representatives</value>
+  </data>
+  <data name="Z" xml:space="preserve">
+    <value>Title different from the previous ones</value>
+  </data>
+</root>

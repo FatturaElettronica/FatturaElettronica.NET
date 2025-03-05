@@ -2,6 +2,8 @@
 
 ## In Development
 
+- new: supporto per lingua Inglese.
+ 
 ## Stable
 
 ### v 3.6.0

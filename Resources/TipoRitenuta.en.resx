@@ -1,0 +1,32 @@
+<root>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>1.3</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="RT01" xml:space="preserve">
+    <value>withholding tax for natural persons</value>
+  </data>
+  <data name="RT02" xml:space="preserve">
+    <value>withholding tax for legal entities</value>
+  </data>
+  <data name="RT03" xml:space="preserve">
+    <value>INPS contribution</value>
+  </data>
+  <data name="RT04" xml:space="preserve">
+    <value>ENASARCO contribution</value>
+  </data>
+  <data name="RT05" xml:space="preserve">
+    <value>ENPAM contribution</value>
+  </data>
+  <data name="RT06" xml:space="preserve">
+    <value>other social security contribution</value>
+  </data>
+</root>
