@@ -2,6 +2,7 @@
 
 ## In Development
 
+- fix: non includere GitHub workflows nel package.
 - new: supporto per lingua Inglese ([#430][430]).
 
 [430]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/430
