@@ -2,12 +2,18 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+### v 3.6.1
+
+Released on March 17, 2025
+
 - fix: non includere GitHub workflows nel package.
 - new: supporto per lingua Inglese ([#430][430]).
 
 [430]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/430
-
-## Stable
 
 ### v 3.6.0
 
