@@ -6,6 +6,10 @@
  
 ## Stable
 
+### v 3.6.2
+
+Released on April 2, 2025
+
 -fix: non includere GitHub workflows nel package, per davvero.
 
 ### v 3.6.1
