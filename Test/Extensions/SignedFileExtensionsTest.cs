@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Security.Cryptography;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
 using FatturaElettronica.Ordinaria;
@@ -19,6 +20,14 @@ namespace FatturaElettronica.Test.Extensions
             f.ReadXmlSigned("Samples/IT02182030391_31.xml.p7m");
             Assert.AreEqual("31", f.FatturaElettronicaHeader.DatiTrasmissione.ProgressivoInvio);
         }
+
+        [TestMethod]
+        public void ReadXMLSigned_ShouldThrowExceptionOnTamperedDocuments()
+        {
+            var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
+            var exception = Assert.ThrowsException<SignatureException>(()=> f.ReadXmlSigned("Samples/IT02182030391_31_tampered.xml.p7m"));
+        }
+
 
         [TestMethod]
         public void ReadXMLSignedBase64()
@@ -62,14 +71,14 @@ namespace FatturaElettronica.Test.Extensions
         public void ReadXMLSignedThrowsOnNonSignedFile()
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            Assert.ThrowsException<FormatException>(() => f.ReadXmlSigned("Samples/IT02182030391_32.xml"));
+            Assert.ThrowsException<SignatureException>(() => f.ReadXmlSigned("Samples/IT02182030391_32.xml"));
         }
 
         [TestMethod]
         public void ReadXMLSignedBase64ThrowsOnNonSignedFile()
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            Assert.ThrowsException<FormatException>(() => f.ReadXmlSigned("Samples/IT02182030391_32.xml"));
+            Assert.ThrowsException<FormatException>(() => f.ReadXmlSignedBase64("Samples/IT02182030391_32.xml"));
         }
 
         [TestMethod]

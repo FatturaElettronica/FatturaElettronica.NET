@@ -3,23 +3,27 @@ using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Pkcs;
 using System.Security.Cryptography.X509Certificates;
+using System.Text.RegularExpressions;
 
 namespace FatturaElettronica.Extensions
 {
     public static class SignedFileExtensions
     {
+
+        /// <summary>
+        /// This method will Read the Signed XML whether it is Base64Encoded or plain
+        /// </summary>
+        /// <param name="fattura"></param>
+        /// <param name="filePath"></param>
+        /// <param name="validateSignature"></param>
+        /// <exception cref="SignatureException">If there is an error validating invoice signature</exception>
+        /// <exception cref="FormatException">If it is dealing with a Base64 input and it fails to decode it</exception>"
         public static void ReadXmlSigned(this FatturaBase fattura, string filePath, bool validateSignature = true)
         {
-            try
-            {
-                // Most times input will be a plain (non-Base64-encoded) file.
-                using var inputStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-                ReadXmlSigned(fattura, inputStream, validateSignature);
-            }
-            catch (CryptographicException)
-            {
-                ReadXmlSignedBase64(fattura, filePath, validateSignature);
-            }
+            using var inputStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            using var contentStream = PreprocessStreamEncoding(inputStream);
+            ReadXmlSigned(fattura, contentStream, validateSignature);
+
         }
 
         public static void ReadXmlSignedBase64(this FatturaBase fattura, string filePath, bool validateSignature = true)
@@ -28,6 +32,28 @@ namespace FatturaElettronica.Extensions
                 validateSignature);
         }
 
+        /// <summary>
+        /// This helper performs preliminary checks to determine if content is likely to be Base64 encoded and if it is it attempts to Decode it and returns.
+        /// </summary>
+        /// <param name="fileContents">The Stream to be processed</param>
+        /// <returns>If the input stream was Base encoded and was successfully decoded it returns a new Stream containing the decoded data. 
+        ///Else it rewinds and returns the original stream</returns>
+        ///<exception cref="FormatException">Although unlikely, if provided with an invalid base encoded Stream that still got through the length check and regex it will throw a FormatException</exception>
+        private static Stream PreprocessStreamEncoding(Stream fileContents)
+        {
+            //Using the full constructor to prevent stream collection
+            using var reader = new StreamReader(fileContents, System.Text.Encoding.UTF8, true, 1024, true);
+            var content = reader.ReadToEnd();
+            //The length check is a bit faster separate instead of inserted in the regex match
+            if (content.Length % 4 != 0 || !Regex.IsMatch(content, "^[A-Za-z0-9+/]*([AQgw]==|[AEIMQUYcgkosw048]=)?$"))
+            {
+                //Unlikely to be B64,we rewind the stream for convenience
+                fileContents.Position = 0;
+                return fileContents;
+            }
+            //Returning a B64Decoded Stream
+            return new MemoryStream(Convert.FromBase64String(content));
+        }
 
         public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = true)
         {
@@ -35,23 +61,32 @@ namespace FatturaElettronica.Extensions
             fattura.ReadXml(parsed);
         }
 
+        /// <summary>
+        /// Retrieves the Fattura XML as a Stream from an input Signed content Stream. 
+        /// It should be invoked on Signed content that is not base encoded, and supports signature validation
+        /// </summary>
+        /// <param name="stream">A Signed Content stream</param>
+        /// <param name="validateSignature">If we should validate the content matches the signature</param>
+        /// <returns>A Stream that can be Read into a Fattura object</returns>
+        /// <exception cref="SignatureException">If ValidateSignature is true and the content doesn't match the signature</exception>
+        /// <exception cref="CryptographicException">If the stream is encoded or there is an error Decoding the signature and ValidateSignature is false</exception>
         public static MemoryStream ParseSignature(Stream stream, bool validateSignature)
         {
             var fileContent = ReadAllBytes(stream);
             var content = new ContentInfo(fileContent);
             var signedFile = new SignedCms(SubjectIdentifierType.IssuerAndSerialNumber, content, false);
-            signedFile.Decode(fileContent);
 
-            if (validateSignature)
+            try
             {
-                try
+                signedFile.Decode(fileContent);
+                if (validateSignature)
                 {
                     signedFile.CheckSignature(true);
                 }
-                catch (CryptographicException ce)
-                {
-                    throw new SignatureException(Resources.ErrorMessages.SignatureException, ce);
-                }
+            }
+            catch (CryptographicException ce) when (validateSignature)
+            {
+                throw new SignatureException(Resources.ErrorMessages.SignatureException, ce);
             }
 
             var memoryStream = new MemoryStream();
