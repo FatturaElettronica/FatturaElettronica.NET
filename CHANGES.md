@@ -2,7 +2,9 @@
 
 ## In Development
 
-- *hic sunt leones*
+- fix: traduzione Inglese allineata a quella ufficiale ([#432][432])
+
+[432]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/432
  
 ## Stable
 
