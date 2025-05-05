@@ -13,66 +13,66 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="N1" xml:space="preserve">
-    <value>excluded under art. 15</value>
+    <value>excluded pursuant to Art. 15</value>
   </data>
   <data name="N2.1" xml:space="preserve">
-    <value>not subject to VAT pursuant to articles 7 to 7-septies of Presidential Decree 633/72</value>
+    <value>not subject to VAT under the articles from 7 to 7-septies of DPR 633/72</value>
   </data>
   <data name="N2.2" xml:space="preserve">
-    <value>not subject - other cases</value>
+    <value>not subject – other cases</value>
   </data>
   <data name="N3.1" xml:space="preserve">
-    <value>non-taxable - exports</value>
+    <value>not taxable - exportations</value>
   </data>
   <data name="N3.2" xml:space="preserve">
-    <value>non-taxable - intra-Community supplies</value>
+    <value>not taxable - intra Community transfers</value>
   </data>
   <data name="N3.3" xml:space="preserve">
-    <value>non-taxable - supplies to San Marino</value>
+    <value>not taxable - transfers to San Marino</value>
   </data>
   <data name="N3.4" xml:space="preserve">
-    <value>non-taxable - operations similar to exports</value>
+    <value>not taxable - transactions treated as export supplies</value>
   </data>
   <data name="N3.5" xml:space="preserve">
-    <value>non-taxable - following intent declarations</value>
+    <value>not taxable - for declaration of intent</value>
   </data>
   <data name="N3.6" xml:space="preserve">
-    <value>non-taxable - other operations not contributing to the plafond</value>
+    <value>not taxable – other transactions that don’t contribute to the determination of ceiling</value>
   </data>
   <data name="N4" xml:space="preserve">
     <value>exempt</value>
   </data>
   <data name="N5" xml:space="preserve">
-    <value>margin scheme / VAT not shown on invoice</value>
+    <value>margin regime / VAT not exposed on invoice</value>
   </data>
   <data name="N6.1" xml:space="preserve">
-    <value>reverse charge - sale of scrap and other recovery materials</value>
+    <value>reverse charge - transfer of scrap and of other recyclable materials</value>
   </data>
   <data name="N6.2" xml:space="preserve">
-    <value>reverse charge - sale of gold and silver under Law 7/2000 and used goldsmithing to OPO</value>
+    <value>reverse charge - transfer of gold and silver in accordance with law 7/2000 as well as used jewelry to OPO</value>
   </data>
   <data name="N6.3" xml:space="preserve">
     <value>reverse charge - subcontracting in the construction sector</value>
   </data>
   <data name="N6.4" xml:space="preserve">
-    <value>reverse charge - sale of buildings</value>
+    <value>reverse charge - transfer of buildings</value>
   </data>
   <data name="N6.5" xml:space="preserve">
-    <value>reverse charge - sale of mobile phones</value>
+    <value>reverse charge - transfer of mobile phones</value>
   </data>
   <data name="N6.6" xml:space="preserve">
-    <value>reverse charge - sale of electronic products</value>
+    <value>reverse charge - transfer of electronic products</value>
   </data>
   <data name="N6.7" xml:space="preserve">
-    <value>reverse charge - services in the construction and related sectors</value>
+    <value>reverse charge - provisions in the construction and related sectors</value>
   </data>
   <data name="N6.8" xml:space="preserve">
-    <value>reverse charge - energy sector operations</value>
+    <value>reverse charge - transactions in the energy sector</value>
   </data>
   <data name="N6.9" xml:space="preserve">
     <value>reverse charge - other cases</value>
   </data>
   <data name="N7" xml:space="preserve">
-    <value>VAT paid in another EU state (telecommunications, radio-broadcasting and electronic services under art. 7-octies, paragraph 1 lett. a, b, art. 74-sexies Presidential Decree 633/72)</value>
+    <value>VAT paid in another EU country  (distance sales pursuant to article 40 paragraphs 3 and 4 and article 41 paragraph 1 letter b, DL 331/93; provision of telecommunications, radio and television broadcasting and electronic services pursuant to article 7-octies, paragraph 1 letter a, b and article 74-sexies, DPR 633/72)</value>
   </data>
 </root>

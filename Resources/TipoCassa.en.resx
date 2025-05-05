@@ -14,69 +14,69 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TC01" xml:space="preserve">
-    <value>National welfare and assistance fund for lawyers and legal procurators</value>
+    <value>National Pension and Welfare Fund for Lawyers and Solicitors</value>
   </data>
   <data name="TC02" xml:space="preserve">
-    <value>Welfare fund for chartered accountants</value>
+    <value>Pension fund for accountants</value>
   </data>
   <data name="TC03" xml:space="preserve">
-    <value>Welfare and assistance fund for surveyors</value>
+    <value>Pension and welfare fund for surveyors</value>
   </data>
   <data name="TC04" xml:space="preserve">
-    <value>National welfare and assistance fund for freelance engineers and architects</value>
+    <value>National pension and welfare fund for self-employed engineers and architects</value>
   </data>
   <data name="TC05" xml:space="preserve">
-    <value>National notary fund</value>
+    <value>National fund for solicitors</value>
   </data>
   <data name="TC06" xml:space="preserve">
-    <value>National welfare and assistance fund for accountants and commercial experts</value>
+    <value>National pension and welfare fund for bookkeepers and commercial experts</value>
   </data>
   <data name="TC07" xml:space="preserve">
-    <value>National assistance body for agents and commercial representatives (ENASARCO)</value>
+    <value>National welfare board for sales agents and representatives (ENASARCO - Ente Nazionale Assistenza Agenti e Rappresentanti di Commercio)</value>
   </data>
   <data name="TC08" xml:space="preserve">
-    <value>National welfare and assistance body for labor consultants (ENPACL)</value>
+    <value>National pension and welfare board for employment consultants (ENPACL - Ente Nazionale Previdenza e Assistenza Consulenti del Lavoro)</value>
   </data>
   <data name="TC09" xml:space="preserve">
-    <value>National welfare and assistance body for doctors (ENPAM)</value>
+    <value>National pension and welfare board for doctors (ENPAM - Ente Nazionale Previdenza e Assistenza Medici)</value>
   </data>
   <data name="TC10" xml:space="preserve">
-    <value>National welfare and assistance body for pharmacists (ENPAF)</value>
+    <value>National pension and welfare board for pharmacists (ENPAF - Ente Nazionale Previdenza e Assistenza Farmacisti )</value>
   </data>
   <data name="TC11" xml:space="preserve">
-    <value>National welfare and assistance body for veterinarians (ENPAV)</value>
+    <value>National pension and welfare board for veterinary physicians (ENPAV - Ente Nazionale Previdenza e Assistenza Veterinari)</value>
   </data>
   <data name="TC12" xml:space="preserve">
-    <value>National welfare and assistance body for agricultural employees (ENPAIA)</value>
+    <value>National pension and welfare board for agricultural employees (ENPAIA - Ente Nazionale Previdenza e Assistenza Impiegati dell'Agricoltura)</value>
   </data>
   <data name="TC13" xml:space="preserve">
-    <value>Welfare fund for employees of shipping companies and maritime agencies</value>
+    <value>Pension fund for employees of shipping companies and maritime agencies)</value>
   </data>
   <data name="TC14" xml:space="preserve">
-    <value>National welfare institute for Italian journalists (INPGI)</value>
+    <value>National pension institute for Italian journalists (INPGI - Istituto Nazionale Previdenza Giornalisti Italiani)</value>
   </data>
   <data name="TC15" xml:space="preserve">
-    <value>National assistance organization for orphans of Italian healthcare professionals (ONAOSI)</value>
+    <value>National welfare board for orphans of Italian doctors (ONAOSI - Opera Nazionale Assistenza Orfani Sanitari Italiani)</value>
   </data>
   <data name="TC16" xml:space="preserve">
-    <value>Autonomous supplementary assistance fund for Italian journalists (CASAGIT)</value>
+    <value>Autonomous supplementary welfare fund for Italian journalists (CASAGIT - Cassa Autonoma Assistenza Integrativa Giornalisti Italiani)</value>
   </data>
   <data name="TC17" xml:space="preserve">
-    <value>Welfare body for industrial experts and graduate industrial experts (EPPI)</value>
+    <value>Pension board for industrial experts and graduate industrial experts (EPPI - Ente Previdenza Periti Industriali e Periti Industriali Laureati)</value>
   </data>
   <data name="TC18" xml:space="preserve">
-    <value>Multi-category welfare and assistance body (EPAP)</value>
+    <value>National multi-category pension and welfare board (EPAP - Ente Previdenza e Assistenza Pluricategoriale)</value>
   </data>
   <data name="TC19" xml:space="preserve">
-    <value>National welfare and assistance body for biologists (ENPAB)</value>
+    <value>National pension and welfare board for biologists (ENPAB - Ente Nazionale Previdenza e Assistenza Biologi)</value>
   </data>
   <data name="TC20" xml:space="preserve">
-    <value>National welfare and assistance body for nursing profession (ENPAPI)</value>
+    <value>National pension and welfare board for the nursing profession (ENPAPI - Ente Nazionale Previdenza e Assistenza Professione Infermieristica)</value>
   </data>
   <data name="TC21" xml:space="preserve">
-    <value>National welfare and assistance body for psychologists (ENPAP)</value>
+    <value>National pension and welfare board for psychologists (ENPAP - Ente Nazionale Previdenza e Assistenza Psicologi)</value>
   </data>
   <data name="TC22" xml:space="preserve">
-    <value>INPS</value>
+    <value>National Social Security Institute (INPS - Istituto Nazionale della Previdenza Sociale)</value>
   </data>
 </root>

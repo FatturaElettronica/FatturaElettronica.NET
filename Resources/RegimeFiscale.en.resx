@@ -22,57 +22,57 @@
     <value>Ordinary</value>
   </data>
   <data name="RF02" xml:space="preserve">
-    <value>Minimum taxpayers (art.1, c.96-117, L. 244/07)</value>
+    <value>Minimum taxpayers (Art. 1, section 96-117, Italian Law 244/07)</value>
   </data>
   <data name="RF04" xml:space="preserve">
-    <value>Agriculture and related activities and fishing (art.34 and 34-bis, DPR 633/72)</value>
+    <value>Agriculture and connected activities and fishing (Arts. 34 and 34-bis, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF05" xml:space="preserve">
-    <value>Sale of salt and tobacco (art.74, c.1, DPR 633/72)</value>
+    <value>Sale of salts and tobaccos (Art. 74, section 1, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF06" xml:space="preserve">
-    <value>Matches trade (art.74, c.1, DPR 633/72)</value>
+    <value>Match sales (Art. 74, section 1, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF07" xml:space="preserve">
-    <value>Publishing (art.74, c.1, DPR 633/72)</value>
+    <value>Publishing (Art. 74, section 1, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF08" xml:space="preserve">
-    <value>Public telephone services management (art.74, c.1, DPR 633/72)</value>
+    <value>Management of public telephone services (Art. 74, section 1, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF09" xml:space="preserve">
-    <value>Resale of public transport and parking documents (art.74, c.1, DPR 633/72)</value>
+    <value>Resale of public transport and parking documents (Art. 74, section 1, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF10" xml:space="preserve">
-    <value>Entertainment, games and other activities listed in the tariff attached to DPR 640/72 (art.74, c.6, DPR 633/72)</value>
+    <value>Entertainment, gaming and other activities referred to by the tariff attached to Italian Presidential Decree 640/72 (Art. 74, section 6, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF11" xml:space="preserve">
-    <value>Travel and tourism agencies (art.74-ter, DPR 633/72)</value>
+    <value>Travel and tourism agencies (Art. 74-ter, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF12" xml:space="preserve">
-    <value>Agritourism (art.5, c.2 L. 413/91)</value>
+    <value>Farmhouse accommodation/restaurants (Art. 5, section 2, Italian law 413/91)</value>
   </data>
   <data name="RF13" xml:space="preserve">
-    <value>Door-to-door sales (art.25-bis, c.6, DPR 600/73)</value>
+    <value>Door-to-door sales (Art. 25-bis, section 6, Italian Presidential Decree 600/73)</value>
   </data>
   <data name="RF14" xml:space="preserve">
-    <value>Resale of used goods, works of art, antiques or collectibles (art.36, DL 41/95)</value>
+    <value>Resale of used goods, artworks, antiques or collector's items (Art. 36, Italian Decree Law 41/95)</value>
   </data>
   <data name="RF15" xml:space="preserve">
-    <value>Auction agencies for works of art, antiques or collectibles (art.40-bis, DL 41/95)</value>
+    <value>Artwork, antiques or collector's items auction agencies (Art. 40-bis, Italian Decree Law 41/95)</value>
   </data>
   <data name="RF16" xml:space="preserve">
-    <value>Cash VAT P.A. (art.6, c.5, DPR 633/72)</value>
+    <value>VAT paid in cash by P.A. (Art. 6, section 5, Italian Presidential Decree 633/72)</value>
   </data>
   <data name="RF17" xml:space="preserve">
-    <value>Cash VAT (art. 32-bis, DL 83/2012)</value>
+    <value>VAT paid in cash by subjects with business turnover below Euro 200,000 (Art. 7, Italian Decree Law 185/2008)</value>
   </data>
   <data name="RF18" xml:space="preserve">
     <value>Other</value>
   </data>
   <data name="RF19" xml:space="preserve">
-    <value>Flat-rate regime (art.1, c.54-89, L. 190/2014)</value>
+    <value>Flat-rate tax regime (article1, c. 54-89, L. 190/2014)</value>
   </data>
   <data name="RF20" xml:space="preserve">
-    <value>Cross-border VAT Franchise Regime (EU Directive 2020/285)</value>
+    <value>Cross-border VAT exemption regime (EU Directive 2020/285)</value>
   </data>
 </root>

@@ -16,10 +16,10 @@
     <value>cash</value>
   </data>
   <data name="MP02" xml:space="preserve">
-    <value>check</value>
+    <value>cheque</value>
   </data>
   <data name="MP03" xml:space="preserve">
-    <value>cashier's check</value>
+    <value>banker's draft</value>
   </data>
   <data name="MP04" xml:space="preserve">
     <value>cash at Treasury</value>
@@ -28,43 +28,43 @@
     <value>bank transfer</value>
   </data>
   <data name="MP06" xml:space="preserve">
-    <value>bill of exchange</value>
+    <value>money order</value>
   </data>
   <data name="MP07" xml:space="preserve">
-    <value>bank slip</value>
+    <value>pre-compiled bank payment slip</value>
   </data>
   <data name="MP08" xml:space="preserve">
     <value>payment card</value>
   </data>
   <data name="MP09" xml:space="preserve">
-    <value>RID</value>
+    <value>direct debit</value>
   </data>
   <data name="MP10" xml:space="preserve">
-    <value>RID utilities</value>
+    <value>utilities direct debit</value>
   </data>
   <data name="MP11" xml:space="preserve">
-    <value>fast RID</value>
+    <value>fast direct debit</value>
   </data>
   <data name="MP12" xml:space="preserve">
-    <value>RIBA</value>
+    <value>collection order</value>
   </data>
   <data name="MP13" xml:space="preserve">
-    <value>MAV</value>
+    <value>payment by notice</value>
   </data>
   <data name="MP14" xml:space="preserve">
-    <value>Treasury receipt</value>
+    <value>tax office quittance</value>
   </data>
   <data name="MP15" xml:space="preserve">
-    <value>giro account on special accounting accounts</value>
+    <value>transfer on special accounting accounts</value>
   </data>
   <data name="MP16" xml:space="preserve">
-    <value>bank domiciliation</value>
+    <value>order for direct payment from bank account</value>
   </data>
   <data name="MP17" xml:space="preserve">
-    <value>postal domiciliation</value>
+    <value>order for direct payment from post office account</value>
   </data>
   <data name="MP18" xml:space="preserve">
-    <value>postal current account slip</value>
+    <value>bulletin postal account</value>
   </data>
   <data name="MP19" xml:space="preserve">
     <value>SEPA Direct Debit</value>
@@ -76,7 +76,7 @@
     <value>SEPA Direct Debit B2B</value>
   </data>
   <data name="MP22" xml:space="preserve">
-    <value>Withholding on already collected amounts</value>
+    <value>Deduction on sums already collected</value>
   </data>
   <data name="MP23" xml:space="preserve">
     <value>PagoPA</value>
