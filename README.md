@@ -33,23 +33,22 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 
 ## Licenza
 
-FatturaElettronica è un progetto open source di [Nicola Iarocci][ni] e [Gestionali Amica][ga] rilasciato sotto licenza [BSD][bsd].
-Artwork by [Kalamun][rp].
-
-### Sponsorship
-
-Se usi FatturaElettronica.NET o qualcun altro dei miei progetti in un
-prodotto che genera profitto, buon senso vorrebbe che tu sponsorizzassi la
-mia attività open source. Contribuiresti a far sì che il progetto su cui si
-basa il tuo prodotto rimanga sano, attivo, e mantenuto nel tempo. Avresti
-inoltre, se lo desideri, un premio in visibilità per te o la tua azienda.
-Ogni singola sottoscrizione ha un impatto significante.
-
-Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
+Fattura Elettronica è un progetto di [Nicola Iarocci][ni] e
+[__Invoicetronic__][it]. È [libero][bsd], [sviluppato in pubblico][gh], aperto
+alla collaborazione di tutti.
 
 ## Documentazione
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
+
+## API moderne per la fattura elettronica in Italia
+
+[__Invoicetronic API__][it] ti consente di integrare facilmente l'intero ciclo di gestione della fattura elettronica: __invio__, __ricezione__, applicazione di __firme digitali__, __validazione__ preventiva, notifiche __webhook__, __log__ degli eventi, varie __opzioni di upload__ e molto altro, il tutto su una piattaforma moderna che astrae le complessità di SDI.
+
+Invoicetronic include __client SDK__ open-source per i linguaggi di programmazione più diffusi, __comandi CLI__ per lo
+scripting, una completa __documentazione OpenAPI__ e un ambiente __Sandbox gratuito__.
+
+Vai su [__Invoicetronic__][it] per saperne di più.
 
 ## Powered by
 
@@ -63,3 +62,5 @@ Scopri come puoi partecipare sulla mia pagina [GitHub Sponsors][ghs]
 [netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md
 [rp]: http://www.kalamun.org/
 [ghs]: https://github.com/sponsors/nicolaiarocci
+[it]: https://www.invoicetronic.com
+[gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET
