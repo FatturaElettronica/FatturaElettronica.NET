@@ -2,7 +2,7 @@
 
 ## In Development
 
-- _hic sunt leones_
+- CI: non eseguire test action al push di un tag (la publish action include i test)
 
 ## Stable
 
