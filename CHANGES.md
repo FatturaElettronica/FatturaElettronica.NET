@@ -2,12 +2,18 @@
 
 ## In Development
 
+- _hic sunt leones_
+
+## Stable
+
+### v 3.6.3
+
+Released on May 6, 2025
+
 - fix: traduzione Inglese allineata a quella ufficiale ([#432][432])
 - fix: README typos.
 
 [432]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/432
- 
-## Stable
 
 ### v 3.6.2
 
