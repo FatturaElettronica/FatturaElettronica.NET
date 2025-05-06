@@ -3,6 +3,7 @@
 ## In Development
 
 - fix: traduzione Inglese allineata a quella ufficiale ([#432][432])
+- fix: README typos.
 
 [432]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/432
  
@@ -188,7 +189,7 @@ Released on October 1, 2022
 
 Released on October 1, 2022
 
-- Fix: aggiornati i controlli 00401 e 00430 affinchè escludano i documenti TD16 ([#382][382])
+- Fix: aggiornati i controlli 00401 e 00430 affinché escludano i documenti TD16 ([#382][382])
 
 [382]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/382
 
@@ -216,7 +217,7 @@ Released on September 9, 2022
 Questa beta release recepisce le specifiche tecniche v1.7.1 che entreranno in vigore il 1 Ottobre 2022.
 Per maggiori informazioni vedi il ticket ([#376][376]).
 
-- New: introdotto nuovo controllo sulla fatture con codice errore 00476 ([#376][376]).
+- New: introdotto nuovo controllo sulle fatture con codice errore 00476 ([#376][376]).
 - New: TD28, acquisti da San Marino con IVA (fattura cartacea) ([#376][376]).
 - Fix: modificato il criterio di controllo per l'errore 00472 ([#376][376]).
 - Fix: modificato il criterio di controllo per l’errore 00471 per i tipi documento TD01, TD02,TD03,TD06,TD24,TD25 e TD28 (fattura ordinaria) e TD07 (fattura semplificata) ([#376][376]).
@@ -269,7 +270,7 @@ Released on April 6, 2022
 Released on February 25, 2022
 
 - New: supporto per tag 'Processing Instructions' in de-serializzazione XML ([#367][367])
-- Fix: link rotto alle specifiche techiche ([#362][362])
+- Fix: link rotto alle specifiche tecniche ([#362][362])
 - Migrazione a System.Text.Json ([#360][360])
 - Rimosso badge dependabot dal README
 
@@ -309,7 +310,7 @@ Released on May 14, 2021
 
 ### v 3.1.4
 
-Released on March 21, 2021 - Codename 'Spring'
+Released on March 21, 2021—Codename 'Spring'
 
 - Fix: il codice per Irlanda del Nord è `XI`, non `IX` ([#314][314])
 
@@ -351,7 +352,7 @@ Released on December 30, 2020
 - Aggiunta convalida per errore 00313 ([#300][300])
 - `Defaults.RootElement.ExtraAttributes` diventa una read-write property ([#303][303])
 - `Defaults.RootElement.Prefix` diventa una read-write property ([#303][303])
-- Migrazione CI da Azure Pipelines a GitHub Actions (`ubuntu-latest`, `windows-latest`, `macos-latest`) ([#298][298])
+- Migrazione CI dà Azure Pipelines a GitHub Actions (`ubuntu-latest`, `windows-latest`, `macos-latest`) ([#298][298])
 - Impostato target framework della test suite a `net5.0` ([#295][295])
 - Aggiornata dipendenza Portable.BouncyCastle a 1.8.9
 - Aggiornata dipendenza Microsoft.NET.Test.Sdk a 16.8.3
@@ -442,7 +443,7 @@ Released on May 21, 2020
 
 Released on April 20, 2020
 
-- Tabella `CausalePagamento` accetta valori Y,K,V2,Z durante il periodo di transizione ([#259][259]) 
+- Tabella `CausalePagamento` accetta valori Y, K,V2,Z durante il periodo di transizione ([#259][259]) 
 
 [259]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/259
 
@@ -539,7 +540,7 @@ Released on May 24, 2019
 - Fix: FatturaSemplificata convalidata con Natura valida per Ordinaria ([#205][205])
 - Fix: Validazione AltriDatiIdentificativi in FatturaSemplificata ([#203][203])
 - Fix: UnitaMisura vuota deve sollevare errore di validazione ([#204][204])
-- Fix: DatiFatturaRettificata.DataFR dovrebe essere nullabile ([#200][200])
+- Fix: DatiFatturaRettificata.DataFR dovrebbe essere nullabile ([#200][200])
 - Fix: CausalePagamento: ZO e M2 sostituiti rispettivamente da Z e M ([#191][191c])
 
 [205]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/205
@@ -737,7 +738,7 @@ Released on October 4, 2018.
 
 Released on October 2, 2018.
 
-- Fix: DettaglioLineeValidator: 00423 non supporta tolleranca di 1 centesimo. Closes #66.
+- Fix: DettaglioLineeValidator: 00423 non supporta tolleranza di 1 centesimo. Closes #66.
 
 ### v0.8.2
 
@@ -820,7 +821,7 @@ Rilasciata il 23.3.2017.
 
 ### v0.4.2
 
-Rilascata il 17.3.2017.
+Rilasciata il 17.3.2017.
 
 - Fix: Convalida DatiCassaPrevidenziale.Natura va fatta solo quando Aliquota uguale a
   zero. Closes #36.
@@ -930,7 +931,7 @@ compatibilità con l'API precedente.
 - New: attributo xsi:schemaLocation nel root elemento del documento xml.
 - New: campo 1.4.4 RappresentanteFiscale.
 - New: campo 1.4.3 StabileOrganizzazione.
-- New: campo 1.1.6 PECDestinatario e relavite convalide.
+- New: campo 1.1.6 PECDestinatario e relative convalide.
 - Fix: modificato campo 2.4.2.13 IBAN per recepire da 15 a 34 caratteri.
 - Fix: aggiunto valore N7 ai campi 2.2.2.2 e 2.1.1.7.7 Natura.
 - Fix: aggiunto valore MP22 al campo 2.4.2.2 ModalitaPagamento.
