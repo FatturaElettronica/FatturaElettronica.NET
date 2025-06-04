@@ -16,10 +16,10 @@
     <value>invoice</value>
   </data>
   <data name="TD02" xml:space="preserve">
-    <value>advance payment on invoice</value>
+    <value>advance/down payment on invoice</value>
   </data>
   <data name="TD03" xml:space="preserve">
-    <value>advance payment on fee note</value>
+    <value>advance/down payment on fee</value>
   </data>
   <data name="TD04" xml:space="preserve">
     <value>credit note</value>
@@ -28,48 +28,48 @@
     <value>debit note</value>
   </data>
   <data name="TD06" xml:space="preserve">
-    <value>fee note</value>
+    <value>fee</value>
   </data>
   <data name="TD16" xml:space="preserve">
-    <value>integration of internal reverse charge invoice</value>
+    <value>reverse charge internal invoice integration</value>
   </data>
   <data name="TD17" xml:space="preserve">
-    <value>integration/self-invoice for purchase of services from abroad</value>
+    <value>integration/self invoicing for purchase services from abroad</value>
   </data>
   <data name="TD18" xml:space="preserve">
-    <value>integration for purchase of intra-community goods</value>
+    <value>integration for purchase of intra UE goods</value>
   </data>
   <data name="TD19" xml:space="preserve">
-    <value>integration/self-invoice for purchase of goods pursuant to art. 17 c.2 DPR 633/72</value>
+    <value>integration/self invoicing for purchase of goods ex art.17 c.2 DPR 633/72</value>
   </data>
   <data name="TD20" xml:space="preserve">
-    <value>self-invoice for regularization and integration of invoices (pursuant to art. 6 c.9-bis d.lgs. 471/97 or art. 46 c.5 d.l. 331/93)</value>
+    <value>self invoice invoicing for regularization and integration of invoices (ex article 6 c.9-bis d.lgs. 471/97 or article 46 c.5 d.l. 331/93)</value>
   </data>
   <data name="TD21" xml:space="preserve">
-    <value>self-invoice for exceeding ceiling</value>
+    <value>self invoicing for splaphoning</value>
   </data>
   <data name="TD22" xml:space="preserve">
-    <value>extraction of goods from VAT Warehouse</value>
+    <value>extractions of goods from VAT Warehouse</value>
   </data>
   <data name="TD23" xml:space="preserve">
-    <value>extraction of goods from VAT Warehouse with VAT payment</value>
+    <value>extractions of goods from VAT Warehouse with payment of VAT</value>
   </data>
   <data name="TD24" xml:space="preserve">
-    <value>Deferred invoice pursuant to art.21, paragraph 4, third period letter a) DPR 633/72</value>
+    <value>deferred invoice ex art.21, c.4, third period lett. a) DPR 633/72</value>
   </data>
   <data name="TD25" xml:space="preserve">
-    <value>Deferred invoice pursuant to art.21, paragraph 4, third period letter b) DPR 633/72</value>
+    <value>deferred invoice ex art.21, c.4, third period lett. b) DPR 633/72</value>
   </data>
   <data name="TD26" xml:space="preserve">
-    <value>transfer of depreciable assets and internal transfers (pursuant to art.36 DPR 633/72)</value>
+    <value>sale of depreciable assets and for internal transfers (ex art.36 DPR 633/72)</value>
   </data>
   <data name="TD27" xml:space="preserve">
-    <value>invoice for self-consumption or free transfers without recourse</value>
+    <value>self invoicing for self consumption or for free transfer without recourse</value>
   </data>
   <data name="TD28" xml:space="preserve">
-    <value>purchases from San Marino with VAT (paper invoice)</value>
+    <value>purchases from san marino with VAT (paper invoice)</value>
   </data>
   <data name="TD29" xml:space="preserve">
-    <value>communication for omitted or irregular invoicing (art. 6, paragraph 8, d.lgs. 471/97)</value>
+    <value>communication for omitted or irregular invoicing (article 6, paragraph 8, Legislative Decree 471/97)</value>
   </data>
 </root>
