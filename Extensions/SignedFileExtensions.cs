@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Pkcs;
@@ -78,9 +78,9 @@ namespace FatturaElettronica.Extensions
 
             try
             {
-                signedFile.Decode(fileContent);
                 if (validateSignature)
                 {
+                    signedFile.Decode(fileContent);
                     signedFile.CheckSignature(true);
                 }
             }
