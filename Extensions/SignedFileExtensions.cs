@@ -78,9 +78,9 @@ namespace FatturaElettronica.Extensions
 
             try
             {
+                signedFile.Decode(fileContent);
                 if (validateSignature)
                 {
-                    signedFile.Decode(fileContent);
                     signedFile.CheckSignature(true);
                 }
             }
