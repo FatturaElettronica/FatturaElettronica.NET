@@ -11,7 +11,6 @@ namespace FatturaElettronica.Test.Extensions
     [TestClass]
     public class SignedFileExtensionsTest
     {
-        // TODO: test that invalid signature is reported as a FatturaElettronicaSignatureException.
 
         [TestMethod]
         public void ReadXMLSigned()
@@ -22,10 +21,12 @@ namespace FatturaElettronica.Test.Extensions
         }
 
         [TestMethod]
-        public void ReadXMLSigned_ShouldThrowExceptionOnTamperedDocuments()
+        [DataRow(false)]
+        [DataRow(true)]
+        public void ReadXMLSigned_ShouldThrowExceptionOnTamperedDocuments(bool performValidation)
         {
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
-            var exception = Assert.ThrowsException<SignatureException>(()=> f.ReadXmlSigned("Samples/IT02182030391_31_tampered.xml.p7m"));
+            var exception = Assert.ThrowsException<SignatureException>(() => f.ReadXmlSigned("Samples/IT02182030391_31_tampered.xml.p7m", performValidation));
         }
 
 
@@ -48,9 +49,6 @@ namespace FatturaElettronica.Test.Extensions
         [TestMethod]
         public void ReadXMLSignedValidateSignatureDisabled()
         {
-            // TODO: ideally we'd need a .p7m with an invalid signature in order
-            // to properly test this.
-
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
             f.ReadXmlSigned("Samples/IT02182030391_31.xml.p7m", validateSignature: false);
             Assert.AreEqual("31", f.FatturaElettronicaHeader.DatiTrasmissione.ProgressivoInvio);
@@ -59,8 +57,6 @@ namespace FatturaElettronica.Test.Extensions
         [TestMethod]
         public void ReadXMLSignedBase64ValidateSignatureDisabled()
         {
-            // TODO: ideally we'd need a .p7m with an invalid signature in order
-            // to properly test this.
 
             var f = FatturaOrdinaria.CreateInstance(Instance.Privati);
             f.ReadXmlSignedBase64("Samples/IT02182030391_31.Base64.xml.p7m", validateSignature: false);
