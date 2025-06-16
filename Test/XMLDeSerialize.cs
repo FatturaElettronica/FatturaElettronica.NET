@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Net.NetworkInformation;
 using System.Xml;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
@@ -49,6 +50,20 @@ namespace FatturaElettronica.Test
             // Deserialize from an official example file 
             // (downloaded from http://www.fatturapa.gov.it/export/fatturazione/it/normativa/f-2.htm)
             DeserializeAndThenSerialize("Samples/IT01234567890_FPR02.xml", FormatoTrasmissione.Privati);
+        }
+
+        [TestMethod]
+        public void DeserializeShouldRewindStreams()
+        {
+            using var signedStream = new FileStream("Samples/IT02182030391_31.xml.p7m", FileMode.Open, FileAccess.Read);
+            signedStream.Position = 283; //Assumption is reading would fail if the stream were not rewound
+            var invoice = FatturaBase.CreateInstanceFromXml(signedStream, false);
+            Assert.IsTrue(invoice.Validate().IsValid && invoice.GetFormatoTrasmissione() == FormatoTrasmissione.Privati);
+        
+            using var baseEncodedStream = new FileStream("Samples/IT02182030391_31.Base64.xml.p7m", FileMode.Open, FileAccess.Read);
+            baseEncodedStream.Position = 283;//Assumption is reading would fail if the stream were not rewound
+            var baseEncodedInvoice = FatturaBase.CreateInstanceFromXml(baseEncodedStream, false);
+            Assert.IsTrue(baseEncodedInvoice.Validate().IsValid && baseEncodedInvoice.GetFormatoTrasmissione() == FormatoTrasmissione.Privati);
         }
 
         [TestMethod]
