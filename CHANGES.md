@@ -2,7 +2,11 @@
 
 ## In Development
 
-- CI: non eseguire test action al push di un tag (la publish action include i test)
+- breaking: attempting to read Tampered documents will now invariably throw `SignatureException` [#434][434]
+- CI: do not execute the 'test' action on tag pushes (the 'publish' action includes tests)
+- chore: we're switching to the English language for CHANGELOG updates.
+
+[434]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/434
 
 ## Stable
 
