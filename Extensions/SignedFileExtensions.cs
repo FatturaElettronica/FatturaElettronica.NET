@@ -61,7 +61,7 @@ namespace FatturaElettronica.Extensions
                     signedFile.CheckSignature(true);
                 }
             }
-            catch (CryptographicException ce)//when(validateSignature)
+            catch (CryptographicException ce)
             {
                 throw new SignatureException(Resources.ErrorMessages.SignatureException, ce);
             }
