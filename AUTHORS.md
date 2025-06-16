@@ -27,6 +27,7 @@ Collaboratori
 - Marco Tessitore
 - Massimo Linossi
 - Michael Mairegger
+- Paolo Manili
 - Paolo Tatoli
 - Puma
 - Seba
@@ -34,7 +35,7 @@ Collaboratori
 - gminutillo
 - ilserd
 - username77
-
+- 
 [NI]: https://nicolaiarocci.com
 [gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET
 [li]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt

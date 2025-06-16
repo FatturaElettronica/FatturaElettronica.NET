@@ -255,3 +255,5 @@ namespace DemoApp
 ## Limitazioni
 
 In convalida non sono supportati gli errori di tipo `3xx` in quanto risultato dei riscontri fatti da PA sui propri server.
+In lettura di file firmati, non è possibile leggere con successo file la cui firma digitale o il contenuto siano stati alterati, e si riceverà un SignatureException, 
+indipendentemente dall'impostazione del parametro validate nei metodi ReadXMLSigned e CreateInstanceFromXml

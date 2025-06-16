@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Xml;
@@ -37,14 +37,15 @@ namespace FatturaElettronica
 
         public static FatturaBase CreateInstanceFromXml(Stream stream, bool validateSignature = false)
         {
+            using var contentStream = StreamExtensions.PreprocessStreamEncoding(stream);
             try
             {
-                return CreateInstanceFromPlainXml(stream);
+                return CreateInstanceFromPlainXml(contentStream);
             }
             catch (XmlException)
             {
                 stream.Position = 0;
-                return CreateInstanceFromXmlSigned(stream, validateSignature);
+                return CreateInstanceFromXmlSigned(contentStream, validateSignature);
             }
         }
 

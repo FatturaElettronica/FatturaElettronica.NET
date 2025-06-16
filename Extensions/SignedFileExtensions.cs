@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Pkcs;
@@ -6,20 +6,24 @@ using System.Security.Cryptography.X509Certificates;
 
 namespace FatturaElettronica.Extensions
 {
+
     public static class SignedFileExtensions
     {
+
+        /// <summary>
+        /// This method will Read the Signed XML whether it is Base64Encoded or plain
+        /// </summary>
+        /// <param name="fattura"></param>
+        /// <param name="filePath"></param>
+        /// <param name="validateSignature"></param>
+        /// <exception cref="SignatureException">If there is an error validating invoice signature</exception>
+        /// <exception cref="FormatException">If it is dealing with a Base64 input and it fails to decode it</exception>"
         public static void ReadXmlSigned(this FatturaBase fattura, string filePath, bool validateSignature = true)
         {
-            try
-            {
-                // Most times input will be a plain (non-Base64-encoded) file.
-                using var inputStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
-                ReadXmlSigned(fattura, inputStream, validateSignature);
-            }
-            catch (CryptographicException)
-            {
-                ReadXmlSignedBase64(fattura, filePath, validateSignature);
-            }
+            using var inputStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
+            using var contentStream = StreamExtensions.PreprocessStreamEncoding(inputStream);
+            ReadXmlSigned(fattura, contentStream, validateSignature);
+
         }
 
         public static void ReadXmlSignedBase64(this FatturaBase fattura, string filePath, bool validateSignature = true)
@@ -28,34 +32,44 @@ namespace FatturaElettronica.Extensions
                 validateSignature);
         }
 
-
         public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = true)
         {
             using var parsed = ParseSignature(stream, validateSignature);
             fattura.ReadXml(parsed);
         }
 
+        /// <summary>
+        /// Retrieves the Fattura XML as a Stream from an input Signed content Stream. 
+        /// It should be invoked on Signed content that is not base encoded, and supports signature validation
+        /// </summary>
+        /// <param name="stream">A Signed Content stream</param>
+        /// <param name="validateSignature">If we should validate the content matches the signature</param>
+        /// <returns>A Stream that can be Read into a Fattura object</returns>
+        /// <exception cref="SignatureException">If ValidateSignature is true and the content doesn't match the signature</exception>
+        /// <exception cref="CryptographicException">If the stream is encoded or there is an error Decoding the signature and ValidateSignature is false</exception>
         public static MemoryStream ParseSignature(Stream stream, bool validateSignature)
         {
             var fileContent = ReadAllBytes(stream);
             var content = new ContentInfo(fileContent);
             var signedFile = new SignedCms(SubjectIdentifierType.IssuerAndSerialNumber, content, false);
-            signedFile.Decode(fileContent);
 
-            if (validateSignature)
+            try
             {
-                try
+                signedFile.Decode(fileContent);
+                if (validateSignature)
                 {
                     signedFile.CheckSignature(true);
                 }
-                catch (CryptographicException ce)
-                {
-                    throw new SignatureException(Resources.ErrorMessages.SignatureException, ce);
-                }
+            }
+            catch (CryptographicException ce)
+            {
+                throw new SignatureException(Resources.ErrorMessages.SignatureException, ce);
             }
 
             var memoryStream = new MemoryStream();
             memoryStream.Write(signedFile.ContentInfo.Content, 0, signedFile.ContentInfo.Content.Length);
+
+
             return memoryStream;
 
             static byte[] ReadAllBytes(Stream stream)
