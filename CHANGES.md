@@ -2,6 +2,14 @@
 
 ## In Development
 
+- *hic sunt leones*
+ 
+## Stable
+
+### v 4.0.1
+
+Released on June 18, 2025
+
 - fix: if the input stream Position is not 0, and it is seekable, it will be rewound to Position 0 [#436][436]
 
 [436]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/436
