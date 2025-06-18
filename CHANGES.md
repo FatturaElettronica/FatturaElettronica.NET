@@ -2,7 +2,9 @@
 
 ## In Development
 
-- *hic sunt leones*
+- fix: if the input stream Position is not 0, and it is seekable, it will be rewound to Position 0 [#436][436]
+
+[436]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/436
 
 ## Stable
 
