@@ -33,7 +33,7 @@ Oppure usare il comando equivalente nella UI di Visual Studio.
 
 ## Licenza
 
-Fattura Elettronica è un progetto di [Nicola Iarocci][ni] e
+Fattura Elettronica è un progetto di [Nicola Iarocci][ni] per
 [__Invoicetronic__][it]. È [libero][bsd], [sviluppato in pubblico][gh], aperto
 alla collaborazione di tutti.
 
@@ -41,16 +41,18 @@ alla collaborazione di tutti.
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
 
-## API moderne per la fattura elettronica in Italia
+## Invoicetronic API
+La REST API di riferimento per la fatturazione elettronica in Italia.
 
-[__Invoicetronic API__][it] ti consente di integrare facilmente l'intero ciclo di gestione della fattura elettronica: __invio__, __ricezione__, applicazione di __firme digitali__, __validazione__ preventiva, notifiche __webhook__, __log__ degli eventi, varie __opzioni di upload__ e molto altro, il tutto su una piattaforma moderna che astrae le complessità di SDI.
+Dagli stessi autori di FatturaElettronica.NET, [__Invoicetronic API__][it] ti consente di integrare facilmente app l'intero ciclo di gestione della fattura elettronica: invio, ricezione, applicazione di firme digitali, validazione preventiva, notifiche via webhook, log degli eventi, varie opzioni di upload, integrazione LLM via MCP server e altro, il tutto su una piattaforma moderna che astrae le complessità di SDI/FatturaPA.
 
-Invoicetronic include __client SDK__ open-source per i linguaggi di programmazione più diffusi, __comandi CLI__ per lo
-scripting, una completa __documentazione OpenAPI__ e un ambiente __Sandbox gratuito__.
+Invoicetronic include client SDK open-source per i linguaggi di programmazione più diffusi, comandi CLI per lo scripting, una completa documentazione OpenAPI e un ambiente Sandbox gratuito.
 
-Vai su [__Invoicetronic__][it] per saperne di più.
+Visita il sito [__Invoicetronic__][it] per saperne di più.
 
 ## Powered by
+
+[<img src="https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/Artwork/invoicetronic.svg" alt="Invoicetornic logo." width="298">](https://invoicetronic.com)
 
 [![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSourceSupport)
 
@@ -62,5 +64,5 @@ Vai su [__Invoicetronic__][it] per saperne di più.
 [netstandard]: https://github.com/dotnet/standard/blob/master/docs/versions/netstandard2.0.md
 [rp]: http://www.kalamun.org/
 [ghs]: https://github.com/sponsors/nicolaiarocci
-[it]: https://www.invoicetronic.com
+[it]: https://invoicetronic.com
 [gh]: https://github.com/FatturaElettronica/FatturaElettronica.NET

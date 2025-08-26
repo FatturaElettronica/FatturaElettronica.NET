@@ -2,7 +2,7 @@
 
 ## In Development
 
-- *hic sunt leones*
+- Aggiunto riferimento a [Invoicetronic](http://invoicetronic.com) come progetto "gemello" di FatturaElettronica.NET per la gestione completa della fatturazione elettronica in Italia.
  
 ## Stable
 
