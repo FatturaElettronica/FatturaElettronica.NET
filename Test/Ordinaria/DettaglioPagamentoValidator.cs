@@ -158,9 +158,9 @@ namespace FatturaElettronica.Test.Ordinaria
             result = Validator.TestValidate(Challenge);
             result.ShouldHaveValidationErrorFor(x => x.IBAN);
             
-            Challenge.IBAN = "IBANIT17X0605502100000001234567";
+            Challenge.IBAN = "ITQ0103071210000000011561";
             result = Validator.TestValidate(Challenge);
-            result.ShouldNotHaveValidationErrorFor(x => x.IBAN);
+            result.ShouldHaveValidationErrorFor(x => x.IBAN);
         }
 
         [TestMethod]

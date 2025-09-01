@@ -2,7 +2,10 @@
 
 ## In Development
 
+- fix: verifica codice IBAN imprecisa ([#438][438])
 - Aggiunto riferimento a [Invoicetronic](http://invoicetronic.com) come progetto "gemello" di FatturaElettronica.NET per la gestione completa della fatturazione elettronica in Italia.
+
+[438]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/438
  
 ## Stable
 
