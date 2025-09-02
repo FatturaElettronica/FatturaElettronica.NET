@@ -2,11 +2,17 @@
 
 ## In Development
 
-- fix: migliorata validazione Email/PEC ([#439][439])
- 
-[439]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/439
+- *hic sunt leones*
 
 ## Stable
+
+### v 4.0.3
+
+Released on September 2, 2025
+
+- fix: migliorata validazione PECDestinatario ([#439][439])
+
+[439]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/439
 
 ### v 4.0.2
 
