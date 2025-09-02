@@ -31,8 +31,6 @@ Released on June 18, 2025
 
 [436]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/436
 
-## Stable
-
 ### v 4.0.0
 
 Released on June 16, 2025
