@@ -111,6 +111,10 @@ namespace FatturaElettronica.Test.Ordinaria
             
             Challenge.PECDestinatario = "not@really,com";
             result = Validator.TestValidate(Challenge);
+            result.ShouldHaveValidationErrorFor(x => x.PECDestinatario);
+            
+            Challenge.PECDestinatario = "test@2bbresine.it";
+            result = Validator.TestValidate(Challenge);
             result.ShouldNotHaveValidationErrorFor(x => x.PECDestinatario);
             
             Challenge.PECDestinatario = "maybe@we.can";

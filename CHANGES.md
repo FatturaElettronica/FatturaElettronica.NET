@@ -2,7 +2,9 @@
 
 ## In Development
 
-- *hic sunt leones*
+- fix: la fix introdotta con v4.0.3 per la validazione di PECDestinatario non copriva tutti i casi ([#440][440])
+
+[440]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/440
 
 ## Stable
 
