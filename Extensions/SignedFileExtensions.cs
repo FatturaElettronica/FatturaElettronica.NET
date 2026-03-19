@@ -1,4 +1,5 @@
 using System;
+using System.Formats.Asn1;
 using System.IO;
 using System.Security.Cryptography;
 using System.Security.Cryptography.Pkcs;
@@ -18,7 +19,7 @@ namespace FatturaElettronica.Extensions
         /// <param name="validateSignature"></param>
         /// <exception cref="SignatureException">If there is an error validating invoice signature</exception>
         /// <exception cref="FormatException">If it is dealing with a Base64 input and it fails to decode it</exception>"
-        public static void ReadXmlSigned(this FatturaBase fattura, string filePath, bool validateSignature = true)
+        public static void ReadXmlSigned(this FatturaBase fattura, string filePath, bool validateSignature = false)
         {
             using var inputStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             using var contentStream = StreamExtensions.PreprocessStreamEncoding(inputStream);
@@ -26,13 +27,13 @@ namespace FatturaElettronica.Extensions
 
         }
 
-        public static void ReadXmlSignedBase64(this FatturaBase fattura, string filePath, bool validateSignature = true)
+        public static void ReadXmlSignedBase64(this FatturaBase fattura, string filePath, bool validateSignature = false)
         {
             ReadXmlSigned(fattura, new MemoryStream(Convert.FromBase64String(File.ReadAllText(filePath))),
                 validateSignature);
         }
 
-        public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = true)
+        public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = false)
         {
             using var parsed = ParseSignature(stream, validateSignature);
             fattura.ReadXml(parsed);
@@ -61,14 +62,24 @@ namespace FatturaElettronica.Extensions
                     signedFile.CheckSignature(true);
                 }
             }
-            catch (CryptographicException ce)
+            catch (CryptographicException) when (!validateSignature)
             {
-                throw new SignatureException(Resources.ErrorMessages.SignatureException, ce);
+                try
+                {
+                    return ExtractCmsContent(fileContent);
+                }
+                catch (Exception ex)
+                {
+                    throw new SignatureException(Resources.ErrorMessages.SignatureException, ex);
+                }
+            }
+            catch (CryptographicException ex)
+            {
+                throw new SignatureException(Resources.ErrorMessages.SignatureException, ex);
             }
 
             var memoryStream = new MemoryStream();
             memoryStream.Write(signedFile.ContentInfo.Content, 0, signedFile.ContentInfo.Content.Length);
-
 
             return memoryStream;
 
@@ -86,6 +97,35 @@ namespace FatturaElettronica.Extensions
 
                 return ms.ToArray();
             }
+        }
+
+        /// <summary>
+        /// Extracts the embedded content from a CMS/PKCS#7 SignedData envelope using raw ASN.1 parsing.
+        /// This is used as a fallback when SignedCms.Decode() fails due to unusual ASN.1 types
+        /// (e.g. UniversalString in certificate DN fields) that .NET cannot handle.
+        /// Note: this method cannot validate the signature.
+        /// </summary>
+        internal static MemoryStream ExtractCmsContent(byte[] cmsData)
+        {
+            var reader = new AsnReader(cmsData, AsnEncodingRules.BER);
+            var contentInfo = reader.ReadSequence();
+
+            _ = contentInfo.ReadObjectIdentifier();
+
+            var explicit0 = contentInfo.ReadSequence(new Asn1Tag(TagClass.ContextSpecific, 0));
+            var signedData = explicit0.ReadSequence();
+
+            _ = signedData.ReadInteger();
+            _ = signedData.ReadSetOf();
+
+            var encapContentInfo = signedData.ReadSequence();
+
+            _ = encapContentInfo.ReadObjectIdentifier();
+
+            var eContentExplicit = encapContentInfo.ReadSequence(new Asn1Tag(TagClass.ContextSpecific, 0));
+            var xmlContent = eContentExplicit.ReadOctetString();
+
+            return new MemoryStream(xmlContent);
         }
 
         public static void WriteXmlSigned(this FatturaBase fattura, string pfxFile, string pfxPassword, string p7mFilePath)

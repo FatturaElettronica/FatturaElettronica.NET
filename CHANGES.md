@@ -2,8 +2,11 @@
 
 ## In Development
 
-- *hic sunt leones*
-- 
+- fix: supporto file P7M con ASN.1 UniversalString nei certificati ([#442][442]). Quando `SignedCms.Decode()` fallisce e la validazione firma è disabilitata, il contenuto viene estratto tramite parsing ASN.1 diretto.
+- breaking: il default di `validateSignature` in `ReadXmlSigned` e `ReadXmlSignedBase64` passa da `true` a `false`, in linea con `CreateInstanceFromXml`. Chi necessita della convalida della firma deve ora passare `validateSignature: true` esplicitamente.
+
+[442]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/442
+
 ## Stable
 
 ### v 4.0.4
