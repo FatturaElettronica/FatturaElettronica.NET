@@ -19,7 +19,7 @@ namespace FatturaElettronica.Extensions
         /// <param name="validateSignature"></param>
         /// <exception cref="SignatureException">If there is an error validating invoice signature</exception>
         /// <exception cref="FormatException">If it is dealing with a Base64 input and it fails to decode it</exception>"
-        public static void ReadXmlSigned(this FatturaBase fattura, string filePath, bool validateSignature = false)
+        public static void ReadXmlSigned(this FatturaBase fattura, string filePath, bool validateSignature = true)
         {
             using var inputStream = new FileStream(filePath, FileMode.Open, FileAccess.Read);
             using var contentStream = StreamExtensions.PreprocessStreamEncoding(inputStream);
@@ -27,13 +27,13 @@ namespace FatturaElettronica.Extensions
 
         }
 
-        public static void ReadXmlSignedBase64(this FatturaBase fattura, string filePath, bool validateSignature = false)
+        public static void ReadXmlSignedBase64(this FatturaBase fattura, string filePath, bool validateSignature = true)
         {
             ReadXmlSigned(fattura, new MemoryStream(Convert.FromBase64String(File.ReadAllText(filePath))),
                 validateSignature);
         }
 
-        public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = false)
+        public static void ReadXmlSigned(this FatturaBase fattura, Stream stream, bool validateSignature = true)
         {
             using var parsed = ParseSignature(stream, validateSignature);
             fattura.ReadXml(parsed);
@@ -62,20 +62,19 @@ namespace FatturaElettronica.Extensions
                     signedFile.CheckSignature(true);
                 }
             }
-            catch (CryptographicException) when (!validateSignature)
+            catch (CryptographicException ex)
             {
+                if (validateSignature)
+                    throw new SignatureException(Resources.ErrorMessages.SignatureException, ex);
+
                 try
                 {
                     return ExtractCmsContent(fileContent);
                 }
-                catch (Exception ex)
+                catch (Exception fallbackEx)
                 {
-                    throw new SignatureException(Resources.ErrorMessages.SignatureException, ex);
+                    throw new SignatureException(Resources.ErrorMessages.SignatureException, fallbackEx);
                 }
-            }
-            catch (CryptographicException ex)
-            {
-                throw new SignatureException(Resources.ErrorMessages.SignatureException, ex);
             }
 
             var memoryStream = new MemoryStream();
