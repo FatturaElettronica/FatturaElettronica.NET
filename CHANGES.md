@@ -2,16 +2,18 @@
 
 ## In Development
 
+- fix: supporto encoding `windows-1252` nelle fatture XML e P7M ([#442][442]).
+
+[442]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/442
+
 ## Stable
 
 ### v 4.0.5
 
 Released on March 19, 2026
 
-- fix: supporto file P7M con ASN.1 UniversalString nei certificati ([#442][442]). Quando `SignedCms.Decode()` fallisce e la validazione firma non è richiesta, il contenuto viene estratto tramite parsing ASN.1 diretto.
+- fix: supporto P7M con ASN.1 UniversalString nei certificati ([#442][442]).
 - new: test suite migrata a .NET 10.
-
-[442]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/442
 
 ### v 4.0.4
 

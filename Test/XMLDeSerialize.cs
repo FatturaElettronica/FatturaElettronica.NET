@@ -122,6 +122,13 @@ namespace FatturaElettronica.Test
             return f;
         }
 
+        [TestMethod]
+        public void DeserializeWindows1252EncodedXml()
+        {
+            var f = DeserializeAny("Samples/IT02182030391_32.windows-1252.xml");
+            Assert.AreEqual(FormatoTrasmissione.Privati, f.GetFormatoTrasmissione());
+        }
+
         private FatturaBase DeserializeAny(string fileName)
         {
             using var fileStream = new FileStream(fileName, FileMode.Open, FileAccess.Read);

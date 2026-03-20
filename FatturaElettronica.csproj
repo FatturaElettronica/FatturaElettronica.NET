@@ -18,11 +18,7 @@
     <PackageIcon>icon.png</PackageIcon>
   </PropertyGroup>
 
-  <ItemGroup>
-    <InternalsVisibleTo Include="FatturaElettronica.Test" />
-  </ItemGroup>
-
-  <ItemGroup>
+<ItemGroup>
     <None Include="LICENSE.txt" Pack="true" PackagePath="\"/>
     <None Include="README.md" Pack="true" PackagePath="\"/>
     <None Include=".github\workflows\**\*.*" Pack="false" />
@@ -44,8 +40,8 @@
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="11.5.2"/>
-    <PackageReference Include="System.Formats.Asn1" Version="9.0.0" />
     <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.0" />
     <PackageReference Include="System.Text.Json" Version="9.0.0" />
   </ItemGroup>
 

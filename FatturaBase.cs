@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Security.Cryptography;
+using System.Text;
 using System.Xml;
 using FatturaElettronica.Defaults;
 using FatturaElettronica.Extensions;
@@ -11,6 +12,11 @@ namespace FatturaElettronica
 {
     public abstract class FatturaBase : BaseClassSerializable
     {
+        static FatturaBase()
+        {
+            Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+        }
+
         public override void ReadXml(XmlReader r)
         {
             r.MoveToContent();
