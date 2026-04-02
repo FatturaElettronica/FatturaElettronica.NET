@@ -2,9 +2,13 @@
 
 ## In Development
 
-- fix: gestione file P7M in formato Base64 con line breaks CRLF tramite `CreateInstanceFromXml`.
-
 ## Stable
+
+### v 4.0.7
+
+Released on April 2, 2026
+
+- fix: gestione file P7M in formato Base64 con line breaks CRLF tramite `CreateInstanceFromXml`.
 
 ### v 4.0.6
 
