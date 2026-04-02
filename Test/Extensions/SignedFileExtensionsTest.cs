@@ -90,6 +90,15 @@ namespace FatturaElettronica.Test.Extensions
         }
 
         [TestMethod]
+        public void CreateInstanceFromXmlBase64WithCRLF()
+        {
+            using var stream = new FileStream("Samples/IT02182030391_31.Base64.CRLF.xml.p7m", FileMode.Open, FileAccess.Read);
+            var f = FatturaBase.CreateInstanceFromXml(stream);
+            Assert.IsInstanceOfType(f, typeof(FatturaOrdinaria));
+            Assert.AreEqual("31", ((FatturaOrdinaria)f).FatturaElettronicaHeader.DatiTrasmissione.ProgressivoInvio);
+        }
+
+        [TestMethod]
         public void WriteXmlSigned()
         {
             if (File.Exists("Samples/IT02182030391_32.xml.p7m"))

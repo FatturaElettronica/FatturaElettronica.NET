@@ -2,6 +2,8 @@
 
 ## In Development
 
+- fix: gestione file P7M in formato Base64 con line breaks CRLF tramite `CreateInstanceFromXml`.
+
 ## Stable
 
 ### v 4.0.6

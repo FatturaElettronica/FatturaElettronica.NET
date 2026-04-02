@@ -103,7 +103,7 @@ namespace FatturaElettronica
                 newStream.Position = 0;
                 return CreateInstanceFromXml(newStream);
             }
-            catch (CryptographicException)
+            catch (Exception ex) when (ex is CryptographicException or SignatureException)
             {
                 stream.Position = 0;
                 return CreateInstanceFromXmlSignedBase64(stream, validateSignature);
