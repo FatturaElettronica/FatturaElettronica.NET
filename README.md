@@ -41,18 +41,15 @@ alla collaborazione di tutti.
 
 - [Sito web](https://fatturaelettronicaopensource.org/)
 
-## Invoicetronic API
-La REST API di riferimento per la fatturazione elettronica in Italia.
-
-Dagli stessi autori di FatturaElettronica.NET, [__Invoicetronic API__][it] ti consente di integrare facilmente app l'intero ciclo di gestione della fattura elettronica: invio, ricezione, applicazione di firme digitali, validazione preventiva, notifiche via webhook, log degli eventi, varie opzioni di upload, integrazione LLM via MCP server e altro, il tutto su una piattaforma moderna che astrae le complessità di SDI/FatturaPA.
-
-Invoicetronic include client SDK open-source per i linguaggi di programmazione più diffusi, comandi CLI per lo scripting, una completa documentazione OpenAPI e un ambiente Sandbox gratuito.
-
-Visita il sito [__Invoicetronic__][it] per saperne di più.
-
 ## Powered by
 
 [<img src="https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/Artwork/invoicetronic.svg" alt="Invoicetornic logo." width="298">](https://invoicetronic.com)
+
+Realizzata dagli stessi autori di FatturaElettronica.NET, [__Invoicetronic API__][it] ti permette di integrare facilmente nella tua app l'intero ciclo della fattura elettronica: invio, ricezione, applicazione di firme digitali, convalida, notifiche via webhook e altro, il tutto su una piattaforma moderna che astrae le complessità di SDI/FatturaPA.
+
+Invoicetronic include gli SDK per i linguaggi di programmazione più diffusi, comandi CLI per lo scripting, Web app, OpenAPI, e un completo ambiente di prova gratuita.
+
+Visita il sito [__Invoicetronic__][it] per saperne di più.
 
 [pa]: https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.8
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt
