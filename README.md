@@ -54,8 +54,6 @@ Visita il sito [__Invoicetronic__][it] per saperne di più.
 
 [<img src="https://raw.githubusercontent.com/FatturaElettronica/FatturaElettronica.NET/master/Artwork/invoicetronic.svg" alt="Invoicetornic logo." width="298">](https://invoicetronic.com)
 
-[![JetBrains logo.](https://resources.jetbrains.com/storage/products/company/brand/logos/jetbrains.svg)](https://jb.gg/OpenSourceSupport)
-
 [pa]: https://www.agenziaentrate.gov.it/portale/web/guest/specifiche-tecniche-versione-1.8
 [bsd]: http://github.com/FatturaElettronica/FatturaElettronica.NET/blob/master/LICENSE.txt
 [ga]: http://gestionaleamica.com
