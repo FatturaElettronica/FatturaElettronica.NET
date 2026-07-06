@@ -690,6 +690,15 @@ namespace FatturaElettronica.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to EU (sogg. passivi extracomunitari).
+        /// </summary>
+        public static string EU {
+            get {
+                return ResourceManager.GetString("EU", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Finlandia.
         /// </summary>
         public static string FI {

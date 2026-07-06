@@ -773,5 +773,8 @@
   </data>
   <data name="OO" xml:space="preserve">
     <value>Campione d'Italia and Livigno</value>
-  </data> 
+  </data>
+  <data name="EU" xml:space="preserve">
+    <value>EU (non-EU entities)</value>
+  </data>
 </root>
