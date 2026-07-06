@@ -771,4 +771,7 @@
   <data name="EL" xml:space="preserve">
     <value>Griechenland EL</value>
   </data>
+  <data name="EU" xml:space="preserve">
+    <value>EU (Nicht-EU-Unternehmen)</value>
+  </data>
 </root>

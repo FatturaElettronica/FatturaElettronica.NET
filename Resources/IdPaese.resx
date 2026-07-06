@@ -780,4 +780,7 @@
     <value>Grecia EL</value>
     <comment> https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/374</comment>
   </data>
+  <data name="EU" xml:space="preserve">
+    <value>EU (sogg. passivi extracomunitari)</value>
+  </data>
 </root>
