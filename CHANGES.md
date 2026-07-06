@@ -2,6 +2,10 @@
 
 ## In Development
 
+- fix: validazione IdPaese fallisce se partita IVA comincia con EI ([#443][443]). 
+
+[443]: https://github.com/FatturaElettronica/FatturaElettronica.NET/issues/443
+
 ## Stable
 
 ### v 4.0.7
