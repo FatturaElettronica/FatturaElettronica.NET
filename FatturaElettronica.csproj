@@ -39,10 +39,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="11.5.2"/>
-    <PackageReference Include="System.Security.Cryptography.Pkcs" Version="9.0.21" />
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="9.0.21" />
-    <PackageReference Include="System.Text.Json" Version="9.0.21" />
+    <PackageReference Include="FluentValidation" />
+    <PackageReference Include="System.Security.Cryptography.Pkcs" />
+    <PackageReference Include="System.Text.Encoding.CodePages" />
+    <PackageReference Include="System.Text.Json" />
   </ItemGroup>
 
   <ItemGroup>
