@@ -2,6 +2,11 @@
 
 ## In Development
 
+- fix: aggiornata System.Security.Cryptography.Pkcs a 9.0.21 per le vulnerabilità GHSA-2fmv-rv2c-59x7 e GHSA-846f-f764-76mx ([#445][445]).
+- chore: versioni dei pacchetti NuGet gestite centralmente in `Directory.Packages.props` ([#445][445]).
+
+[445]: https://github.com/FatturaElettronica/FatturaElettronica.NET/pull/445
+
 ## Stable
 
 ### v 4.0.8
